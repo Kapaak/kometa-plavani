@@ -6,6 +6,7 @@ export const Flex = styled.div<{
 	direction?: string;
 	gap?: string;
 	textAlign?: string;
+	width?: string;
 }>`
 	display: flex;
 	flex-direction: column;
@@ -14,5 +15,6 @@ export const Flex = styled.div<{
 	flex-direction: ${({ direction }) => (direction ? direction : "column")};
 	gap: ${({ gap }) => (gap ? gap : "0")};
 	height: 100%;
+	width: ${({ width }) => (width ? width : "100%")};
 	text-align: ${({ textAlign }) => (textAlign ? textAlign : "left")};
 `;
