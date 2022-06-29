@@ -17,6 +17,7 @@ const ServiceSection = () => {
               headline={text.headline}
               smallText={text.smallText}
               image={text.image}
+              key={i}
             />
           ))}
         </Flex>
