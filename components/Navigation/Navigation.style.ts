@@ -3,7 +3,7 @@ import styled from "styled-components";
 export const ImageContainer = styled.div``;
 
 export const Navigation = styled.nav<{ isActive: boolean }>`
-	position: absolute;
+	position: ${({ isActive }) => (isActive ? "fixed" : "absolute")};
 	width: 100%;
 	height: ${({ isActive }) => (isActive ? "100%" : "auto")};
 	padding: 2rem;

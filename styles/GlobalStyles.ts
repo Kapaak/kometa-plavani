@@ -33,10 +33,5 @@ export const GlobalStyles = createGlobalStyle`
         color:var(--colb);
     }
 
-    h3{
-        color:var(--col1);
-        font-family: var(--font1);
-        font-weight: 500;
-    }
 
 `;

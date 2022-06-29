@@ -2,27 +2,31 @@
 import Image from "next/image";
 //styles
 import * as S from "./Services.style";
-import { Flex, Text } from "@/styles";
+import { Button, Flex, Subheadline, Text } from "@/styles";
 
 interface Props {
-	headline: string;
-	smallText: string;
-	fullText: string;
-	image: any;
+  headline: string;
+  smallText: string;
+  fullText: string;
+  image: any;
 }
 
 const Service = ({ fullText, headline, smallText, image }: Props) => {
-	return (
-		<S.Service>
-			<Flex justify="flex-end">
-				<h3>{headline}</h3>
-				<Text light>{smallText}</Text>
-				<S.ImageContainer>
-					<Image src={image} layout="fill" objectFit="cover" />
-				</S.ImageContainer>
-			</Flex>
-		</S.Service>
-	);
+  return (
+    <S.Service>
+      <Flex justify="flex-end" relative>
+        <Subheadline>{headline}</Subheadline>
+        <Text light>{smallText}</Text>
+        <S.ButtonContainer>
+          <Button bgCol="yellow">Přihlásit se</Button>
+          <Button bgCol="blue">Více informací</Button>
+        </S.ButtonContainer>
+      </Flex>
+      <S.ImageContainer>
+        <Image src={image} layout="fill" objectFit="cover" />
+      </S.ImageContainer>
+    </S.Service>
+  );
 };
 
 export default Service;
