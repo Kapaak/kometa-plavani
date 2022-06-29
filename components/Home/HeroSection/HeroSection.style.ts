@@ -1,6 +1,6 @@
 import styled from "styled-components";
 
-export const HeroSection = styled.div`
+export const HeroSection = styled.section`
 	background: linear-gradient(
 		109.69deg,
 		#2172dd -4.31%,

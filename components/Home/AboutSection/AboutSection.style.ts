@@ -1,7 +1,7 @@
 import { Text } from "@/styles";
 import styled from "styled-components";
 
-export const AboutSection = styled.div`
+export const AboutSection = styled.section`
 	padding: 1.5rem 0;
 `;
 

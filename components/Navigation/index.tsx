@@ -29,4 +29,12 @@ const Navigation = () => {
 	);
 };
 
+//*TODO -> header by mel obalovat navigation a logo
+{
+	/* <header>
+	<div class="logo"></div>
+	<Navigation/>
+</header> */
+}
+
 export default Navigation;
