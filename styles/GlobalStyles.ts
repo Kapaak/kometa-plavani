@@ -18,7 +18,7 @@ export const GlobalStyles = createGlobalStyle`
         --colb: #001427;
 
         --max-width:120rem;
-        --side-padding:4rem;
+        --side-padding:2rem;
         --vertical-padding:2rem;
     }
 

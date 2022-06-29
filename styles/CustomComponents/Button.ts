@@ -7,8 +7,10 @@ export const Button = styled.button<{ bgCol?: bgCol }>`
   padding: 1rem 2.5rem;
   font-family: var(--font1);
   border: none;
-  border-radius: 2rem;
+  border-radius: 2.4rem;
   font-size: 2rem;
+  cursor: pointer;
+  letter-spacing: 0.11rem;
 
   ${({ bgCol }) => {
     switch (bgCol) {
