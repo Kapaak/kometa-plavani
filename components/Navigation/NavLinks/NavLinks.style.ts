@@ -1,4 +1,4 @@
-import styled from "styled-components";
+import styled, { css } from "styled-components";
 
 export const NavLink = styled.li`
 	list-style-type: none;
@@ -10,11 +10,37 @@ export const NavLink = styled.li`
 `;
 
 export const NavLinks = styled.ul<{ isActive: boolean }>`
-	display: ${({ isActive }) => (isActive ? "flex" : "none")};
 	flex-direction: column;
-	align-self: ${({ isActive }) => (isActive ? "center" : "baseline")};
 
-	${NavLink} {
-		padding-left: ${({ isActive }) => (isActive ? "4rem" : "0")};
-	}
+	${({ isActive }) => {
+		switch (isActive) {
+			case true:
+				return css`
+					display: flex;
+					align-self: center;
+
+					${NavLink} {
+						padding-left: 4rem;
+					}
+				`;
+			case false:
+				return css`
+					display: none;
+					align-self: baseline;
+
+					${NavLink} {
+						padding-left: 0;
+					}
+				`;
+			default:
+				return css``;
+		}
+	}}// 	display: ${({ isActive }) => (isActive ? "flex" : "none")};
+// 	flex-direction: column;
+// 	align-self: ${({ isActive }) => (isActive ? "center" : "baseline")};
+
+// 	${NavLink} {
+// 		padding-left: ${({ isActive }) => (isActive ? "4rem" : "0")};
+// 	}
+//
 `;

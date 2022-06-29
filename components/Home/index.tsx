@@ -1,11 +1,12 @@
 //components
+import AboutSection from "./AboutSection";
 import HeroSection from "./HeroSection";
 
 const Home = () => {
 	return (
 		<>
 			<HeroSection />
-			{/* about page */}
+			<AboutSection />
 			{/* contat page */}
 		</>
 	);
