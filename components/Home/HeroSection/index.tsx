@@ -38,11 +38,11 @@ const HeroSection = () => {
             </S.ImageButton>
           </Flex>
         </MaxWidth>
-      </MaxHeight>
 
-      <S.ImageContainer>
-        <Image src={HeroImg} layout="fill" objectFit="cover" />
-      </S.ImageContainer>
+        <S.ImageContainer>
+          <Image src={HeroImg} layout="fill" objectFit="cover" />
+        </S.ImageContainer>
+      </MaxHeight>
     </S.HeroSection>
   );
 };

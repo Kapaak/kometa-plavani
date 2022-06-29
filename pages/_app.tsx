@@ -3,21 +3,24 @@ import { Provider } from "react-redux";
 //components
 import HeadSelector from "../components/utils/HeadSelector";
 import Navigation from "@/components/Navigation";
-import { store } from "@redux/store";
+import Footer from "@/components/Home/Footer";
 //styles
 import { GlobalStyles } from "../styles/GlobalStyles";
 //types
 import type { AppProps } from "next/app";
+//redux
+import { store } from "@redux/store";
 
 function MyApp({ Component, pageProps }: AppProps) {
-	return (
-		<Provider store={store}>
-			<GlobalStyles />
-			<Navigation />
-			<HeadSelector />
-			<Component {...pageProps} />
-		</Provider>
-	);
+  return (
+    <Provider store={store}>
+      <GlobalStyles />
+      <Navigation />
+      <HeadSelector />
+      <Component {...pageProps} />
+      <Footer />
+    </Provider>
+  );
 }
 
 export default MyApp;
