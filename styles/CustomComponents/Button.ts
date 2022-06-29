@@ -8,7 +8,7 @@ export const Button = styled.button<{ bgCol?: bgCol }>`
   font-family: var(--font1);
   border: none;
   border-radius: 2.4rem;
-  font-size: 2rem;
+  font-size: var(--fbutton);
   cursor: pointer;
   letter-spacing: 0.11rem;
 

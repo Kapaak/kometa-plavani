@@ -23,7 +23,7 @@ const HeroSection = () => {
             align="center"
             justify="flex-end"
             textAlign="center"
-            gap="2.5rem"
+            gap="var(--gap)"
           >
             <MainHeadline>Plavecká škola kometa</MainHeadline>
             <div>
@@ -33,7 +33,9 @@ const HeroSection = () => {
                 záštitou nejúspěšnějšího plaveckého klubu v České republice
               </Text>
             </div>
-            <Image src={PlusButton} objectFit="cover" />
+            <S.ImageButton>
+              <Image src={PlusButton} objectFit="cover" />
+            </S.ImageButton>
           </Flex>
         </MaxWidth>
       </MaxHeight>

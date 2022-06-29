@@ -20,6 +20,14 @@ export const GlobalStyles = createGlobalStyle`
         --max-width:120rem;
         --side-padding:2rem;
         --vertical-padding:2rem;
+        --gap:2rem;
+
+        --ftext:1.6rem;
+        --fnavlink:2rem;
+        --fbutton:2rem;
+        --fmheadline:6rem;
+        --fmsheadline:2.5rem;
+        --fsheadline:2.5rem;
     }
 
     html{

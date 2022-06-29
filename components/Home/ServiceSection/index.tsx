@@ -7,22 +7,22 @@ import Service from "./Service";
 import { texts } from "./texts";
 
 const ServiceSection = () => {
-	return (
-		<S.ServiceSection>
-			<MaxWidth>
-				<Flex gap="2rem">
-					{texts.map((text, i) => (
-						<Service
-							fullText={text.fullText}
-							headline={text.headline}
-							smallText={text.smallText}
-							image={text.image}
-						/>
-					))}
-				</Flex>
-			</MaxWidth>
-		</S.ServiceSection>
-	);
+  return (
+    <S.ServiceSection>
+      <MaxWidth>
+        <Flex gap="var(--gap)">
+          {texts.map((text, i) => (
+            <Service
+              fullText={text.fullText}
+              headline={text.headline}
+              smallText={text.smallText}
+              image={text.image}
+            />
+          ))}
+        </Flex>
+      </MaxWidth>
+    </S.ServiceSection>
+  );
 };
 
 export default ServiceSection;

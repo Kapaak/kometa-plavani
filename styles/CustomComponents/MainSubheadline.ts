@@ -1,10 +1,10 @@
 import styled from "styled-components";
 
 export const MainSubheadline = styled.h2`
-	font-family: var(--font1);
-	color: var(--col1);
-	font-weight: 300;
-	letter-spacing: 0.35rem;
-	text-transform: uppercase;
-	font-size: 2.5rem;
+  font-family: var(--font1);
+  color: var(--col1);
+  font-weight: 300;
+  letter-spacing: 0.35rem;
+  text-transform: uppercase;
+  font-size: var(--fmsheadline);
 `;
