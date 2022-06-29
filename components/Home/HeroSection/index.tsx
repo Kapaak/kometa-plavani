@@ -1,3 +1,5 @@
+//libraries
+import { use100vh } from "react-div-100vh";
 //styles
 import {
   Flex,
@@ -17,7 +19,8 @@ import HeroImg from "@/public/images/hero-img.JPG";
 const HeroSection = () => {
   return (
     <S.HeroSection>
-      <MaxHeight>
+      {/* <MaxHeight> */}
+      <div style={{ height: "100vh" }}>
         <MaxWidth>
           <Flex
             align="center"
@@ -42,7 +45,8 @@ const HeroSection = () => {
         <S.ImageContainer>
           <Image src={HeroImg} layout="fill" objectFit="cover" />
         </S.ImageContainer>
-      </MaxHeight>
+      </div>
+      {/* </MaxHeight> */}
     </S.HeroSection>
   );
 };

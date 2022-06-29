@@ -11,7 +11,7 @@ export const HeroSection = styled.section`
 
 export const ImageContainer = styled.div`
   position: absolute;
-  height: 100%;
+  height: 100vh;
   width: 100%;
   top: 0;
   z-index: -1;
