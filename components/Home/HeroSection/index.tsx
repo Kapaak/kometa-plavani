@@ -15,19 +15,11 @@ import * as S from "./HeroSection.style";
 import PlusButton from "@/public/icons/plus-button.svg";
 //@ts-ignore
 import HeroImg from "@/public/images/hero-img.JPG";
-import { useEffect, useState } from "react";
 
 const HeroSection = () => {
-  const [height, setHeight] = useState<number | null>(0);
-
-  useEffect(() => {
-    setHeight(measureHeight());
-  });
-
   return (
-    <S.HeroSection>
-      {/* <MaxHeight> */}
-      <div style={{ height: `${height}px` }}>
+    <S.MaxHeightWithBG>
+      <S.HeroSection>
         <MaxWidth>
           <Flex
             align="center"
@@ -49,12 +41,11 @@ const HeroSection = () => {
           </Flex>
         </MaxWidth>
 
-        <S.ImageContainer>
+        {/* <S.ImageContainer>
           <Image src={HeroImg} layout="fill" objectFit="cover" />
-        </S.ImageContainer>
-      </div>
-      {/* </MaxHeight> */}
-    </S.HeroSection>
+        </S.ImageContainer> */}
+      </S.HeroSection>
+    </S.MaxHeightWithBG>
   );
 };
 
