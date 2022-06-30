@@ -4,19 +4,19 @@ import * as S from "./ServiceSection.style";
 //components
 import Service from "./Service";
 //texts
-import { texts } from "./texts";
+import { data } from "./data";
 
 const ServiceSection = () => {
   return (
     <S.ServiceSection>
       <MaxWidth>
         <Flex gap="var(--gap)">
-          {texts.map((text, i) => (
+          {data.map((d, i) => (
             <Service
-              fullText={text.fullText}
-              headline={text.headline}
-              smallText={text.smallText}
-              image={text.image}
+              fullText={d.fullText}
+              headline={d.headline}
+              smallText={d.smallText}
+              image={d.image}
               key={i}
             />
           ))}

@@ -12,26 +12,26 @@ import NavLinks from "./NavLinks";
 import { RootState } from "@redux/store";
 
 const Navigation = () => {
-	const isActive = useSelector(
-		(state: RootState) => state.navigation.isNavActive
-	);
+  const isActive = useSelector(
+    (state: RootState) => state.navigation.isNavActive
+  );
 
-	return (
-		<S.Navigation isActive={isActive}>
-			<Flex direction="row" justify="space-between">
-				<S.ImageContainer>
-					<Image src={LogoWhite} height={75} width={75} />
-				</S.ImageContainer>
-				<NavLinks />
-				<Hamburger />
-			</Flex>
-		</S.Navigation>
-	);
+  return (
+    <S.Navigation isActive={isActive}>
+      <Flex direction="row" justify="space-between">
+        <S.ImageContainer>
+          <Image src={LogoWhite} height={75} width={75} />
+        </S.ImageContainer>
+        <NavLinks />
+        <Hamburger />
+      </Flex>
+    </S.Navigation>
+  );
 };
 
 //*TODO -> header by mel obalovat navigation a logo
 {
-	/* <header>
+  /* <header>
 	<div class="logo"></div>
 	<Navigation/>
 </header> */
