@@ -1,5 +1,3 @@
-//libraries
-import { use100vh, measureHeight } from "react-div-100vh";
 //styles
 import {
   Flex,
@@ -13,13 +11,11 @@ import Image from "next/image";
 import * as S from "./HeroSection.style";
 //images or svgs
 import PlusButton from "@/public/icons/plus-button.svg";
-//@ts-ignore
-import HeroImg from "@/public/images/hero-img.JPG";
 
 const HeroSection = () => {
   return (
-    <S.MaxHeightWithBG>
-      <S.HeroSection>
+    <S.HeroSection>
+      <MaxHeight>
         <MaxWidth>
           <Flex
             align="center"
@@ -40,12 +36,8 @@ const HeroSection = () => {
             </S.ImageButton>
           </Flex>
         </MaxWidth>
-
-        {/* <S.ImageContainer>
-          <Image src={HeroImg} layout="fill" objectFit="cover" />
-        </S.ImageContainer> */}
-      </S.HeroSection>
-    </S.MaxHeightWithBG>
+      </MaxHeight>
+    </S.HeroSection>
   );
 };
 
