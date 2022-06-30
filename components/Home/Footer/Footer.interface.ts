@@ -1,9 +1,9 @@
 export interface IData {
   headline: string;
-  info: Array<infoType>;
+  fragment: Array<fragmentType>;
 }
 
-export type infoType = {
+export type fragmentType = {
   output: string;
   type: string;
 };

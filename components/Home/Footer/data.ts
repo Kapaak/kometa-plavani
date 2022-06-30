@@ -3,7 +3,7 @@ import { IData } from "./Footer.interface";
 export const data: Array<IData> = [
   {
     headline: "Kontakt",
-    info: [
+    fragment: [
       {
         output: "Bc. Anna Matušová",
         type: "bold",
@@ -28,7 +28,7 @@ export const data: Array<IData> = [
   },
   {
     headline: "Vedení klubu",
-    info: [
+    fragment: [
       {
         output: "Bc. Jiří Vlček BA",
         type: "bold",
@@ -57,7 +57,7 @@ export const data: Array<IData> = [
   },
   {
     headline: "Informace",
-    info: [
+    fragment: [
       { output: "GDPR", type: "normal" },
       { output: "IČO: 123456", type: "normal" }, //dopln spravne ICO
     ],

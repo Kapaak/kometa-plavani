@@ -5,15 +5,21 @@ import { Flex, MaxWidth } from "@/styles";
 import * as S from "./Footer.style";
 //data
 import { data } from "./data";
+//interfaces
+import { IData } from "./Footer.interface";
 
 const Footer = () => {
   return (
     <S.Footer>
       <MaxWidth>
         <Flex gap="4rem">
-          {data.map((d: any, i) => {
+          {data.map((d: IData, i) => {
             return (
-              <FooterSection key={i} headline={d.headline} textArray={d.info} />
+              <FooterSection
+                key={i}
+                headline={d.headline}
+                fragment={d.fragment}
+              />
             );
           })}
         </Flex>
