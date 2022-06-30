@@ -12,22 +12,30 @@ interface Props {
 const contentRenderer = (array: Array<fragmentType>) => {
   const content: any = [];
 
-  array.map((a) => {
+  array.map((a, i) => {
     switch (a.type) {
       case "bold":
-        return content.push(<S.BoldText light>{a.output}</S.BoldText>);
+        return content.push(
+          <S.BoldText key={i} light>
+            {a.output}
+          </S.BoldText>
+        );
 
       case "link": {
         const outputWithoutSpaces = a.output.replace(/ /g, "");
         return content.push(
-          <S.Link light href={outputWithoutSpaces}>
+          <S.Link key={i} light href={outputWithoutSpaces}>
             {a.output}
           </S.Link>
         );
       }
 
       case "normal":
-        return content.push(<Text light>{a.output}</Text>);
+        return content.push(
+          <Text key={i} light>
+            {a.output}
+          </Text>
+        );
 
       default:
         return;
