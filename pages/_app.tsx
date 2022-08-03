@@ -3,7 +3,7 @@ import { Provider } from "react-redux";
 //components
 import HeadSelector from "../components/utils/HeadSelector";
 import Navigation from "@/components/Navigation";
-import Footer from "@/components/Home/Footer";
+import Footer from "@/components/PageHome/Footer";
 //styles
 import { GlobalStyles } from "../styles/GlobalStyles";
 //types

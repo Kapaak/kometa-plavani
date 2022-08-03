@@ -1,3 +1,4 @@
+import { dimensions } from "@/components/utils/breakpoints";
 import styled from "styled-components";
 
 export const Service = styled.article`
@@ -10,6 +11,12 @@ export const Service = styled.article`
     rgba(33, 114, 221, 0) 103.15%
   );
   height: 30rem;
+  border-radius: 2rem;
+  overflow: hidden;
+
+  @media (${dimensions.tablet}) {
+    padding: 3rem 4rem;
+  }
 `;
 
 export const ImageContainer = styled.div`

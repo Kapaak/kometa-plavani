@@ -23,4 +23,5 @@ export const BoldText = styled(Text)`
 
 export const Headline = styled(Subheadline)`
   margin-bottom: 2rem;
+  color: var(--col1);
 `;

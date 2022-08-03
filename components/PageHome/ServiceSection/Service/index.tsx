@@ -1,7 +1,7 @@
 //libraries
 import Image from "next/image";
 //styles
-import * as S from "./Services.style";
+import * as S from "./Service.style";
 import { Button, Flex, Subheadline, Text } from "@/styles";
 
 interface Props {
@@ -18,8 +18,7 @@ const Service = ({ fullText, headline, smallText, image }: Props) => {
         <Subheadline>{headline}</Subheadline>
         <Text light>{smallText}</Text>
         <S.ButtonContainer>
-          <Button bgCol="yellow">Přihlásit se</Button>
-          <Button bgCol="blue">Více informací</Button>
+          <Button bgCol="yellow">Více informací</Button>
         </S.ButtonContainer>
       </Flex>
       <S.ImageContainer>

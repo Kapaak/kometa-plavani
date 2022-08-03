@@ -4,7 +4,7 @@ type bgCol = "yellow" | "blue" | "transparent";
 
 export const Button = styled.button<{ bgCol?: bgCol }>`
   text-transform: uppercase;
-  padding: 1rem 2.5rem;
+  padding: 1.2rem 2.5rem;
   font-family: var(--font1);
   border: none;
   border-radius: 2.4rem;

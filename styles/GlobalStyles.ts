@@ -1,5 +1,7 @@
 import { createGlobalStyle } from "styled-components";
 
+import { dimensions } from "@/components/utils/breakpoints";
+
 export const GlobalStyles = createGlobalStyle`
     *,*::before,*::after{
         margin: 0;
@@ -24,7 +26,7 @@ export const GlobalStyles = createGlobalStyle`
 
         --ftext:1.6rem;
         --fnavlink:2rem;
-        --fbutton:2rem;
+        --fbutton:1.7rem;
         --fmheadline:6rem;
         --fmsheadline:2.5rem;
         --fsheadline:2.5rem;
@@ -41,5 +43,12 @@ export const GlobalStyles = createGlobalStyle`
         color:var(--colb);
     }
 
+
+    @media(${dimensions.tablet}){
+        :root{
+            --side-padding:8rem;
+            --gap:4rem;
+        }
+    }
 
 `;

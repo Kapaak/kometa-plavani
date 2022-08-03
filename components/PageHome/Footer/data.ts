@@ -62,4 +62,25 @@ export const data: Array<IData> = [
       { output: "IČO: 123456", type: "normal" }, //dopln spravne ICO
     ],
   },
+  {
+    headline: "Sledujte nás",
+    fragment: [
+      {
+        output: "",
+        outputArr: [
+          { imageSrc: "/icons/youtube.svg", link: "https://www.youtube.com/" },
+          {
+            imageSrc: "/icons/instagram.svg",
+            link: "https://www.instagram.com/",
+          },
+          {
+            imageSrc: "/icons/facebook.svg",
+            link: "https://www.facebook.com/",
+          },
+        ],
+
+        type: "icon",
+      },
+    ],
+  },
 ];
