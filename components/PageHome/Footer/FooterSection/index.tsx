@@ -43,8 +43,8 @@ const contentRenderer = (array: Array<fragmentType>) => {
         return content.push(
           <Flex direction="row" gap="1rem">
             {a.outputArr &&
-              a.outputArr.map((outItem) => (
-                <Link href={outItem.link}>
+              a.outputArr.map((outItem, i) => (
+                <Link href={outItem.link} key={i}>
                   <a>
                     <Image src={outItem.imageSrc} width={30} height={30} />
                   </a>

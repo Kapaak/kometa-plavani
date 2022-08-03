@@ -22,6 +22,7 @@ const Footer = () => {
               />
             );
           })}
+          <p>© 2022 Pavel Zapletal</p>
         </Flex>
       </MaxWidth>
     </S.Footer>
