@@ -11,6 +11,9 @@ import Image from "next/image";
 import * as S from "./HeroSection.style";
 //images or svgs
 import PlusButton from "@/public/icons/plus-button.svg";
+//fix -> https://stackoverflow.com/questions/52759220/importing-images-in-typescript-react-cannot-find-module
+//@ts-ignore
+import HeroImage from "@/public/images/hero-img.JPG";
 
 const HeroSection = () => {
   return (
@@ -36,6 +39,15 @@ const HeroSection = () => {
             </S.ImageButton>
           </Flex>
         </MaxWidth>
+        <S.ImageContainer>
+          <Image
+            src={HeroImage}
+            layout="fill"
+            objectFit="cover"
+            placeholder={HeroImage}
+            priority={true}
+          />
+        </S.ImageContainer>
       </MaxHeight>
     </S.HeroSection>
   );

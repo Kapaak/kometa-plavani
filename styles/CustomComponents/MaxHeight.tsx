@@ -12,4 +12,5 @@ export const MaxHeight = ({ children }: Props) => {
 
 const SMaxHeight = styled(Div100vh)`
   max-height: 100vh;
+  transition: all 0.5s ease-in-out;
 `;
