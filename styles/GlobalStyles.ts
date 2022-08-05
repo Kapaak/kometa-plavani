@@ -20,9 +20,9 @@ export const GlobalStyles = createGlobalStyle`
         --colb: #001427;
 
         --max-width:120rem;
-        --side-padding:2rem;
+        --side-padding:3rem;
         --vertical-padding:2rem;
-        --gap:2rem;
+        --gap:2.5rem;
 
         --ftext:1.6rem;
         --fnavlink:2rem;
