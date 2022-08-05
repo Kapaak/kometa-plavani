@@ -11,6 +11,14 @@ export const MaxHeight = ({ children }: Props) => {
 };
 
 const SMaxHeight = styled(Div100vh)`
+  position: relative;
   max-height: 100vh;
   transition: all 0.5s ease-in-out;
+
+  background: linear-gradient(
+    109.69deg,
+    #2172dd -4.31%,
+    rgba(33, 114, 221, 0.6) 62.89%,
+    rgba(33, 114, 221, 0) 105.03%
+  );
 `;
