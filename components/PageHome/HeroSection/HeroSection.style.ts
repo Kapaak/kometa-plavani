@@ -1,3 +1,5 @@
+import { dimensions } from "@/components/utils/breakpoints";
+import { Flex, Text } from "@/styles";
 import styled from "styled-components";
 
 export const HeroSection = styled.section`
@@ -40,4 +42,18 @@ export const Gradient = styled.div`
 export const ImageButton = styled.button`
   background-color: transparent;
   border: none;
+  align-self: center;
+`;
+
+export const FlexWrapper = styled(Flex)`
+  @media (${dimensions.tablet}) {
+    align-items: flex-start;
+    text-align: left;
+  }
+`;
+
+export const TextContainer = styled(Text)`
+  @media (${dimensions.tablet}) {
+    text-align: left;
+  }
 `;

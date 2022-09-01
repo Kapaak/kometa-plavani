@@ -41,10 +41,10 @@ const contentRenderer = (array: Array<fragmentType>) => {
 
       case "icon": {
         return content.push(
-          <Flex direction="row" gap="1rem">
+          <Flex direction="row" gap="1rem" key={i}>
             {a.outputArr &&
               a.outputArr.map((outItem, i) => (
-                <Link href={outItem.link} key={i}>
+                <Link key={i} href={outItem.link}>
                   <a>
                     <Image src={outItem.imageSrc} width={30} height={30} />
                   </a>
