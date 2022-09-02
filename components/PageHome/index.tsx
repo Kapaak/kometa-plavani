@@ -1,7 +1,7 @@
 //components
-import AboutSection from "./AboutSection";
+import AboutSection from "./AboutSection/AboutSection";
 import HeroSection from "./HeroSection/HeroSection";
-import ServiceSection from "./ServiceSection";
+import ServiceSection from "./ServiceSection/ServiceSection";
 
 const Home = () => {
   return (

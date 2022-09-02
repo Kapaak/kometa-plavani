@@ -6,8 +6,8 @@ import * as S from "./Navigation.style";
 import LogoWhite from "@/public/icons/logo-white.svg";
 import { Flex } from "@/styles";
 //components
-import Hamburger from "./Hamburger";
-import NavLinks from "./NavLinks";
+import Hamburger from "./Hamburger/Hamburger";
+import NavLinks from "./NavLinks/NavLinks";
 //redux
 import { RootState } from "@redux/store";
 

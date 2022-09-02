@@ -1,7 +1,14 @@
-import { dimensions } from "@/components/utils/breakpoints";
 import styled from "styled-components";
+import { dimensions } from "@/components/utils/breakpoints";
+import { Text, A as SA } from "@/styles";
 
 export const Service = styled.article`
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+`;
+
+export const Container = styled.div`
   position: relative;
   padding: 2rem;
   background: linear-gradient(
@@ -17,6 +24,30 @@ export const Service = styled.article`
   @media (${dimensions.tablet}) {
     padding: 3rem 4rem;
   }
+
+  @media (${dimensions.desktop}) {
+    width: 35rem;
+    padding: 1rem 3rem;
+
+    ${Text} {
+      display: none;
+    }
+
+    ${SA} {
+      display: none;
+    }
+  }
+`;
+
+export const DesktopContainer = styled.div`
+  display: none;
+  gap: 2rem;
+  flex-direction: column;
+  align-items: flex-start;
+
+  @media (${dimensions.desktop}) {
+    display: flex;
+  }
 `;
 
 export const ImageContainer = styled.div`
@@ -28,7 +59,7 @@ export const ImageContainer = styled.div`
   z-index: -1;
 `;
 
-export const ButtonContainer = styled.div`
+export const A = styled(SA)`
   position: absolute;
   top: 0;
   right: 0;

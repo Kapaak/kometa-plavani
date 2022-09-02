@@ -18,7 +18,7 @@ const contentRenderer = (array: Array<fragmentType>) => {
     switch (a.type) {
       case "bold":
         return content.push(
-          <S.BoldText key={i} light>
+          <S.BoldText key={i} variant="light">
             {a.output}
           </S.BoldText>
         );
@@ -26,7 +26,7 @@ const contentRenderer = (array: Array<fragmentType>) => {
       case "link": {
         const outputWithoutSpaces = a.output.replace(/ /g, "");
         return content.push(
-          <S.Link key={i} light href={outputWithoutSpaces}>
+          <S.Link key={i} variant="light" href={outputWithoutSpaces}>
             {a.output}
           </S.Link>
         );
@@ -34,7 +34,7 @@ const contentRenderer = (array: Array<fragmentType>) => {
 
       case "normal":
         return content.push(
-          <Text key={i} light>
+          <Text key={i} variant="light">
             {a.output}
           </Text>
         );

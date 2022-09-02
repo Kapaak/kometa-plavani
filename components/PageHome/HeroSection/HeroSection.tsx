@@ -29,7 +29,7 @@ const HeroSection = () => {
             <MainHeadline>Plavecká škola kometa</MainHeadline>
             <div>
               <MainSubheadline>Bazén za Lužánkami</MainSubheadline>
-              <S.TextContainer light center>
+              <S.TextContainer variant="light" center>
                 Základní plavání pro děti. Svěřte se do rukou profesionálů pod
                 záštitou nejúspěšnějšího plaveckého klubu v České republice
               </S.TextContainer>

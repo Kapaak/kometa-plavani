@@ -1,8 +1,8 @@
 //styles
-import { Flex, MaxWidth } from "@/styles";
+import { MaxWidth } from "@/styles";
 import * as S from "./ServiceSection.style";
 //components
-import Service from "./Service";
+import Service from "./Service/Service";
 //texts
 import { data } from "./data";
 
@@ -10,7 +10,7 @@ const ServiceSection = () => {
   return (
     <S.ServiceSection>
       <MaxWidth>
-        <Flex gap="var(--gap)">
+        <S.Flex gap="var(--gap)">
           {data.map((d, i) => (
             <Service
               fullText={d.fullText}
@@ -20,7 +20,7 @@ const ServiceSection = () => {
               key={i}
             />
           ))}
-        </Flex>
+        </S.Flex>
       </MaxWidth>
     </S.ServiceSection>
   );

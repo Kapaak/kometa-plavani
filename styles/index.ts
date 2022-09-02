@@ -5,4 +5,4 @@ export { MainSubheadline } from "./CustomComponents/MainSubheadline";
 export { Text } from "./CustomComponents/Text";
 export { Flex } from "./CustomComponents/Flex";
 export { Subheadline } from "./CustomComponents/Subheadline";
-export { Button } from "./CustomComponents/Button";
+export { A } from "./CustomComponents/A";
