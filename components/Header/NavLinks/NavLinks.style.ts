@@ -1,3 +1,4 @@
+import { dimensions } from "@/components/utils/breakpoints";
 import styled, { css } from "styled-components";
 
 export const NavLink = styled.li`
@@ -35,12 +36,13 @@ export const NavLinks = styled.ul<{ isActive: boolean }>`
       default:
         return css``;
     }
-  }}// 	display: ${({ isActive }) => (isActive ? "flex" : "none")};
-// 	flex-direction: column;
-// 	align-self: ${({ isActive }) => (isActive ? "center" : "baseline")};
+  }}
 
-// 	${NavLink} {
-// 		padding-left: ${({ isActive }) => (isActive ? "4rem" : "0")};
-// 	}
-//
+  @media(${dimensions.desktop}) {
+    display: flex;
+    flex-direction: row;
+    gap: 2rem;
+    height: 100%;
+    align-items: center;
+  }
 `;

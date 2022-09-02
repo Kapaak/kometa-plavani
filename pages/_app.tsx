@@ -2,7 +2,7 @@
 import { Provider } from "react-redux";
 //components
 import HeadSelector from "../components/utils/HeadSelector";
-import Navigation from "@/components/Navigation/Navigation";
+import Header from "@/components/Header/Header";
 import Footer from "@/components/PageHome/Footer/Footer";
 //styles
 import { GlobalStyles } from "../styles/GlobalStyles";
@@ -15,7 +15,7 @@ function MyApp({ Component, pageProps }: AppProps) {
   return (
     <Provider store={store}>
       <GlobalStyles />
-      <Navigation />
+      <Header />
       <HeadSelector />
       <Component {...pageProps} />
       <Footer />
