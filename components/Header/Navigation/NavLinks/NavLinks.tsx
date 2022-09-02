@@ -4,24 +4,25 @@ import { useSelector } from "react-redux";
 import * as S from "./NavLinks.style";
 //redux
 import { RootState } from "@redux/store";
+import NavLink from "./NavLink/NavLink";
 
 const NavItems = () => {
-	const isActive = useSelector(
-		(state: RootState) => state.navigation.isNavActive
-	);
+  const isActive = useSelector(
+    (state: RootState) => state.navigation.isNavActive
+  );
 
-	return (
-		<S.NavLinks isActive={isActive}>
-			<S.NavLink>Domů</S.NavLink>
-			<S.NavLink>O nás</S.NavLink>
-			<S.NavLink>Přihlášky</S.NavLink>
-			<S.NavLink>Aktuality</S.NavLink>
-			<S.NavLink>Základní informace</S.NavLink>
-			<S.NavLink>Trenéři</S.NavLink>
-			<S.NavLink>Dokumenty</S.NavLink>
-			<S.NavLink>Kontakt</S.NavLink>
-		</S.NavLinks>
-	);
+  return (
+    <S.NavLinks isActive={isActive}>
+      <NavLink href="/">Domů</NavLink>
+      <NavLink href="#o-nas">O nás</NavLink>
+      <NavLink href="#prihlasky">Přihlášky</NavLink>
+      <NavLink href="#aktuality">Aktuality</NavLink>
+      <NavLink href="#zakladni-info">Základní informace</NavLink>
+      <NavLink href="#treneri">Trenéři</NavLink>
+      <NavLink href="#dokumenty">Dokumenty</NavLink>
+      <NavLink href="#kontakt">Kontakt</NavLink>
+    </S.NavLinks>
+  );
 };
 
 export default NavItems;

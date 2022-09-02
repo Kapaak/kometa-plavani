@@ -9,6 +9,11 @@ export const GlobalStyles = createGlobalStyle`
         box-sizing: border-box;
     }
 
+    a{
+        text-decoration: none;
+        color:inherit;
+    }
+
     :root{
         --font1: 'Bebas Neue', cursive;
         --font2: 'Poppins', sans-serif;
