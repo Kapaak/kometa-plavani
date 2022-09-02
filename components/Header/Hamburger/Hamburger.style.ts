@@ -38,9 +38,8 @@ export const Hamburger = styled.div<{ isActive: boolean }>`
       width: ${({ isActive }) => (isActive ? "100%" : "50%")};
       transition: all 0.3s ease-in;
     }
-
-    @media (${dimensions.desktop}) {
-      display: none;
-    }
+  }
+  @media (${dimensions.desktop}) {
+    display: none;
   }
 `;
