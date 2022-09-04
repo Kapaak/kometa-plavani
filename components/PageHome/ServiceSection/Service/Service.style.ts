@@ -28,6 +28,12 @@ export const Container = styled.div`
   @media (${dimensions.desktop}) {
     width: 35rem;
     padding: 1rem 3rem;
+    background: linear-gradient(
+      353.53deg,
+      rgba(33, 114, 221, 0.5) -10.6%,
+      rgba(33, 114, 221, 0.3) 55.75%,
+      rgba(33, 114, 221, 0) 103.15%
+    );
 
     ${Text} {
       display: none;

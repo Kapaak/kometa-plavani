@@ -30,7 +30,7 @@ const Service = ({ fullText, headline, smallText, image }: Props) => {
       <S.DesktopContainer>
         <Text variant="dark">{fullText}</Text>
         <Link href="/prihlasky">
-          <A variant="transparent-blue">Přihlásit se</A>
+          <A variant="transparent-blue">Více informací</A>
         </Link>
       </S.DesktopContainer>
     </S.Service>

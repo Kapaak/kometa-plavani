@@ -12,6 +12,6 @@ export const Header = styled.header`
   z-index: 9;
 
   @media (${dimensions.desktop}) {
-    background-color: pink;
+    background-color: var(--colw);
   }
 `;

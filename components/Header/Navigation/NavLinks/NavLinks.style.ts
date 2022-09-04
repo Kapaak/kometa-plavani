@@ -24,7 +24,7 @@ export const NavLinks = styled.ul<{ isActive: boolean }>`
   @media(${dimensions.desktop}) {
     display: flex;
     flex-direction: row;
-    gap: 2rem;
+    gap: 4rem;
     height: 100%;
     align-items: center;
     padding: 1rem 2rem;

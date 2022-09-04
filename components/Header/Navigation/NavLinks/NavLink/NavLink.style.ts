@@ -11,7 +11,17 @@ export const NavLink = styled.li`
   cursor: pointer;
   padding-left: 4rem;
 
+  a {
+    &:hover {
+      color: var(--col1);
+    }
+  }
+
   @media (${dimensions.desktop}) {
     padding-left: 0;
+
+    a {
+      color: var(--colb);
+    }
   }
 `;
