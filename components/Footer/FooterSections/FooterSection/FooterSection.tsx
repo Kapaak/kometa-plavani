@@ -1,10 +1,8 @@
 //styles
-import { Flex, Text } from "@/styles";
+import { Text } from "@/styles";
 import * as S from "./FooterSection.style";
 //interfaces
-import { fragmentType } from "../Footer.interface";
-import Link from "next/link";
-import Image from "next/image";
+import { fragmentType } from "../../Footer.interface";
 
 interface Props {
   headline: string;
@@ -39,20 +37,20 @@ const contentRenderer = (array: Array<fragmentType>) => {
           </Text>
         );
 
-      case "icon": {
-        return content.push(
-          <Flex direction="row" gap="1rem" key={i}>
-            {a.outputArr &&
-              a.outputArr.map((outItem, i) => (
-                <Link key={i} href={outItem.link}>
-                  <a>
-                    <Image src={outItem.imageSrc} width={30} height={30} />
-                  </a>
-                </Link>
-              ))}
-          </Flex>
-        );
-      }
+      // case "icon": {
+      //   return content.push(
+      //     <Flex direction="row" gap="1rem" key={i}>
+      //       {a.outputArr &&
+      //         a.outputArr.map((outItem, i) => (
+      //           <Link key={i} href={outItem.link}>
+      //             <a>
+      //               <Image src={outItem.imageSrc} width={30} height={30} />
+      //             </a>
+      //           </Link>
+      //         ))}
+      //     </Flex>
+      //   );
+      // }
 
       default:
         return;
