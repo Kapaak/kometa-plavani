@@ -4,12 +4,19 @@ import { dimensions } from "../utils/breakpoints";
 
 export const Footer = styled.div`
   padding: 2rem 0;
+  background-color: var(--col2);
+
+  @media (${dimensions.desktop}) {
+    background-color: unset;
+  }
 `;
 
 export const MaxWidth = styled(SMaxWidth)`
-  background-color: var(--col2);
-  border-radius: 2rem;
-  padding: 6rem;
+  @media (${dimensions.desktop}) {
+    background-color: var(--col2);
+    border-radius: 2rem;
+    padding: 6rem;
+  }
 `;
 
 export const Flex = styled(SFlex)`

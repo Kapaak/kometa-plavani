@@ -6,6 +6,7 @@ export const Service = styled.article`
   display: flex;
   flex-direction: column;
   gap: 1rem;
+  flex: 1 1 30%;
 `;
 
 export const Container = styled.div`
@@ -26,7 +27,7 @@ export const Container = styled.div`
   }
 
   @media (${dimensions.desktop}) {
-    width: 35rem;
+    /* width: 35rem; */
     padding: 1rem 3rem;
     background: linear-gradient(
       353.53deg,
