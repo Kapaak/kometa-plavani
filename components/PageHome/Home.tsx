@@ -5,7 +5,7 @@ import ServiceSection from "./ServiceSection/ServiceSection";
 
 const Home = () => {
   return (
-    <main style={{ position: "relative" }}>
+    <main>
       <HeroSection />
       <AboutSection />
       <ServiceSection />
