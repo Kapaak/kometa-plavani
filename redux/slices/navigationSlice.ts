@@ -2,28 +2,23 @@
 import { createSlice } from "@reduxjs/toolkit";
 
 export interface NavigationSlice {
-  isNavActive: boolean;
-  navbarHeight: number;
+	isNavActive: boolean;
 }
 
 const initialState: NavigationSlice = {
-  isNavActive: false,
-  navbarHeight: 0,
+	isNavActive: false,
 };
 
 export const navigationSlice = createSlice({
-  name: "navigation",
-  initialState,
-  reducers: {
-    toggleNavigation: (state) => {
-      state.isNavActive = !state.isNavActive;
-    },
-    setNavbarHeight: (state, action) => {
-      state.navbarHeight = action.payload;
-    },
-  },
+	name: "navigation",
+	initialState,
+	reducers: {
+		toggleNavigation: state => {
+			state.isNavActive = !state.isNavActive;
+		},
+	},
 });
 
-export const { toggleNavigation, setNavbarHeight } = navigationSlice.actions;
+export const { toggleNavigation } = navigationSlice.actions;
 
 export default navigationSlice.reducer;
