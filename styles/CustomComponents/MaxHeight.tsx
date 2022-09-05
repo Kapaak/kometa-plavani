@@ -21,7 +21,7 @@ const SMaxHeight = styled.div<{ $gradient: boolean; height: number }>`
     height ? `calc(${height}px - var(--header-height))` : "100vh"};
   /* max-height: calc(100vh - 10.7rem); */ // - velikost headeru // mozna se to da vyresit v tom 100DIVu odpoctem od velikosti headeru
   max-height: 100vh;
-  transition: all 0.5s ease-in-out;
+  transition: all 0.5s ease-in;
 
   background: ${({ $gradient }) =>
     $gradient

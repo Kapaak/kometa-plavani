@@ -10,7 +10,7 @@ const Logo = () => {
   return (
     <Link href="/">
       <S.Logo>
-        <Image src={LogoLatest} height={80} width={130} />
+        <Image src={LogoLatest} height={80} width={100} />
       </S.Logo>
     </Link>
   );

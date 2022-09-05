@@ -3,8 +3,8 @@ import styled from "styled-components";
 
 export const Hamburger = styled.div<{ isActive: boolean }>`
   position: relative;
-  height: 3rem;
-  width: 3.8rem;
+  height: 2.6rem;
+  width: 3.4rem;
   display: flex;
   margin: 1rem 2rem;
   flex-direction: column;
