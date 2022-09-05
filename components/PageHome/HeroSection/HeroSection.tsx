@@ -2,8 +2,6 @@
 import { MainHeadline, MainSubheadline, MaxHeight, MaxWidth } from "@/styles";
 import Image from "next/image";
 import * as S from "./HeroSection.style";
-//images or svgs
-import PlusButton from "@/public/icons/plus-button.svg";
 //fix -> https://stackoverflow.com/questions/52759220/importing-images-in-typescript-react-cannot-find-module
 //@ts-ignore
 import HeroImage from "@/public/images/hero-img.JPG";
@@ -12,7 +10,7 @@ const HeroSection = () => {
   return (
     <S.HeroSection>
       <MaxHeight $gradient={true}>
-        <MaxWidth>
+        <S.MaxWidth>
           <S.FlexWrapper
             align="center"
             justify="flex-end"
@@ -20,8 +18,10 @@ const HeroSection = () => {
             gap="var(--gap)"
           >
             <div>
-              <MainHeadline>Plavecká škola</MainHeadline>
-              <MainHeadline>kometa</MainHeadline>
+              <MainHeadline>
+                Plavecká škola{" "}
+                <S.EmphasizedHeadline>kometa</S.EmphasizedHeadline>
+              </MainHeadline>
             </div>
             <div>
               <MainSubheadline>Bazén za Lužánkami</MainSubheadline>
@@ -31,7 +31,7 @@ const HeroSection = () => {
               </S.TextContainer>
             </div>
           </S.FlexWrapper>
-        </MaxWidth>
+        </S.MaxWidth>
         <S.ImageContainer>
           <Image
             src={HeroImage}

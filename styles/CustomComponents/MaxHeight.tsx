@@ -1,5 +1,6 @@
+import { dimensions } from "@/components/utils/breakpoints";
 import { use100vh } from "react-div-100vh";
-import styled from "styled-components";
+import styled, { css } from "styled-components";
 
 interface Props {
   children: React.ReactNode;
@@ -31,4 +32,16 @@ const SMaxHeight = styled.div<{ $gradient: boolean; height: number }>`
     rgba(33, 114, 221, 0) 105.03%
   )`
       : "unset"};
+
+  ${({ $gradient, height }) =>
+    $gradient &&
+    css`
+      @media (${dimensions.desktop}) {
+        border-radius: 2rem;
+        overflow: hidden;
+        height: ${height
+          ? `calc(${height}px - var(--header-height) - 6rem)`
+          : "100vh"};
+      }
+    `}
 `;

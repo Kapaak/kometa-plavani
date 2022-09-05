@@ -1,24 +1,31 @@
 import { dimensions } from "@/components/utils/breakpoints";
-import { Flex, Text } from "@/styles";
+import { Flex, Text, MaxWidth as SMaxWidth } from "@/styles";
 import styled from "styled-components";
 
 export const HeroSection = styled.section`
-  /* background: linear-gradient(
-    109.69deg,
-    #2172dd -4.31%,
-    rgba(33, 114, 221, 0.6) 62.89%,
-    rgba(33, 114, 221, 0) 105.03%
-  ); */
-  /* background: linear-gradient(
-      109.69deg,
-      #2172dd -4.31%,
-      rgba(33, 114, 221, 0.6) 62.89%,
-      rgba(33, 114, 221, 0) 105.03%
-    ),
-    url(./images/hero-img.JPG); */
-  height: 100%;
-  background-position: 50% 50%;
-  background-size: cover;
+  @media (${dimensions.desktop}) {
+    padding: 4rem;
+  }
+`;
+
+export const MaxWidth = styled(SMaxWidth)`
+  @media (${dimensions.desktop}) {
+    max-width: 100%;
+    padding: var(--side-padding);
+  }
+`;
+
+export const EmphasizedHeadline = styled.span`
+  display: block;
+  font-size: 9rem;
+  letter-spacing: 0.4rem;
+  margin-top: -2rem;
+
+  @media (${dimensions.desktop}) {
+    display: inline-block;
+    font-size: inherit;
+    letter-spacing: inherit;
+  }
 `;
 
 export const ImageContainer = styled.div`
@@ -53,6 +60,8 @@ export const FlexWrapper = styled(Flex)`
 `;
 
 export const TextContainer = styled(Text)`
+  margin-bottom: 3rem;
+  max-width: 50rem;
   @media (${dimensions.tablet}) {
     text-align: left;
   }
