@@ -22,9 +22,9 @@ const HeroSection = () => {
                 Plavecká škola{" "}
                 <S.EmphasizedHeadline>kometa</S.EmphasizedHeadline>
               </MainHeadline>
+              <MainSubheadline>Bazén za Lužánkami</MainSubheadline>
             </div>
             <div>
-              <MainSubheadline>Bazén za Lužánkami</MainSubheadline>
               <S.TextContainer variant="light" center>
                 Základní plavání pro děti. Svěřte se do rukou profesionálů pod
                 záštitou nejúspěšnějšího plaveckého klubu v České republice

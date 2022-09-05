@@ -60,6 +60,8 @@ export const GlobalStyles = createGlobalStyle`
     @media(${dimensions.desktop}){
         :root{
             --ftext:1.8rem;
+            --fmheadline:7.5rem;
+            --fmsheadline:3.8rem;
         }
     }
 
