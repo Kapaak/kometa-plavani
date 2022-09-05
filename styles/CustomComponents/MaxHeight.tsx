@@ -1,4 +1,4 @@
-import Div100vh, { use100vh } from "react-div-100vh";
+import Div100vh, { use100vh, measureHeight } from "react-div-100vh";
 import styled from "styled-components";
 
 interface Props {
@@ -7,7 +7,7 @@ interface Props {
 }
 
 export const MaxHeight = ({ children, $gradient = false }: Props) => {
-  const height = use100vh()!;
+  const height = measureHeight()!;
   return (
     <SMaxHeight $gradient={$gradient} height={height}>
       {children}
