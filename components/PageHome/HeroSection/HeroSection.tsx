@@ -19,7 +19,10 @@ const HeroSection = () => {
             textAlign="center"
             gap="var(--gap)"
           >
-            <MainHeadline>Plavecká škola kometa</MainHeadline>
+            <div>
+              <MainHeadline>Plavecká škola</MainHeadline>
+              <MainHeadline>kometa</MainHeadline>
+            </div>
             <div>
               <MainSubheadline>Bazén za Lužánkami</MainSubheadline>
               <S.TextContainer variant="light" center>
@@ -27,9 +30,6 @@ const HeroSection = () => {
                 záštitou nejúspěšnějšího plaveckého klubu v České republice
               </S.TextContainer>
             </div>
-            <S.ImageButton>
-              <Image src={PlusButton} objectFit="cover" />
-            </S.ImageButton>
           </S.FlexWrapper>
         </MaxWidth>
         <S.ImageContainer>

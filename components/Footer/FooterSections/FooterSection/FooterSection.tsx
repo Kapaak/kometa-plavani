@@ -23,8 +23,16 @@ const contentRenderer = (array: Array<fragmentType>) => {
 
       case "link": {
         const outputWithoutSpaces = a.output.replace(/ /g, "");
+        let triggerOption = outputWithoutSpaces.includes("+")
+          ? "tel"
+          : "mailto";
+
         return content.push(
-          <S.Link key={i} variant="light" href={outputWithoutSpaces}>
+          <S.Link
+            key={i}
+            variant="light"
+            href={`${triggerOption}:${outputWithoutSpaces}`}
+          >
             {a.output}
           </S.Link>
         );
@@ -36,21 +44,6 @@ const contentRenderer = (array: Array<fragmentType>) => {
             {a.output}
           </Text>
         );
-
-      // case "icon": {
-      //   return content.push(
-      //     <Flex direction="row" gap="1rem" key={i}>
-      //       {a.outputArr &&
-      //         a.outputArr.map((outItem, i) => (
-      //           <Link key={i} href={outItem.link}>
-      //             <a>
-      //               <Image src={outItem.imageSrc} width={30} height={30} />
-      //             </a>
-      //           </Link>
-      //         ))}
-      //     </Flex>
-      //   );
-      // }
 
       default:
         return;
