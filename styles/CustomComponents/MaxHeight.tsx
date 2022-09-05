@@ -26,17 +26,18 @@ const SMaxHeight = styled.div<{ $gradient: boolean; height: number }>`
   background: ${({ $gradient }) =>
     $gradient
       ? `linear-gradient(
-    109.69deg,
-    #2172dd -4.31%,
-    rgba(33, 114, 221, 0.6) 62.89%,
-    rgba(33, 114, 221, 0) 105.03%
-  )`
+      109.69deg,
+      #2172dd -4.31%,
+      rgba(33, 114, 221, 0.6) 62.89%,
+      rgba(33, 114, 221, 0) 105.03%
+      )`
       : "unset"};
 
   ${({ $gradient, height }) =>
     $gradient &&
     css`
       @media (${dimensions.desktop}) {
+        transition: none;
         border-radius: 2rem;
         overflow: hidden;
         height: ${height
