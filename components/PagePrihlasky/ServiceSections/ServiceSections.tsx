@@ -3,7 +3,7 @@ import { StaticImageData } from "next/image";
 //components
 import ServiceSection from "./ServiceSection/ServiceSection";
 //styles
-import { Flex } from "@/styles";
+import * as S from "./ServiceSections.style";
 
 type TData = {
   id: number;
@@ -21,7 +21,7 @@ const ServiceSections = ({ data }: Props) => {
     return id % 2 === 0;
   };
   return (
-    <Flex gap="4rem">
+    <S.Flex gap="4rem">
       {data.map((d) => (
         <ServiceSection
           key={d.id}
@@ -31,7 +31,7 @@ const ServiceSections = ({ data }: Props) => {
           image={d.image}
         />
       ))}
-    </Flex>
+    </S.Flex>
   );
 };
 

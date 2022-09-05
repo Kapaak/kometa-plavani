@@ -1,4 +1,4 @@
-import Div100vh, { use100vh } from "react-div-100vh";
+import { use100vh } from "react-div-100vh";
 import styled from "styled-components";
 
 interface Props {

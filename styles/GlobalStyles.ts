@@ -57,4 +57,10 @@ export const GlobalStyles = createGlobalStyle`
         }
     }
 
+    @media(${dimensions.desktop}){
+        :root{
+            --ftext:1.8rem;
+        }
+    }
+
 `;

@@ -15,7 +15,7 @@ export const MaxWidth = styled(SMaxWidth)`
   @media (${dimensions.desktop}) {
     background-color: var(--col2);
     border-radius: 2rem;
-    padding: var(--side-padding);
+    padding: var(--side-padding) var(--side-padding) 2rem;
   }
 `;
 

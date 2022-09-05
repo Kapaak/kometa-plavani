@@ -7,6 +7,7 @@ interface Props {
 }
 
 export const Text = styled.p<Props>`
+  font-size: var(--ftext);
   ${({ variant }) => {
     switch (variant) {
       case "light":
