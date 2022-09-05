@@ -7,7 +7,7 @@ interface Props {
 }
 
 export const MaxHeight = ({ children, $gradient = false }: Props) => {
-  const height = use100vh();
+  const height = use100vh()!;
   return (
     <SMaxHeight $gradient={$gradient} height={height}>
       {children}
@@ -19,7 +19,7 @@ const SMaxHeight = styled.div<{ $gradient: boolean; height: number }>`
   position: relative;
   height: ${({ height }) =>
     height ? `calc(${height}px - var(--header-height))` : "100vh"};
-  /* max-height: calc(100vh - 10.7rem); */ // - velikost headeru // mozna se to da vyresit v tom 100DIVu odpoctem od velikosti headeru
+  max-height: calc(100vh - var(--header-height));
   max-height: 100vh;
   transition: all 0.3s ease-in;
 
