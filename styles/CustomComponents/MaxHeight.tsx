@@ -12,7 +12,8 @@ export const MaxHeight = ({ children }: Props) => {
 
 const SMaxHeight = styled(Div100vh)`
   position: relative;
-  max-height: 100vh;
+  max-height: calc(100vh - 10.7rem);
+  /* max-height: 100vh; */
   transition: all 0.5s ease-in-out;
 
   background: linear-gradient(

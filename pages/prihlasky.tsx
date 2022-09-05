@@ -1,17 +1,14 @@
-import { A } from "@/styles";
+//components
+import Prihlasky from "@/components/PagePrihlasky/Prihlasky";
+//interfaces
 import { NextPage } from "next";
-import Link from "next/link";
 
-const Prihlasky: NextPage = () => {
+const PrihlaskyPage: NextPage = () => {
   return (
-    <div>
-      <h1>Prihlasky</h1>
-      <a href="/">prihlasky</a>
-      <Link href="/">
-        <A variant="transparent-blue">prihlasky</A>
-      </Link>
-    </div>
+    <main>
+      <Prihlasky />
+    </main>
   );
 };
 
-export default Prihlasky;
+export default PrihlaskyPage;

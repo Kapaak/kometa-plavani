@@ -1,4 +1,6 @@
+//components
 import NavLinks from "./NavLinks/NavLinks";
+//styles
 import * as S from "./Navigation.style";
 
 interface Props {
