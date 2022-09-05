@@ -1,12 +1,5 @@
 //styles
-import {
-  Flex,
-  MainHeadline,
-  MainSubheadline,
-  MaxHeight,
-  MaxWidth,
-  Text,
-} from "@/styles";
+import { MainHeadline, MainSubheadline, MaxHeight, MaxWidth } from "@/styles";
 import Image from "next/image";
 import * as S from "./HeroSection.style";
 //images or svgs
@@ -18,7 +11,7 @@ import HeroImage from "@/public/images/hero-img.JPG";
 const HeroSection = () => {
   return (
     <S.HeroSection>
-      <MaxHeight>
+      <MaxHeight $gradient={true}>
         <MaxWidth>
           <S.FlexWrapper
             align="center"
@@ -52,12 +45,5 @@ const HeroSection = () => {
     </S.HeroSection>
   );
 };
-
-//to skakani je obecne debilni
-//co to udelat po svym, ze si zmerim pri nacitani stranky velikost a jen 1
-//to podle toho upravim a uz se to dal menit nebude
-//mozna by melo ale, kdyz nekdo otoci mobil na landscape
-
-//pouzij tu measure height funkci z use100vh .. ta by mohla byt gut
 
 export default HeroSection;
