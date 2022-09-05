@@ -9,6 +9,7 @@ export const Header = styled.header`
   align-items: center;
   justify-content: space-between;
   width: 100%;
+  height: var(--header-height);
   z-index: 9;
   background-color: var(--colw);
 

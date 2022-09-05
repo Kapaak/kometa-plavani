@@ -28,6 +28,7 @@ export const GlobalStyles = createGlobalStyle`
         --side-padding:3rem;
         --vertical-padding:2rem;
         --gap:2.5rem;
+        --header-height:10rem;
 
         --ftext:1.6rem;
         --fnavlink:2rem;

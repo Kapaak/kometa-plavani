@@ -1,4 +1,4 @@
-import Div100vh from "react-div-100vh";
+import Div100vh, { use100vh } from "react-div-100vh";
 import styled from "styled-components";
 
 interface Props {
@@ -7,11 +7,18 @@ interface Props {
 }
 
 export const MaxHeight = ({ children, $gradient = false }: Props) => {
-  return <SMaxHeight $gradient={$gradient}>{children}</SMaxHeight>;
+  const height = use100vh()!;
+  return (
+    <SMaxHeight $gradient={$gradient} height={height}>
+      {children}
+    </SMaxHeight>
+  );
 };
 
-const SMaxHeight = styled(Div100vh)<{ $gradient: boolean }>`
+const SMaxHeight = styled.div<{ $gradient: boolean; height: number }>`
   position: relative;
+  height: ${({ height }) =>
+    height ? `calc(${height}px - var(--header-height))` : "100vh"};
   /* max-height: calc(100vh - 10.7rem); */ // - velikost headeru // mozna se to da vyresit v tom 100DIVu odpoctem od velikosti headeru
   max-height: 100vh;
   transition: all 0.5s ease-in-out;
