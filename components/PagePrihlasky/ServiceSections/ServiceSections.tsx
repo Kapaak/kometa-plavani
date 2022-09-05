@@ -1,5 +1,9 @@
+//libraries
 import { StaticImageData } from "next/image";
+//components
 import ServiceSection from "./ServiceSection/ServiceSection";
+//styles
+import { Flex } from "@/styles";
 
 type TData = {
   id: number;
@@ -13,17 +17,21 @@ interface Props {
 }
 
 const ServiceSections = ({ data }: Props) => {
+  const isEven = (id: number) => {
+    return id % 2 === 0;
+  };
   return (
-    <div>
+    <Flex gap="4rem">
       {data.map((d) => (
         <ServiceSection
-          key={d!.id}
+          key={d.id}
+          isEven={isEven(d.id)}
           headline={d.headline}
           fullText={d.fullText}
           image={d.image}
         />
       ))}
-    </div>
+    </Flex>
   );
 };
 

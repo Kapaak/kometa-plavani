@@ -13,7 +13,8 @@ export const Hamburger = styled.div<{ isActive: boolean }>`
   z-index: 10;
 
   p {
-    background-color: var(--colw);
+    background-color: ${({ isActive }) =>
+      isActive ? "var(--colw)" : "var(--col2)"};
     width: 100%;
     height: 0.3rem;
     border-radius: 0.2rem;
