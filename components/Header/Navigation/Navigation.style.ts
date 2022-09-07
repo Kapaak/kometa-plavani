@@ -9,6 +9,7 @@ export const Navigation = styled.nav<{ isActive: boolean }>`
   background-color: ${({ isActive }) => (isActive ? "var(--col2)" : "unset")};
   z-index: 9;
   top: 0;
+  transition: all .4 ease;
 
   @media (${dimensions.desktop}) {
     position: relative;

@@ -8,15 +8,15 @@ const Testovani = () => {
   const scroll = Scroll.animateScroll
   const router = useRouter()
   const clickHandler = async() => {
-    await router.push("/")
-    scroller.scrollTo("about",{smooth:true})
+    await router.push("/prihlasky")
+    scroller.scrollTo("schools",{smooth:true})
 
   }
 
   return (
     <div>
       <h1>Testovani</h1>
-      <ScrollLink smooth={true} to="about" onClick={clickHandler}>
+      <ScrollLink smooth={true} to="schools" onClick={clickHandler}>
         <div>scroll to pepega</div>
       </ScrollLink>
       {/*

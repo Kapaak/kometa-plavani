@@ -10,6 +10,7 @@ type TData = {
   headline: string;
   fullText: string;
   image: StaticImageData;
+  name: string;
 };
 
 interface Props {
@@ -29,6 +30,7 @@ const ServiceSections = ({ data }: Props) => {
           headline={d.headline}
           fullText={d.fullText}
           image={d.image}
+          name={d.name}
         />
       ))}
     </S.Flex>

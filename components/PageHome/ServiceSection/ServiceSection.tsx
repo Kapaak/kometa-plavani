@@ -17,6 +17,7 @@ const ServiceSection = () => {
               headline={d.headline}
               smallText={d.smallText}
               image={d.image}
+              scrollTarget={d.scrollTarget}
               key={i}
             />
           ))}

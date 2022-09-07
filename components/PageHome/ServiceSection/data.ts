@@ -11,6 +11,7 @@ export const data = [
     fullText:
       "Cílem je neplavce zbavit strachu, položit na vodu s hlavou pod vodou na bříšku a zakopat.",
     image: KindergardenService,
+    scrollTarget: "kindergardens",
   },
   {
     headline: "Školy",
@@ -19,6 +20,7 @@ export const data = [
     fullText:
       "Cílem je plavce naučit základům plavání. Děti již trochu plavat umí. Našim úkolem je naučit kraul a znak.",
     image: SchoolService,
+    scrollTarget: "schools",
   },
   {
     headline: "Kurzy",
@@ -27,5 +29,6 @@ export const data = [
     fullText:
       "Děti se zde mohou učit plavat již od  5 do 17 let a potom přejít do závodního plavání.",
     image: CourseService,
+    scrollTarget: "courses",
   },
 ];

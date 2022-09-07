@@ -1,5 +1,7 @@
 //libraries
 import Image from "next/image";
+import { useRouter } from "next/router";
+import { scroller } from "react-scroll";
 //styles
 import * as S from "./Service.style";
 import { A, Flex, Subheadline, Text } from "@/styles";
@@ -10,18 +12,24 @@ interface Props {
   smallText: string;
   fullText: string;
   image: any;
+  scrollTarget: string;
 }
 
-const Service = ({ fullText, headline, smallText, image }: Props) => {
+const Service = ({ fullText, headline, smallText, image, scrollTarget }: Props) => {
+  const router = useRouter()
+
+  const clickHandler = async () =>{
+    await router.push("/prihlasky")
+    scroller.scrollTo(scrollTarget,{ smooth: true, offset: -100})
+  }
+
   return (
     <S.Service>
       <S.Container>
         <Flex justify="flex-end" relative>
           <Subheadline>{headline}</Subheadline>
           <Text variant="light">{smallText}</Text>
-          <Link href="/prihlasky">
-            <S.A variant="yellow">Více informací</S.A>
-          </Link>
+            <S.A variant="yellow" onClick={clickHandler}>Více informací</S.A>
         </Flex>
         <S.ImageContainer>
           <Image src={image} layout="fill" objectFit="cover" />
@@ -29,9 +37,7 @@ const Service = ({ fullText, headline, smallText, image }: Props) => {
       </S.Container>
       <S.DesktopContainer>
         <Text variant="dark">{fullText}</Text>
-        <Link href="/prihlasky">
-          <A variant="transparent-blue">Více informací</A>
-        </Link>
+          <A variant="transparent-blue" onClick={clickHandler}>Více informací</A>
       </S.DesktopContainer>
     </S.Service>
   );
