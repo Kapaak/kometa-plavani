@@ -30,7 +30,7 @@ export const EmphasizedHeadline = styled.span`
 
 export const ImageContainer = styled.div`
   position: absolute;
-  height: 100vh;
+  height: 100%;
   max-height: 100%;
   width: 100%;
   top: 0;
