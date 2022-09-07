@@ -4,7 +4,7 @@ import styled from "styled-components";
 
 export const HeroSection = styled(SectionElement)`
   @media (${dimensions.desktop}) {
-    padding: 4rem;
+    padding: 4rem 6rem;
   }
 `;
 

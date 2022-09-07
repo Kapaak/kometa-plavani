@@ -27,7 +27,7 @@ export const MaxHeight = ({ children, $gradient = false }: Props) => {
 const SMaxHeight = styled.div<{ $gradient: boolean; height: number }>`
   position: relative;
   height: ${({ height }) =>
-    height ? `calc(${height}px - var(--header-height))` : "100vh"};
+    height ? `calc(${height}px - var(--header-height) - 12rem)` : "100vh"};
   max-height: calc(100vh - var(--header-height));
   transition: all 0.2s linear;
 
