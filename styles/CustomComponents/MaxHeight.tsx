@@ -29,7 +29,7 @@ const SMaxHeight = styled.div<{ $gradient: boolean; height: number }>`
   height: ${({ height }) =>
     height ? `calc(${height}px - var(--header-height))` : "100vh"};
   max-height: calc(100vh - var(--header-height));
-  /* transition: all 0.3s ease-in; */
+  transition: all 0.3s ease-in;
 
   background: ${({ $gradient }) =>
     $gradient
