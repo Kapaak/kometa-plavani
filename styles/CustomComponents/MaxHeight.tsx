@@ -7,7 +7,7 @@ interface Props {
   children: React.ReactNode;
   $gradient?: boolean;
 }
-
+//todo -> make it styleable like SectionElement using className, so that donthav eto pass the gradient prop and can style it anywhere
 export const MaxHeight = ({ children, $gradient = false }: Props) => {
   const [fixedHeight,setFixedHeight] = useState(0)
 

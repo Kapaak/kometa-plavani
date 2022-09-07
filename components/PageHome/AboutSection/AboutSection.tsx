@@ -3,12 +3,11 @@ import Image from "next/image";
 //images or svgs
 import WaveYellow from "@/public/icons/wave-yellow.svg";
 //styles
-import { MaxWidth, Text } from "@/styles";
 import * as S from "./AboutSection.style";
 
 const AboutSection = () => {
   return (
-    <S.AboutSection>
+    <S.AboutSection name="about">
       <S.MaxWidth>
         <S.ImageContainer>
           <Image src={WaveYellow} layout="fill" />

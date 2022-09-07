@@ -8,7 +8,7 @@ import HeroImage from "@/public/images/hero-img.JPG";
 
 const HeroSection = () => {
   return (
-    <S.HeroSection>
+    <S.HeroSection name="home">
       <MaxHeight $gradient={true}>
         <S.MaxWidth>
           <S.FlexWrapper

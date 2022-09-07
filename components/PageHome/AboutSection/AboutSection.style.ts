@@ -1,8 +1,8 @@
 import styled from "styled-components";
 import { dimensions } from "@/components/utils/breakpoints";
-import { Text, MaxWidth as SMaxWidth } from "@/styles";
+import { Text, MaxWidth as SMaxWidth,SectionElement } from "@/styles";
 
-export const AboutSection = styled.section`
+export const AboutSection = styled(SectionElement)`
   padding: 1.5rem 0;
 
   @media (${dimensions.desktop}) {

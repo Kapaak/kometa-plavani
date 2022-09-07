@@ -6,3 +6,4 @@ export { Text } from "./CustomComponents/Text";
 export { Flex } from "./CustomComponents/Flex";
 export { Subheadline } from "./CustomComponents/Subheadline";
 export { A } from "./CustomComponents/A";
+export {SectionElement} from "./CustomComponents/SectionElement"
