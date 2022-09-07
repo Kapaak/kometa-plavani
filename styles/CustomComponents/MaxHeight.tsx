@@ -1,5 +1,6 @@
-import { dimensions } from "@/components/utils/breakpoints";
-import { use100vh } from "react-div-100vh";
+import { dimensions} from "@/components/utils/breakpoints";
+import { useEffect, useState } from "react";
+import { use100vh ,measureHeight} from "react-div-100vh";
 import styled, { css } from "styled-components";
 
 interface Props {
@@ -8,9 +9,19 @@ interface Props {
 }
 
 export const MaxHeight = ({ children, $gradient = false }: Props) => {
-  const height = use100vh()!;
+  const [fixedHeight,setFixedHeight] = useState(0)
+
+  useEffect(()=>{
+    console.log(measureHeight);
+    console.log("peeep");
+    
+    //@ts-ignore
+    measureHeight() && setFixedHeight(measureHeight)
+  },[measureHeight])
+
+  // const height = use100vh()!;
   return (
-    <SMaxHeight $gradient={$gradient} height={height}>
+    <SMaxHeight $gradient={$gradient} height={fixedHeight}>
       {children}
     </SMaxHeight>
   );
