@@ -12,9 +12,6 @@ export const MaxHeight = ({ children, $gradient = false }: Props) => {
   const [fixedHeight,setFixedHeight] = useState(0)
 
   useEffect(()=>{
-    console.log(measureHeight);
-    console.log("peeep");
-    
     //@ts-ignore
     measureHeight() && setFixedHeight(measureHeight)
   },[measureHeight])
