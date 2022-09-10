@@ -1,3 +1,5 @@
+//libraries
+import Image from "next/image";
 //componenets
 import ContentRenderer from "@/components/utils/ContentRenderer";
 //styles
@@ -13,7 +15,7 @@ interface Props {
 const ContactItem = ({ headline, fragment, icon }: Props) => {
   return (
     <Flex direction="row" gap="2rem" align="center">
-      <div>icon</div>
+      <Image src={icon} />
       <div>
         <S.Headline>{headline}</S.Headline>
         <ContentRenderer

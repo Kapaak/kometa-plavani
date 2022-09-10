@@ -35,6 +35,7 @@ export const GlobalStyles = createGlobalStyle`
         --fbutton:1.7rem;
         --fmheadline:4.5rem;
         --fmsheadline:2.5rem;
+        --fheadline:3.5rem;
         --fsheadline:2.5rem;
     }
 

@@ -1,7 +1,12 @@
+import LocationIcon from "@/public/icons/location.svg";
+import UserIcon from "@/public/icons/user.svg";
+import EmailIcon from "@/public/icons/email.svg";
+import PhoneIcon from "@/public/icons/phone.svg";
+
 export const data = [
   {
     headline: "adresa",
-    icon: "",
+    icon: LocationIcon,
     fragment: [
       {
         output: "Sportovní 486/4, Brno 602 00",
@@ -11,7 +16,7 @@ export const data = [
   },
   {
     headline: "kontaktní osoba",
-    icon: "",
+    icon: UserIcon,
     fragment: [
       {
         output: "Bc. Anna Matušová",
@@ -21,7 +26,7 @@ export const data = [
   },
   {
     headline: "telefon",
-    icon: "",
+    icon: PhoneIcon,
     fragment: [
       {
         output: "+420 606 354 747",
@@ -31,7 +36,7 @@ export const data = [
   },
   {
     headline: "e-mail",
-    icon: "",
+    icon: EmailIcon,
     fragment: [
       {
         output: "plavaniluzanky@kometabrno.cz",
