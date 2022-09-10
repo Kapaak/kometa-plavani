@@ -1,6 +1,6 @@
 import styled, { css } from "styled-components";
 
-interface Props {
+export interface Props {
   light?: boolean;
   center?: boolean;
   variant?: "light" | "dark" | "normal";

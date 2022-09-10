@@ -7,8 +7,9 @@ const lineHeight = () => css`
   line-height: 2;
 `;
 
-export const Link = styled(Text).attrs({
+export const LinkElement = styled(Text).attrs({
   as: "a",
+  variant: "light",
 })<{ href: string }>`
   display: block;
   text-decoration: none;
@@ -16,7 +17,11 @@ export const Link = styled(Text).attrs({
   ${lineHeight()}
 `;
 
-export const BoldText = styled(Text)`
+export const TextElement = styled(Text).attrs({
+  variant: "light",
+})``;
+
+export const BoldText = styled(Text).attrs({ variant: "light" })`
   font-weight: 500;
   ${lineHeight()}
 `;

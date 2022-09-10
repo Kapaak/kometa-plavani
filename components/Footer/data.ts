@@ -13,11 +13,11 @@ export const data: Array<IData> = [
         type: "link",
       },
       {
-        output: "annamatusova@kometa.com",
+        output: "plavaniluzanky@kometabrno.cz",
         type: "link",
       },
       {
-        output: "Bauerova 321/5, Brno 613 00",
+        output: "Sportovní 486/4, Brno 602 00",
         type: "normal",
       },
       {
