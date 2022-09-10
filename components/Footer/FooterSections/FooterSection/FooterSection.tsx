@@ -1,8 +1,9 @@
+//components
+import ContentRenderer from "@/components/utils/ContentRenderer";
 //styles
 import * as S from "./FooterSection.style";
 //interfaces
 import { fragmentType } from "../../Footer.interface";
-import ContentRenderer from "@/components/utils/ContentRenderer";
 
 interface Props {
   headline: string;

@@ -28,11 +28,7 @@ const ContentRenderer = ({
         case "bold": {
           return (
             BoldElement &&
-            content.push(
-              <BoldElement key={i} variant="light">
-                {a.output}
-              </BoldElement>
-            )
+            content.push(<BoldElement key={i}>{a.output}</BoldElement>)
           );
         }
 
