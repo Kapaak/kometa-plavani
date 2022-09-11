@@ -2,11 +2,7 @@
 import * as S from "./ContactMap.style";
 
 const ContactMap = () => {
-  return (
-    <S.Map
-      src={`https://snazzymaps.com/embed/${process.env.MAPS_URL}` || ""}
-    ></S.Map>
-  );
+  return <S.Map src="https://snazzymaps.com/embed/421429" />;
 };
 
 export default ContactMap;
