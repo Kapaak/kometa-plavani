@@ -16,14 +16,14 @@ const ContactItem = ({ headline, fragment, icon }: Props) => {
   return (
     <Flex direction="row" gap="2rem" align="center">
       <Image src={icon} />
-      <div>
+      <Flex gap=".5rem">
         <S.Headline>{headline}</S.Headline>
         <ContentRenderer
           fragment={fragment}
           LinkElement={S.LinkElement}
           TextElement={S.TextElement}
         />
-      </div>
+      </Flex>
     </Flex>
   );
 };

@@ -23,11 +23,15 @@ const NavItems = () => {
       <NavLink href="/prihlasky" scrollTarget="application">
         Přihlášky
       </NavLink>
+      <NavLink href="/" scrollTarget="contact">
+        Kontakt
+      </NavLink>
+
       {/* <NavLink href="#aktuality">Aktuality</NavLink>
       <NavLink href="#zakladni-info">Základní informace</NavLink>
       <NavLink href="#treneri">Trenéři</NavLink> 
       <NavLink href="#dokumenty">Dokumenty</NavLink>
-      <NavLink href="/" scrollTarget="contact">Kontakt</NavLink>*/}
+      */}
     </S.NavLinks>
   );
 };
