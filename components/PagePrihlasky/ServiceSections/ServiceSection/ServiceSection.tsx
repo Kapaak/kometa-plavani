@@ -1,9 +1,9 @@
 //libraries
 import Image, { StaticImageData } from "next/image";
+import Link from "next/link";
 //styles
 import { A, Flex, SectionElement, Text } from "@/styles";
 import * as S from "./ServiceSection.style";
-import Link from "next/link";
 
 interface Props {
   isEven: boolean;

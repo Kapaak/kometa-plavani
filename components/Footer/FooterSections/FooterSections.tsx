@@ -1,5 +1,7 @@
-import { IData } from "../Footer.interface";
+//components
 import FooterSection from "./FooterSection/FooterSection";
+//interfaces
+import { IData } from "../Footer.interface";
 
 interface Props {
   data: IData[];

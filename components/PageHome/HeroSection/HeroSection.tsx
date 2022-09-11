@@ -1,5 +1,5 @@
 //styles
-import { MainHeadline, MainSubheadline, MaxHeight, MaxWidth } from "@/styles";
+import { MainHeadline, MainSubheadline, MaxHeight } from "@/styles";
 import Image from "next/image";
 import * as S from "./HeroSection.style";
 //fix -> https://stackoverflow.com/questions/52759220/importing-images-in-typescript-react-cannot-find-module

@@ -1,6 +1,6 @@
 //libraries
 import Image from "next/image";
-//images or svgs
+//images
 import WaveYellow from "@/public/icons/wave-yellow.svg";
 //styles
 import * as S from "./AboutSection.style";

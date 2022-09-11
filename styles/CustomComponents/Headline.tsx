@@ -7,7 +7,7 @@ import WaveYellow from "@/public/icons/wave-yellow.svg";
 import { PropsWithChildren } from "react";
 
 interface Props {
-  className: string;
+  className?: string;
 }
 
 export const Headline = ({ children, ...rest }: PropsWithChildren<Props>) => {

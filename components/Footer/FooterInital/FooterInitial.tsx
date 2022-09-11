@@ -1,3 +1,4 @@
+//libraries
 import Image from "next/image";
 //svgs
 import LogoWhite from "@/public/icons/logo-latest-white.svg";

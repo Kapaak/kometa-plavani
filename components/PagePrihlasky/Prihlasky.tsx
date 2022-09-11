@@ -1,3 +1,4 @@
+//components
 import ServiceSections from "./ServiceSections/ServiceSections";
 //styles
 import { MaxWidth } from "@/styles";
