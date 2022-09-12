@@ -5,6 +5,9 @@ import * as S from "./HeroSection.style";
 //fix -> https://stackoverflow.com/questions/52759220/importing-images-in-typescript-react-cannot-find-module
 //@ts-ignore
 import HeroImage from "@/public/images/hero-img.JPG";
+import ArrowYellow from "@/public/icons/arrow-yellow.svg";
+//others
+import { scrollTo } from "@/components/utils/functions";
 
 const HeroSection = () => {
   return (
@@ -41,6 +44,9 @@ const HeroSection = () => {
             priority={true}
           />
         </S.ImageContainer>
+        <S.ArrowContainer onClick={() => scrollTo("about")}>
+          <Image src={ArrowYellow} />
+        </S.ArrowContainer>
       </MaxHeight>
     </S.HeroSection>
   );

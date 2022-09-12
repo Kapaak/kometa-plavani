@@ -5,6 +5,8 @@ import { scroller } from "react-scroll";
 //styles
 import * as S from "./Service.style";
 import { A, Flex, Subheadline, Text } from "@/styles";
+//others
+import { scrollTo } from "@/components/utils/functions";
 
 interface Props {
   headline: string;
@@ -21,7 +23,7 @@ const Service = (props: Props) => {
 
   const clickHandler = async () => {
     await router.push("/prihlasky");
-    scroller.scrollTo(scrollTarget, { smooth: true, offset: -100 });
+    scrollTo(scrollTarget);
   };
 
   return (

@@ -1,8 +1,8 @@
 import styled, { css } from "styled-components";
 
 export interface Props {
-  light?: boolean;
   center?: boolean;
+  bold?: boolean;
   variant?: "light" | "dark" | "normal";
 }
 
@@ -31,6 +31,6 @@ export const Text = styled.p<Props>`
         `;
     }
   }}
-  font-weight: 300;
+  font-weight: ${({ bold }) => (bold ? "600" : "300")};
   text-align: ${({ center }) => (center ? "center" : "left")};
 `;

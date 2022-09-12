@@ -1,7 +1,7 @@
 import styled, { css } from "styled-components";
 
 interface Props {
-  variant: "yellow" | "transparent-blue" | "transparent-yellow";
+  variant: "yellow" | "transparent-blue" | "transparent-yellow" | "disabled";
 }
 
 export const A = styled.a<Props>`
@@ -31,6 +31,13 @@ export const A = styled.a<Props>`
         return css`
           color: var(--colw);
           border: 2px solid var(--col1);
+        `;
+      case "disabled":
+        return css`
+          pointer-events: none;
+          cursor: not-allowed;
+          border: 2px solid #ababab;
+          color: #ababab;
         `;
     }
   }}

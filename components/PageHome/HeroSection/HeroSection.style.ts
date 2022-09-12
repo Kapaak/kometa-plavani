@@ -15,6 +15,26 @@ export const MaxWidth = styled(SMaxWidth)`
   }
 `;
 
+export const ArrowContainer = styled.button`
+  display: none;
+  position: absolute;
+  right: 2rem;
+  bottom: -4rem;
+  border: none;
+  background-color: transparent;
+  cursor: pointer;
+  transition: all 0.5s ease;
+
+  &:hover {
+    transition: all 0.5s ease;
+    transform: translateY(2rem);
+  }
+
+  @media (${dimensions.desktop}) {
+    display: block;
+  }
+`;
+
 export const EmphasizedHeadline = styled.span`
   display: block;
   font-size: 9rem;
@@ -35,6 +55,8 @@ export const ImageContainer = styled.div`
   width: 100%;
   top: 0;
   z-index: -1;
+  overflow: hidden;
+  border-radius: inherit;
 `;
 
 export const Gradient = styled.div`
@@ -62,7 +84,12 @@ export const FlexWrapper = styled(Flex)`
 export const TextContainer = styled(Text)`
   margin-bottom: 3rem;
   max-width: 50rem;
+
   @media (${dimensions.tablet}) {
+    text-align: left;
+  }
+
+  @media (${dimensions.desktop}) {
     text-align: left;
   }
 `;

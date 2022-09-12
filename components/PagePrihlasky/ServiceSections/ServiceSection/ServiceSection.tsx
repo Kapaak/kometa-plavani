@@ -27,7 +27,7 @@ const ServiceSection = ({ headline, fullText, image, isEven, name }: Props) => {
           </S.ImageContainer>
           <Text variant="dark">{fullText}</Text>
           <Link href="">
-            <A variant="transparent-blue">přihlásit dítě</A>
+            <A variant="disabled">připravujeme</A>
           </Link>
         </S.Flex>
       </Flex>

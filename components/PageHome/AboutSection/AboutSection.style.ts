@@ -1,6 +1,6 @@
 import styled from "styled-components";
 import { dimensions } from "@/components/utils/breakpoints";
-import { Text, MaxWidth as SMaxWidth,SectionElement } from "@/styles";
+import { Text, MaxWidth as SMaxWidth, SectionElement } from "@/styles";
 
 export const AboutSection = styled(SectionElement)`
   padding: 1.5rem 0;
@@ -28,5 +28,4 @@ export const ImageContainer = styled.div`
 
 export const AboutText = styled(Text)`
   padding: 2rem 0;
-  text-align: center;
 `;

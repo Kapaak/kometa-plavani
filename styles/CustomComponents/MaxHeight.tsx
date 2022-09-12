@@ -1,6 +1,6 @@
-import { dimensions} from "@/components/utils/breakpoints";
+import { dimensions } from "@/components/utils/breakpoints";
 import { useEffect, useState } from "react";
-import { use100vh ,measureHeight} from "react-div-100vh";
+import { use100vh, measureHeight } from "react-div-100vh";
 import styled, { css } from "styled-components";
 
 interface Props {
@@ -9,12 +9,12 @@ interface Props {
 }
 //todo -> make it styleable like SectionElement using className, so that donthav eto pass the gradient prop and can style it anywhere
 export const MaxHeight = ({ children, $gradient = false }: Props) => {
-  const [fixedHeight,setFixedHeight] = useState(0)
+  const [fixedHeight, setFixedHeight] = useState(0);
 
-  useEffect(()=>{
+  useEffect(() => {
     //@ts-ignore
-    measureHeight() && setFixedHeight(measureHeight)
-  },[measureHeight])
+    measureHeight() && setFixedHeight(measureHeight);
+  }, [measureHeight]);
 
   // const height = use100vh()!;
   return (
@@ -47,7 +47,6 @@ const SMaxHeight = styled.div<{ $gradient: boolean; height: number }>`
       @media (${dimensions.desktop}) {
         transition: none;
         border-radius: 2rem;
-        overflow: hidden;
         height: ${height
           ? `calc(${height}px - var(--header-height) - 12rem)`
           : "100vh"};

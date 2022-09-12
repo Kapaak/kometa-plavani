@@ -13,7 +13,8 @@ const FooterInitial = () => {
       <Image src={KometaLogo} />
       <S.Text variant="light">
         Sportovní klub policie Brno <br />
-        Bauerova 321/5, Brno 613 00 <br /> 613 00 Brno
+        Bauerova 321/5
+        <br /> 613 00 Brno
       </S.Text>
     </S.Flex>
   );
