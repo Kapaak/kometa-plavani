@@ -2,23 +2,28 @@
 import { createSlice } from "@reduxjs/toolkit";
 
 export interface NavigationSlice {
-	isNavActive: boolean;
+  isNavActive: boolean;
+  withShadow: boolean;
 }
 
 const initialState: NavigationSlice = {
-	isNavActive: false,
+  isNavActive: false,
+  withShadow: false,
 };
 
 export const navigationSlice = createSlice({
-	name: "navigation",
-	initialState,
-	reducers: {
-		toggleNavigation: state => {
-			state.isNavActive = !state.isNavActive;
-		},
-	},
+  name: "navigation",
+  initialState,
+  reducers: {
+    toggleNavigation: (state) => {
+      state.isNavActive = !state.isNavActive;
+    },
+    toggleShadow: (state, action) => {
+      state.withShadow = action.payload;
+    },
+  },
 });
 
-export const { toggleNavigation } = navigationSlice.actions;
+export const { toggleNavigation, toggleShadow } = navigationSlice.actions;
 
 export default navigationSlice.reducer;

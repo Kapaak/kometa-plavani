@@ -14,8 +14,14 @@ const Header = () => {
     (state: RootState) => state.navigation.isNavActive
   );
 
+  const withShadow = useSelector(
+    (state: RootState) => state.navigation.withShadow
+  );
+
+  console.log(withShadow, "sha");
+
   return (
-    <S.Header>
+    <S.Header withShadow={withShadow}>
       <Logo />
       <Navigation isActive={isActive} />
       <Hamburger />
