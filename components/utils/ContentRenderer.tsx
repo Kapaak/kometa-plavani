@@ -5,6 +5,13 @@ import { StyledComponent } from "styled-components";
 import { fragmentType } from "../Footer/Footer.interface";
 import { IText } from "@/styles";
 
+export enum contentType {
+  normal,
+  bold,
+  link,
+  blank,
+}
+
 interface Props {
   fragment: Array<fragmentType>;
   LinkElement?: StyledComponent<"a", any, IText, any>;
@@ -25,14 +32,14 @@ const ContentRenderer = ({
 
     fragment.map((a, i) => {
       switch (a.type) {
-        case "bold": {
+        case contentType.bold: {
           return (
             BoldElement &&
             content.push(<BoldElement key={i}>{a.output}</BoldElement>)
           );
         }
 
-        case "link": {
+        case contentType.link: {
           const outputWithoutSpaces = a.output.replace(/ /g, "");
           let triggerOption = outputWithoutSpaces.includes("+")
             ? "tel"
@@ -50,13 +57,13 @@ const ContentRenderer = ({
           );
         }
 
-        case "normal":
+        case contentType.normal:
           return (
             TextElement &&
             content.push(<TextElement key={i}>{a.output}</TextElement>)
           );
 
-        case "blank":
+        case contentType.blank:
           return content.push(<br key={i} />);
 
         default:

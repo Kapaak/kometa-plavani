@@ -1,3 +1,5 @@
+import { contentType } from "./data";
+
 export interface IData {
   headline: string;
   fragment: Array<fragmentType>;
@@ -5,6 +7,6 @@ export interface IData {
 
 export type fragmentType = {
   output: string;
-  type: string;
+  type: contentType;
   href?: string;
 };

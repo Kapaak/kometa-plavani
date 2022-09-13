@@ -3,6 +3,8 @@ import UserIcon from "@/public/icons/user.svg";
 import EmailIcon from "@/public/icons/email.svg";
 import PhoneIcon from "@/public/icons/phone.svg";
 
+import { contentType } from "@/components/utils/ContentRenderer";
+
 export const data = [
   {
     headline: "adresa",
@@ -10,7 +12,7 @@ export const data = [
     fragment: [
       {
         output: "Sportovní 486/4, Brno 602 00",
-        type: "normal",
+        type: contentType.normal,
       },
     ],
   },
@@ -20,7 +22,7 @@ export const data = [
     fragment: [
       {
         output: "Bc. Anna Matušová",
-        type: "normal",
+        type: contentType.normal,
       },
     ],
   },
@@ -30,7 +32,7 @@ export const data = [
     fragment: [
       {
         output: "+420 606 354 747",
-        type: "link",
+        type: contentType.link,
       },
     ],
   },
@@ -40,7 +42,7 @@ export const data = [
     fragment: [
       {
         output: "plavaniluzanky@kometabrno.cz",
-        type: "link",
+        type: contentType.link,
       },
     ],
   },

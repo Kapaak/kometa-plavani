@@ -1,3 +1,4 @@
+import { contentType } from "../utils/ContentRenderer";
 import { IData } from "./Footer.interface";
 
 export const data: Array<IData> = [
@@ -6,23 +7,23 @@ export const data: Array<IData> = [
     fragment: [
       {
         output: "Bc. Anna Matušová",
-        type: "bold",
+        type: contentType.bold,
       },
       {
         output: "+420 606 354 747",
-        type: "link",
+        type: contentType.link,
       },
       {
         output: "plavaniluzanky@kometabrno.cz",
-        type: "link",
+        type: contentType.link,
       },
       {
         output: "Sportovní 486/4, Brno 602 00",
-        type: "normal",
+        type: contentType.normal,
       },
       {
         output: "Po - Pá: 8:00-15:30",
-        type: "normal",
+        type: contentType.normal,
       },
     ],
   },
@@ -31,39 +32,39 @@ export const data: Array<IData> = [
     fragment: [
       {
         output: "Plavecké kurzy Kometa",
-        type: "bold",
+        type: contentType.bold,
       },
       {
         output: "Kraví hora",
-        type: "link",
+        type: contentType.link,
         href: "https://kometaplavani.cz/ucime-se-plavat/kravi-hora/",
       },
       {
         output: "Kohoutovice",
-        type: "link",
+        type: contentType.link,
         href: "https://kometaplavani.cz/plavani-bazenky/bazenky/aquapark-kohoutovice/",
       },
       {
         output: "Bazénky",
-        type: "link",
+        type: contentType.link,
         href: "https://kometaplavani.cz/plavani-bazenky/bazenky/",
       },
       {
         output: "",
-        type: "blank",
+        type: contentType.blank,
       },
       {
         output: "Tábory a letní akce",
-        type: "bold",
+        type: contentType.bold,
       },
       {
         output: "Kraví hora",
-        type: "link",
+        type: contentType.link,
         href: "https://kometaplavani.cz/primestsky-tabor-kravi-hora/",
       },
       {
         output: "Pisárky",
-        type: "link",
+        type: contentType.link,
         href: "https://kometaplavani.cz/otevrena-zahrada/",
       },
     ],
@@ -71,8 +72,8 @@ export const data: Array<IData> = [
   {
     headline: "Informace",
     fragment: [
-      { output: "GDPR", type: "normal" },
-      { output: "IČO: 123456", type: "normal" }, //dopln spravne ICO
+      { output: "GDPR", type: contentType.normal },
+      { output: "IČO: 123456", type: contentType.normal }, //dopln spravne ICO
     ],
   },
 ];
