@@ -8,7 +8,10 @@ export const Text = styled(SText)`
 
 export const Flex = styled(SFlex)`
   @media (${dimensions.desktop}) {
-    flex: 30%;
+    flex: 20%;
     max-width: 40rem;
+    & > span {
+      flex: 1 1 30%;
+    }
   }
 `;

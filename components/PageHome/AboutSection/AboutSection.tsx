@@ -26,7 +26,6 @@ const AboutSection = () => {
     const isCommingFromAbove =
       entry?.boundingClientRect && entry?.boundingClientRect.top > 0;
     if (isCommingFromAbove) dispatch(toggleShadow(inView));
-    console.log(entry, "entry");
   }, [inView]);
 
   return (
