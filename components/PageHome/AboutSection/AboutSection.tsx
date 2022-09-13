@@ -30,8 +30,8 @@ const AboutSection = () => {
   }, [inView]);
 
   return (
-    <div ref={ref}>
-      <S.AboutSection name="about">
+    <div>
+      <S.AboutSection name="about" ref={ref}>
         <S.MaxWidth>
           <S.ImageContainer>
             <Image src={WaveYellow} layout="fill" />
