@@ -56,6 +56,9 @@ const ContentRenderer = ({
             content.push(<TextElement key={i}>{a.output}</TextElement>)
           );
 
+        case "blank":
+          return content.push(<br key={i} />);
+
         default:
           return;
       }

@@ -48,6 +48,24 @@ export const data: Array<IData> = [
         type: "link",
         href: "https://kometaplavani.cz/plavani-bazenky/bazenky/",
       },
+      {
+        output: "",
+        type: "blank",
+      },
+      {
+        output: "Tábory a letní akce",
+        type: "bold",
+      },
+      {
+        output: "Kraví hora",
+        type: "link",
+        href: "https://kometaplavani.cz/primestsky-tabor-kravi-hora/",
+      },
+      {
+        output: "Pisárky",
+        type: "link",
+        href: "https://kometaplavani.cz/otevrena-zahrada/",
+      },
     ],
   },
   {
