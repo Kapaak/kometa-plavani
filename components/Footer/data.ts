@@ -2,7 +2,7 @@ import { IData } from "./Footer.interface";
 
 export const data: Array<IData> = [
   {
-    headline: "Kontakt",
+    headline: "Kontaktní osoba",
     fragment: [
       {
         output: "Bc. Anna Matušová",
@@ -27,31 +27,26 @@ export const data: Array<IData> = [
     ],
   },
   {
-    headline: "Vedení klubu",
+    headline: "Užitečné odkazy",
     fragment: [
       {
-        output: "Bc. Jiří Vlček BA",
+        output: "Plavecké kurzy Kometa",
         type: "bold",
       },
       {
-        output: "Vedení klubu",
-        type: "normal",
+        output: "Kraví hora",
+        type: "link",
+        href: "https://kometaplavani.cz/ucime-se-plavat/kravi-hora/",
       },
       {
-        output: "Mgr. Radek Vostrejž",
-        type: "bold",
+        output: "Kohoutovice",
+        type: "link",
+        href: "https://kometaplavani.cz/plavani-bazenky/bazenky/aquapark-kohoutovice/",
       },
       {
-        output: "Předseda klubu",
-        type: "normal",
-      },
-      {
-        output: "Ing. Lenka Dřínovská",
-        type: "bold",
-      },
-      {
-        output: "Mistopředseda klubu",
-        type: "normal",
+        output: "Bazénky",
+        type: "link",
+        href: "https://kometaplavani.cz/plavani-bazenky/bazenky/",
       },
     ],
   },

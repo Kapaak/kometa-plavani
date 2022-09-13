@@ -38,13 +38,12 @@ const ContentRenderer = ({
             ? "tel"
             : "mailto";
 
+          let href = a.href || `${triggerOption}:${outputWithoutSpaces}`;
+
           return (
             LinkElement &&
             content.push(
-              <LinkElement
-                key={i}
-                href={`${triggerOption}:${outputWithoutSpaces}`}
-              >
+              <LinkElement key={i} href={href}>
                 {a.output}
               </LinkElement>
             )
