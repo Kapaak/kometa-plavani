@@ -35,7 +35,7 @@ const NavLink = ({ scrollTarget, children, href, group }: Props) => {
   };
   return (
     //I dont use next/link because I want to change route and then scroll to element
-    //if I had next/link I would only change route, the function must have some kind of delay
+    //if I had next/link I would only change route, the function would not fire
     //maybe push route like /example#school and on example page have useEffect, that would fire
     //Scrolling to #school element on the initial page load (empty dependency array)
     <S.NavLink>
