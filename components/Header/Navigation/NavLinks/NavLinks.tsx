@@ -12,6 +12,24 @@ const NavItems = () => {
     (state: RootState) => state.navigation.isNavActive
   );
 
+  const appGroup = [
+    {
+      href: "/prihlasky/skolky",
+      output: "školky",
+      scrollTarget: "skolky",
+    },
+    {
+      href: "/prihlasky/skoly",
+      output: "školy",
+      scrollTarget: "skoly",
+    },
+    {
+      href: "/prihlasky/kurzy",
+      output: "kurzy",
+      scrollTarget: "kurzy",
+    },
+  ];
+
   return (
     <S.NavLinks isActive={isActive}>
       <NavLink href="/" scrollTarget="home">
@@ -20,7 +38,7 @@ const NavItems = () => {
       <NavLink href="/" scrollTarget="about">
         O nás
       </NavLink>
-      <NavLink href="/prihlasky" scrollTarget="application">
+      <NavLink href="/prihlasky" scrollTarget="application" group={appGroup}>
         Přihlášky
       </NavLink>
       <NavLink href="/" scrollTarget="contact">

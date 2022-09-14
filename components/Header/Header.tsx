@@ -18,8 +18,6 @@ const Header = () => {
     (state: RootState) => state.navigation.withShadow
   );
 
-  console.log(withShadow, "sha");
-
   return (
     <S.Header withShadow={withShadow}>
       <Logo />

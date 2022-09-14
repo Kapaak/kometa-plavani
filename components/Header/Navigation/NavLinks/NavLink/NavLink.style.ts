@@ -1,7 +1,23 @@
 import { dimensions } from "@/components/utils/breakpoints";
 import styled from "styled-components";
 
+export const Group = styled.div`
+  display: none;
+  flex-direction: column;
+  left: 50%;
+  align-items: center;
+  justify-content: flex-start;
+  padding: 0 2rem;
+
+  @media (${dimensions.desktop}) {
+    position: absolute;
+    transform: translateX(-50%);
+    background-color: var(--colw);
+  }
+`;
+
 export const NavLink = styled.li`
+  position: relative;
   list-style-type: none;
   text-decoration: none;
   color: var(--colw);
@@ -22,6 +38,12 @@ export const NavLink = styled.li`
 
     a {
       color: var(--colb);
+    }
+  }
+
+  &:hover {
+    ${Group} {
+      display: flex;
     }
   }
 `;
