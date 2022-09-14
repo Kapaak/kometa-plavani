@@ -40,7 +40,8 @@ const HeroSection = () => {
             src={HeroImage}
             layout="fill"
             objectFit="cover"
-            placeholder={HeroImage}
+            placeholder="blur"
+            blurDataURL={HeroImage}
             priority={true}
           />
         </S.ImageContainer>

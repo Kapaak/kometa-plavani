@@ -41,15 +41,13 @@ const SMaxHeight = styled.div<{ $gradient: boolean; height: number }>`
       )`
       : "unset"};
 
-  ${({ $gradient, height }) =>
+  ${({ $gradient }) =>
     $gradient &&
     css`
       @media (${dimensions.desktop}) {
         transition: none;
         border-radius: 2rem;
-        height: ${height
-          ? `calc(${height}px - var(--header-height) - 12rem)`
-          : "100vh"};
+        height: calc(100vh - var(--header-height) - 12rem);
       }
     `}
 `;
