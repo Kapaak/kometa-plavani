@@ -16,6 +16,8 @@ export const MaxHeight = ({ children, $gradient = false }: Props) => {
     measureHeight() && setFixedHeight(measureHeight);
   }, [measureHeight]);
 
+  //co pridat useHeight() a tim vyresit to initial a ulozit to do promenne
+  //ale useEffect by pres jinou promennout nastavil maxHeight ... tim by se pak mozna vynulovalo skakani
   // const height = use100vh()!;
   return (
     <SMaxHeight $gradient={$gradient} height={fixedHeight}>

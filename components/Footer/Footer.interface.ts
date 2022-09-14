@@ -1,4 +1,4 @@
-import { contentType } from "./data";
+import { contentType } from "../utils/ContentRenderer";
 
 export interface IData {
   headline: string;
