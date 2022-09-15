@@ -15,23 +15,24 @@ export const data: Array<INavLink> = [
     href: "/prihlasky",
     scrollTarget: scrollTargets.application,
     output: "Přihlášky",
-    dropdown: [
-      {
-        href: "/prihlasky/skolky",
-        scrollTarget: scrollTargets.skolky,
-        output: "školky",
-      },
-      {
-        href: "/prihlasky/skoly",
-        scrollTarget: scrollTargets.skoly,
-        output: "školy",
-      },
-      {
-        href: "/prihlasky/kurzy",
-        scrollTarget: scrollTargets.kurzy,
-        output: "kurzy",
-      },
-    ],
+    //commented out, because it wont be needed on release
+    // dropdown: [
+    //   {
+    //     href: "/prihlasky/skolky",
+    //     scrollTarget: scrollTargets.skolky,
+    //     output: "školky",
+    //   },
+    //   {
+    //     href: "/prihlasky/skoly",
+    //     scrollTarget: scrollTargets.skoly,
+    //     output: "školy",
+    //   },
+    //   {
+    //     href: "/prihlasky/kurzy",
+    //     scrollTarget: scrollTargets.kurzy,
+    //     output: "kurzy",
+    //   },
+    // ],
   },
   {
     href: "/",
