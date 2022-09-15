@@ -2,7 +2,6 @@
 import { toggleNavigation } from "@redux/slices/navigationSlice";
 import { useRouter } from "next/router";
 import { useDispatch } from "react-redux";
-import Link from "next/link";
 //styles
 import * as S from "./NavLink.style";
 //others
@@ -11,16 +10,16 @@ interface Props {
   children: React.ReactNode;
   scrollTarget: string;
   href: string;
-  group?: Array<TGroup>;
+  dropdown?: Array<TDropdown>;
 }
 
-type TGroup = {
+type TDropdown = {
   href: string;
   scrollTarget: string;
   output: string;
 };
 
-const NavLink = ({ scrollTarget, children, href, group }: Props) => {
+const NavLink = ({ scrollTarget, children, href, dropdown }: Props) => {
   const dispatch = useDispatch();
   const router = useRouter();
 
@@ -40,14 +39,14 @@ const NavLink = ({ scrollTarget, children, href, group }: Props) => {
     //Scrolling to #school element on the initial page load (empty dependency array)
     <S.NavLink>
       <a onClick={() => clickHandler(scrollTarget, href)}>{children}</a>
-      {group && (
-        <S.Group>
-          {group.map((g, i) => (
+      {dropdown && (
+        <S.Dropdown>
+          {dropdown.map((g, i) => (
             <a onClick={() => clickHandler(g.scrollTarget, g.href)} key={i}>
               {g.output}
             </a>
           ))}
-        </S.Group>
+        </S.Dropdown>
       )}
     </S.NavLink>
   );

@@ -1,7 +1,7 @@
 import { dimensions } from "@/components/utils/breakpoints";
 import styled from "styled-components";
 
-export const Group = styled.div`
+export const Dropdown = styled.div`
   display: none;
   flex-direction: column;
   left: 50%;
@@ -42,7 +42,7 @@ export const NavLink = styled.li`
   }
 
   &:hover {
-    ${Group} {
+    ${Dropdown} {
       display: flex;
     }
   }

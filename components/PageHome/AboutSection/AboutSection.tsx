@@ -23,9 +23,9 @@ const AboutSection = () => {
     //I want a shadow on <Header/> to disappear only on hero page
     //(in default behavior it would disappear after we leave this element)
     //therefore I check if boundingClientRect - visible area of element is above current page or not
-    const isCommingFromAbove =
+    const isCrossingHeroSection =
       entry?.boundingClientRect && entry?.boundingClientRect.top > 0;
-    if (isCommingFromAbove) dispatch(toggleShadow(inView));
+    if (isCrossingHeroSection) dispatch(toggleShadow(inView));
   }, [inView]);
 
   return (

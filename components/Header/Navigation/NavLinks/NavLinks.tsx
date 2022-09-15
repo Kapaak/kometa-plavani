@@ -12,7 +12,7 @@ const NavItems = () => {
     (state: RootState) => state.navigation.isNavActive
   );
 
-  const appGroup = [
+  const dropdown = [
     {
       href: "/prihlasky/skolky",
       output: "školky",
@@ -38,7 +38,7 @@ const NavItems = () => {
       <NavLink href="/" scrollTarget="about">
         O nás
       </NavLink>
-      <NavLink href="/prihlasky" scrollTarget="application" group={appGroup}>
+      <NavLink href="/prihlasky" scrollTarget="application" dropdown={dropdown}>
         Přihlášky
       </NavLink>
       <NavLink href="/" scrollTarget="contact">
