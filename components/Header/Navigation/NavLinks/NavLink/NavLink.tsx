@@ -4,11 +4,14 @@ import { useRouter } from "next/router";
 import { useDispatch } from "react-redux";
 //styles
 import * as S from "./NavLink.style";
+//interfaces
+import { scrollTargets } from "../../data";
 //others
 import { scrollTo } from "@/components/utils/functions";
+
 interface Props {
   children: React.ReactNode;
-  scrollTarget: string;
+  scrollTarget: scrollTargets;
   href: string;
   dropdown?: Array<TDropdown>;
 }

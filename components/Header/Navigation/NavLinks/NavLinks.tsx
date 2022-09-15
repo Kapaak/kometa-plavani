@@ -4,52 +4,32 @@ import { useSelector } from "react-redux";
 import NavLink from "./NavLink/NavLink";
 //styles
 import * as S from "./NavLinks.style";
+//interfaces
+import { INavLink } from "../data";
 //redux
 import { RootState } from "@redux/store";
 
-const NavItems = () => {
+interface Props {
+  data: Array<INavLink>;
+}
+
+const NavItems = ({ data }: Props) => {
   const isActive = useSelector(
     (state: RootState) => state.navigation.isNavActive
   );
 
-  const dropdown = [
-    {
-      href: "/prihlasky/skolky",
-      output: "školky",
-      scrollTarget: "skolky",
-    },
-    {
-      href: "/prihlasky/skoly",
-      output: "školy",
-      scrollTarget: "skoly",
-    },
-    {
-      href: "/prihlasky/kurzy",
-      output: "kurzy",
-      scrollTarget: "kurzy",
-    },
-  ];
-
   return (
     <S.NavLinks isActive={isActive}>
-      <NavLink href="/" scrollTarget="home">
-        Domů
-      </NavLink>
-      <NavLink href="/" scrollTarget="about">
-        O nás
-      </NavLink>
-      <NavLink href="/prihlasky" scrollTarget="application" dropdown={dropdown}>
-        Přihlášky
-      </NavLink>
-      <NavLink href="/" scrollTarget="contact">
-        Kontakt
-      </NavLink>
-
-      {/* <NavLink href="#aktuality">Aktuality</NavLink>
-      <NavLink href="#zakladni-info">Základní informace</NavLink>
-      <NavLink href="#treneri">Trenéři</NavLink> 
-      <NavLink href="#dokumenty">Dokumenty</NavLink>
-      */}
+      {data.map((d, i) => (
+        <NavLink
+          key={i}
+          href={d.href}
+          scrollTarget={d.scrollTarget}
+          dropdown={d.dropdown || undefined}
+        >
+          {d.output}
+        </NavLink>
+      ))}
     </S.NavLinks>
   );
 };
