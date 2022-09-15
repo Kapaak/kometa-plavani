@@ -5,7 +5,7 @@ import ContactMap from "./ContactMap/ContactMap";
 import { MaxWidth } from "@/styles";
 import * as S from "./ContactSection.style";
 //data
-import { data } from "./data";
+import { data } from "./ContactSection.data";
 
 const ContactSection = () => {
   return (

@@ -1,7 +1,7 @@
 //libraries
 import { Provider } from "react-redux";
 //components
-import HeadSelector from "../components/utils/HeadSelector";
+import HeadSelector from "../utils/HeadSelector";
 import Header from "@/components/Header/Header";
 import Footer from "@/components/Footer/Footer";
 //styles
@@ -9,7 +9,7 @@ import { GlobalStyles } from "../styles/GlobalStyles";
 //types
 import type { AppProps } from "next/app";
 //redux
-import { store } from "@redux/store";
+import { store } from "@/redux/store";
 
 function MyApp({ Component, pageProps }: AppProps) {
   return (

@@ -1,4 +1,4 @@
-import { contentType } from "../utils/ContentRenderer";
+import { contentType } from "./Footer.interface";
 import { IData } from "./Footer.interface";
 
 export const data: Array<IData> = [

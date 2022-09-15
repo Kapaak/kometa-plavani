@@ -1,16 +1,11 @@
 //libraries
 import { useEffect, useState } from "react";
 import { StyledComponent } from "styled-components";
-//interfaces
-import { fragmentType } from "../Footer/Footer.interface";
+//styles
 import { IText } from "@/styles";
-
-export enum contentType {
-  normal,
-  bold,
-  link,
-  blank,
-}
+//interfaces
+import { fragmentType } from "../components/Footer/Footer.interface";
+import { contentType } from "@/utils/interfaces";
 
 interface Props {
   fragment: Array<fragmentType>;

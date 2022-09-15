@@ -1,5 +1,5 @@
 //components
-import ContentRenderer from "@/components/utils/ContentRenderer";
+import ContentRenderer from "@/utils/ContentRenderer";
 //styles
 import * as S from "./FooterSection.style";
 //interfaces

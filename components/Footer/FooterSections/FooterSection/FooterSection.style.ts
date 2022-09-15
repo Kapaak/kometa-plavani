@@ -1,5 +1,7 @@
-import { Subheadline, Text } from "@/styles";
+//libraries
 import styled, { css } from "styled-components";
+//styles
+import { Subheadline, Text } from "@/styles";
 
 export const FooterSection = styled.section``;
 

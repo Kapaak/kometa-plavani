@@ -7,7 +7,7 @@ import Hamburger from "./Hamburger/Hamburger";
 import Navigation from "./Navigation/Navigation";
 import Logo from "./Logo/Logo";
 //redux
-import { RootState } from "@redux/store";
+import { RootState } from "@/redux/store";
 
 const Header = () => {
   const isActive = useSelector(

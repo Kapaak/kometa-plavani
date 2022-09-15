@@ -3,7 +3,7 @@ import NavLinks from "./NavLinks/NavLinks";
 //styles
 import * as S from "./Navigation.style";
 //data
-import { data } from "./data";
+import { data } from "./Navigation.data";
 
 interface Props {
   isActive: boolean;

@@ -1,13 +1,14 @@
+//libraries
+import Image from "next/image";
 //styles
 import { MainHeadline, MainSubheadline, MaxHeight } from "@/styles";
-import Image from "next/image";
 import * as S from "./HeroSection.style";
-//fix -> https://stackoverflow.com/questions/52759220/importing-images-in-typescript-react-cannot-find-module
-//@ts-ignore
+//images
+//@ts-ignore it should be lowercase .jpg i guess
 import HeroImage from "@/public/images/hero-img.JPG";
 import ArrowYellow from "@/public/icons/arrow-yellow.svg";
 //others
-import { scrollTo } from "@/components/utils/functions";
+import { scrollTo } from "@/utils/functions";
 
 const HeroSection = () => {
   return (

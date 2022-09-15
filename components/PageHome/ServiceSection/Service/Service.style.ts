@@ -1,5 +1,7 @@
+//libraries
 import styled from "styled-components";
-import { dimensions } from "@/components/utils/breakpoints";
+//styles
+import { dimensions } from "@/utils/breakpoints";
 import { Text, A as SA } from "@/styles";
 
 export const Service = styled.article`

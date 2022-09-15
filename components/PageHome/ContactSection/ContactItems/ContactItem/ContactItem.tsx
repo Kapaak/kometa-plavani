@@ -1,7 +1,7 @@
 //libraries
 import Image from "next/image";
 //componenets
-import ContentRenderer from "@/components/utils/ContentRenderer";
+import ContentRenderer from "@/utils/ContentRenderer";
 //styles
 import * as S from "./ContactItem.style";
 import { Flex } from "@/styles";

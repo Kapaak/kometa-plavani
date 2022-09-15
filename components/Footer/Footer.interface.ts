@@ -1,12 +1,9 @@
-import { contentType } from "../utils/ContentRenderer";
+import { contentType, fragmentType } from "@/utils/interfaces";
 
 export interface IData {
   headline: string;
   fragment: Array<fragmentType>;
 }
 
-export type fragmentType = {
-  output: string;
-  type: contentType;
-  href?: string;
-};
+export { contentType };
+export type { fragmentType };

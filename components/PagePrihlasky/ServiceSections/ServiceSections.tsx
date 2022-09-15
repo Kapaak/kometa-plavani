@@ -1,26 +1,13 @@
-//libraries
-import { StaticImageData } from "next/image";
 //components
 import ServiceSection from "./ServiceSection/ServiceSection";
 //styles
 import * as S from "./ServiceSections.style";
+//data
+import { data } from "./ServiceSections.data";
+//others
+import { isEven } from "@/utils/functions";
 
-type TData = {
-  id: number;
-  headline: string;
-  fullText: string;
-  image: StaticImageData;
-  name: string;
-};
-
-interface Props {
-  data: TData[];
-}
-
-const ServiceSections = ({ data }: Props) => {
-  const isEven = (id: number) => {
-    return id % 2 === 0;
-  };
+const ServiceSections = () => {
   return (
     <S.Flex gap="4rem">
       {data.map((d) => (

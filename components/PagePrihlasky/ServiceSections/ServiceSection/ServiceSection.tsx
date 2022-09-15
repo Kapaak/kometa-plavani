@@ -1,19 +1,15 @@
 //libraries
-import Image, { StaticImageData } from "next/image";
+import Image from "next/image";
 import Link from "next/link";
 //styles
 import { A, Flex, SectionElement, Text } from "@/styles";
 import * as S from "./ServiceSection.style";
+//interfaces
+import { ISection } from "../ServiceSections.interface";
 
-interface Props {
-  isEven: boolean;
-  headline: string;
-  fullText: string;
-  image: StaticImageData;
-  name: string;
-}
+const ServiceSection = (props: ISection) => {
+  const { headline, fullText, image, isEven, name } = props;
 
-const ServiceSection = ({ headline, fullText, image, isEven, name }: Props) => {
   return (
     <SectionElement name={name}>
       <Flex direction="row" gap="6rem">

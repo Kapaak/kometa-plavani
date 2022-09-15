@@ -1,22 +1,4 @@
-interface IDropdown {
-  href: string;
-  scrollTarget: scrollTargets;
-  output: string;
-}
-
-export interface INavLink extends IDropdown {
-  dropdown?: Array<IDropdown>;
-}
-
-export enum scrollTargets {
-  home = "home",
-  about = "about",
-  application = "application",
-  contact = "contact",
-  skolky = "skolky",
-  skoly = "skoly",
-  kurzy = "kurzy",
-}
+import { INavLink, scrollTargets } from "./Navigation.interface";
 
 export const data: Array<INavLink> = [
   {

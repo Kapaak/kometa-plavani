@@ -1,5 +1,7 @@
-import { dimensions } from "@/components/utils/breakpoints";
+//libraries
 import styled from "styled-components";
+//styles
+import { dimensions } from "@/utils/breakpoints";
 import { Flex as SFlex } from "@/styles";
 
 export const Navigation = styled.nav<{ isActive: boolean }>`
@@ -9,7 +11,7 @@ export const Navigation = styled.nav<{ isActive: boolean }>`
   background-color: ${({ isActive }) => (isActive ? "var(--col2)" : "unset")};
   z-index: 9;
   top: 0;
-  transition: all .4 ease;
+  transition: all 0.4 ease;
 
   @media (${dimensions.desktop}) {
     position: relative;

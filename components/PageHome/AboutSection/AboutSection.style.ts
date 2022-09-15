@@ -1,5 +1,7 @@
+//libraries
 import styled from "styled-components";
-import { dimensions } from "@/components/utils/breakpoints";
+//styles
+import { dimensions } from "@/utils/breakpoints";
 import { Text, MaxWidth as SMaxWidth, SectionElement } from "@/styles";
 
 export const AboutSection = styled(SectionElement)`

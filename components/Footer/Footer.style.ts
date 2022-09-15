@@ -1,6 +1,8 @@
+//libraries
 import styled from "styled-components";
+//styles
 import { Flex as SFlex, MaxWidth as SMaxWidth } from "@/styles";
-import { dimensions } from "../utils/breakpoints";
+import { dimensions } from "../../utils/breakpoints";
 
 export const Footer = styled.div`
   padding: 2rem 0;

@@ -14,3 +14,4 @@
   - udelej shared/interface.ts pro sdileny typy
   - udelej interface.ts pro kazdej komponent a typy ber odtama
   - mozna u kazdyho interface preexportuj shared/interface element, pokud se nekde pouziva
+  - prejmenuj vsechny data.ts na ComponentName.data.ts

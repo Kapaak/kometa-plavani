@@ -1,6 +1,6 @@
 //libraries
 import Image from "next/image";
-//svgs
+//images
 import LogoWhite from "@/public/icons/logo-latest-white.svg";
 import KometaLogo from "@/public/icons/kometa.svg";
 //styles

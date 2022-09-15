@@ -1,5 +1,7 @@
-import { Text } from "@/styles";
+//libraries
 import styled from "styled-components";
+//styles
+import { Text } from "@/styles";
 
 // custom made type, that will act as if it was an <a> tag
 export const LinkElement = styled(Text).attrs({

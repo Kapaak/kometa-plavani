@@ -1,6 +1,8 @@
+//libraries
 import styled from "styled-components";
+//styles
 import { Flex as SFlex } from "@/styles";
-import { dimensions } from "@/components/utils/breakpoints";
+import { dimensions } from "@/utils/breakpoints";
 
 export const Flex = styled(SFlex)`
   @media (${dimensions.desktop}) {

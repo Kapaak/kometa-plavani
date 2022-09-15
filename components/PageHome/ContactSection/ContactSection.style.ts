@@ -1,7 +1,8 @@
-import { SectionElement } from "@/styles";
+//librarires
 import styled from "styled-components";
-import { Flex as SFlex } from "@/styles";
-import { dimensions } from "@/components/utils/breakpoints";
+//styles
+import { SectionElement, Flex as SFlex } from "@/styles";
+import { dimensions } from "@/utils/breakpoints";
 
 export const ContactSection = styled(SectionElement)``;
 

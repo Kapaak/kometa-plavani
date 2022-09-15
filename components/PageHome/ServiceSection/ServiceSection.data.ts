@@ -2,8 +2,10 @@
 import KindergardenService from "@/public/images/service-kindergarden.jpg";
 import SchoolService from "@/public/images/service-school.jpg";
 import CourseService from "@/public/images/service-course.jpg";
+import { IService } from "./ServiceSection.interface";
+import { scrollTargets } from "./ServiceSection.interface";
 
-export const data = [
+export const data: IService[] = [
   {
     headline: "Školky",
     smallText:
@@ -11,7 +13,7 @@ export const data = [
     fullText:
       "Cílem je neplavce zbavit strachu, položit na vodu s hlavou pod vodou na bříšku a zakopat.",
     image: KindergardenService,
-    scrollTarget: "kindergardens",
+    scrollTarget: scrollTargets.kindergardens,
   },
   {
     headline: "Školy",
@@ -20,7 +22,7 @@ export const data = [
     fullText:
       "Cílem je plavce naučit základům plavání. Děti již trochu plavat umí. Našim úkolem je naučit kraul a znak.",
     image: SchoolService,
-    scrollTarget: "schools",
+    scrollTarget: scrollTargets.schools,
   },
   {
     headline: "Kurzy",
@@ -29,6 +31,6 @@ export const data = [
     fullText:
       "Děti se zde mohou učit plavat již od  5 do 17 let a potom přejít do závodního plavání.",
     image: CourseService,
-    scrollTarget: "courses",
+    scrollTarget: scrollTargets.courses,
   },
 ];

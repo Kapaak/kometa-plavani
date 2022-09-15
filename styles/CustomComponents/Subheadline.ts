@@ -1,4 +1,4 @@
-import { dimensions } from "@/components/utils/breakpoints";
+import { dimensions } from "@/utils/breakpoints";
 import styled from "styled-components";
 
 export const Subheadline = styled.h3`

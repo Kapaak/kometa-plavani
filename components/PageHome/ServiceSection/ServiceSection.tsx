@@ -3,8 +3,8 @@ import { MaxWidth } from "@/styles";
 import * as S from "./ServiceSection.style";
 //components
 import Service from "./Service/Service";
-//texts
-import { data } from "./data";
+//data
+import { data } from "./ServiceSection.data";
 
 const ServiceSection = () => {
   return (

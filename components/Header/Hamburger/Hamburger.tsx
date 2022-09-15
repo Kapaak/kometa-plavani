@@ -3,8 +3,8 @@ import { useDispatch, useSelector } from "react-redux";
 //styles
 import * as S from "./Hamburger.style";
 //redux
-import { toggleNavigation } from "@redux/slices/navigationSlice";
-import { RootState } from "@redux/store";
+import { toggleNavigation } from "@/redux/slices/navigationSlice";
+import { RootState } from "@/redux/store";
 
 const Hamburger = () => {
   const dispatch = useDispatch();

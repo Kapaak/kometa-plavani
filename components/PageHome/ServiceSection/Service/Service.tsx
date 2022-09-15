@@ -1,19 +1,20 @@
 //libraries
-import Image from "next/image";
+import Image, { StaticImageData } from "next/image";
 import { useRouter } from "next/router";
-import { scroller } from "react-scroll";
 //styles
 import * as S from "./Service.style";
 import { A, Flex, Subheadline, Text } from "@/styles";
+//interfaces
+import { scrollTargets } from "../ServiceSection.interface";
 //others
-import { scrollTo } from "@/components/utils/functions";
+import { scrollTo } from "@/utils/functions";
 
 interface Props {
   headline: string;
   smallText: string;
   fullText: string;
-  image: any;
-  scrollTarget: string;
+  image: StaticImageData;
+  scrollTarget: scrollTargets;
 }
 
 const Service = (props: Props) => {

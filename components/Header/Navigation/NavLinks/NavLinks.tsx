@@ -5,9 +5,9 @@ import NavLink from "./NavLink/NavLink";
 //styles
 import * as S from "./NavLinks.style";
 //interfaces
-import { INavLink } from "../data";
+import { INavLink } from "../Navigation.interface";
 //redux
-import { RootState } from "@redux/store";
+import { RootState } from "@/redux/store";
 
 interface Props {
   data: Array<INavLink>;

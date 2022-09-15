@@ -1,4 +1,4 @@
-import { dimensions } from "@/components/utils/breakpoints";
+import { dimensions } from "@/utils/breakpoints";
 import { useEffect, useState } from "react";
 import { use100vh, measureHeight } from "react-div-100vh";
 import styled, { css } from "styled-components";

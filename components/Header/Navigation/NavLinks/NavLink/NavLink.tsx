@@ -1,26 +1,20 @@
 //libraries
-import { toggleNavigation } from "@redux/slices/navigationSlice";
+import { toggleNavigation } from "@/redux/slices/navigationSlice";
 import { useRouter } from "next/router";
 import { useDispatch } from "react-redux";
 //styles
 import * as S from "./NavLink.style";
 //interfaces
-import { scrollTargets } from "../../data";
+import { IDropdown, scrollTargets } from "../../Navigation.interface";
 //others
-import { scrollTo } from "@/components/utils/functions";
+import { scrollTo } from "@/utils/functions";
 
 interface Props {
   children: React.ReactNode;
   scrollTarget: scrollTargets;
   href: string;
-  dropdown?: Array<TDropdown>;
+  dropdown?: Array<IDropdown>;
 }
-
-type TDropdown = {
-  href: string;
-  scrollTarget: string;
-  output: string;
-};
 
 const NavLink = ({ scrollTarget, children, href, dropdown }: Props) => {
   const dispatch = useDispatch();

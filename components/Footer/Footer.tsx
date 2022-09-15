@@ -3,10 +3,9 @@ import FooterSections from "./FooterSections/FooterSections";
 import FooterInitial from "./FooterInital/FooterInitial";
 import FooterEnding from "./FooterEnding/FooterEnding";
 //styles
-import { MaxWidth } from "@/styles";
 import * as S from "./Footer.style";
 //data
-import { data } from "./data";
+import { data } from "./Footer.data";
 
 const Footer = () => {
   return (

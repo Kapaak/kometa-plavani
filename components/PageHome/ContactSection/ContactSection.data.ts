@@ -1,11 +1,12 @@
+//images
 import LocationIcon from "@/public/icons/location.svg";
 import UserIcon from "@/public/icons/user.svg";
 import EmailIcon from "@/public/icons/email.svg";
 import PhoneIcon from "@/public/icons/phone.svg";
+//interfaces
+import { contentType, IContact } from "./ContactSection.interface";
 
-import { contentType } from "@/components/utils/ContentRenderer";
-
-export const data = [
+export const data: IContact[] = [
   {
     headline: "adresa",
     icon: LocationIcon,

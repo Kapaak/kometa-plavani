@@ -1,5 +1,7 @@
+//libraries
 import styled from "styled-components";
-import { dimensions } from "../utils/breakpoints";
+//styles
+import { dimensions } from "../../utils/breakpoints";
 
 export const Header = styled.header<{ withShadow: boolean }>`
   position: sticky;

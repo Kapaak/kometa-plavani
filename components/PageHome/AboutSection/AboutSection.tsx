@@ -8,7 +8,7 @@ import WaveYellow from "@/public/icons/wave-yellow.svg";
 //styles
 import * as S from "./AboutSection.style";
 //redux
-import { toggleShadow } from "@redux/slices/navigationSlice";
+import { toggleShadow } from "@/redux/slices/navigationSlice";
 
 const AboutSection = () => {
   const { ref, inView, entry } = useInView({

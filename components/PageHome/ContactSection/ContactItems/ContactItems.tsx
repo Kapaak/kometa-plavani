@@ -3,9 +3,11 @@ import ContactItem from "./ContactItem/ContactItem";
 //styles
 import { Flex, Headline } from "@/styles";
 import * as S from "./ContactItems.style";
+//interfaces
+import { IContact } from "../ContactSection.interface";
 
 interface Props {
-  data: any;
+  data: Array<IContact>;
 }
 
 const ContactItems = ({ data }: Props) => {
@@ -16,7 +18,7 @@ const ContactItems = ({ data }: Props) => {
         V případě jakýchkoliv dotazů nás kontaktujte.
       </S.Text>
       <Flex gap="2rem">
-        {data.map((d: any, i: number) => (
+        {data.map((d, i) => (
           <ContactItem
             key={i}
             headline={d.headline}
