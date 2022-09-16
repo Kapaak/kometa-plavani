@@ -10,8 +10,8 @@
 
   TODO
 
-  - scrollTarget v Service.tsx by mel byt typu enum scrollTargets
-  - udelej shared/interface.ts pro sdileny typy
-  - udelej interface.ts pro kazdej komponent a typy ber odtama
-  - mozna u kazdyho interface preexportuj shared/interface element, pokud se nekde pouziva
-  - prejmenuj vsechny data.ts na ComponentName.data.ts
+- projdi si lighthouse score
+- najdi best practices SEO
+- optimalizuj appku
+- vetsi mezery na hlavni strance
+- ikonky u sponzoru

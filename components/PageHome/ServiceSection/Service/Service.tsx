@@ -38,7 +38,12 @@ const Service = (props: Props) => {
           </S.A>
         </Flex>
         <S.ImageContainer>
-          <Image src={image} layout="fill" objectFit="cover" />
+          <Image
+            src={image}
+            layout="fill"
+            objectFit="cover"
+            alt={headline.toLowerCase()}
+          />
         </S.ImageContainer>
       </S.Container>
       <S.DesktopContainer>

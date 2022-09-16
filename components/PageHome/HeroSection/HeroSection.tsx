@@ -44,6 +44,7 @@ const HeroSection = () => {
             placeholder="blur"
             blurDataURL={HeroImage}
             priority={true}
+            alt="loading screen image"
           />
         </S.ImageContainer>
         <S.ArrowContainer onClick={() => scrollTo("about")}>

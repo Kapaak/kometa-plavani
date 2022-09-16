@@ -14,7 +14,7 @@ export const Headline = ({ children, ...rest }: PropsWithChildren<Props>) => {
   return (
     <div>
       <SHeadline {...rest}>{children}</SHeadline>
-      <Image src={WaveYellow} />
+      <Image src={WaveYellow} alt="vlnka" />
     </div>
   );
 };
