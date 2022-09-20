@@ -22,9 +22,13 @@ export const MaxWidth = styled(SMaxWidth)`
 `;
 
 export const Flex = styled(SFlex)`
+  flex-direction: row;
+  flex-wrap: wrap;
+  justify-content: space-between;
+
   @media (${dimensions.desktop}) {
-    flex-direction: row;
-    flex-wrap: wrap;
+    /* flex-direction: row;
+    flex-wrap: wrap; */
     gap: 8rem;
   }
 `;
