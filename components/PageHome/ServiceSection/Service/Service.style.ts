@@ -56,6 +56,8 @@ export const DesktopContainer = styled.div`
 
   @media (${dimensions.notebook}) {
     display: flex;
+    justify-content: space-between;
+    flex: 1;
   }
 `;
 

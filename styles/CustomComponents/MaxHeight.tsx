@@ -49,6 +49,7 @@ const SMaxHeight = styled.div<{ $gradient: boolean; height: number }>`
       @media (${dimensions.desktop}) {
         transition: none;
         border-radius: 2rem;
+        min-height: 40rem;
         height: calc(100vh - var(--header-height) - 12rem);
       }
     `}

@@ -11,8 +11,6 @@ export const Text = styled(SText)`
 `;
 
 export const Flex = styled(SFlex)`
-  max-width: 30rem;
-
   @media (${dimensions.desktop}) {
     flex: 20%;
     max-width: 40rem;
