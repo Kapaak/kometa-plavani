@@ -13,4 +13,4 @@
 - projdi si lighthouse score
 - najdi best practices SEO
 - optimalizuj appku
-- vetsi mezery na hlavni strance
+- ten slider u log at je hezci a na pc to stejne nejde

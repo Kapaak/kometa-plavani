@@ -7,7 +7,7 @@ import { data } from "./SponsorSection.data";
 const SponsorSection = () => {
   return (
     <S.SponsorSection name="sponsor">
-      <S.Flex direction="row" align="center" gap="2rem">
+      <S.Flex direction="row" align="center" gap="5rem">
         {data.map((d, i) => (
           <Sponsor image={d.image} href={d.href} key={i} />
         ))}

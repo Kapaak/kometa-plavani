@@ -1,7 +1,7 @@
 //libraries
 import styled from "styled-components";
 //styles
-import { Flex as SFlex } from "@/styles";
+import { Flex as SFlex, Headline as SHeadline } from "@/styles";
 import { dimensions } from "@/utils/breakpoints";
 
 export const ImageContainer = styled.div`
@@ -33,4 +33,8 @@ export const DesktopImageContainer = styled.div<{ isEven: boolean }>`
 export const Flex = styled(SFlex)`
   align-items: flex-start;
   flex: 1 1 40%;
+`;
+
+export const Headline = styled(SHeadline)`
+  font-size: 3.8rem;
 `;

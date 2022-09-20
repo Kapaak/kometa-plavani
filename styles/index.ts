@@ -9,3 +9,4 @@ export { Subheadline } from "./CustomComponents/Subheadline";
 export { A } from "./CustomComponents/A";
 export { SectionElement } from "./CustomComponents/SectionElement";
 export { Headline } from "./CustomComponents/Headline";
+export { Space } from "./CustomComponents/Space";

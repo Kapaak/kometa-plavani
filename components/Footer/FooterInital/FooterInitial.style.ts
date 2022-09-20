@@ -6,6 +6,8 @@ import { dimensions } from "@/utils/breakpoints";
 
 export const Text = styled(SText)`
   flex: 100%;
+  font-size: 1.5rem;
+  line-height: 2;
 `;
 
 export const Flex = styled(SFlex)`

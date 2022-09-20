@@ -73,7 +73,7 @@ export const data: Array<IData> = [
     headline: "Informace",
     fragment: [
       { output: "GDPR", type: contentType.normal },
-      { output: "IČO: 123456", type: contentType.normal }, //dopln spravne ICO
+      { output: "IČO: 44992432", type: contentType.normal },
     ],
   },
 ];

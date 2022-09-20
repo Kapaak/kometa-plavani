@@ -9,6 +9,10 @@ const lineHeight = () => css`
   line-height: 2;
 `;
 
+const smallerFont = () => css`
+  font-size: 1.5rem;
+`;
+
 export const LinkElement = styled(Text).attrs({
   as: "a",
   variant: "light",
@@ -17,18 +21,24 @@ export const LinkElement = styled(Text).attrs({
   text-decoration: none;
 
   ${lineHeight()}
+  ${smallerFont()}
 `;
 
 export const TextElement = styled(Text).attrs({
   variant: "light",
-})``;
+})`
+  font-size: 1.5rem;
+  ${lineHeight()}
+  ${smallerFont()}
+`;
 
 export const BoldText = styled(Text).attrs({ variant: "light" })`
   font-weight: 500;
   ${lineHeight()}
+  ${smallerFont()}
 `;
 
-export const Headline = styled(Subheadline)`
+export const Headline = styled(Subheadline).attrs({ as: "h2" })`
   margin-bottom: 2rem;
   color: var(--col1);
 `;

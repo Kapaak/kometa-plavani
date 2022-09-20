@@ -17,7 +17,7 @@ const ServiceSection = (props: ISection) => {
           <Image layout="fill" src={image} objectFit="cover" />
         </S.DesktopImageContainer>
         <S.Flex gap="2rem">
-          <h1>{headline}</h1>
+          <S.Headline>{headline}</S.Headline>
           <S.ImageContainer>
             <Image layout="fill" src={image} objectFit="cover" />
           </S.ImageContainer>

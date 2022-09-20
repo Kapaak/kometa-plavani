@@ -17,7 +17,6 @@ export const A = styled.a<Props>`
 
   &:hover {
     transition: all 0.35s ease;
-    box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.25);
   }
 
   ${({ variant }) => {
@@ -31,6 +30,11 @@ export const A = styled.a<Props>`
         return css`
           color: var(--col2);
           border: 2px solid var(--col2);
+
+          &:hover {
+            background-color: var(--col2);
+            color: var(--colw);
+          }
         `;
 
       case "transparent-yellow":
