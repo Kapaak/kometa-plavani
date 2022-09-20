@@ -6,10 +6,6 @@ import { Text, MaxWidth as SMaxWidth, SectionElement } from "@/styles";
 
 export const AboutSection = styled(SectionElement)`
   padding: 1.5rem 0;
-
-  @media (${dimensions.desktop}) {
-    padding: 5vw 0;
-  }
 `;
 
 export const MaxWidth = styled(SMaxWidth)`
