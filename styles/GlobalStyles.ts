@@ -59,7 +59,7 @@ export const GlobalStyles = createGlobalStyle`
 
     @media(${dimensions.desktop}){
         :root{
-            --ftext:1.8rem;
+            --ftext:1.6rem;
             --fmheadline:7.5rem;
             --fmsheadline:3.8rem;
             --fheadline:5.6rem;
