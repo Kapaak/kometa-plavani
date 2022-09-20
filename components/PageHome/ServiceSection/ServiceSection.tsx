@@ -10,7 +10,7 @@ const ServiceSection = () => {
   return (
     <S.ServiceSection>
       <MaxWidth>
-        <S.Flex gap="var(--gap)">
+        <S.Flex gap="4rem">
           {data.map((d, i) => (
             <Service
               fullText={d.fullText}

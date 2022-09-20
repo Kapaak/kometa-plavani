@@ -14,4 +14,3 @@
 - najdi best practices SEO
 - optimalizuj appku
 - vetsi mezery na hlavni strance
-- ikonky u sponzoru

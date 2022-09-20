@@ -12,7 +12,13 @@ export const A = styled.a<Props>`
   font-size: var(--fbutton);
   padding: 1.2rem 2.5rem;
   letter-spacing: 0.11rem;
+  transition: all 0.2s ease;
   cursor: pointer;
+
+  &:hover {
+    transition: all 0.35s ease;
+    box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.25);
+  }
 
   ${({ variant }) => {
     switch (variant) {

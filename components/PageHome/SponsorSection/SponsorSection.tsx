@@ -1,13 +1,18 @@
-import { MaxWidth } from "@/styles";
-import React from "react";
+//styles
+import * as S from "./SponsorSection.style";
+import Sponsor from "./Sponsor/Sponsor";
+//data
+import { data } from "./SponsorSection.data";
 
 const SponsorSection = () => {
   return (
-    <div>
-      <MaxWidth>
-        <h1>SponsorSection</h1>
-      </MaxWidth>
-    </div>
+    <S.SponsorSection name="sponsor">
+      <S.Flex direction="row" align="center" gap="2rem">
+        {data.map((d, i) => (
+          <Sponsor image={d.image} href={d.href} key={i} />
+        ))}
+      </S.Flex>
+    </S.SponsorSection>
   );
 };
 

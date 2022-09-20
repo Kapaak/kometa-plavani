@@ -42,6 +42,7 @@ const Service = (props: Props) => {
             src={image}
             layout="fill"
             objectFit="cover"
+            placeholder="blur"
             alt={headline.toLowerCase()}
           />
         </S.ImageContainer>
