@@ -11,7 +11,7 @@ const Footer = () => {
   return (
     <S.Footer>
       <S.MaxWidth>
-        <S.Flex gap="4rem">
+        <S.Flex gap="2rem">
           <FooterInitial />
           <FooterSections data={data} />
           <FooterEnding />
