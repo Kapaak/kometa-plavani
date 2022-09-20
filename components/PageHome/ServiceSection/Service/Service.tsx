@@ -7,7 +7,7 @@ import { A, Flex, Subheadline, Text } from "@/styles";
 //interfaces
 import { scrollTargets } from "../ServiceSection.interface";
 //others
-import { scrollTo } from "@/utils/functions";
+import { delay, scrollTo } from "@/utils/functions";
 
 interface Props {
   headline: string;
@@ -24,7 +24,10 @@ const Service = (props: Props) => {
 
   const clickHandler = async () => {
     await router.push("/prihlasky");
-    scrollTo(scrollTarget);
+
+    await delay(() => scrollTo(scrollTarget));
+
+    //scrollTo(scrollTarget);
   };
 
   return (

@@ -15,17 +15,32 @@ const FooterEnding = () => {
       <S.ImageFlexContainer gap="1rem" direction="row">
         <Link href="https://www.youtube.com/KometaSwimTv">
           <a>
-            <Image src={YoutubeIcon} width={30} height={30} />
+            <Image
+              src={YoutubeIcon}
+              width={30}
+              height={30}
+              alt="youtube-icon"
+            />
           </a>
         </Link>
         <Link href="https://instagram.com/kometaplavani">
           <a>
-            <Image src={InstagramIcon} width={30} height={30} />
+            <Image
+              src={InstagramIcon}
+              width={30}
+              height={30}
+              alt="instagram-icon"
+            />
           </a>
         </Link>
         <Link href="https://www.facebook.com/kometaplavani">
           <a>
-            <Image src={FacebookIcon} width={30} height={30} />
+            <Image
+              src={FacebookIcon}
+              width={30}
+              height={30}
+              alt="facebook-icon"
+            />
           </a>
         </Link>
       </S.ImageFlexContainer>
