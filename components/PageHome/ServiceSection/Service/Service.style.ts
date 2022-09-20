@@ -28,7 +28,7 @@ export const Container = styled.div`
     padding: 3rem 4rem;
   }
 
-  @media (${dimensions.desktop}) {
+  @media (${dimensions.notebook}) {
     /* width: 35rem; */
     padding: 1rem 3rem;
     background: linear-gradient(
@@ -54,7 +54,7 @@ export const DesktopContainer = styled.div`
   flex-direction: column;
   align-items: flex-start;
 
-  @media (${dimensions.desktop}) {
+  @media (${dimensions.notebook}) {
     display: flex;
   }
 `;
