@@ -1,3 +1,5 @@
+//libraries
+import Marquee from "react-fast-marquee";
 //styles
 import * as S from "./SponsorSection.style";
 import Sponsor from "./Sponsor/Sponsor";
@@ -7,11 +9,13 @@ import { data } from "./SponsorSection.data";
 const SponsorSection = () => {
   return (
     <S.SponsorSection name="sponsor">
-      <S.Flex direction="row" align="center" gap="5rem">
-        {data.map((d, i) => (
-          <Sponsor image={d.image} href={d.href} key={i} />
-        ))}
-      </S.Flex>
+      <Marquee pauseOnHover gradientColor={[248, 248, 248]}>
+        <S.Flex direction="row" align="center" gap="5rem">
+          {data.map((d, i) => (
+            <Sponsor image={d.image} href={d.href} key={i} />
+          ))}
+        </S.Flex>
+      </Marquee>
     </S.SponsorSection>
   );
 };

@@ -10,7 +10,6 @@ export const Flex = styled(SFlex)`
 
 export const SponsorSection = styled(SectionElement)`
   padding: 4rem;
-  background-color: #dce9fa;
 
   @media (${dimensions.notebook}) {
     height: 25rem;
