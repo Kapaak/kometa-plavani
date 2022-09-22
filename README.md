@@ -13,6 +13,5 @@
 - projdi si lighthouse score
 - najdi best practices SEO
 - optimalizuj appku
-- ten slider u log at je hezci a na pc to stejne nejde
 - mozna ten delay i na scroll funkci v navigaci
 - pri redirectu asi smaz shadow u headeru, protoze to se ted neoddelava pri zmene stranky

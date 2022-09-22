@@ -19,6 +19,7 @@ const Sponsor = ({ href, image }: Props) => {
         objectFit="contain"
         height={100}
         width={120}
+        priority
       />
     </S.Sponsor>
   );
