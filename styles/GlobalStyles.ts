@@ -66,10 +66,4 @@ export const GlobalStyles = createGlobalStyle`
         }
     }
     
-    @media(${dimensions.desktopX}){
-        :root{
-            --side-padding:2rem;
-        }
-    }
-
 `;
