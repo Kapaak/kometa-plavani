@@ -10,6 +10,7 @@ export const Footer = styled.div`
 
   @media (${dimensions.desktop}) {
     background-color: unset;
+    padding: 2rem;
   }
 `;
 

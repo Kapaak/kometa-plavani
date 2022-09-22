@@ -24,7 +24,7 @@ export const GlobalStyles = createGlobalStyle`
         --colw: #F8F8F8;
         --colb: #001427;
 
-        --max-width:130rem;
+        --max-width:145rem;
         --side-padding:3rem;
         --vertical-padding:2rem;
         --gap:2.5rem;

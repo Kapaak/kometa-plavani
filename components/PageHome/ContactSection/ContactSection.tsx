@@ -11,7 +11,7 @@ const ContactSection = () => {
   return (
     <S.ContactSection name="contact">
       <MaxWidth>
-        <S.Flex gap="4rem">
+        <S.Flex>
           <ContactItems data={data} />
           <ContactMap />
         </S.Flex>

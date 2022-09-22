@@ -24,4 +24,5 @@ const SHeadline = styled.h2`
   font-family: var(--font1);
   font-size: var(--fheadline);
   letter-spacing: 0.2rem;
+  font-weight: 400;
 `;

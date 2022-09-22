@@ -7,7 +7,9 @@ import { dimensions } from "@/utils/breakpoints";
 export const ContactSection = styled(SectionElement)``;
 
 export const Flex = styled(SFlex)`
+  gap: 4rem;
   @media (${dimensions.desktop}) {
     flex-direction: row-reverse;
+    gap: 10rem;
   }
 `;
