@@ -65,5 +65,11 @@ export const GlobalStyles = createGlobalStyle`
             --fheadline:5.6rem;
         }
     }
+    
+    @media(${dimensions.desktopX}){
+        :root{
+            --side-padding:2rem;
+        }
+    }
 
 `;
