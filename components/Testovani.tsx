@@ -10,7 +10,7 @@ const Testovani = () => {
       <Marquee pauseOnHover>
         <div style={{ display: "flex", gap: "12rem" }}>
           {data.map((d, i) => (
-            <Sponsor image={d.image} href={d.href} key={i} />
+            <Sponsor image={d.image} href={d.href} key={i} alt={d.name} />
           ))}
         </div>
       </Marquee>
