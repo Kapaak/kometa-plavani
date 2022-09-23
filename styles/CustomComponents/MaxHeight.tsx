@@ -46,7 +46,7 @@ const SMaxHeight = styled.div<{ $gradient: boolean; height: number }>`
   ${({ $gradient }) =>
     $gradient &&
     css`
-      @media (${dimensions.desktop}) {
+      @media (${dimensions.notebook}) {
         transition: none;
         border-radius: 2rem;
         min-height: 40rem;

@@ -5,13 +5,17 @@ import { Flex, Text, MaxWidth as SMaxWidth, SectionElement } from "@/styles";
 import { dimensions } from "@/utils/breakpoints";
 
 export const HeroSection = styled(SectionElement)`
+  @media (${dimensions.notebook}) {
+    padding: 2rem;
+  }
+
   @media (${dimensions.desktop}) {
-    padding: 6rem 6rem;
+    padding: 6rem;
   }
 `;
 
 export const MaxWidth = styled(SMaxWidth)`
-  @media (${dimensions.desktop}) {
+  @media (${dimensions.notebook}) {
     max-width: 100%;
     padding: var(--side-padding);
   }
@@ -32,7 +36,7 @@ export const ArrowContainer = styled.button`
     transform: translateY(2rem);
   }
 
-  @media (${dimensions.desktop}) {
+  @media (${dimensions.notebook}) {
     display: block;
   }
 `;
@@ -43,7 +47,7 @@ export const EmphasizedHeadline = styled.span`
   letter-spacing: 0.4rem;
   margin-top: -2rem;
 
-  @media (${dimensions.desktop}) {
+  @media (${dimensions.notebook}) {
     display: inline-block;
     font-size: inherit;
     letter-spacing: inherit;
@@ -91,7 +95,7 @@ export const TextContainer = styled(Text)`
     text-align: left;
   }
 
-  @media (${dimensions.desktop}) {
+  @media (${dimensions.notebook}) {
     text-align: left;
   }
 `;
