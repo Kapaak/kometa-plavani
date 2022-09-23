@@ -6,16 +6,15 @@ import * as S from "./Sponsor.style";
 interface Props {
   href: string;
   image: StaticImageData;
+  alt: string;
 }
 
-const Sponsor = ({ href, image }: Props) => {
-  const sponsorName = href.split("/").at(-1)?.split(".")[1];
-
+const Sponsor = ({ href, image, alt }: Props) => {
   return (
     <S.Sponsor href={href}>
       <Image
         src={image}
-        alt={sponsorName}
+        alt={`${alt} logo`}
         objectFit="contain"
         height={100}
         width={120}

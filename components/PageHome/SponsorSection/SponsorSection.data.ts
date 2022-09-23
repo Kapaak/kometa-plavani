@@ -20,57 +20,71 @@ export const data: ISponsor[] = [
   {
     href: "https://www.zsarmenska.cz",
     image: ArmendaLogo,
+    name: "armenska",
   },
   {
     href: "https://www.brno-bohunice.cz",
     image: BohuniceLogo,
+    name: "bohunice",
   },
   {
     href: "https://www.brno.cz",
     image: BrnoLogo,
+    name: "brno",
   },
   {
     href: "https://www.cuscz.cz",
     image: CusLogo,
+    name: "cus",
   },
   {
     href: "https://www.enervit.cz",
     image: EnervitLogo,
+    name: "enervit",
   },
   {
     href: "https://www.jmk.cz",
     image: JihomorKrajLogo,
+    name: "jihomoravsky kraj",
   },
   {
     href: "https://www.kamzasportemvbrne.cz",
     image: KamzasportemLogo,
+    name: "kam za sportem",
   },
   {
     href: "https://kralovopole.brno.cz",
     image: KrpoleLogo,
+    name: "kralovo pole",
   },
   {
     href: "https://agenturasport.cz",
     image: NSALogo,
+    name: "agentura sport",
   },
   {
     href: "https://www.olympcsmv.cz",
     image: OlympLogo,
+    name: "olympijsky",
   },
   {
     href: "http://www.sever.brno.cz",
     image: SeverBrnoLogo,
+    name: "brno sever",
   },
   {
     href: "https://www.sgldbrno.cz",
     image: SgldBrnoLogo,
+    name: "sgld",
   },
   {
     href: "https://csvp.cz",
     image: VodniPoloLogo,
+    name: "vodni polo",
   },
   {
     href: "https://www.waterdrop.cz",
     image: WaterdropLogo,
+    name: "waterdrop",
   },
 ];
