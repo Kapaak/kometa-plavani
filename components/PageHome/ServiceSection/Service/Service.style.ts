@@ -21,7 +21,7 @@ export const Container = styled.div`
     rgba(33, 114, 221, 0) 103.15%
   );
   height: 30rem;
-  border-radius: 2rem;
+  border-radius: var(--small-border-rad);
   overflow: hidden;
 
   @media (${dimensions.tablet}) {

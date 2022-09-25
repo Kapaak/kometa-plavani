@@ -21,5 +21,7 @@ export const Header = styled.header<{ withShadow: boolean }>`
 
   @media (${dimensions.desktop}) {
     background-color: var(--colw);
+    max-width: var(--max-width);
+    padding: 0 6rem;
   }
 `;

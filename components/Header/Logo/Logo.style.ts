@@ -15,6 +15,7 @@ export const Logo = styled.a`
 
   @media (${dimensions.desktop}) {
     width: 14rem;
-    margin: 0 2rem;
+    padding: 0;
+    margin: 0;
   }
 `;

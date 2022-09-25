@@ -30,6 +30,9 @@ export const GlobalStyles = createGlobalStyle`
         --gap:2.5rem;
         --header-height:7rem;
 
+        --shadow:0 0 20px 0 rgba(10, 19, 10, 0.1);
+        --small-border-rad:1rem;
+
         --ftext:1.6rem;
         --fnavlink:2rem;
         --fbutton:1.7rem;

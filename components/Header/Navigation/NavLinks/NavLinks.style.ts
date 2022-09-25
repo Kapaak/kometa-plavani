@@ -29,6 +29,6 @@ export const NavLinks = styled.ul<{ isActive: boolean }>`
     gap: 4rem;
     height: 100%;
     align-items: center;
-    padding: 1rem 2rem;
+    padding: 1rem 0rem;
   }
 `;

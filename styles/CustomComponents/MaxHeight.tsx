@@ -51,6 +51,11 @@ const SMaxHeight = styled.div<{ $gradient: boolean; height: number }>`
         border-radius: 2rem;
         min-height: 40rem;
         height: calc(100vh - var(--header-height) - 12rem);
+        background: linear-gradient(
+          47.76deg,
+          rgba(33, 114, 221, 0.68) 29.07%,
+          rgba(33, 114, 221, 0) 56.67%
+        );
       }
     `}
 `;

@@ -24,7 +24,7 @@ export const MaxWidth = styled(SMaxWidth)`
 export const ArrowContainer = styled.button`
   display: none;
   position: absolute;
-  right: 2rem;
+  right: 8rem;
   bottom: -4rem;
   border: none;
   background-color: transparent;
