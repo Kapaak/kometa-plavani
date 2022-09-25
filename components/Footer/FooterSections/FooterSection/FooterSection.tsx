@@ -13,7 +13,7 @@ interface Props {
 const FooterSection = ({ headline, fragment }: Props) => {
   return (
     <S.FooterSection>
-      <S.Headline>{headline}</S.Headline>
+      <S.Headline variant="light">{headline}</S.Headline>
       <ContentRenderer
         fragment={fragment}
         BoldElement={S.BoldText}

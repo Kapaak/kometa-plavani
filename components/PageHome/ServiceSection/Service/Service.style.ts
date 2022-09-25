@@ -2,13 +2,21 @@
 import styled from "styled-components";
 //styles
 import { dimensions } from "@/utils/breakpoints";
-import { Text, A as SA } from "@/styles";
+import { Text, A as SA, Subheadline } from "@/styles";
 
 export const Service = styled.article`
   display: flex;
   flex-direction: column;
   gap: 1rem;
   flex: 1 1 30%;
+
+  @media (${dimensions.desktop}) {
+    box-shadow: var(--shadow);
+  }
+
+  @media (${dimensions.desktop}) {
+    border-radius: var(--small-border-rad);
+  }
 `;
 
 export const Container = styled.div`
@@ -45,6 +53,15 @@ export const Container = styled.div`
     ${SA} {
       display: none;
     }
+
+    ${Subheadline} {
+      display: none;
+    }
+
+    @media (${dimensions.desktop}) {
+      background: none;
+      border-radius: var(--small-border-rad) var(--small-border-rad) 0 0;
+    }
   }
 `;
 
@@ -58,6 +75,11 @@ export const DesktopContainer = styled.div`
     display: flex;
     justify-content: space-between;
     flex: 1;
+    padding: 2rem 0;
+  }
+
+  @media (${dimensions.desktop}) {
+    padding: 3rem;
   }
 `;
 

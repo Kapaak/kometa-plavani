@@ -10,7 +10,7 @@ export const HeroSection = styled(SectionElement)`
   }
 
   @media (${dimensions.desktop}) {
-    padding: 6rem;
+    padding: var(--side-padding) 6rem;
   }
 `;
 

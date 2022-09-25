@@ -34,7 +34,7 @@ const Service = (props: Props) => {
     <S.Service>
       <S.Container>
         <Flex justify="flex-end" relative>
-          <Subheadline>{headline}</Subheadline>
+          <Subheadline variant="light">{headline}</Subheadline>
           <Text variant="light">{smallText}</Text>
           <S.A variant="yellow" onClick={clickHandler}>
             Více informací
@@ -51,6 +51,7 @@ const Service = (props: Props) => {
         </S.ImageContainer>
       </S.Container>
       <S.DesktopContainer>
+        <Subheadline variant="dark">{headline}</Subheadline>
         <Text variant="dark">{fullText}</Text>
         <A variant="transparent-blue" onClick={clickHandler}>
           Více informací

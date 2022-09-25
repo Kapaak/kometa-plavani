@@ -1,9 +1,14 @@
 import { dimensions } from "@/utils/breakpoints";
 import styled from "styled-components";
 
-export const Subheadline = styled.h3`
+interface Props {
+  variant: "light" | "dark";
+}
+
+export const Subheadline = styled.h3<Props>`
   font-size: var(--fsheadline);
-  color: var(--colw);
+  color: ${({ variant }) =>
+    variant === "light" ? "var(--colw)" : "var(--colb)"};
   font-family: var(--font1);
   font-weight: 500;
 

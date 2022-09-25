@@ -13,6 +13,10 @@ export const Logo = styled.a`
   margin: 0 2rem;
   height: 100%;
 
+  @media (${dimensions.notebook}) {
+    width: 11rem;
+  }
+
   @media (${dimensions.desktop}) {
     width: 14rem;
     padding: 0;
