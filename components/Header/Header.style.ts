@@ -24,6 +24,10 @@ export const MaxWidth = styled.div`
   width: 100%;
   height: 100%;
 
+  @media (${dimensions.notebook}) {
+    padding: 0 2rem;
+  }
+
   @media (${dimensions.desktop}) {
     padding: var(--vertical-padding) var(--side-padding);
   }

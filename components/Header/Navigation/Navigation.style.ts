@@ -13,7 +13,7 @@ export const Navigation = styled.nav<{ isActive: boolean }>`
   top: 0;
   transition: all 0.4 ease;
 
-  @media (${dimensions.desktop}) {
+  @media (${dimensions.notebook}) {
     position: relative;
     height: auto;
     background-color: unset;
@@ -21,7 +21,7 @@ export const Navigation = styled.nav<{ isActive: boolean }>`
 `;
 
 export const Flex = styled(SFlex)`
-  @media (${dimensions.desktop}) {
+  @media (${dimensions.notebook}) {
     justify-content: flex-end;
     height: 100px;
   }

@@ -35,7 +35,7 @@ export const NavLink = styled.li`
     }
   }
 
-  @media (${dimensions.desktop}) {
+  @media (${dimensions.notebook}) {
     padding-left: 0;
 
     a {

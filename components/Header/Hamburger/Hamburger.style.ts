@@ -42,7 +42,7 @@ export const Hamburger = styled.div<{ isActive: boolean }>`
       transition: all 0.3s ease-in;
     }
   }
-  @media (${dimensions.desktop}) {
+  @media (${dimensions.notebook}) {
     display: none;
   }
 `;

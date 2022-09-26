@@ -23,7 +23,7 @@ export const NavLinks = styled.ul<{ isActive: boolean }>`
     }
   }}
 
-  @media(${dimensions.desktop}) {
+  @media(${dimensions.notebook}) {
     display: flex;
     flex-direction: row;
     gap: 4rem;
