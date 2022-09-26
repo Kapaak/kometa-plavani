@@ -9,12 +9,12 @@ export const Logo = styled.a`
   z-index: 10;
   padding: 1rem 2rem;
   cursor: pointer;
-  width: 8rem;
+  width: 11rem;
   margin: 0 2rem;
   height: 100%;
 
   @media (${dimensions.notebook}) {
-    width: 11rem;
+    width: 13rem;
   }
 
   @media (${dimensions.desktop}) {

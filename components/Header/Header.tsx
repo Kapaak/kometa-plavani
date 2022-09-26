@@ -8,6 +8,7 @@ import Navigation from "./Navigation/Navigation";
 import Logo from "./Logo/Logo";
 //redux
 import { RootState } from "@/redux/store";
+import { Flex, MaxWidth } from "@/styles";
 
 const Header = () => {
   const isActive = useSelector(
@@ -20,9 +21,13 @@ const Header = () => {
 
   return (
     <S.Header withShadow={withShadow}>
-      <Logo />
-      <Navigation isActive={isActive} />
-      <Hamburger />
+      <S.MaxWidth>
+        <Flex direction="row" align="center" justify="space-between">
+          <Logo />
+          <Navigation isActive={isActive} />
+          <Hamburger />
+        </Flex>
+      </S.MaxWidth>
     </S.Header>
   );
 };

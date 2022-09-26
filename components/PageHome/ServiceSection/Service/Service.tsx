@@ -25,21 +25,14 @@ const Service = (props: Props) => {
   const clickHandler = async () => {
     await router.push("/prihlasky");
 
-    await delay(() => scrollTo(scrollTarget));
+    // await delay(() => scrollTo(scrollTarget)); //not working well
 
-    //scrollTo(scrollTarget);
+    scrollTo(scrollTarget);
   };
 
   return (
     <S.Service>
       <S.Container>
-        <Flex justify="flex-end" relative>
-          <Subheadline variant="light">{headline}</Subheadline>
-          <Text variant="light">{smallText}</Text>
-          <S.A variant="yellow" onClick={clickHandler}>
-            Více informací
-          </S.A>
-        </Flex>
         <S.ImageContainer>
           <Image
             src={image}
@@ -49,14 +42,14 @@ const Service = (props: Props) => {
             alt={headline.toLowerCase()}
           />
         </S.ImageContainer>
+        <S.Flex justify="space-between" gap="2rem">
+          <Subheadline variant="dark">{headline}</Subheadline>
+          <Text variant="dark">{smallText}</Text>
+          <S.A variant="transparent-blue" onClick={clickHandler}>
+            Více informací
+          </S.A>
+        </S.Flex>
       </S.Container>
-      <S.DesktopContainer>
-        <Subheadline variant="dark">{headline}</Subheadline>
-        <Text variant="dark">{fullText}</Text>
-        <A variant="transparent-blue" onClick={clickHandler}>
-          Více informací
-        </A>
-      </S.DesktopContainer>
     </S.Service>
   );
 };

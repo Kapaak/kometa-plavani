@@ -18,10 +18,18 @@ export const Header = styled.header<{ withShadow: boolean }>`
     withShadow ? "0 0 20px 0 rgba(10,19,10,.2)" : "none"};
 
   transition: all 0.5s ease;
+`;
+
+export const MaxWidth = styled.div`
+  width: 100%;
+  height: 100%;
+  padding: 1rem;
 
   @media (${dimensions.desktop}) {
-    background-color: var(--colw);
-    max-width: var(--max-width);
-    padding: 0 var(--side-padding);
+    padding: var(--vertical-padding) var(--side-padding);
+  }
+
+  @media (${dimensions.desktopX}) {
+    padding: 0 6rem;
   }
 `;
