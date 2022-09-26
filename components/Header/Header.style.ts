@@ -23,7 +23,6 @@ export const Header = styled.header<{ withShadow: boolean }>`
 export const MaxWidth = styled.div`
   width: 100%;
   height: 100%;
-  padding: 1rem;
 
   @media (${dimensions.desktop}) {
     padding: var(--vertical-padding) var(--side-padding);
