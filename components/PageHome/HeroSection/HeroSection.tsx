@@ -5,7 +5,7 @@ import { MainHeadline, MainSubheadline, MaxHeight } from "@/styles";
 import * as S from "./HeroSection.style";
 //images
 //@ts-ignore it should be lowercase .jpg i guess
-import HeroImage from "@/public/images/hero-img.JPG";
+import HeroImage from "@/public/images/hero-img.jpg";
 import ArrowYellow from "@/public/icons/arrow-yellow.svg";
 //others
 import { scrollTo } from "@/utils/functions";
@@ -38,11 +38,13 @@ const HeroSection = () => {
         </S.MaxWidth>
         <S.ImageContainer>
           <Image
-            src={HeroImage}
+            src={HeroImage} //co sem dat string path
+            // src="/images/hero-img.jpg"
             layout="fill"
             objectFit="cover"
             placeholder="blur"
             blurDataURL={HeroImage}
+            // blurDataURL="/images/hero-img.jpg"
             priority={true}
             alt="loading screen image"
           />
