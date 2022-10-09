@@ -18,5 +18,3 @@
 - najdi best practices SEO
 - optimalizuj appku
 - pri redirectu asi smaz shadow u headeru, protoze to se ted neoddelava pri zmene stranky
-- useMemo nebo useCallback na ContentRenderer.tsx
-- podivej se jestli pri vypnuti js je na strance problem s vecma z ContentRendereru - k zamysleni, jestli to nedela vic skoly nez uzitku
