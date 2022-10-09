@@ -38,13 +38,10 @@ const HeroSection = () => {
         </S.MaxWidth>
         <S.ImageContainer>
           <Image
-            src={HeroImage} //co sem dat string path
-            // src="/images/hero-img.jpg"
+            src={HeroImage}
             layout="fill"
             objectFit="cover"
             placeholder="blur"
-            // blurDataURL={HeroImage}
-            // blurDataURL="/images/hero-img.jpg"
             priority={true}
             alt="loading screen image"
           />
