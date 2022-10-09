@@ -44,7 +44,9 @@ const FooterEnding = () => {
           </a>
         </Link>
       </S.ImageFlexContainer>
-      <S.Creator>© 2022 Pavel Zapletal</S.Creator>
+      <S.Creator>
+        <a href="https://www.pavelzapletal.cz/">© 2022 Pavel Zapletal</a>
+      </S.Creator>
     </Flex>
   );
 };
