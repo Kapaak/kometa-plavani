@@ -43,7 +43,7 @@ const HeroSection = () => {
             layout="fill"
             objectFit="cover"
             placeholder="blur"
-            blurDataURL={HeroImage}
+            // blurDataURL={HeroImage}
             // blurDataURL="/images/hero-img.jpg"
             priority={true}
             alt="loading screen image"
