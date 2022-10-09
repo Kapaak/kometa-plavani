@@ -8,7 +8,7 @@ import LogoLatest from "@/public/icons/logo-latest.svg";
 
 const Logo = () => {
   return (
-    <Link href="/">
+    <Link href="/" aria-label="website logo">
       <S.Logo>
         <Image src={LogoLatest} layout="fill" alt="logo" />
       </S.Logo>

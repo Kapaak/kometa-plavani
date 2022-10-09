@@ -47,9 +47,12 @@ const HeroSection = () => {
             alt="loading screen image"
           />
         </S.ImageContainer>
-        <S.ArrowContainer onClick={() => scrollTo("about")}>
-          <Image src={ArrowYellow} />
-        </S.ArrowContainer>
+        <S.ArrowButton
+          onClick={() => scrollTo("about")}
+          aria-label="arrow scrolling to about section"
+        >
+          <Image src={ArrowYellow} alt="arrow" />
+        </S.ArrowButton>
       </MaxHeight>
     </S.HeroSection>
   );

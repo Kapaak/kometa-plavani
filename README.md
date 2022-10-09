@@ -1,6 +1,10 @@
-## Poznamky
+## Kometa plavani
 
-### Zajimave komponenty
+### Popisek
+
+- Web application for swimming courses of Kometa Brno
+
+### Interesting components
 
 - ContentRenderer.tsx
   - Converts text strings into HTML elements with predetermined tag
@@ -8,10 +12,11 @@
 
   - Element that React-scroll scrolls to. Is styleable even though its .tsx, because it passes className prop + I use forwardRef to pass down ref from IntersectionObserver
 
-  TODO
+### TODO
 
 - projdi si lighthouse score
 - najdi best practices SEO
 - optimalizuj appku
-- mozna ten delay i na scroll funkci v navigaci
 - pri redirectu asi smaz shadow u headeru, protoze to se ted neoddelava pri zmene stranky
+- useMemo nebo useCallback na ContentRenderer.tsx
+- podivej se jestli pri vypnuti js je na strance problem s vecma z ContentRendereru - k zamysleni, jestli to nedela vic skoly nez uzitku
