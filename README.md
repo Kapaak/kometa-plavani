@@ -18,3 +18,5 @@
 - najdi best practices SEO
 - optimalizuj appku
 - pri redirectu asi smaz shadow u headeru, protoze to se ted neoddelava pri zmene stranky
+- co kdyz budu met kazdou page obalenou komponentem, ktery bude checkovat # za url a bude scrollovat
+- resolvni vsechny TODO
