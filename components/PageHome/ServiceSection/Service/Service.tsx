@@ -11,14 +11,13 @@ import { delay, scrollTo } from "@/utils/functions";
 
 interface Props {
   headline: string;
-  smallText: string;
-  fullText: string;
+  text: string;
   image: StaticImageData;
   scrollTarget: scrollTargets;
 }
 
 const Service = (props: Props) => {
-  const { fullText, headline, smallText, image, scrollTarget } = props;
+  const { headline, text, image, scrollTarget } = props;
 
   const router = useRouter();
 
@@ -44,7 +43,7 @@ const Service = (props: Props) => {
         </S.ImageContainer>
         <S.Flex justify="space-between" gap="2rem">
           <Subheadline variant="dark">{headline}</Subheadline>
-          <Text variant="dark">{smallText}</Text>
+          <Text variant="dark">{text}</Text>
           <S.A variant="transparent-blue" onClick={clickHandler}>
             Více informací
           </S.A>

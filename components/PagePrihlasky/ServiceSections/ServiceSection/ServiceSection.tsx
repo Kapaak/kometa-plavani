@@ -8,7 +8,7 @@ import * as S from "./ServiceSection.style";
 import { ISection } from "../ServiceSections.interface";
 
 const ServiceSection = (props: ISection) => {
-  const { headline, fullText, image, isEven, name } = props;
+  const { headline, text, image, isEven, name } = props;
 
   return (
     <SectionElement name={name}>
@@ -21,7 +21,7 @@ const ServiceSection = (props: ISection) => {
           <S.ImageContainer>
             <Image layout="fill" src={image} objectFit="cover" />
           </S.ImageContainer>
-          <Text variant="dark">{fullText}</Text>
+          <Text variant="dark">{text}</Text>
           <Link href="">
             <A variant="disabled">připravujeme</A>
           </Link>

@@ -4,7 +4,7 @@ import { StaticImageData } from "next/image";
 export interface IService {
   id: number;
   headline: string;
-  fullText: string;
+  text: string;
   image: StaticImageData;
   name: scrollTargets;
 }

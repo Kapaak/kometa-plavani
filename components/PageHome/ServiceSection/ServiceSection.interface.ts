@@ -4,8 +4,7 @@ import { scrollTargets } from "@/utils/interfaces";
 
 export interface IService {
   headline: string;
-  smallText: string;
-  fullText: string;
+  text: string;
   image: StaticImageData;
   scrollTarget: scrollTargets;
 }

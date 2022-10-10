@@ -13,9 +13,8 @@ const ServiceSection = () => {
         <S.Flex gap="4rem">
           {data.map((d, i) => (
             <Service
-              fullText={d.fullText}
               headline={d.headline}
-              smallText={d.smallText}
+              text={d.text}
               image={d.image}
               scrollTarget={d.scrollTarget}
               key={i}

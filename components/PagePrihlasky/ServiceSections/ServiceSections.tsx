@@ -15,7 +15,7 @@ const ServiceSections = () => {
           key={d.id}
           isEven={isEven(d.id)}
           headline={d.headline}
-          fullText={d.fullText}
+          text={d.text}
           image={d.image}
           name={d.name}
         />

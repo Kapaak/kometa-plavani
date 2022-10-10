@@ -35,19 +35,19 @@ const AboutSection = () => {
           <Image src={WaveYellow} layout="fill" alt="vlnka" />
         </S.ImageContainer>
         <S.AboutText center bold>
-          Přihlášky se spustí po dostavení a spuštění chodu v bazénu.
-          Předpokládaná doba je září 2023. Budeme se na vás těšit.
+          Předpoklad pro otevření přihlášek kurzů je červen 2023 budeme se na
+          Vás těšit.
         </S.AboutText>
         <S.ImageContainer>
           <Image src={WaveYellow} layout="fill" alt="vlnka" />
         </S.ImageContainer>
         <S.AboutText center>
-          Naše plavecká škola pracuje pod záštitou plaveckého oddílu SKP Kometa.
-          Naší specializací je výuka plavání předškolních dětí a dětí ze
-          základních škol. V plavecké přípravě dětí jsme nasbírali během řady
-          let mnoho zkušeností a díky tomu můžeme dětem nabídnout profesionální
-          výuku plavání pod vedením certifikovaných trenérů, kteří patří mezi
-          špičku v trenérské branži.
+          Naše plavecká škola pracuje pod záštitou plaveckého oddílu SKP Kometa
+          Brno. Naší specializací je výuka plavání dětí předškolního a školního
+          věku. V plavecké přípravě dětí jsme nasbírali během řady let mnoho
+          zkušeností a díky tomu můžeme dětem nabídnout komplexní výuku plavání
+          podle nejnovějších metodik. Výuku zajišťují certifikovaní trenéři,
+          kteří patří mezi špičku v trenérské branži.
         </S.AboutText>
         <S.ImageContainer>
           <Image src={WaveYellow} layout="fill" alt="vlnka" />

@@ -10,24 +10,25 @@ export const data: IService[] = [
   {
     id: 1,
     headline: "Školky",
-    fullText:
-      "Cílem je neplavce zbavit strachu, položit na vodu s hlavou pod vodou na bříšku a zakopat. Lovit předměty ze dna. Naučit skákat a klouzat do vody. Podstatné u neplavců je, aby měli z plavání radost a do plavání se těšili. V případě nečekaného pádu do vody jsou děti schopné zadržet dech a chvíli se udrží na hladině. Toto jim může zachránit život. Děti dochází na výuku 1x týdně po dobu 15 týdnů. Jedna lekce trvá 45 min. Výuku dětem usnadní a zpříjemní nové, pěkné pomůcky, klouzačka a spousta hraček. Každý plaváček dostane Mokré vysvědčení.",
+    text: `Cílem výuky je u dítěte odbourat strach z vody a naučit ho základním plaveckým dovednostem jako jsou splývání, kopání na břiše a zádech, potápění se a skákání do vody. Nejdůležitějším pro nás je, aby děti měly z plavání radost a výuka je bavila. 
+      Po absolvování kurzu by dítě mělo být schopno v případě nečekaného pádu do vody zadržet dech a chvíli se udržet na hladině. Toto jim může zachránit život.
+      Výuka probíhá 1x týdně po Vámi zvolenou dobu (10, 15, 20 týdnů). Jedna lekce trvá 45 min. Výuku dětem usnadní a zpříjemní nové pomůcky a spousta hraček. Každé dítě dostane po absolvování kurzu Mokré vysvědčení.
+      `,
     image: KindergardenService,
     name: scrollTargets.kindergardens,
   },
   {
     id: 2,
     headline: "Školy",
-    fullText:
-      "Cílem je plavce naučit základům plavání. Děti již trochu plavat umí. Našim úkolem je naučit kraul a znak. Koncem školního roku se budou učit i prsa. Některé delfínky připravíme na velký bazén. Pokud jsou hodně šikovní mohou přejít na velký bazén po domluvě s trenéry. Delfínům do výuky zařazujeme také hry skoky skluz, lovení předmětů…",
+    text: `Cílem je plavce naučit základům plavání. Děti budou plavat ve skupinách dle svých plaveckých dovedností. Našim úkolem je tyto dovednosti rozšířit a děti naučit plavecké způsoby kraul a znak. Koncem školního roku se zařazují motoricky náročnější prsa a motýl. Děti mohou své nově nabité dovednosti rozvíjet v našich navazujících kurzech. Výuka probíhá 1x týdně po Vámi zvolenou dobu (10, 15, 20 týdnů). Jedna lekce trvá 45 min. Výuku dětem usnadní a zpříjemní nové pomůcky. Každé dítě dostane po absolvování kurzu Mokré vysvědčení.
+      `,
     image: SchoolService,
     name: scrollTargets.schools,
   },
   {
     id: 3,
     headline: "Kurzy",
-    fullText:
-      "Děti se zde mohou učit plavat již od  5 do 17 let a potom přejít do závodního plavání, vodního póla, synchronizovaného plavání nebo kondičního plavání. Rodiče na bazén nesmí, proto musí být nejmladší děti schopné samostatného převlékání a kontroly svých věcí/plaveckých potřeb.",
+    text: "Učíme plavat děti od 4 do 17 let. Máme nejrozšířenější možnosti pokračování ať už se jedná o závodní plavání, kondiční plavání, vodní polo nebo synchronizované plavání. Děti budou plavat ve skupinách dle svých plaveckých dovedností. Našim úkolem je tyto dovednosti rozšířit hravou formou pod vedením zkušených trenérů.",
     image: CourseService,
     name: scrollTargets.courses,
   },
