@@ -12,7 +12,7 @@ export const ImageContainer = styled.div`
   overflow: hidden;
   box-shadow: var(--shadow);
 
-  @media (${dimensions.desktop}) {
+  @media (${dimensions.notebook}) {
     display: none;
   }
 `;
@@ -27,7 +27,7 @@ export const DesktopImageContainer = styled.div<{ isEven: boolean }>`
   order: ${({ isEven }) => (isEven ? "1" : "0")};
   box-shadow: var(--shadow);
 
-  @media (${dimensions.desktop}) {
+  @media (${dimensions.notebook}) {
     display: block;
   }
 `;
