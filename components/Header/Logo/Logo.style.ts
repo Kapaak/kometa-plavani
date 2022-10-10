@@ -12,6 +12,7 @@ export const Logo = styled.a`
   width: 11rem;
   margin: 0 2rem;
   height: 100%;
+  z-index: 2;
 
   @media (${dimensions.notebook}) {
     width: 13rem;

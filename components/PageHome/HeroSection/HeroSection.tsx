@@ -31,7 +31,7 @@ const HeroSection = () => {
             <div>
               <S.TextContainer variant="light" center>
                 Základní plavání pro děti. Svěřte se do rukou profesionálů pod
-                záštitou nejúspěšnějšího plaveckého klubu v České republice
+                záštitou nejúspěšnějšího plaveckého klubu v České republice.
               </S.TextContainer>
             </div>
           </S.FlexWrapper>

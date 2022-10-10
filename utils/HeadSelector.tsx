@@ -5,6 +5,7 @@ const HeadSelector = () => {
   return (
     <Head>
       <title>Plavecká škola | Kometa</title>
+      <link rel="icon" href="/icons/tucnak.svg"></link>
       <meta name="author" content="Pavel Zapletal & Barbora Novakova" />
       <meta name="keywords" content="Plavecká škola Kometa" />
       {/* TODO <link rel="canonical" href="https://kometa-plavani.vercel.app/" /> */}
