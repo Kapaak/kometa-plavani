@@ -1,0 +1,9 @@
+user-agent: *
+Sitemap: https://plavani-luzanky.cz/sitemap.xml
+Disallow: /images/*
+Disallow: /api/*
+
+user-agent: Googlebot
+Sitemap: https://plavani-luzanky.cz/sitemap.xml
+Disallow: /images/*
+Allow: /
