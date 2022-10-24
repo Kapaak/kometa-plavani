@@ -8,7 +8,7 @@ const HeadSelector = () => {
       <link rel="icon" href="/icons/tucnak.svg"></link>
       <meta name="author" content="Pavel Zapletal & Barbora Novakova" />
       <meta name="keywords" content="Plavecká škola Kometa" />
-      {/* TODO <link rel="canonical" href="https://kometa-plavani.vercel.app/" /> */}
+      <link rel="canonical" href="https://www.plavani-luzanky.cz/" />
       <meta
         name="description"
         content="Učíme plavat zábavnou formou dle nejnovějších metodik děti i dospělé. Výuku vedou kvalifikovaní trenéři na bazénech po celém Brně. Přidej se k nejlepším."
