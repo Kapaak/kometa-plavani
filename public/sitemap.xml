@@ -6,7 +6,15 @@
             http://www.sitemaps.org/schemas/sitemap/0.9/sitemap.xsd">
 <url>
   <loc>https://www.plavani-luzanky.cz/</loc>
-  <lastmod>2022-10-21T17:50:58+00:00</lastmod>
+  <lastmod>2022-10-24T17:50:58+00:00</lastmod>
+  <changefreq>monthly</changefreq>
+  <priority>0.8</priority>
+</url>
+<url>
+  <loc>https://www.plavani-luzanky.cz/prihlasky</loc>
+  <lastmod>2022-10-24T17:50:58+00:00</lastmod>
+  <changefreq>monthly</changefreq>
+  <priority>0.6</priority>
 </url>
 
 
