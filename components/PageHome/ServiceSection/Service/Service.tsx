@@ -3,28 +3,27 @@ import Image, { StaticImageData } from "next/image";
 import { useRouter } from "next/router";
 //styles
 import * as S from "./Service.style";
-import { A, Flex, Subheadline, Text } from "@/styles";
+import { Subheadline, Text } from "@/styles";
 //interfaces
 import { scrollTargets } from "../ServiceSection.interface";
 //others
-import { delay, scrollTo } from "@/utils/functions";
+import { scrollTo } from "@/utils/functions";
 
 interface Props {
   headline: string;
   text: string;
   image: StaticImageData;
+  alt: string;
   scrollTarget: scrollTargets;
 }
 
 const Service = (props: Props) => {
-  const { headline, text, image, scrollTarget } = props;
+  const { headline, text, image, scrollTarget, alt } = props;
 
   const router = useRouter();
 
   const clickHandler = async () => {
     await router.push("/prihlasky");
-
-    // await delay(() => scrollTo(scrollTarget)); //not working well
 
     scrollTo(scrollTarget);
   };
@@ -38,7 +37,7 @@ const Service = (props: Props) => {
             layout="fill"
             objectFit="cover"
             placeholder="blur"
-            alt={headline.toLowerCase()}
+            alt={alt}
           />
         </S.ImageContainer>
         <S.Flex justify="space-between" gap="2rem">

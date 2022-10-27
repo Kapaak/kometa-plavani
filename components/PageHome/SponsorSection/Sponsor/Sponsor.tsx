@@ -1,20 +1,15 @@
 //libraries
-import Image, { StaticImageData } from "next/image";
+import Image from "next/image";
+import { ISponsor } from "../SponsorSection.interface";
 //styles
 import * as S from "./Sponsor.style";
 
-interface Props {
-  href: string;
-  image: StaticImageData;
-  alt: string;
-}
-
-const Sponsor = ({ href, image, alt }: Props) => {
+const Sponsor = ({ href, image, name }: ISponsor) => {
   return (
     <S.Sponsor href={href}>
       <Image
         src={image}
-        alt={`${alt} logo`}
+        alt={name}
         objectFit="contain"
         height={100}
         width={120}

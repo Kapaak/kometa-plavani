@@ -14,7 +14,7 @@ const Error = () => {
             <MainSubheadline>
               je nam to líto, stránka kterou hledáte není k dispozici
             </MainSubheadline>
-            <Link href="/">
+            <Link href="/" passHref>
               <A variant="transparent-blue">hlavní stránka</A>
             </Link>
           </Flex>

@@ -4,7 +4,6 @@ import Image from "next/image";
 import { MainHeadline, MainSubheadline, MaxHeight } from "@/styles";
 import * as S from "./HeroSection.style";
 //images
-//@ts-ignore it should be lowercase .jpg i guess
 import HeroImage from "@/public/images/hero-img.jpg";
 import ArrowYellow from "@/public/icons/arrow-yellow.svg";
 //others
@@ -43,14 +42,14 @@ const HeroSection = () => {
             objectFit="cover"
             placeholder="blur"
             priority={true}
-            alt="loading screen image"
+            alt="děti na bazéně v Brně soutěžící proti sobě"
           />
         </S.ImageContainer>
         <S.ArrowButton
           onClick={() => scrollTo("about")}
-          aria-label="arrow scrolling to about section"
+          aria-label="šipka která naviguje na sekci o nás"
         >
-          <Image src={ArrowYellow} alt="arrow" />
+          <Image src={ArrowYellow} alt="šipka" />
         </S.ArrowButton>
       </MaxHeight>
     </S.HeroSection>

@@ -10,18 +10,21 @@ export const data: IService[] = [
     headline: "Školky",
     text: "Cílem výuky je u dítěte odbourat strach z vody a naučit ho základním plaveckým dovednostem.",
     image: KindergardenService,
+    alt: "dítě v bazénu pod vodou s brýlemi",
     scrollTarget: scrollTargets.kindergardens,
   },
   {
     headline: "Školy",
     text: "Cílem je plavce naučit základům plavání. Děti budou plavat ve skupinách dle svých plaveckých dovedností.",
     image: SchoolService,
+    alt: "plavec s hlavou pod vodou a deskou",
     scrollTarget: scrollTargets.schools,
   },
   {
     headline: "Kurzy",
     text: "Učíme plavat děti od 4 do 17 let. Máme nejrozšířenější možnosti pokračování ať už se jedná o závodní plavání, kondiční plavání, vodní polo nebo synchronizované plavání.",
     image: CourseService,
+    alt: "dvě plavkyně na začátku dráhy",
     scrollTarget: scrollTargets.courses,
   },
 ];

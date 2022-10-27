@@ -42,7 +42,7 @@ const AboutSection = () => {
           <Image src={WaveYellow} layout="fill" alt="vlnka" />
         </S.ImageContainer>
         <S.AboutText center>
-          Naše plavecká škola pracuje pod záštitou plaveckého oddílu SKP Kometa
+          Naše plavecká škola pracuje pod záštitou plaveckého oddílu KPSP Kometa
           Brno. Naší specializací je výuka plavání dětí předškolního a školního
           věku. V plavecké přípravě dětí jsme nasbírali během řady let mnoho
           zkušeností a díky tomu můžeme dětem nabídnout komplexní výuku plavání

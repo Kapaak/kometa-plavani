@@ -6,6 +6,7 @@ export interface IService {
   headline: string;
   text: string;
   image: StaticImageData;
+  alt: string;
   scrollTarget: scrollTargets;
 }
 

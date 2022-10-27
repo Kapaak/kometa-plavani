@@ -12,7 +12,7 @@ const SponsorSection = () => {
       <Marquee pauseOnHover gradientColor={[248, 248, 248]}>
         <S.Flex direction="row" align="center" gap="5rem">
           {data.map((d, i) => (
-            <Sponsor image={d.image} href={d.href} alt={d.name} key={i} />
+            <Sponsor image={d.image} href={d.href} name={d.name} key={i} />
           ))}
         </S.Flex>
       </Marquee>

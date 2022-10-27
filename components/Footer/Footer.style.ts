@@ -28,8 +28,6 @@ export const Flex = styled(SFlex)`
   justify-content: space-between;
 
   @media (${dimensions.notebook}) {
-    /* flex-direction: row;
-    flex-wrap: wrap; */
     gap: 8rem;
   }
 `;

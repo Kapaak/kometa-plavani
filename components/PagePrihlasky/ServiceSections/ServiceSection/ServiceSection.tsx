@@ -22,7 +22,7 @@ const ServiceSection = (props: ISection) => {
             <Image layout="fill" src={image} objectFit="cover" />
           </S.ImageContainer>
           <Text variant="dark">{text}</Text>
-          <Link href="">
+          <Link href="" passHref>
             <A variant="disabled">připravujeme</A>
           </Link>
         </S.Flex>

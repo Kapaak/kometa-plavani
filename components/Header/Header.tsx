@@ -8,7 +8,7 @@ import Navigation from "./Navigation/Navigation";
 import Logo from "./Logo/Logo";
 //redux
 import { RootState } from "@/redux/store";
-import { Flex, MaxWidth } from "@/styles";
+import { Flex } from "@/styles";
 
 const Header = () => {
   const isActive = useSelector(

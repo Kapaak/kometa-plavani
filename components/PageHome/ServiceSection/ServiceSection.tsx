@@ -18,6 +18,7 @@ const ServiceSection = () => {
               image={d.image}
               scrollTarget={d.scrollTarget}
               key={i}
+              alt={d.alt}
             />
           ))}
         </S.Flex>
