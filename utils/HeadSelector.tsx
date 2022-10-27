@@ -14,7 +14,7 @@ const HeadSelector = () => {
       <link rel="canonical" href="https://www.plavani-luzanky.cz/" />
       <meta
         name="description"
-        content="Učíme plavat zábavnou formou dle nejnovějších metodik děti i dospělé na bazéně za Lužánkami. Výuku plavání vedou kvalifikovaní trenéři na bazénech po celém Brně. Přidej se k těm nejlepším."
+        content="Učíme plavat zábavnou formou dle nejnovějších metodik děti i dospělé. Výuku vedou kvalifikovaní trenéři na bazénech po celém Brně. Navštiv bazén Lužánky."
       />
     </Head>
   );
