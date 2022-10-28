@@ -13,7 +13,6 @@ export const data: Array<INavLink> = [
   },
   {
     href: "/prihlasky",
-    scrollTarget: scrollTargets.application,
     output: "Přihlášky",
     //commented out, because it wont be needed on release
     // dropdown: [

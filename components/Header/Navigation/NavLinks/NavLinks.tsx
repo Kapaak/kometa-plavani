@@ -24,7 +24,7 @@ const NavItems = ({ data }: Props) => {
         <NavLink
           key={i}
           href={d.href}
-          scrollTarget={d.scrollTarget}
+          scrollTarget={d?.scrollTarget}
           dropdown={d.dropdown || undefined}
         >
           {d.output}

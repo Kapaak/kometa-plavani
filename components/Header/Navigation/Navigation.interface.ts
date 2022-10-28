@@ -2,7 +2,7 @@ import { scrollTargets } from "@/utils/interfaces";
 
 export interface IDropdown {
   href: string;
-  scrollTarget: scrollTargets;
+  scrollTarget?: scrollTargets;
   output: string;
 }
 

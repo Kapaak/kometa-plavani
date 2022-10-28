@@ -1,4 +1,5 @@
 //libraries
+import Link from "next/link";
 import { toggleNavigation } from "@/redux/slices/navigationSlice";
 import { useRouter } from "next/router";
 import { useDispatch } from "react-redux";
@@ -11,7 +12,7 @@ import { scrollTo } from "@/utils/functions";
 
 interface Props {
   children: React.ReactNode;
-  scrollTarget: scrollTargets;
+  scrollTarget?: scrollTargets;
   href: string;
   dropdown?: Array<IDropdown>;
 }
@@ -35,8 +36,14 @@ const NavLink = ({ scrollTarget, children, href, dropdown }: Props) => {
     //maybe push route like /example#school and on example page have useEffect, that would fire
     //Scrolling to #school element on the initial page load (empty dependency array)
     <S.NavLink>
-      <a onClick={() => clickHandler(scrollTarget, href)}>{children}</a>
-      {dropdown && (
+      {scrollTarget ? (
+        <a onClick={() => clickHandler(scrollTarget, href)}>{children}</a>
+      ) : (
+        <Link href={href}>
+          <a>{children}</a>
+        </Link>
+      )}
+      {/* {dropdown && (
         <S.Dropdown>
           {dropdown.map((g, i) => (
             <a onClick={() => clickHandler(g.scrollTarget, g.href)} key={i}>
@@ -44,7 +51,7 @@ const NavLink = ({ scrollTarget, children, href, dropdown }: Props) => {
             </a>
           ))}
         </S.Dropdown>
-      )}
+      )} */}
     </S.NavLink>
   );
 };
