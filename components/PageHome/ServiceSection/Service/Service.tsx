@@ -43,7 +43,11 @@ const Service = (props: Props) => {
         <S.Flex justify="space-between" gap="2rem">
           <Subheadline variant="dark">{headline}</Subheadline>
           <Text variant="dark">{text}</Text>
-          <S.A variant="transparent-blue" onClick={clickHandler}>
+          <S.A
+            variant="transparent-blue"
+            onClick={clickHandler}
+            aria-label="odkazuje na stránku přihlášky"
+          >
             Více informací
           </S.A>
         </S.Flex>

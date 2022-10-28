@@ -1,13 +1,15 @@
 //components
 import ServiceSections from "./ServiceSections/ServiceSections";
 //styles
-import { MaxWidth } from "@/styles";
+import { MaxWidth, SectionElement } from "@/styles";
 
 const Prihlasky = () => {
   return (
     <main>
       <MaxWidth>
-        <ServiceSections />
+        <SectionElement name="application">
+          <ServiceSections />
+        </SectionElement>
       </MaxWidth>
     </main>
   );
