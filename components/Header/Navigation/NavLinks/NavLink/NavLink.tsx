@@ -40,7 +40,7 @@ const NavLink = ({ scrollTarget, children, href, dropdown }: Props) => {
         <a onClick={() => clickHandler(scrollTarget, href)}>{children}</a>
       ) : (
         <Link href={href}>
-          <a>{children}</a>
+          <a onClick={() => dispatch(toggleNavigation())}>{children}</a>
         </Link>
       )}
       {/* {dropdown && (

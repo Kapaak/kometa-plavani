@@ -18,7 +18,7 @@ const HeroSection = () => {
             align="center"
             justify="flex-end"
             textAlign="center"
-            gap="var(--gap)"
+            gap="2rem"
           >
             <div>
               <MainHeadline>
