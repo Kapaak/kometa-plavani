@@ -8,18 +8,18 @@ import * as S from "./ServiceSection.style";
 import { ISection } from "../ServiceSections.interface";
 
 const ServiceSection = (props: ISection) => {
-  const { headline, text, image, isEven, name } = props;
+  const { headline, text, image, isEven, name, alt } = props;
 
   return (
     <SectionElement name={name}>
       <Flex direction="row" gap="6rem">
         <S.DesktopImageContainer isEven={isEven}>
-          <Image layout="fill" src={image} objectFit="cover" />
+          <Image layout="fill" src={image} objectFit="cover" alt={alt} />
         </S.DesktopImageContainer>
         <S.Flex gap="2rem">
           <S.Headline>{headline}</S.Headline>
           <S.ImageContainer>
-            <Image layout="fill" src={image} objectFit="cover" />
+            <Image layout="fill" src={image} objectFit="cover" alt={alt} />
           </S.ImageContainer>
           <Text variant="dark">{text}</Text>
           <Link href="/prihlasky" passHref>

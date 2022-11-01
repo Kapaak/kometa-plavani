@@ -7,6 +7,7 @@ export interface IService {
   text: string;
   image: StaticImageData;
   name: scrollTargets;
+  alt: string;
 }
 
 export interface ISection extends Omit<IService, "id"> {

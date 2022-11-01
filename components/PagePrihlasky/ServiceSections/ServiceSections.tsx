@@ -17,6 +17,7 @@ const ServiceSections = () => {
           headline={d.headline}
           text={d.text}
           image={d.image}
+          alt={d.alt}
           name={d.name}
         />
       ))}
