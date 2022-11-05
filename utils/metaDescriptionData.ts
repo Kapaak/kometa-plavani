@@ -1,4 +1,4 @@
-export const data = {
+export const metaDescription = {
   "/prihlasky": {
     description:
       "Nabízíme plavecké kurzy pro děti, školy a školky i dospělé. Učíme plavat zábavnou formou dle nejnovějších metodik.",

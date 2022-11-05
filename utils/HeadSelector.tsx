@@ -1,9 +1,12 @@
 import Head from "next/head";
 import { useRouter } from "next/router";
 
-import { data } from "./metaDescriptionData";
+import { metaDescription } from "./metaDescriptionData";
+import { title } from "./titleData";
 
 type RouteType = "/" | "/prihlasky";
+
+type TitleType = "/prihlasky";
 
 const HeadSelector = () => {
   const router = useRouter();
@@ -11,11 +14,14 @@ const HeadSelector = () => {
   const currentRoute = router.asPath;
 
   const currentRouteMetaDesc =
-    data[currentRoute as RouteType]?.description ?? data.default.description;
+    metaDescription[currentRoute as RouteType]?.description ??
+    metaDescription.default.description;
+
+  const currentRouteTitle = title[currentRoute as TitleType] ?? title.default;
 
   return (
     <Head>
-      <title>Plavecká škola | Kometa </title>
+      <title> {currentRouteTitle} Plavecká škola | Kometa </title>
       <link rel="icon" href="/icons/tucnak.svg" />
       <meta name="author" content="Pavel Zapletal & Barbora Novakova" />
       <meta
