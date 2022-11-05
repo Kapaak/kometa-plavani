@@ -22,6 +22,8 @@ export const GlobalStyles = createGlobalStyle`
         --col2: #2172DD;
         --col3: #DCE9FA;
         --colw: #F8F8F8;
+        --collg: #dcdcdc;
+        --colg:#9A9A9A;
         --colb: #001427;
 
         --max-width:145rem;

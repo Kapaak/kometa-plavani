@@ -15,12 +15,13 @@ export const Logo = styled.a`
   z-index: 2;
 
   @media (${dimensions.notebook}) {
-    width: 13rem;
+    width: 10rem;
+    padding: 0;
     margin: 0;
   }
 
   @media (${dimensions.desktop}) {
-    width: 14rem;
+    width: 11rem;
     padding: 0;
     margin: 0;
   }

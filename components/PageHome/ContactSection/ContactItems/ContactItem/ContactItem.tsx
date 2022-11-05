@@ -14,7 +14,7 @@ interface Props {
 
 const ContactItem = ({ headline, fragment, icon }: Props) => {
   return (
-    <Flex direction="row" gap="2rem" align="center">
+    <S.ContactItem direction="row" gap="2rem" align="center">
       <Image src={icon} alt={headline.toLowerCase()} />
       <Flex gap=".5rem">
         <S.Headline>{headline}</S.Headline>
@@ -24,7 +24,7 @@ const ContactItem = ({ headline, fragment, icon }: Props) => {
           TextElement={S.TextElement}
         />
       </Flex>
-    </Flex>
+    </S.ContactItem>
   );
 };
 

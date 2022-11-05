@@ -10,13 +10,14 @@ const lineHeight = () => css`
 `;
 
 const smallerFont = () => css`
-  font-size: 1.5rem;
+  font-size: 1.4rem;
 `;
 
 export const LinkElement = styled(Text).attrs({
   as: "a",
   variant: "light",
 })<{ href: string }>`
+  font-size: 1.4rem;
   display: block;
   text-decoration: none;
 
@@ -27,7 +28,7 @@ export const LinkElement = styled(Text).attrs({
 export const TextElement = styled(Text).attrs({
   variant: "light",
 })`
-  font-size: 1.5rem;
+  font-size: 1.4rem;
   ${lineHeight()}
   ${smallerFont()}
 `;

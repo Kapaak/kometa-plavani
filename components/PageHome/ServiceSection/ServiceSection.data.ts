@@ -15,14 +15,14 @@ export const data: IService[] = [
   },
   {
     headline: "Školy",
-    text: "Cílem je plavce naučit základům plavání. Děti budou plavat ve skupinách dle svých plaveckých dovedností.",
+    text: "Cílem je plavce naučit základům plavání. ",
     image: SchoolService,
     alt: "plavec s hlavou pod vodou a deskou",
     scrollTarget: scrollTargets.schools,
   },
   {
     headline: "Kurzy",
-    text: "Učíme plavat děti od 4 do 17 let. Máme nejrozšířenější možnosti pokračování ať už se jedná o závodní plavání, kondiční plavání, vodní polo nebo synchronizované plavání.",
+    text: "Učíme plavat děti od 4 do 17 let.",
     image: CourseService,
     alt: "dvě plavkyně na začátku dráhy",
     scrollTarget: scrollTargets.courses,

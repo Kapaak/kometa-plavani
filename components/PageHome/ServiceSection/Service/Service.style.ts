@@ -2,7 +2,7 @@
 import styled from "styled-components";
 //styles
 import { dimensions } from "@/utils/breakpoints";
-import { Text, A as SA, Subheadline, Flex as SFlex } from "@/styles";
+import { A as SA, Flex as SFlex } from "@/styles";
 
 export const Service = styled.article`
   display: flex;
@@ -11,6 +11,7 @@ export const Service = styled.article`
   flex: 1 1 30%;
   border-radius: var(--small-border-rad);
   box-shadow: var(--shadow);
+  font-family: var(--font1);
 `;
 
 export const Flex = styled(SFlex)`
@@ -38,8 +39,12 @@ export const Container = styled.div`
 export const ImageContainer = styled.div`
   position: relative;
   height: 18rem;
+
+  @media (${dimensions.notebook}) {
+    height: 26rem;
+  }
 `;
 
 export const A = styled(SA)`
-  align-self: start;
+  align-self: end;
 `;

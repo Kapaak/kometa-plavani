@@ -3,11 +3,13 @@ import styled, { css } from "styled-components";
 export interface Props {
   center?: boolean;
   bold?: boolean;
-  variant?: "light" | "dark" | "normal";
+  variant?: "light" | "dark" | "normal" | "grey";
 }
 
 export const Text = styled.p<Props>`
   font-size: var(--ftext);
+  line-height: 1.9;
+
   ${({ variant }) => {
     switch (variant) {
       case "light":
@@ -18,6 +20,12 @@ export const Text = styled.p<Props>`
       case "dark":
         return css`
           color: var(--colb);
+        `;
+
+      case "grey":
+        return css`
+          color: var(--colg);
+          letter-spacing: 0.08rem;
         `;
 
       case "normal":
@@ -31,6 +39,6 @@ export const Text = styled.p<Props>`
         `;
     }
   }}
-  font-weight: ${({ bold }) => (bold ? "600" : "300")};
+  font-weight: ${({ bold }) => (bold ? "500" : "300")};
   text-align: ${({ center }) => (center ? "center" : "left")};
 `;

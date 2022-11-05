@@ -6,6 +6,7 @@ import { dimensions } from "@/utils/breakpoints";
 
 export const Creator = styled.p`
   color: var(--colw);
+  font-size: 1.4rem;
   @media (${dimensions.desktop}) {
     text-align: right;
   }

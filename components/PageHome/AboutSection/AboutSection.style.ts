@@ -10,6 +10,7 @@ export const AboutSection = styled(SectionElement)`
 
 export const MaxWidth = styled(SMaxWidth)`
   text-align: center;
+  max-width: 60rem;
 `;
 
 export const ImageContainer = styled.div`

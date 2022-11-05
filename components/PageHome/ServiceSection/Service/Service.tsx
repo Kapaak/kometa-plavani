@@ -40,9 +40,9 @@ const Service = (props: Props) => {
             alt={alt}
           />
         </S.ImageContainer>
-        <S.Flex justify="space-between" gap="2rem">
+        <S.Flex justify="space-between" gap="1rem">
           <Subheadline variant="dark">{headline}</Subheadline>
-          <Text variant="dark">{text}</Text>
+          <Text variant="grey">{text}</Text>
           <S.A
             variant="transparent-blue"
             onClick={clickHandler}
