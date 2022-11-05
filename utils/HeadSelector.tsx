@@ -18,15 +18,15 @@ const HeadSelector = () => {
       <title>Plavecká škola | Kometa </title>
       <link rel="icon" href="/icons/tucnak.svg" />
       <meta name="author" content="Pavel Zapletal & Barbora Novakova" />
-      <meta name="keywords" content={currentRouteMetaDesc} />
+      <meta
+        name="keywords"
+        content="plavání Lužánky, bazén Lužánky, bazén za Lužánkami, výuka plavání v Brně, plavání Brno, plavecké kurzy brno, plavání brno, plavání pro děti, plavání s dětmi"
+      />
       <link
         rel="canonical"
         href={`https://www.plavani-luzanky.cz${currentRoute}`}
       />
-      <meta
-        name="description"
-        content="Učíme plavat zábavnou formou dle nejnovějších metodik děti i dospělé. Výuku vedou kvalifikovaní trenéři na bazénech po celém Brně. Navštiv bazén Lužánky."
-      />
+      <meta name="description" content={currentRouteMetaDesc} />
     </Head>
   );
 };
