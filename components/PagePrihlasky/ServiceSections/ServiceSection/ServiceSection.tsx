@@ -2,7 +2,7 @@
 import Image from "next/image";
 import Link from "next/link";
 //styles
-import { A, Flex, SectionElement, Text } from "@/styles";
+import { A, Flex, SectionElement, Subheadline, Text } from "@/styles";
 import * as S from "./ServiceSection.style";
 //interfaces
 import { ISection } from "../ServiceSections.interface";
@@ -17,10 +17,10 @@ const ServiceSection = (props: ISection) => {
           <Image layout="fill" src={image} objectFit="cover" alt={alt} />
         </S.DesktopImageContainer>
         <S.Flex gap="2rem">
-          <S.Headline>{headline}</S.Headline>
           <S.ImageContainer>
             <Image layout="fill" src={image} objectFit="cover" alt={alt} />
           </S.ImageContainer>
+          <S.Headline>{headline}</S.Headline>
           <Text variant="dark">{text}</Text>
           <Link href="/prihlasky" passHref>
             <A variant="disabled">připravujeme</A>

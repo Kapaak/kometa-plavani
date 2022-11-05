@@ -6,20 +6,34 @@ import WaveYellow from "@/public/icons/wave-yellow.svg";
 //interfaces
 import { PropsWithChildren } from "react";
 
+type HeadlineType = "h1" | "h2";
 interface Props {
   className?: string;
+  headlineType?: HeadlineType;
 }
 
-export const Headline = ({ children, ...rest }: PropsWithChildren<Props>) => {
+interface StyleProps {
+  headlineType: HeadlineType;
+}
+
+export const Headline = ({
+  children,
+  headlineType = "h2",
+  ...rest
+}: PropsWithChildren<Props>) => {
   return (
     <div>
-      <SHeadline {...rest}>{children}</SHeadline>
+      <SHeadline headlineType={headlineType} {...rest}>
+        {children}
+      </SHeadline>
       <Image src={WaveYellow} alt="vlnka" />
     </div>
   );
 };
 
-const SHeadline = styled.h2`
+const SHeadline = styled.h2.attrs<StyleProps>((props) => ({
+  as: props.headlineType || "h2",
+}))<StyleProps>`
   color: var(--col2);
   font-family: var(--font1);
   font-size: var(--fheadline);

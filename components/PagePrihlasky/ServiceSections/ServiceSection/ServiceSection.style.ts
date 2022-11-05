@@ -37,6 +37,13 @@ export const Flex = styled(SFlex)`
   flex: 1 1 40%;
 `;
 
-export const Headline = styled(SHeadline)`
-  font-size: 3.8rem;
+export const Headline = styled.h2`
+  font-size: 3rem;
+  font-family: var(--font1);
+  font-weight: 500;
+  letter-spacing: 0.08rem;
+
+  @media (${dimensions.notebook}) {
+    font-size: 4rem;
+  }
 `;
