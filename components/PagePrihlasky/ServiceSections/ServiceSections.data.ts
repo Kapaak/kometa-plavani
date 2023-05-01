@@ -30,7 +30,7 @@ export const data: IService[] = [
   {
     id: 3,
     headline: "Kurzy",
-    text: "Učíme plavat děti od 4 do 17 let. Máme nejrozšířenější možnosti pokračování ať už se jedná o závodní plavání, kondiční plavání, vodní polo nebo synchronizované plavání. Děti budou plavat ve skupinách dle svých plaveckých dovedností. Našim úkolem je tyto dovednosti rozšířit hravou formou pod vedením zkušených trenérů.",
+    text: "Učíme plavat děti od 4 do 10 let. Máme nejrozšířenější možnosti pokračování ať už se jedná o závodní plavání, kondiční plavání, vodní polo nebo synchronizované plavání. Děti budou plavat ve skupinách dle svých plaveckých dovedností. Našim úkolem je tyto dovednosti rozšířit hravou formou pod vedením zkušených trenérů.",
     image: CourseService,
     alt: "dvě plavkyně na začátku dráhy čekající na start",
     name: scrollTargets.courses,

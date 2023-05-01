@@ -22,7 +22,7 @@ export const data: IService[] = [
   },
   {
     headline: "Kurzy",
-    text: "Učíme plavat děti od 4 do 17 let.",
+    text: "Učíme plavat děti od 4 do 10 let.",
     image: CourseService,
     alt: "dvě plavkyně na začátku dráhy",
     scrollTarget: scrollTargets.courses,
