@@ -10,3 +10,5 @@ export { A } from "./CustomComponents/A";
 export { SectionElement } from "./CustomComponents/SectionElement";
 export { Headline } from "./CustomComponents/Headline";
 export { Space } from "./CustomComponents/Space";
+export { Divider } from "./CustomComponents/Divider";
+export { Strong } from "./CustomComponents/Strong";

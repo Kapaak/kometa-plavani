@@ -20,7 +20,9 @@
       "@/styles":["styles"],
       "@/public/*":["public/*"],
       "@/redux/*":["redux/*"],
-      "@/utils/*":["utils/*"]
+      "@/utils/*":["utils/*"],
+      "@/libs":["libs/index.ts"],
+      "@/shared":["components/Shared"],
     }
   },
   "include": ["next-env.d.ts", "**/*.ts", "**/*.tsx", "pages/_document.jsx"],

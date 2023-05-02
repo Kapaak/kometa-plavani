@@ -15,3 +15,7 @@ export const delay = (callback: () => void, delayInMs?: number) =>
       resolve();
     }, delayInMs ?? 500)
   );
+
+export const createOption = (label: string, value: string) => {
+  return { label, value };
+};
