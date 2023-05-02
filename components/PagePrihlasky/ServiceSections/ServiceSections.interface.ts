@@ -8,6 +8,7 @@ export interface IService {
   image: StaticImageData;
   name: scrollTargets;
   alt: string;
+  url: string;
 }
 
 export interface ISection extends Omit<IService, "id"> {

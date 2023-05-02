@@ -17,6 +17,7 @@ export const data: IService[] = [
     image: KindergardenService,
     alt: "dítě v bazénu pod vodou s brýlemi",
     name: scrollTargets.kindergardens,
+    url: "skolky",
   },
   {
     id: 2,
@@ -26,6 +27,7 @@ export const data: IService[] = [
     image: SchoolService,
     alt: "plavec s hlavou pod vodou a deskou",
     name: scrollTargets.schools,
+    url: "skoly",
   },
   {
     id: 3,
@@ -34,5 +36,6 @@ export const data: IService[] = [
     image: CourseService,
     alt: "dvě plavkyně na začátku dráhy čekající na start",
     name: scrollTargets.courses,
+    url: "kurzy",
   },
 ];

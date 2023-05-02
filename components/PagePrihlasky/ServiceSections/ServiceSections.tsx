@@ -19,6 +19,7 @@ const ServiceSections = () => {
           image={d.image}
           alt={d.alt}
           name={d.name}
+          url={d.url}
         />
       ))}
     </S.Flex>

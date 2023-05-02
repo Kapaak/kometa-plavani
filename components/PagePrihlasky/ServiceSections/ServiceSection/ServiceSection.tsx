@@ -8,7 +8,7 @@ import * as S from "./ServiceSection.style";
 import { ISection } from "../ServiceSections.interface";
 
 const ServiceSection = (props: ISection) => {
-  const { headline, text, image, isEven, name, alt } = props;
+  const { headline, text, image, isEven, name, alt, url } = props;
 
   return (
     <SectionElement name={name}>
@@ -22,8 +22,8 @@ const ServiceSection = (props: ISection) => {
           </S.ImageContainer>
           <S.Headline>{headline}</S.Headline>
           <Text variant="dark">{text}</Text>
-          <Link href="/prihlasky" passHref>
-            <A variant="disabled">připravujeme</A>
+          <Link href={`/prihlasky/${url}`} passHref>
+            <A variant="transparent-blue">přejít na přihlášku</A>
           </Link>
         </S.Flex>
       </Flex>
