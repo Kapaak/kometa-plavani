@@ -1,16 +1,34 @@
 //interfaces
-import { SchoolSectionForm } from "@/components/PagePrihlasky/SchoolSectionForm";
-import { GetStaticPaths, GetStaticProps, NextPage } from "next";
-import ErrorPage from "pages/404";
-//sanity
-import { client } from "sanity";
+import { Course } from "@/domains";
+import { GetServerSideProps, NextPage } from "next";
+import { data } from "../../components/PagePrihlasky/Prihlasky.data";
+import { FormContainer } from "@/components/PagePrihlasky/FormContainer";
 
-const CoursePage: NextPage = () => {
+interface CoursePageProps {
+  courseName: Course;
+  spreadsheet: string;
+}
+
+const CoursePage: NextPage<CoursePageProps> = ({ courseName, spreadsheet }) => {
   return (
-    <div>
-      <h1>whatever</h1>
-      <SchoolSectionForm spreadsheet={"0"} />
-    </div>
+    <main>
+      <FormContainer courseName={courseName} spreadsheet={spreadsheet} />
+    </main>
   );
 };
+
+export const getServerSideProps: GetServerSideProps<{
+  courseName: Course;
+}> = async (ctx) => {
+  const courseName = ctx.query.course as Course;
+  const spreadsheet = data?.find((d) => d.name === courseName)?.spreadsheetId;
+
+  return {
+    props: {
+      courseName,
+      spreadsheet,
+    },
+  };
+};
+
 export default CoursePage;

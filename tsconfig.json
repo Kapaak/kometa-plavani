@@ -23,6 +23,7 @@
       "@/utils/*":["utils/*"],
       "@/libs":["libs/index.ts"],
       "@/shared":["components/Shared"],
+      "@/domains":["domains"],
     }
   },
   "include": ["next-env.d.ts", "**/*.ts", "**/*.tsx", "pages/_document.jsx"],

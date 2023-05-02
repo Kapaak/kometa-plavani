@@ -23,193 +23,135 @@ export const SchoolForm = ({
     <S.Form onSubmit={onSubmit}>
       <S.Container>
         <S.FormItem>
-          <Subheadline variant="dark">Osobní údaje</Subheadline>
+          <Subheadline variant="dark">Údaje</Subheadline>
           <S.FormInputContainer>
             <ControlledNameInput
-              name={`firstName`}
-              placeholder="Jméno dítěte"
+              name="schoolName"
+              placeholder="Název školy"
               required="Jméno nesmí být prázdné"
             />
-            <S.Label>Jméno dítěte</S.Label>
-            <S.ErrorContainer>{errors?.firstName?.message}</S.ErrorContainer>
+            <S.Label>Název školy</S.Label>
+            <S.ErrorContainer>{errors?.schoolName?.message}</S.ErrorContainer>
           </S.FormInputContainer>
           <S.FormInputContainer>
             <ControlledInput
-              name={`lastName`}
-              placeholder="Příjmení dítěte"
-              required="Příjmení nesmí být prázdné"
+              name="address"
+              placeholder="Adresa"
+              required="Adresa nesmí být prázdná"
             />
-            <S.Label>Příjmení dítěte</S.Label>
-            <S.ErrorContainer>{errors?.lastName?.message}</S.ErrorContainer>
-          </S.FormInputContainer>
-          <div>
-            <ControlledSelect
-              name={`gender`}
-              placeholder="Pohlaví"
-              options={[
-                createOption("Muž", "muž"),
-                createOption("Žena", "žena"),
-              ]}
-              required="Pohlaví musí být vyplněno"
-            />
-            <S.ErrorContainer>{errors?.gender?.message}</S.ErrorContainer>
-          </div>
-          <S.FormInputContainer>
-            <ControlledInput
-              name={`personalIdNum`}
-              placeholder="Rodné číslo dítěte (př. 045421/1234)"
-              pattern={/\d{4}([.,\/]\d{4})/}
-              required="Rodné číslo v nesprávném formátu. Příklad: 045421/1234."
-            />
-            <S.Label>Rodné číslo</S.Label>
-            <S.ErrorContainer>
-              {errors?.personalIdNum?.message}
-            </S.ErrorContainer>
-          </S.FormInputContainer>
-          <div>
-            <ControlledSelect
-              name={`czechNationality`}
-              options={[createOption("Ano", "ano"), createOption("Ne", "ne")]}
-              placeholder="Je dítě občanem ČR?"
-              required="Národnost musí být vyplněna"
-            />
-            <S.ErrorContainer>
-              {errors?.czechNationality?.message}
-            </S.ErrorContainer>
-          </div>
-          <S.FormInputContainer>
-            <ControlledInput
-              name={`dateOfBirth`}
-              placeholder="Datum narození dítěte"
-              required="Datum narození musí být vyplněno."
-            />
-            <S.Label>Datum narození dítěte</S.Label>
-            <S.ErrorContainer>{errors?.dateOfBirth?.message}</S.ErrorContainer>
-          </S.FormInputContainer>
-          <S.FormInputContainer>
-            <ControlledSelect
-              name={`insurance`}
-              options={[
-                createOption(
-                  "Všeobecná zdravotní pojišťovna",
-                  "všeobecná zdravotní pojišťovna"
-                ),
-                createOption(
-                  "Vojenská zdravotní pojišťovna",
-                  "vojenská zdravotní pojišťovna"
-                ),
-                createOption(
-                  "Česká průmyslová zdravotní pojišťovna",
-                  "česká průmyslová zdravotní pojišťovna"
-                ),
-                createOption(
-                  "Oborová zdravotní pojišťovna",
-                  "oborová zdravotní pojišťovna"
-                ),
-                createOption(
-                  "Zaměstnanecká pojišťovna Škoda",
-                  "zaměstnanecká pojišťovna škoda"
-                ),
-                createOption(
-                  "Zdravotní pojišťovna ministerstva vnitra",
-                  "zdravotní pojišťovna ministerstva vnitra"
-                ),
-                createOption(
-                  "Revírní bratrská pokladna zdravotní pojišťovna",
-                  "revírní bratrská pokladna zdravotní pojišťovna"
-                ),
-                createOption("Jiná", "jiná"),
-                createOption("Žádná", "žádná"),
-              ]}
-              placeholder="Zdravotní pojišťovna"
-              required="Zdravotní pojišťovn musí být vyplněna"
-            />
-            <S.ErrorContainer>{errors?.insurance?.message}</S.ErrorContainer>
-          </S.FormInputContainer>
-        </S.FormItem>
-        <S.FormItem>
-          <Subheadline variant="dark">Kontaktní údaje</Subheadline>
-          <S.FormInputContainer>
-            <ControlledInput
-              name={`phone`}
-              placeholder="Telefon"
-              required="Telefon musí být vyplněn"
-            />
-            <S.Label>Telefon</S.Label>
-            <S.ErrorContainer>{errors?.phone?.message}</S.ErrorContainer>
-          </S.FormInputContainer>
-          <S.FormInputContainer>
-            <ControlledInput
-              name={`email`}
-              placeholder="E-mail"
-              pattern={/\S+@\S+\.\S+/}
-              required="Platný email musí obsahovat @ (př. novak.filip@email.cz)."
-            />
-            <S.Label>E-mail</S.Label>
-            <S.ErrorContainer>{errors?.email?.message}</S.ErrorContainer>
-          </S.FormInputContainer>
-          <S.FormInputContainer>
-            <ControlledInput
-              name={`address`}
-              placeholder="Adresa a číslo popisné"
-              required="Adresa musí být vyplněna"
-            />
-            <S.Label>Adresa a číslo popisné</S.Label>
+            <S.Label>Adresa</S.Label>
             <S.ErrorContainer>{errors?.address?.message}</S.ErrorContainer>
           </S.FormInputContainer>
           <S.FormInputContainer>
             <ControlledInput
-              name={`city`}
-              placeholder="Město"
-              required="Město musí být vyplněno"
+              name="identifier"
+              placeholder="IČ nebo DIČ"
+              pattern={/^\d+$/}
+              required="IČ nebo DIČ musí být číslo"
             />
-            <S.Label>Město</S.Label>
-            <S.ErrorContainer>{errors?.city?.message}</S.ErrorContainer>
-          </S.FormInputContainer>
-          <S.FormInputContainer>
-            <ControlledInput
-              name={`postCode`}
-              placeholder="PSČ"
-              required="PSČ musí být vyplněno"
-            />
-            <S.Label>PSČ</S.Label>
-            <S.ErrorContainer>{errors?.postCode?.message}</S.ErrorContainer>
+            <S.Label>IČ nebo DIČ</S.Label>
+            <S.ErrorContainer>{errors?.identifier?.message}</S.ErrorContainer>
           </S.FormInputContainer>
         </S.FormItem>
         <S.FormItem>
-          <Subheadline variant="dark">Ostatní</Subheadline>
+          <Subheadline variant="dark">Kontaktní osoba</Subheadline>
           <S.FormInputContainer>
-            <ControlledInput name={`alergy`} placeholder="Alergie" />
-            <S.Label>Alergie</S.Label>
-          </S.FormInputContainer>
-          <div>
-            <ControlledSelect
-              name={`swimmingAbilities`}
-              placeholder="Plavecké schopnosti"
-              options={[
-                createOption("Plavec", "plavec"),
-                createOption("Neplavec", "neplavec"),
-              ]}
-              required="Plavecké schopnosti musí být vyplněny."
+            <ControlledInput
+              name="contactPerson"
+              placeholder="Jméno kontaktní osoby"
+              required="Kontaktní osoba musí být vyplněna"
             />
+            <S.Label>Jméno kontaktní osoby</S.Label>
             <S.ErrorContainer>
-              {errors?.swimmingAbilities?.message}
+              {errors?.contactPerson?.message}
             </S.ErrorContainer>
-          </div>
-          <S.FormInputContainer>
-            <ControlledInput
-              name={`healthIssues`}
-              placeholder="Upozornění  na zdravotní potíže"
-            />
-            <S.Label>Zdravotní potíže</S.Label>
           </S.FormInputContainer>
-
           <S.FormInputContainer>
             <ControlledInput
-              name={`foundUs`}
-              placeholder="Jak jste se o nás dozvěděli?"
+              name="contactPersonPhone"
+              placeholder="Telefon kontaktní osoby"
+              required="Telefon Kontaktní osoby musí být vyplněn"
             />
-            <S.Label>Jak jste se o nás dozvěděli?</S.Label>
+            <S.Label>Telefon kontaktní osoby</S.Label>
+            <S.ErrorContainer>
+              {errors?.contactPersonPhone?.message}
+            </S.ErrorContainer>
+          </S.FormInputContainer>
+        </S.FormItem>
+        <S.FormItem>
+          <Subheadline variant="dark">Lekce</Subheadline>
+          <S.FormInputContainer>
+            <ControlledInput
+              name="lessonsCount"
+              placeholder="Počet lekcí"
+              pattern={/^\d+$/}
+              required="Počet lekcí musí být číselná hodnota"
+            />
+            <S.Label>Počet lekcí</S.Label>
+            <S.ErrorContainer>{errors?.lessonsCount?.message}</S.ErrorContainer>
+          </S.FormInputContainer>
+          <S.FormInputContainer>
+            <ControlledInput
+              name="childrenCount"
+              placeholder="Počet dětí"
+              pattern={/^\d+$/}
+              required="Počet dětí musí být číselná hodnota"
+            />
+            <S.Label>Počet dětí</S.Label>
+            <S.ErrorContainer>
+              {errors?.childrenCount?.message}
+            </S.ErrorContainer>
+          </S.FormInputContainer>
+          <S.FormInputContainer>
+            <ControlledSelect
+              name="preferedDay"
+              placeholder="Preferovaný den"
+              pattern={/^\d+$/}
+              required="Preferovaný den nesmí být prázdný"
+              options={[
+                createOption("pondělí", "pondělí"),
+                createOption("úterý", "úterý"),
+                createOption("středa", "středa"),
+                createOption("čtvrtek", "čtvrtek"),
+                createOption("pátek", "pátek"),
+              ]}
+            />
+            <S.Label>Preferovaný den</S.Label>
+            <S.ErrorContainer>{errors?.preferedDay?.message}</S.ErrorContainer>
+          </S.FormInputContainer>
+          <S.FormInputContainer>
+            <ControlledSelect
+              name="preferedTime"
+              placeholder="Preferovaný čas"
+              pattern={/^\d+$/}
+              required="Preferovaný čas nesmí být prázdný"
+              options={[
+                createOption("7:00", "7:00"),
+                createOption("7:30", "7:30"),
+                createOption("8:00", "8:00"),
+                createOption("8:30", "8:30"),
+                createOption("9:00", "9:00"),
+                createOption("9:30", "9:30"),
+                createOption("10:00", "10:00"),
+                createOption("10:30", "10:30"),
+                createOption("11:00", "11:00"),
+                createOption("11:30", "11:30"),
+                createOption("12:00", "12:00"),
+                createOption("13:30", "13:30"),
+                createOption("13:30", "13:30"),
+                createOption("14:00", "14:00"),
+                createOption("14:30", "14:30"),
+                createOption("15:00", "15:00"),
+                createOption("15:30", "15:30"),
+                createOption("16:00", "16:00"),
+                createOption("16:30", "16:30"),
+                createOption("17:00", "17:00"),
+                createOption("17:30", "17:30"),
+                createOption("18:00", "18:00"),
+              ]}
+            />
+            <S.Label>Preferovaný den</S.Label>
+            <S.ErrorContainer>{errors?.preferedTime?.message}</S.ErrorContainer>
           </S.FormInputContainer>
         </S.FormItem>
       </S.Container>

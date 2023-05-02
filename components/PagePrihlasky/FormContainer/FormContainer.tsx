@@ -4,15 +4,20 @@ import { useRouter } from "next/router";
 import { SuccessModal } from "./SuccessModal";
 import { appendSpreadsheet } from "@/libs";
 import dayjs from "dayjs";
-// import { FormValues } from "../PagePrihlasky.interface";
 import axios from "axios";
 import { SchoolForm } from "../SchoolForm";
+import { CourseForm } from "../CourseForm";
+import { Course } from "@/domains";
 
-interface SchoolSectionFormProps {
+interface FormContainerProps {
   spreadsheet: string;
+  courseName: Course;
 }
 
-export const SchoolSectionForm = ({ spreadsheet }: SchoolSectionFormProps) => {
+export const FormContainer = ({
+  spreadsheet,
+  courseName,
+}: FormContainerProps) => {
   const [isOpen, setIsOpen] = useState(false);
   const [isLoading, setIsLoading] = useState(false);
 
@@ -39,6 +44,9 @@ export const SchoolSectionForm = ({ spreadsheet }: SchoolSectionFormProps) => {
     newData.gender = data?.gender?.value;
     newData.insurance = data?.insurance?.value;
     newData.swimmingAbilities = data?.swimmingAbilities?.value;
+    //dalši
+    newData.preferedDay = data?.preferedDay?.value;
+    newData.preferedTime = data?.preferedTime?.value;
 
     return newData;
   };
@@ -68,25 +76,38 @@ export const SchoolSectionForm = ({ spreadsheet }: SchoolSectionFormProps) => {
 
   const handleExcelUpload = async (d: any) => {
     const currentDateTime = dayjs().format("DD-MM-YYYY hh:mm");
-    await appendSpreadsheet(
+
+    if (courseName === "kurzy")
+      return await appendSpreadsheet(
+        {
+          "Časová značka": currentDateTime,
+          Jméno: d?.firstName,
+          Příjmení: d?.lastName,
+          Pohlaví: d?.gender,
+          "Rodné číslo": d?.personalIdNum,
+          "Datum narození": d?.dateOfBirth,
+          Telefon: d?.phone,
+          Email: d?.email,
+          "Adresa a číslo popisné": d?.address,
+          Město: d?.city,
+          PSČ: d?.postCode,
+          Alergie: d?.alergy,
+          "Zdravotní potíže": d?.healthIssues,
+        },
+        spreadsheet
+      );
+
+    return await appendSpreadsheet(
       {
-        "Časová značka": currentDateTime,
-        Jméno: d?.firstName,
-        Příjmení: d?.lastName,
-        Pohlaví: d?.gender,
-        "Rodné číslo": d?.personalIdNum,
-        "Je dítě občan ČR": d?.czechNationality,
-        "Datum narození": d?.dateOfBirth,
-        "Zdravotní pojišťovna": d?.insurance,
-        Telefon: d?.phone,
-        Email: d?.email,
-        "Adresa a číslo popisné": d?.address,
-        Město: d?.city,
-        PSČ: d?.postCode,
-        Alergie: d?.alergy,
-        "Plavecké schopnosti": d?.swimmingAbilities,
-        "Zdravotní potíže": d?.healthIssues,
-        "Jak jste se o nás dozvěděli": d?.foundUs,
+        "Název školy": d?.schoolName,
+        Adresa: d?.address,
+        "IČ nebo DIČ": d?.identifier,
+        "Kontaktní osoba": d?.contactPerson,
+        "Telefon kontaktní osoby": d?.contactPersonPhone,
+        "Počet lekcí": d?.lessonsCount,
+        "Počet dětí": d?.childrenCount,
+        "Preferovaný den": d?.preferedDay,
+        "Preferovaný čas": d?.preferedTime,
       },
       spreadsheet
     );
@@ -99,11 +120,27 @@ export const SchoolSectionForm = ({ spreadsheet }: SchoolSectionFormProps) => {
         addChild={resetAll}
         redirect={redirectHome}
       />
-      <SchoolForm
-        onSubmit={handleSubmit(onSubmit)}
-        errors={errors}
-        isLoading={isLoading}
-      />
+      {courseName === "skoly" && (
+        <SchoolForm
+          onSubmit={handleSubmit(onSubmit)}
+          errors={errors}
+          isLoading={isLoading}
+        />
+      )}
+      {courseName === "kurzy" && (
+        <CourseForm
+          onSubmit={handleSubmit(onSubmit)}
+          errors={errors}
+          isLoading={isLoading}
+        />
+      )}
+      {courseName === "skolky" && (
+        <SchoolForm
+          onSubmit={handleSubmit(onSubmit)}
+          errors={errors}
+          isLoading={isLoading}
+        />
+      )}
     </FormProvider>
   );
 };
