@@ -4,3 +4,5 @@ export * from './ControlledInput';
 export * from './ControlledSelect';
 export * from './IconButton';
 export * from './Modal';
+export * from './ContentRenderer';
+export * from './HeadSelector';

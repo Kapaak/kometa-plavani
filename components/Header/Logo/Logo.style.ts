@@ -1,7 +1,7 @@
 //libraries
 import styled from "styled-components";
 //styles
-import { dimensions } from "@/utils/breakpoints";
+import { dimensions } from "@/utils";
 
 export const Logo = styled.a`
   position: relative;

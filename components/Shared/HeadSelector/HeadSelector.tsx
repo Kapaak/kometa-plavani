@@ -8,7 +8,7 @@ type RouteType = "/" | "/prihlasky";
 
 type TitleType = "/prihlasky";
 
-const HeadSelector = () => {
+export const HeadSelector = () => {
   const router = useRouter();
 
   const currentRoute = router.asPath;
@@ -36,5 +36,3 @@ const HeadSelector = () => {
     </Head>
   );
 };
-
-export default HeadSelector;

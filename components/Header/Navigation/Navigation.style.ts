@@ -1,7 +1,7 @@
 //libraries
 import styled from "styled-components";
 //styles
-import { dimensions } from "@/utils/breakpoints";
+import { dimensions } from "@/utils";
 import { Flex as SFlex } from "@/styles";
 
 export const Navigation = styled.nav<{ isActive: boolean }>`

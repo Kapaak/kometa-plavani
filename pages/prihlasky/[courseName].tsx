@@ -1,8 +1,7 @@
 //interfaces
 import { Course } from "@/domains";
 import { GetServerSideProps, NextPage } from "next";
-import { data } from "../../components/PagePrihlasky/Prihlasky.data";
-import PagePrihlaskyId from "@/components/PagePrihlaskyId/PagePrihlaskyId";
+import { PrihlaskyNameScreen, prihlaskyNameData } from "@/screens";
 
 interface CoursePageProps {
   courseName: Course;
@@ -12,7 +11,7 @@ interface CoursePageProps {
 const CoursePage: NextPage<CoursePageProps> = ({ courseName, spreadsheet }) => {
   return (
     <main>
-      <PagePrihlaskyId courseName={courseName} spreadsheet={spreadsheet} />
+      <PrihlaskyNameScreen courseName={courseName} spreadsheet={spreadsheet} />
     </main>
   );
 };
@@ -20,8 +19,15 @@ const CoursePage: NextPage<CoursePageProps> = ({ courseName, spreadsheet }) => {
 export const getServerSideProps: GetServerSideProps<{
   courseName: Course;
 }> = async (ctx) => {
-  const courseName = ctx.query.course as Course;
-  const spreadsheet = data?.find((d) => d.name === courseName)?.spreadsheetId;
+  const courseName = ctx.query.courseName as Course;
+  const spreadsheet = prihlaskyNameData?.find(
+    (d) => d.name === courseName
+  )?.spreadsheetId;
+
+  if (!courseName)
+    return {
+      notFound: true,
+    };
 
   return {
     props: {

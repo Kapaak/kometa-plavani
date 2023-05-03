@@ -1,6 +1,6 @@
 import { createGlobalStyle } from "styled-components";
 
-import { dimensions } from "@/utils/breakpoints";
+import { dimensions } from "@/utils";
 
 export const GlobalStyles = createGlobalStyle`
     *,*::before,*::after{

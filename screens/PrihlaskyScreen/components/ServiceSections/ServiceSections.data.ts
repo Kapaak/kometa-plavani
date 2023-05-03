@@ -3,10 +3,9 @@ import KindergardenService from "@/public/images/service-kindergarden.jpg";
 import SchoolService from "@/public/images/service-school.jpg";
 import CourseService from "@/public/images/service-course.jpg";
 //interfaces
-import { IService } from "./ServiceSections.interface";
-import { ScrollSections } from "./ServiceSections.interface";
+import { Service, ScrollSections } from "@/domains";
 
-export const data: IService[] = [
+export const data: Service[] = [
   {
     id: 1,
     headline: "Školky",

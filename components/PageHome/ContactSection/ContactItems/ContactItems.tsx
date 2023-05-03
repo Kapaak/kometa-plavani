@@ -4,13 +4,13 @@ import ContactItem from "./ContactItem/ContactItem";
 import { Flex, Headline } from "@/styles";
 import * as S from "./ContactItems.style";
 //interfaces
-import { IContact } from "../ContactSection.interface";
+import { Contact } from "@/domains";
 
-interface Props {
-  data: Array<IContact>;
+interface ContactItemsProps {
+  data: Contact[];
 }
 
-const ContactItems = ({ data }: Props) => {
+const ContactItems = ({ data }: ContactItemsProps) => {
   return (
     <Flex gap="2rem">
       <Headline>Kontakt</Headline>

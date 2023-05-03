@@ -2,7 +2,7 @@
 import styled from "styled-components";
 //styles
 import { Flex as SFlex, Headline as SHeadline } from "@/styles";
-import { dimensions } from "@/utils/breakpoints";
+import { dimensions } from "@/utils";
 
 export const ImageContainer = styled.div`
   position: relative;

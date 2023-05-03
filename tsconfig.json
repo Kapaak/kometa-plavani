@@ -20,10 +20,11 @@
       "@/styles":["styles"],
       "@/public/*":["public/*"],
       "@/redux/*":["redux/*"],
-      "@/utils/*":["utils/*"],
+      "@/utils":["utils/index.ts"],
       "@/libs":["libs/index.ts"],
       "@/shared":["components/Shared"],
       "@/domains":["domains"],
+      "@/screens":["screens"]
     }
   },
   "include": ["next-env.d.ts", "**/*.ts", "**/*.tsx", "pages/_document.jsx"],

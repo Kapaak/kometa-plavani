@@ -6,7 +6,7 @@ import {
   ControlledNameInput,
   IconButton,
 } from "@/shared";
-import { createOption } from "@/utils/functions";
+import { createOption } from "@/utils";
 
 interface CourseFormProps {
   onSubmit: any;

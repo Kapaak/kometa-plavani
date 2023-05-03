@@ -2,7 +2,7 @@
 import styled from "styled-components";
 //styles
 import { Text as SText, Flex as SFlex } from "@/styles";
-import { dimensions } from "@/utils/breakpoints";
+import { dimensions } from "@/utils";
 
 export const Text = styled(SText)`
   flex: 100%;

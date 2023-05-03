@@ -1,6 +1,6 @@
-import { INavLink, ScrollSections } from "./Navigation.interface";
+import { NavLink, ScrollSections } from "@/domains";
 
-export const data: Array<INavLink> = [
+export const data: NavLink[] = [
   {
     href: "/",
     scrollTarget: ScrollSections.home,

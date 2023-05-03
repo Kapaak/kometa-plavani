@@ -1,13 +1,23 @@
 //libraries
-import Image from "next/image";
+import Image, { StaticImageData } from "next/image";
 import Link from "next/link";
 //styles
 import { A, Flex, SectionElement, Subheadline, Text } from "@/styles";
 import * as S from "./ServiceSection.style";
 //interfaces
-import { ISection } from "../ServiceSections.interface";
+import { ScrollSections } from "@/domains";
 
-const ServiceSection = (props: ISection) => {
+interface ServiceSectionProps {
+  headline: string;
+  text: string;
+  image: StaticImageData;
+  alt: string;
+  name: ScrollSections;
+  url?: string;
+  isEven: boolean;
+}
+
+export const ServiceSection = (props: ServiceSectionProps) => {
   const { headline, text, image, isEven, name, alt, url } = props;
 
   return (
@@ -30,5 +40,3 @@ const ServiceSection = (props: ISection) => {
     </SectionElement>
   );
 };
-
-export default ServiceSection;

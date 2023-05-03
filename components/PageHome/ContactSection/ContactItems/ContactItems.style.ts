@@ -2,7 +2,7 @@
 import styled from "styled-components";
 //styles
 import { Text as SText } from "@/styles";
-import { dimensions } from "@/utils/breakpoints";
+import { dimensions } from "@/utils";
 
 export const Text = styled(SText)`
   display: none;

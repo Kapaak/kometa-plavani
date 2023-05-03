@@ -7,7 +7,7 @@ import * as S from "./HeroSection.style";
 import HeroImage from "@/public/images/hero-img.jpg";
 import ArrowYellow from "@/public/icons/arrow-yellow.svg";
 //others
-import { scrollTo } from "@/utils/functions";
+import { scrollTo } from "@/utils";
 
 const HeroSection = () => {
   return (

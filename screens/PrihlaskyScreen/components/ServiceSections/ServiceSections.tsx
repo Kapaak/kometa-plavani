@@ -1,13 +1,13 @@
 //components
-import ServiceSection from "./ServiceSection/ServiceSection";
+import { ServiceSection } from "./ServiceSection";
 //styles
 import * as S from "./ServiceSections.style";
 //data
 import { data } from "./ServiceSections.data";
 //others
-import { isEven } from "@/utils/functions";
+import { isEven } from "@/utils";
 
-const ServiceSections = () => {
+export const ServiceSections = () => {
   return (
     <S.Flex gap="4rem">
       {data.map((d) => (
@@ -19,11 +19,9 @@ const ServiceSections = () => {
           image={d.image}
           alt={d.alt}
           name={d.name}
-          url={d.url}
+          url={d?.url}
         />
       ))}
     </S.Flex>
   );
 };
-
-export default ServiceSections;

@@ -4,9 +4,9 @@ import UserIcon from "@/public/icons/user.svg";
 import EmailIcon from "@/public/icons/email.svg";
 import PhoneIcon from "@/public/icons/phone.svg";
 //interfaces
-import { Content, IContact } from "./ContactSection.interface";
+import { Content, Contact } from "@/domains";
 
-export const data: IContact[] = [
+export const data: Contact[] = [
   {
     headline: "adresa",
     icon: LocationIcon,

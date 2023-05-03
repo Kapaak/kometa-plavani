@@ -5,27 +5,27 @@ import { useRouter } from "next/router";
 import * as S from "./Service.style";
 import { Subheadline, Text } from "@/styles";
 //interfaces
-import { ScrollSections } from "../ServiceSection.interface";
+import { ScrollSections } from "@/domains";
 //others
-import { scrollTo } from "@/utils/functions";
+import { scrollTo } from "@/utils";
 
-interface Props {
+interface ServiceProps {
   headline: string;
   text: string;
   image: StaticImageData;
   alt: string;
-  scrollTarget: ScrollSections;
+  name: ScrollSections;
 }
 
-const Service = (props: Props) => {
-  const { headline, text, image, scrollTarget, alt } = props;
+const Service = (props: ServiceProps) => {
+  const { headline, text, image, name, alt } = props;
 
   const router = useRouter();
 
   const clickHandler = async () => {
     await router.push("/prihlasky");
 
-    scrollTo(scrollTarget);
+    scrollTo(name);
   };
 
   return (

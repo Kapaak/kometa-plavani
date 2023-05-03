@@ -5,7 +5,7 @@ import {
   ControlledSelect,
   ControlledNameInput,
 } from "@/shared";
-import { createOption } from "@/utils/functions";
+import { createOption } from "@/utils";
 import { IconButton } from "@/components/Shared";
 
 interface SchoolFormProps {

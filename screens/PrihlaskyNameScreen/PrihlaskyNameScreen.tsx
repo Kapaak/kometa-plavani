@@ -1,15 +1,18 @@
-import { Headline, MaxWidth } from "@/styles";
-import { FormContainer } from "../PagePrihlasky/FormContainer";
+import { MaxWidth } from "@/styles";
 import { Course } from "@/domains";
 import { useMemo } from "react";
-import * as S from "./PagePrihlaskyId.style";
+import * as S from "./PrihlaskyNameScreen.style";
+import { FormContainer } from "screens/PrihlaskyScreen/components";
 
-interface PagePrihlaskyIdProps {
+interface PrihlaskyNameScreenProps {
   courseName: Course;
   spreadsheet: string;
 }
 
-const PagePrihlaskyId = ({ courseName, spreadsheet }: PagePrihlaskyIdProps) => {
+export const PrihlaskyNameScreen = ({
+  courseName,
+  spreadsheet,
+}: PrihlaskyNameScreenProps) => {
   const courseTranslation = useMemo(() => {
     if (courseName === "kurzy") return "Kurzy";
     if (courseName === "skolky") return "Školky";
@@ -27,4 +30,3 @@ const PagePrihlaskyId = ({ courseName, spreadsheet }: PagePrihlaskyIdProps) => {
     </MaxWidth>
   );
 };
-export default PagePrihlaskyId;

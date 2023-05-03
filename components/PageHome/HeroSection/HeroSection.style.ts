@@ -2,7 +2,7 @@
 import styled from "styled-components";
 //styles
 import { Flex, Text, MaxWidth as SMaxWidth, SectionElement } from "@/styles";
-import { dimensions } from "@/utils/breakpoints";
+import { dimensions } from "@/utils";
 
 export const HeroSection = styled(SectionElement)`
   @media (${dimensions.notebook}) {

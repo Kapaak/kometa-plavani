@@ -6,19 +6,19 @@ import { IText } from "@/styles";
 //interfaces
 import { Content, Fragment } from "@/domains";
 
-interface Props {
+interface ContentRendererProps {
   fragment: Array<Fragment>;
   LinkElement?: StyledComponent<"a", any, IText, any>;
   TextElement?: StyledComponent<"p", any, IText, never>;
   BoldElement?: StyledComponent<"p", any, IText, never>;
 }
 
-const ContentRenderer = ({
+export const ContentRenderer = ({
   fragment,
   LinkElement,
   TextElement,
   BoldElement,
-}: Props) => {
+}: ContentRendererProps) => {
   const [content, setContent] = useState<any>([]);
 
   const populate = () => {
@@ -74,5 +74,3 @@ const ContentRenderer = ({
 
   return content;
 };
-
-export default ContentRenderer;

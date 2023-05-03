@@ -1,6 +1,6 @@
 import { HeadlineFragment, Content } from "@/domains";
 
-export const data: Array<HeadlineFragment> = [
+export const data: HeadlineFragment[] = [
   {
     headline: "Kontaktní osoba",
     fragment: [

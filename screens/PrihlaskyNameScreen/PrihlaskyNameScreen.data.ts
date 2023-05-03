@@ -1,4 +1,4 @@
-export const data = [
+export const prihlaskyNameData = [
   {
     spreadsheetId: "0",
     name: "skoly",

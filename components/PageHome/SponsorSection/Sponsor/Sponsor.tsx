@@ -1,10 +1,10 @@
 //libraries
 import Image from "next/image";
-import { ISponsor } from "../SponsorSection.interface";
+import { Sponsor } from "@/domains";
 //styles
 import * as S from "./Sponsor.style";
 
-const Sponsor = ({ href, image, name }: ISponsor) => {
+const Sponsor = ({ href, image, name }: Sponsor) => {
   return (
     <S.Sponsor href={href}>
       <Image
