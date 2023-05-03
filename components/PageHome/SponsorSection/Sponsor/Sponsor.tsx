@@ -1,5 +1,4 @@
 //libraries
-import Image from "next/image";
 import { Sponsor } from "@/domains";
 //styles
 import * as S from "./Sponsor.style";

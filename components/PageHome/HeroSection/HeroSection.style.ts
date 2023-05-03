@@ -22,26 +22,6 @@ export const MaxWidth = styled(SMaxWidth)`
   }
 `;
 
-export const ArrowButton = styled.button`
-  display: none;
-  position: absolute;
-  right: 8rem;
-  bottom: -4rem;
-  border: none;
-  background-color: transparent;
-  cursor: pointer;
-  transition: all 0.5s ease;
-
-  &:hover {
-    transition: all 0.5s ease;
-    transform: translateY(2rem);
-  }
-
-  @media (${dimensions.notebook}) {
-    display: block;
-  }
-`;
-
 export const EmphasizedHeadline = styled.span`
   display: block;
   font-size: 9rem;
@@ -88,15 +68,22 @@ export const ImageButton = styled.button`
 `;
 
 export const FlexWrapper = styled(Flex)`
+  padding-bottom: 3rem;
+
   @media (${dimensions.tablet}) {
     align-items: flex-start;
     text-align: left;
+  }
+
+  @media (${dimensions.desktop}) {
+    padding-bottom: 0;
   }
 `;
 
 export const TextContainer = styled(Text)`
   margin-bottom: 3rem;
   max-width: 50rem;
+  font-weight: 500;
 
   @media (${dimensions.tablet}) {
     text-align: left;
