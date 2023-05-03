@@ -6,6 +6,7 @@ import { A, Flex, SectionElement, Subheadline, Text } from "@/styles";
 import * as S from "./ServiceSection.style";
 //interfaces
 import { ScrollSections } from "@/domains";
+import { Button } from "@/components/Shared/Button";
 
 interface ServiceSectionProps {
   headline: string;
@@ -24,16 +25,16 @@ export const ServiceSection = (props: ServiceSectionProps) => {
     <SectionElement name={name}>
       <Flex direction="row" gap="6rem">
         <S.DesktopImageContainer isEven={isEven}>
-          <Image layout="fill" src={image} objectFit="cover" alt={alt} />
+          <S.Img src={image} alt={alt} />
         </S.DesktopImageContainer>
         <S.Flex gap="2rem">
           <S.ImageContainer>
-            <Image layout="fill" src={image} objectFit="cover" alt={alt} />
+            <S.Img src={image} alt={alt} />
           </S.ImageContainer>
           <S.Headline>{headline}</S.Headline>
           <Text variant="dark">{text}</Text>
           <Link href={`/prihlasky/${url}`} passHref>
-            <A variant="transparent-blue">přejít na přihlášku</A>
+            <Button>přejít na přihlášku</Button>
           </Link>
         </S.Flex>
       </Flex>

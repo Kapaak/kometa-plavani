@@ -36,10 +36,8 @@ const HeroSection = () => {
           </S.FlexWrapper>
         </S.MaxWidth>
         <S.ImageContainer>
-          <Image
+          <S.Img
             src={HeroImage}
-            layout="fill"
-            objectFit="cover"
             placeholder="blur"
             priority={true}
             alt="děti na bazéně v Brně soutěžící proti sobě"

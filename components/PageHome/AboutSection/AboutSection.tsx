@@ -32,14 +32,14 @@ const AboutSection = () => {
     <S.AboutSection name="about" ref={ref}>
       <S.MaxWidth>
         <S.ImageContainer>
-          <Image src={WaveYellow} layout="fill" alt="vlnka" />
+          <S.Img src={WaveYellow} alt="vlnka" />
         </S.ImageContainer>
         <S.AboutText center bold>
           Předpoklad pro otevření přihlášek kurzů je červen 2023. Budeme se na
           Vás těšit.
         </S.AboutText>
         <S.ImageContainer>
-          <Image src={WaveYellow} layout="fill" alt="vlnka" />
+          <S.Img src={WaveYellow} alt="vlnka" />
         </S.ImageContainer>
         <S.AboutText center>
           Naše plavecká škola pracuje pod záštitou plaveckého oddílu KPSP Kometa
@@ -50,7 +50,7 @@ const AboutSection = () => {
           kteří patří mezi špičku v trenérské branži.
         </S.AboutText>
         <S.ImageContainer>
-          <Image src={WaveYellow} layout="fill" alt="vlnka" />
+          <S.Img src={WaveYellow} alt="vlnka" />
         </S.ImageContainer>
       </S.MaxWidth>
     </S.AboutSection>

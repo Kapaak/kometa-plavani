@@ -32,24 +32,17 @@ const Service = (props: ServiceProps) => {
     <S.Service>
       <S.Container>
         <S.ImageContainer>
-          <Image
-            src={image}
-            layout="fill"
-            objectFit="cover"
-            placeholder="blur"
-            alt={alt}
-          />
+          <S.Img src={image} placeholder="blur" alt={alt} />
         </S.ImageContainer>
         <S.Flex justify="space-between" gap="1rem">
           <Subheadline variant="dark">{headline}</Subheadline>
           <Text variant="grey">{text}</Text>
-          <S.A
-            variant="transparent-blue"
+          <S.Btn
             onClick={clickHandler}
             aria-label="odkazuje na stránku přihlášky"
           >
             Více informací
-          </S.A>
+          </S.Btn>
         </S.Flex>
       </S.Container>
     </S.Service>

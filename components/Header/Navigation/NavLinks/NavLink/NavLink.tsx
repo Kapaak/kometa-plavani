@@ -39,8 +39,8 @@ const NavLink = ({ scrollTarget, children, href, dropdown }: NavLinkProps) => {
       {scrollTarget ? (
         <a onClick={() => clickHandler(scrollTarget, href)}>{children}</a>
       ) : (
-        <Link href={href}>
-          <a onClick={() => dispatch(toggleNavigation())}>{children}</a>
+        <Link href={href} onClick={() => dispatch(toggleNavigation())}>
+          {children}
         </Link>
       )}
       {/* {dropdown && (

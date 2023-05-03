@@ -3,6 +3,7 @@ import styled from "styled-components";
 //styles
 import { Flex, Text, MaxWidth as SMaxWidth, SectionElement } from "@/styles";
 import { dimensions } from "@/utils";
+import Image from "next/image";
 
 export const HeroSection = styled(SectionElement)`
   @media (${dimensions.notebook}) {
@@ -63,6 +64,12 @@ export const ImageContainer = styled.div`
   z-index: -1;
   overflow: hidden;
   border-radius: inherit;
+`;
+
+export const Img = styled(Image)`
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
 `;
 
 export const Gradient = styled.div`

@@ -3,6 +3,7 @@ import styled from "styled-components";
 //styles
 import { Flex as SFlex, Headline as SHeadline } from "@/styles";
 import { dimensions } from "@/utils";
+import Image from "next/image";
 
 export const ImageContainer = styled.div`
   position: relative;
@@ -15,6 +16,12 @@ export const ImageContainer = styled.div`
   @media (${dimensions.notebook}) {
     display: none;
   }
+`;
+
+export const Img = styled(Image)`
+  object-fit: cover;
+  width: 100%;
+  height: 100%;
 `;
 
 export const DesktopImageContainer = styled.div<{ isEven: boolean }>`

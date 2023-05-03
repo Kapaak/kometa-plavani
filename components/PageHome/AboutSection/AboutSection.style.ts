@@ -3,6 +3,7 @@ import styled from "styled-components";
 //styles
 import { dimensions } from "@/utils";
 import { Text, MaxWidth as SMaxWidth, SectionElement } from "@/styles";
+import Image from "next/image";
 
 export const AboutSection = styled(SectionElement)`
   padding: 1.5rem 0;
@@ -23,6 +24,12 @@ export const ImageContainer = styled.div`
     width: 6rem;
     height: 6rem;
   }
+`;
+
+export const Img = styled(Image)`
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
 `;
 
 export const AboutText = styled(Text)`
