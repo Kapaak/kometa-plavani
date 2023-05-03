@@ -4,7 +4,7 @@ import SchoolService from "@/public/images/service-school.jpg";
 import CourseService from "@/public/images/service-course.jpg";
 //interfaces
 import { IService } from "./ServiceSections.interface";
-import { scrollTargets } from "./ServiceSections.interface";
+import { ScrollSections } from "./ServiceSections.interface";
 
 export const data: IService[] = [
   {
@@ -16,7 +16,7 @@ export const data: IService[] = [
       `,
     image: KindergardenService,
     alt: "dítě v bazénu pod vodou s brýlemi",
-    name: scrollTargets.kindergardens,
+    name: ScrollSections.kindergardens,
     url: "skolky",
   },
   {
@@ -26,7 +26,7 @@ export const data: IService[] = [
       `,
     image: SchoolService,
     alt: "plavec s hlavou pod vodou a deskou",
-    name: scrollTargets.schools,
+    name: ScrollSections.schools,
     url: "skoly",
   },
   {
@@ -35,7 +35,7 @@ export const data: IService[] = [
     text: "Učíme plavat děti od 4 do 10 let. Máme nejrozšířenější možnosti pokračování ať už se jedná o závodní plavání, kondiční plavání, vodní polo nebo synchronizované plavání. Děti budou plavat ve skupinách dle svých plaveckých dovedností. Našim úkolem je tyto dovednosti rozšířit hravou formou pod vedením zkušených trenérů.",
     image: CourseService,
     alt: "dvě plavkyně na začátku dráhy čekající na start",
-    name: scrollTargets.courses,
+    name: ScrollSections.courses,
     url: "kurzy",
   },
 ];

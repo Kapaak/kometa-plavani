@@ -2,7 +2,7 @@
 import { Course } from "@/domains";
 import { GetServerSideProps, NextPage } from "next";
 import { data } from "../../components/PagePrihlasky/Prihlasky.data";
-import { FormContainer } from "@/components/PagePrihlasky/FormContainer";
+import PagePrihlaskyId from "@/components/PagePrihlaskyId/PagePrihlaskyId";
 
 interface CoursePageProps {
   courseName: Course;
@@ -12,7 +12,7 @@ interface CoursePageProps {
 const CoursePage: NextPage<CoursePageProps> = ({ courseName, spreadsheet }) => {
   return (
     <main>
-      <FormContainer courseName={courseName} spreadsheet={spreadsheet} />
+      <PagePrihlaskyId courseName={courseName} spreadsheet={spreadsheet} />
     </main>
   );
 };

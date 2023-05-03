@@ -3,11 +3,11 @@ import ContentRenderer from "@/utils/ContentRenderer";
 //styles
 import * as S from "./FooterSection.style";
 //interfaces
-import { fragmentType } from "../../Footer.interface";
+import { Fragment } from "@/domains";
 
 interface Props {
   headline: string;
-  fragment: Array<fragmentType>;
+  fragment: Array<Fragment>;
 }
 
 const FooterSection = ({ headline, fragment }: Props) => {

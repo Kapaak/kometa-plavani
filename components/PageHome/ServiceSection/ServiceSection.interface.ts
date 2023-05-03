@@ -1,13 +1,13 @@
 //interfaces
 import { StaticImageData } from "next/image";
-import { scrollTargets } from "@/utils/interfaces";
+import { ScrollSections } from "@/domains";
 
 export interface IService {
   headline: string;
   text: string;
   image: StaticImageData;
   alt: string;
-  scrollTarget: scrollTargets;
+  scrollTarget: ScrollSections;
 }
 
-export { scrollTargets };
+export { ScrollSections };

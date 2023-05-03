@@ -1,10 +1,10 @@
-import { fragmentType } from "@/utils/interfaces";
+import { Fragment } from "@/domains";
 import { StaticImageData } from "next/image";
 
 export interface IContact {
   headline: string;
   icon: StaticImageData;
-  fragment: Array<fragmentType>;
+  fragment: Array<Fragment>;
 }
 
-export { contentType } from "@/utils/interfaces";
+export { Content } from "@/domains";

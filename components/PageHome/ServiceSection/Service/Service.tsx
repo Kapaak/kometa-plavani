@@ -5,7 +5,7 @@ import { useRouter } from "next/router";
 import * as S from "./Service.style";
 import { Subheadline, Text } from "@/styles";
 //interfaces
-import { scrollTargets } from "../ServiceSection.interface";
+import { ScrollSections } from "../ServiceSection.interface";
 //others
 import { scrollTo } from "@/utils/functions";
 
@@ -14,7 +14,7 @@ interface Props {
   text: string;
   image: StaticImageData;
   alt: string;
-  scrollTarget: scrollTargets;
+  scrollTarget: ScrollSections;
 }
 
 const Service = (props: Props) => {

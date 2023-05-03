@@ -1,4 +1,4 @@
-import { scrollTargets } from "@/utils/interfaces";
+import { ScrollSections } from "@/domains";
 import { StaticImageData } from "next/image";
 
 export interface IService {
@@ -6,7 +6,7 @@ export interface IService {
   headline: string;
   text: string;
   image: StaticImageData;
-  name: scrollTargets;
+  name: ScrollSections;
   alt: string;
   url: string;
 }
@@ -15,4 +15,4 @@ export interface ISection extends Omit<IService, "id"> {
   isEven: boolean;
 }
 
-export { scrollTargets };
+export { ScrollSections };

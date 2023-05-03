@@ -4,7 +4,7 @@ import UserIcon from "@/public/icons/user.svg";
 import EmailIcon from "@/public/icons/email.svg";
 import PhoneIcon from "@/public/icons/phone.svg";
 //interfaces
-import { contentType, IContact } from "./ContactSection.interface";
+import { Content, IContact } from "./ContactSection.interface";
 
 export const data: IContact[] = [
   {
@@ -13,7 +13,7 @@ export const data: IContact[] = [
     fragment: [
       {
         output: "Sportovní 486/4, Brno 602 00",
-        type: contentType.normal,
+        type: Content.normal,
       },
     ],
   },
@@ -23,7 +23,7 @@ export const data: IContact[] = [
     fragment: [
       {
         output: "Bc. Anna Matušová",
-        type: contentType.normal,
+        type: Content.normal,
       },
     ],
   },
@@ -33,7 +33,7 @@ export const data: IContact[] = [
     fragment: [
       {
         output: "+420 773 708 287",
-        type: contentType.link,
+        type: Content.link,
       },
     ],
   },
@@ -43,7 +43,7 @@ export const data: IContact[] = [
     fragment: [
       {
         output: "plavaniluzanky@kometabrno.cz",
-        type: contentType.link,
+        type: Content.link,
       },
     ],
   },
