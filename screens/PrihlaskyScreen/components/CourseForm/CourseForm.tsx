@@ -138,6 +138,38 @@ export const CourseForm = ({
             />
             <S.Label>Zdravotní potíže</S.Label>
           </S.FormInputContainer>
+          <S.FormInputContainer>
+            <ControlledSelect
+              name="preferedDay"
+              placeholder="Preferovaný den"
+              pattern={/^\d+$/}
+              required="Preferovaný den nesmí být prázdný"
+              options={[
+                createOption("pondělí", "pondělí"),
+                createOption("úterý", "úterý"),
+                createOption("středa", "středa"),
+                createOption("čtvrtek", "čtvrtek"),
+                createOption("pátek", "pátek"),
+              ]}
+            />
+            <S.Label>Preferovaný den</S.Label>
+            <S.ErrorContainer>{errors?.preferedDay?.message}</S.ErrorContainer>
+          </S.FormInputContainer>
+          <S.FormInputContainer>
+            <ControlledSelect
+              name="preferedTime"
+              placeholder="Preferovaný čas"
+              pattern={/^\d+$/}
+              required="Preferovaný čas nesmí být prázdný"
+              options={[
+                createOption("15:00 - 16:00", "15:00 - 16:00"),
+                createOption("16:00 - 17:00", "16:00 - 17:00"),
+                createOption("17:00 - 18:00", "17:00 - 18:00"),
+              ]}
+            />
+            <S.Label>Preferovaný den</S.Label>
+            <S.ErrorContainer>{errors?.preferedTime?.message}</S.ErrorContainer>
+          </S.FormInputContainer>
         </S.FormItem>
       </S.Container>
       <S.SubmitContainer>

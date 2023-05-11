@@ -9,7 +9,7 @@ const handler = (req: NextApiRequest, res: NextApiResponse) => {
 
   const msg = {
     to: email,
-    from: "taborpisarky@gmail.com", // Change to your verified sender
+    from: "plavaniluzanky@kometaplavani.cz",
     subject: "Sending with SendGrid is Fun",
     text: "and easy to do anywhere, even with Node.js",
     html: "<strong>and easy to do anywhere, even with Node.js</strong>",
