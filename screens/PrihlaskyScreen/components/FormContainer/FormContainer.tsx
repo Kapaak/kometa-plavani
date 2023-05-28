@@ -66,6 +66,8 @@ export const FormContainer = ({
       czechNationality: "",
       insurance: "",
       swimmingAbilities: "",
+      preferedDay: "",
+      preferedTime: "",
     });
     setIsOpen(false);
   };
