@@ -8,7 +8,7 @@ import { data } from "./ServiceSection.data";
 
 const ServiceSection = () => {
   return (
-    <S.ServiceSection>
+    <S.ServiceSection name="service">
       <MaxWidth>
         <S.Flex gap="4rem">
           {data.map((d, i) => (

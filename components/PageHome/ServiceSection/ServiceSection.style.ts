@@ -1,7 +1,7 @@
 //libraries
 import styled from "styled-components";
 //styles
-import { Flex as SFlex } from "@/styles";
+import { Flex as SFlex, SectionElement } from "@/styles";
 import { dimensions } from "@/utils";
 
 export const Flex = styled(SFlex)`
@@ -11,6 +11,6 @@ export const Flex = styled(SFlex)`
   }
 `;
 
-export const ServiceSection = styled.section`
+export const ServiceSection = styled(SectionElement)`
   padding: 1.5rem 0;
 `;

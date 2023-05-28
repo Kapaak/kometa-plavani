@@ -29,7 +29,7 @@ const HeroSection = () => {
             <Button
               variant="filled"
               color="secondary"
-              onClick={() => scrollTo("about")}
+              onClick={() => scrollTo("service")}
             >
               Volné termíny
             </Button>
