@@ -2,7 +2,6 @@ import sgMail from "@sendgrid/mail";
 import { NextApiRequest, NextApiResponse } from "next";
 
 const handler = (req: NextApiRequest, res: NextApiResponse) => {
-  //@ts-ignore  pridej typ pro NextRequest
   const { email } = req.body;
 
   sgMail.setApiKey(process.env.NEXT_PUBLIC_SENDGRID_API_KEY ?? "");

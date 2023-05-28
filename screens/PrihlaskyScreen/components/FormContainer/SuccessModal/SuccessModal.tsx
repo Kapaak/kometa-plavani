@@ -18,8 +18,7 @@ export const SuccessModal = ({ addChild, isOpen, redirect }: ModalProps) => {
     >
       <S.TextWrapper>
         <Text variant="dark">
-          Potvrzení objednávky a informace k platbě jsme Vám poslali na e-mail.
-          Moc si vážíme Vaší důvěry.
+          Děkujeme za přihlášku na Váš email byl odeslán potvrzovací email.
         </Text>
         <Divider />
         <Text variant="dark">
@@ -29,9 +28,9 @@ export const SuccessModal = ({ addChild, isOpen, redirect }: ModalProps) => {
         </Text>
         <Divider />
         <Text variant="dark">
-          <Strong weight="400">Potřebujete pomoc? </Strong>
-          Volejte na +420 773 708 287 nebo piště na
-          taborpisarky@kometaplavani.cz
+          <Strong weight="400">Potřebujete pomoc? </Strong>V případě jakéhokoliv
+          problému se prosím obraťte na tel. číslo 773708287 nebo na email
+          plavaniluzanky@kometabrno.cz
         </Text>
         <Divider width="50%" />
 

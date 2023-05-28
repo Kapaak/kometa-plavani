@@ -9,9 +9,9 @@ export const data: Service[] = [
   {
     id: 1,
     headline: "Školky",
-    text: `Cílem výuky je u dítěte odbourat strach z vody a naučit ho základním plaveckým dovednostem jako jsou splývání, kopání na břiše a zádech, potápění se a skákání do vody. Nejdůležitějším pro nás je, aby děti měly z plavání radost a výuka je bavila. 
-      Po absolvování kurzu by dítě mělo být schopno v případě nečekaného pádu do vody zadržet dech a chvíli se udržet na hladině. Toto jim může zachránit život.
-      Výuka probíhá 1x týdně po Vámi zvolenou dobu (10, 15, 20 týdnů). Jedna lekce trvá 45 min. Výuku dětem usnadní a zpříjemní nové pomůcky a spousta hraček. Každé dítě dostane po absolvování kurzu Mokré vysvědčení.
+    text: ` Cílem naší výuky u dětí předškolního věku je adaptovat na vodní prostředí. To konkrétně zahrnuje odstranění strachu z vody, potápění, splývání, rozvoj pocitu vody a skok do vody. Poté se děti učí základy jednotlivých plaveckých způsobů.
+    Navíc náš klub disponuje nově zpracovanou metodikou, díky které se děti naučí plavat rychle a zábavnou formou. Nejdůležitější pro nás je, aby děti měly z plavání radost.
+    Výuka probíhá jednou týdně v bazénu, který má 30°C až 32°C . Délka lekce je 60 minut, ve kterých  se děti nejprve rozcvičí, poté následuje výuková jednotka a na závěr se děti protáhnou. Po dokončení kurzu děti obdrží vysvědčení. Doporučený počet lekcí je 20.
       `,
     image: KindergardenService,
     alt: "dítě v bazénu pod vodou s brýlemi",
@@ -21,7 +21,11 @@ export const data: Service[] = [
   {
     id: 2,
     headline: "Školy",
-    text: `Cílem je plavce naučit základům plavání. Děti budou plavat ve skupinách dle svých plaveckých dovedností. Našim úkolem je tyto dovednosti rozšířit a děti naučit plavecké způsoby kraul a znak. Koncem školního roku se zařazují motoricky náročnější prsa a motýl. Děti mohou své nově nabité dovednosti rozvíjet v našich navazujících kurzech. Výuka probíhá 1x týdně po Vámi zvolenou dobu (10, 15, 20 týdnů). Jedna lekce trvá 45 min. Výuku dětem usnadní a zpříjemní nové pomůcky. Každé dítě dostane po absolvování kurzu Mokré vysvědčení.
+    text: `
+    Na začátku děti rozdělíme do týmu, abychom zajistili jejich nejrychlejší rozvoj. 
+Cílem je plavce naučit základům plavání. Děti budou plavat ve skupinách dle svých plaveckých dovedností. Našim úkolem je tyto dovednosti rozšířit a děti naučit plavecké způsoby kraul a znak. Ve druhé části kurzu se zařazujeme motoricky náročnější prsa a motýl. Počet lekcí není omezen. Naše metodika je v souladu s MŠMT koncipovaná na 20 hodin pro adaptaci na vodní prostředí dalších 20 hodin je věnováno výuce jednotlivých plaveckých způsobů. Každá výuková jednotka, ale probíhá dle aktuálních potřeb jednotlivců. Proto Vám můžeme zajistit, že si všechny děti odnesou vždy něco nového.
+Děti mohou své nově nabyté dovednosti rozvíjet v našich navazujících kurzech.
+Výuka probíhá jednou týdně v bazénu, dle výkonnosti jednotlivců. Délka lekce je 60 minut, ve kterých  se děti nejprve rozcvičí poté následuje výuková jednotka a na závěr se děti protáhnou. Po dokončení kurzu děti obdrží vysvědčení. 
       `,
     image: SchoolService,
     alt: "plavec s hlavou pod vodou a deskou",
@@ -31,7 +35,8 @@ export const data: Service[] = [
   {
     id: 3,
     headline: "Kurzy",
-    text: "Učíme plavat děti od 4 do 10 let. Máme nejrozšířenější možnosti pokračování ať už se jedná o závodní plavání, kondiční plavání, vodní polo nebo synchronizované plavání. Děti budou plavat ve skupinách dle svých plaveckých dovedností. Našim úkolem je tyto dovednosti rozšířit hravou formou pod vedením zkušených trenérů.",
+    text: `Děti jsou rozdělovány do týmu dle jejich dovedností. Každá výuková jednotka se  
+    probíhá dle aktuálních potřeb jednotlivců. Maximální počet dětí v jedné hodině je 55, počet lekcí není omezen. Součástí ceny je vždy pronájem bazénu, profesionální trenéři a kvalitní pomůcky, které pomohou zefektivnit výuku plavání.`,
     image: CourseService,
     alt: "dvě plavkyně na začátku dráhy čekající na start",
     name: ScrollSections.courses,
