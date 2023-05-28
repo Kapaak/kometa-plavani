@@ -70,11 +70,22 @@ export const SchoolForm = ({
             <ControlledInput
               name="contactPersonPhone"
               placeholder="Telefon kontaktní osoby"
-              required="Telefon Kontaktní osoby musí být vyplněn"
+              required="Telefon kontaktní osoby musí být vyplněn"
             />
             <S.Label>Telefon kontaktní osoby</S.Label>
             <S.ErrorContainer>
               {errors?.contactPersonPhone?.message}
+            </S.ErrorContainer>
+          </S.FormInputContainer>
+          <S.FormInputContainer>
+            <ControlledInput
+              name="contactPersonEmail"
+              placeholder="Email kontaktní osoby"
+              required="Email kontaktní osoby musí být vyplněn"
+            />
+            <S.Label>Email kontaktní osoby</S.Label>
+            <S.ErrorContainer>
+              {errors?.contactPersonEmail?.message}
             </S.ErrorContainer>
           </S.FormInputContainer>
         </S.FormItem>

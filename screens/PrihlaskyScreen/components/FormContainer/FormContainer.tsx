@@ -28,7 +28,7 @@ export const FormContainer = ({
     setIsLoading(true);
     try {
       await handleExcelUpload(newVals);
-      axios.post("/api/email", { email: d?.email });
+      axios.post("/api/email", { email: d?.email ?? d?.contactPersonEmail });
     } catch (e) {
       console.log("cant send email or create user");
     } finally {
@@ -104,6 +104,7 @@ export const FormContainer = ({
         "IČ nebo DIČ": d?.identifier,
         "Kontaktní osoba": d?.contactPerson,
         "Telefon kontaktní osoby": d?.contactPersonPhone,
+        "Email kontaktní osoby": d?.contactPersonEmail,
         "Počet lekcí": d?.lessonsCount,
         "Počet dětí": d?.childrenCount,
         "Preferovaný den": d?.preferedDay,
