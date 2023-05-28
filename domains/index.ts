@@ -52,6 +52,8 @@ export type Service = {
   alt: string;
   name: ScrollSections;
   url?: string;
+  price: string;
+  time: number;
 };
 
 export type Dropdown = {

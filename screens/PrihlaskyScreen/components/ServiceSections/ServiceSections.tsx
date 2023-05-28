@@ -20,6 +20,8 @@ export const ServiceSections = () => {
           alt={d.alt}
           name={d.name}
           url={d?.url}
+          price={d?.price}
+          time={d?.time}
         />
       ))}
     </S.Flex>

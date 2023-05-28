@@ -30,7 +30,7 @@ export const DesktopImageContainer = styled.div<{ isEven: boolean }>`
   border-radius: var(--small-border-rad);
   overflow: hidden;
   height: 40rem;
-  flex: 1 1 60%;
+  flex: 1 1 50%;
   order: ${({ isEven }) => (isEven ? "1" : "0")};
   box-shadow: var(--shadow);
 
@@ -41,7 +41,7 @@ export const DesktopImageContainer = styled.div<{ isEven: boolean }>`
 
 export const Flex = styled(SFlex)`
   align-items: flex-start;
-  flex: 1 1 40%;
+  flex: 1 1 50%;
 `;
 
 export const Headline = styled.h2`
