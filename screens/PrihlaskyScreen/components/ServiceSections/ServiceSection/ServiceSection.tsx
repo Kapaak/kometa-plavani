@@ -17,8 +17,8 @@ interface ServiceSectionProps {
   name: ScrollSections;
   url?: string;
   isEven: boolean;
-  price: string;
-  time: number;
+  price?: string;
+  time?: number;
 }
 
 export const ServiceSection = (props: ServiceSectionProps) => {

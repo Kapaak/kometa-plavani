@@ -59,10 +59,12 @@ export const ControlledSelect = ({
           isSearchable
           placeholder={placeholder}
           options={options}
+          value={options.find((c) => c.value === value)}
+          onChange={(selectedOption: any) => {
+            onChange(selectedOption.value);
+          }}
           menuPosition="fixed"
           menuPlacement="auto"
-          value={value}
-          onChange={(val) => onChange(val)}
           styles={styles}
           components={{
             DropdownIndicator,
