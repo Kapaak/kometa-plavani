@@ -3,6 +3,7 @@ import Link from "next/link";
 //styles
 import { MainSubheadline, MaxHeight, A, Flex, MaxWidth } from "@/styles";
 import * as S from "./Error.style";
+import { Button } from "../Shared/Button";
 
 const Error = () => {
   return (
@@ -15,7 +16,7 @@ const Error = () => {
               je nam to líto, stránka kterou hledáte není k dispozici
             </MainSubheadline>
             <Link href="/" passHref>
-              <A variant="transparent-blue">hlavní stránka</A>
+              <Button>hlavní stránka</Button>
             </Link>
           </Flex>
         </MaxWidth>

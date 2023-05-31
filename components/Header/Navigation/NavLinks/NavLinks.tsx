@@ -5,12 +5,12 @@ import NavLink from "./NavLink/NavLink";
 //styles
 import * as S from "./NavLinks.style";
 //interfaces
-import { INavLink } from "../Navigation.interface";
+import { NavLink as NavLinkType } from "@/domains";
 //redux
 import { RootState } from "@/redux/store";
 
 interface Props {
-  data: Array<INavLink>;
+  data: NavLinkType[];
 }
 
 const NavItems = ({ data }: Props) => {

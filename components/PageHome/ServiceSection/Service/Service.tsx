@@ -5,51 +5,44 @@ import { useRouter } from "next/router";
 import * as S from "./Service.style";
 import { Subheadline, Text } from "@/styles";
 //interfaces
-import { scrollTargets } from "../ServiceSection.interface";
+import { ScrollSections } from "@/domains";
 //others
-import { scrollTo } from "@/utils/functions";
+import { scrollTo } from "@/utils";
 
-interface Props {
+interface ServiceProps {
   headline: string;
   text: string;
   image: StaticImageData;
   alt: string;
-  scrollTarget: scrollTargets;
+  name: ScrollSections;
 }
 
-const Service = (props: Props) => {
-  const { headline, text, image, scrollTarget, alt } = props;
+const Service = (props: ServiceProps) => {
+  const { headline, text, image, name, alt } = props;
 
   const router = useRouter();
 
   const clickHandler = async () => {
     await router.push("/prihlasky");
 
-    scrollTo(scrollTarget);
+    scrollTo(name);
   };
 
   return (
     <S.Service>
       <S.Container>
         <S.ImageContainer>
-          <Image
-            src={image}
-            layout="fill"
-            objectFit="cover"
-            placeholder="blur"
-            alt={alt}
-          />
+          <S.Img src={image} placeholder="blur" alt={alt} />
         </S.ImageContainer>
         <S.Flex justify="space-between" gap="1rem">
           <Subheadline variant="dark">{headline}</Subheadline>
           <Text variant="grey">{text}</Text>
-          <S.A
-            variant="transparent-blue"
+          <S.Btn
             onClick={clickHandler}
             aria-label="odkazuje na stránku přihlášky"
           >
             Více informací
-          </S.A>
+          </S.Btn>
         </S.Flex>
       </S.Container>
     </S.Service>

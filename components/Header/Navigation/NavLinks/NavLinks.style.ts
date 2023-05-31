@@ -1,7 +1,7 @@
 //libraries
 import styled, { css } from "styled-components";
 //styles
-import { dimensions } from "@/utils/breakpoints";
+import { dimensions } from "@/utils";
 
 export const NavLinks = styled.ul<{ isActive: boolean }>`
   flex-direction: column;

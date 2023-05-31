@@ -1,7 +1,7 @@
 //libraries
 import { Provider } from "react-redux";
 //components
-import HeadSelector from "../utils/HeadSelector";
+import { HeadSelector } from "@/shared";
 import Header from "@/components/Header/Header";
 import Footer from "@/components/Footer/Footer";
 //styles

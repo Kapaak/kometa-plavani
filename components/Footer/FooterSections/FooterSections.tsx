@@ -1,16 +1,14 @@
-//components
+import { HeadlineFragment } from "@/domains";
 import FooterSection from "./FooterSection/FooterSection";
-//interfaces
-import { IData } from "../Footer.interface";
 
-interface Props {
-  data: IData[];
+interface FooterSectionsProps {
+  data: HeadlineFragment[];
 }
 
-const FooterSections = ({ data }: Props) => {
+const FooterSections = ({ data }: FooterSectionsProps) => {
   return (
     <>
-      {data.map((d: IData, i) => {
+      {data.map((d: HeadlineFragment, i) => {
         return (
           <FooterSection key={i} headline={d.headline} fragment={d.fragment} />
         );

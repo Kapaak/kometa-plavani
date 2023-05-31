@@ -2,7 +2,8 @@
 import styled from "styled-components";
 //styles
 import { Flex, Text, MaxWidth as SMaxWidth, SectionElement } from "@/styles";
-import { dimensions } from "@/utils/breakpoints";
+import { dimensions } from "@/utils";
+import Image from "next/image";
 
 export const HeroSection = styled(SectionElement)`
   @media (${dimensions.notebook}) {
@@ -18,26 +19,6 @@ export const MaxWidth = styled(SMaxWidth)`
   @media (${dimensions.notebook}) {
     max-width: 100%;
     padding: var(--side-padding);
-  }
-`;
-
-export const ArrowButton = styled.button`
-  display: none;
-  position: absolute;
-  right: 8rem;
-  bottom: -4rem;
-  border: none;
-  background-color: transparent;
-  cursor: pointer;
-  transition: all 0.5s ease;
-
-  &:hover {
-    transition: all 0.5s ease;
-    transform: translateY(2rem);
-  }
-
-  @media (${dimensions.notebook}) {
-    display: block;
   }
 `;
 
@@ -65,6 +46,12 @@ export const ImageContainer = styled.div`
   border-radius: inherit;
 `;
 
+export const Img = styled(Image)`
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+`;
+
 export const Gradient = styled.div`
   position: absolute;
   background-color: var(--col2);
@@ -81,15 +68,22 @@ export const ImageButton = styled.button`
 `;
 
 export const FlexWrapper = styled(Flex)`
+  padding-bottom: 3rem;
+
   @media (${dimensions.tablet}) {
     align-items: flex-start;
     text-align: left;
+  }
+
+  @media (${dimensions.desktop}) {
+    padding-bottom: 0;
   }
 `;
 
 export const TextContainer = styled(Text)`
   margin-bottom: 3rem;
   max-width: 50rem;
+  font-weight: 500;
 
   @media (${dimensions.tablet}) {
     text-align: left;

@@ -1,5 +1,5 @@
 //interfaces
-import { ISponsor } from "./SponsorSection.interface";
+import { Sponsor } from "@/domains";
 //images
 import ArmendaLogo from "@/public/sponsors/armenda.svg";
 import BohuniceLogo from "@/public/sponsors/bohunice.png";
@@ -16,7 +16,7 @@ import SgldBrnoLogo from "@/public/sponsors/sglo.png";
 import VodniPoloLogo from "@/public/sponsors/vodni-polo.svg";
 import WaterdropLogo from "@/public/sponsors/waterdrop.png";
 
-export const data: ISponsor[] = [
+export const data: Sponsor[] = [
   {
     href: "https://www.zsarmenska.cz",
     image: ArmendaLogo,

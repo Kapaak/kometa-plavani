@@ -8,7 +8,7 @@ import { data } from "./ServiceSection.data";
 
 const ServiceSection = () => {
   return (
-    <S.ServiceSection>
+    <S.ServiceSection name="service">
       <MaxWidth>
         <S.Flex gap="4rem">
           {data.map((d, i) => (
@@ -16,7 +16,7 @@ const ServiceSection = () => {
               headline={d.headline}
               text={d.text}
               image={d.image}
-              scrollTarget={d.scrollTarget}
+              name={d.name}
               key={i}
               alt={d.alt}
             />

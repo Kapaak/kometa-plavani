@@ -1,14 +1,14 @@
-import { INavLink, scrollTargets } from "./Navigation.interface";
+import { NavLink, ScrollSections } from "@/domains";
 
-export const data: Array<INavLink> = [
+export const data: NavLink[] = [
   {
     href: "/",
-    scrollTarget: scrollTargets.home,
+    scrollTarget: ScrollSections.home,
     output: "Domů",
   },
   {
     href: "/",
-    scrollTarget: scrollTargets.about,
+    scrollTarget: ScrollSections.about,
     output: "O nás",
   },
   {
@@ -18,24 +18,24 @@ export const data: Array<INavLink> = [
     // dropdown: [
     //   {
     //     href: "/prihlasky/skolky",
-    //     scrollTarget: scrollTargets.skolky,
+    //     scrollTarget: ScrollSections.skolky,
     //     output: "školky",
     //   },
     //   {
     //     href: "/prihlasky/skoly",
-    //     scrollTarget: scrollTargets.skoly,
+    //     scrollTarget: ScrollSections.skoly,
     //     output: "školy",
     //   },
     //   {
     //     href: "/prihlasky/kurzy",
-    //     scrollTarget: scrollTargets.kurzy,
+    //     scrollTarget: ScrollSections.kurzy,
     //     output: "kurzy",
     //   },
     // ],
   },
   {
     href: "/",
-    scrollTarget: scrollTargets.contact,
+    scrollTarget: ScrollSections.contact,
     output: "Kontakt",
   },
 ];

@@ -1,12 +1,10 @@
-//components
-import Prihlasky from "@/components/PagePrihlasky/Prihlasky";
-//interfaces
 import { NextPage } from "next";
+import { PrihlaskyScreen } from "@/screens";
 
 const PrihlaskyPage: NextPage = () => {
   return (
     <main>
-      <Prihlasky />
+      <PrihlaskyScreen />
     </main>
   );
 };

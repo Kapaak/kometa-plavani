@@ -6,18 +6,18 @@ import { useDispatch } from "react-redux";
 //styles
 import * as S from "./NavLink.style";
 //interfaces
-import { IDropdown, scrollTargets } from "../../Navigation.interface";
+import { Dropdown, ScrollSections } from "@/domains";
 //others
-import { scrollTo } from "@/utils/functions";
+import { scrollTo } from "@/utils";
+import { PropsWithChildren } from "react";
 
-interface Props {
-  children: React.ReactNode;
-  scrollTarget?: scrollTargets;
+interface NavLinkProps extends PropsWithChildren {
+  scrollTarget?: ScrollSections;
   href: string;
-  dropdown?: Array<IDropdown>;
+  dropdown?: Array<Dropdown>;
 }
 
-const NavLink = ({ scrollTarget, children, href, dropdown }: Props) => {
+const NavLink = ({ scrollTarget, children, href, dropdown }: NavLinkProps) => {
   const dispatch = useDispatch();
   const router = useRouter();
 
@@ -39,8 +39,8 @@ const NavLink = ({ scrollTarget, children, href, dropdown }: Props) => {
       {scrollTarget ? (
         <a onClick={() => clickHandler(scrollTarget, href)}>{children}</a>
       ) : (
-        <Link href={href}>
-          <a onClick={() => dispatch(toggleNavigation())}>{children}</a>
+        <Link href={href} onClick={() => dispatch(toggleNavigation())}>
+          {children}
         </Link>
       )}
       {/* {dropdown && (

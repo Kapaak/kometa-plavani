@@ -1,29 +1,28 @@
-import { contentType } from "./Footer.interface";
-import { IData } from "./Footer.interface";
+import { HeadlineFragment, Content } from "@/domains";
 
-export const data: Array<IData> = [
+export const data: HeadlineFragment[] = [
   {
     headline: "Kontaktní osoba",
     fragment: [
       {
         output: "Bc. Anna Matušová",
-        type: contentType.bold,
+        type: Content.bold,
       },
       {
         output: "+420 773 708 287",
-        type: contentType.link,
+        type: Content.link,
       },
       {
         output: "plavaniluzanky@kometabrno.cz",
-        type: contentType.link,
+        type: Content.link,
       },
       {
         output: "Sportovní 486/4, Brno 602 00",
-        type: contentType.normal,
+        type: Content.normal,
       },
       {
         output: "Po - Pá: 8:00-15:30",
-        type: contentType.normal,
+        type: Content.normal,
       },
     ],
   },
@@ -32,39 +31,39 @@ export const data: Array<IData> = [
     fragment: [
       {
         output: "Plavecké kurzy Kometa",
-        type: contentType.bold,
+        type: Content.bold,
       },
       {
         output: "Kraví hora",
-        type: contentType.link,
+        type: Content.link,
         href: "https://kometaplavani.cz/ucime-se-plavat/kravi-hora/",
       },
       {
         output: "Kohoutovice",
-        type: contentType.link,
+        type: Content.link,
         href: "https://kometaplavani.cz/plavani-bazenky/bazenky/aquapark-kohoutovice/",
       },
       {
         output: "Bazénky",
-        type: contentType.link,
+        type: Content.link,
         href: "https://kometaplavani.cz/plavani-bazenky/bazenky/",
       },
       {
         output: "",
-        type: contentType.blank,
+        type: Content.blank,
       },
       {
         output: "Tábory a letní akce",
-        type: contentType.bold,
+        type: Content.bold,
       },
       {
         output: "Kraví hora",
-        type: contentType.link,
+        type: Content.link,
         href: "https://kometaplavani.cz/primestsky-tabor-kravi-hora/",
       },
       {
         output: "Pisárky",
-        type: contentType.link,
+        type: Content.link,
         href: "https://kometaplavani.cz/otevrena-zahrada/",
       },
     ],
@@ -72,8 +71,8 @@ export const data: Array<IData> = [
   {
     headline: "Informace",
     fragment: [
-      { output: "GDPR", type: contentType.normal },
-      { output: "IČO: 44992432", type: contentType.normal },
+      { output: "GDPR", type: Content.normal },
+      { output: "IČO: 44992432", type: Content.normal },
     ],
   },
 ];

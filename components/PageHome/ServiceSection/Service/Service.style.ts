@@ -1,8 +1,10 @@
 //libraries
 import styled from "styled-components";
 //styles
-import { dimensions } from "@/utils/breakpoints";
+import { dimensions } from "@/utils";
 import { A as SA, Flex as SFlex } from "@/styles";
+import Image from "next/image";
+import { Button } from "@/components/Shared";
 
 export const Service = styled.article`
   display: flex;
@@ -36,6 +38,11 @@ export const Container = styled.div`
   flex: 1;
 `;
 
+export const Img = styled(Image)`
+  height: 100%;
+  width: 100%;
+  object-fit: cover;
+`;
 export const ImageContainer = styled.div`
   position: relative;
   height: 18rem;
@@ -45,6 +52,6 @@ export const ImageContainer = styled.div`
   }
 `;
 
-export const A = styled(SA)`
+export const Btn = styled(Button)`
   align-self: end;
 `;

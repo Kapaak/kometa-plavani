@@ -1,9 +1,10 @@
 //libraries
 import styled from "styled-components";
 //styles
-import { dimensions } from "@/utils/breakpoints";
+import { dimensions } from "@/utils";
+import Image from "next/image";
 
-export const Logo = styled.a`
+export const Img = styled(Image)`
   position: relative;
   display: inline-block;
   z-index: 10;

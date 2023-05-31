@@ -1,4 +1,4 @@
-import { dimensions } from "@/utils/breakpoints";
+import { dimensions } from "@/utils";
 import styled from "styled-components";
 
 export const MainHeadline = styled.h1`
