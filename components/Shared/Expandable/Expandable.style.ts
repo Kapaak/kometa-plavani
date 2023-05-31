@@ -1,6 +1,6 @@
 import styled from "styled-components";
 import { Text as SText } from "@/styles";
-import { CaretDown } from "phosphor-react";
+import { CaretDown } from "@phosphor-icons/react";
 
 export const Expandable = styled.div`
   margin: 1rem 0;

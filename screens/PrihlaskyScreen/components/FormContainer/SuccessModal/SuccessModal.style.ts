@@ -1,6 +1,6 @@
 import { Flex } from "@/styles";
 import { IconButton } from "@/shared";
-import { ArrowRight } from "phosphor-react";
+import { ArrowRight } from "@phosphor-icons/react";
 import styled from "styled-components";
 import { dimensions } from "utils/breakpoints";
 

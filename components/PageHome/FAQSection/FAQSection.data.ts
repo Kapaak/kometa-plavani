@@ -11,7 +11,14 @@ import {
   CalendarBlank,
   Archive,
   Scroll,
-} from "phosphor-react";
+  TreePalm,
+  Coins,
+  Paperclip,
+  Swap,
+  FileArchive,
+  Checks,
+  Notebook,
+} from "@phosphor-icons/react";
 
 export const data = [
   {
@@ -30,7 +37,7 @@ export const data = [
         title: "Absence a náhrady",
         description:
           "Dítě není potřeba z hodiny omlouvat, z tohoto důvodu nejsme schopni garantovat náhrady všem. Vždy je potřeba domluva s vedoucí trenérem.",
-        icon: Wallet,
+        icon: Swap,
       },
 
       {
@@ -38,21 +45,14 @@ export const data = [
         title: "Podmínky pro přijetí do kurzu",
         description:
           "Bližší informace naleznete v sekci DOKUMENTY. Primárně je třeba, aby dítě bylo schopno uposlechnout pokynům trenéra a ovládalo základní hygienické návyky.",
-        icon: FirstAid,
+        icon: Notebook,
       },
       {
         id: "55",
         title: "Pro koho jsou kurzy vhodné",
         description:
           "U jednotlivých kurzů naleznete bližší informace. Obecně lze říct, že kurzy primárně slouží pro děti od 4 do 15 let, které se chtějí naučit nebo zdokonalit v plavání.",
-        icon: FirstAid,
-      },
-      {
-        id: "66",
-        title: "Co je součástí ceny",
-        description:
-          " Součástí ceny je vždy pronájem bazénu, profesionální trenéři a kvalitní pomůcky, které pomohou zefektivnit výuku plavání.          ",
-        icon: FirstAid,
+        icon: Checks,
       },
     ],
   },
@@ -73,14 +73,21 @@ export const data = [
         7.         cena kurzu
         8.         telefon na žadatele
         9.         e-mail, na který se bude faktura posílat`,
-        icon: Coin,
+        icon: Paperclip,
       },
       {
         id: "55",
         title: "Platba",
         description:
           "Kurz je třeba zaplatit nejpozději před první navštívenou lekcí. Platbu proveďte na účet 8822184001, banka 5500, variabilní symbol 01. Do zprávy pro příjemce je nutné napsat jméno dítěte. Za každé dítě je nutné poslat peníze jednotlivě.",
-        icon: FirstAid,
+        icon: Coins,
+      },
+      {
+        id: "66",
+        title: "Co je součástí ceny",
+        description:
+          " Součástí ceny je vždy pronájem bazénu, profesionální trenéři a kvalitní pomůcky, které pomohou zefektivnit výuku plavání.          ",
+        icon: Coin,
       },
     ],
   },
@@ -112,7 +119,7 @@ export const data = [
            
           8.5. Den vítězství
           `,
-        icon: EnvelopeOpen,
+        icon: TreePalm,
       },
     ],
   },

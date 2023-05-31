@@ -1,6 +1,6 @@
 import { Divider, Strong, Text } from "@/styles";
 import { Modal } from "@/shared";
-import { UserCirclePlus } from "phosphor-react";
+import { UserCirclePlus } from "@phosphor-icons/react";
 import * as S from "./SuccessModal.style";
 
 interface ModalProps {

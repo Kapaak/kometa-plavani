@@ -1,5 +1,5 @@
 import { Option } from "@/domains";
-import { CaretCircleDown } from "phosphor-react";
+import { CaretCircleDown } from "@phosphor-icons/react";
 import React, { useId } from "react";
 import { Controller } from "react-hook-form";
 import { ValidationRule } from "react-hook-form/dist/types";

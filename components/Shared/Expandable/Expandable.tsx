@@ -1,6 +1,6 @@
 import { useState } from "react";
 import * as S from "./Expandable.style";
-import { Icon as TIcon } from "phosphor-react";
+import { Icon as TIcon } from "@phosphor-icons/react";
 import { Flex } from "@/styles";
 
 interface FAQProps {

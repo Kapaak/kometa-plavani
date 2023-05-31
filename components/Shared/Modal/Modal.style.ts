@@ -1,5 +1,5 @@
 import { Text } from "@/styles";
-import { ArrowRight } from "phosphor-react";
+import { ArrowRight } from "@phosphor-icons/react";
 import styled from "styled-components";
 import { Button } from "../Button";
 

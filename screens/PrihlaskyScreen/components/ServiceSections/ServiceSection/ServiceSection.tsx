@@ -7,7 +7,7 @@ import * as S from "./ServiceSection.style";
 //interfaces
 import { ScrollSections } from "@/domains";
 import { Button } from "@/components/Shared/Button";
-import { Coin, Timer } from "phosphor-react";
+import { Coin, Timer } from "@phosphor-icons/react";
 
 interface ServiceSectionProps {
   headline: string;
