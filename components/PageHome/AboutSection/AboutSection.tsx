@@ -35,8 +35,8 @@ const AboutSection = () => {
           <S.Img src={WaveYellow} alt="vlnka" />
         </S.ImageContainer>
         <S.AboutText center bold>
-          Předpoklad pro otevření přihlášek kurzů je červen 2023. Budeme se na
-          Vás těšit.
+          Předpoklad pro otevření přihlášek kurzů je 12.června 2023. Budeme se
+          na Vás těšit.
         </S.AboutText>
         <S.ImageContainer>
           <S.Img src={WaveYellow} alt="vlnka" />

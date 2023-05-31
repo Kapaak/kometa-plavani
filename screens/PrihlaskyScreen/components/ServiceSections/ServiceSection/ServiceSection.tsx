@@ -36,17 +36,17 @@ export const ServiceSection = (props: ServiceSectionProps) => {
           </S.ImageContainer>
           <S.Headline>{headline}</S.Headline>
           <Text variant="dark">{text}</Text>
-          <Flex direction="row" gap="1rem" align="center">
+          {/* <Flex direction="row" gap="1rem" align="center">
             <Coin />
             <Text variant="dark">{price} Kč</Text>
-          </Flex>
+          </Flex> */}
           <Flex direction="row" gap="1rem" align="center">
             <Timer />
             <Text variant="dark">{time} min</Text>
           </Flex>
-          <Link href={`/prihlasky/${url}`} passHref>
-            <Button>přejít na přihlášku</Button>
-          </Link>
+          {/* <Link href={`/prihlasky/${url}`} passHref> */}
+          <Button disabled>přejít na přihlášku</Button>
+          {/* </Link> */}
         </S.Flex>
       </Flex>
     </SectionElement>
