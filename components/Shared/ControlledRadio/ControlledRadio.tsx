@@ -22,8 +22,8 @@ export const RadioGroupIndicator = styled(RadioGroup.Indicator)`
     top: 50%;
     left: 50%;
     display: block;
-    width: 100%;
-    height: 100%;
+    width: 1rem;
+    height: 1rem;
     border-radius: 50%;
     background-color: var(--colb);
   }
@@ -32,8 +32,10 @@ export const RadioGroupIndicator = styled(RadioGroup.Indicator)`
 export const RadioGroupItem = styled(RadioGroup.Item)`
   all: unset;
   background-color: #fff;
-  width: 1.2rem;
-  height: 1.2rem;
+  width: 1.6rem;
+  min-width: 1.6rem;
+  min-height: 1.6rem;
+  height: 1.6rem;
   border-radius: 50%;
   box-shadow: 0 2px 10px var(--collg);
 
@@ -78,26 +80,3 @@ export const ControlledRadio = ({ name, options }: ControlledRadioProps) => {
     />
   );
 };
-
-{
-  /* <Flex direction="row" align="center" gap="2rem">
-<RadioGroupItem
-  className="RadioGroupItem"
-  value="comfortable"
-  id="r2"
->
-  <RadioGroupIndicator className="RadioGroupIndicator" />
-</RadioGroupItem>
-<label className="Label" htmlFor="r2">
-  Comfortable
-</label>
-</Flex>
-<Flex direction="row" align="center" gap="2rem">
-<RadioGroupItem className="RadioGroupItem" value="compact" id="r3">
-  <RadioGroupIndicator className="RadioGroupIndicator" />
-</RadioGroupItem>
-<label className="Label" htmlFor="r3">
-  Compact
-</label>
-</Flex> */
-}

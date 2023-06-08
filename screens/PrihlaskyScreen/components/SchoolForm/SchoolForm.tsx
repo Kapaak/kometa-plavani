@@ -1,11 +1,14 @@
-import { Space, Subheadline, Text } from "@/styles";
+import { Flex, Space, Subheadline, Text } from "@/styles";
 import * as S from "./SchoolForm.style";
 import {
+  ControlledCheckbox,
   ControlledInput,
   ControlledNameInput,
   ControlledRadio,
 } from "@/shared";
 import { IconButton } from "@/components/Shared";
+import { useEffect, useState } from "react";
+import { useFormContext } from "react-hook-form";
 
 interface SchoolFormProps {
   onSubmit: any;
@@ -18,8 +21,32 @@ export const SchoolForm = ({
   errors,
   isLoading,
 }: SchoolFormProps) => {
+  //pokud bude checkedFields met vetsi length nez max, tak to hodi ostatni,
+  //ktery nejsou zrovna checked jako disabled
+  const [checkedFields, setCheckedFields] = useState<string[]>([]);
+
+  const { watch } = useFormContext();
+
+  const watchedFields = watch();
+
+  useEffect(() => {
+    //tohle by slo hodit do wrapperu <CheckboxGroup>{children}</CheckboxGroup>
+    // Subscribe to changes in fields with names containing "day_"
+    for (const fieldName in watchedFields) {
+      if (fieldName.includes("day_")) {
+        const fieldValue = watchedFields[fieldName];
+        //tak tady budu checkovat, jestli uz je 1 a pokud ano, tak disablni vse
+        console.log(`Field "${fieldName}" changed:`, fieldValue);
+        // if (fieldValue) setCheckedFields((prev) => [...prev, fieldName]);
+      }
+    }
+  }, [watchedFields]);
+
   return (
     <S.Form onSubmit={onSubmit}>
+      <button type="button" onClick={() => console.log(checkedFields, "ckds")}>
+        show checkd
+      </button>
       <S.Container>
         <S.FormItem>
           <Subheadline variant="dark">Údaje</Subheadline>
@@ -113,15 +140,33 @@ export const SchoolForm = ({
           <ControlledRadio
             name="level"
             options={[
-              { label: "škola", value: "škola" },
-              { label: "školka", value: "školka" },
+              { label: "Škola", value: "škola" },
+              { label: "Školka", value: "školka" },
             ]}
           />
         </S.FormItem>
       </S.Container>
       <Space />
       <S.Container>
-        <Subheadline variant="dark">Vybraný termín a čas</Subheadline>
+        <S.FormItem>
+          <Subheadline variant="dark">Vybraný termín a čas</Subheadline>
+          <Flex direction="row" gap="6rem" align="baseline">
+            <Flex gap="1rem">
+              <Text variant="dark" bold>
+                Pondělí
+              </Text>
+              <ControlledCheckbox name="day_po_9" label="9:00 - 10:00" />
+              <ControlledCheckbox name="day_po_8" label="10:00 - 11:00" />
+            </Flex>
+            <Flex gap="1rem">
+              <Text variant="dark" bold>
+                Úterý
+              </Text>
+              <ControlledCheckbox name="day_ut_9" label="9:00 - 10:00" />
+              <ControlledCheckbox name="day_ut_8" label="10:00 - 11:00" />
+            </Flex>
+          </Flex>
+        </S.FormItem>
       </S.Container>
       <S.SubmitContainer>
         <S.Text>
@@ -147,3 +192,7 @@ export const SchoolForm = ({
     </S.Form>
   );
 };
+
+// export const CheckboxGroup = () => {
+//   return
+// }
