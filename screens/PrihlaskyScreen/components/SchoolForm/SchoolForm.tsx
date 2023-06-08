@@ -1,11 +1,10 @@
-import { Subheadline } from "@/styles";
+import { Space, Subheadline, Text } from "@/styles";
 import * as S from "./SchoolForm.style";
 import {
   ControlledInput,
-  ControlledSelect,
   ControlledNameInput,
+  ControlledRadio,
 } from "@/shared";
-import { createOption } from "@/utils";
 import { IconButton } from "@/components/Shared";
 
 interface SchoolFormProps {
@@ -27,10 +26,10 @@ export const SchoolForm = ({
           <S.FormInputContainer>
             <ControlledNameInput
               name="schoolName"
-              placeholder="Název školy"
+              placeholder="Název školy / školky"
               required="Jméno nesmí být prázdné"
             />
-            <S.Label>Název školy</S.Label>
+            <S.Label>Název školy / školky</S.Label>
             <S.ErrorContainer>{errors?.schoolName?.message}</S.ErrorContainer>
           </S.FormInputContainer>
           <S.FormInputContainer>
@@ -89,82 +88,40 @@ export const SchoolForm = ({
             </S.ErrorContainer>
           </S.FormInputContainer>
         </S.FormItem>
+      </S.Container>
+      <Space />
+      <S.Container>
         <S.FormItem>
-          <Subheadline variant="dark">Lekce</Subheadline>
-          <S.FormInputContainer>
-            <ControlledInput
-              name="lessonsCount"
-              placeholder="Počet lekcí"
-              pattern={/^\d+$/}
-              required="Počet lekcí musí být číselná hodnota"
-            />
-            <S.Label>Počet lekcí</S.Label>
-            <S.ErrorContainer>{errors?.lessonsCount?.message}</S.ErrorContainer>
-          </S.FormInputContainer>
-          <S.FormInputContainer>
-            <ControlledInput
-              name="childrenCount"
-              placeholder="Počet dětí"
-              pattern={/^\d+$/}
-              required="Počet dětí musí být číselná hodnota"
-            />
-            <S.Label>Počet dětí</S.Label>
-            <S.ErrorContainer>
-              {errors?.childrenCount?.message}
-            </S.ErrorContainer>
-          </S.FormInputContainer>
-          <S.FormInputContainer>
-            <ControlledSelect
-              name="preferedDay"
-              placeholder="Preferovaný den"
-              pattern={/^\d+$/}
-              required="Preferovaný den nesmí být prázdný"
-              options={[
-                createOption("pondělí", "pondělí"),
-                createOption("úterý", "úterý"),
-                createOption("středa", "středa"),
-                createOption("čtvrtek", "čtvrtek"),
-                createOption("pátek", "pátek"),
-              ]}
-            />
-            <S.Label>Preferovaný den</S.Label>
-            <S.ErrorContainer>{errors?.preferedDay?.message}</S.ErrorContainer>
-          </S.FormInputContainer>
-          <S.FormInputContainer>
-            <ControlledSelect
-              name="preferedTime"
-              placeholder="Preferovaný čas"
-              pattern={/^\d+$/}
-              required="Preferovaný čas nesmí být prázdný"
-              options={[
-                createOption("7:00", "7:00"),
-                createOption("7:30", "7:30"),
-                createOption("8:00", "8:00"),
-                createOption("8:30", "8:30"),
-                createOption("9:00", "9:00"),
-                createOption("9:30", "9:30"),
-                createOption("10:00", "10:00"),
-                createOption("10:30", "10:30"),
-                createOption("11:00", "11:00"),
-                createOption("11:30", "11:30"),
-                createOption("12:00", "12:00"),
-                createOption("13:30", "13:30"),
-                createOption("13:30", "13:30"),
-                createOption("14:00", "14:00"),
-                createOption("14:30", "14:30"),
-                createOption("15:00", "15:00"),
-                createOption("15:30", "15:30"),
-                createOption("16:00", "16:00"),
-                createOption("16:30", "16:30"),
-                createOption("17:00", "17:00"),
-                createOption("17:30", "17:30"),
-                createOption("18:00", "18:00"),
-              ]}
-            />
-            <S.Label>Preferovaný den</S.Label>
-            <S.ErrorContainer>{errors?.preferedTime?.message}</S.ErrorContainer>
-          </S.FormInputContainer>
+          <Subheadline variant="dark">Počet lekcí</Subheadline>
+          <ControlledRadio
+            name="numOfLessons"
+            options={[
+              {
+                label:
+                  "2040 Kč - pololetí, 1x týdně - cca 17 lekcí ve vybrané skupince / na 1 žáka",
+                value: "2040 Kč",
+              },
+            ]}
+          />
+          <Text variant="dark">
+            V případě individuálních požadavků kontaktujte
+            plavaniluzanky@kometabrno.cz
+          </Text>
         </S.FormItem>
+        <S.FormItem>
+          <Subheadline variant="dark">Úroveň</Subheadline>
+          <ControlledRadio
+            name="level"
+            options={[
+              { label: "škola", value: "škola" },
+              { label: "školka", value: "školka" },
+            ]}
+          />
+        </S.FormItem>
+      </S.Container>
+      <Space />
+      <S.Container>
+        <Subheadline variant="dark">Vybraný termín a čas</Subheadline>
       </S.Container>
       <S.SubmitContainer>
         <S.Text>

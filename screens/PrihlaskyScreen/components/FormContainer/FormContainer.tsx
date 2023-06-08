@@ -57,6 +57,7 @@ export const FormContainer = ({
     handleSubmit,
     formState: { errors },
     reset,
+    getValues,
   } = form;
 
   const resetAll = () => {
@@ -118,6 +119,11 @@ export const FormContainer = ({
 
   return (
     <FormProvider {...form}>
+      <button type="button" onClick={() => console.log(getValues())}>
+        {" "}
+        show data
+      </button>
+
       <SuccessModal
         isOpen={isOpen}
         addChild={resetAll}
