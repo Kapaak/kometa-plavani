@@ -29,16 +29,16 @@ export const FormContainer = ({
     console.log(d, "dcko");
     console.log(newVals, "newvals");
 
-    // setIsLoading(true);
-    // try {
-    //   await handleExcelUpload(newVals);
-    //   axios.post("/api/email", { email: d?.email ?? d?.contactPersonEmail });
-    // } catch (e) {
-    //   console.log("cant send email or create user");
-    // } finally {
-    //   setIsOpen(true);
-    //   setIsLoading(false);
-    // }
+    setIsLoading(true);
+    try {
+      await handleExcelUpload(newVals);
+      axios.post("/api/email", { email: d?.email ?? d?.contactPersonEmail });
+    } catch (e) {
+      console.log("cant send email or create user");
+    } finally {
+      setIsOpen(true);
+      setIsLoading(false);
+    }
   };
 
   //todo select input vraci {label:"...",value:"..."}, ja chci ale jen "...", to se nastavuje uvnitr toho selectu nejak
@@ -48,9 +48,6 @@ export const FormContainer = ({
     newData.gender = data?.gender?.value;
     newData.insurance = data?.insurance?.value;
     newData.swimmingAbilities = data?.swimmingAbilities?.value;
-    //dalši
-    newData.preferedDay = data?.preferedDay?.value;
-    newData.preferedTime = data?.preferedTime?.value;
 
     return newData;
   };
@@ -112,10 +109,10 @@ export const FormContainer = ({
         "Kontaktní osoba": d?.contactPerson,
         "Telefon kontaktní osoby": d?.contactPersonPhone,
         "Email kontaktní osoby": d?.contactPersonEmail,
-        "Počet lekcí": d?.lessonsCount,
+        "Cenová kategorie": d?.lessonsPrice,
         "Počet dětí": d?.childrenCount,
-        "Preferovaný den": d?.preferedDay,
-        "Preferovaný čas": d?.preferedTime,
+        Úroveň: d?.level,
+        "Den a čas": d?.lessonsDayTime,
       },
       spreadsheet
     );

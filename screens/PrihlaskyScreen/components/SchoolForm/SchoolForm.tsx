@@ -113,6 +113,12 @@ export const SchoolForm = ({
     setSelectedOptions(options);
   };
 
+  const handleSubmit = (data: any) => {
+    onSubmit(data);
+    setSelectedOptions([]);
+    setSelectedLevel("lower");
+  };
+
   // useEffect(() => {
   //   //tohle by slo hodit do wrapperu <CheckboxGroup>{children}</CheckboxGroup>
   //   // Subscribe to changes in fields with names containing "day_"
@@ -135,7 +141,7 @@ export const SchoolForm = ({
   }, [selectedOptions, setValue]);
 
   return (
-    <S.Form onSubmit={onSubmit}>
+    <S.Form onSubmit={handleSubmit}>
       <S.Container>
         <S.FormItem>
           <Subheadline variant="dark">Údaje</Subheadline>
@@ -166,6 +172,18 @@ export const SchoolForm = ({
             />
             <S.Label>IČ nebo DIČ</S.Label>
             <S.ErrorContainer>{errors?.identifier?.message}</S.ErrorContainer>
+          </S.FormInputContainer>
+          <S.FormInputContainer>
+            <ControlledInput
+              name="childrenCount"
+              placeholder="Počet dětí"
+              required="Počet dětí musí být vyplněn"
+              type="number"
+            />
+            <S.Label>Počet dětí</S.Label>
+            <S.ErrorContainer>
+              {errors?.childrenCount?.message}
+            </S.ErrorContainer>
           </S.FormInputContainer>
         </S.FormItem>
         <S.FormItem>
@@ -240,6 +258,7 @@ export const SchoolForm = ({
           <Subheadline variant="dark">Vybraný termín a čas</Subheadline>
           {/* //todo pridej at to rovnou uklada do react hook form */}
           <Select
+            instanceId="lessons-select"
             placeholder="Termín a čas"
             styles={colourStyles}
             value={selectedOptions}
@@ -287,7 +306,7 @@ export const SchoolForm = ({
 
         <IconButton
           loading={isLoading}
-          disabled={isLoading}
+          disabled={isLoading || selectedOptions.length === 0}
           iconAfter={S.ArrowRightIcon}
         >
           Odeslat
