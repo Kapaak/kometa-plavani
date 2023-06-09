@@ -1,7 +1,6 @@
 import { Flex, Space, Subheadline, Text } from "@/styles";
 import * as S from "./SchoolForm.style";
 import {
-  ControlledCheckbox,
   ControlledInput,
   ControlledNameInput,
   ControlledRadio,
@@ -9,7 +8,7 @@ import {
 import { IconButton } from "@/components/Shared";
 import { useEffect, useState } from "react";
 import { useFormContext } from "react-hook-form";
-import Select, { MultiValue } from "react-select";
+import Select, { MultiValue, StylesConfig } from "react-select";
 
 interface SchoolFormProps {
   onSubmit: any;
@@ -35,15 +34,15 @@ const highLevelOptions = [
   {
     label: "Pondělí",
     options: [
-      { label: "9:00 - 10:00 (Po)", value: "po_9" },
-      { label: "10:00 - 11:00 (Po)", value: "po_10" },
+      { label: "9:00 - 10:00", value: "po_9" },
+      { label: "10:00 - 11:00", value: "po_10" },
     ],
   },
   {
     label: "Úterý",
     options: [
-      { label: "9:00 - 10:00 (Út)", value: "ut_9" },
-      { label: "10:00 - 11:00 (Út)", value: "ut_10" },
+      { label: "9:00 - 10:00", value: "ut_9" },
+      { label: "10:00 - 11:00", value: "ut_10" },
     ],
   },
 ];
@@ -52,18 +51,36 @@ const lowLevelOptions = [
   {
     label: "Pondělí",
     options: [
-      { label: "9:00 - 10:00 (Po)", value: "po_9" },
-      { label: "10:00 - 11:00 (Po)", value: "po_10" },
+      { label: "9:00 - 10:00", value: "po_9" },
+      { label: "10:00 - 11:00", value: "po_10" },
     ],
   },
   {
     label: "Úterý",
     options: [
-      { label: "9:00 - 10:00 (Út)", value: "ut_9" },
-      { label: "10:00 - 11:00 (Út)", value: "ut_10" },
+      { label: "9:00 - 10:00", value: "ut_9" },
+      { label: "10:00 - 11:00", value: "ut_10" },
     ],
   },
 ];
+
+const colourStyles: StylesConfig<any, true> = {
+  control: (styles) => ({ ...styles, backgroundColor: "white" }),
+
+  multiValue: (styles, { data }) => {
+    const prefix = data.value.split("_")[0].toUpperCase() as string;
+    return {
+      ...styles,
+      paddingLeft: "1rem",
+      ":before": {
+        display: "flex",
+        alignSelf: "center",
+        content: `"${prefix}"`,
+        fontSize: "1.2rem",
+      },
+    };
+  },
+};
 
 export const SchoolForm = ({
   onSubmit,
@@ -230,6 +247,7 @@ export const SchoolForm = ({
           {/* //todo pridej at to rovnou uklada do react hook form */}
           <Select
             placeholder="Termín a čas"
+            styles={colourStyles}
             value={selectedOptions}
             isMulti
             name="lessonsDayTime"
@@ -284,7 +302,3 @@ export const SchoolForm = ({
     </S.Form>
   );
 };
-
-// export const CheckboxGroup = () => {
-//   return
-// }
