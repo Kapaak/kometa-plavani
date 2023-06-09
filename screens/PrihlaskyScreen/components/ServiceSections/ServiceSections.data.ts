@@ -23,12 +23,11 @@ export const data: Service[] = [
   },
   {
     id: 2,
-    headline: "Základní a pokročilé plavání (od 4-10 let)",
+    headline: "Základní a pokročilé plavání",
     text: `
     Na začátku děti rozdělíme do týmu, abychom zajistili jejich nejrychlejší rozvoj. 
-Cílem je plavce naučit základům plavání. Děti budou plavat ve skupinách dle svých plaveckých dovedností. Našim úkolem je tyto dovednosti rozšířit a děti naučit plavecké způsoby kraul a znak. Ve druhé části kurzu se zařazujeme motoricky náročnější prsa a motýl. Počet lekcí není omezen. Naše metodika je v souladu s MŠMT koncipovaná na 20 hodin pro adaptaci na vodní prostředí dalších 20 hodin je věnováno výuce jednotlivých plaveckých způsobů. Každá výuková jednotka, ale probíhá dle aktuálních potřeb jednotlivců. Proto Vám můžeme zajistit, že si všechny děti odnesou vždy něco nového.
+Cílem je plavce naučit základům plavání. Děti budou plavat ve skupinách dle svých plaveckých dovedností. Našim úkolem je tyto dovednosti rozšířit a děti naučit plavecké způsoby kraul a znak. Ve druhé části kurzu se zařazujeme motoricky náročnější prsa a motýl. Počet lekcí není omezen.
 Děti mohou své nově nabyté dovednosti rozvíjet v našich navazujících kurzech.
-Výuka probíhá jednou týdně v bazénu, dle výkonnosti jednotlivců. Po dokončení kurzu děti obdrží vysvědčení. 
       `,
     image: SchoolService,
     alt: "plavec s hlavou pod vodou a deskou",
@@ -40,7 +39,7 @@ Výuka probíhá jednou týdně v bazénu, dle výkonnosti jednotlivců. Po doko
   },
   {
     id: 3,
-    headline: "Zdokonalovací plavání pro děti (od 10-15 let)",
+    headline: "Zdokonalovací plavání pro děti",
     text: `Děti jsou rozdělovány do týmu dle jejich dovedností. Každá výuková jednotka se  
     probíhá dle aktuálních potřeb jednotlivců. Maximální počet dětí v jedné hodině je 55, počet lekcí není omezen. Součástí ceny je vždy pronájem bazénu, profesionální trenéři a kvalitní pomůcky, které pomohou zefektivnit výuku plavání.`,
     image: CourseService,

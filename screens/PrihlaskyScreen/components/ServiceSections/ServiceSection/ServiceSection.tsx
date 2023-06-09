@@ -50,21 +50,34 @@ export const ServiceSection = (props: ServiceSectionProps) => {
           <Text variant="dark">{text}</Text>
           <Flex>
             <Flex direction="row" gap="1rem" align="center">
-              <Coin />
+              <Coin size={20} />
               <Text variant="dark">{price}</Text>
+              <Text variant="dark">
+                (
+                <a
+                  href={"/files/CENIK_LUZANKY.pdf"}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  download
+                  style={{ textDecoration: "underline" }}
+                >
+                  ceník lekcí
+                </a>
+                )
+              </Text>
             </Flex>
             <Flex direction="row" gap="1rem" align="center">
-              <Timer />
+              <Timer size={20} />
               <Text variant="dark">{time} min</Text>
             </Flex>
             <Flex direction="row" gap="1rem" align="center">
-              <Baby />
+              <Baby size={20} />
               <Text variant="dark">{ageRange}</Text>
             </Flex>
           </Flex>
-          {/* <Link href={`/prihlasky/${url}`} passHref> */}
-          <Button disabled>přejít na přihlášku</Button>
-          {/* </Link> */}
+          <Link href={`/prihlasky/${url}`} passHref>
+            <Button>přihláška</Button>
+          </Link>
         </S.Flex>
       </Flex>
     </SectionElement>

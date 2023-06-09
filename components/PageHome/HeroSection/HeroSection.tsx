@@ -31,7 +31,7 @@ const HeroSection = () => {
               color="secondary"
               onClick={() => scrollTo("service")}
             >
-              Volné termíny
+              Příhlášky
             </Button>
           </S.FlexWrapper>
         </S.MaxWidth>

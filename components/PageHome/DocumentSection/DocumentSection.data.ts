@@ -1,5 +1,10 @@
 export const data = [
   {
+    id: "0",
+    title: "Ceník",
+    filePath: "/files/CENIK_LUZANKY.pdf",
+  },
+  {
     id: "1",
     title: "Zásady ochrany osobních údajů",
     filePath: "/files/ZASADY_GDPR.pdf",
