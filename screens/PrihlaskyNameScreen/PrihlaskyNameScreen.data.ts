@@ -1,14 +1,14 @@
 export const prihlaskyNameData = [
   {
     spreadsheetId: "0",
-    name: "skoly",
+    name: "skoly-skolky",
   },
   {
     spreadsheetId: "1955007726",
-    name: "skolky",
+    name: "zakladni-plavani",
   },
   {
     spreadsheetId: "1941806095",
-    name: "kurzy",
+    name: "zdokonalovaci-plavani",
   },
 ];

@@ -8,6 +8,7 @@ import axios from "axios";
 import { SchoolForm } from "../SchoolForm";
 import { CourseForm } from "../CourseForm";
 import { Course } from "@/domains";
+import { BasicSwimmingForm } from "../BasicSwimmingForm";
 
 interface FormContainerProps {
   spreadsheet: string;
@@ -25,16 +26,19 @@ export const FormContainer = ({
 
   const onSubmit = async (d: any) => {
     const newVals = normalizeSelectInputs(d);
-    setIsLoading(true);
-    try {
-      await handleExcelUpload(newVals);
-      axios.post("/api/email", { email: d?.email ?? d?.contactPersonEmail });
-    } catch (e) {
-      console.log("cant send email or create user");
-    } finally {
-      setIsOpen(true);
-      setIsLoading(false);
-    }
+    console.log(d, "dcko");
+    console.log(newVals, "newvals");
+
+    // setIsLoading(true);
+    // try {
+    //   await handleExcelUpload(newVals);
+    //   axios.post("/api/email", { email: d?.email ?? d?.contactPersonEmail });
+    // } catch (e) {
+    //   console.log("cant send email or create user");
+    // } finally {
+    //   setIsOpen(true);
+    //   setIsLoading(false);
+    // }
   };
 
   //todo select input vraci {label:"...",value:"..."}, ja chci ale jen "...", to se nastavuje uvnitr toho selectu nejak
@@ -57,7 +61,6 @@ export const FormContainer = ({
     handleSubmit,
     formState: { errors },
     reset,
-    getValues,
   } = form;
 
   const resetAll = () => {
@@ -80,6 +83,7 @@ export const FormContainer = ({
   const handleExcelUpload = async (d: any) => {
     const currentDateTime = dayjs().format("DD-MM-YYYY hh:mm");
 
+    //tady budu spis met opacnou otazku !== skoly-skolky
     if (courseName === "kurzy")
       return await appendSpreadsheet(
         {
@@ -119,31 +123,26 @@ export const FormContainer = ({
 
   return (
     <FormProvider {...form}>
-      <button type="button" onClick={() => console.log(getValues())}>
-        {" "}
-        show data
-      </button>
-
       <SuccessModal
         isOpen={isOpen}
         addChild={resetAll}
         redirect={redirectHome}
       />
-      {courseName === "skoly" && (
+      {/* {courseName === "zdokonalovaci-plavani" && (
         <SchoolForm
           onSubmit={handleSubmit(onSubmit)}
           errors={errors}
           isLoading={isLoading}
         />
-      )}
-      {courseName === "kurzy" && (
-        <CourseForm
+      )} */}
+      {courseName === "zakladni-plavani" && (
+        <BasicSwimmingForm
           onSubmit={handleSubmit(onSubmit)}
           errors={errors}
           isLoading={isLoading}
         />
       )}
-      {courseName === "skolky" && (
+      {courseName === "skoly-skolky" && (
         <SchoolForm
           onSubmit={handleSubmit(onSubmit)}
           errors={errors}

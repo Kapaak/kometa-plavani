@@ -1,6 +1,9 @@
 import { StaticImageData } from "next/image";
 
-export type Course = "skolky" | "skoly" | "kurzy";
+export type Course =
+  | "skoly-skolky"
+  | "zdokonalovaci-plavani"
+  | "zakladni-plavani";
 
 export enum ScrollSections {
   home = "home",
@@ -54,6 +57,7 @@ export type Service = {
   url?: string;
   price?: string;
   time?: number;
+  ageRange?: string;
 };
 
 export type Dropdown = {

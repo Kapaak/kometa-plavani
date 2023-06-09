@@ -14,9 +14,9 @@ export const PrihlaskyNameScreen = ({
   spreadsheet,
 }: PrihlaskyNameScreenProps) => {
   const courseTranslation = useMemo(() => {
-    if (courseName === "kurzy") return "Kurzy";
-    if (courseName === "skolky") return "Školky";
-    if (courseName === "skoly") return "Školy";
+    if (courseName === "zdokonalovaci-plavani") return "Zdokonalovací plavání";
+    if (courseName === "skoly-skolky") return "Školy a školky";
+    if (courseName === "zakladni-plavani") return "Školy";
 
     return "";
   }, [courseName]);

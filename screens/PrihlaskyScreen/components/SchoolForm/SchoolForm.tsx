@@ -39,10 +39,10 @@ const highLevelOptions = [
     ],
   },
   {
-    label: "Úterý",
+    label: "Pátek",
     options: [
-      { label: "9:00 - 10:00", value: "ut_9" },
-      { label: "10:00 - 11:00", value: "ut_10" },
+      { label: "9:00 - 10:00", value: "pa_9" },
+      { label: "10:00 - 11:00", value: "pa_10" },
     ],
   },
 ];
@@ -56,10 +56,10 @@ const lowLevelOptions = [
     ],
   },
   {
-    label: "Úterý",
+    label: "Pátek",
     options: [
-      { label: "9:00 - 10:00", value: "ut_9" },
-      { label: "10:00 - 11:00", value: "ut_10" },
+      { label: "9:00 - 10:00", value: "pa_9" },
+      { label: "10:00 - 11:00", value: "pa_10" },
     ],
   },
 ];
@@ -136,12 +136,6 @@ export const SchoolForm = ({
 
   return (
     <S.Form onSubmit={onSubmit}>
-      <button
-        type="button"
-        onClick={() => console.log(selectedOptions, "ckds")}
-      >
-        show checkd
-      </button>
       <S.Container>
         <S.FormItem>
           <Subheadline variant="dark">Údaje</Subheadline>

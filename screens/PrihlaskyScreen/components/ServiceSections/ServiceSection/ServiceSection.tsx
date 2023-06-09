@@ -7,7 +7,7 @@ import * as S from "./ServiceSection.style";
 //interfaces
 import { ScrollSections } from "@/domains";
 import { Button } from "@/components/Shared/Button";
-import { Coin, Timer } from "@phosphor-icons/react";
+import { Baby, Coin, Timer } from "@phosphor-icons/react";
 
 interface ServiceSectionProps {
   headline: string;
@@ -19,10 +19,22 @@ interface ServiceSectionProps {
   isEven: boolean;
   price?: string;
   time?: number;
+  ageRange?: string;
 }
 
 export const ServiceSection = (props: ServiceSectionProps) => {
-  const { headline, text, image, isEven, name, alt, url, time, price } = props;
+  const {
+    headline,
+    text,
+    image,
+    isEven,
+    name,
+    alt,
+    url,
+    ageRange,
+    time,
+    price,
+  } = props;
 
   return (
     <SectionElement name={name}>
@@ -36,13 +48,19 @@ export const ServiceSection = (props: ServiceSectionProps) => {
           </S.ImageContainer>
           <S.Headline>{headline}</S.Headline>
           <Text variant="dark">{text}</Text>
-          {/* <Flex direction="row" gap="1rem" align="center">
-            <Coin />
-            <Text variant="dark">{price} Kč</Text>
-          </Flex> */}
-          <Flex direction="row" gap="1rem" align="center">
-            <Timer />
-            <Text variant="dark">{time} min</Text>
+          <Flex>
+            <Flex direction="row" gap="1rem" align="center">
+              <Coin />
+              <Text variant="dark">{price}</Text>
+            </Flex>
+            <Flex direction="row" gap="1rem" align="center">
+              <Timer />
+              <Text variant="dark">{time} min</Text>
+            </Flex>
+            <Flex direction="row" gap="1rem" align="center">
+              <Baby />
+              <Text variant="dark">{ageRange}</Text>
+            </Flex>
           </Flex>
           {/* <Link href={`/prihlasky/${url}`} passHref> */}
           <Button disabled>přejít na přihlášku</Button>
