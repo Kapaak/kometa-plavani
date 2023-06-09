@@ -32,13 +32,37 @@ const availableLessons = [
 ];
 
 const highLevelOptions = [
-  { label: "9:00 - 10:00", value: "po_9" },
-  { label: "10:00 - 11:00", value: "po_10" },
+  {
+    label: "Pondělí",
+    options: [
+      { label: "9:00 - 10:00 (Po)", value: "po_9" },
+      { label: "10:00 - 11:00 (Po)", value: "po_10" },
+    ],
+  },
+  {
+    label: "Úterý",
+    options: [
+      { label: "9:00 - 10:00 (Út)", value: "ut_9" },
+      { label: "10:00 - 11:00 (Út)", value: "ut_10" },
+    ],
+  },
 ];
 
 const lowLevelOptions = [
-  { label: "9:00 - 10:00", value: "po_9" },
-  { label: "10:00 - 11:00", value: "po_10" },
+  {
+    label: "Pondělí",
+    options: [
+      { label: "9:00 - 10:00 (Po)", value: "po_9" },
+      { label: "10:00 - 11:00 (Po)", value: "po_10" },
+    ],
+  },
+  {
+    label: "Úterý",
+    options: [
+      { label: "9:00 - 10:00 (Út)", value: "ut_9" },
+      { label: "10:00 - 11:00 (Út)", value: "ut_10" },
+    ],
+  },
 ];
 
 export const SchoolForm = ({
@@ -65,25 +89,25 @@ export const SchoolForm = ({
 
   const { watch, setValue } = useFormContext();
 
-  const watchedFields = watch();
+  // const watchedFields = watch();
 
   // const handleOptionSelect = (option:readonly Option[]) => {
   const handleOptionSelect = (options: MultiValue<Option>) => {
     setSelectedOptions(options);
   };
 
-  useEffect(() => {
-    //tohle by slo hodit do wrapperu <CheckboxGroup>{children}</CheckboxGroup>
-    // Subscribe to changes in fields with names containing "day_"
-    for (const fieldName in watchedFields) {
-      if (fieldName.includes("day_")) {
-        const fieldValue = watchedFields[fieldName];
-        //tak tady budu checkovat, jestli uz je 1 a pokud ano, tak disablni vse
-        console.log(`Field "${fieldName}" changed:`, fieldValue);
-        // if (fieldValue) setCheckedFields((prev) => [...prev, fieldName]);
-      }
-    }
-  }, [watchedFields]);
+  // useEffect(() => {
+  //   //tohle by slo hodit do wrapperu <CheckboxGroup>{children}</CheckboxGroup>
+  //   // Subscribe to changes in fields with names containing "day_"
+  //   for (const fieldName in watchedFields) {
+  //     if (fieldName.includes("day_")) {
+  //       const fieldValue = watchedFields[fieldName];
+  //       //tak tady budu checkovat, jestli uz je 1 a pokud ano, tak disablni vse
+  //       console.log(`Field "${fieldName}" changed:`, fieldValue);
+  //       // if (fieldValue) setCheckedFields((prev) => [...prev, fieldName]);
+  //     }
+  //   }
+  // }, [watchedFields]);
 
   useEffect(() => {
     const transformSelectedOptions = [...selectedOptions].map(
@@ -205,6 +229,7 @@ export const SchoolForm = ({
           <Subheadline variant="dark">Vybraný termín a čas</Subheadline>
           {/* //todo pridej at to rovnou uklada do react hook form */}
           <Select
+            placeholder="Termín a čas"
             value={selectedOptions}
             isMulti
             name="lessonsDayTime"
