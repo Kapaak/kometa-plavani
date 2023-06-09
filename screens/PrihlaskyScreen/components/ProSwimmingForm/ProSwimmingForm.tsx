@@ -1,5 +1,5 @@
 import { Space, Subheadline, Text } from "@/styles";
-import * as S from "./BasicSwimmingForm.style";
+import * as S from "./ProSwimmingForm.style";
 import {
   ControlledInput,
   ControlledSelect,
@@ -12,7 +12,7 @@ import Select, { MultiValue, StylesConfig } from "react-select";
 import { useEffect, useState } from "react";
 import { useFormContext } from "react-hook-form";
 
-interface BasicSwimmingFormProps {
+interface ProSwimmingFormProps {
   onSubmit: any;
   errors: any;
   isLoading: boolean;
@@ -76,7 +76,7 @@ const availableLessons = [
   },
 ];
 
-const highLevelOptions = [
+const dayTimeOptions = [
   {
     label: "Pondělí",
     options: [{ label: "15:00 - 16:00", value: "po_15" }],
@@ -85,47 +85,21 @@ const highLevelOptions = [
   {
     label: "Středa",
     options: [{ label: "15:00 - 16:00", value: "st_15" }],
-  },
-];
-
-const lowLevelOptions = [
-  {
-    label: "Pondělí",
-    options: [{ label: "15:00 - 16:00", value: "po_15" }],
-  },
-  {
-    label: "Úterý",
-    options: [
-      { label: "15:00 - 16:00", value: "ut_15" },
-      { label: "16:00 - 17:00", value: "ut_16" },
-    ],
-  },
-  {
-    label: "Středa",
-    options: [{ label: "15:00 - 16:00", value: "st_15" }],
-  },
-  {
-    label: "Čtvrtek",
-    options: [
-      { label: "15:00 - 16:00", value: "ct_15" },
-      { label: "17:00 - 18:00", value: "ct_17" },
-    ],
   },
   {
     label: "Pátek",
     options: [
-      { label: "15:00 - 16:00", value: "pa_15" },
       { label: "16:00 - 17:00", value: "pa_16" },
       { label: "17:00 - 18:00", value: "pa_17" },
     ],
   },
 ];
 
-export const BasicSwimmingForm = ({
+export const ProSwimmingForm = ({
   onSubmit,
   errors,
   isLoading,
-}: BasicSwimmingFormProps) => {
+}: ProSwimmingFormProps) => {
   const [selectedOptions, setSelectedOptions] = useState<MultiValue<Option>>(
     []
   );
@@ -134,14 +108,9 @@ export const BasicSwimmingForm = ({
     availableLessons[0].lessonsPerWeek
   );
 
-  const [selectedLevel, setSelectedLevel] = useState<"lower" | "higher">(
-    "lower"
-  );
-
   const handleSubmit = (data: any) => {
     onSubmit(data);
     setSelectedOptions([]);
-    setSelectedLevel("lower");
   };
 
   const { watch, setValue } = useFormContext();
@@ -296,36 +265,6 @@ export const BasicSwimmingForm = ({
             plavaniluzanky@kometabrno.cz
           </Text>
         </S.FormItem>
-        <S.FormItem>
-          <Subheadline variant="dark">Úroveň</Subheadline>
-          <ControlledRadio
-            name="level"
-            onClick={(radio) => {
-              setSelectedLevel(radio?.level ?? "lower");
-              setSelectedOptions([]);
-            }}
-            options={[
-              { label: "Neplavec", value: "neplavec", level: "lower" },
-              { label: "Plavec", value: "plavec", level: "higher" },
-            ]}
-          />
-          <div>
-            <Text variant="dark">
-              Mezi plavce se řadí dítě, které zvládá dané dovednosti:
-            </Text>
-            <ul
-              style={{
-                listStylePosition: "inside",
-                fontWeight: "300",
-                marginLeft: "2rem",
-              }}
-            >
-              <li>nebojí se skočit do vody</li>
-              <li> nebojí se potopit obličej do vody</li>
-              <li> uplave 25 m alespoň jedním plaveckým způsobem</li>
-            </ul>
-          </div>
-        </S.FormItem>
       </S.Container>
       <Space />
       <S.Container>
@@ -344,9 +283,7 @@ export const BasicSwimmingForm = ({
             isOptionDisabled={() =>
               selectedOptions.length >= maxNumberOfLessons
             }
-            options={
-              selectedLevel === "higher" ? highLevelOptions : lowLevelOptions
-            }
+            options={dayTimeOptions}
           />
         </S.FormItem>
       </S.Container>

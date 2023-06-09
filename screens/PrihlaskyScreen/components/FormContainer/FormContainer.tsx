@@ -9,6 +9,7 @@ import { SchoolForm } from "../SchoolForm";
 import { CourseForm } from "../CourseForm";
 import { Course } from "@/domains";
 import { BasicSwimmingForm } from "../BasicSwimmingForm";
+import { ProSwimmingForm } from "../ProSwimmingForm";
 
 interface FormContainerProps {
   spreadsheet: string;
@@ -32,7 +33,13 @@ export const FormContainer = ({
     setIsLoading(true);
     try {
       await handleExcelUpload(newVals);
-      axios.post("/api/email", { email: d?.email ?? d?.contactPersonEmail });
+      axios.post("/api/email", {
+        email: d?.email ?? d?.contactPersonEmail,
+        templateId:
+          courseName === "skoly-skolky"
+            ? "d-59d5da971b4b4f61851ebd6dda8af4c6"
+            : "d-874de2c55ad944d890768e75b9b2969b",
+      });
     } catch (e) {
       console.log("cant send email or create user");
     } finally {
@@ -44,10 +51,6 @@ export const FormContainer = ({
   //todo select input vraci {label:"...",value:"..."}, ja chci ale jen "...", to se nastavuje uvnitr toho selectu nejak
   const normalizeSelectInputs = (data: any) => {
     const newData = { ...data };
-    newData.czechNationality = data?.czechNationality?.value;
-    newData.gender = data?.gender?.value;
-    newData.insurance = data?.insurance?.value;
-    newData.swimmingAbilities = data?.swimmingAbilities?.value;
 
     return newData;
   };
@@ -97,6 +100,8 @@ export const FormContainer = ({
           PSČ: d?.postCode,
           Alergie: d?.alergy,
           "Zdravotní potíže": d?.healthIssues,
+          Úroveň: d?.level,
+          "Den a čas": d?.lessonsDayTime,
         },
         spreadsheet
       );
@@ -125,13 +130,13 @@ export const FormContainer = ({
         addChild={resetAll}
         redirect={redirectHome}
       />
-      {/* {courseName === "zdokonalovaci-plavani" && (
-        <SchoolForm
+      {courseName === "zdokonalovaci-plavani" && (
+        <ProSwimmingForm
           onSubmit={handleSubmit(onSubmit)}
           errors={errors}
           isLoading={isLoading}
         />
-      )} */}
+      )}
       {courseName === "zakladni-plavani" && (
         <BasicSwimmingForm
           onSubmit={handleSubmit(onSubmit)}
