@@ -4,9 +4,21 @@ import React, { useId } from "react";
 import { Controller } from "react-hook-form";
 import styled from "styled-components";
 
+//idelane by bylo sem davat nejakej generic type na ten label value lessons
 type ControlledRadioProps = {
   name: string;
-  options: { label: string; value: string }[];
+  options: {
+    label: string;
+    value: string;
+    lessons?: number;
+    level?: "lower" | "higher";
+  }[];
+  onClick?: (option: {
+    label: string;
+    value: string;
+    lessons?: number;
+    level?: "lower" | "higher";
+  }) => void;
 };
 
 export const RadioGroupIndicator = styled(RadioGroup.Indicator)`
@@ -48,7 +60,11 @@ export const RadioGroupRoot = styled(RadioGroup.Root)`
   gap: 1rem;
 `;
 
-export const ControlledRadio = ({ name, options }: ControlledRadioProps) => {
+export const ControlledRadio = ({
+  name,
+  options,
+  onClick,
+}: ControlledRadioProps) => {
   const id = useId();
   return (
     <Controller
@@ -66,6 +82,7 @@ export const ControlledRadio = ({ name, options }: ControlledRadioProps) => {
                 className="RadioGroupItem"
                 value={option.value}
                 id={`${id}-${index}`}
+                onClick={() => onClick && onClick(option)}
               >
                 <RadioGroupIndicator className="RadioGroupIndicator" />
               </RadioGroupItem>

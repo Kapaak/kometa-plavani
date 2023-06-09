@@ -9,6 +9,7 @@ import {
 import { IconButton } from "@/components/Shared";
 import { useEffect, useState } from "react";
 import { useFormContext } from "react-hook-form";
+import Select, { MultiValue } from "react-select";
 
 interface SchoolFormProps {
   onSubmit: any;
@@ -16,18 +17,60 @@ interface SchoolFormProps {
   isLoading: boolean;
 }
 
+type Option = {
+  label: string;
+  value: string;
+};
+
+const availableLessons = [
+  {
+    label:
+      "2040 Kč - pololetí, 1x týdně - cca 17 lekcí ve vybrané skupince / na 1 žáka",
+    value: "2040 Kč",
+    lessons: 1,
+  },
+];
+
+const highLevelOptions = [
+  { label: "9:00 - 10:00", value: "po_9" },
+  { label: "10:00 - 11:00", value: "po_10" },
+];
+
+const lowLevelOptions = [
+  { label: "9:00 - 10:00", value: "po_9" },
+  { label: "10:00 - 11:00", value: "po_10" },
+];
+
 export const SchoolForm = ({
   onSubmit,
   errors,
   isLoading,
 }: SchoolFormProps) => {
+  const [selectedOptions, setSelectedOptions] = useState<MultiValue<Option>>(
+    []
+  );
+
+  const [maxNumberOfLessons, setMaxNumberOfLessons] = useState(
+    availableLessons[0].lessons
+  );
+
+  const [selectedLevel, setSelectedLevel] = useState<"lower" | "higher">(
+    "lower"
+  );
+  // const [selectedLevel, setSelectedLevel] = useState<Option[]>(lowLevelOptions);
+
   //pokud bude checkedFields met vetsi length nez max, tak to hodi ostatni,
   //ktery nejsou zrovna checked jako disabled
-  const [checkedFields, setCheckedFields] = useState<string[]>([]);
+  // const [checkedFields, setCheckedFields] = useState<string[]>([]);
 
-  const { watch } = useFormContext();
+  const { watch, setValue } = useFormContext();
 
   const watchedFields = watch();
+
+  // const handleOptionSelect = (option:readonly Option[]) => {
+  const handleOptionSelect = (options: MultiValue<Option>) => {
+    setSelectedOptions(options);
+  };
 
   useEffect(() => {
     //tohle by slo hodit do wrapperu <CheckboxGroup>{children}</CheckboxGroup>
@@ -42,9 +85,20 @@ export const SchoolForm = ({
     }
   }, [watchedFields]);
 
+  useEffect(() => {
+    const transformSelectedOptions = [...selectedOptions].map(
+      (option) => option.value
+    );
+
+    setValue("lessonsDayTime", transformSelectedOptions.toString());
+  }, [selectedOptions, setValue]);
+
   return (
     <S.Form onSubmit={onSubmit}>
-      <button type="button" onClick={() => console.log(checkedFields, "ckds")}>
+      <button
+        type="button"
+        onClick={() => console.log(selectedOptions, "ckds")}
+      >
         show checkd
       </button>
       <S.Container>
@@ -121,14 +175,9 @@ export const SchoolForm = ({
         <S.FormItem>
           <Subheadline variant="dark">Počet lekcí</Subheadline>
           <ControlledRadio
-            name="numOfLessons"
-            options={[
-              {
-                label:
-                  "2040 Kč - pololetí, 1x týdně - cca 17 lekcí ve vybrané skupince / na 1 žáka",
-                value: "2040 Kč",
-              },
-            ]}
+            name="lessonsPrice"
+            onClick={(radio) => setMaxNumberOfLessons(radio?.lessons ?? 0)}
+            options={availableLessons}
           />
           <Text variant="dark">
             V případě individuálních požadavků kontaktujte
@@ -139,9 +188,13 @@ export const SchoolForm = ({
           <Subheadline variant="dark">Úroveň</Subheadline>
           <ControlledRadio
             name="level"
+            onClick={(radio) => {
+              setSelectedLevel(radio?.level ?? "lower");
+              setSelectedOptions([]);
+            }}
             options={[
-              { label: "Škola", value: "škola" },
-              { label: "Školka", value: "školka" },
+              { label: "Školka", value: "školka", level: "lower" },
+              { label: "Škola", value: "škola", level: "higher" },
             ]}
           />
         </S.FormItem>
@@ -150,7 +203,21 @@ export const SchoolForm = ({
       <S.Container>
         <S.FormItem>
           <Subheadline variant="dark">Vybraný termín a čas</Subheadline>
-          <Flex direction="row" gap="6rem" align="baseline">
+          {/* //todo pridej at to rovnou uklada do react hook form */}
+          <Select
+            value={selectedOptions}
+            isMulti
+            name="lessonsDayTime"
+            closeMenuOnSelect={false}
+            onChange={handleOptionSelect}
+            isOptionDisabled={() =>
+              selectedOptions.length >= maxNumberOfLessons
+            }
+            options={
+              selectedLevel === "higher" ? highLevelOptions : lowLevelOptions
+            }
+          />
+          {/* <Flex direction="row" gap="6rem" align="baseline">
             <Flex gap="1rem">
               <Text variant="dark" bold>
                 Pondělí
@@ -165,7 +232,7 @@ export const SchoolForm = ({
               <ControlledCheckbox name="day_ut_9" label="9:00 - 10:00" />
               <ControlledCheckbox name="day_ut_8" label="10:00 - 11:00" />
             </Flex>
-          </Flex>
+          </Flex> */}
         </S.FormItem>
       </S.Container>
       <S.SubmitContainer>
