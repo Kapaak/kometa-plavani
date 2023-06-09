@@ -1,12 +1,16 @@
-import { Subheadline } from "@/styles";
+import { Space, Subheadline, Text } from "@/styles";
 import * as S from "./BasicSwimmingForm.style";
 import {
   ControlledInput,
   ControlledSelect,
   ControlledNameInput,
   IconButton,
+  ControlledRadio,
 } from "@/shared";
 import { createOption } from "@/utils";
+import Select, { MultiValue, StylesConfig } from "react-select";
+import { useEffect, useState } from "react";
+import { useFormContext } from "react-hook-form";
 
 interface BasicSwimmingFormProps {
   onSubmit: any;
@@ -14,13 +18,148 @@ interface BasicSwimmingFormProps {
   isLoading: boolean;
 }
 
+type Option = {
+  label: string;
+  value: string;
+};
+
+const colourStyles: StylesConfig<any, true> = {
+  control: (styles) => ({ ...styles, backgroundColor: "white" }),
+
+  multiValue: (styles, { data }) => {
+    const prefix = data.value.split("_")[0].toUpperCase() as string;
+    return {
+      ...styles,
+      paddingLeft: "1rem",
+      ":before": {
+        display: "flex",
+        alignSelf: "center",
+        content: `"${prefix}"`,
+        fontSize: "1.2rem",
+      },
+    };
+  },
+};
+
+const availableLessons = [
+  {
+    label: "4000 Kč - pololetí, 1 x týdně - cca 17 lekcí ve vybrané skupince",
+    value: "4000 Kč",
+    lessonsPerWeek: 1,
+  },
+  {
+    label:
+      "7700 Kč - celý školní rok, 1 x týdně - cca 34 lekcí ve vybrané skupince",
+    value: "7700 Kč",
+    lessonsPerWeek: 1,
+  },
+  {
+    label: "7500 Kč - pololetí, 2x týdně - cca 34 lekcí ve vybrané skupince",
+    value: "7500 Kč",
+    lessonsPerWeek: 2,
+  },
+  {
+    label:
+      "14500 Kč - celý školní rok, 2x týdně - cca 68 lekcí ve vybrané skupince",
+    value: "14500 Kč",
+    lessonsPerWeek: 2,
+  },
+  {
+    label: "9000 Kč - pololetí, 3x týdně - cca 51 lekcí ve vybrané skupince",
+    value: "9000 Kč",
+    lessonsPerWeek: 3,
+  },
+  {
+    label: "15000 Kč - pololetí, 3x týdně - cca 102 lekcí ve vybrané skupince",
+    value: "15000 Kč",
+    lessonsPerWeek: 3,
+  },
+];
+
+const highLevelOptions = [
+  {
+    label: "Pondělí",
+    options: [{ label: "15:00 - 16:00", value: "po_15" }],
+  },
+
+  {
+    label: "Středa",
+    options: [{ label: "15:00 - 16:00", value: "st_15" }],
+  },
+];
+
+const lowLevelOptions = [
+  {
+    label: "Pondělí",
+    options: [{ label: "15:00 - 16:00", value: "po_15" }],
+  },
+  {
+    label: "Úterý",
+    options: [
+      { label: "15:00 - 16:00", value: "ut_15" },
+      { label: "16:00 - 17:00", value: "ut_16" },
+    ],
+  },
+  {
+    label: "Středa",
+    options: [{ label: "15:00 - 16:00", value: "st_15" }],
+  },
+  {
+    label: "Čtvrtek",
+    options: [
+      { label: "15:00 - 16:00", value: "ct_15" },
+      { label: "17:00 - 18:00", value: "ct_17" },
+    ],
+  },
+  {
+    label: "Pátek",
+    options: [
+      { label: "15:00 - 16:00", value: "pa_15" },
+      { label: "16:00 - 17:00", value: "pa_16" },
+      { label: "17:00 - 18:00", value: "pa_17" },
+    ],
+  },
+];
+
 export const BasicSwimmingForm = ({
   onSubmit,
   errors,
   isLoading,
 }: BasicSwimmingFormProps) => {
+  const [selectedOptions, setSelectedOptions] = useState<MultiValue<Option>>(
+    []
+  );
+
+  const [maxNumberOfLessons, setMaxNumberOfLessons] = useState(
+    availableLessons[0].lessonsPerWeek
+  );
+
+  const [selectedLevel, setSelectedLevel] = useState<"lower" | "higher">(
+    "lower"
+  );
+
+  const handleSubmit = (data: any) => {
+    onSubmit(data);
+    setSelectedOptions([]);
+    setSelectedLevel("lower");
+  };
+
+  const { watch, setValue } = useFormContext();
+
+  const handleOptionSelect = (options: MultiValue<Option>) => {
+    setSelectedOptions(options);
+  };
+
+  useEffect(() => {
+    const transformSelectedOptions = [...selectedOptions].map(
+      (option) => option.value
+    );
+
+    setValue("lessonsDayTime", transformSelectedOptions.toString());
+  }, [selectedOptions, setValue]);
+
   return (
-    <S.Form onSubmit={onSubmit}>
+    <S.Form onSubmit={handleSubmit}>
       <S.Container>
         <S.FormItem>
           <Subheadline variant="dark">Osobní údaje</Subheadline>
@@ -138,38 +277,93 @@ export const BasicSwimmingForm = ({
             />
             <S.Label>Zdravotní potíže</S.Label>
           </S.FormInputContainer>
-          <S.FormInputContainer>
-            <ControlledSelect
-              name="preferedDay"
-              placeholder="Preferovaný den"
-              pattern={/^\d+$/}
-              required="Preferovaný den nesmí být prázdný"
-              options={[
-                createOption("pondělí", "pondělí"),
-                createOption("úterý", "úterý"),
-                createOption("středa", "středa"),
-                createOption("čtvrtek", "čtvrtek"),
-                createOption("pátek", "pátek"),
-              ]}
-            />
-            <S.Label>Preferovaný den</S.Label>
-            <S.ErrorContainer>{errors?.preferedDay?.message}</S.ErrorContainer>
-          </S.FormInputContainer>
-          <S.FormInputContainer>
-            <ControlledSelect
-              name="preferedTime"
-              placeholder="Preferovaný čas"
-              pattern={/^\d+$/}
-              required="Preferovaný čas nesmí být prázdný"
-              options={[
-                createOption("15:00 - 16:00", "15:00 - 16:00"),
-                createOption("16:00 - 17:00", "16:00 - 17:00"),
-                createOption("17:00 - 18:00", "17:00 - 18:00"),
-              ]}
-            />
-            <S.Label>Preferovaný den</S.Label>
-            <S.ErrorContainer>{errors?.preferedTime?.message}</S.ErrorContainer>
-          </S.FormInputContainer>
+        </S.FormItem>
+      </S.Container>
+      <Space />
+      <S.Container>
+        <S.FormItem>
+          <Subheadline variant="dark">Počet lekcí</Subheadline>
+          <ControlledRadio
+            name="lessonsPrice"
+            onClick={(radio) => {
+              setMaxNumberOfLessons(radio?.lessonsPerWeek ?? 0);
+              setSelectedOptions([]);
+            }}
+            options={availableLessons}
+          />
+          <Text variant="dark">
+            V případě individuálních požadavků kontaktujte
+            plavaniluzanky@kometabrno.cz
+          </Text>
+        </S.FormItem>
+        <S.FormItem>
+          <Subheadline variant="dark">Úroveň</Subheadline>
+          <ControlledRadio
+            name="level"
+            onClick={(radio) => {
+              setSelectedLevel(radio?.level ?? "lower");
+              setSelectedOptions([]);
+            }}
+            options={[
+              { label: "Neplavec", value: "neplavec", level: "lower" },
+              { label: "Plavec", value: "plavec", level: "higher" },
+            ]}
+          />
+          <div>
+            <Text variant="dark">
+              Mezi plavce se řadí dítě, které zvládá dané dovednosti:
+            </Text>
+            <ul
+              style={{
+                listStylePosition: "inside",
+                fontWeight: "300",
+                marginLeft: "2rem",
+              }}
+            >
+              <li>nebojí se skočit do vody</li>
+              <li> nebojí se potopit obličej do vody</li>
+              <li> uplave 25 m alespoň jedním plaveckým způsobem</li>
+            </ul>
+          </div>
+        </S.FormItem>
+      </S.Container>
+      <Space />
+      <S.Container>
+        <S.FormItem>
+          <Subheadline variant="dark">Vybraný termín a čas</Subheadline>
+          {/* //todo pridej at to rovnou uklada do react hook form */}
+          <Select
+            instanceId="lessons-select"
+            placeholder="Termín a čas"
+            styles={colourStyles}
+            value={selectedOptions}
+            isMulti
+            name="lessonsDayTime"
+            closeMenuOnSelect={false}
+            onChange={handleOptionSelect}
+            isOptionDisabled={() =>
+              selectedOptions.length >= maxNumberOfLessons
+            }
+            options={
+              selectedLevel === "higher" ? highLevelOptions : lowLevelOptions
+            }
+          />
+          {/* <Flex direction="row" gap="6rem" align="baseline">
+            <Flex gap="1rem">
+              <Text variant="dark" bold>
+                Pondělí
+              </Text>
+              <ControlledCheckbox name="day_po_9" label="9:00 - 10:00" />
+              <ControlledCheckbox name="day_po_8" label="10:00 - 11:00" />
+            </Flex>
+            <Flex gap="1rem">
+              <Text variant="dark" bold>
+                Úterý
+              </Text>
+              <ControlledCheckbox name="day_ut_9" label="9:00 - 10:00" />
+              <ControlledCheckbox name="day_ut_8" label="10:00 - 11:00" />
+            </Flex>
+          </Flex> */}
         </S.FormItem>
       </S.Container>
       <S.SubmitContainer>

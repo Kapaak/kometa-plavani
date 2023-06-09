@@ -10,13 +10,13 @@ type ControlledRadioProps = {
   options: {
     label: string;
     value: string;
-    lessons?: number;
+    lessonsPerWeek?: number;
     level?: "lower" | "higher";
   }[];
   onClick?: (option: {
     label: string;
     value: string;
-    lessons?: number;
+    lessonsPerWeek?: number;
     level?: "lower" | "higher";
   }) => void;
 };
@@ -72,7 +72,7 @@ export const ControlledRadio = ({
       render={({ field: { value, ...restField } }) => (
         <RadioGroupRoot
           className="RadioGroupRoot"
-          defaultValue={options[0].value}
+          defaultValue={options[0]?.value}
           aria-label="View density"
           {...restField}
         >
@@ -93,7 +93,7 @@ export const ControlledRadio = ({
           ))}
         </RadioGroupRoot>
       )}
-      defaultValue={options[0].value}
+      defaultValue={options[0]?.value ?? false}
     />
   );
 };

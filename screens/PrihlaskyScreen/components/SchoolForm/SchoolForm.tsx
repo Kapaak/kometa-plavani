@@ -26,7 +26,7 @@ const availableLessons = [
     label:
       "2040 Kč - pololetí, 1x týdně - cca 17 lekcí ve vybrané skupince / na 1 žáka",
     value: "2040 Kč",
-    lessons: 1,
+    lessonsPerWeek: 1,
   },
 ];
 
@@ -36,6 +36,27 @@ const highLevelOptions = [
     options: [
       { label: "9:00 - 10:00", value: "po_9" },
       { label: "10:00 - 11:00", value: "po_10" },
+    ],
+  },
+  {
+    label: "Úterý",
+    options: [
+      { label: "9:00 - 10:00", value: "ut_9" },
+      { label: "10:00 - 11:00", value: "ut_10" },
+    ],
+  },
+  {
+    label: "Středa",
+    options: [
+      { label: "9:00 - 10:00", value: "st_9" },
+      { label: "10:00 - 11:00", value: "st_10" },
+    ],
+  },
+  {
+    label: "Čtvrtek",
+    options: [
+      { label: "9:00 - 10:00", value: "ct_9" },
+      { label: "10:00 - 11:00", value: "ct_10" },
     ],
   },
   {
@@ -92,7 +113,7 @@ export const SchoolForm = ({
   );
 
   const [maxNumberOfLessons, setMaxNumberOfLessons] = useState(
-    availableLessons[0].lessons
+    availableLessons[0].lessonsPerWeek
   );
 
   const [selectedLevel, setSelectedLevel] = useState<"lower" | "higher">(
@@ -229,7 +250,9 @@ export const SchoolForm = ({
           <Subheadline variant="dark">Počet lekcí</Subheadline>
           <ControlledRadio
             name="lessonsPrice"
-            onClick={(radio) => setMaxNumberOfLessons(radio?.lessons ?? 0)}
+            onClick={(radio) =>
+              setMaxNumberOfLessons(radio?.lessonsPerWeek ?? 0)
+            }
             options={availableLessons}
           />
           <Text variant="dark">

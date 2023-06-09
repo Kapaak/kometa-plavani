@@ -99,25 +99,7 @@ export const data = [
         id: "11",
         title: "Prázdniny a státní svátky",
         description: ` 
-          Naše kurzy kopírují školní prázdniny a státní svátky, proto v těchto termínech neplaveme. Jedná se o tyto datumy:
-           
-          28.9. Den české státnosti
-           
-          Podzimní prázdniny 26. 10–27. 102023.
-           
-          17.11. Den boje za svobodu a demokracii
-           
-          Vánoční prázdniny 23.12. - 2.1 2024  
-           
-          Pololetní prázdniny 2.2. 2024.
-           
-          Jarní prázdniny 5. 2. – 11. 2. 2024
-           
-          Velikonoční prázdniny 28.3. - 1.4.2024
-           
-          1.5. Svátek práce
-           
-          8.5. Den vítězství
+        Naše kurzy kopírují školní prázdniny a státní svátky, proto v těchto termínech neplaveme. Jedná se o tyto datumy: 28.9.2023 - Den české státnosti / 26. 10 až 27. 10 2023 - Podzimní prázdniny / 17.11.2023 - Den boje za svobodu a demokracii / 23.12.2023 až 2.1 2024 - Vánoční prázdniny /2.2. 2024 - Pololetní prázdniny  / 5. 2. až 11. 2. 2024 - Jarní prázdniny / 28.3. až 1.4.2024 - Velikonoční prázdniny / 1.5. - Svátek práce / 8.5. - Den vítězství
           `,
         icon: TreePalm,
       },

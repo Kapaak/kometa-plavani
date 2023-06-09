@@ -81,7 +81,7 @@ export const FormContainer = ({
     const currentDateTime = dayjs().format("DD-MM-YYYY hh:mm");
 
     //tady budu spis met opacnou otazku !== skoly-skolky
-    if (courseName === "kurzy")
+    if (courseName !== "skoly-skolky")
       return await appendSpreadsheet(
         {
           "Časová značka": currentDateTime,
