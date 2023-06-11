@@ -13,7 +13,7 @@ export const data: HeadlineFragment[] = [
         type: Content.link,
       },
       {
-        output: "plavaniluzanky@kometabrno.cz",
+        output: "plavaniluzanky@kometaplavani.cz",
         type: Content.link,
       },
       {

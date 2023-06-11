@@ -16,6 +16,8 @@ export enum ScrollSections {
   kindergardens = "kindergardens",
   schools = "schools",
   courses = "courses",
+  faq = "faq",
+  documents = "documents",
 }
 
 export enum Content {
@@ -57,7 +59,6 @@ export type Service = {
   url?: string;
   price?: string;
   time?: number;
-  ageRange?: string;
 };
 
 export type Dropdown = {

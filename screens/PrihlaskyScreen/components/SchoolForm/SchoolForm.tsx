@@ -257,7 +257,7 @@ export const SchoolForm = ({
           />
           <Text variant="dark">
             V případě individuálních požadavků kontaktujte
-            plavaniluzanky@kometabrno.cz
+            plavaniluzanky@kometaplavani.cz
           </Text>
         </S.FormItem>
         <S.FormItem>

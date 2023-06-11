@@ -30,7 +30,7 @@ export const SuccessModal = ({ addChild, isOpen, redirect }: ModalProps) => {
         <Text variant="dark">
           <Strong weight="400">Potřebujete pomoc? </Strong>V případě jakéhokoliv
           problému se prosím obraťte na tel. číslo 773708287 nebo na email
-          plavaniluzanky@kometabrno.cz
+          plavaniluzanky@kometaplavani.cz
         </Text>
         <Divider width="50%" />
 

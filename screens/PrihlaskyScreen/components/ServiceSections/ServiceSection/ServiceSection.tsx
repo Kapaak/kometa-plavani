@@ -7,7 +7,7 @@ import * as S from "./ServiceSection.style";
 //interfaces
 import { ScrollSections } from "@/domains";
 import { Button } from "@/components/Shared/Button";
-import { Baby, Coin, Timer } from "@phosphor-icons/react";
+import { Calendar, Coin, Timer } from "@phosphor-icons/react";
 
 interface ServiceSectionProps {
   headline: string;
@@ -19,22 +19,10 @@ interface ServiceSectionProps {
   isEven: boolean;
   price?: string;
   time?: number;
-  ageRange?: string;
 }
 
 export const ServiceSection = (props: ServiceSectionProps) => {
-  const {
-    headline,
-    text,
-    image,
-    isEven,
-    name,
-    alt,
-    url,
-    ageRange,
-    time,
-    price,
-  } = props;
+  const { headline, text, image, isEven, name, alt, url, time, price } = props;
 
   return (
     <SectionElement name={name}>
@@ -50,21 +38,44 @@ export const ServiceSection = (props: ServiceSectionProps) => {
           <Text variant="dark">{text}</Text>
           <Flex>
             <Flex direction="row" gap="1rem" align="center">
-              <Coin />
+              <Coin size={20} />
               <Text variant="dark">{price}</Text>
+              <Text variant="dark">
+                (
+                <a
+                  href={"/files/CENIK_LUZANKY.pdf"}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  download
+                  style={{ textDecoration: "underline" }}
+                >
+                  ceník lekcí
+                </a>
+                )
+              </Text>
             </Flex>
             <Flex direction="row" gap="1rem" align="center">
-              <Timer />
+              <Timer size={20} />
               <Text variant="dark">{time} min</Text>
             </Flex>
             <Flex direction="row" gap="1rem" align="center">
-              <Baby />
-              <Text variant="dark">{ageRange}</Text>
+              <Calendar size={20} />
+              <Text variant="dark">
+                <a
+                  href={"/files/ROZVRH_LEKCI.pdf"}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  download
+                  style={{ textDecoration: "underline" }}
+                >
+                  stáhnout rozvrh lekcí
+                </a>
+              </Text>
             </Flex>
           </Flex>
-          {/* <Link href={`/prihlasky/${url}`} passHref> */}
-          <Button disabled>přejít na přihlášku</Button>
-          {/* </Link> */}
+          <Link href={`/prihlasky/${url}`} passHref>
+            <Button>přihláška</Button>
+          </Link>
         </S.Flex>
       </Flex>
     </SectionElement>
