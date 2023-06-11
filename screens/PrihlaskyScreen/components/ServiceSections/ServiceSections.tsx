@@ -22,7 +22,6 @@ export const ServiceSections = () => {
           url={d?.url}
           price={d?.price}
           time={d?.time}
-          ageRange={d?.ageRange}
         />
       ))}
     </S.Flex>

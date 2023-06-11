@@ -70,7 +70,8 @@ const availableLessons = [
     lessonsPerWeek: 3,
   },
   {
-    label: "15000 Kč - pololetí, 3x týdně - cca 102 lekcí ve vybrané skupince",
+    label:
+      "15000 Kč - celý školní rok, 3x týdně - cca 102 lekcí ve vybrané skupince",
     value: "15000 Kč",
     lessonsPerWeek: 3,
   },
@@ -81,10 +82,31 @@ const highLevelOptions = [
     label: "Pondělí",
     options: [{ label: "15:00 - 16:00", value: "po_15" }],
   },
-
+  {
+    label: "Úterý",
+    options: [
+      { label: "15:00 - 16:00", value: "ut_15" },
+      { label: "16:00 - 17:00", value: "ut_16" },
+    ],
+  },
   {
     label: "Středa",
     options: [{ label: "15:00 - 16:00", value: "st_15" }],
+  },
+  {
+    label: "Čtvrtek",
+    options: [
+      { label: "15:00 - 16:00", value: "ct_15" },
+      { label: "17:00 - 18:00", value: "ct_17" },
+    ],
+  },
+  {
+    label: "Pátek",
+    options: [
+      { label: "15:00 - 16:00", value: "pa_15" },
+      { label: "16:00 - 17:00", value: "pa_16" },
+      { label: "17:00 - 18:00", value: "pa_17" },
+    ],
   },
 ];
 
@@ -293,7 +315,7 @@ export const BasicSwimmingForm = ({
           />
           <Text variant="dark">
             V případě individuálních požadavků kontaktujte
-            plavaniluzanky@kometabrno.cz
+            plavaniluzanky@kometaplavani.cz
           </Text>
         </S.FormItem>
         <S.FormItem>
@@ -322,7 +344,7 @@ export const BasicSwimmingForm = ({
             >
               <li>nebojí se skočit do vody</li>
               <li> nebojí se potopit obličej do vody</li>
-              <li> uplave 25 m alespoň jedním plaveckým způsobem</li>
+              <li>zvládá splývání</li>
             </ul>
           </div>
         </S.FormItem>

@@ -1,5 +1,11 @@
+import { SectionElement } from "@/styles";
 import styled from "styled-components";
 import { dimensions } from "utils/breakpoints";
+
+export const FAQSection = styled(SectionElement)`
+  padding: 8rem 0;
+  background-color: var(--col3);
+`;
 
 export const Headline = styled.h3`
   font-family: var(--font1);

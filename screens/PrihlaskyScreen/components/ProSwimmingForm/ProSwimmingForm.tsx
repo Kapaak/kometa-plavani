@@ -70,13 +70,26 @@ const availableLessons = [
     lessonsPerWeek: 3,
   },
   {
-    label: "15000 Kč - pololetí, 3x týdně - cca 102 lekcí ve vybrané skupince",
+    label:
+      "15000 Kč - celý školní rok, 3x týdně - cca 102 lekcí ve vybrané skupince",
     value: "15000 Kč",
     lessonsPerWeek: 3,
   },
 ];
 
-const dayTimeOptions = [
+const lowLevelOptions = [
+  {
+    label: "Pondělí",
+    options: [{ label: "15:00 - 16:00", value: "po_15" }],
+  },
+
+  {
+    label: "Středa",
+    options: [{ label: "15:00 - 16:00", value: "st_15" }],
+  },
+];
+
+const highLevelOptions = [
   {
     label: "Pondělí",
     options: [{ label: "15:00 - 16:00", value: "po_15" }],
@@ -106,6 +119,10 @@ export const ProSwimmingForm = ({
 
   const [maxNumberOfLessons, setMaxNumberOfLessons] = useState(
     availableLessons[0].lessonsPerWeek
+  );
+
+  const [selectedLevel, setSelectedLevel] = useState<"lower" | "higher">(
+    "lower"
   );
 
   const handleSubmit = (data: any) => {
@@ -262,8 +279,41 @@ export const ProSwimmingForm = ({
           />
           <Text variant="dark">
             V případě individuálních požadavků kontaktujte
-            plavaniluzanky@kometabrno.cz
+            plavaniluzanky@kometaplavani.cz
           </Text>
+        </S.FormItem>
+        <S.FormItem>
+          <Subheadline variant="dark">Úroveň</Subheadline>
+          <ControlledRadio
+            name="level"
+            onClick={(radio) => {
+              setSelectedLevel(radio?.level ?? "lower");
+              setSelectedOptions([]);
+            }}
+            options={[
+              {
+                label: "Zdokonalovací plavání",
+                value: "zdokonalovací",
+                level: "lower",
+              },
+              { label: "Kondiční plavání", value: "kondiční", level: "higher" },
+            ]}
+          />
+          <div>
+            <Text variant="dark">
+              Mezi kondiční plavce se řadí dítě, které zvládá dané dovednosti:
+            </Text>
+            <ul
+              style={{
+                listStylePosition: "inside",
+                fontWeight: "300",
+                marginLeft: "2rem",
+              }}
+            >
+              <li>umí kraul, znak a prsa</li>
+              <li> uplave 200 m alespoň jedním plaveckým způsobem</li>
+            </ul>
+          </div>
         </S.FormItem>
       </S.Container>
       <Space />
@@ -283,7 +333,9 @@ export const ProSwimmingForm = ({
             isOptionDisabled={() =>
               selectedOptions.length >= maxNumberOfLessons
             }
-            options={dayTimeOptions}
+            options={
+              selectedLevel === "higher" ? highLevelOptions : lowLevelOptions
+            }
           />
         </S.FormItem>
       </S.Container>

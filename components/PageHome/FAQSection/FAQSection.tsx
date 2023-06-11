@@ -8,7 +8,7 @@ import { Expandable } from "@/components/Shared";
 
 export const FAQSection = () => {
   return (
-    <SectionElement name="faq">
+    <S.FAQSection name="faq">
       <MaxWidth>
         <Headline>Základní informace</Headline>
         <S.Container>
@@ -27,6 +27,6 @@ export const FAQSection = () => {
           ))}
         </S.Container>
       </MaxWidth>
-    </SectionElement>
+    </S.FAQSection>
   );
 };

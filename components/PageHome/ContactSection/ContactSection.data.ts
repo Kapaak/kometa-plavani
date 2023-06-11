@@ -42,7 +42,7 @@ export const data: Contact[] = [
     icon: EmailIcon,
     fragment: [
       {
-        output: "plavaniluzanky@kometabrno.cz",
+        output: "plavaniluzanky@kometaplavani.cz",
         type: Content.link,
       },
     ],

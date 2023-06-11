@@ -9,45 +9,38 @@ export const data: Service[] = [
   {
     id: 1,
     headline: "Školy a školky",
-    text: ` Cílem naší výuky u dětí předškolního věku a školního věku je adaptovat na vodní prostředí. To konkrétně zahrnuje odstranění strachu z vody, potápění, splývání, rozvoj pocitu vody a skok do vody. Poté se děti učí základy jednotlivých plaveckých způsobů.
-    Navíc náš klub disponuje nově zpracovanou metodikou, díky které se děti naučí plavat rychle a zábavnou formou. Nejdůležitější pro nás je, aby děti měly z plavání radost.
-    Výuka probíhá jednou týdně v bazénu, který má 30°C až 32°C. Po dokončení kurzu děti obdrží vysvědčení. Doporučený počet lekcí je 20.
+    text: ` Cílem naší výuky je adaptovat dítě na vodní prostředí. To konkrétně zahrnuje odstranění strachu z vody, potápění, splývání, rozvoj pocitu vody a skok do vody. Poté se děti učí základy jednotlivých plaveckých způsobů. Naše metodika odpovídá směrnicím MŠMT. Výuka se však přizpůsobuje aktuálním potřebám jednotlivců, což znamená, že děti vždy získají nové dovednosti. Zároveň klademe velký důraz na to, aby děti výuka bavila.
+
       `,
     image: KindergardenService,
     alt: "dítě v bazénu pod vodou s brýlemi",
     name: ScrollSections.kindergardens,
     url: "skoly-skolky",
     price: "2 040 Kč za dítě / pololetí",
-    time: 60,
-    ageRange: "4-15 let",
+    time: 45,
   },
   {
     id: 2,
-    headline: "Základní a pokročilé plavání",
+    headline: "Základní plavání",
     text: `
-    Na začátku děti rozdělíme do týmu, abychom zajistili jejich nejrychlejší rozvoj. 
-Cílem je plavce naučit základům plavání. Děti budou plavat ve skupinách dle svých plaveckých dovedností. Našim úkolem je tyto dovednosti rozšířit a děti naučit plavecké způsoby kraul a znak. Ve druhé části kurzu se zařazujeme motoricky náročnější prsa a motýl. Počet lekcí není omezen.
-Děti mohou své nově nabyté dovednosti rozvíjet v našich navazujících kurzech.
+    Kurzy jsou určené pro děti, které se potřebují naučit plavat nebo se v plavání zdokonalit. Našim cílem je děti adaptovat na vodní prostředí. Navíc náš klub disponuje nově zpracovanou metodikou, díky které se děti naučí plavat rychle a zábavnou formou. Nejdůležitější pro nás je, aby děti měly z plavání radost.
       `,
     image: SchoolService,
     alt: "plavec s hlavou pod vodou a deskou",
     name: ScrollSections.schools,
     url: "zakladni-plavani",
     price: "4 000 - 14 500 Kč",
-    time: 60,
-    ageRange: "4-10 let",
+    time: 55,
   },
   {
     id: 3,
-    headline: "Zdokonalovací plavání pro děti",
-    text: `Děti jsou rozdělovány do týmu dle jejich dovedností. Každá výuková jednotka se  
-    probíhá dle aktuálních potřeb jednotlivců. Maximální počet dětí v jedné hodině je 55, počet lekcí není omezen. Součástí ceny je vždy pronájem bazénu, profesionální trenéři a kvalitní pomůcky, které pomohou zefektivnit výuku plavání.`,
+    headline: "Zdokonalovací a kondiční plavání",
+    text: `Kurzy jsou určeny pro děti, co se nebojí plavat ve velkém bazénu, navíc již ovládají základy plavání a v plavání se chtějí zdokonalit. Pokud již plavat umí nabízíme možnost kondičního plavání, kde děti mohou zlepšit svou fyzickou kondici a věnovat se plavání ikdyž zatím neuvažují o kariéře závodního plavce.`,
     image: CourseService,
     alt: "dvě plavkyně na začátku dráhy čekající na start",
     name: ScrollSections.courses,
     url: "zdokonalovaci-plavani",
     price: "4 000 - 14 500 Kč",
-    time: 60,
-    ageRange: "10-15 let",
+    time: 55,
   },
 ];

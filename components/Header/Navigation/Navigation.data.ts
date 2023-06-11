@@ -35,6 +35,16 @@ export const data: NavLink[] = [
   },
   {
     href: "/",
+    scrollTarget: ScrollSections.faq,
+    output: "Základní informace",
+  },
+  {
+    href: "/",
+    scrollTarget: ScrollSections.documents,
+    output: "Dokumenty",
+  },
+  {
+    href: "/",
     scrollTarget: ScrollSections.contact,
     output: "Kontakt",
   },
