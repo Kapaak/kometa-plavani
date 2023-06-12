@@ -27,9 +27,6 @@ export const FormContainer = ({
 
   const onSubmit = async (d: any) => {
     const newVals = normalizeSelectInputs(d);
-    console.log(d, "dcko");
-    console.log(newVals, "newvals");
-
     setIsLoading(true);
     try {
       await handleExcelUpload(newVals);
