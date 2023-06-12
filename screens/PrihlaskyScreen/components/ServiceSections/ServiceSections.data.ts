@@ -29,7 +29,7 @@ export const data: Service[] = [
     alt: "plavec s hlavou pod vodou a deskou",
     name: ScrollSections.schools,
     url: "zakladni-plavani",
-    price: "4 000 - 14 500 Kč",
+    price: "4 000 - 15 000 Kč",
     time: 55,
   },
   {
@@ -40,7 +40,7 @@ export const data: Service[] = [
     alt: "dvě plavkyně na začátku dráhy čekající na start",
     name: ScrollSections.courses,
     url: "zdokonalovaci-plavani",
-    price: "4 000 - 14 500 Kč",
+    price: "4 000 - 15 000 Kč",
     time: 55,
   },
 ];
