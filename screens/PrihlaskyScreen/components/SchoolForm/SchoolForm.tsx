@@ -4,6 +4,7 @@ import {
   ControlledInput,
   ControlledNameInput,
   ControlledRadio,
+  ControlledSelect,
 } from "@/shared";
 import { IconButton } from "@/components/Shared";
 import { useEffect, useState } from "react";
@@ -71,17 +72,11 @@ const highLevelOptions = [
 const lowLevelOptions = [
   {
     label: "Pondělí",
-    options: [
-      { label: "9:00 - 10:00", value: "po_9" },
-      { label: "10:00 - 11:00", value: "po_10" },
-    ],
+    options: [{ label: "9:00 - 10:00", value: "po_9" }],
   },
   {
     label: "Pátek",
-    options: [
-      { label: "9:00 - 10:00", value: "pa_9" },
-      { label: "10:00 - 11:00", value: "pa_10" },
-    ],
+    options: [{ label: "10:00 - 11:00", value: "pa_10" }],
   },
 ];
 
@@ -202,6 +197,28 @@ export const SchoolForm = ({
               type="number"
             />
             <S.Label>Počet dětí</S.Label>
+            <S.ErrorContainer>
+              {errors?.childrenCount?.message}
+            </S.ErrorContainer>
+          </S.FormInputContainer>
+          <S.FormInputContainer>
+            <ControlledSelect
+              name="midTerm"
+              placeholder="Pololetí"
+              required="Pololetí musí být vyplněno"
+              options={[
+                { label: "1. pololetí", value: "1. pololetí" },
+                { label: "2. pololetí", value: "2. pololetí" },
+              ]}
+            />
+            <S.Label>Pololetí</S.Label>
+            <S.ErrorContainer>
+              {errors?.childrenCount?.message}
+            </S.ErrorContainer>
+          </S.FormInputContainer>
+          <S.FormInputContainer>
+            <ControlledInput name="notes" placeholder="Poznámky" />
+            <S.Label>Poznámky</S.Label>
             <S.ErrorContainer>
               {errors?.childrenCount?.message}
             </S.ErrorContainer>

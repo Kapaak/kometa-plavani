@@ -9,7 +9,7 @@ export const data: Service[] = [
   {
     id: 1,
     headline: "Školy a školky",
-    text: ` Cílem naší výuky je adaptovat dítě na vodní prostředí. To konkrétně zahrnuje odstranění strachu z vody, potápění, splývání, rozvoj pocitu vody a skok do vody. Poté se děti učí základy jednotlivých plaveckých způsobů. Naše metodika odpovídá směrnicím MŠMT. Výuka se však přizpůsobuje aktuálním potřebám jednotlivců, což znamená, že děti vždy získají nové dovednosti. Zároveň klademe velký důraz na to, aby děti výuka bavila.
+    text: ` Cílem naší výuky je adaptovat dítě na vodní prostředí. To konkrétně zahrnuje odstranění strachu z vody, potápění, splývání, rozvoj pocitu vody a skok do vody. Poté se děti učí základy jednotlivých plaveckých způsobů. Naše metodika odpovídá směrnicím MŠMT. Výuka se však přizpůsobuje aktuálním potřebám jednotlivců, což znamená, že děti vždy získají nové dovednosti. Zároveň klademe velký důraz na to, aby děti výuka bavila. Vhodné pro děti od 4 let.
 
       `,
     image: KindergardenService,

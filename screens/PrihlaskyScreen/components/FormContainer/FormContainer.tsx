@@ -79,6 +79,8 @@ export const FormContainer = ({
 
   const handleExcelUpload = async (d: any) => {
     const currentDateTime = dayjs().format("DD-MM-YYYY hh:mm");
+    console.log(d, "ddxx");
+    console.log(d?.notes, "note");
 
     //tady budu spis met opacnou otazku !== skoly-skolky
     if (courseName !== "skoly-skolky")
@@ -115,6 +117,8 @@ export const FormContainer = ({
         "Počet dětí": d?.childrenCount,
         Úroveň: d?.level,
         "Den a čas": d?.lessonsDayTime,
+        Pololetí: d?.midTerm,
+        Poznámky: d?.notes,
       },
       spreadsheet
     );
