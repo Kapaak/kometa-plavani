@@ -98,6 +98,7 @@ export const FormContainer = ({
           Město: d?.city,
           PSČ: d?.postCode,
           Alergie: d?.alergy,
+          "Cenová kategorie": d?.lessonsPrice,
           "Zdravotní potíže": d?.healthIssues,
           Úroveň: d?.level,
           "Den a čas": d?.lessonsDayTime,

@@ -71,10 +71,6 @@ const highLevelOptions = [
 
 const lowLevelOptions = [
   {
-    label: "Pondělí",
-    options: [{ label: "9:00 - 10:00", value: "po_9" }],
-  },
-  {
     label: "Pátek",
     options: [{ label: "10:00 - 11:00", value: "pa_10" }],
   },
