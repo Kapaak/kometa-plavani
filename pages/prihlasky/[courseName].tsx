@@ -1,6 +1,6 @@
 //interfaces
 import { Course, PageData } from "@/domains";
-import { GetServerSideProps, NextPage } from "next";
+import { GetStaticPropsContext, NextPage } from "next";
 import { PrihlaskyNameScreen, prihlaskyNameData } from "@/screens";
 
 interface CoursePageProps {
@@ -15,10 +15,8 @@ const CoursePage: NextPage<CoursePageProps> = ({ pageData }) => {
   );
 };
 
-export const getServerSideProps: GetServerSideProps<CoursePageProps> = async (
-  ctx
-) => {
-  const courseName = ctx.query.courseName as Course;
+export const getStaticProps = async (ctx: GetStaticPropsContext) => {
+  const courseName = ctx.params?.courseName as Course;
   const pageData = prihlaskyNameData?.find((d) => d.name === courseName);
 
   if (!pageData)
@@ -30,6 +28,18 @@ export const getServerSideProps: GetServerSideProps<CoursePageProps> = async (
     props: {
       pageData,
     },
+  };
+};
+
+export const getStaticPaths = async () => {
+  const paths = prihlaskyNameData.map((data) => ({
+    params: {
+      courseName: data?.name,
+    },
+  }));
+  return {
+    paths,
+    fallback: false,
   };
 };
 

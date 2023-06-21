@@ -3,6 +3,7 @@ import { useRouter } from "next/router";
 
 import { metaDescription } from "./metaDescriptionData";
 import { title } from "./titleData";
+import { useEffect, useState } from "react";
 
 type RouteType = "/" | "/prihlasky";
 
@@ -17,11 +18,11 @@ export const HeadSelector = () => {
     metaDescription[currentRoute as RouteType]?.description ??
     metaDescription.default.description;
 
-  const currentRouteTitle = title[currentRoute as TitleType] ?? title.default;
-
+  //pri reloadu to dela <--!> a dava error do console .. warning ...
+  // const currentRouteTitle = title[currentRoute as TitleType] ?? title.default;
   return (
     <Head>
-      <title> {currentRouteTitle} Plavecká škola | Kometa </title>
+      <title> Plavecká škola | Kometa </title>
       <link rel="icon" href="/icons/tucnak.svg" />
       <meta name="author" content="Pavel Zapletal & Barbora Novakova" />
       <meta
