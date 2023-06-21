@@ -11,19 +11,8 @@ import { createOption } from "@/utils";
 import Select, { MultiValue, StylesConfig } from "react-select";
 import { BaseSyntheticEvent, useEffect, useState } from "react";
 import { useFormContext } from "react-hook-form";
-import { useProSchoolForm } from "@/hooks";
-import { GlobalSpreadsheetData, Level, SchoolSpreadsheetData } from "@/domains";
-
-interface ProSwimmingFormProps {
-  onSubmit: any;
-  errors: any;
-  isLoading: boolean;
-}
-
-type Option = {
-  label: string;
-  value: string;
-};
+import { useProSwimmingOptions } from "@/hooks";
+import { Level, Option, SwimmingPage } from "@/domains";
 
 const colourStyles: StylesConfig<any, true> = {
   control: (styles) => ({ ...styles, backgroundColor: "white" }),
@@ -47,14 +36,14 @@ export const ProSwimmingForm = ({
   onSubmit,
   errors,
   isLoading,
-}: ProSwimmingFormProps) => {
+}: SwimmingPage) => {
   const [selectedLevel, setSelectedLevel] = useState<Level>("lower");
   const [selectedOptions, setSelectedOptions] = useState<MultiValue<Option>>(
     []
   );
 
   const { lessonOptions, highLevelOptions, lowLevelOptions, radioOptions } =
-    useProSchoolForm();
+    useProSwimmingOptions();
 
   const [maxNumberOfLessons, setMaxNumberOfLessons] = useState(
     lessonOptions[0].lessonsPerWeek

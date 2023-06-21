@@ -1,5 +1,5 @@
 import { Flex, Space, Subheadline, Text } from "@/styles";
-import * as S from "./SchoolForm.style";
+import * as S from "./SchoolSwimmingForm.style";
 import {
   ControlledInput,
   ControlledNameInput,
@@ -7,74 +7,12 @@ import {
   ControlledSelect,
 } from "@/shared";
 import { IconButton } from "@/components/Shared";
-import { useEffect, useState } from "react";
+import { BaseSyntheticEvent, useEffect, useState } from "react";
 import { useFormContext } from "react-hook-form";
 import Select, { MultiValue, StylesConfig } from "react-select";
-
-interface SchoolFormProps {
-  onSubmit: any;
-  errors: any;
-  isLoading: boolean;
-}
-
-type Option = {
-  label: string;
-  value: string;
-};
-
-const availableLessons = [
-  {
-    label:
-      "2040 Kč - pololetí, 1x týdně - cca 17 lekcí ve vybrané skupince / na 1 žáka",
-    value: "2040 Kč",
-    lessonsPerWeek: 1,
-  },
-];
-
-const highLevelOptions = [
-  {
-    label: "Pondělí",
-    options: [
-      { label: "9:00 - 10:00", value: "po_9" },
-      { label: "10:00 - 11:00", value: "po_10" },
-    ],
-  },
-  {
-    label: "Úterý",
-    options: [
-      { label: "9:00 - 10:00", value: "ut_9" },
-      { label: "10:00 - 11:00", value: "ut_10" },
-    ],
-  },
-  {
-    label: "Středa",
-    options: [
-      { label: "9:00 - 10:00", value: "st_9" },
-      { label: "10:00 - 11:00", value: "st_10" },
-    ],
-  },
-  {
-    label: "Čtvrtek",
-    options: [
-      { label: "9:00 - 10:00", value: "ct_9" },
-      { label: "10:00 - 11:00", value: "ct_10" },
-    ],
-  },
-  {
-    label: "Pátek",
-    options: [
-      { label: "9:00 - 10:00", value: "pa_9" },
-      { label: "10:00 - 11:00", value: "pa_10" },
-    ],
-  },
-];
-
-const lowLevelOptions = [
-  {
-    label: "Pátek",
-    options: [{ label: "10:00 - 11:00", value: "pa_10" }],
-  },
-];
+import { Level, Option, SwimmingPage } from "@/domains";
+import { useSchoolSwimmingOptions } from "@/hooks";
+import { createOption } from "@/utils";
 
 const colourStyles: StylesConfig<any, true> = {
   control: (styles) => ({ ...styles, backgroundColor: "white" }),
@@ -94,22 +32,23 @@ const colourStyles: StylesConfig<any, true> = {
   },
 };
 
-export const SchoolForm = ({
+export const SchoolSwimmingForm = ({
   onSubmit,
   errors,
   isLoading,
-}: SchoolFormProps) => {
+}: SwimmingPage) => {
   const [selectedOptions, setSelectedOptions] = useState<MultiValue<Option>>(
     []
   );
 
+  const { highLevelOptions, lessonOptions, lowLevelOptions, radioOptions } =
+    useSchoolSwimmingOptions();
+
   const [maxNumberOfLessons, setMaxNumberOfLessons] = useState(
-    availableLessons[0].lessonsPerWeek
+    lessonOptions[0].lessonsPerWeek
   );
 
-  const [selectedLevel, setSelectedLevel] = useState<"lower" | "higher">(
-    "lower"
-  );
+  const [selectedLevel, setSelectedLevel] = useState<Level>("lower");
 
   const { setValue } = useFormContext();
 
@@ -117,8 +56,9 @@ export const SchoolForm = ({
     setSelectedOptions(options);
   };
 
-  const handleSubmit = (data: any) => {
-    onSubmit(data);
+  const handleSubmit = (event: BaseSyntheticEvent) => {
+    onSubmit(event);
+
     setSelectedOptions([]);
     setSelectedLevel("lower");
   };
@@ -183,8 +123,8 @@ export const SchoolForm = ({
               placeholder="Pololetí"
               required="Pololetí musí být vyplněno"
               options={[
-                { label: "1. pololetí", value: "1. pololetí" },
-                { label: "2. pololetí", value: "2. pololetí" },
+                createOption("1. pololetí", "1. pololetí"),
+                createOption("2. pololetí", "2. pololetí"),
               ]}
             />
             <S.Label>Pololetí</S.Label>
@@ -246,7 +186,7 @@ export const SchoolForm = ({
             onClick={(radio) =>
               setMaxNumberOfLessons(radio?.lessonsPerWeek ?? 0)
             }
-            options={availableLessons}
+            options={lessonOptions}
           />
           <Text variant="dark">
             V případě individuálních požadavků kontaktujte
@@ -261,10 +201,7 @@ export const SchoolForm = ({
               setSelectedLevel(radio?.level ?? "lower");
               setSelectedOptions([]);
             }}
-            options={[
-              { label: "Školka", value: "školka", level: "lower" },
-              { label: "Škola", value: "škola", level: "higher" },
-            ]}
+            options={radioOptions}
           />
         </S.FormItem>
       </S.Container>
@@ -273,6 +210,7 @@ export const SchoolForm = ({
         <S.FormItem>
           <Subheadline variant="dark">Vybraný termín a čas</Subheadline>
           {/* //todo pridej at to rovnou uklada do react hook form */}
+          {/* vsak komponent na toto uz mam, to je ten ControlledSelect */}
           <Select
             instanceId="lessons-select"
             placeholder="Termín a čas"

@@ -9,19 +9,10 @@ import {
 } from "@/shared";
 import { createOption } from "@/utils";
 import Select, { MultiValue, StylesConfig } from "react-select";
-import { useEffect, useState } from "react";
+import { BaseSyntheticEvent, useEffect, useState } from "react";
 import { useFormContext } from "react-hook-form";
-
-interface BasicSwimmingFormProps {
-  onSubmit: any;
-  errors: any;
-  isLoading: boolean;
-}
-
-type Option = {
-  label: string;
-  value: string;
-};
+import { useBasicSwimmingOptions } from "@/hooks";
+import { Option, SwimmingPage } from "@/domains";
 
 const colourStyles: StylesConfig<any, true> = {
   control: (styles) => ({ ...styles, backgroundColor: "white" }),
@@ -41,132 +32,33 @@ const colourStyles: StylesConfig<any, true> = {
   },
 };
 
-const availableLessons = [
-  {
-    label: "4000 Kč - pololetí, 1 x týdně - cca 17 lekcí ve vybrané skupince",
-    value: "4000 Kč",
-    lessonsPerWeek: 1,
-  },
-  {
-    label:
-      "7700 Kč - celý školní rok, 1 x týdně - cca 34 lekcí ve vybrané skupince",
-    value: "7700 Kč",
-    lessonsPerWeek: 1,
-  },
-  {
-    label: "7500 Kč - pololetí, 2x týdně - cca 34 lekcí ve vybrané skupince",
-    value: "7500 Kč",
-    lessonsPerWeek: 2,
-  },
-  {
-    label:
-      "14500 Kč - celý školní rok, 2x týdně - cca 68 lekcí ve vybrané skupince",
-    value: "14500 Kč",
-    lessonsPerWeek: 2,
-  },
-  {
-    label: "9000 Kč - pololetí, 3x týdně - cca 51 lekcí ve vybrané skupince",
-    value: "9000 Kč",
-    lessonsPerWeek: 3,
-  },
-  {
-    label:
-      "15000 Kč - celý školní rok, 3x týdně - cca 102 lekcí ve vybrané skupince",
-    value: "15000 Kč",
-    lessonsPerWeek: 3,
-  },
-];
-
-const highLevelOptions = [
-  {
-    label: "Pondělí",
-    options: [{ label: "15:00 - 16:00", value: "po_15" }],
-  },
-  {
-    label: "Úterý",
-    options: [
-      { label: "15:00 - 16:00", value: "ut_15" },
-      { label: "16:00 - 17:00", value: "ut_16" },
-    ],
-  },
-  {
-    label: "Středa",
-    options: [{ label: "15:00 - 16:00", value: "st_15" }],
-  },
-  {
-    label: "Čtvrtek",
-    options: [
-      { label: "15:00 - 16:00", value: "ct_15" },
-      { label: "17:00 - 18:00", value: "ct_17" },
-    ],
-  },
-  {
-    label: "Pátek",
-    options: [
-      { label: "15:00 - 16:00", value: "pa_15" },
-      { label: "16:00 - 17:00", value: "pa_16" },
-      { label: "17:00 - 18:00", value: "pa_17" },
-    ],
-  },
-];
-
-const lowLevelOptions = [
-  {
-    label: "Pondělí",
-    options: [{ label: "15:00 - 16:00", value: "po_15" }],
-  },
-  {
-    label: "Úterý",
-    options: [
-      { label: "15:00 - 16:00", value: "ut_15" },
-      { label: "16:00 - 17:00", value: "ut_16" },
-    ],
-  },
-  {
-    label: "Středa",
-    options: [{ label: "15:00 - 16:00", value: "st_15" }],
-  },
-  {
-    label: "Čtvrtek",
-    options: [
-      { label: "15:00 - 16:00", value: "ct_15" },
-      { label: "17:00 - 18:00", value: "ct_17" },
-    ],
-  },
-  {
-    label: "Pátek",
-    options: [
-      { label: "15:00 - 16:00", value: "pa_15" },
-      { label: "16:00 - 17:00", value: "pa_16" },
-      { label: "17:00 - 18:00", value: "pa_17" },
-    ],
-  },
-];
-
 export const BasicSwimmingForm = ({
   onSubmit,
   errors,
   isLoading,
-}: BasicSwimmingFormProps) => {
+}: SwimmingPage) => {
   const [selectedOptions, setSelectedOptions] = useState<MultiValue<Option>>(
     []
   );
 
+  const { highLevelOptions, lessonOptions, lowLevelOptions, radioOptions } =
+    useBasicSwimmingOptions();
+
   const [maxNumberOfLessons, setMaxNumberOfLessons] = useState(
-    availableLessons[0].lessonsPerWeek
+    lessonOptions[0].lessonsPerWeek
   );
 
   const [selectedLevel, setSelectedLevel] = useState<"lower" | "higher">(
     "lower"
   );
 
-  const handleSubmit = (data: any) => {
-    onSubmit(data);
+  const handleSubmit = (event: BaseSyntheticEvent) => {
+    onSubmit(event);
     setSelectedOptions([]);
     setSelectedLevel("lower");
   };
 
-  const { watch, setValue } = useFormContext();
+  const { setValue } = useFormContext();
 
   const handleOptionSelect = (options: MultiValue<Option>) => {
     setSelectedOptions(options);
@@ -311,7 +203,7 @@ export const BasicSwimmingForm = ({
               setMaxNumberOfLessons(radio?.lessonsPerWeek ?? 0);
               setSelectedOptions([]);
             }}
-            options={availableLessons}
+            options={lessonOptions}
           />
           <Text variant="dark">
             V případě individuálních požadavků kontaktujte
@@ -326,10 +218,7 @@ export const BasicSwimmingForm = ({
               setSelectedLevel(radio?.level ?? "lower");
               setSelectedOptions([]);
             }}
-            options={[
-              { label: "Neplavec", value: "neplavec", level: "lower" },
-              { label: "Plavec", value: "plavec", level: "higher" },
-            ]}
+            options={radioOptions}
           />
           <div>
             <Text variant="dark">

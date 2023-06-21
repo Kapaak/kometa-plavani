@@ -1,4 +1,4 @@
-import { Level } from "@/domains";
+import { RadioOption } from "@/domains";
 
 const lessonOptions = [
   {
@@ -67,13 +67,6 @@ const highLevelOptions = [
   },
 ];
 
-type RadioOption = {
-  label: string;
-  value: string;
-  lessonsPerWeek?: number; //tohle je blbost a je to tim, ze do ControlledRadio nedavam nejakej <T> typ
-  level?: Level;
-};
-
 const radioOptions: RadioOption[] = [
   {
     label: "Zdokonalovací plavání",
@@ -83,7 +76,7 @@ const radioOptions: RadioOption[] = [
   { label: "Kondiční plavání", value: "kondiční", level: "higher" },
 ];
 
-export const useProSchoolForm = () => {
+export const useProSwimmingOptions = () => {
   //tady ty options budu dostavat ze sanity
   return {
     lessonOptions,

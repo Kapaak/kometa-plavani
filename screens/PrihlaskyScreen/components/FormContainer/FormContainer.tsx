@@ -8,7 +8,7 @@ import {
   GlobalSpreadsheetData,
   SchoolSpreadsheetData,
 } from "@/domains";
-import { SchoolForm, BasicSwimmingForm, ProSwimmingForm } from "..";
+import { SchoolSwimmingForm, BasicSwimmingForm, ProSwimmingForm } from "..";
 import { uploadGlobalSpreadsheet, uploadSchoolSpreadsheet } from "@/utils";
 
 interface FormContainerProps {
@@ -24,6 +24,10 @@ export const FormContainer = ({
   courseName,
   templateId,
 }: FormContainerProps) => {
+  const isBasicSwimming = courseName === "zakladni-plavani";
+  const isSchoolSwimming = courseName === "skoly-skolky";
+  const isProSwimming = courseName === "zdokonalovaci-plavani";
+
   const [isOpen, setIsOpen] = useState(false);
   const [isLoading, setIsLoading] = useState(false);
 
@@ -77,22 +81,22 @@ export const FormContainer = ({
         addChild={resetAll}
         redirect={() => router.push("/")}
       />
-      {courseName === "zdokonalovaci-plavani" && (
+      {isProSwimming && (
         <ProSwimmingForm
           onSubmit={handleSubmit(onSubmit)}
           errors={errors}
           isLoading={isLoading}
         />
       )}
-      {courseName === "zakladni-plavani" && (
+      {isBasicSwimming && (
         <BasicSwimmingForm
           onSubmit={handleSubmit(onSubmit)}
           errors={errors}
           isLoading={isLoading}
         />
       )}
-      {courseName === "skoly-skolky" && (
-        <SchoolForm
+      {isSchoolSwimming && (
+        <SchoolSwimmingForm
           onSubmit={handleSubmit(onSubmit)}
           errors={errors}
           isLoading={isLoading}

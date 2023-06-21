@@ -59,7 +59,7 @@ export const ControlledSelect = ({
           isSearchable
           placeholder={placeholder}
           options={options}
-          value={options.find((c) => c.value === value)}
+          value={options.find((c) => c.value === value) ?? ""}
           onChange={(selectedOption: any) => {
             onChange(selectedOption.value);
           }}

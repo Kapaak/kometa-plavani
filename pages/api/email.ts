@@ -4,15 +4,6 @@ import { NextApiRequest, NextApiResponse } from "next";
 const handler = (req: NextApiRequest, res: NextApiResponse) => {
   const { email, templateId } = req.body;
 
-  console.log(
-    email,
-    "mail",
-    templateId,
-    "tempID",
-    process.env.NEXT_PUBLIC_SENDGRID_API_KEY,
-    "api key sg"
-  );
-
   sgMail.setApiKey(process.env.NEXT_PUBLIC_SENDGRID_API_KEY ?? "");
 
   const msg = {
@@ -31,14 +22,6 @@ const handler = (req: NextApiRequest, res: NextApiResponse) => {
     })
     .catch((error) => {
       console.error(error);
-      console.log(
-        email,
-        "mail",
-        templateId,
-        "tempID",
-        process.env.NEXT_PUBLIC_SENDGRID_API_KEY,
-        "api key sg"
-      );
     });
 
   res.send({});

@@ -1,10 +1,24 @@
 import { StaticImageData } from "next/image";
+import { BaseSyntheticEvent } from "react";
 
 export type PageData = {
   spreadsheetId: string;
   name: Course;
   templateId: string;
   label: string;
+};
+
+export type SwimmingPage = {
+  onSubmit: (e: BaseSyntheticEvent) => void;
+  errors: any;
+  isLoading: boolean;
+};
+
+export type RadioOption = {
+  label: string;
+  value: string;
+  lessonsPerWeek?: number; //tohle je blbost a je to tim, ze do ControlledRadio nedavam nejakej <T> typ
+  level?: Level;
 };
 
 export type Course =
