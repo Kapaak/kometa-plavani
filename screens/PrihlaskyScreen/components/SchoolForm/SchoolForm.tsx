@@ -191,6 +191,7 @@ export const SchoolForm = ({
               placeholder="Počet dětí"
               required="Počet dětí musí být vyplněn"
               type="number"
+              pattern={/^(?=.*1)(?=.*[2-9]|30)[1-9]\d?$/}
             />
             <S.Label>Počet dětí</S.Label>
             <S.ErrorContainer>

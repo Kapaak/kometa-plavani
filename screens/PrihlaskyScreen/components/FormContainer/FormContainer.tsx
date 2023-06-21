@@ -28,6 +28,7 @@ export const FormContainer = ({
   const onSubmit = async (d: any) => {
     const newVals = normalizeSelectInputs(d);
     setIsLoading(true);
+
     try {
       await handleExcelUpload(newVals);
       axios.post("/api/email", {
