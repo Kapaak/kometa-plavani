@@ -12,6 +12,8 @@ export type Course =
   | "zdokonalovaci-plavani"
   | "zakladni-plavani";
 
+export type Level = "lower" | "higher";
+
 export enum ScrollSections {
   home = "home",
   about = "about",

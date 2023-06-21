@@ -9,8 +9,10 @@ import {
 } from "@/shared";
 import { createOption } from "@/utils";
 import Select, { MultiValue, StylesConfig } from "react-select";
-import { useEffect, useState } from "react";
+import { BaseSyntheticEvent, useEffect, useState } from "react";
 import { useFormContext } from "react-hook-form";
+import { useProSchoolForm } from "@/hooks";
+import { GlobalSpreadsheetData, Level, SchoolSpreadsheetData } from "@/domains";
 
 interface ProSwimmingFormProps {
   onSubmit: any;
@@ -41,96 +43,29 @@ const colourStyles: StylesConfig<any, true> = {
   },
 };
 
-const availableLessons = [
-  {
-    label: "4000 Kč - pololetí, 1 x týdně - cca 17 lekcí ve vybrané skupince",
-    value: "4000 Kč",
-    lessonsPerWeek: 1,
-  },
-  {
-    label:
-      "7700 Kč - celý školní rok, 1 x týdně - cca 34 lekcí ve vybrané skupince",
-    value: "7700 Kč",
-    lessonsPerWeek: 1,
-  },
-  {
-    label: "7500 Kč - pololetí, 2x týdně - cca 34 lekcí ve vybrané skupince",
-    value: "7500 Kč",
-    lessonsPerWeek: 2,
-  },
-  {
-    label:
-      "14500 Kč - celý školní rok, 2x týdně - cca 68 lekcí ve vybrané skupince",
-    value: "14500 Kč",
-    lessonsPerWeek: 2,
-  },
-  {
-    label: "9000 Kč - pololetí, 3x týdně - cca 51 lekcí ve vybrané skupince",
-    value: "9000 Kč",
-    lessonsPerWeek: 3,
-  },
-  {
-    label:
-      "15000 Kč - celý školní rok, 3x týdně - cca 102 lekcí ve vybrané skupince",
-    value: "15000 Kč",
-    lessonsPerWeek: 3,
-  },
-];
-
-const lowLevelOptions = [
-  {
-    label: "Pondělí",
-    options: [{ label: "15:00 - 16:00", value: "po_15" }],
-  },
-
-  {
-    label: "Středa",
-    options: [{ label: "15:00 - 16:00", value: "st_15" }],
-  },
-];
-
-const highLevelOptions = [
-  {
-    label: "Pondělí",
-    options: [{ label: "15:00 - 16:00", value: "po_15" }],
-  },
-
-  {
-    label: "Středa",
-    options: [{ label: "15:00 - 16:00", value: "st_15" }],
-  },
-  {
-    label: "Pátek",
-    options: [
-      { label: "16:00 - 17:00", value: "pa_16" },
-      { label: "17:00 - 18:00", value: "pa_17" },
-    ],
-  },
-];
-
 export const ProSwimmingForm = ({
   onSubmit,
   errors,
   isLoading,
 }: ProSwimmingFormProps) => {
+  const [selectedLevel, setSelectedLevel] = useState<Level>("lower");
   const [selectedOptions, setSelectedOptions] = useState<MultiValue<Option>>(
     []
   );
 
+  const { lessonOptions, highLevelOptions, lowLevelOptions, radioOptions } =
+    useProSchoolForm();
+
   const [maxNumberOfLessons, setMaxNumberOfLessons] = useState(
-    availableLessons[0].lessonsPerWeek
+    lessonOptions[0].lessonsPerWeek
   );
 
-  const [selectedLevel, setSelectedLevel] = useState<"lower" | "higher">(
-    "lower"
-  );
-
-  const handleSubmit = (data: any) => {
-    onSubmit(data);
+  const handleSubmit = (e: BaseSyntheticEvent) => {
+    onSubmit(e);
     setSelectedOptions([]);
   };
 
-  const { watch, setValue } = useFormContext();
+  const { setValue } = useFormContext();
 
   const handleOptionSelect = (options: MultiValue<Option>) => {
     setSelectedOptions(options);
@@ -275,7 +210,7 @@ export const ProSwimmingForm = ({
               setMaxNumberOfLessons(radio?.lessonsPerWeek ?? 0);
               setSelectedOptions([]);
             }}
-            options={availableLessons}
+            options={lessonOptions}
           />
           <Text variant="dark">
             V případě individuálních požadavků kontaktujte
@@ -290,14 +225,7 @@ export const ProSwimmingForm = ({
               setSelectedLevel(radio?.level ?? "lower");
               setSelectedOptions([]);
             }}
-            options={[
-              {
-                label: "Zdokonalovací plavání",
-                value: "zdokonalovací",
-                level: "lower",
-              },
-              { label: "Kondiční plavání", value: "kondiční", level: "higher" },
-            ]}
+            options={radioOptions}
           />
           <div>
             <Text variant="dark">

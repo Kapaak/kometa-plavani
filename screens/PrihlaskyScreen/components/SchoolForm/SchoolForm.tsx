@@ -110,17 +110,9 @@ export const SchoolForm = ({
   const [selectedLevel, setSelectedLevel] = useState<"lower" | "higher">(
     "lower"
   );
-  // const [selectedLevel, setSelectedLevel] = useState<Option[]>(lowLevelOptions);
 
-  //pokud bude checkedFields met vetsi length nez max, tak to hodi ostatni,
-  //ktery nejsou zrovna checked jako disabled
-  // const [checkedFields, setCheckedFields] = useState<string[]>([]);
+  const { setValue } = useFormContext();
 
-  const { watch, setValue } = useFormContext();
-
-  // const watchedFields = watch();
-
-  // const handleOptionSelect = (option:readonly Option[]) => {
   const handleOptionSelect = (options: MultiValue<Option>) => {
     setSelectedOptions(options);
   };
@@ -130,19 +122,6 @@ export const SchoolForm = ({
     setSelectedOptions([]);
     setSelectedLevel("lower");
   };
-
-  // useEffect(() => {
-  //   //tohle by slo hodit do wrapperu <CheckboxGroup>{children}</CheckboxGroup>
-  //   // Subscribe to changes in fields with names containing "day_"
-  //   for (const fieldName in watchedFields) {
-  //     if (fieldName.includes("day_")) {
-  //       const fieldValue = watchedFields[fieldName];
-  //       //tak tady budu checkovat, jestli uz je 1 a pokud ano, tak disablni vse
-  //       console.log(`Field "${fieldName}" changed:`, fieldValue);
-  //       // if (fieldValue) setCheckedFields((prev) => [...prev, fieldName]);
-  //     }
-  //   }
-  // }, [watchedFields]);
 
   useEffect(() => {
     const transformSelectedOptions = [...selectedOptions].map(
@@ -310,22 +289,6 @@ export const SchoolForm = ({
               selectedLevel === "higher" ? highLevelOptions : lowLevelOptions
             }
           />
-          {/* <Flex direction="row" gap="6rem" align="baseline">
-            <Flex gap="1rem">
-              <Text variant="dark" bold>
-                Pondělí
-              </Text>
-              <ControlledCheckbox name="day_po_9" label="9:00 - 10:00" />
-              <ControlledCheckbox name="day_po_8" label="10:00 - 11:00" />
-            </Flex>
-            <Flex gap="1rem">
-              <Text variant="dark" bold>
-                Úterý
-              </Text>
-              <ControlledCheckbox name="day_ut_9" label="9:00 - 10:00" />
-              <ControlledCheckbox name="day_ut_8" label="10:00 - 11:00" />
-            </Flex>
-          </Flex> */}
         </S.FormItem>
       </S.Container>
       <S.SubmitContainer>

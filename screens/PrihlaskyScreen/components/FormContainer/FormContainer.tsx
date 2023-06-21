@@ -3,14 +3,12 @@ import { useState } from "react";
 import { useRouter } from "next/router";
 import { SuccessModal } from "./SuccessModal";
 import axios from "axios";
-import { SchoolForm } from "../SchoolForm";
 import {
   Course,
   GlobalSpreadsheetData,
   SchoolSpreadsheetData,
 } from "@/domains";
-import { BasicSwimmingForm } from "../BasicSwimmingForm";
-import { ProSwimmingForm } from "../ProSwimmingForm";
+import { SchoolForm, BasicSwimmingForm, ProSwimmingForm } from "..";
 import { uploadGlobalSpreadsheet, uploadSchoolSpreadsheet } from "@/utils";
 
 interface FormContainerProps {
