@@ -40,6 +40,8 @@ const handler = (req: NextApiRequest, res: NextApiResponse) => {
         "api key sg"
       );
     });
+
+  res.send({});
 };
 
 export default handler;

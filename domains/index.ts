@@ -1,5 +1,12 @@
 import { StaticImageData } from "next/image";
 
+export type PageData = {
+  spreadsheetId: string;
+  name: Course;
+  templateId: string;
+  label: string;
+};
+
 export type Course =
   | "skoly-skolky"
   | "zdokonalovaci-plavani"
@@ -76,3 +83,36 @@ export interface Contact {
   icon: StaticImageData;
   fragment: Array<Fragment>;
 }
+
+export type GlobalSpreadsheetData = {
+  firstName?: string;
+  lastName?: string;
+  gender?: string;
+  personalIdNum?: string;
+  dateOfBirth?: string;
+  phone?: string;
+  email?: string;
+  address?: string;
+  city?: string;
+  postCode?: string;
+  alergy?: string;
+  lessonsPrice?: string;
+  healthIssues?: string;
+  level?: string;
+  lessonsDayTime?: string;
+};
+
+export type SchoolSpreadsheetData = {
+  schoolName?: string;
+  address?: string;
+  identifier?: string;
+  contactPerson?: string;
+  contactPersonPhone?: string;
+  contactPersonEmail?: string;
+  lessonsPrice?: string;
+  childrenCount?: string;
+  level?: string;
+  lessonsDayTime?: string;
+  midTerm?: string;
+  notes?: string;
+};

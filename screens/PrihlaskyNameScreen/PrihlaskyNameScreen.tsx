@@ -1,32 +1,22 @@
 import { MaxWidth } from "@/styles";
-import { Course } from "@/domains";
-import { useMemo } from "react";
+import { PageData } from "@/domains";
 import * as S from "./PrihlaskyNameScreen.style";
 import { FormContainer } from "screens/PrihlaskyScreen/components";
 
 interface PrihlaskyNameScreenProps {
-  courseName: Course;
-  spreadsheet: string;
+  pageData: PageData;
 }
 
-export const PrihlaskyNameScreen = ({
-  courseName,
-  spreadsheet,
-}: PrihlaskyNameScreenProps) => {
-  const courseTranslation = useMemo(() => {
-    if (courseName === "zdokonalovaci-plavani")
-      return "Zdokonalovací a kondiční plavání";
-    if (courseName === "skoly-skolky") return "Školy a školky";
-    if (courseName === "zakladni-plavani") return "Základní plavání";
-
-    return "";
-  }, [courseName]);
-
+export const PrihlaskyNameScreen = ({ pageData }: PrihlaskyNameScreenProps) => {
   return (
     <MaxWidth>
       <S.Wrapper>
-        <S.Headline>{courseTranslation}</S.Headline>
-        <FormContainer courseName={courseName} spreadsheet={spreadsheet} />
+        <S.Headline>{pageData?.label}</S.Headline>
+        <FormContainer
+          courseName={pageData?.name}
+          spreadsheetId={pageData?.spreadsheetId}
+          templateId={pageData?.templateId}
+        />
       </S.Wrapper>
     </MaxWidth>
   );

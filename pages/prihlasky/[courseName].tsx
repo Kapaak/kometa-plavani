@@ -1,38 +1,34 @@
 //interfaces
-import { Course } from "@/domains";
+import { Course, PageData } from "@/domains";
 import { GetServerSideProps, NextPage } from "next";
 import { PrihlaskyNameScreen, prihlaskyNameData } from "@/screens";
 
 interface CoursePageProps {
-  courseName: Course;
-  spreadsheet: string;
+  pageData: PageData;
 }
 
-const CoursePage: NextPage<CoursePageProps> = ({ courseName, spreadsheet }) => {
+const CoursePage: NextPage<CoursePageProps> = ({ pageData }) => {
   return (
     <main>
-      <PrihlaskyNameScreen courseName={courseName} spreadsheet={spreadsheet} />
+      <PrihlaskyNameScreen pageData={pageData} />
     </main>
   );
 };
 
-export const getServerSideProps: GetServerSideProps<{
-  courseName: Course;
-}> = async (ctx) => {
+export const getServerSideProps: GetServerSideProps<CoursePageProps> = async (
+  ctx
+) => {
   const courseName = ctx.query.courseName as Course;
-  const spreadsheet = prihlaskyNameData?.find(
-    (d) => d.name === courseName
-  )?.spreadsheetId;
+  const pageData = prihlaskyNameData?.find((d) => d.name === courseName);
 
-  if (!courseName)
+  if (!pageData)
     return {
       notFound: true,
     };
 
   return {
     props: {
-      courseName,
-      spreadsheet,
+      pageData,
     },
   };
 };
