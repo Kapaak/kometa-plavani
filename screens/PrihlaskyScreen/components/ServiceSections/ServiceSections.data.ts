@@ -18,6 +18,7 @@ export const data: Service[] = [
     url: "skoly-skolky",
     price: "2 040 Kč za dítě / pololetí",
     time: 45,
+    priceListHref: "/files/CENIK_SKOLY_SKOLKY.pdf",
   },
   {
     id: 2,
@@ -31,6 +32,7 @@ export const data: Service[] = [
     url: "zakladni-plavani",
     price: "4 000 - 15 000 Kč",
     time: 55,
+    priceListHref: "/files/CENIK_ODPOLEDNI_KURZY.pdf",
   },
   {
     id: 3,
@@ -42,5 +44,6 @@ export const data: Service[] = [
     url: "zdokonalovaci-plavani",
     price: "4 000 - 15 000 Kč",
     time: 55,
+    priceListHref: "/files/CENIK_ODPOLEDNI_KURZY.pdf",
   },
 ];

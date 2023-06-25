@@ -82,6 +82,7 @@ export type Service = {
   url?: string;
   price?: string;
   time?: number;
+  priceListHref?: string;
 };
 
 export type Dropdown = {

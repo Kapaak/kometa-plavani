@@ -19,10 +19,22 @@ interface ServiceSectionProps {
   isEven: boolean;
   price?: string;
   time?: number;
+  priceListHref?: string;
 }
 
 export const ServiceSection = (props: ServiceSectionProps) => {
-  const { headline, text, image, isEven, name, alt, url, time, price } = props;
+  const {
+    headline,
+    text,
+    image,
+    isEven,
+    name,
+    alt,
+    url,
+    time,
+    price,
+    priceListHref,
+  } = props;
 
   return (
     <SectionElement name={name}>
@@ -43,10 +55,10 @@ export const ServiceSection = (props: ServiceSectionProps) => {
               <Text variant="dark">
                 (
                 <a
-                  href={"/files/CENIK_LUZANKY.pdf"}
+                  href={priceListHref}
                   target="_blank"
                   rel="noopener noreferrer"
-                  download
+                  // download
                   style={{ textDecoration: "underline" }}
                 >
                   ceník lekcí
@@ -62,13 +74,13 @@ export const ServiceSection = (props: ServiceSectionProps) => {
               <Calendar size={20} />
               <Text variant="dark">
                 <a
-                  href={"/files/ROZVRH_LEKCI.pdf"}
+                  href={"/files/ROZPIS_LEKCI.pdf"}
                   target="_blank"
                   rel="noopener noreferrer"
-                  download
+                  // download
                   style={{ textDecoration: "underline" }}
                 >
-                  stáhnout rozvrh lekcí
+                  zobrazit rozpis lekcí
                 </a>
               </Text>
             </Flex>

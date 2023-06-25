@@ -22,6 +22,7 @@ export const ServiceSections = () => {
           url={d?.url}
           price={d?.price}
           time={d?.time}
+          priceListHref={d?.priceListHref}
         />
       ))}
     </S.Flex>
