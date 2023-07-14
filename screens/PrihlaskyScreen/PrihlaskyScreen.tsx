@@ -1,4 +1,4 @@
-import { ServiceSections } from "./components";
+import { LecturesSection } from "./components";
 import { Headline, MaxWidth, SectionElement } from "@/styles";
 
 export const PrihlaskyScreen = () => {
@@ -6,7 +6,7 @@ export const PrihlaskyScreen = () => {
     <MaxWidth>
       <SectionElement name="application">
         <Headline headlineType="h1">Přihlášky</Headline>
-        <ServiceSections />
+        <LecturesSection />
       </SectionElement>
     </MaxWidth>
   );

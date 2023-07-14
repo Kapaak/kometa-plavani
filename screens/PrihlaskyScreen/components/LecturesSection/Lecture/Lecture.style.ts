@@ -5,33 +5,19 @@ import { Flex as SFlex, Headline as SHeadline } from "@/styles";
 import { dimensions } from "@/utils";
 import Image from "next/image";
 
-export const ImageContainer = styled.div`
-  position: relative;
-  width: 100%;
-  height: 30rem;
-  border-radius: var(--small-border-rad);
-  overflow: hidden;
-  box-shadow: var(--shadow);
-
-  @media (${dimensions.notebook}) {
-    display: none;
-  }
-`;
-
 export const Img = styled(Image)`
   object-fit: cover;
   width: 100%;
   height: 100%;
 `;
 
-export const DesktopImageContainer = styled.div<{ isEven: boolean }>`
+export const DesktopImageContainer = styled.div`
   display: none;
   position: relative;
   border-radius: var(--small-border-rad);
   overflow: hidden;
   height: 40rem;
   flex: 1 1 50%;
-  order: ${({ isEven }) => (isEven ? "1" : "0")};
   box-shadow: var(--shadow);
 
   @media (${dimensions.notebook}) {
@@ -49,8 +35,27 @@ export const Headline = styled.h2`
   font-family: var(--font1);
   font-weight: 500;
   letter-spacing: 0.08rem;
+  color: var(--col2);
 
   @media (${dimensions.notebook}) {
     font-size: 4rem;
   }
+`;
+
+export const LectureCalendar = styled(Flex)`
+  background-color: red;
+  height: 100%;
+`;
+
+export const LectureSemesterButton = styled.button<{ visible: boolean }>`
+  cursor: pointer;
+  border: none;
+  background: none;
+  visibility: ${({ visible }) => (visible ? "visible" : "hidden")};
+`;
+
+export const LectureGrid = styled.div`
+  display: grid;
+  grid-template-columns: 2rem 1fr 1fr 1fr;
+  gap: 1rem;
 `;

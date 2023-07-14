@@ -66,6 +66,40 @@ export type Option = {
   value: string;
 };
 
+export enum WeekDays {
+  PO = "Pondělí",
+  UT = "Úterý",
+  ST = "Středa",
+  CT = "Čtvrtek",
+  PA = "Pátek",
+}
+
+export enum LectureTypes {
+  KINDERGARDEN = "kindergarden",
+  SCHOOL = "school",
+  BASIC = "basic",
+  ADVANCED = "advanced",
+  CONDITION = "condition",
+}
+
+export type Lecture = {
+  label: string;
+  value: string;
+};
+
+export type LectureOption = {
+  label: WeekDays;
+  lectures: Lecture[];
+};
+
+export type LectureOptions = {
+  kindergarden?: LectureOption[];
+  school?: LectureOption[];
+  basic?: LectureOption[];
+  advanced?: LectureOption[];
+  condition?: LectureOption[];
+};
+
 export type Sponsor = {
   image: StaticImageData;
   href: string;

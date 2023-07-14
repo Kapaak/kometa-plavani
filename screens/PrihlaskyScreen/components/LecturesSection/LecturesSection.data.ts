@@ -3,7 +3,7 @@ import KindergardenService from "@/public/images/service-kindergarden.jpg";
 import SchoolService from "@/public/images/service-school.jpg";
 import CourseService from "@/public/images/service-course.jpg";
 //interfaces
-import { Service, ScrollSections } from "@/domains";
+import { Service, ScrollSections, WeekDays } from "@/domains";
 
 export const data: Service[] = [
   {

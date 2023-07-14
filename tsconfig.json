@@ -25,7 +25,9 @@
       "@/shared":["components/Shared"],
       "@/domains":["domains"],
       "@/screens":["screens"],
-      "@/hooks":["hooks"]
+      "@/hooks":["hooks"],
+      "@/constants":["constants"],
+      "@/contexts":["contexts"]
     }
   },
   "include": ["next-env.d.ts", "**/*.ts", "**/*.tsx", "pages/_document.jsx"],
