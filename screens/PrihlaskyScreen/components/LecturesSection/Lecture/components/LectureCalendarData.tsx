@@ -1,18 +1,12 @@
 import { Flex } from "@/styles";
 import { LectureAvailability } from "./LectureAvailability";
 import { nanoid } from "nanoid";
-import { DayAbbr, LectureTime } from "@/domains";
-
-type Lecture = {
-  lectureTimeId: string;
-  available: number;
-  max: number;
-};
+import { DayAbbr, Lecture, LectureTime } from "@/domains";
 
 interface LectureCalendarDataProps {
   lectureTimes?: LectureTime[];
   lectureDays?: DayAbbr[];
-  calendarData: Record<string, Lecture[]>;
+  calendarData?: Record<string, Lecture[]>;
 }
 
 export const LectureCalendarData = ({
@@ -33,7 +27,7 @@ export const LectureCalendarData = ({
       return (
         <LectureAvailability
           key={id}
-          selected={lectureData?.available}
+          selected={lectureData?.available || lectureData?.max}
           max={lectureData?.max}
         />
       );

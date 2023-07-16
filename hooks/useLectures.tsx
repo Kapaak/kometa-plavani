@@ -1,8 +1,15 @@
+import {
+  DayAbbr,
+  Lecture,
+  LectureTime,
+  LectureTypes,
+  LectureValue,
+} from "@/domains";
 import { getAllSheets } from "@/libs";
 import { useEffect, useState } from "react";
 
 //teoreticky dostat ze SANITY
-const defaultValues = {
+const defaultValues: LectureValue = {
   kindergarden: {
     lectureTimes: [
       {
@@ -17,6 +24,7 @@ const defaultValues = {
         {
           lectureTimeId: "10",
           max: 32,
+          available: 32,
         },
       ],
     },
@@ -199,12 +207,35 @@ const defaultValues = {
       },
     ],
     lectureDays: ["po", "st", "pa"],
+    lectures: {
+      po: [
+        {
+          lectureTimeId: "15",
+          max: 32,
+        },
+      ],
+      st: [
+        {
+          lectureTimeId: "15",
+          max: 32,
+        },
+      ],
+      pa: [
+        {
+          lectureTimeId: "16",
+          max: 32,
+        },
+        {
+          lectureTimeId: "17",
+          max: 32,
+        },
+      ],
+    },
   },
 };
 
 export const useLectures = () => {
-  //pridej default values pro lectureDays z LectureOptions ... tam ty data jeste pridej
-  const [googleSheets, setGoogleSheets] = useState(defaultValues);
+  const [googleSheets, setGoogleSheets] = useState<LectureValue>(defaultValues);
 
   const transformData = (data: any[]) => {
     //transform data ze sheet, je to array of row

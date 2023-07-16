@@ -83,13 +83,28 @@ export enum LectureTypes {
 }
 
 export type Lecture = {
+  lectureTimeId: string;
+  available?: number;
+  max: number;
+};
+
+export type LectureValue = Record<
+  LectureTypes,
+  {
+    lectureTimes: LectureTime[];
+    lectureDays: DayAbbr[];
+    lectures: Record<string, Lecture[]>;
+  }
+>;
+
+export type LectureOptionValue = {
   label: string;
   value: string;
 };
 
 export type LectureOption = {
   label: WeekDays;
-  lectures: Lecture[];
+  lectures: LectureOptionValue[];
 };
 
 export type LectureOptions = {
@@ -113,6 +128,7 @@ export type Service = {
   image: StaticImageData;
   alt: string;
   name: ScrollSections;
+  lectureType?: LectureTypes;
   url?: string;
   price?: string;
   time?: number;

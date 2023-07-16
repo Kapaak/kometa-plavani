@@ -5,7 +5,6 @@ import * as S from "./LecturesSection.style";
 //data
 import { data } from "./LecturesSection.data";
 import { useLectureOptions } from "@/hooks";
-import { LectureTypes } from "@/domains";
 import { useLecturesContext } from "@/contexts";
 
 export const LecturesSection = () => {
@@ -31,6 +30,7 @@ export const LecturesSection = () => {
           url={d?.url}
           price={d?.price}
           time={d?.time}
+          lectureType={d?.lectureType}
         />
       ))}
     </S.Flex>

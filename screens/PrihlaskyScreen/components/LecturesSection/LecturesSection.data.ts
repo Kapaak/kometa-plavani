@@ -3,7 +3,7 @@ import KindergardenService from "@/public/images/service-kindergarden.jpg";
 import SchoolService from "@/public/images/service-school.jpg";
 import CourseService from "@/public/images/service-course.jpg";
 //interfaces
-import { Service, ScrollSections, WeekDays } from "@/domains";
+import { Service, ScrollSections, WeekDays, LectureTypes } from "@/domains";
 
 export const data: Service[] = [
   {
@@ -13,7 +13,8 @@ export const data: Service[] = [
       `,
     image: KindergardenService,
     alt: "dítě v bazénu pod vodou s brýlemi",
-    name: "kindergarden",
+    name: ScrollSections.kindergardens,
+    lectureType: LectureTypes.KINDERGARDEN,
     url: "skolky",
     price: "2 040 Kč za dítě / pololetí",
     time: 45,
@@ -26,7 +27,8 @@ export const data: Service[] = [
       `,
     image: KindergardenService,
     alt: "dítě v bazénu pod vodou s brýlemi",
-    name: "school",
+    name: ScrollSections.kindergardens, //TODO uprav
+    lectureType: LectureTypes.SCHOOL,
     url: "skoly",
     price: "2 040 Kč za dítě / pololetí",
     time: 45,
@@ -39,7 +41,8 @@ export const data: Service[] = [
       `,
     image: SchoolService,
     alt: "plavec s hlavou pod vodou a deskou",
-    name: "basic",
+    name: ScrollSections.kindergardens, //TODO uprav
+    lectureType: LectureTypes.BASIC,
     url: "zakladni-plavani",
     price: "4 000 - 15 000 Kč",
     time: 55,
@@ -51,7 +54,8 @@ export const data: Service[] = [
     text: `Kurzy jsou určeny pro děti, co se nebojí plavat ve velkém bazénu, navíc již ovládají základy plavání a v plavání se chtějí zdokonalit. Pokud již plavat umí nabízíme možnost kondičního plavání, kde děti mohou zlepšit svou fyzickou kondici a věnovat se plavání ikdyž zatím neuvažují o kariéře závodního plavce.`,
     image: CourseService,
     alt: "dvě plavkyně na začátku dráhy čekající na start",
-    name: "advanced",
+    name: ScrollSections.kindergardens, //TODO uprav
+    lectureType: LectureTypes.ADVANCED,
     url: "zdokonalovaci-plavani",
     price: "4 000 - 15 000 Kč",
     time: 55,
@@ -63,7 +67,8 @@ export const data: Service[] = [
     text: `Kurzy jsou určeny pro děti, co se nebojí plavat ve velkém bazénu, navíc již ovládají základy plavání a v plavání se chtějí zdokonalit. Pokud již plavat umí nabízíme možnost kondičního plavání, kde děti mohou zlepšit svou fyzickou kondici a věnovat se plavání ikdyž zatím neuvažují o kariéře závodního plavce.`,
     image: CourseService,
     alt: "dvě plavkyně na začátku dráhy čekající na start",
-    name: "condition",
+    name: ScrollSections.kindergardens, //TODO uprav
+    lectureType: LectureTypes.CONDITION,
     url: "kondicni-plavani",
     price: "4 000 - 15 000 Kč",
     time: 55,
