@@ -1,11 +1,8 @@
+import { LectureTime } from "@/domains";
 import * as S from "../Lecture.style";
 
 interface LectureCalendarTimesProps {
-  lectureTimes: {
-    id: string;
-    from: string;
-    to: string;
-  }[];
+  lectureTimes?: LectureTime[];
 }
 
 export const LectureCalendarTimes = ({
@@ -14,7 +11,7 @@ export const LectureCalendarTimes = ({
   return (
     <S.LectureGrid>
       <div />
-      {lectureTimes.map((time) => (
+      {lectureTimes?.map((time) => (
         <div key={time?.from}>
           {time?.from} - {time?.to}
         </div>

@@ -4,15 +4,22 @@ import * as S from "./Lecture.style";
 //interfaces
 import { Service } from "@/domains";
 import { LectureCalendar, LectureDescription } from "./components";
+import { useLectures } from "@/hooks";
+import { useLecturesContext } from "@/contexts";
 
 type LectureProps = Omit<Service, "id">;
 
 export const Lecture = (props: LectureProps) => {
   const { headline, text, image, name, alt, url, time, price } = props;
-  console.log(props.url, "props");
+  const { googleSheets, getLectureSheetsByType } = useLecturesContext();
+  //todo pak predelat tu funkci na hodnotu
 
   return (
     <SectionElement name={name}>
+      <button onClick={() => console.log(googleSheets)}>show ggl</button>
+      <button onClick={() => console.log(getLectureSheetsByType(name))}>
+        show tpe
+      </button>
       <Flex direction="row" gap="6rem">
         <LectureDescription
           title={headline}
@@ -21,7 +28,10 @@ export const Lecture = (props: LectureProps) => {
           time={time}
           url={url}
         />
-        <LectureCalendar />
+        <LectureCalendar
+          times={getLectureSheetsByType(name)?.lectureTimes}
+          days={getLectureSheetsByType(name)?.lectureDays}
+        />
         <S.DesktopImageContainer>
           <S.Img src={image} alt={alt} />
         </S.DesktopImageContainer>

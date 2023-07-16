@@ -1,10 +1,20 @@
 import { LectureOptions, WeekDays } from "@/domains";
 
 export const LECTURE_OPTIONS: LectureOptions = {
+  //nevim jestli bude fungovat, v tom aktualnim mam misto lectures options
+  //stacilo by prejmenovat, ale to lectures tu dava vetsi smysl
+  //pouziva se u SELECT komponentu
   kindergarden: [
     {
       label: WeekDays.PA,
-      lectures: [{ label: "10:00 - 11:00", value: "pa_10" }],
+      lectures: [{ label: "10:00 - 11:00", value: "pa_10" }], //toto je kvuli Select component
+      // lectureTimes: [
+      //   {
+      //     id: "10",
+      //     from: "10:00",
+      //     to: "11:00",
+      //   },
+      // ],
     },
   ],
   school: [

@@ -2,6 +2,7 @@ import * as S from "../Lecture.style";
 import { LectureSemester } from "./LectureSemester";
 import { LectureCalendarTimes } from "./LectureCalendarTimes";
 import { LectureCalendarData } from "./LectureCalendarData";
+import { DayAbbr, LectureTime } from "@/domains";
 
 //TODO: kdybych chtel podle pololeti, tak bych mel 1:{...data} a 2:{...data} a podle stavu bych prochazel data?.[stav]?....
 //TODO: objekt Skoly a skolky , atd...
@@ -25,6 +26,7 @@ const DUMMY_DATA = {
   ],
   lectureDays: ["Po", "Út", "St", "Čt", "Pá"],
   lectures: {
+    //tady ty dny asi by mely byt "po | ut | st | ct | pa"
     Po: [
       {
         lectureTimeId: "15",
@@ -85,15 +87,19 @@ const DUMMY_DATA = {
   },
 };
 
-export const LectureCalendar = () => {
-  //TODO ziskat data z hooku pro specificky element
+interface LectureCalendarProps {
+  times?: LectureTime[];
+  days?: DayAbbr[];
+}
+
+export const LectureCalendar = ({ times, days }: LectureCalendarProps) => {
   return (
     <S.LectureCalendar>
       <LectureSemester />
-      <LectureCalendarTimes lectureTimes={DUMMY_DATA.lectureTimes} />
+      <LectureCalendarTimes lectureTimes={times} />
       <LectureCalendarData
-        lectureTimes={DUMMY_DATA.lectureTimes}
-        lectureDays={DUMMY_DATA?.lectureDays} //protoze ty hardcoded data jsou string, ale ma to byt typ DayAbbr
+        lectureTimes={times}
+        lectureDays={days}
         calendarData={DUMMY_DATA?.lectures}
       />
     </S.LectureCalendar>

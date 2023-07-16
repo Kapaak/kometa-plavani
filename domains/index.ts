@@ -167,3 +167,11 @@ export type SchoolSpreadsheetData = {
   midTerm?: string;
   notes?: string;
 };
+
+export type LectureTime = {
+  id: string;
+  from: string;
+  to: string;
+};
+
+export type DayAbbr = "po" | "ut" | "st" | "ct" | "pa";

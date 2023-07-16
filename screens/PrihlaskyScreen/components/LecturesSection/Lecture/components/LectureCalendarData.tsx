@@ -1,6 +1,7 @@
 import { Flex } from "@/styles";
 import { LectureAvailability } from "./LectureAvailability";
 import { nanoid } from "nanoid";
+import { DayAbbr, LectureTime } from "@/domains";
 
 type Lecture = {
   lectureTimeId: string;
@@ -8,15 +9,9 @@ type Lecture = {
   max: number;
 };
 
-type DayAbbr = "Po" | "Út" | "St" | "Čt" | "Pá";
-
 interface LectureCalendarDataProps {
-  lectureTimes: {
-    id: string;
-    from: string;
-    to: string;
-  }[];
-  lectureDays: DayAbbr[];
+  lectureTimes?: LectureTime[];
+  lectureDays?: DayAbbr[];
   calendarData: Record<string, Lecture[]>;
 }
 
