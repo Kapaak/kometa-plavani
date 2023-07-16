@@ -84,7 +84,7 @@ export enum LectureTypes {
 
 export type Lecture = {
   lectureTimeId: string;
-  available?: number;
+  aplications?: number;
   max: number;
 };
 
@@ -191,3 +191,31 @@ export type LectureTime = {
 };
 
 export type DayAbbr = "po" | "ut" | "st" | "ct" | "pa";
+
+export type GoogleSheetRowType = {
+  "Adresa a číslo popisné"?: string;
+  Adresa?: string;
+  Alergie?: string;
+  "Cenová kategorie": string;
+  "Datum narození"?: string;
+  "Den a čas"?: string;
+  Email?: string;
+  "Email kontaktní osoby"?: string;
+  "IČ nebo DIČ"?: string;
+  Jméno?: string;
+  "Kontaktní osoba"?: string;
+  Město?: string;
+  "Název školy"?: string;
+  Pohlaví?: string;
+  Pololetí?: string;
+  Poznámky?: string;
+  "Počet dětí"?: number;
+  PSČ?: string;
+  Příjmení?: string;
+  "Rodné číslo"?: string;
+  Telefon?: string;
+  "Telefon kontaktní osoby"?: string;
+  "Zdravotní potíže"?: string;
+  Úroveň: string;
+  "Časová značka"?: string;
+};

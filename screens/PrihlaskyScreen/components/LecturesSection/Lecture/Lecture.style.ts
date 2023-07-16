@@ -43,7 +43,6 @@ export const Headline = styled.h2`
 `;
 
 export const LectureCalendar = styled(Flex)`
-  background-color: red;
   height: 100%;
 `;
 
@@ -56,6 +55,6 @@ export const LectureSemesterButton = styled.button<{ visible: boolean }>`
 
 export const LectureGrid = styled.div`
   display: grid;
-  grid-template-columns: 2rem 1fr 1fr 1fr;
+  grid-template-columns: 2rem 10rem 10rem 10rem;
   gap: 1rem;
 `;

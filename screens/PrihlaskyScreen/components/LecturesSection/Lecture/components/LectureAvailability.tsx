@@ -13,11 +13,14 @@ export const LectureAvailability = ({
     <Flex
       justify="center"
       align="center"
-      width="8rem"
+      // width="8rem"
       style={{ background: "#fff" }}
     >
-      <p>
-        {selected} / {max}
+      <p style={{ fontWeight: "300" }}>
+        <span style={{ color: selected > 3 ? "inherit" : "red" }}>
+          {selected}
+        </span>{" "}
+        / {max}
       </p>
     </Flex>
   );

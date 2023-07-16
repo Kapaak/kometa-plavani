@@ -27,7 +27,7 @@ export const LectureCalendarData = ({
       return (
         <LectureAvailability
           key={id}
-          selected={lectureData?.available || lectureData?.max}
+          selected={lectureData?.aplications || lectureData?.max}
           max={lectureData?.max}
         />
       );
@@ -39,7 +39,7 @@ export const LectureCalendarData = ({
         <div
           style={{
             display: "grid",
-            gridTemplateColumns: "2rem 1fr 1fr 1fr",
+            gridTemplateColumns: "2rem 10rem 10rem 10rem",
             gap: "1rem",
           }}
           key={`${day}_${uniqueGlobalId}_${index}`}

@@ -1,12 +1,7 @@
-import {
-  DayAbbr,
-  Lecture,
-  LectureTime,
-  LectureTypes,
-  LectureValue,
-} from "@/domains";
+import { GoogleSheetRowType, LectureTypes, LectureValue } from "@/domains";
 import { getAllSheets } from "@/libs";
-import { useEffect, useState } from "react";
+import { GoogleSpreadsheetRow } from "google-spreadsheet";
+import { useCallback, useEffect, useState } from "react";
 
 //teoreticky dostat ze SANITY
 const defaultValues: LectureValue = {
@@ -24,7 +19,6 @@ const defaultValues: LectureValue = {
         {
           lectureTimeId: "10",
           max: 32,
-          available: 32,
         },
       ],
     },
@@ -234,78 +228,83 @@ const defaultValues: LectureValue = {
   },
 };
 
+const getDayAndTimeFromString = (dayTime?: string) => {
+  if (!dayTime || dayTime.length === 0) return { day: null, time: null };
+
+  const [day, time] = dayTime.split("_");
+
+  return { day, time };
+};
+
+const transformData = (
+  googleSheetRows: GoogleSheetRowType[],
+  lectureType: LectureTypes
+) => {
+  const dataForLecture = { ...defaultValues[lectureType] };
+
+  //projdu vsechny ulozene radky v google sheets
+  //a pro kazdy ulozeny po_19 napr pridam do Pondeli 19 hodin +1
+  googleSheetRows.map((googleSheetRow) => {
+    const { day, time } = getDayAndTimeFromString(googleSheetRow["Den a čas"]);
+
+    if (!day || !time) return;
+
+    const incrementValue = Number(googleSheetRow["Počet dětí"]) || 1;
+
+    dataForLecture?.lectures[day]?.map((lecture) => {
+      if (Number(lecture?.lectureTimeId) === Number(time)) {
+        lecture.aplications = (lecture.aplications ?? 0) + incrementValue;
+      }
+
+      return lecture;
+    });
+  });
+
+  return dataForLecture;
+};
+
 export const useLectures = () => {
   const [googleSheets, setGoogleSheets] = useState<LectureValue>(defaultValues);
 
-  const transformData = (data: any[]) => {
-    //transform data ze sheet, je to array of row
-    //projdu si Den a čas a vytvořim objekt, kde transformuju value po_17 na
-    //{lectureTimeId:"17"} a vlozim to pod Po:{}
-    const newData = {};
-    data.map((d) => {
-      const dayAndTime = d["Den a čas"].split("_");
-      const day = dayAndTime[0];
-      const time = dayAndTime[1];
-
-      const actualNumberOfApplications =
-        newData?.[day]?.[time]?.applications || 0;
-      const incrementValue = Number(d["Počet dětí"]) || 1;
-
-      newData[day] = {
-        ...newData[day],
-        [time]: {
-          applications: actualNumberOfApplications + incrementValue,
-        },
-      };
-    });
-    console.log(
-      "🚀 ~ file: useLectures.tsx:32 ~ transformData ~ newData:",
-      newData
-    );
-
-    //zatim dostavam objekt pro specificky typ lekce s applications = pocet prihlasek k danymu dni
-
-    //tamto je mozna zbytecne slozity
-    //ja potrebuju info jen o tom, do jakyho dne to patri
-    //a do jakyho casu to patri a tam pridat zaznam +1, jenze u skol a skolek to bude + x (pocet deti v tom radku)
-  };
-
   useEffect(() => {
     (async () => {
-      const sheets = await getAllSheets(["0", "1955007726", "1941806095"]);
+      // const allSheets = await getAllSheets(["0", "1955007726", "1941806095"]);
+      const allSheets = await getAllSheets([
+        "1925580387",
+        "1899142510",
+        "508666225",
+        "646592576",
+        "1180547156",
+      ]);
 
-      const googleSheetKeyValuePairs: Record<number, string> = {
-        0: "kindergarden",
-        1: "school",
-        2: "basic",
-        3: "advanced",
-        4: "condition",
+      const googleSheetKeyValuePairs: Record<number, LectureTypes> = {
+        0: LectureTypes.KINDERGARDEN,
+        1: LectureTypes.SCHOOL,
+        2: LectureTypes.BASIC,
+        3: LectureTypes.ADVANCED,
+        4: LectureTypes.CONDITION,
       };
 
-      sheets &&
-        Promise.allSettled(sheets)
+      allSheets &&
+        Promise.allSettled(allSheets)
           .then((resSheets: any) => {
-            const sheetValue = resSheets.map((sheet: any) => sheet.value);
+            const sheetValue = resSheets.map(
+              (sheet: GoogleSpreadsheetRow) => sheet.value
+            );
 
-            let transformedData = {};
+            sheetValue.forEach(
+              (sheets: GoogleSheetRowType[], index: number) => {
+                const transformed = transformData(
+                  sheets,
+                  googleSheetKeyValuePairs[index]
+                );
 
-            sheetValue.forEach((sheet: any, index: number) => {
-              const sheetName = googleSheetKeyValuePairs[index];
-
-              transformedData = { ...transformedData, [sheetName]: sheet };
-              console.log(
-                "🚀 ~ file: useLectures.tsx:39 ~ sheetValue.forEach ~ sheet:",
-                sheet
-              );
-              transformData(sheet);
-            });
-
-            // console.log("sheetValue", sheetValue);
-            // console.log("sheetValuexx", sheetValue[0][0]["Den a čas"]);
-            console.log(transformedData, "transformer");
-
-            // setGoogleSheets(sheetValue);
-            //TODO: transformuj ty data do spravnyho formatu
+                setGoogleSheets((prev) => ({
+                  ...prev,
+                  [googleSheetKeyValuePairs[index]]: transformed,
+                }));
+              }
+            );
           })
           .catch((e) => console.log("promise error", e));
     })();
