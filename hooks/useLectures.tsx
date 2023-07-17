@@ -259,6 +259,7 @@ const transformData = (
       return lecture;
     });
   });
+  console.log(dataForLecture, "data");
 
   return dataForLecture;
 };
@@ -271,10 +272,10 @@ export const useLectures = () => {
       // const allSheets = await getAllSheets(["0", "1955007726", "1941806095"]);
       const allSheets = await getAllSheets([
         "1925580387",
-        "1899142510",
-        "508666225",
-        "646592576",
-        "1180547156",
+        // "1899142510",
+        // "508666225",
+        // "646592576",
+        // "1180547156",
       ]);
 
       const googleSheetKeyValuePairs: Record<number, LectureTypes> = {
@@ -291,7 +292,7 @@ export const useLectures = () => {
             const sheetValue = resSheets.map(
               (sheet: GoogleSpreadsheetRow) => sheet.value
             );
-
+            //tady mozna nejdriv celej objekt opravit a pak az to nakonci pridat do setGoogleSheets
             sheetValue.forEach(
               (sheets: GoogleSheetRowType[], index: number) => {
                 const transformed = transformData(
@@ -299,10 +300,12 @@ export const useLectures = () => {
                   googleSheetKeyValuePairs[index]
                 );
 
-                setGoogleSheets((prev) => ({
-                  ...prev,
-                  [googleSheetKeyValuePairs[index]]: transformed,
-                }));
+                console.log(transformed, "transka");
+
+                // setGoogleSheets((prev) => ({
+                //   ...prev,
+                //   [googleSheetKeyValuePairs[index]]: transformed,
+                // }));
               }
             );
           })
