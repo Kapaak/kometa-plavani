@@ -327,8 +327,6 @@ export const useLectures = () => {
             },
           },
         };
-
-        console.log(updatedDayTimeObject, "newTimeObject", day, time, index);
       });
 
       setGoogleSheets((prev) => ({

@@ -22,8 +22,10 @@ export type RadioOption = {
 };
 
 export type Course =
-  | "skoly-skolky"
+  | "skoly"
+  | "skolky"
   | "zdokonalovaci-plavani"
+  | "kondicni-plavani"
   | "zakladni-plavani";
 
 export type Level = "lower" | "higher";
