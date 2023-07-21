@@ -27,14 +27,14 @@ export const LectureSemester = () => {
         }
       </S.LectureSemesterButton>
       <p>{selectedSemester}</p>
-      <S.LectureSemesterButton visible={!isSecondSemesterSelected}>
+      {/* <S.LectureSemesterButton visible={!isSecondSemesterSelected}>
         {
           <ArrowRight
             size={20}
             onClick={() => setSelectedSemester(SemesterOptions.SECOND)}
           />
         }
-      </S.LectureSemesterButton>
+      </S.LectureSemesterButton> */}
     </Flex>
   );
 };

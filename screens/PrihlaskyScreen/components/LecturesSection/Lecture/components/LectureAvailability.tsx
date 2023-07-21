@@ -2,11 +2,11 @@ import { Flex } from "@/styles";
 
 interface LectureAvailabilityProps {
   max: number;
-  selected: number;
+  applications: number;
 }
 
 export const LectureAvailability = ({
-  selected,
+  applications,
   max,
 }: LectureAvailabilityProps) => {
   return (
@@ -17,8 +17,8 @@ export const LectureAvailability = ({
       style={{ background: "#fff" }}
     >
       <p style={{ fontWeight: "300" }}>
-        <span style={{ color: selected > 3 ? "inherit" : "red" }}>
-          {selected}
+        <span style={{ color: max - applications > 3 ? "inherit" : "red" }}>
+          {max - applications}
         </span>{" "}
         / {max}
       </p>

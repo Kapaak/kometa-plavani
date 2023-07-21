@@ -13,7 +13,7 @@ const LecturesContext = createContext<{
   getLectureSheetsByType: (type?: LectureTypes) => {
     lectureTimes: LectureTime[];
     lectureDays: DayAbbr[];
-    lectures: Record<string, Lecture[]>;
+    lectures: Record<string, Lecture>;
   };
 }>({
   googleSheets: {

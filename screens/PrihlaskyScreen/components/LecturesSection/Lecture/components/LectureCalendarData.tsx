@@ -6,7 +6,7 @@ import { DayAbbr, Lecture, LectureTime } from "@/domains";
 interface LectureCalendarDataProps {
   lectureTimes?: LectureTime[];
   lectureDays?: DayAbbr[];
-  calendarData?: Record<string, Lecture[]>;
+  calendarData?: Record<string, Lecture>;
 }
 
 export const LectureCalendarData = ({
@@ -19,15 +19,13 @@ export const LectureCalendarData = ({
   const findLectureTime = (day: DayAbbr) => {
     return lectureTimes?.map((lectureTime) => {
       const id = nanoid();
-      const lectureData = calendarData?.[day]?.find(
-        (lectureDay) => lectureTime?.id === lectureDay?.lectureTimeId
-      );
+      const lectureData = calendarData?.[day]?.[Number(lectureTime.id)];
       if (!lectureData) return <div key={`no_data_${id}`} />;
 
       return (
         <LectureAvailability
           key={id}
-          selected={lectureData?.aplications || lectureData?.max}
+          applications={lectureData?.aplications || 0}
           max={lectureData?.max}
         />
       );

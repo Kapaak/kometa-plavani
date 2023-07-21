@@ -11,15 +11,11 @@ type LectureProps = Omit<Service, "id">;
 export const Lecture = (props: LectureProps) => {
   const { headline, text, image, name, alt, url, time, price, lectureType } =
     props;
-  const { googleSheets, getLectureSheetsByType } = useLecturesContext();
+  const { getLectureSheetsByType } = useLecturesContext();
   //todo pak predelat tu funkci na hodnotu
 
   return (
     <SectionElement name={name}>
-      <button onClick={() => console.log(googleSheets)}>show ggl</button>
-      <button onClick={() => console.log(getLectureSheetsByType(lectureType))}>
-        show tpe
-      </button>
       <Flex direction="row" gap="6rem">
         <LectureDescription
           title={headline}

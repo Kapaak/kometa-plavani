@@ -82,18 +82,21 @@ export enum LectureTypes {
   CONDITION = "condition",
 }
 
-export type Lecture = {
-  lectureTimeId: string;
-  aplications?: number;
-  max: number;
-};
+export type Lecture = Record<
+  number,
+  {
+    lectureTimeId: string;
+    aplications?: number;
+    max: number;
+  }
+>;
 
 export type LectureValue = Record<
   LectureTypes,
   {
     lectureTimes: LectureTime[];
     lectureDays: DayAbbr[];
-    lectures: Record<string, Lecture[]>;
+    lectures: Record<string, Lecture>;
   }
 >;
 

@@ -7,7 +7,7 @@ import { DayAbbr, Lecture, LectureTime } from "@/domains";
 interface LectureCalendarProps {
   times?: LectureTime[];
   days?: DayAbbr[];
-  data?: Record<string, Lecture[]>;
+  data?: Record<string, Lecture>;
 }
 
 export const LectureCalendar = ({
