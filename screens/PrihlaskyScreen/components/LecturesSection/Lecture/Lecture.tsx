@@ -25,6 +25,9 @@ export const Lecture = (props: LectureProps) => {
           url={url}
         />
         <LectureCalendar
+          showSemesterSwitcher={
+            lectureType === "school" || lectureType === "kindergarden"
+          }
           times={getLectureSheetsByType(lectureType)?.lectureTimes}
           days={getLectureSheetsByType(lectureType)?.lectureDays}
           data={getLectureSheetsByType(lectureType)?.lectures}

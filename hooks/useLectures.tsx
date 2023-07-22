@@ -23,7 +23,7 @@ const defaultValues: LectureValue = {
       pa: {
         10: {
           lectureTimeId: "10",
-          max: 32,
+          max: 30,
           aplications: 0,
         },
       },
@@ -47,60 +47,60 @@ const defaultValues: LectureValue = {
       po: {
         9: {
           lectureTimeId: "9",
-          max: 32,
+          max: 30,
           aplications: 0,
         },
         10: {
           lectureTimeId: "10",
-          max: 32,
+          max: 30,
           aplications: 0,
         },
       },
       ut: {
         9: {
           lectureTimeId: "9",
-          max: 32,
+          max: 30,
           aplications: 0,
         },
         10: {
           lectureTimeId: "10",
-          max: 32,
+          max: 30,
           aplications: 0,
         },
       },
       st: {
         9: {
           lectureTimeId: "9",
-          max: 32,
+          max: 30,
           aplications: 0,
         },
         10: {
           lectureTimeId: "10",
-          max: 32,
+          max: 30,
           aplications: 0,
         },
       },
       ct: {
         9: {
           lectureTimeId: "9",
-          max: 32,
+          max: 30,
           aplications: 0,
         },
         10: {
           lectureTimeId: "10",
-          max: 32,
+          max: 30,
           aplications: 0,
         },
       },
       pa: {
         9: {
           lectureTimeId: "9",
-          max: 32,
+          max: 30,
           aplications: 0,
         },
         10: {
           lectureTimeId: "10",
-          max: 32,
+          max: 30,
           aplications: 0,
         },
       },
@@ -129,55 +129,55 @@ const defaultValues: LectureValue = {
       po: {
         15: {
           lectureTimeId: "15",
-          max: 32,
+          max: 30,
           aplications: 0,
         },
       },
       ut: {
         15: {
           lectureTimeId: "15",
-          max: 32,
+          max: 30,
           aplications: 0,
         },
         16: {
           lectureTimeId: "16",
-          max: 32,
+          max: 30,
           aplications: 0,
         },
       },
       st: {
         15: {
           lectureTimeId: "15",
-          max: 32,
+          max: 30,
           aplications: 0,
         },
       },
       ct: {
         15: {
           lectureTimeId: "15",
-          max: 32,
+          max: 30,
           aplications: 0,
         },
         17: {
           lectureTimeId: "17",
-          max: 32,
+          max: 30,
           aplications: 0,
         },
       },
       pa: {
         15: {
           lectureTimeId: "15",
-          max: 32,
+          max: 30,
           aplications: 0,
         },
         16: {
           lectureTimeId: "16",
-          max: 32,
+          max: 30,
           aplications: 0,
         },
         17: {
           lectureTimeId: "17",
-          max: 32,
+          max: 30,
           aplications: 0,
         },
       },
@@ -196,14 +196,14 @@ const defaultValues: LectureValue = {
       po: {
         15: {
           lectureTimeId: "15",
-          max: 32,
+          max: 30,
           aplications: 0,
         },
       },
       st: {
         15: {
           lectureTimeId: "15",
-          max: 32,
+          max: 30,
           aplications: 0,
         },
       },
@@ -232,26 +232,26 @@ const defaultValues: LectureValue = {
       po: {
         15: {
           lectureTimeId: "15",
-          max: 32,
+          max: 30,
           aplications: 0,
         },
       },
       st: {
         15: {
           lectureTimeId: "15",
-          max: 32,
+          max: 30,
           aplications: 0,
         },
       },
       pa: {
         16: {
           lectureTimeId: "16",
-          max: 32,
+          max: 30,
           aplications: 0,
         },
         17: {
           lectureTimeId: "17",
-          max: 32,
+          max: 30,
           aplications: 0,
         },
       },
@@ -320,7 +320,7 @@ export const useLectures = () => {
           [day]: {
             [Number(time)]: {
               lectureTimeId: time,
-              max: 32,
+              max: 30,
               aplications:
                 incrementValue +
                 (updatedDayTimeObject?.[day]?.[Number(time)]?.aplications ?? 0),

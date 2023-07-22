@@ -10,7 +10,7 @@ enum SemesterOptions {
 
 export const LectureSemester = () => {
   const [selectedSemester, setSelectedSemester] = useState(
-    SemesterOptions.FIRST
+    SemesterOptions.SECOND
   );
 
   const isFirstSemesterSelected = selectedSemester === SemesterOptions.FIRST;
@@ -19,12 +19,12 @@ export const LectureSemester = () => {
   return (
     <Flex direction="row" gap="1rem">
       <S.LectureSemesterButton visible={!isFirstSemesterSelected}>
-        {
+        {/* {
           <ArrowLeft
             size={20}
             onClick={() => setSelectedSemester(SemesterOptions.FIRST)}
           />
-        }
+        } */}
       </S.LectureSemesterButton>
       <p>{selectedSemester}</p>
       {/* <S.LectureSemesterButton visible={!isSecondSemesterSelected}>

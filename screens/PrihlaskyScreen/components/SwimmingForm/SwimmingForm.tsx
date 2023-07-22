@@ -41,7 +41,7 @@ export const SwimmingForm = ({
     []
   );
 
-  const { setValue } = useFormContext();
+  const { setValue, watch } = useFormContext();
 
   const handleSubmit = (event: BaseSyntheticEvent) => {
     onSubmit(event);
@@ -51,6 +51,13 @@ export const SwimmingForm = ({
   const handleOptionSelect = (options: MultiValue<Option>) => {
     setSelectedOptions(options);
   };
+
+  const watchLessonsPrice = watch("lessonsPrice");
+
+  useEffect(() => {
+    //resetuj "vybraný termín a čas", když se změní počet lekcí
+    setSelectedOptions([]);
+  }, [watchLessonsPrice]);
 
   useEffect(() => {
     const transformSelectedOptions = [...selectedOptions].map(

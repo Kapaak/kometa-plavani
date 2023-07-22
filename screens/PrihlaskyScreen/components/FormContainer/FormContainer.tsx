@@ -8,9 +8,14 @@ import {
   GlobalSpreadsheetData,
   SchoolSpreadsheetData,
 } from "@/domains";
-import { SchoolSwimmingForm, BasicSwimmingForm, ProSwimmingForm } from "..";
+import {
+  SchoolForm,
+  BasicForm,
+  KindergardenForm,
+  AdvancedForm,
+  ConditionForm,
+} from "..";
 import { uploadGlobalSpreadsheet, uploadSchoolSpreadsheet } from "@/utils";
-import { KindergardenForm } from "../KindergardenForm";
 
 interface FormContainerProps {
   spreadsheetId: string;
@@ -28,7 +33,7 @@ export const FormContainer = ({
   const isKindergardenSwimming = courseName === "skolky";
   const isSchoolSwimming = courseName === "skoly";
   const isBasicSwimming = courseName === "zakladni-plavani";
-  const isImproveSwimming = courseName === "zdokonalovaci-plavani";
+  const isAdvancedSwimming = courseName === "zdokonalovaci-plavani";
   const isConditionSwimming = courseName === "kondicni-plavani";
 
   const [isOpen, setIsOpen] = useState(false);
@@ -84,8 +89,6 @@ export const FormContainer = ({
         addChild={resetAll}
         redirect={() => router.push("/")}
       />
-      {/* //todo -> udelej global komponent pro School a Kindergarden */}
-      {/* //todo -> passuj jen nejakou prop */}
       {isKindergardenSwimming && (
         <KindergardenForm
           onSubmit={handleSubmit(onSubmit)}
@@ -94,29 +97,28 @@ export const FormContainer = ({
         />
       )}
       {isSchoolSwimming && (
-        <SchoolSwimmingForm
+        <SchoolForm
           onSubmit={handleSubmit(onSubmit)}
           errors={errors}
           isLoading={isLoading}
         />
       )}
       {isBasicSwimming && (
-        <BasicSwimmingForm
+        <BasicForm
           onSubmit={handleSubmit(onSubmit)}
           errors={errors}
           isLoading={isLoading}
         />
       )}
-      {/* //todo -> udelej global komponent pro basic, impro a condition swimming */}
-      {isImproveSwimming && (
-        <BasicSwimmingForm
+      {isAdvancedSwimming && (
+        <AdvancedForm
           onSubmit={handleSubmit(onSubmit)}
           errors={errors}
           isLoading={isLoading}
         />
       )}
       {isConditionSwimming && (
-        <ProSwimmingForm
+        <ConditionForm
           onSubmit={handleSubmit(onSubmit)}
           errors={errors}
           isLoading={isLoading}

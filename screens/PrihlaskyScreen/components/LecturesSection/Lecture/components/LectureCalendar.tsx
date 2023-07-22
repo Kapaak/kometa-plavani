@@ -8,16 +8,18 @@ interface LectureCalendarProps {
   times?: LectureTime[];
   days?: DayAbbr[];
   data?: Record<string, Lecture>;
+  showSemesterSwitcher?: boolean;
 }
 
 export const LectureCalendar = ({
   times,
   days,
   data,
+  showSemesterSwitcher = false,
 }: LectureCalendarProps) => {
   return (
     <S.LectureCalendar>
-      <LectureSemester />
+      {showSemesterSwitcher && <LectureSemester />}
       <LectureCalendarTimes lectureTimes={times} />
       <LectureCalendarData
         lectureTimes={times}

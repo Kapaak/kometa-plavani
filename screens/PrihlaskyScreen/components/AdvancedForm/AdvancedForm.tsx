@@ -1,79 +1,41 @@
 import { Space, Subheadline, Text } from "@/styles";
-import * as S from "./BasicSwimmingForm.style";
+import * as S from "../SwimmingForm/SwimmingForm.style";
 import {
   ControlledInput,
   ControlledSelect,
   ControlledNameInput,
-  IconButton,
   ControlledRadio,
 } from "@/shared";
 import { createOption } from "@/utils";
-import Select, { MultiValue, StylesConfig } from "react-select";
-import { BaseSyntheticEvent, useEffect, useState } from "react";
-import { useFormContext } from "react-hook-form";
-import { useBasicSwimmingOptions } from "@/hooks";
-import { Option, SwimmingPage } from "@/domains";
+import { useState } from "react";
+import { useLectureOptions, useLecturePaymentOptions } from "@/hooks";
+import { SwimmingForm } from "../SwimmingForm";
 
-const colourStyles: StylesConfig<any, true> = {
-  control: (styles) => ({ ...styles, backgroundColor: "white" }),
+interface AdvancedFormProps {
+  onSubmit: () => void;
+  isLoading: boolean;
+  errors: any;
+}
 
-  multiValue: (styles, { data }) => {
-    const prefix = data.value.split("_")[0].toUpperCase() as string;
-    return {
-      ...styles,
-      paddingLeft: "1rem",
-      ":before": {
-        display: "flex",
-        alignSelf: "center",
-        content: `"${prefix}"`,
-        fontSize: "1.2rem",
-      },
-    };
-  },
-};
-
-export const BasicSwimmingForm = ({
+export const AdvancedForm = ({
   onSubmit,
   errors,
   isLoading,
-}: SwimmingPage) => {
-  const [selectedOptions, setSelectedOptions] = useState<MultiValue<Option>>(
-    []
-  );
-
-  const { highLevelOptions, lessonOptions, lowLevelOptions, radioOptions } =
-    useBasicSwimmingOptions();
+}: AdvancedFormProps) => {
+  const { advanced: advancedOptions } = useLectureOptions();
+  const { advanced: advancedPaymentOptions } = useLecturePaymentOptions();
 
   const [maxNumberOfLessons, setMaxNumberOfLessons] = useState(
-    lessonOptions[0].lessonsPerWeek
+    advancedPaymentOptions[0].lessonsPerWeek
   );
-
-  const [selectedLevel, setSelectedLevel] = useState<"lower" | "higher">(
-    "lower"
-  );
-
-  const handleSubmit = (event: BaseSyntheticEvent) => {
-    onSubmit(event);
-    setSelectedOptions([]);
-    setSelectedLevel("lower");
-  };
-
-  const { setValue } = useFormContext();
-
-  const handleOptionSelect = (options: MultiValue<Option>) => {
-    setSelectedOptions(options);
-  };
-
-  useEffect(() => {
-    const transformSelectedOptions = [...selectedOptions].map(
-      (option) => option.value
-    );
-
-    setValue("lessonsDayTime", transformSelectedOptions.toString());
-  }, [selectedOptions, setValue]);
 
   return (
-    <S.Form onSubmit={handleSubmit}>
+    <SwimmingForm
+      selectOptions={advancedOptions}
+      onSubmit={onSubmit}
+      isLoading={isLoading}
+      maxNumberOfLessons={maxNumberOfLessons}
+    >
       <S.Container>
         <S.FormItem>
           <Subheadline variant="dark">Osobní údaje</Subheadline>
@@ -201,87 +163,15 @@ export const BasicSwimmingForm = ({
             name="lessonsPrice"
             onClick={(radio) => {
               setMaxNumberOfLessons(radio?.lessonsPerWeek ?? 0);
-              setSelectedOptions([]);
             }}
-            options={lessonOptions}
+            options={advancedPaymentOptions}
           />
           <Text variant="dark">
             V případě individuálních požadavků kontaktujte
             plavaniluzanky@kometaplavani.cz
           </Text>
         </S.FormItem>
-        <S.FormItem>
-          <Subheadline variant="dark">Úroveň</Subheadline>
-          <ControlledRadio
-            name="level"
-            onClick={(radio) => {
-              setSelectedLevel(radio?.level ?? "lower");
-              setSelectedOptions([]);
-            }}
-            options={radioOptions}
-          />
-          <div>
-            <Text variant="dark">
-              Mezi plavce se řadí dítě, které zvládá dané dovednosti:
-            </Text>
-            <ul
-              style={{
-                listStylePosition: "inside",
-                fontWeight: "300",
-                marginLeft: "2rem",
-              }}
-            >
-              <li>nebojí se skočit do vody</li>
-              <li> nebojí se potopit obličej do vody</li>
-              <li>zvládá splývání</li>
-            </ul>
-          </div>
-        </S.FormItem>
       </S.Container>
-      <Space />
-      <S.Container>
-        <S.FormItem>
-          <Subheadline variant="dark">Vybraný termín a čas</Subheadline>
-          {/* //todo pridej at to rovnou uklada do react hook form */}
-          <Select
-            instanceId="lessons-select"
-            placeholder="Termín a čas"
-            styles={colourStyles}
-            value={selectedOptions}
-            isMulti
-            name="lessonsDayTime"
-            closeMenuOnSelect={false}
-            onChange={handleOptionSelect}
-            isOptionDisabled={() =>
-              selectedOptions.length >= maxNumberOfLessons
-            }
-            options={
-              selectedLevel === "higher" ? highLevelOptions : lowLevelOptions
-            }
-          />
-        </S.FormItem>
-      </S.Container>
-      <S.SubmitContainer>
-        <S.Text>
-          Odesláním přihlášky potvrzuji, že jsem se seznámil(a) s{" "}
-          <S.UnderlinedInput
-            href="/files/VSEOBECNE-PODMINKY.pdf"
-            rel="noopener noreferrer"
-            target="_blank"
-          >
-            podmínkami přijetí
-          </S.UnderlinedInput>
-          . S podmínkami souhlasím a moje dítě je splňuje.
-        </S.Text>
-
-        <IconButton
-          loading={isLoading}
-          disabled={isLoading || selectedOptions.length !== maxNumberOfLessons}
-          iconAfter={S.ArrowRightIcon}
-        >
-          Odeslat
-        </IconButton>
-      </S.SubmitContainer>
-    </S.Form>
+    </SwimmingForm>
   );
 };
