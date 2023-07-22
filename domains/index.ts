@@ -34,16 +34,14 @@ export type Level = "lower" | "higher";
 export enum ScrollSections {
   home = "home",
   about = "about",
-  application = "application",
   contact = "contact",
-  skolky = "skolky",
-  skoly = "skoly",
-  kurzy = "kurzy",
-  kindergardens = "kindergardens",
-  schools = "schools",
-  courses = "courses",
   faq = "faq",
   documents = "documents",
+  APPLICATIONS_KINDERGARDEN = "applications-kindergarden",
+  APPLICATIONS_SCHOOL = "applications-school",
+  APPLICATIONS_BASIC = "applications-basic",
+  APPLICATIONS_ADVANCED = "applications-advanced",
+  APPLICATIONS_CONDITION = "applications-condition",
 }
 
 export enum Content {

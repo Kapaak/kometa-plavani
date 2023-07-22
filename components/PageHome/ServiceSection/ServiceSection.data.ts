@@ -11,7 +11,7 @@ export const data: Service[] = [
     text: "Cílem naší výuky je adaptovat dítě na vodní prostředí.",
     image: KindergardenService,
     alt: "dítě v bazénu pod vodou s brýlemi",
-    name: ScrollSections.kindergardens,
+    name: ScrollSections.APPLICATIONS_KINDERGARDEN,
   },
   {
     id: 2,
@@ -19,7 +19,7 @@ export const data: Service[] = [
     text: "Kurzy jsou určené pro děti, které se potřebují naučit plavat.",
     image: SchoolService,
     alt: "plavec s hlavou pod vodou a deskou",
-    name: ScrollSections.schools,
+    name: ScrollSections.APPLICATIONS_SCHOOL,
   },
   {
     id: 3,
@@ -27,6 +27,6 @@ export const data: Service[] = [
     text: "Vhodné přo děti, co se nebojí plavat ve velkém bazénu, navíc již ovládají základy plavání.",
     image: CourseService,
     alt: "dvě plavkyně na začátku dráhy",
-    name: ScrollSections.courses,
+    name: ScrollSections.APPLICATIONS_ADVANCED,
   },
 ];

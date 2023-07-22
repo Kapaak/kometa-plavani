@@ -15,7 +15,7 @@ export const data: Service[] = [
       `,
     image: KindergardenService,
     alt: "dítě v bazénu pod vodou s brýlemi",
-    name: ScrollSections.kindergardens,
+    name: ScrollSections.APPLICATIONS_KINDERGARDEN,
     lectureType: LectureTypes.KINDERGARDEN,
     url: "skolky",
     price: "2 040 Kč za dítě / pololetí",
@@ -29,7 +29,7 @@ export const data: Service[] = [
       `,
     image: SchoolService,
     alt: "dítě v bazénu pod vodou s brýlemi",
-    name: ScrollSections.kindergardens, //TODO uprav
+    name: ScrollSections.APPLICATIONS_SCHOOL,
     lectureType: LectureTypes.SCHOOL,
     url: "skoly",
     price: "2 040 Kč za dítě / pololetí",
@@ -43,7 +43,7 @@ export const data: Service[] = [
       `,
     image: BasicService,
     alt: "plavec s hlavou pod vodou a deskou",
-    name: ScrollSections.kindergardens, //TODO uprav
+    name: ScrollSections.APPLICATIONS_BASIC,
     lectureType: LectureTypes.BASIC,
     url: "zakladni-plavani",
     price: "4 000 - 15 000 Kč",
@@ -56,7 +56,7 @@ export const data: Service[] = [
     text: `Kurzy jsou určeny pro děti, co se nebojí plavat ve velkém bazénu, navíc již ovládají základy plavání a v plavání se chtějí zdokonalit. Pokud již plavat umí nabízíme možnost kondičního plavání, kde děti mohou zlepšit svou fyzickou kondici a věnovat se plavání ikdyž zatím neuvažují o kariéře závodního plavce.`,
     image: CourseService,
     alt: "dvě plavkyně na začátku dráhy čekající na start",
-    name: ScrollSections.kindergardens, //TODO uprav
+    name: ScrollSections.APPLICATIONS_ADVANCED,
     lectureType: LectureTypes.ADVANCED,
     url: "zdokonalovaci-plavani",
     price: "4 000 - 15 000 Kč",
@@ -69,7 +69,7 @@ export const data: Service[] = [
     text: `Kurzy jsou určeny pro děti, co se nebojí plavat ve velkém bazénu, navíc již ovládají základy plavání a v plavání se chtějí zdokonalit. Pokud již plavat umí nabízíme možnost kondičního plavání, kde děti mohou zlepšit svou fyzickou kondici a věnovat se plavání ikdyž zatím neuvažují o kariéře závodního plavce.`,
     image: ConditionService,
     alt: "dvě plavkyně na začátku dráhy čekající na start",
-    name: ScrollSections.kindergardens, //TODO uprav
+    name: ScrollSections.APPLICATIONS_CONDITION,
     lectureType: LectureTypes.CONDITION,
     url: "kondicni-plavani",
     price: "4 000 - 15 000 Kč",
