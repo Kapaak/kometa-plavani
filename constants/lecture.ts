@@ -1,22 +1,73 @@
 import { LectureValue, WeekDays } from "@/domains";
 
+//kazda hodnota ve dni je zdvojena, protoze 0 je 1. pololetí a 1 je 2. pololetí
 export const LECTURE_DATA: LectureValue = {
   kindergarden: {
     lectureTimes: [
+      {
+        id: "9",
+        from: "9:00",
+        to: "10:00",
+      },
       {
         id: "10",
         from: "10:00",
         to: "11:00",
       },
     ],
-    lectureDays: ["pa"],
+    lectureDays: ["po", "pa"],
     lectures: {
+      po: {
+        9: [
+          {
+            lectureTimeId: "9",
+            max: 30,
+            aplications: 0,
+          },
+          {
+            lectureTimeId: "9",
+            max: 30,
+            aplications: 0,
+          },
+        ],
+        10: [
+          {
+            lectureTimeId: "10",
+            max: 30,
+            aplications: 0,
+          },
+          {
+            lectureTimeId: "10",
+            max: 30,
+            aplications: 0,
+          },
+        ],
+      },
       pa: {
-        10: {
-          lectureTimeId: "10",
-          max: 30,
-          aplications: 0,
-        },
+        9: [
+          {
+            lectureTimeId: "9",
+            max: 30,
+            aplications: 0,
+          },
+          {
+            lectureTimeId: "9",
+            max: 30,
+            aplications: 0,
+          },
+        ],
+        10: [
+          {
+            lectureTimeId: "10",
+            max: 30,
+            aplications: 0,
+          },
+          {
+            lectureTimeId: "10",
+            max: 30,
+            aplications: 0,
+          },
+        ],
       },
     },
   },
@@ -36,64 +87,136 @@ export const LECTURE_DATA: LectureValue = {
     lectureDays: ["po", "ut", "st", "ct", "pa"], //tohle bych si umel dokazat vytahnout z lectures, kdyz data dostanu ze sanity, to stejny ty data nad
     lectures: {
       po: {
-        9: {
-          lectureTimeId: "9",
-          max: 30,
-          aplications: 0,
-        },
-        10: {
-          lectureTimeId: "10",
-          max: 30,
-          aplications: 0,
-        },
+        //array z toho duvodu, ze v prvnim indexu je 1. semestr a v druhem 2. semestr
+        //defaultne u vsech ostatnich budu vzdy pouzivat [0], abych mohl met vsude stejnej format
+        9: [
+          {
+            lectureTimeId: "9",
+            max: 30,
+            aplications: 0,
+          },
+          {
+            lectureTimeId: "9",
+            max: 30,
+            aplications: 0,
+          },
+        ],
+        10: [
+          {
+            lectureTimeId: "10",
+            max: 30,
+            aplications: 0,
+          },
+          {
+            lectureTimeId: "10",
+            max: 30,
+            aplications: 0,
+          },
+        ],
       },
       ut: {
-        9: {
-          lectureTimeId: "9",
-          max: 30,
-          aplications: 0,
-        },
-        10: {
-          lectureTimeId: "10",
-          max: 30,
-          aplications: 0,
-        },
+        9: [
+          {
+            lectureTimeId: "9",
+            max: 30,
+            aplications: 0,
+          },
+          {
+            lectureTimeId: "9",
+            max: 30,
+            aplications: 0,
+          },
+        ],
+        10: [
+          {
+            lectureTimeId: "10",
+            max: 30,
+            aplications: 0,
+          },
+          {
+            lectureTimeId: "10",
+            max: 30,
+            aplications: 0,
+          },
+        ],
       },
       st: {
-        9: {
-          lectureTimeId: "9",
-          max: 30,
-          aplications: 0,
-        },
-        10: {
-          lectureTimeId: "10",
-          max: 30,
-          aplications: 0,
-        },
+        9: [
+          {
+            lectureTimeId: "9",
+            max: 30,
+            aplications: 0,
+          },
+          {
+            lectureTimeId: "9",
+            max: 30,
+            aplications: 0,
+          },
+        ],
+        10: [
+          {
+            lectureTimeId: "10",
+            max: 30,
+            aplications: 0,
+          },
+          {
+            lectureTimeId: "10",
+            max: 30,
+            aplications: 0,
+          },
+        ],
       },
       ct: {
-        9: {
-          lectureTimeId: "9",
-          max: 30,
-          aplications: 0,
-        },
-        10: {
-          lectureTimeId: "10",
-          max: 30,
-          aplications: 0,
-        },
+        9: [
+          {
+            lectureTimeId: "9",
+            max: 30,
+            aplications: 0,
+          },
+          {
+            lectureTimeId: "9",
+            max: 30,
+            aplications: 0,
+          },
+        ],
+        10: [
+          {
+            lectureTimeId: "10",
+            max: 30,
+            aplications: 0,
+          },
+          {
+            lectureTimeId: "10",
+            max: 30,
+            aplications: 0,
+          },
+        ],
       },
       pa: {
-        9: {
-          lectureTimeId: "9",
-          max: 30,
-          aplications: 0,
-        },
-        10: {
-          lectureTimeId: "10",
-          max: 30,
-          aplications: 0,
-        },
+        9: [
+          {
+            lectureTimeId: "9",
+            max: 30,
+            aplications: 0,
+          },
+          {
+            lectureTimeId: "9",
+            max: 30,
+            aplications: 0,
+          },
+        ],
+        10: [
+          {
+            lectureTimeId: "10",
+            max: 30,
+            aplications: 0,
+          },
+          {
+            lectureTimeId: "10",
+            max: 30,
+            aplications: 0,
+          },
+        ],
       },
     },
   },
@@ -118,59 +241,122 @@ export const LECTURE_DATA: LectureValue = {
     lectureDays: ["po", "ut", "st", "ct", "pa"],
     lectures: {
       po: {
-        15: {
-          lectureTimeId: "15",
-          max: 30,
-          aplications: 0,
-        },
+        15: [
+          {
+            lectureTimeId: "15",
+            max: 30,
+            aplications: 0,
+          },
+          {
+            lectureTimeId: "15",
+            max: 30,
+            aplications: 0,
+          },
+        ],
       },
       ut: {
-        15: {
-          lectureTimeId: "15",
-          max: 30,
-          aplications: 0,
-        },
-        16: {
-          lectureTimeId: "16",
-          max: 30,
-          aplications: 0,
-        },
+        15: [
+          {
+            lectureTimeId: "15",
+            max: 30,
+            aplications: 0,
+          },
+          {
+            lectureTimeId: "15",
+            max: 30,
+            aplications: 0,
+          },
+        ],
+        16: [
+          {
+            lectureTimeId: "16",
+            max: 30,
+            aplications: 0,
+          },
+          {
+            lectureTimeId: "16",
+            max: 30,
+            aplications: 0,
+          },
+        ],
       },
       st: {
-        15: {
-          lectureTimeId: "15",
-          max: 30,
-          aplications: 0,
-        },
+        15: [
+          {
+            lectureTimeId: "15",
+            max: 30,
+            aplications: 0,
+          },
+          {
+            lectureTimeId: "15",
+            max: 30,
+            aplications: 0,
+          },
+        ],
       },
       ct: {
-        15: {
-          lectureTimeId: "15",
-          max: 30,
-          aplications: 0,
-        },
-        17: {
-          lectureTimeId: "17",
-          max: 30,
-          aplications: 0,
-        },
+        15: [
+          {
+            lectureTimeId: "15",
+            max: 30,
+            aplications: 0,
+          },
+          {
+            lectureTimeId: "15",
+            max: 30,
+            aplications: 0,
+          },
+        ],
+        17: [
+          {
+            lectureTimeId: "17",
+            max: 30,
+            aplications: 0,
+          },
+          {
+            lectureTimeId: "17",
+            max: 30,
+            aplications: 0,
+          },
+        ],
       },
       pa: {
-        15: {
-          lectureTimeId: "15",
-          max: 30,
-          aplications: 0,
-        },
-        16: {
-          lectureTimeId: "16",
-          max: 30,
-          aplications: 0,
-        },
-        17: {
-          lectureTimeId: "17",
-          max: 30,
-          aplications: 0,
-        },
+        15: [
+          {
+            lectureTimeId: "15",
+            max: 30,
+            aplications: 0,
+          },
+          {
+            lectureTimeId: "15",
+            max: 30,
+            aplications: 0,
+          },
+        ],
+        16: [
+          {
+            lectureTimeId: "16",
+            max: 30,
+            aplications: 0,
+          },
+          {
+            lectureTimeId: "16",
+            max: 30,
+            aplications: 0,
+          },
+        ],
+        17: [
+          {
+            lectureTimeId: "17",
+            max: 30,
+            aplications: 0,
+          },
+          {
+            lectureTimeId: "17",
+            max: 30,
+            aplications: 0,
+          },
+        ],
       },
     },
   },
@@ -185,18 +371,22 @@ export const LECTURE_DATA: LectureValue = {
     lectureDays: ["po", "st"],
     lectures: {
       po: {
-        15: {
-          lectureTimeId: "15",
-          max: 30,
-          aplications: 0,
-        },
+        15: [
+          {
+            lectureTimeId: "15",
+            max: 30,
+            aplications: 0,
+          },
+        ],
       },
       st: {
-        15: {
-          lectureTimeId: "15",
-          max: 30,
-          aplications: 0,
-        },
+        15: [
+          {
+            lectureTimeId: "15",
+            max: 30,
+            aplications: 0,
+          },
+        ],
       },
     },
   },
@@ -221,30 +411,38 @@ export const LECTURE_DATA: LectureValue = {
     lectureDays: ["po", "st", "pa"],
     lectures: {
       po: {
-        15: {
-          lectureTimeId: "15",
-          max: 30,
-          aplications: 0,
-        },
+        15: [
+          {
+            lectureTimeId: "15",
+            max: 30,
+            aplications: 0,
+          },
+        ],
       },
       st: {
-        15: {
-          lectureTimeId: "15",
-          max: 30,
-          aplications: 0,
-        },
+        15: [
+          {
+            lectureTimeId: "15",
+            max: 30,
+            aplications: 0,
+          },
+        ],
       },
       pa: {
-        16: {
-          lectureTimeId: "16",
-          max: 30,
-          aplications: 0,
-        },
-        17: {
-          lectureTimeId: "17",
-          max: 30,
-          aplications: 0,
-        },
+        16: [
+          {
+            lectureTimeId: "16",
+            max: 30,
+            aplications: 0,
+          },
+        ],
+        17: [
+          {
+            lectureTimeId: "17",
+            max: 30,
+            aplications: 0,
+          },
+        ],
       },
     },
   },

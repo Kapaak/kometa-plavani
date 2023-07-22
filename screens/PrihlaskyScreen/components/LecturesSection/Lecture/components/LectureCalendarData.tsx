@@ -8,19 +8,22 @@ interface LectureCalendarDataProps {
   lectureTimes?: LectureTime[];
   lectureDays?: DayAbbr[];
   calendarData?: Record<string, Lecture>;
+  selectedSemester?: number;
 }
 
 export const LectureCalendarData = ({
   lectureTimes,
   lectureDays,
   calendarData,
+  selectedSemester = 1,
 }: LectureCalendarDataProps) => {
   const uniqueGlobalId = nanoid();
 
   const findLectureTime = (day: DayAbbr) => {
     return lectureTimes?.map((lectureTime) => {
       const id = nanoid();
-      const lectureData = calendarData?.[day]?.[Number(lectureTime.id)];
+      const lectureData =
+        calendarData?.[day]?.[Number(lectureTime.id)]?.[selectedSemester];
       if (!lectureData) return <div key={`no_data_${id}`} />;
 
       return (

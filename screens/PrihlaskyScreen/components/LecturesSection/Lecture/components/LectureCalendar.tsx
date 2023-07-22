@@ -1,3 +1,4 @@
+import { useState } from "react";
 import * as S from "../Lecture.style";
 import { LectureSemester } from "./LectureSemester";
 import { LectureCalendarTimes } from "./LectureCalendarTimes";
@@ -17,11 +18,20 @@ export const LectureCalendar = ({
   data,
   showSemesterSwitcher = false,
 }: LectureCalendarProps) => {
+  const [selectedSemester, setSelectedSemester] = useState<0 | 1>(0);
+
   return (
     <S.LectureCalendar>
-      {showSemesterSwitcher && <LectureSemester />}
+      {showSemesterSwitcher && (
+        <LectureSemester
+          selectedSemester={selectedSemester}
+          onPrev={() => setSelectedSemester(0)}
+          onNext={() => setSelectedSemester(1)}
+        />
+      )}
       <LectureCalendarTimes lectureTimes={times} />
       <LectureCalendarData
+        selectedSemester={showSemesterSwitcher ? selectedSemester : 0}
         lectureTimes={times}
         lectureDays={days}
         calendarData={data}

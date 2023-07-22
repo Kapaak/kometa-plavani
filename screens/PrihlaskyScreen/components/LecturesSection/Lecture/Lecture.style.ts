@@ -88,7 +88,7 @@ export const LectureSection = styled(SectionElement)`
 `;
 
 export const LectureSemesterText = styled(Text)`
-  padding-bottom: 1.5rem;
+  padding: 1.5rem 0;
 `;
 
 export const PaddingWrapper = styled.div<{ padding?: string }>`

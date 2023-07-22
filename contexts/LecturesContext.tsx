@@ -32,6 +32,10 @@ const LecturesContext = createContext<{
 
 export const LecturesContextProvider = ({ children }: PropsWithChildren) => {
   const { googleSheets } = useLectures();
+  console.log(
+    "🚀 ~ file: LecturesContext.tsx:35 ~ LecturesContextProvider ~ googleSheets:",
+    googleSheets
+  );
 
   const getLectureSheetsByType = (type?: LectureTypes) => {
     if (!type)

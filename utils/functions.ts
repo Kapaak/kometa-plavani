@@ -27,3 +27,13 @@ export const getDayAndTimeFromString = (dayTime?: string) => {
 
   return { day, time };
 };
+
+export const getSemesterNumberFromString = (
+  semester?: string
+): number | null => {
+  if (!semester || semester.length === 0) return null;
+
+  const [semesterNumber] = semester.split(" ");
+
+  return Number(semesterNumber);
+};

@@ -92,7 +92,7 @@ export type Lecture = Record<
     lectureTimeId: string;
     aplications?: number;
     max: number;
-  }
+  }[]
 >;
 
 export type LectureValue = Record<
