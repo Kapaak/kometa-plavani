@@ -1,4 +1,254 @@
-import { LectureOptions, WeekDays } from "@/domains";
+import { LectureValue, WeekDays } from "@/domains";
+
+export const LECTURE_DATA: LectureValue = {
+  kindergarden: {
+    lectureTimes: [
+      {
+        id: "10",
+        from: "10:00",
+        to: "11:00",
+      },
+    ],
+    lectureDays: ["pa"],
+    lectures: {
+      pa: {
+        10: {
+          lectureTimeId: "10",
+          max: 30,
+          aplications: 0,
+        },
+      },
+    },
+  },
+  school: {
+    lectureTimes: [
+      {
+        id: "9",
+        from: "9:00",
+        to: "10:00",
+      },
+      {
+        id: "10",
+        from: "10:00",
+        to: "11:00",
+      },
+    ],
+    lectureDays: ["po", "ut", "st", "ct", "pa"], //tohle bych si umel dokazat vytahnout z lectures, kdyz data dostanu ze sanity, to stejny ty data nad
+    lectures: {
+      po: {
+        9: {
+          lectureTimeId: "9",
+          max: 30,
+          aplications: 0,
+        },
+        10: {
+          lectureTimeId: "10",
+          max: 30,
+          aplications: 0,
+        },
+      },
+      ut: {
+        9: {
+          lectureTimeId: "9",
+          max: 30,
+          aplications: 0,
+        },
+        10: {
+          lectureTimeId: "10",
+          max: 30,
+          aplications: 0,
+        },
+      },
+      st: {
+        9: {
+          lectureTimeId: "9",
+          max: 30,
+          aplications: 0,
+        },
+        10: {
+          lectureTimeId: "10",
+          max: 30,
+          aplications: 0,
+        },
+      },
+      ct: {
+        9: {
+          lectureTimeId: "9",
+          max: 30,
+          aplications: 0,
+        },
+        10: {
+          lectureTimeId: "10",
+          max: 30,
+          aplications: 0,
+        },
+      },
+      pa: {
+        9: {
+          lectureTimeId: "9",
+          max: 30,
+          aplications: 0,
+        },
+        10: {
+          lectureTimeId: "10",
+          max: 30,
+          aplications: 0,
+        },
+      },
+    },
+  },
+  basic: {
+    lectureTimes: [
+      {
+        id: "15",
+        from: "15:00",
+        to: "16:00",
+      },
+      {
+        id: "16",
+        from: "16:00",
+        to: "17:00",
+      },
+      {
+        id: "17",
+        from: "17:00",
+        to: "18:00",
+      },
+    ],
+    lectureDays: ["po", "ut", "st", "ct", "pa"],
+    lectures: {
+      po: {
+        15: {
+          lectureTimeId: "15",
+          max: 30,
+          aplications: 0,
+        },
+      },
+      ut: {
+        15: {
+          lectureTimeId: "15",
+          max: 30,
+          aplications: 0,
+        },
+        16: {
+          lectureTimeId: "16",
+          max: 30,
+          aplications: 0,
+        },
+      },
+      st: {
+        15: {
+          lectureTimeId: "15",
+          max: 30,
+          aplications: 0,
+        },
+      },
+      ct: {
+        15: {
+          lectureTimeId: "15",
+          max: 30,
+          aplications: 0,
+        },
+        17: {
+          lectureTimeId: "17",
+          max: 30,
+          aplications: 0,
+        },
+      },
+      pa: {
+        15: {
+          lectureTimeId: "15",
+          max: 30,
+          aplications: 0,
+        },
+        16: {
+          lectureTimeId: "16",
+          max: 30,
+          aplications: 0,
+        },
+        17: {
+          lectureTimeId: "17",
+          max: 30,
+          aplications: 0,
+        },
+      },
+    },
+  },
+  advanced: {
+    lectureTimes: [
+      {
+        id: "15",
+        from: "15:00",
+        to: "16:00",
+      },
+    ],
+    lectureDays: ["po", "st"],
+    lectures: {
+      po: {
+        15: {
+          lectureTimeId: "15",
+          max: 30,
+          aplications: 0,
+        },
+      },
+      st: {
+        15: {
+          lectureTimeId: "15",
+          max: 30,
+          aplications: 0,
+        },
+      },
+    },
+  },
+  condition: {
+    lectureTimes: [
+      {
+        id: "15",
+        from: "15:00",
+        to: "16:00",
+      },
+      {
+        id: "16",
+        from: "16:00",
+        to: "17:00",
+      },
+      {
+        id: "17",
+        from: "17:00",
+        to: "18:00",
+      },
+    ],
+    lectureDays: ["po", "st", "pa"],
+    lectures: {
+      po: {
+        15: {
+          lectureTimeId: "15",
+          max: 30,
+          aplications: 0,
+        },
+      },
+      st: {
+        15: {
+          lectureTimeId: "15",
+          max: 30,
+          aplications: 0,
+        },
+      },
+      pa: {
+        16: {
+          lectureTimeId: "16",
+          max: 30,
+          aplications: 0,
+        },
+        17: {
+          lectureTimeId: "17",
+          max: 30,
+          aplications: 0,
+        },
+      },
+    },
+  },
+};
 
 export const LECTURE_PAYMENT_OPTIONS = {
   kindergarden: [

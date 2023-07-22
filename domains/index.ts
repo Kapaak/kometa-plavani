@@ -1,5 +1,6 @@
 import { StaticImageData } from "next/image";
 import { BaseSyntheticEvent } from "react";
+import { GoogleSpreadsheetRow } from "google-spreadsheet";
 
 export type PageData = {
   spreadsheetId: string;
@@ -7,6 +8,8 @@ export type PageData = {
   templateId: string;
   label: string;
 };
+
+export type GoogleSpreadsheetRowResponse = GoogleSpreadsheetRow;
 
 export type SwimmingPage = {
   onSubmit: (e: BaseSyntheticEvent) => void;
@@ -230,4 +233,12 @@ export type GoogleSheetRowType = {
   "Zdravotní potíže"?: string;
   Úroveň: string;
   "Časová značka"?: string;
+};
+
+export const googleSheetKeyValuePairs: Record<number, LectureTypes> = {
+  0: LectureTypes.KINDERGARDEN,
+  1: LectureTypes.SCHOOL,
+  2: LectureTypes.BASIC,
+  3: LectureTypes.ADVANCED,
+  4: LectureTypes.CONDITION,
 };
