@@ -10,8 +10,9 @@ export type PageData = {
 
 export type SwimmingPage = {
   onSubmit: (e: BaseSyntheticEvent) => void;
-  errors: any;
   isLoading: boolean;
+  selectOptions?: LectureOption[];
+  maxNumberOfLessons: number;
 };
 
 export type RadioOption = {
@@ -109,7 +110,7 @@ export type LectureOptionValue = {
 
 export type LectureOption = {
   label: WeekDays;
-  lectures: LectureOptionValue[];
+  options: LectureOptionValue[];
 };
 
 export type LectureOptions = {

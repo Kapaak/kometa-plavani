@@ -10,6 +10,7 @@ import {
 } from "@/domains";
 import { SchoolSwimmingForm, BasicSwimmingForm, ProSwimmingForm } from "..";
 import { uploadGlobalSpreadsheet, uploadSchoolSpreadsheet } from "@/utils";
+import { KindergardenForm } from "../KindergardenForm";
 
 interface FormContainerProps {
   spreadsheetId: string;
@@ -86,7 +87,7 @@ export const FormContainer = ({
       {/* //todo -> udelej global komponent pro School a Kindergarden */}
       {/* //todo -> passuj jen nejakou prop */}
       {isKindergardenSwimming && (
-        <SchoolSwimmingForm
+        <KindergardenForm
           onSubmit={handleSubmit(onSubmit)}
           errors={errors}
           isLoading={isLoading}
