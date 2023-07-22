@@ -5,7 +5,7 @@ export const PrihlaskyScreen = () => {
   return (
     <MaxWidth>
       <SectionElement name="application">
-        <Headline headlineType="h1">Přihlášky</Headline>
+        <Headline headlineType="h1">Dostupné lekce</Headline>
         <LecturesSection />
       </SectionElement>
     </MaxWidth>

@@ -197,6 +197,14 @@ export type LectureTime = {
 };
 
 export type DayAbbr = "po" | "ut" | "st" | "ct" | "pa";
+// export enum DayAbbrDiacritics = "Po" | "Út" | "St" | "Čt" | "Pá";
+export enum DayAbbrDiacritics {
+  PO = "PO",
+  UT = "Út",
+  ST = "St",
+  CT = "Čt",
+  PA = "Pá",
+}
 
 export type GoogleSheetRowType = {
   "Adresa a číslo popisné"?: string;

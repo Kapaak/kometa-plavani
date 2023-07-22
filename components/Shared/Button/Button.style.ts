@@ -22,7 +22,7 @@ export const Button = styled.button<ButtonProps>`
   font-size: var(--fbutton);
   overflow: hidden;
   transition: all 0.3s ease;
-  letter-spacing: 0.1rem;
+  letter-spacing: 0.132rem;
 
   ${({ variant = "bordered", color = "primary" }) => {
     switch (variant) {
@@ -48,9 +48,13 @@ export const Button = styled.button<ButtonProps>`
             }
           `;
         return css`
+          padding: 1.5rem 3rem;
           line-height: 1.6;
           background-color: var(--col2);
           color: var(--colw);
+          &:hover {
+            background-color: var(--col2-hover);
+          }
         `;
       }
 

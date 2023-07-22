@@ -8,7 +8,7 @@ import { Service, ScrollSections, WeekDays, LectureTypes } from "@/domains";
 export const data: Service[] = [
   {
     id: 1,
-    headline: "Školky",
+    headline: "Plavání pro školky",
     text: ` Cílem naší výuky je adaptovat dítě na vodní prostředí. To konkrétně zahrnuje odstranění strachu z vody, potápění, splývání, rozvoj pocitu vody a skok do vody. Poté se děti učí základy jednotlivých plaveckých způsobů. Naše metodika odpovídá směrnicím MŠMT. Výuka se však přizpůsobuje aktuálním potřebám jednotlivců, což znamená, že děti vždy získají nové dovednosti. Zároveň klademe velký důraz na to, aby děti výuka bavila. Vhodné pro děti od 4 let.
       `,
     image: KindergardenService,
@@ -22,7 +22,7 @@ export const data: Service[] = [
   },
   {
     id: 2,
-    headline: "Školy",
+    headline: "Plavání pro školy",
     text: ` Cílem naší výuky je adaptovat dítě na vodní prostředí. To konkrétně zahrnuje odstranění strachu z vody, potápění, splývání, rozvoj pocitu vody a skok do vody. Poté se děti učí základy jednotlivých plaveckých způsobů. Naše metodika odpovídá směrnicím MŠMT. Výuka se však přizpůsobuje aktuálním potřebám jednotlivců, což znamená, že děti vždy získají nové dovednosti. Zároveň klademe velký důraz na to, aby děti výuka bavila. Vhodné pro děti od 4 let.
       `,
     image: KindergardenService,
@@ -35,7 +35,7 @@ export const data: Service[] = [
   },
   {
     id: 3,
-    headline: "Základní plavání",
+    headline: "Kurzy pro základní plavání",
     text: `
     Kurzy jsou určené pro děti, které se potřebují naučit plavat nebo se v plavání zdokonalit. Našim cílem je děti adaptovat na vodní prostředí. Navíc náš klub disponuje nově zpracovanou metodikou, díky které se děti naučí plavat rychle a zábavnou formou. Nejdůležitější pro nás je, aby děti měly z plavání radost.
       `,

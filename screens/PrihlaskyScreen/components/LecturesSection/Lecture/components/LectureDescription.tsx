@@ -1,8 +1,6 @@
 import { Flex, Text } from "@/styles";
 import * as S from "../Lecture.style";
 import { Calendar, Coin, Timer } from "@phosphor-icons/react";
-import Link from "next/link";
-import { Button } from "@/components/Shared";
 
 interface LectureDescriptionProps {
   title: string;
@@ -26,7 +24,9 @@ export const LectureDescription = ({
       <Flex>
         <Flex direction="row" gap="1rem" align="center">
           <Coin size={20} />
-          <Text variant="dark">{price}</Text>
+          <Text variant="dark" bold>
+            {price}
+          </Text>
           <Text variant="dark">
             (
             <a
@@ -36,7 +36,7 @@ export const LectureDescription = ({
               download
               style={{ textDecoration: "underline" }}
             >
-              ceník lekcí
+              ceník&nbsp;lekcí
             </a>
             )
           </Text>
@@ -60,9 +60,6 @@ export const LectureDescription = ({
           </Text>
         </Flex>
       </Flex>
-      <Link href={`/prihlasky/${url}`} passHref>
-        <Button>přihláška</Button>
-      </Link>
     </S.Flex>
   );
 };

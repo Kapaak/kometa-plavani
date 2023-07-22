@@ -12,7 +12,7 @@ interface Props {
 const Navigation = ({ isActive }: Props) => {
   return (
     <S.Navigation isActive={isActive}>
-      <S.Flex direction="row" justify="space-between">
+      <S.Flex direction="row" justify="end">
         <NavLinks data={data} />
       </S.Flex>
     </S.Navigation>

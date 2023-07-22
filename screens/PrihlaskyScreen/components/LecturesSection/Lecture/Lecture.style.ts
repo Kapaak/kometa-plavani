@@ -1,7 +1,12 @@
 //libraries
 import styled from "styled-components";
 //styles
-import { Flex as SFlex, Headline as SHeadline } from "@/styles";
+import {
+  Flex as SFlex,
+  Headline as SHeadline,
+  SectionElement,
+  Text,
+} from "@/styles";
 import { dimensions } from "@/utils";
 import Image from "next/image";
 
@@ -14,13 +19,11 @@ export const Img = styled(Image)`
 export const DesktopImageContainer = styled.div`
   display: none;
   position: relative;
-  border-radius: var(--small-border-rad);
+  border-radius: 0 var(--small-border-rad) var(--small-border-rad) 0;
   overflow: hidden;
-  height: 40rem;
-  flex: 1 1 50%;
   box-shadow: var(--shadow);
 
-  @media (${dimensions.notebook}) {
+  @media (${dimensions.desktop}) {
     display: block;
   }
 `;
@@ -53,8 +56,45 @@ export const LectureSemesterButton = styled.button<{ visible: boolean }>`
   visibility: ${({ visible }) => (visible ? "visible" : "hidden")};
 `;
 
+export const LectureCalendarTimesGrid = styled.div<{ padding?: string }>`
+  display: grid;
+  grid-template-columns: 3rem 8rem 8rem 8rem;
+  grid-template-rows: 3.6rem;
+  gap: 1.2rem;
+  align-items: center;
+  padding: ${({ padding }) => padding || "0"};
+
+  @media (${dimensions.tablet}) {
+    grid-template-columns: 3rem 11rem 11rem 11rem;
+  }
+`;
+
 export const LectureGrid = styled.div`
   display: grid;
-  grid-template-columns: 2rem 10rem 10rem 10rem;
-  gap: 1rem;
+  grid-template-columns: 1fr;
+
+  @media (${dimensions.tabletX}) {
+    gap: 2rem;
+    grid-template-columns: 1fr 1fr;
+  }
+  @media (${dimensions.desktop}) {
+    grid-template-columns: 1fr 1fr 35rem;
+  }
+`;
+
+export const LectureSection = styled(SectionElement)`
+  background-color: rgba(220, 233, 250, 0.25);
+  border-radius: var(--small-border-rad);
+`;
+
+export const LectureSemesterText = styled(Text)`
+  padding-bottom: 1.5rem;
+`;
+
+export const PaddingWrapper = styled.div<{ padding?: string }>`
+  padding: 3.2rem;
+
+  @media (${dimensions.desktop}) {
+    padding: ${({ padding }) => padding || "0"};
+  }
 `;

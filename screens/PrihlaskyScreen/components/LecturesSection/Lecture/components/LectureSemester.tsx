@@ -17,7 +17,7 @@ export const LectureSemester = () => {
   const isSecondSemesterSelected = selectedSemester === SemesterOptions.SECOND;
 
   return (
-    <Flex direction="row" gap="1rem">
+    <Flex direction="row" gap="1rem" height="initial" justify="center">
       <S.LectureSemesterButton visible={!isFirstSemesterSelected}>
         {/* {
           <ArrowLeft
@@ -26,7 +26,9 @@ export const LectureSemester = () => {
           />
         } */}
       </S.LectureSemesterButton>
-      <p>{selectedSemester}</p>
+      <S.LectureSemesterText variant="dark" bold>
+        {selectedSemester}
+      </S.LectureSemesterText>
       {/* <S.LectureSemesterButton visible={!isSecondSemesterSelected}>
         {
           <ArrowRight
