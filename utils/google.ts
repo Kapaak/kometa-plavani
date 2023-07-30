@@ -16,7 +16,6 @@ export const uploadSchoolSpreadsheet = async (
       "Email kontaktní osoby": spreadsheetData?.contactPersonEmail,
       "Cenová kategorie": spreadsheetData?.lessonsPrice,
       "Počet dětí": spreadsheetData?.childrenCount,
-      Úroveň: spreadsheetData?.level,
       "Den a čas": spreadsheetData?.lessonsDayTime,
       Pololetí: spreadsheetData?.midTerm,
       Poznámky: spreadsheetData?.notes,
@@ -47,7 +46,6 @@ export const uploadGlobalSpreadsheet = async (
       Alergie: globalSpreadsheet?.alergy,
       "Cenová kategorie": globalSpreadsheet?.lessonsPrice,
       "Zdravotní potíže": globalSpreadsheet?.healthIssues,
-      Úroveň: globalSpreadsheet?.level,
       "Den a čas": globalSpreadsheet?.lessonsDayTime,
     },
     spreadsheetId

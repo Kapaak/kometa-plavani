@@ -46,48 +46,52 @@ export const useLectures = () => {
       };
 
       sheets.forEach((sheet) => {
-        const { day, time } = getDayAndTimeFromString(sheet["Den a čas"]);
+        const multipleDays = sheet["Den a čas"]?.split(",");
 
-        if (!day || !time) return;
-        //vraci mi to hodnoty 1 a 2, ale ja potrebuji 0 a 1 do arraye
-        //mimo skoly a skolky to nic nevrati a proto dam 1, abych ji -1 dostal na 0
-        let semesterNumber =
-          getSemesterNumberFromString(sheet["Pololetí"]) ?? 1;
-        semesterNumber -= 1;
+        multipleDays?.forEach((dayAndTime) => {
+          const { day, time } = getDayAndTimeFromString(dayAndTime);
 
-        // nebyt tohodle, tak bych pri spreadu ztratil data z defaultniho objektu
-        //ale to uz je i v tom hornim updatedayTime, ale z nejakyho duvodu nefunguje ten array v newTimeArray s tim
-        const initialLecturesArray: Record<string, Lecture> = {
-          ...LECTURE_DATA?.[googleSheetKeyValuePairs[index]]?.lectures,
-        };
+          if (!day || !time) return;
+          //vraci mi to hodnoty 1 a 2, ale ja potrebuji 0 a 1 do arraye
+          //mimo skoly a skolky to nic nevrati a proto dam 1, abych ji -1 dostal na 0
+          let semesterNumber =
+            getSemesterNumberFromString(sheet["Pololetí"]) ?? 1;
+          semesterNumber -= 1;
 
-        const incrementValue = Number(sheet["Počet dětí"]) || 1;
+          // nebyt tohodle, tak bych pri spreadu ztratil data z defaultniho objektu
+          //ale to uz je i v tom hornim updatedayTime, ale z nejakyho duvodu nefunguje ten array v newTimeArray s tim
+          const initialLecturesArray: Record<string, Lecture> = {
+            ...LECTURE_DATA?.[googleSheetKeyValuePairs[index]]?.lectures,
+          };
 
-        const newTimeArray = initialLecturesArray[day]?.[Number(time)]?.map(
-          (timeData: any, index: number) =>
-            index === semesterNumber
-              ? {
-                  lectureTimeId: time,
-                  max: timeData?.max ?? 0,
-                  aplications:
-                    incrementValue +
-                    (updatedDayTimeObject?.[day]?.[Number(time)]?.[
-                      semesterNumber
-                    ]?.aplications ?? 0),
-                }
-              : timeData
-        );
+          const incrementValue = Number(sheet["Počet dětí"]) || 1;
 
-        updatedDayTimeObject = {
-          ...updatedDayTimeObject,
-          [day]: {
-            ...updatedDayTimeObject[day],
-            [Number(time)]: {
-              ...updatedDayTimeObject[day]?.[Number(time)],
-              ...newTimeArray,
+          const newTimeArray = initialLecturesArray[day]?.[Number(time)]?.map(
+            (timeData: any, index: number) =>
+              index === semesterNumber
+                ? {
+                    lectureTimeId: time,
+                    max: timeData?.max ?? 0,
+                    aplications:
+                      incrementValue +
+                      (updatedDayTimeObject?.[day]?.[Number(time)]?.[
+                        semesterNumber
+                      ]?.aplications ?? 0),
+                  }
+                : timeData
+          );
+
+          updatedDayTimeObject = {
+            ...updatedDayTimeObject,
+            [day]: {
+              ...updatedDayTimeObject[day],
+              [Number(time)]: {
+                ...updatedDayTimeObject[day]?.[Number(time)],
+                ...newTimeArray,
+              },
             },
-          },
-        };
+          };
+        });
       });
 
       setGoogleSheets((prev) => ({
