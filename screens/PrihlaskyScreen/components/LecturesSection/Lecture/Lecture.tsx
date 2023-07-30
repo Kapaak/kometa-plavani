@@ -11,8 +11,18 @@ import { Button } from "@/shared";
 type LectureProps = Omit<Service, "id">;
 
 export const Lecture = (props: LectureProps) => {
-  const { headline, text, image, name, alt, url, time, price, lectureType } =
-    props;
+  const {
+    headline,
+    text,
+    image,
+    name,
+    alt,
+    url,
+    time,
+    price,
+    lectureType,
+    pricingDocument,
+  } = props;
   const { getLectureSheetsByType } = useLecturesContext();
   //todo pak predelat tu funkci na hodnotu
 
@@ -26,6 +36,7 @@ export const Lecture = (props: LectureProps) => {
             price={price}
             time={time}
             url={url}
+            pricingDocument={pricingDocument}
           />
         </S.PaddingWrapper>
         <S.PaddingWrapper padding="3.3rem">

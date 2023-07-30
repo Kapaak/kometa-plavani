@@ -139,7 +139,7 @@ export type Service = {
   url?: string;
   price?: string;
   time?: number;
-  priceListHref?: string;
+  pricingDocument?: string;
 };
 
 export type Dropdown = {

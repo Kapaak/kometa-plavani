@@ -35,6 +35,7 @@ export const LecturesSection = () => {
           price={d?.price}
           time={d?.time}
           lectureType={d?.lectureType}
+          pricingDocument={d?.pricingDocument}
         />
       ))}
     </S.Flex>
