@@ -21,7 +21,7 @@ const HeroSection = () => {
               <MainSubheadline>Bazén za Lužánkami</MainSubheadline>
             </div>
             <div>
-              <S.TextContainer variant="light" center>
+              <S.TextContainer variant="light">
                 Základní plavání pro děti. Svěřte se do rukou profesionálů pod
                 záštitou nejúspěšnějšího plaveckého klubu v České republice.
               </S.TextContainer>
