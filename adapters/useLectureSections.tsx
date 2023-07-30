@@ -5,9 +5,9 @@ import CourseService from "@/public/images/service-course.jpg";
 import BasicService from "@/public/images/service-basic.jpg";
 import ConditionService from "@/public/images/service-condition.jpg";
 //interfaces
-import { Service, ScrollSections, WeekDays, LectureTypes } from "@/domains";
+import { Service, ScrollSections, LectureTypes } from "@/domains";
 
-export const data: Service[] = [
+export const lectures: Service[] = [
   {
     id: 1,
     headline: "Plavání pro školky",
@@ -76,3 +76,9 @@ export const data: Service[] = [
     time: 55,
   },
 ];
+
+export const useLectureSections = () => {
+  return {
+    lectures,
+  };
+};

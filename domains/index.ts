@@ -235,6 +235,18 @@ export type GoogleSheetRowType = {
   "Časová značka"?: string;
 };
 
+export type FilterOption = {
+  id: string;
+  value: string;
+  label: string;
+};
+
+export enum FilterLectureOptions {
+  ALL = "all",
+  SCHOOL_KINDERGARDEN = "school-kindergarden",
+  COURSE = "course",
+}
+
 export const googleSheetKeyValuePairs: Record<number, LectureTypes> = {
   0: LectureTypes.KINDERGARDEN,
   1: LectureTypes.SCHOOL,

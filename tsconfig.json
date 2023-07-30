@@ -27,7 +27,8 @@
       "@/screens":["screens"],
       "@/hooks":["hooks"],
       "@/constants":["constants"],
-      "@/contexts":["contexts"]
+      "@/contexts":["contexts"],
+      "@/adapters":["adapters"]
     }
   },
   "include": ["next-env.d.ts", "**/*.ts", "**/*.tsx", "pages/_document.jsx"],
