@@ -83,8 +83,11 @@ export const LectureGrid = styled.div`
 `;
 
 export const LectureSection = styled(SectionElement)`
-  background-color: rgba(220, 233, 250, 0.25);
   border-radius: var(--small-border-rad);
+
+  @media (${dimensions.tablet}) {
+    background-color: rgba(220, 233, 250, 0.25);
+  }
 `;
 
 export const LectureSemesterText = styled(Text)`
@@ -92,7 +95,11 @@ export const LectureSemesterText = styled(Text)`
 `;
 
 export const PaddingWrapper = styled.div<{ padding?: string }>`
-  padding: 3.2rem;
+  padding: 2rem 0;
+
+  @media (${dimensions.tablet}) {
+    padding: 3.2rem;
+  }
 
   @media (${dimensions.desktop}) {
     padding: ${({ padding }) => padding || "0"};
