@@ -68,7 +68,7 @@ export const useLectures = () => {
             index === semesterNumber
               ? {
                   lectureTimeId: time,
-                  max: 30,
+                  max: timeData?.max ?? 0,
                   aplications:
                     incrementValue +
                     (updatedDayTimeObject?.[day]?.[Number(time)]?.[

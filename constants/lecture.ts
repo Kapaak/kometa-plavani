@@ -321,18 +321,6 @@ export const LECTURE_DATA: LectureValue = {
         ],
       },
       pa: {
-        15: [
-          {
-            lectureTimeId: "15",
-            max: 30,
-            aplications: 0,
-          },
-          {
-            lectureTimeId: "15",
-            max: 30,
-            aplications: 0,
-          },
-        ],
         16: [
           {
             lectureTimeId: "16",
@@ -367,14 +355,24 @@ export const LECTURE_DATA: LectureValue = {
         from: "15:00",
         to: "16:00",
       },
+      {
+        id: "16",
+        from: "16:00",
+        to: "17:00",
+      },
+      {
+        id: "17",
+        from: "17:00",
+        to: "18:00",
+      },
     ],
-    lectureDays: ["po", "st"],
+    lectureDays: ["po", "st", "pa"],
     lectures: {
       po: {
         15: [
           {
             lectureTimeId: "15",
-            max: 30,
+            max: 15,
             aplications: 0,
           },
         ],
@@ -383,7 +381,23 @@ export const LECTURE_DATA: LectureValue = {
         15: [
           {
             lectureTimeId: "15",
-            max: 30,
+            max: 15,
+            aplications: 0,
+          },
+        ],
+      },
+      pa: {
+        16: [
+          {
+            lectureTimeId: "16",
+            max: 15,
+            aplications: 0,
+          },
+        ],
+        17: [
+          {
+            lectureTimeId: "17",
+            max: 15,
             aplications: 0,
           },
         ],
@@ -408,13 +422,43 @@ export const LECTURE_DATA: LectureValue = {
         to: "18:00",
       },
     ],
-    lectureDays: ["po", "st", "pa"],
+    lectureDays: ["po", "ut", "st", "ct", "pa"],
     lectures: {
       po: {
         15: [
           {
             lectureTimeId: "15",
-            max: 30,
+            max: 45,
+            aplications: 0,
+          },
+        ],
+        16: [
+          {
+            lectureTimeId: "16",
+            max: 15,
+            aplications: 0,
+          },
+        ],
+        17: [
+          {
+            lectureTimeId: "17",
+            max: 15,
+            aplications: 0,
+          },
+        ],
+      },
+      ut: {
+        16: [
+          {
+            lectureTimeId: "16",
+            max: 15,
+            aplications: 0,
+          },
+        ],
+        17: [
+          {
+            lectureTimeId: "17",
+            max: 15,
             aplications: 0,
           },
         ],
@@ -423,12 +467,19 @@ export const LECTURE_DATA: LectureValue = {
         15: [
           {
             lectureTimeId: "15",
-            max: 30,
+            max: 45,
             aplications: 0,
           },
         ],
       },
-      pa: {
+      ct: {
+        15: [
+          {
+            lectureTimeId: "15",
+            max: 30,
+            aplications: 0,
+          },
+        ],
         16: [
           {
             lectureTimeId: "16",
@@ -440,6 +491,29 @@ export const LECTURE_DATA: LectureValue = {
           {
             lectureTimeId: "17",
             max: 30,
+            aplications: 0,
+          },
+        ],
+      },
+      pa: {
+        15: [
+          {
+            lectureTimeId: "15",
+            max: 15,
+            aplications: 0,
+          },
+        ],
+        16: [
+          {
+            lectureTimeId: "16",
+            max: 45,
+            aplications: 0,
+          },
+        ],
+        17: [
+          {
+            lectureTimeId: "17",
+            max: 15,
             aplications: 0,
           },
         ],
