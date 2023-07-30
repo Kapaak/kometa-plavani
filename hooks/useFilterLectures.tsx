@@ -20,7 +20,8 @@ const filterOptions = [
   },
 ];
 
-export const useFilterLectures = () => {
+//by default returns all lectures for page
+export const useFilterLectures = (page?: string) => {
   const [selectedValue, setSelectedValue] = useState(FilterLectureOptions.ALL);
   const { lectures } = useLectureSections();
 
@@ -30,7 +31,8 @@ export const useFilterLectures = () => {
 
   const filteredLectures = useMemo(
     () =>
-      lectures?.filter((lecture) => {
+      page &&
+      lectures[page].filter((lecture) => {
         switch (selectedValue) {
           case FilterLectureOptions.ALL: {
             return true;
@@ -59,7 +61,7 @@ export const useFilterLectures = () => {
           }
         }
       }),
-    [selectedValue, lectures]
+    [lectures, page, selectedValue]
   );
 
   return {

@@ -247,6 +247,11 @@ export enum FilterLectureOptions {
   COURSE = "course",
 }
 
+export enum PageRouteTranslation {
+  HOME = "homePage",
+  APPLICATIONS = "applicationsPage",
+}
+
 export const googleSheetKeyValuePairs: Record<number, LectureTypes> = {
   0: LectureTypes.KINDERGARDEN,
   1: LectureTypes.SCHOOL,

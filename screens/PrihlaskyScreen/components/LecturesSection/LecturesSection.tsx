@@ -6,14 +6,20 @@ import * as S from "./LecturesSection.style";
 import { Filter } from "@/shared";
 import { useFilterLectures } from "@/hooks";
 import { FilterLectureOptions } from "@/domains";
+import { useRouter } from "next/router";
+import { getPageRouteTranslation } from "@/utils";
 
 export const LecturesSection = () => {
+  const { route } = useRouter();
+
   const {
     filteredLectures,
     selectedValue,
     filterOptions,
     onSelectedValueChange,
-  } = useFilterLectures();
+  } = useFilterLectures(getPageRouteTranslation(route));
+
+  if (!filteredLectures) return null;
 
   return (
     <S.Flex gap="4rem">

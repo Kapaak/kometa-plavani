@@ -1,5 +1,4 @@
 //components
-import { getAllSheets, getRowsBySheetId } from "libs/google";
 import AboutSection from "./AboutSection/AboutSection";
 import ContactSection from "./ContactSection/ContactSection";
 import { DocumentSection } from "./DocumentSection";

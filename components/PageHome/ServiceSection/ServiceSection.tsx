@@ -4,14 +4,24 @@ import * as S from "./ServiceSection.style";
 //components
 import Service from "./Service/Service";
 //data
-import { data } from "./ServiceSection.data";
+import { useFilterLectures } from "@/hooks";
+import { useRouter } from "next/router";
+import { getPageRouteTranslation } from "@/utils";
 
 const ServiceSection = () => {
+  const { route } = useRouter();
+
+  const { filteredLectures } = useFilterLectures(
+    getPageRouteTranslation(route)
+  );
+
+  if (!filteredLectures) return null;
+
   return (
     <S.ServiceSection name="service">
       <MaxWidth>
         <S.Flex gap="4rem">
-          {data.map((d, i) => (
+          {filteredLectures.map((d, i) => (
             <Service
               headline={d.headline}
               text={d.text}

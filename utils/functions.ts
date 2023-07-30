@@ -1,3 +1,4 @@
+import { PageRouteTranslation } from "@/domains";
 import { scroller } from "react-scroll";
 
 export const scrollTo = (destination: string) => {
@@ -36,4 +37,13 @@ export const getSemesterNumberFromString = (
   const [semesterNumber] = semester.split(" ");
 
   return Number(semesterNumber);
+};
+
+export const getPageRouteTranslation = (pageRoute: string) => {
+  switch (pageRoute) {
+    case "/":
+      return PageRouteTranslation.HOME;
+    case "/prihlasky":
+      return PageRouteTranslation.APPLICATIONS;
+  }
 };
