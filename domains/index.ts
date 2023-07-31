@@ -1,5 +1,6 @@
 import { StaticImageData } from "next/image";
 import { BaseSyntheticEvent } from "react";
+import { GoogleSpreadsheetRow } from "google-spreadsheet";
 
 export type PageData = {
   spreadsheetId: string;
@@ -8,10 +9,13 @@ export type PageData = {
   label: string;
 };
 
+export type GoogleSpreadsheetRowResponse = GoogleSpreadsheetRow;
+
 export type SwimmingPage = {
   onSubmit: (e: BaseSyntheticEvent) => void;
-  errors: any;
   isLoading: boolean;
+  selectOptions?: LectureOption[];
+  maxNumberOfLessons: number;
 };
 
 export type RadioOption = {
@@ -22,8 +26,10 @@ export type RadioOption = {
 };
 
 export type Course =
-  | "skoly-skolky"
+  | "skoly"
+  | "skolky"
   | "zdokonalovaci-plavani"
+  | "kondicni-plavani"
   | "zakladni-plavani";
 
 export type Level = "lower" | "higher";
@@ -31,16 +37,14 @@ export type Level = "lower" | "higher";
 export enum ScrollSections {
   home = "home",
   about = "about",
-  application = "application",
   contact = "contact",
-  skolky = "skolky",
-  skoly = "skoly",
-  kurzy = "kurzy",
-  kindergardens = "kindergardens",
-  schools = "schools",
-  courses = "courses",
   faq = "faq",
   documents = "documents",
+  APPLICATIONS_KINDERGARDEN = "applications-kindergarden",
+  APPLICATIONS_SCHOOL = "applications-school",
+  APPLICATIONS_BASIC = "applications-basic",
+  APPLICATIONS_ADVANCED = "applications-advanced",
+  APPLICATIONS_CONDITION = "applications-condition",
 }
 
 export enum Content {
@@ -66,6 +70,58 @@ export type Option = {
   value: string;
 };
 
+export enum WeekDays {
+  PO = "Pondělí",
+  UT = "Úterý",
+  ST = "Středa",
+  CT = "Čtvrtek",
+  PA = "Pátek",
+}
+
+export enum LectureTypes {
+  KINDERGARDEN = "kindergarden",
+  SCHOOL = "school",
+  BASIC = "basic",
+  ADVANCED = "advanced",
+  CONDITION = "condition",
+}
+
+export type Lecture = Record<
+  number,
+  {
+    lectureTimeId: string;
+    aplications?: number;
+    max: number;
+  }[]
+>;
+
+export type LectureValue = Record<
+  LectureTypes,
+  {
+    lectureTimes: LectureTime[];
+    lectureDays: DayAbbr[];
+    lectures: Record<string, Lecture>;
+  }
+>;
+
+export type LectureOptionValue = {
+  label: string;
+  value: string;
+};
+
+export type LectureOption = {
+  label: WeekDays;
+  options: LectureOptionValue[];
+};
+
+export type LectureOptions = {
+  kindergarden?: LectureOption[];
+  school?: LectureOption[];
+  basic?: LectureOption[];
+  advanced?: LectureOption[];
+  condition?: LectureOption[];
+};
+
 export type Sponsor = {
   image: StaticImageData;
   href: string;
@@ -79,10 +135,11 @@ export type Service = {
   image: StaticImageData;
   alt: string;
   name: ScrollSections;
+  lectureType?: LectureTypes;
   url?: string;
   price?: string;
   time?: number;
-  priceListHref?: string;
+  pricingDocument?: string;
 };
 
 export type Dropdown = {
@@ -132,4 +189,73 @@ export type SchoolSpreadsheetData = {
   lessonsDayTime?: string;
   midTerm?: string;
   notes?: string;
+};
+
+export type LectureTime = {
+  id: string;
+  from: string;
+  to: string;
+};
+
+export type DayAbbr = "po" | "ut" | "st" | "ct" | "pa";
+// export enum DayAbbrDiacritics = "Po" | "Út" | "St" | "Čt" | "Pá";
+export enum DayAbbrDiacritics {
+  PO = "PO",
+  UT = "Út",
+  ST = "St",
+  CT = "Čt",
+  PA = "Pá",
+}
+
+export type GoogleSheetRowType = {
+  "Adresa a číslo popisné"?: string;
+  Adresa?: string;
+  Alergie?: string;
+  "Cenová kategorie": string;
+  "Datum narození"?: string;
+  "Den a čas"?: string;
+  Email?: string;
+  "Email kontaktní osoby"?: string;
+  "IČ nebo DIČ"?: string;
+  Jméno?: string;
+  "Kontaktní osoba"?: string;
+  Město?: string;
+  "Název školy"?: string;
+  Pohlaví?: string;
+  Pololetí?: string;
+  Poznámky?: string;
+  "Počet dětí"?: number;
+  PSČ?: string;
+  Příjmení?: string;
+  "Rodné číslo"?: string;
+  Telefon?: string;
+  "Telefon kontaktní osoby"?: string;
+  "Zdravotní potíže"?: string;
+  Úroveň: string;
+  "Časová značka"?: string;
+};
+
+export type FilterOption = {
+  id: string;
+  value: string;
+  label: string;
+};
+
+export enum FilterLectureOptions {
+  ALL = "all",
+  SCHOOL_KINDERGARDEN = "school-kindergarden",
+  COURSE = "course",
+}
+
+export enum PageRouteTranslation {
+  HOME = "homePage",
+  APPLICATIONS = "applicationsPage",
+}
+
+export const googleSheetKeyValuePairs: Record<number, LectureTypes> = {
+  0: LectureTypes.KINDERGARDEN,
+  1: LectureTypes.SCHOOL,
+  2: LectureTypes.BASIC,
+  3: LectureTypes.ADVANCED,
+  4: LectureTypes.CONDITION,
 };

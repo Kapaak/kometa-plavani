@@ -16,18 +16,19 @@ export const Button = styled.button<ButtonProps>`
   text-transform: uppercase;
   font-family: var(--font1);
   color: var(--col2);
-  padding: 1rem 2rem;
+  padding: 1.5rem 3rem;
   cursor: pointer;
   border-radius: 3rem;
   font-size: var(--fbutton);
   overflow: hidden;
   transition: all 0.3s ease;
-  letter-spacing: 0.1rem;
+  letter-spacing: 0.132rem;
 
   ${({ variant = "bordered", color = "primary" }) => {
     switch (variant) {
       case "bordered":
         return css`
+          padding: 1.5rem 3rem;
           border: 2px solid var(--col2);
           background-color: transparent;
 
@@ -42,15 +43,19 @@ export const Button = styled.button<ButtonProps>`
           return css`
             background-color: var(--col1);
             color: var(--col2);
-            padding: 1.9rem 4rem;
+            min-height: 5rem;
+
             &:hover {
-              padding: 1.9rem 5rem;
+              padding-inline: 4rem;
             }
           `;
         return css`
           line-height: 1.6;
           background-color: var(--col2);
           color: var(--colw);
+          &:hover {
+            background-color: var(--col2-hover);
+          }
         `;
       }
 

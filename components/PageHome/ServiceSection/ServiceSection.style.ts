@@ -5,7 +5,7 @@ import { Flex as SFlex, SectionElement } from "@/styles";
 import { dimensions } from "@/utils";
 
 export const Flex = styled(SFlex)`
-  @media (${dimensions.notebook}) {
+  @media (${dimensions.tabletX}) {
     flex-direction: row;
     justify-content: space-between;
   }

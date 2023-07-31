@@ -21,4 +21,6 @@ export const SectionElement = forwardRef(
   }
 );
 
+SectionElement.displayName = "SectionElement";
+
 const Section = styled(Element).attrs({ as: "section" })``;

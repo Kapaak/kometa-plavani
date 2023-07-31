@@ -18,6 +18,7 @@ export const Flex = styled.div<{
   gap?: string;
   textAlign?: "left" | "center" | "right";
   width?: string;
+  height?: string;
   relative?: boolean;
   wrap?: "nowrap" | "wrap" | "wrap-reverse";
 }>`
@@ -28,7 +29,7 @@ export const Flex = styled.div<{
   align-items: ${({ align }) => (align ? align : "stretch")};
   flex-direction: ${({ direction }) => (direction ? direction : "column")};
   gap: ${({ gap }) => (gap ? gap : "0")};
-  height: 100%;
+  height: ${({ height }) => (height ? height : "100%")};
   width: ${({ width }) => (width ? width : "100%")};
   text-align: ${({ textAlign }) => (textAlign ? textAlign : "left")};
   flex-wrap: ${({ wrap }) => (wrap ? wrap : "nowrap")};

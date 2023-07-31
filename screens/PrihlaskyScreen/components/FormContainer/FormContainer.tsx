@@ -8,7 +8,13 @@ import {
   GlobalSpreadsheetData,
   SchoolSpreadsheetData,
 } from "@/domains";
-import { SchoolSwimmingForm, BasicSwimmingForm, ProSwimmingForm } from "..";
+import {
+  SchoolForm,
+  BasicForm,
+  KindergardenForm,
+  AdvancedForm,
+  ConditionForm,
+} from "..";
 import { uploadGlobalSpreadsheet, uploadSchoolSpreadsheet } from "@/utils";
 
 interface FormContainerProps {
@@ -24,9 +30,11 @@ export const FormContainer = ({
   courseName,
   templateId,
 }: FormContainerProps) => {
+  const isKindergardenSwimming = courseName === "skolky";
+  const isSchoolSwimming = courseName === "skoly";
   const isBasicSwimming = courseName === "zakladni-plavani";
-  const isSchoolSwimming = courseName === "skoly-skolky";
-  const isProSwimming = courseName === "zdokonalovaci-plavani";
+  const isAdvancedSwimming = courseName === "zdokonalovaci-plavani";
+  const isConditionSwimming = courseName === "kondicni-plavani";
 
   const [isOpen, setIsOpen] = useState(false);
   const [isLoading, setIsLoading] = useState(false);
@@ -42,7 +50,7 @@ export const FormContainer = ({
   } = form;
 
   const handleExcelUpload = async (formData: FormData) => {
-    if (courseName !== "skoly-skolky") {
+    if (courseName !== "skoly" && courseName !== "skolky") {
       return uploadGlobalSpreadsheet(spreadsheetId, formData);
     }
 
@@ -81,22 +89,36 @@ export const FormContainer = ({
         addChild={resetAll}
         redirect={() => router.push("/")}
       />
-      {isProSwimming && (
-        <ProSwimmingForm
-          onSubmit={handleSubmit(onSubmit)}
-          errors={errors}
-          isLoading={isLoading}
-        />
-      )}
-      {isBasicSwimming && (
-        <BasicSwimmingForm
+      {isKindergardenSwimming && (
+        <KindergardenForm
           onSubmit={handleSubmit(onSubmit)}
           errors={errors}
           isLoading={isLoading}
         />
       )}
       {isSchoolSwimming && (
-        <SchoolSwimmingForm
+        <SchoolForm
+          onSubmit={handleSubmit(onSubmit)}
+          errors={errors}
+          isLoading={isLoading}
+        />
+      )}
+      {isBasicSwimming && (
+        <BasicForm
+          onSubmit={handleSubmit(onSubmit)}
+          errors={errors}
+          isLoading={isLoading}
+        />
+      )}
+      {isAdvancedSwimming && (
+        <AdvancedForm
+          onSubmit={handleSubmit(onSubmit)}
+          errors={errors}
+          isLoading={isLoading}
+        />
+      )}
+      {isConditionSwimming && (
+        <ConditionForm
           onSubmit={handleSubmit(onSubmit)}
           errors={errors}
           isLoading={isLoading}

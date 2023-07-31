@@ -1,11 +1,14 @@
 import { NextPage } from "next";
 import { PrihlaskyScreen } from "@/screens";
+import { LecturesContextProvider } from "@/contexts";
 
 const PrihlaskyPage: NextPage = () => {
   return (
-    <main>
-      <PrihlaskyScreen />
-    </main>
+    <LecturesContextProvider>
+      <main>
+        <PrihlaskyScreen />
+      </main>
+    </LecturesContextProvider>
   );
 };
 

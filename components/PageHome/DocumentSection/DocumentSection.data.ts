@@ -1,13 +1,13 @@
 export const data = [
   {
     id: "0",
-    title: "Ceník",
-    filePath: "/files/CENIK_LUZANKY.pdf",
+    title: "Ceník školy a školky",
+    filePath: "/files/CENIK_SKOLY_SKOLKY.pdf",
   },
   {
-    id: "0.5",
-    title: "Termíny lekcí",
-    filePath: "/files/ROZVRH_LEKCI.pdf",
+    id: "0.2",
+    title: "Ceník odpolední kurzy",
+    filePath: "/files/CENIK_KURZY.pdf",
   },
   {
     id: "1",
