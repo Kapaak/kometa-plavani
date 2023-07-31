@@ -652,15 +652,18 @@ export const LECTURE_OPTIONS = {
   //pouziva se u SELECT komponentu
   kindergarden: [
     {
+      label: WeekDays.PO,
+      options: [
+        { label: "9:00 - 10:00", value: "po_9" },
+        { label: "10:00 - 11:00", value: "po_10" },
+      ],
+    },
+    {
       label: WeekDays.PA,
-      options: [{ label: "10:00 - 11:00", value: "pa_10" }], //toto je kvuli Select component
-      // lectureTimes: [
-      //   {
-      //     id: "10",
-      //     from: "10:00",
-      //     to: "11:00",
-      //   },
-      // ],
+      options: [
+        { label: "9:00 - 10:00", value: "pa_9" },
+        { label: "10:00 - 11:00", value: "pa_10" },
+      ],
     },
   ],
   school: [
@@ -726,7 +729,6 @@ export const LECTURE_OPTIONS = {
     {
       label: WeekDays.PA,
       options: [
-        { label: "15:00 - 16:00", value: "pa_15" },
         { label: "16:00 - 17:00", value: "pa_16" },
         { label: "17:00 - 18:00", value: "pa_17" },
       ],
@@ -737,18 +739,6 @@ export const LECTURE_OPTIONS = {
       label: WeekDays.PO,
       options: [{ label: "15:00 - 16:00", value: "po_15" }],
     },
-
-    {
-      label: WeekDays.ST,
-      options: [{ label: "15:00 - 16:00", value: "st_15" }],
-    },
-  ],
-  condition: [
-    {
-      label: WeekDays.PO,
-      options: [{ label: "15:00 - 16:00", value: "po_15" }],
-    },
-
     {
       label: WeekDays.ST,
       options: [{ label: "15:00 - 16:00", value: "st_15" }],
@@ -756,6 +746,43 @@ export const LECTURE_OPTIONS = {
     {
       label: WeekDays.PA,
       options: [
+        { label: "16:00 - 17:00", value: "pa_16" },
+        { label: "17:00 - 18:00", value: "pa_17" },
+      ],
+    },
+  ],
+  condition: [
+    {
+      label: WeekDays.PO,
+      options: [
+        { label: "15:00 - 16:00", value: "po_15" },
+        { label: "16:00 - 17:00", value: "po_16" },
+        { label: "17:00 - 18:00", value: "po_17" },
+      ],
+    },
+    {
+      label: WeekDays.UT,
+      options: [
+        { label: "16:00 - 17:00", value: "ut_16" },
+        { label: "17:00 - 18:00", value: "ut_17" },
+      ],
+    },
+    {
+      label: WeekDays.ST,
+      options: [{ label: "15:00 - 16:00", value: "st_15" }],
+    },
+    {
+      label: WeekDays.CT,
+      options: [
+        { label: "15:00 - 16:00", value: "ct_15" },
+        { label: "16:00 - 17:00", value: "ct_16" },
+        { label: "17:00 - 18:00", value: "ct_17" },
+      ],
+    },
+    {
+      label: WeekDays.PA,
+      options: [
+        { label: "15:00 - 16:00", value: "pa_15" },
         { label: "16:00 - 17:00", value: "pa_16" },
         { label: "17:00 - 18:00", value: "pa_17" },
       ],
