@@ -21,7 +21,6 @@ export const DesktopImageContainer = styled.div`
   position: relative;
   border-radius: 0 var(--small-border-rad) var(--small-border-rad) 0;
   overflow: hidden;
-  box-shadow: var(--shadow);
 
   @media (${dimensions.desktop}) {
     display: block;

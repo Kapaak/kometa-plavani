@@ -1,4 +1,4 @@
-import { Flex } from "@/styles";
+import { Flex, Text } from "@/styles";
 import { LectureAvailability } from "./LectureAvailability";
 import { nanoid } from "nanoid";
 import { DayAbbr, DayAbbrDiacritics, Lecture, LectureTime } from "@/domains";
@@ -47,6 +47,7 @@ export const LectureCalendarData = ({
           </S.LectureCalendarTimesGrid>
         );
       })}
+      <Text variant="dark">&#42; Volná místa / kapacita</Text>
     </Flex>
   );
 };

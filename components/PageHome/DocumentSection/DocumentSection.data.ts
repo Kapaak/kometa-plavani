@@ -10,11 +10,6 @@ export const data = [
     filePath: "/files/CENIK_KURZY.pdf",
   },
   {
-    id: "0.5",
-    title: "Termíny lekcí",
-    filePath: "/files/ROZVRH_LEKCI.pdf",
-  },
-  {
     id: "1",
     title: "Zásady ochrany osobních údajů",
     filePath: "/files/ZASADY_GDPR.pdf",
