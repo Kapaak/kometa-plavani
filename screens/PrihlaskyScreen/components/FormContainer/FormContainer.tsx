@@ -62,10 +62,11 @@ export const FormContainer = ({
 
     try {
       await handleExcelUpload(formValues);
-      await axios.post("/api/email", {
+      const resp = await axios.post("/api/email", {
         email: formValues?.email ?? formValues?.contactPersonEmail,
         templateId: templateId,
       });
+      console.log("🚀 ~ file: FormContainer.tsx:69 ~ onSubmit ~ resp:", resp);
     } catch (error) {
       console.log("cant send email or upload spreadsheet", error);
     } finally {

@@ -8,6 +8,7 @@ const handler = (req: NextApiRequest, res: NextApiResponse) => {
 
   const msg = {
     to: email,
+    // from: "pavel.zaplet25@gmail.com",
     from: "plavaniluzanky@kometaplavani.cz",
     subject: "Sending with SendGrid is Fun",
     text: "and easy to do anywhere, even with Node.js",
@@ -17,13 +18,13 @@ const handler = (req: NextApiRequest, res: NextApiResponse) => {
 
   sgMail
     .send(msg)
-    .then(() => {
+    .then((val) => {
       console.log("Email sent");
-    
+      res.send({ val, email });
     })
     .catch((error) => {
       console.error(error);
-      res.send({ error })
+      res.send({ error, email });
     });
 
   res.send({});
