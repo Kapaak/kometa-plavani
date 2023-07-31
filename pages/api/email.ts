@@ -19,9 +19,11 @@ const handler = (req: NextApiRequest, res: NextApiResponse) => {
     .send(msg)
     .then(() => {
       console.log("Email sent");
+    
     })
     .catch((error) => {
       console.error(error);
+      res.send({ error })
     });
 
   res.send({});
