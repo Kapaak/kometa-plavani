@@ -1,7 +1,7 @@
 import sgMail from "@sendgrid/mail";
 import { NextApiRequest, NextApiResponse } from "next";
 
-const handler = (req: NextApiRequest, res: NextApiResponse) => {
+const handler = async (req: NextApiRequest, res: NextApiResponse) => {
   const { email, templateId } = req.body;
 
   sgMail.setApiKey(process.env.NEXT_PUBLIC_SENDGRID_API_KEY ?? "");
@@ -16,16 +16,25 @@ const handler = (req: NextApiRequest, res: NextApiResponse) => {
     template_id: templateId,
   };
 
-  sgMail
-    .send(msg)
-    .then((val) => {
-      console.log("Email sent");
-      res.send({ val, email });
-    })
-    .catch((error) => {
-      console.error(error);
-      res.send({ error, email });
-    });
+  try {
+    const sended = await sgMail.send(msg);
+    console.log("sended: ", sended);
+    return { success: true };
+  } catch (error) {
+    console.error(error);
+    return { succes: false };
+  }
+
+  // sgMail
+  //   .send(msg)
+  //   .then((val) => {
+  //     console.log("Email sent");
+  //     res.send({ val, email });
+  //   })
+  //   .catch((error) => {
+  //     console.error(error);
+  //     res.send({ error, email });
+  //   });
 
   res.send({});
 };
