@@ -48,7 +48,7 @@ export const LectureCalendarData = ({
         );
       })}
       <Text variant="dark">&#42; Volná místa / kapacita</Text>
-      <Text variant="dark">
+      <Text variant="dark" bold>
         &#42; Přihlašujte se pouze na termíny, kde je volná kapacita
       </Text>
     </Flex>
