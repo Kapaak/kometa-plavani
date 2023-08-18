@@ -41,6 +41,9 @@ const AboutSection = () => {
         <S.ImageContainer>
           <S.Img src={WaveYellow} alt="vlnka" />
         </S.ImageContainer>
+        <S.AboutText bold center>
+          Naše plavecké kurzy budou otevřeny od října 2023. Těšíme se na Vás.
+        </S.AboutText>
         <S.AboutText center>
           Naše plavecká škola pracuje pod záštitou plaveckého oddílu KPSP Kometa
           Brno. Naší specializací je výuka plavání dětí předškolního a školního
