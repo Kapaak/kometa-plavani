@@ -4,9 +4,10 @@ import { Document } from "./Document";
 import * as S from "./DocumentSection.style";
 import { MaxWidth, Text, Headline } from "@/styles";
 //data
-import { data } from "./DocumentSection.data";
+import { useSanityHomeContext } from "@/contexts";
 
 export const DocumentSection = () => {
+  const { document } = useSanityHomeContext();
   return (
     <S.DocumentSection name="documents">
       <MaxWidth>
@@ -18,8 +19,12 @@ export const DocumentSection = () => {
             </Text>
           </S.TextContainer>
           <S.GridContainer>
-            {data.map((d) => (
-              <Document key={d?.id} title={d?.title} filePath={d?.filePath} />
+            {document.map((doc, index) => (
+              <Document
+                key={`${doc?.title}_${index}`}
+                title={doc?.title}
+                filePath={doc?.file?.asset?.url}
+              />
             ))}
           </S.GridContainer>
         </S.FlexContainer>
