@@ -50,9 +50,6 @@ const AboutSection = () => {
 
                     return <Text center>{props.children}</Text>;
                   },
-                  bold: (props) => (
-                    <h1 style={{ color: "red" }}>{props.children}</h1>
-                  ),
                 },
               }}
             />
