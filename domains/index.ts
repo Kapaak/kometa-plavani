@@ -1,6 +1,8 @@
 import { StaticImageData } from "next/image";
 import { BaseSyntheticEvent } from "react";
 import { GoogleSpreadsheetRow } from "google-spreadsheet";
+import { PortableTextBlock } from "@portabletext/types";
+import { KeyofIcons } from "utils/functions";
 
 export type PageData = {
   spreadsheetId: string;
@@ -258,4 +260,27 @@ export const googleSheetKeyValuePairs: Record<number, LectureTypes> = {
   2: LectureTypes.BASIC,
   3: LectureTypes.ADVANCED,
   4: LectureTypes.CONDITION,
+};
+
+export type SanityActuality = {
+  title: string;
+  text: PortableTextBlock[];
+};
+
+export type SanityFaq = {
+  title: string;
+  faqItems: {
+    title: string;
+    icon: KeyofIcons;
+    text: PortableTextBlock[];
+  }[];
+};
+
+export type SanityDocument = {
+  title: string;
+  file: {
+    asset: {
+      url: string;
+    };
+  };
 };

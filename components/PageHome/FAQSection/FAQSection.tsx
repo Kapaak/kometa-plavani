@@ -17,7 +17,7 @@ export const FAQSection = () => {
           {faq?.map((d, index) => (
             <S.FAQWrapper key={`${d?.title}_${index}`}>
               <S.Headline>{d?.title}</S.Headline>
-              {d?.faqItems.map((item: any, i: number) => {
+              {d?.faqItems.map((item, i) => {
                 return (
                   <Expandable
                     key={`${item?.title}_${i}`}

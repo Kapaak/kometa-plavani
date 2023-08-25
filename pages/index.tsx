@@ -7,6 +7,7 @@ import type {
 import Home from "@/components/PageHome/Home";
 import { client } from "@/libs";
 import { SanityHomeContextProvider } from "@/contexts";
+import { SanityActuality, SanityDocument, SanityFaq } from "@/domains";
 
 interface Props
   extends InferGetServerSidePropsType<typeof getServerSideProps> {}
@@ -24,13 +25,13 @@ export default HomePage;
 export const getServerSideProps = async (
   pageContext: GetServerSidePropsContext<any>
 ) => {
-  const queryActualities = `*[_type == "home" && visibility == true]{text,order,title}|order(order asc)`;
+  const queryActualities = `*[_type == "home" && visibility == true]{text,title}|order(order asc)`;
   const queryFAQ = `*[_type == "faq"]{title,faqItems[]{icon,text,title}}`;
-  const queryDocument = `*[_type == "uploadFile"]{title,order,file{asset->{url}}}|order(order asc)`;
+  const queryDocument = `*[_type == "uploadFile"]{title,file{asset->{url}}}|order(order asc)`;
 
-  const actualities = await client.fetch(queryActualities);
-  const faq = await client.fetch(queryFAQ);
-  const document = await client.fetch(queryDocument);
+  const actualities: SanityActuality[] = await client.fetch(queryActualities);
+  const faq: SanityFaq[] = await client.fetch(queryFAQ);
+  const document: SanityDocument[] = await client.fetch(queryDocument);
 
   return {
     props: {

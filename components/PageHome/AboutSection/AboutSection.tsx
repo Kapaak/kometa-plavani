@@ -42,12 +42,10 @@ const AboutSection = () => {
           return (
             <PortableText
               value={actuality?.text}
-              key={index}
+              key={`${actuality?.title}_${index}`}
               components={{
                 block: {
                   normal: (props) => {
-                    console.log(props, "pro");
-
                     return <Text center>{props.children}</Text>;
                   },
                 },

@@ -1,11 +1,13 @@
+import { SanityActuality, SanityDocument, SanityFaq } from "@/domains";
 import { PropsWithChildren, createContext, useContext } from "react";
 
-//TODO -> doplnit typy
-const SanityHomeContext = createContext<{
-  actualities: any[];
-  faq: any[];
-  document: any[];
-}>({
+type SanityContext = {
+  actualities: SanityActuality[];
+  faq: SanityFaq[];
+  document: SanityDocument[];
+};
+
+const SanityHomeContext = createContext<SanityContext>({
   actualities: [],
   faq: [],
   document: [],
@@ -15,11 +17,7 @@ export const SanityHomeContextProvider = ({
   children,
   sanityData,
 }: PropsWithChildren<{
-  sanityData: {
-    actualities: any[];
-    faq: any[];
-    document: any[];
-  };
+  sanityData: SanityContext;
 }>) => {
   return (
     <SanityHomeContext.Provider value={sanityData}>
