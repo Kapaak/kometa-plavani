@@ -1,1 +1,2 @@
-export * from "./LecturesContext";
+export * from './LecturesContext';
+export * from './SanityHomeContext';
