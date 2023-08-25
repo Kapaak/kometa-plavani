@@ -26,7 +26,7 @@ export const getServerSideProps = async (
   pageContext: GetServerSidePropsContext<any>
 ) => {
   const queryActualities = `*[_type == "home" && visibility == true]{text,title}|order(order asc)`;
-  const queryFAQ = `*[_type == "faq"]{title,faqItems[]{icon,text,title}}`;
+  const queryFAQ = `*[_type == "faq"]{title,order,faqItems[]{icon,text,title}}|order(order asc)`;
   const queryDocument = `*[_type == "uploadFile"]{title,file{asset->{url}}}|order(order asc)`;
 
   const actualities: SanityActuality[] = await client.fetch(queryActualities);
