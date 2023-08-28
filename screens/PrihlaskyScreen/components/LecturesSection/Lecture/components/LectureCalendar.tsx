@@ -3,13 +3,19 @@ import * as S from "../Lecture.style";
 import { LectureSemester } from "./LectureSemester";
 import { LectureCalendarTimes } from "./LectureCalendarTimes";
 import { LectureCalendarData } from "./LectureCalendarData";
-import { DayAbbr, Lecture, LectureTime } from "@/domains";
+import {
+  DayTimeCapacity,
+  GoogleSheetDayTime,
+  LectureTime,
+  WeekDaysNew,
+} from "@/domains";
 
 interface LectureCalendarProps {
   times?: LectureTime[];
-  days?: DayAbbr[];
-  data?: Record<string, Lecture>;
+  days?: WeekDaysNew[];
+  data?: Record<string, DayTimeCapacity>;
   showSemesterSwitcher?: boolean;
+  capacity?: GoogleSheetDayTime;
 }
 
 export const LectureCalendar = ({
@@ -17,24 +23,26 @@ export const LectureCalendar = ({
   days,
   data,
   showSemesterSwitcher = false,
+  capacity,
 }: LectureCalendarProps) => {
-  const [selectedSemester, setSelectedSemester] = useState<0 | 1>(0);
+  const [selectedSemester, setSelectedSemester] = useState<1 | 2>(1);
 
   return (
     <S.LectureCalendar>
       {showSemesterSwitcher && (
         <LectureSemester
           selectedSemester={selectedSemester}
-          onPrev={() => setSelectedSemester(0)}
-          onNext={() => setSelectedSemester(1)}
+          onPrev={() => setSelectedSemester(1)}
+          onNext={() => setSelectedSemester(2)}
         />
       )}
       <LectureCalendarTimes lectureTimes={times} />
       <LectureCalendarData
-        selectedSemester={showSemesterSwitcher ? selectedSemester : 0}
+        selectedSemester={showSemesterSwitcher ? selectedSemester : 1}
         lectureTimes={times}
         lectureDays={days}
         calendarData={data}
+        capacity={capacity}
       />
     </S.LectureCalendar>
   );

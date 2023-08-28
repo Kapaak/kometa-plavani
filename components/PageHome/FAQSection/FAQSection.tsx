@@ -8,16 +8,16 @@ import { useSanityHomeContext } from "contexts/SanityHomeContext";
 import { PortableText } from "@portabletext/react";
 
 export const FAQSection = () => {
-  const { faq } = useSanityHomeContext();
+  const { faqs } = useSanityHomeContext();
   return (
     <S.FAQSection name="faq">
       <MaxWidth>
         <Headline>Základní informace</Headline>
         <S.Container>
-          {faq?.map((d, index) => (
-            <S.FAQWrapper key={`${d?.title}_${index}`}>
-              <S.Headline>{d?.title}</S.Headline>
-              {d?.faqItems.map((item, i) => {
+          {faqs?.map((faq, index) => (
+            <S.FAQWrapper key={`${faq?.title}_${index}`}>
+              <S.Headline>{faq?.title}</S.Headline>
+              {faq?.faqItems.map((item, i) => {
                 return (
                   <Expandable
                     key={`${item?.title}_${i}`}

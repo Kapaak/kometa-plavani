@@ -3,14 +3,14 @@ import { PropsWithChildren, createContext, useContext } from "react";
 
 type SanityContext = {
   actualities: SanityActuality[];
-  faq: SanityFaq[];
-  document: SanityDocument[];
+  faqs: SanityFaq[];
+  documents: SanityDocument[];
 };
 
 const SanityHomeContext = createContext<SanityContext>({
   actualities: [],
-  faq: [],
-  document: [],
+  faqs: [],
+  documents: [],
 });
 
 export const SanityHomeContextProvider = ({

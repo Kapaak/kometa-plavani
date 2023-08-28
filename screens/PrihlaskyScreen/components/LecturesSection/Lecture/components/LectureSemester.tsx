@@ -3,7 +3,7 @@ import * as S from "../Lecture.style";
 import { Flex } from "@/styles";
 
 interface LectureSemesterProps {
-  selectedSemester: 0 | 1;
+  selectedSemester: 1 | 2;
   onPrev?: () => void;
   onNext?: () => void;
 }
@@ -13,8 +13,8 @@ export const LectureSemester = ({
   onNext,
   onPrev,
 }: LectureSemesterProps) => {
-  const isFirstSemesterSelected = selectedSemester === 0;
-  const isSecondSemesterSelected = selectedSemester === 1;
+  const isFirstSemesterSelected = selectedSemester === 1;
+  const isSecondSemesterSelected = selectedSemester === 2;
 
   return (
     <Flex
@@ -28,7 +28,7 @@ export const LectureSemester = ({
         {<ArrowLeft size={20} onClick={onPrev} />}
       </S.LectureSemesterButton>
       <S.LectureSemesterText variant="dark" bold>
-        {selectedSemester + 1}. pololetí
+        {selectedSemester}. pololetí
       </S.LectureSemesterText>
       <S.LectureSemesterButton visible={!isSecondSemesterSelected}>
         {<ArrowRight size={20} onClick={onNext} />}

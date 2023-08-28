@@ -12,9 +12,9 @@ import { SanityActuality, SanityDocument, SanityFaq } from "@/domains";
 interface Props
   extends InferGetServerSidePropsType<typeof getServerSideProps> {}
 
-const HomePage: NextPage<Props> = ({ actualities, faq, document }) => {
+const HomePage: NextPage<Props> = ({ actualities, faqs, documents }) => {
   return (
-    <SanityHomeContextProvider sanityData={{ actualities, faq, document }}>
+    <SanityHomeContextProvider sanityData={{ actualities, faqs, documents }}>
       <Home />
     </SanityHomeContextProvider>
   );
@@ -30,14 +30,14 @@ export const getServerSideProps = async (
   const queryDocument = `*[_type == "uploadFile"]{title,file{asset->{url}}}|order(order asc)`;
 
   const actualities: SanityActuality[] = await client.fetch(queryActualities);
-  const faq: SanityFaq[] = await client.fetch(queryFAQ);
-  const document: SanityDocument[] = await client.fetch(queryDocument);
+  const faqs: SanityFaq[] = await client.fetch(queryFAQ);
+  const documents: SanityDocument[] = await client.fetch(queryDocument);
 
   return {
     props: {
       actualities,
-      faq,
-      document,
+      faqs,
+      documents,
     },
   };
 };

@@ -4,7 +4,11 @@ import * as S from "./Lecture.style";
 //interfaces
 import { Service } from "@/domains";
 import { LectureCalendar, LectureDescription } from "./components";
-import { useLecturesContext } from "@/contexts";
+import {
+  useGoogleSheetsContext,
+  useLecturesContext,
+  useSanityApplicationsContext,
+} from "@/contexts";
 import Link from "next/link";
 import { Button } from "@/shared";
 
@@ -24,7 +28,15 @@ export const Lecture = (props: LectureProps) => {
     pricingDocument,
   } = props;
   const { getLectureSheetsByType } = useLecturesContext();
+  const { lectureDaysTimesCapacity } = useSanityApplicationsContext();
+  const { googleSheets } = useGoogleSheetsContext();
+  console.log(
+    "🚀 ~ file: Lecture.tsx:33 ~ Lecture ~ googleSheets:",
+    googleSheets
+  );
+
   //todo pak predelat tu funkci na hodnotu
+  if (!lectureType) return null;
 
   return (
     <S.LectureSection name={name}>
@@ -45,9 +57,10 @@ export const Lecture = (props: LectureProps) => {
               showSemesterSwitcher={
                 lectureType === "school" || lectureType === "kindergarden"
               }
-              times={getLectureSheetsByType(lectureType)?.lectureTimes}
-              days={getLectureSheetsByType(lectureType)?.lectureDays}
-              data={getLectureSheetsByType(lectureType)?.lectures}
+              times={lectureDaysTimesCapacity[lectureType]?.lectureTimes}
+              days={lectureDaysTimesCapacity[lectureType]?.lectureDays}
+              data={lectureDaysTimesCapacity[lectureType]?.lectures}
+              capacity={googleSheets?.[lectureType]?.lectures}
             />
             <Link href={`/prihlasky/${url}`} passHref>
               <Button variant="filled">poslat přihlášku</Button>

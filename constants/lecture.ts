@@ -5,12 +5,12 @@ export const LECTURE_DATA: LectureValue = {
   kindergarden: {
     lectureTimes: [
       {
-        id: "9",
+        id: 9,
         from: "9:00",
         to: "10:00",
       },
       {
-        id: "10",
+        id: 10,
         from: "10:00",
         to: "11:00",
       },
@@ -74,12 +74,12 @@ export const LECTURE_DATA: LectureValue = {
   school: {
     lectureTimes: [
       {
-        id: "9",
+        id: 9,
         from: "9:00",
         to: "10:00",
       },
       {
-        id: "10",
+        id: 10,
         from: "10:00",
         to: "11:00",
       },
@@ -223,17 +223,17 @@ export const LECTURE_DATA: LectureValue = {
   basic: {
     lectureTimes: [
       {
-        id: "15",
+        id: 15,
         from: "15:00",
         to: "16:00",
       },
       {
-        id: "16",
+        id: 16,
         from: "16:00",
         to: "17:00",
       },
       {
-        id: "17",
+        id: 17,
         from: "17:00",
         to: "18:00",
       },
@@ -363,17 +363,17 @@ export const LECTURE_DATA: LectureValue = {
   advanced: {
     lectureTimes: [
       {
-        id: "15",
+        id: 15,
         from: "15:00",
         to: "16:00",
       },
       {
-        id: "16",
+        id: 16,
         from: "16:00",
         to: "17:00",
       },
       {
-        id: "17",
+        id: 17,
         from: "17:00",
         to: "18:00",
       },
@@ -419,17 +419,17 @@ export const LECTURE_DATA: LectureValue = {
   condition: {
     lectureTimes: [
       {
-        id: "15",
+        id: 15,
         from: "15:00",
         to: "16:00",
       },
       {
-        id: "16",
+        id: 16,
         from: "16:00",
         to: "17:00",
       },
       {
-        id: "17",
+        id: 17,
         from: "17:00",
         to: "18:00",
       },

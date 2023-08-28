@@ -193,16 +193,17 @@ export type SchoolSpreadsheetData = {
   notes?: string;
 };
 
-export type LectureTime = {
-  id: string;
-  from: string;
-  to: string;
-};
+export enum DayAbbr {
+  PO = "po",
+  UT = "ut",
+  ST = "st",
+  CT = "ct",
+  PA = "pa",
+}
 
-export type DayAbbr = "po" | "ut" | "st" | "ct" | "pa";
 // export enum DayAbbrDiacritics = "Po" | "Út" | "St" | "Čt" | "Pá";
 export enum DayAbbrDiacritics {
-  PO = "PO",
+  PO = "Po",
   UT = "Út",
   ST = "St",
   CT = "Čt",
@@ -283,4 +284,85 @@ export type SanityDocument = {
       url: string;
     };
   };
+};
+
+export type SanityCourse = {
+  value: string;
+  title: string;
+  price: string;
+  duration: number;
+  pondeli?: SanityCourseDay[];
+  utery?: SanityCourseDay[];
+  streda?: SanityCourseDay[];
+  ctvrtek?: SanityCourseDay[];
+  patek?: SanityCourseDay[];
+};
+
+export type SanityCourseDay = {
+  //NEW
+  start: number;
+  capacity: number;
+};
+
+export type DayCapacity = {
+  lectureTimeId?: number;
+  max?: number;
+  aplications?: number;
+};
+
+export type DayTimeCapacity = Record<number, Record<string, DayCapacity>>;
+
+export type LectureTime = { id?: number; from?: string; to?: string };
+
+export type LectureDaysTimesCapacity = Record<
+  string,
+  {
+    lectureTimes: LectureTime[];
+    lectureDays: WeekDaysNew[];
+    lectures: Record<string, DayTimeCapacity>;
+  }
+>;
+
+export type GoogleSheetDayTime = Record<
+  string,
+  Record<number, Record<number, { aplications: number }>>
+>;
+
+export type GoogleSheets = Record<
+  string,
+  {
+    lectures: GoogleSheetDayTime;
+  }
+>;
+
+export type WeekDaysNew = "pondeli" | "utery" | "streda" | "ctvrtek" | "patek";
+
+export const convertWeekDaysToAbbr = (day: WeekDaysNew): DayAbbrDiacritics => {
+  switch (day) {
+    case "pondeli":
+      return DayAbbrDiacritics.PO;
+    case "utery":
+      return DayAbbrDiacritics.UT;
+    case "streda":
+      return DayAbbrDiacritics.ST;
+    case "ctvrtek":
+      return DayAbbrDiacritics.CT;
+    case "patek":
+      return DayAbbrDiacritics.PA;
+  }
+};
+
+export const convertAbbrToWeekDays = (day: DayAbbr): WeekDaysNew => {
+  switch (day) {
+    case DayAbbr.PO:
+      return "pondeli";
+    case DayAbbr.UT:
+      return "utery";
+    case DayAbbr.ST:
+      return "streda";
+    case DayAbbr.CT:
+      return "ctvrtek";
+    case DayAbbr.PA:
+      return "patek";
+  }
 };
