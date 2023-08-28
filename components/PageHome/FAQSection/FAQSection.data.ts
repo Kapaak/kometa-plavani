@@ -68,7 +68,7 @@ export const data = [
         id: "55",
         title: "Platba",
         description:
-          "Kurz je třeba zaplatit nejpozději před první navštívenou lekcí. Platbu proveďte na účet 8822184001, banka 5500, variabilní symbol 01. Do zprávy pro příjemce je nutné napsat jméno dítěte. Za každé dítě je nutné poslat peníze jednotlivě.",
+          "Kurz je třeba zaplatit nejpozději před první navštívenou lekcí. Platbu proveďte na účet 8822184001, banka 5500, variabilní symbol 259 01. Do zprávy pro příjemce je nutné napsat jméno dítěte. Za každé dítě je nutné poslat peníze jednotlivě.",
         icon: Coins,
       },
       {
