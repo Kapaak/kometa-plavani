@@ -23,7 +23,7 @@ export const lectures: Record<string, Service[]> = {
       text: "Kurzy jsou určené pro děti, které se potřebují naučit plavat.",
       image: AdvancedLecture,
       alt: "plavec s hlavou pod vodou a deskou",
-      name: ScrollSections.APPLICATIONS_SCHOOL,
+      name: ScrollSections.APPLICATIONS_BASIC,
     },
     {
       id: 3,
