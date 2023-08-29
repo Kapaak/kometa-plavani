@@ -61,8 +61,11 @@ export const SchoolForm = ({
             <ControlledInput
               name="identifier"
               placeholder="IČ nebo DIČ"
-              pattern={/^\d+$/}
-              required="IČ nebo DIČ musí být číslo"
+              pattern={{
+                value: /^\d+$/,
+                message: "IČ nebo DIČ musí být číslo.",
+              }}
+              required="IČ nebo DIČ musí být vyplněno."
             />
             <S.Label>IČ nebo DIČ</S.Label>
             <S.ErrorContainer>{errors?.identifier?.message}</S.ErrorContainer>

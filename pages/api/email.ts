@@ -17,26 +17,12 @@ const handler = async (req: NextApiRequest, res: NextApiResponse) => {
   };
 
   try {
-    const sended = await sgMail.send(msg);
-    console.log("sended: ", sended);
-    return { success: true };
+    const email = await sgMail.send(msg);
+    return res.send({ data: email, email });
   } catch (error) {
     console.error(error);
-    return { succes: false };
+    return res.send({ message: error, email });
   }
-
-  // sgMail
-  //   .send(msg)
-  //   .then((val) => {
-  //     console.log("Email sent");
-  //     res.send({ val, email });
-  //   })
-  //   .catch((error) => {
-  //     console.error(error);
-  //     res.send({ error, email });
-  //   });
-
-  res.send({});
 };
 
 export default handler;

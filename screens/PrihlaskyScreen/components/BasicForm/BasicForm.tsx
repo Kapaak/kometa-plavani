@@ -69,8 +69,12 @@ export const BasicForm = ({ onSubmit, errors, isLoading }: BasicFormProps) => {
             <ControlledInput
               name="personalIdNum"
               placeholder="Rodné číslo dítěte (př. 045421/1234)"
-              pattern={/\d{4}([.,\/]\d{4})/}
-              required="Rodné číslo v nesprávném formátu. Příklad: 045421/1234."
+              pattern={{
+                value: /\d{4}([.,\/]\d{4})/,
+                message:
+                  "Rodné číslo v nesprávném formátu. Příklad: 045421/1234.",
+              }}
+              required="Rodné číslo musí být vyplněno."
             />
             <S.Label>Rodné číslo</S.Label>
             <S.ErrorContainer>
@@ -102,8 +106,12 @@ export const BasicForm = ({ onSubmit, errors, isLoading }: BasicFormProps) => {
             <ControlledInput
               name="email"
               placeholder="E-mail"
-              pattern={/\S+@\S+\.\S+/}
-              required="Platný email musí obsahovat @ (př. novak.filip@email.cz)."
+              pattern={{
+                value: /\S+@\S+\.\S+/,
+                message:
+                  "Platný email musí obsahovat @ (př. novak.filip@email.cz).",
+              }}
+              required="Email musí být vyplněn."
             />
             <S.Label>E-mail</S.Label>
             <S.ErrorContainer>{errors?.email?.message}</S.ErrorContainer>
@@ -121,7 +129,7 @@ export const BasicForm = ({ onSubmit, errors, isLoading }: BasicFormProps) => {
             <ControlledInput
               name="city"
               placeholder="Město"
-              required="Město musí být vyplněno"
+              required="Město musí být vyplněno."
             />
             <S.Label>Město</S.Label>
             <S.ErrorContainer>{errors?.city?.message}</S.ErrorContainer>
@@ -130,7 +138,7 @@ export const BasicForm = ({ onSubmit, errors, isLoading }: BasicFormProps) => {
             <ControlledInput
               name="postCode"
               placeholder="PSČ"
-              required="PSČ musí být vyplněno"
+              required="PSČ musí být vyplněno."
             />
             <S.Label>PSČ</S.Label>
             <S.ErrorContainer>{errors?.postCode?.message}</S.ErrorContainer>

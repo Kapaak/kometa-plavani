@@ -23,6 +23,7 @@ export const GlobalStyles = createGlobalStyle`
         --col2-hover: #1A5FBF;
         --col3: #DCE9FA;
         --colw: #F8F8F8;
+        --colr: #FF0000;
         --collg: #dcdcdc;
         --colg:#9A9A9A;
         --colb: #001427;

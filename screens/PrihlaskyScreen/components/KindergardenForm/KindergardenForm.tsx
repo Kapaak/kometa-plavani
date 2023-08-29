@@ -53,7 +53,7 @@ export const KindergardenForm = ({
             <ControlledInput
               name="address"
               placeholder="Adresa"
-              required="Adresa nesmí být prázdná"
+              required="Adresa musí být vyplněna."
             />
             <S.Label>Adresa</S.Label>
             <S.ErrorContainer>{errors?.address?.message}</S.ErrorContainer>
@@ -62,8 +62,11 @@ export const KindergardenForm = ({
             <ControlledInput
               name="identifier"
               placeholder="IČ nebo DIČ"
-              pattern={/^\d+$/}
-              required="IČ nebo DIČ musí být číslo"
+              pattern={{
+                value: /^\d+$/,
+                message: "IČ nebo DIČ musí být číslo.",
+              }}
+              required="IČ nebo DIČ musí být vyplněno."
             />
             <S.Label>IČ nebo DIČ</S.Label>
             <S.ErrorContainer>{errors?.identifier?.message}</S.ErrorContainer>
