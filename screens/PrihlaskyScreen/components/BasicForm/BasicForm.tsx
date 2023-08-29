@@ -1,4 +1,4 @@
-import { Space, Subheadline, Text } from "@/styles";
+import { Danger, Space, Subheadline, Text } from "@/styles";
 import * as S from "../SwimmingForm/SwimmingForm.style";
 import {
   ControlledInput,
@@ -42,7 +42,7 @@ export const BasicForm = ({ onSubmit, errors, isLoading }: BasicFormProps) => {
               required="Jméno nesmí být prázdné"
             />
             <S.Label>Jméno dítěte</S.Label>
-            <S.ErrorContainer>{errors?.firstName?.message}</S.ErrorContainer>
+            <Danger>{errors?.firstName?.message}</Danger>
           </S.FormInputContainer>
           <S.FormInputContainer>
             <ControlledInput
@@ -51,7 +51,7 @@ export const BasicForm = ({ onSubmit, errors, isLoading }: BasicFormProps) => {
               required="Příjmení nesmí být prázdné"
             />
             <S.Label>Příjmení dítěte</S.Label>
-            <S.ErrorContainer>{errors?.lastName?.message}</S.ErrorContainer>
+            <Danger>{errors?.lastName?.message}</Danger>
           </S.FormInputContainer>
           <div>
             <ControlledSelect
@@ -63,7 +63,7 @@ export const BasicForm = ({ onSubmit, errors, isLoading }: BasicFormProps) => {
               ]}
               required="Pohlaví musí být vyplněno"
             />
-            <S.ErrorContainer>{errors?.gender?.message}</S.ErrorContainer>
+            <Danger>{errors?.gender?.message}</Danger>
           </div>
           <S.FormInputContainer>
             <ControlledInput
@@ -77,9 +77,7 @@ export const BasicForm = ({ onSubmit, errors, isLoading }: BasicFormProps) => {
               required="Rodné číslo musí být vyplněno."
             />
             <S.Label>Rodné číslo</S.Label>
-            <S.ErrorContainer>
-              {errors?.personalIdNum?.message}
-            </S.ErrorContainer>
+            <Danger>{errors?.personalIdNum?.message}</Danger>
           </S.FormInputContainer>
           <S.FormInputContainer>
             <ControlledInput
@@ -88,7 +86,7 @@ export const BasicForm = ({ onSubmit, errors, isLoading }: BasicFormProps) => {
               required="Datum narození musí být vyplněno."
             />
             <S.Label>Datum narození dítěte</S.Label>
-            <S.ErrorContainer>{errors?.dateOfBirth?.message}</S.ErrorContainer>
+            <Danger>{errors?.dateOfBirth?.message}</Danger>
           </S.FormInputContainer>
         </S.FormItem>
         <S.FormItem>
@@ -100,7 +98,7 @@ export const BasicForm = ({ onSubmit, errors, isLoading }: BasicFormProps) => {
               required="Telefon musí být vyplněn"
             />
             <S.Label>Telefon</S.Label>
-            <S.ErrorContainer>{errors?.phone?.message}</S.ErrorContainer>
+            <Danger>{errors?.phone?.message}</Danger>
           </S.FormInputContainer>
           <S.FormInputContainer>
             <ControlledInput
@@ -114,7 +112,7 @@ export const BasicForm = ({ onSubmit, errors, isLoading }: BasicFormProps) => {
               required="Email musí být vyplněn."
             />
             <S.Label>E-mail</S.Label>
-            <S.ErrorContainer>{errors?.email?.message}</S.ErrorContainer>
+            <Danger>{errors?.email?.message}</Danger>
           </S.FormInputContainer>
           <S.FormInputContainer>
             <ControlledInput
@@ -123,7 +121,7 @@ export const BasicForm = ({ onSubmit, errors, isLoading }: BasicFormProps) => {
               required="Adresa musí být vyplněna"
             />
             <S.Label>Adresa a číslo popisné</S.Label>
-            <S.ErrorContainer>{errors?.address?.message}</S.ErrorContainer>
+            <Danger>{errors?.address?.message}</Danger>
           </S.FormInputContainer>
           <S.FormInputContainer>
             <ControlledInput
@@ -132,7 +130,7 @@ export const BasicForm = ({ onSubmit, errors, isLoading }: BasicFormProps) => {
               required="Město musí být vyplněno."
             />
             <S.Label>Město</S.Label>
-            <S.ErrorContainer>{errors?.city?.message}</S.ErrorContainer>
+            <Danger>{errors?.city?.message}</Danger>
           </S.FormInputContainer>
           <S.FormInputContainer>
             <ControlledInput
@@ -141,7 +139,7 @@ export const BasicForm = ({ onSubmit, errors, isLoading }: BasicFormProps) => {
               required="PSČ musí být vyplněno."
             />
             <S.Label>PSČ</S.Label>
-            <S.ErrorContainer>{errors?.postCode?.message}</S.ErrorContainer>
+            <Danger>{errors?.postCode?.message}</Danger>
           </S.FormInputContainer>
         </S.FormItem>
         <S.FormItem>

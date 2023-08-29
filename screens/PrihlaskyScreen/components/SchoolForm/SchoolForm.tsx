@@ -1,4 +1,4 @@
-import { Space, Subheadline, Text } from "@/styles";
+import { Danger, Space, Subheadline, Text } from "@/styles";
 import * as S from "../SwimmingForm/SwimmingForm.style";
 import {
   ControlledInput,
@@ -46,7 +46,7 @@ export const SchoolForm = ({
               required="Jméno nesmí být prázdné"
             />
             <S.Label>Název školy / školky</S.Label>
-            <S.ErrorContainer>{errors?.schoolName?.message}</S.ErrorContainer>
+            <Danger>{errors?.schoolName?.message}</Danger>
           </S.FormInputContainer>
           <S.FormInputContainer>
             <ControlledInput
@@ -55,7 +55,7 @@ export const SchoolForm = ({
               required="Adresa nesmí být prázdná"
             />
             <S.Label>Adresa</S.Label>
-            <S.ErrorContainer>{errors?.address?.message}</S.ErrorContainer>
+            <Danger>{errors?.address?.message}</Danger>
           </S.FormInputContainer>
           <S.FormInputContainer>
             <ControlledInput
@@ -68,7 +68,7 @@ export const SchoolForm = ({
               required="IČ nebo DIČ musí být vyplněno."
             />
             <S.Label>IČ nebo DIČ</S.Label>
-            <S.ErrorContainer>{errors?.identifier?.message}</S.ErrorContainer>
+            <Danger>{errors?.identifier?.message}</Danger>
           </S.FormInputContainer>
           <S.FormInputContainer>
             <ControlledInput
@@ -79,9 +79,7 @@ export const SchoolForm = ({
               // pattern={/^(?=.*1)(?=.*[2-9]|30)[1-9]\d?$/}
             />
             <S.Label>Počet dětí</S.Label>
-            <S.ErrorContainer>
-              {errors?.childrenCount?.message}
-            </S.ErrorContainer>
+            <Danger>{errors?.childrenCount?.message}</Danger>
           </S.FormInputContainer>
           <S.FormInputContainer>
             <ControlledSelect
@@ -94,16 +92,12 @@ export const SchoolForm = ({
               ]}
             />
             <S.Label>Pololetí</S.Label>
-            <S.ErrorContainer>
-              {errors?.childrenCount?.message}
-            </S.ErrorContainer>
+            <Danger>{errors?.childrenCount?.message}</Danger>
           </S.FormInputContainer>
           <S.FormInputContainer>
             <ControlledInput name="notes" placeholder="Poznámky" />
             <S.Label>Poznámky</S.Label>
-            <S.ErrorContainer>
-              {errors?.childrenCount?.message}
-            </S.ErrorContainer>
+            <Danger>{errors?.childrenCount?.message}</Danger>
           </S.FormInputContainer>
         </S.FormItem>
         <S.FormItem>
@@ -115,9 +109,7 @@ export const SchoolForm = ({
               required="Kontaktní osoba musí být vyplněna"
             />
             <S.Label>Jméno kontaktní osoby</S.Label>
-            <S.ErrorContainer>
-              {errors?.contactPerson?.message}
-            </S.ErrorContainer>
+            <Danger>{errors?.contactPerson?.message}</Danger>
           </S.FormInputContainer>
           <S.FormInputContainer>
             <ControlledInput
@@ -126,9 +118,7 @@ export const SchoolForm = ({
               required="Telefon kontaktní osoby musí být vyplněn"
             />
             <S.Label>Telefon kontaktní osoby</S.Label>
-            <S.ErrorContainer>
-              {errors?.contactPersonPhone?.message}
-            </S.ErrorContainer>
+            <Danger>{errors?.contactPersonPhone?.message}</Danger>
           </S.FormInputContainer>
           <S.FormInputContainer>
             <ControlledInput
@@ -137,9 +127,7 @@ export const SchoolForm = ({
               required="Email kontaktní osoby musí být vyplněn"
             />
             <S.Label>Email kontaktní osoby</S.Label>
-            <S.ErrorContainer>
-              {errors?.contactPersonEmail?.message}
-            </S.ErrorContainer>
+            <Danger>{errors?.contactPersonEmail?.message}</Danger>
           </S.FormInputContainer>
         </S.FormItem>
       </S.Container>

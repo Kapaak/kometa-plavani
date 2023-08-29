@@ -12,3 +12,4 @@ export { Headline } from "./CustomComponents/Headline";
 export { Space } from "./CustomComponents/Space";
 export { Divider } from "./CustomComponents/Divider";
 export { Strong } from "./CustomComponents/Strong";
+export { Danger } from "./CustomComponents/Danger";
