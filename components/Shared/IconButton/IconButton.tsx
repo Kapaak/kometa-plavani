@@ -14,19 +14,24 @@ export const IconButton = ({
   iconBefore,
   iconAfter,
   loading,
+  disabled,
   ...rest
 }: PropsWithChildren<IconButtonProps>) => {
   const IconBefore = iconBefore as TIcon;
   const IconAfter = iconAfter as TIcon;
   return (
-    <S.IconButton {...rest}>
-      {!loading && iconBefore && <IconBefore size={38} weight="regular" />}
+    <S.IconButton {...rest} disabled={disabled} isLoading={loading}>
+      {!loading && !disabled && iconBefore && (
+        <IconBefore size={38} weight="regular" />
+      )}
       {!loading && children}
-      {!loading && iconAfter && <IconAfter size={38} weight="regular" />}
+      {!loading && !disabled && iconAfter && (
+        <IconAfter size={38} weight="regular" />
+      )}
 
       {loading && (
         <span>
-          odesílám ... <LoadingIcon size={38} weight="fill" />
+          odesílám <LoadingIcon size={38} weight="fill" />
         </span>
       )}
     </S.IconButton>

@@ -9,7 +9,7 @@ import {
   useState,
 } from "react";
 import { useFormContext } from "react-hook-form";
-import { IconButton } from "@/components/Shared";
+import { Button, IconButton } from "@/components/Shared";
 import { Space, Subheadline } from "@/styles";
 
 const colourStyles: StylesConfig<any, true> = {
