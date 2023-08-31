@@ -8,6 +8,8 @@ import * as S from "./NavLinks.style";
 import { NavLink as NavLinkType } from "@/domains";
 //redux
 import { RootState } from "@/redux/store";
+import { Button } from "@/components/Shared";
+import { Hidden } from "@/styles";
 
 interface Props {
   data: NavLinkType[];
@@ -30,6 +32,16 @@ const NavItems = ({ data }: Props) => {
           {d.output}
         </NavLink>
       ))}
+      <Hidden down="notebook">
+        <NavLink href="/prihlasky">Přihlášky</NavLink>
+      </Hidden>
+      <Hidden up="notebook">
+        <NavLink href="/prihlasky">
+          <Button variant="filled" size="small">
+            Přihlášky
+          </Button>
+        </NavLink>
+      </Hidden>
     </S.NavLinks>
   );
 };

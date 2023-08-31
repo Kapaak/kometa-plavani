@@ -105,7 +105,7 @@ export const SwimmingForm = ({
         </S.Text>
 
         <IconButton
-          loading={isLoading}
+          isLoading={isLoading}
           disabled={isLoading || selectedOptions.length !== maxNumberOfLessons}
           iconAfter={S.ArrowRightIcon}
         >

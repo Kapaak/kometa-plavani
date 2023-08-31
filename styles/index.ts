@@ -13,3 +13,4 @@ export { Space } from "./CustomComponents/Space";
 export { Divider } from "./CustomComponents/Divider";
 export { Strong } from "./CustomComponents/Strong";
 export { Danger } from "./CustomComponents/Danger";
+export { Hidden } from "./CustomComponents/Hidden";

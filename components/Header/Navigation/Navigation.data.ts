@@ -11,28 +11,28 @@ export const data: NavLink[] = [
     scrollTarget: ScrollSections.about,
     output: "O nás",
   },
-  {
-    href: "/prihlasky",
-    output: "Přihlášky",
-    //commented out, because it wont be needed on release
-    // dropdown: [
-    //   {
-    //     href: "/prihlasky/skolky",
-    //     scrollTarget: ScrollSections.skolky,
-    //     output: "školky",
-    //   },
-    //   {
-    //     href: "/prihlasky/skoly",
-    //     scrollTarget: ScrollSections.skoly,
-    //     output: "školy",
-    //   },
-    //   {
-    //     href: "/prihlasky/kurzy",
-    //     scrollTarget: ScrollSections.kurzy,
-    //     output: "kurzy",
-    //   },
-    // ],
-  },
+  // {
+  //   href: "/prihlasky",
+  //   output: "Přihlášky",
+  //commented out, because it wont be needed on release
+  // dropdown: [
+  //   {
+  //     href: "/prihlasky/skolky",
+  //     scrollTarget: ScrollSections.skolky,
+  //     output: "školky",
+  //   },
+  //   {
+  //     href: "/prihlasky/skoly",
+  //     scrollTarget: ScrollSections.skoly,
+  //     output: "školy",
+  //   },
+  //   {
+  //     href: "/prihlasky/kurzy",
+  //     scrollTarget: ScrollSections.kurzy,
+  //     output: "kurzy",
+  //   },
+  // ],
+  // },
   {
     href: "/",
     scrollTarget: ScrollSections.faq,
