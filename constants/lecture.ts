@@ -62,11 +62,11 @@ export const LECTURE_DATA: LectureValue = {
             max: 30,
             aplications: 0,
           },
-          {
-            lectureTimeId: "10",
-            max: 30,
-            aplications: 0,
-          },
+          // {
+          //   lectureTimeId: "10",
+          //   max: 30,
+          //   aplications: 0,
+          // },
         ],
       },
     },
@@ -321,6 +321,18 @@ export const LECTURE_DATA: LectureValue = {
         ],
       },
       pa: {
+        15: [
+          {
+            lectureTimeId: "15",
+            max: 30,
+            aplications: 0,
+          },
+          {
+            lectureTimeId: "15",
+            max: 30,
+            aplications: 0,
+          },
+        ],
         16: [
           {
             lectureTimeId: "16",
