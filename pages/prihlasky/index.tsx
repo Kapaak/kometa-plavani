@@ -4,10 +4,7 @@ import {
   NextPage,
 } from "next";
 import { PrihlaskyScreen } from "@/screens";
-import {
-  LecturesContextProvider,
-  SanityApplicationsContextProvider,
-} from "@/contexts";
+import { SanityApplicationsContextProvider } from "@/contexts";
 import { client } from "@/libs";
 import { GoogleSheetsContextProvider } from "@/contexts";
 
@@ -18,11 +15,9 @@ const PrihlaskyPage: NextPage<Props> = ({ courses }) => {
   return (
     <SanityApplicationsContextProvider courses={courses}>
       <GoogleSheetsContextProvider>
-        <LecturesContextProvider>
-          <main>
-            <PrihlaskyScreen />
-          </main>
-        </LecturesContextProvider>
+        <main>
+          <PrihlaskyScreen />
+        </main>
       </GoogleSheetsContextProvider>
     </SanityApplicationsContextProvider>
   );

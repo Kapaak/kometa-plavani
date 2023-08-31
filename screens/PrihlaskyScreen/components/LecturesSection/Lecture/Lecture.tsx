@@ -1,12 +1,11 @@
 //styles
-import { Flex, SectionElement } from "@/styles";
+import { Flex } from "@/styles";
 import * as S from "./Lecture.style";
 //interfaces
 import { Service } from "@/domains";
 import { LectureCalendar, LectureDescription } from "./components";
 import {
   useGoogleSheetsContext,
-  useLecturesContext,
   useSanityApplicationsContext,
 } from "@/contexts";
 import Link from "next/link";
@@ -27,8 +26,8 @@ export const Lecture = (props: LectureProps) => {
     lectureType,
     pricingDocument,
   } = props;
-  const { getLectureSheetsByType } = useLecturesContext();
   const { lectureDaysTimesCapacity } = useSanityApplicationsContext();
+
   const { googleSheets } = useGoogleSheetsContext();
   console.log(
     "🚀 ~ file: Lecture.tsx:33 ~ Lecture ~ googleSheets:",
