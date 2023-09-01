@@ -19,7 +19,7 @@ export const DocumentSection = () => {
             </Text>
           </S.TextContainer>
           <S.GridContainer>
-            {documents.map((doc, index) => (
+            {documents?.map((doc, index) => (
               <Document
                 key={`${doc?.title}_${index}`}
                 title={doc?.title}

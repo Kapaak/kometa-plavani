@@ -25,9 +25,7 @@ const PrihlaskyPage: NextPage<Props> = ({ courses }) => {
 
 export default PrihlaskyPage;
 
-export const getServerSideProps = async (
-  pageContext: GetServerSidePropsContext<any>
-) => {
+export const getServerSideProps = async () => {
   const queryCourse = `*[_type == "course"]{pondeli[]{start,capacity},utery[]{start,capacity},streda[]{start,capacity},ctvrtek[]{start,capacity},patek[]{start,capacity},duration,price,title,value}`;
   const courses = await client.fetch(queryCourse);
 

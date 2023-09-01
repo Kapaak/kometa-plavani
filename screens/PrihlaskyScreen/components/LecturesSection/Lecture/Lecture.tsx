@@ -10,6 +10,7 @@ import {
 } from "@/contexts";
 import Link from "next/link";
 import { Button } from "@/shared";
+import { DUMMY_LECTURE_DAYS_TIMES_CAPACITY } from "constants/lecture";
 
 type LectureProps = Omit<Service, "id">;
 
@@ -26,7 +27,7 @@ export const Lecture = (props: LectureProps) => {
     lectureType,
     pricingDocument,
   } = props;
-  const { lectureDaysTimesCapacity } = useSanityApplicationsContext();
+  // const { lectureDaysTimesCapacity } = useSanityApplicationsContext();
 
   const { googleSheets } = useGoogleSheetsContext();
   console.log(
@@ -56,9 +57,11 @@ export const Lecture = (props: LectureProps) => {
               showSemesterSwitcher={
                 lectureType === "school" || lectureType === "kindergarden"
               }
-              times={lectureDaysTimesCapacity[lectureType]?.lectureTimes}
-              days={lectureDaysTimesCapacity[lectureType]?.lectureDays}
-              data={lectureDaysTimesCapacity[lectureType]?.lectures}
+              times={
+                DUMMY_LECTURE_DAYS_TIMES_CAPACITY[lectureType]?.lectureTimes
+              }
+              days={DUMMY_LECTURE_DAYS_TIMES_CAPACITY[lectureType]?.lectureDays}
+              data={DUMMY_LECTURE_DAYS_TIMES_CAPACITY[lectureType]?.lectures}
               capacity={googleSheets?.[lectureType]?.lectures}
             />
             <Link href={`/prihlasky/${url}`} passHref>

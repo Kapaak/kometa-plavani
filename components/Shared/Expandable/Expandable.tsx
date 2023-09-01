@@ -1,14 +1,15 @@
 import { ReactNode, useState } from "react";
 import * as S from "./Expandable.style";
-import { Icon as TIcon } from "@phosphor-icons/react";
 import { Flex } from "@/styles";
-import { DynamicPhosphorIcon, IconType, KeyofIcons } from "@/utils";
+
+import { getAvailableIconByName } from "@/utils";
+import { AvailableIcons } from "@/domains";
 
 interface FAQProps {
   title: string;
   subtitle?: string;
   description: ReactNode;
-  icon?: KeyofIcons;
+  icon?: AvailableIcons;
 }
 
 export const Expandable = ({
@@ -33,7 +34,7 @@ export const Expandable = ({
       </S.Expandable>
     );
 
-  const Icon = DynamicPhosphorIcon({ name: icon }) as IconType;
+  const Icon = getAvailableIconByName(icon);
 
   return (
     <S.Expandable>

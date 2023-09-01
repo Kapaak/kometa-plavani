@@ -2,7 +2,7 @@ import { StaticImageData } from "next/image";
 import { BaseSyntheticEvent } from "react";
 import { GoogleSpreadsheetRow } from "google-spreadsheet";
 import { PortableTextBlock } from "@portabletext/types";
-import { KeyofIcons } from "utils/functions";
+// import { KeyofIcons } from "utils/functions";
 
 export type PageData = {
   spreadsheetId: string;
@@ -272,7 +272,8 @@ export type SanityFaq = {
   title: string;
   faqItems: {
     title: string;
-    icon: KeyofIcons;
+    icon: any;
+    // icon: KeyofIcons;
     text: PortableTextBlock[];
   }[];
 };
@@ -366,3 +367,26 @@ export const convertAbbrToWeekDays = (day: DayAbbr): WeekDaysNew => {
       return "patek";
   }
 };
+
+export type AvailableIcons =
+  | "ClipboardText"
+  | "Coin"
+  | "Swap"
+  | "Checks"
+  | "CreditCard"
+  | "Money"
+  | "HandCoins"
+  | "TreePalm"
+  | "Backpack"
+  | "FirstAid"
+  | "Shuffle"
+  | "File"
+  | "Paperclip"
+  | "EnvelopeOpen"
+  | "SmileyXEyes"
+  | "Smiley"
+  | "MapPin"
+  | "HouseLine"
+  | "Boot"
+  | "CalendarCheck"
+  | "Archive";

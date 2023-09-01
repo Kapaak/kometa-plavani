@@ -7,6 +7,7 @@ import {
 } from "@/domains";
 import { useMemo } from "react";
 import _ from "lodash";
+import { DUMMY_LECTURE_DAYS_TIMES_CAPACITY } from "constants/lecture";
 
 const DAYS: WeekDaysNew[] = ["pondeli", "utery", "streda", "ctvrtek", "patek"];
 
@@ -101,24 +102,25 @@ const convertCourseToLectureCapacity = (course: SanityCourse, key: string) => {
 
 export const useSanityApplications = (courses: SanityCourse[]) => {
   const lectureDaysTimesCapacity = useMemo(() => {
-    let lectureDaysTimesCapacityObj: LectureDaysTimesCapacity = {};
-    courses.forEach((course) => {
-      const lectureDays = convertCourseToLectureDays(course, course.value);
-      const lectureTimes = convertCourseToLectureTimes(course, course.value);
-      const lectureCapacity = convertCourseToLectureCapacity(
-        course,
-        course.value
-      );
+    // let lectureDaysTimesCapacityObj: LectureDaysTimesCapacity = {};
+    // courses?.forEach((course) => {
+    //   const lectureDays = convertCourseToLectureDays(course, course.value);
+    //   const lectureTimes = convertCourseToLectureTimes(course, course.value);
+    //   const lectureCapacity = convertCourseToLectureCapacity(
+    //     course,
+    //     course.value
+    //   );
 
-      const merged = _.mergeWith(lectureDays, lectureTimes, lectureCapacity);
+    //   const merged = _.mergeWith(lectureDays, lectureTimes, lectureCapacity);
 
-      lectureDaysTimesCapacityObj = {
-        ...lectureDaysTimesCapacityObj,
-        ...merged,
-      };
-    });
+    //   lectureDaysTimesCapacityObj = {
+    //     ...lectureDaysTimesCapacityObj,
+    //     ...merged,
+    //   };
+    // });
 
-    return lectureDaysTimesCapacityObj;
+    // return lectureDaysTimesCapacityObj;
+    return DUMMY_LECTURE_DAYS_TIMES_CAPACITY;
   }, [courses]);
 
   return {
