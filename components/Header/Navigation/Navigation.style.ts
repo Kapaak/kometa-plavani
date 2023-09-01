@@ -21,8 +21,14 @@ export const Navigation = styled.nav<{ isActive: boolean }>`
 `;
 
 export const Flex = styled(SFlex)`
+  justify-content: end;
+  text-align: right;
+  padding-right: 3rem;
+
   @media (${dimensions.notebook}) {
     justify-content: flex-end;
     height: 100px;
+    padding-right: 0;
+    text-align: left;
   }
 `;
