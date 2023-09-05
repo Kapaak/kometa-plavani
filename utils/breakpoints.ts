@@ -5,8 +5,8 @@ const recalcToEm = (breakpoint: number) => {
 enum devices {
   tablet = 600,
   tabletX = 820,
-  notebook = 1024,
-  desktop = 1333,
+  notebook = 1023,
+  desktop = 1332,
   desktopX = 1500,
 }
 

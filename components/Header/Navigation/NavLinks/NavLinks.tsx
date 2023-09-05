@@ -9,8 +9,12 @@ import { NavLink as NavLinkType } from "@/domains";
 //redux
 import { RootState } from "@/redux/store";
 import { Button } from "@/components/Shared";
-import { Hidden } from "@/styles";
-
+import { Flex, Hidden } from "@/styles";
+import Link from "next/link";
+import Image from "next/image";
+//images
+import FacebookInvertIcon from "@/public/icons/facebook-invert.svg";
+import InstagramInvertIcon from "@/public/icons/instagram-invert.svg";
 interface Props {
   data: NavLinkType[];
 }
@@ -32,10 +36,30 @@ const NavItems = ({ data }: Props) => {
           {d.output}
         </NavLink>
       ))}
-      <Hidden down="notebook">
-        <NavLink href="/prihlasky">Přihlášky</NavLink>
+      <Hidden down="desktop">
+        <Flex direction="row" align="center" gap="2rem">
+          <Link href="https://www.facebook.com/primestakkometa">
+            <Image
+              src={FacebookInvertIcon}
+              width={30}
+              height={30}
+              alt="facebook"
+            />
+          </Link>
+          <Link href="https://www.instagram.com/primestakbrno">
+            <Image
+              src={InstagramInvertIcon}
+              width={30}
+              height={30}
+              alt="instagram"
+            />
+          </Link>
+        </Flex>
       </Hidden>
       <Hidden up="notebook">
+        <NavLink href="/prihlasky">Přihlášky</NavLink>
+      </Hidden>
+      <Hidden down="notebook">
         <NavLink href="/prihlasky">
           <Button variant="filled" size="small">
             Přihlášky
