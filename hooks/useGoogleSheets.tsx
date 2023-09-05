@@ -1,4 +1,4 @@
-import { useEffect, useState } from "react";
+import { useEffect, useReducer, useState } from "react";
 import {
   GoogleSheetRowType,
   GoogleSheets,
@@ -11,9 +11,25 @@ import {
   convertGoogleSheetRowData,
 } from "@/utils";
 
+type LoadingState = {
+  isLoading: boolean;
+  isError: boolean;
+};
+
 export const useGoogleSheets = () => {
   const [googleSheets, setGoogleSheets] = useState<GoogleSheets>();
   const [rawValues, setRawValues] = useState<Array<any>>([]);
+
+  const [state, dispatch] = useReducer(
+    (state: LoadingState, newState: Partial<LoadingState>) => ({
+      ...state,
+      ...newState,
+    }),
+    {
+      isLoading: true,
+      isError: false,
+    }
+  );
 
   useEffect(() => {
     (async () => {
@@ -33,7 +49,8 @@ export const useGoogleSheets = () => {
             );
             setRawValues(sheetValue);
           })
-          .catch((e) => console.log("promise error", e));
+          .catch(() => dispatch({ isError: true }))
+          .finally(() => dispatch({ isLoading: false }));
     })();
   }, []);
 
@@ -66,5 +83,7 @@ export const useGoogleSheets = () => {
 
   return {
     googleSheets,
+    isLoading: state.isLoading,
+    isError: state.isError,
   };
 };
