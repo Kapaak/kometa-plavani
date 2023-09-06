@@ -37,20 +37,25 @@ const NavItems = ({ data }: Props) => {
         </NavLink>
       ))}
       <Hidden down="desktop">
-        <Flex direction="row" align="center" gap="2rem">
-          <Link href="https://www.facebook.com/primestakkometa">
+        <Flex
+          direction="row"
+          align="center"
+          gap="3rem"
+          style={{ marginTop: ".7rem" }}
+        >
+          <Link href="https://www.facebook.com/kometaplavani">
             <Image
               src={FacebookInvertIcon}
-              width={30}
-              height={30}
+              width={22}
+              height={22}
               alt="facebook"
             />
           </Link>
-          <Link href="https://www.instagram.com/primestakbrno">
+          <Link href="https://www.instagram.com/kometaplavani">
             <Image
               src={InstagramInvertIcon}
-              width={30}
-              height={30}
+              width={22}
+              height={22}
               alt="instagram"
             />
           </Link>
