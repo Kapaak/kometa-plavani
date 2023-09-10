@@ -45,6 +45,7 @@ export const Headline = styled.h2`
 `;
 
 export const LectureCalendar = styled(Flex)`
+  position: relative;
   height: 100%;
 `;
 
@@ -52,7 +53,7 @@ export const LectureSemesterButton = styled.button<{ visible: boolean }>`
   cursor: pointer;
   border: none;
   background: none;
-  visibility: ${({ visible }) => (visible ? "visible" : "hidden")};
+  visibility: ${({ visible }) => (visible ? "inherit" : "hidden")};
 `;
 
 export const LectureCalendarTimesGrid = styled.div<{ padding?: string }>`
@@ -103,4 +104,13 @@ export const PaddingWrapper = styled.div<{ padding?: string }>`
   @media (${dimensions.desktop}) {
     padding: ${({ padding }) => padding || "0"};
   }
+`;
+
+export const AbsoluteFlex = styled(Flex)`
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  translate: -50% -30%;
+  align-items: center;
+  justify-content: center;
 `;

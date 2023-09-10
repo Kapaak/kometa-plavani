@@ -11,7 +11,7 @@ import {
 } from "@/domains";
 
 import Loader from "react-spinners/HashLoader";
-import { Danger, Flex, Space, Text } from "@/styles";
+import { Danger, Hidden, Space, Text } from "@/styles";
 import { X } from "@phosphor-icons/react";
 
 interface LectureCalendarProps {
@@ -34,18 +34,17 @@ export const LectureCalendar = ({
   isError,
 }: LectureCalendarProps) => {
   const [selectedSemester, setSelectedSemester] = useState<1 | 2>(1);
-
   return (
     <S.LectureCalendar>
       {!isLoading && isError && (
-        <Flex justify="center" align="center">
+        <S.AbsoluteFlex justify="center" align="center">
           <X size={40} color="var(--colr)" weight="bold" />
           <Space />
           <Danger>Došlo k chybě, zkuste stránku načíst znova</Danger>
-        </Flex>
+        </S.AbsoluteFlex>
       )}
       {isLoading && (
-        <Flex align="center" justify="center">
+        <S.AbsoluteFlex>
           <Loader
             size={60}
             color="var(--col2)"
@@ -55,28 +54,29 @@ export const LectureCalendar = ({
             }}
           />
           <Space />
-          <Text bold>Načítám data o obsazenosti</Text>
-        </Flex>
+          <Text bold center>
+            Načítám data o obsazenosti
+          </Text>
+        </S.AbsoluteFlex>
       )}
-      {!isLoading && !isError && (
-        <div>
-          {showSemesterSwitcher && (
-            <LectureSemester
-              selectedSemester={selectedSemester}
-              onPrev={() => setSelectedSemester(1)}
-              onNext={() => setSelectedSemester(2)}
-            />
-          )}
-          <LectureCalendarTimes lectureTimes={times} />
-          <LectureCalendarData
-            selectedSemester={showSemesterSwitcher ? selectedSemester : 1}
-            lectureTimes={times}
-            lectureDays={days}
-            calendarData={data}
-            capacity={capacity}
+
+      <Hidden isHidden={isLoading || isError}>
+        {showSemesterSwitcher && (
+          <LectureSemester
+            selectedSemester={selectedSemester}
+            onPrev={() => setSelectedSemester(1)}
+            onNext={() => setSelectedSemester(2)}
           />
-        </div>
-      )}
+        )}
+        <LectureCalendarTimes lectureTimes={times} />
+        <LectureCalendarData
+          selectedSemester={showSemesterSwitcher ? selectedSemester : 1}
+          lectureTimes={times}
+          lectureDays={days}
+          calendarData={data}
+          capacity={capacity}
+        />
+      </Hidden>
     </S.LectureCalendar>
   );
 };

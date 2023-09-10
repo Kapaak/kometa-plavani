@@ -1,5 +1,5 @@
 //styles
-import { Flex } from "@/styles";
+import { Flex, Hidden } from "@/styles";
 import * as S from "./Lecture.style";
 //interfaces
 import { Service } from "@/domains";
@@ -60,11 +60,11 @@ export const Lecture = (props: LectureProps) => {
               data={lectureDaysTimesCapacity?.[lectureType]?.lectures}
               capacity={googleSheets?.[lectureType]?.lectures}
             />
-            {!isLoading && !isError && (
+            <Hidden isHidden={isLoading || isError}>
               <Link href={`/prihlasky/${url}`} passHref>
                 <Button variant="filled">poslat přihlášku</Button>
               </Link>
-            )}
+            </Hidden>
           </Flex>
         </S.PaddingWrapper>
         <S.DesktopImageContainer>

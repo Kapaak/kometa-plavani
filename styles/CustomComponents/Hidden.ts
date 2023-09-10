@@ -4,10 +4,19 @@ import { dimensions, maxDimensions } from "@/utils";
 type HiddenProps = {
   down?: keyof typeof dimensions;
   up?: keyof typeof dimensions;
+  isHidden?: boolean;
 };
 
 export const Hidden = styled.div<HiddenProps>`
   display: block;
+
+  ${({ isHidden }) => {
+    if (isHidden) {
+      return "visibility: hidden;";
+    }
+    return "visibility: visible;";
+  }}
+
   ${({ down }) => {
     switch (down) {
       case "tablet":
