@@ -9,12 +9,16 @@ import { NavLink as NavLinkType } from "@/domains";
 //redux
 import { RootState } from "@/redux/store";
 import { Button } from "@/components/Shared";
+import { Hidden } from "@/styles";
+import { FacebookLogo, InstagramLogo } from "@phosphor-icons/react";
+
 import { Flex, Hidden } from "@/styles";
 import Link from "next/link";
 import Image from "next/image";
 //images
 import FacebookInvertIcon from "@/public/icons/facebook-invert.svg";
 import InstagramInvertIcon from "@/public/icons/instagram-invert.svg";
+
 interface Props {
   data: NavLinkType[];
 }
@@ -36,6 +40,9 @@ const NavItems = ({ data }: Props) => {
           {d.output}
         </NavLink>
       ))}
+      <Hidden up="notebook">
+        <NavLink href="/prihlasky">Přihlášky</NavLink>
+      </Hidden>
       <Hidden down="desktop">
         <Flex
           direction="row"

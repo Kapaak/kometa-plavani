@@ -58,6 +58,10 @@ export const GlobalStyles = createGlobalStyle`
         color:var(--colb);
     }
 
+    strong{
+        font-weight: 500;
+    }
+
     @media(${dimensions.tablet}){
         :root{
             --side-padding:6rem;

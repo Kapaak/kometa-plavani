@@ -1,4 +1,9 @@
-import { PageRouteTranslation } from "@/domains";
+import {
+  DayAbbr,
+  GoogleSheetDayTime,
+  PageRouteTranslation,
+  convertAbbrToWeekDays,
+} from "@/domains";
 import { scroller } from "react-scroll";
 
 export const scrollTo = (destination: string) => {
@@ -26,7 +31,7 @@ export const getDayAndTimeFromString = (dayTime?: string) => {
 
   const [day, time] = dayTime.split("_");
 
-  return { day, time };
+  return { day: convertAbbrToWeekDays(day as DayAbbr), time };
 };
 
 export const getSemesterNumberFromString = (
@@ -46,4 +51,61 @@ export const getPageRouteTranslation = (pageRoute: string) => {
     case "/prihlasky":
       return PageRouteTranslation.APPLICATIONS;
   }
+};
+
+export const convertGoogleSheetRowData = (sheet: any) => {
+  //every entry in the sheet can have multiple days of swimming
+  const multipleDays = sheet["Den a čas"]?.split(",");
+
+  return multipleDays?.map((dayAndTime: string) => {
+    const { day, time } = getDayAndTimeFromString(dayAndTime);
+
+    if (!day || !time) return;
+
+    const semesterNumber = getSemesterNumberFromString(sheet["Pololetí"]) ?? 1;
+    const aplications = Number(sheet["Počet dětí"]) || 1;
+
+    return {
+      day: day,
+      time: Number(time),
+      semesterNumber,
+      aplications,
+    };
+  });
+};
+
+export const calculateGoogleSheetRowApplications = (
+  googleSheets: {
+    day: string;
+    time: number;
+    semesterNumber: number;
+    aplications: number;
+  }[]
+) => {
+  let calculatedAplications: GoogleSheetDayTime = {};
+
+  googleSheets.forEach((sheet) => {
+    const obj = {
+      [sheet.day]: {
+        ...calculatedAplications?.[sheet.day],
+        [sheet.time]: {
+          ...calculatedAplications?.[sheet.day]?.[sheet.time],
+          [sheet.semesterNumber]: {
+            aplications:
+              sheet.aplications +
+              (calculatedAplications?.[sheet.day]?.[sheet.time]?.[
+                sheet.semesterNumber
+              ]?.aplications ?? 0),
+          },
+        },
+      },
+    };
+
+    calculatedAplications = {
+      ...calculatedAplications,
+      ...obj,
+    };
+  });
+
+  return calculatedAplications;
 };

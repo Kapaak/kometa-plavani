@@ -1,534 +1,520 @@
-import { LectureValue, WeekDays } from "@/domains";
+import { LectureDaysTimesCapacity, WeekDays } from "@/domains";
 
-//kazda hodnota ve dni je zdvojena, protoze 0 je 1. pololetí a 1 je 2. pololetí
-export const LECTURE_DATA: LectureValue = {
+//BACKUP DATA IF SANITY FUCKS UP
+export const DUMMY_LECTURE_DAYS_TIMES_CAPACITY: LectureDaysTimesCapacity = {
   kindergarden: {
+    lectureDays: ["pondeli", "patek"],
     lectureTimes: [
       {
-        id: "9",
+        id: 9,
         from: "9:00",
         to: "10:00",
       },
       {
-        id: "10",
+        id: 10,
         from: "10:00",
         to: "11:00",
       },
     ],
-    lectureDays: ["po", "pa"],
     lectures: {
-      po: {
-        9: [
-          {
-            lectureTimeId: "9",
+      pondeli: {
+        9: {
+          1: {
+            lectureTimeId: 9,
             max: 30,
             aplications: 0,
           },
-          {
-            lectureTimeId: "9",
+          2: {
+            lectureTimeId: 9,
             max: 30,
             aplications: 0,
           },
-        ],
-        10: [
-          {
-            lectureTimeId: "10",
+        },
+        10: {
+          1: {
+            lectureTimeId: 10,
             max: 30,
             aplications: 0,
           },
-          // {
-          //   lectureTimeId: "10",
-          //   max: 30,
-          //   aplications: 0,
-          // },
-        ],
+          2: {
+            lectureTimeId: 10,
+            max: 30,
+            aplications: 0,
+          },
+        },
       },
-      pa: {
-        9: [
-          {
-            lectureTimeId: "9",
+      patek: {
+        9: {
+          1: {
+            lectureTimeId: 9,
             max: 30,
             aplications: 0,
           },
-          {
-            lectureTimeId: "9",
+          2: {
+            lectureTimeId: 9,
             max: 30,
             aplications: 0,
           },
-        ],
-        10: [
-          {
-            lectureTimeId: "10",
+        },
+        10: {
+          1: {
+            lectureTimeId: 10,
             max: 30,
             aplications: 0,
           },
-          // {
-          //   lectureTimeId: "10",
-          //   max: 30,
-          //   aplications: 0,
-          // },
-        ],
+          2: {
+            lectureTimeId: 10,
+            max: 30,
+            aplications: 0,
+          },
+        },
       },
     },
   },
   school: {
+    lectureDays: ["pondeli", "utery", "streda", "ctvrtek", "patek"],
     lectureTimes: [
       {
-        id: "9",
+        id: 9,
         from: "9:00",
         to: "10:00",
       },
       {
-        id: "10",
+        id: 10,
         from: "10:00",
         to: "11:00",
       },
     ],
-    lectureDays: ["po", "ut", "st", "ct", "pa"], //tohle bych si umel dokazat vytahnout z lectures, kdyz data dostanu ze sanity, to stejny ty data nad
     lectures: {
-      po: {
-        //array z toho duvodu, ze v prvnim indexu je 1. semestr a v druhem 2. semestr
-        //defaultne u vsech ostatnich budu vzdy pouzivat [0], abych mohl met vsude stejnej format
-        9: [
-          {
-            lectureTimeId: "9",
+      pondeli: {
+        9: {
+          1: {
+            lectureTimeId: 9,
             max: 30,
             aplications: 0,
           },
-          {
-            lectureTimeId: "9",
+          2: {
+            lectureTimeId: 9,
             max: 30,
             aplications: 0,
           },
-        ],
-        10: [
-          {
-            lectureTimeId: "10",
+        },
+        10: {
+          1: {
+            lectureTimeId: 10,
             max: 30,
             aplications: 0,
           },
-          {
-            lectureTimeId: "10",
+          2: {
+            lectureTimeId: 10,
             max: 30,
             aplications: 0,
           },
-        ],
+        },
       },
-      ut: {
-        9: [
-          {
-            lectureTimeId: "9",
+      utery: {
+        9: {
+          1: {
+            lectureTimeId: 9,
             max: 30,
             aplications: 0,
           },
-          {
-            lectureTimeId: "9",
+          2: {
+            lectureTimeId: 9,
             max: 30,
             aplications: 0,
           },
-        ],
-        10: [
-          {
-            lectureTimeId: "10",
+        },
+        10: {
+          1: {
+            lectureTimeId: 10,
             max: 30,
             aplications: 0,
           },
-          {
-            lectureTimeId: "10",
+          2: {
+            lectureTimeId: 10,
             max: 30,
             aplications: 0,
           },
-        ],
+        },
       },
-      st: {
-        9: [
-          {
-            lectureTimeId: "9",
+      streda: {
+        9: {
+          1: {
+            lectureTimeId: 9,
             max: 30,
             aplications: 0,
           },
-          {
-            lectureTimeId: "9",
+          2: {
+            lectureTimeId: 9,
             max: 30,
             aplications: 0,
           },
-        ],
-        10: [
-          {
-            lectureTimeId: "10",
+        },
+        10: {
+          1: {
+            lectureTimeId: 10,
             max: 30,
             aplications: 0,
           },
-          {
-            lectureTimeId: "10",
+          2: {
+            lectureTimeId: 10,
             max: 30,
             aplications: 0,
           },
-        ],
+        },
       },
-      ct: {
-        9: [
-          {
-            lectureTimeId: "9",
+      ctvrtek: {
+        9: {
+          1: {
+            lectureTimeId: 9,
             max: 30,
             aplications: 0,
           },
-          {
-            lectureTimeId: "9",
+          2: {
+            lectureTimeId: 9,
             max: 30,
             aplications: 0,
           },
-        ],
-        10: [
-          {
-            lectureTimeId: "10",
+        },
+        10: {
+          1: {
+            lectureTimeId: 10,
             max: 30,
             aplications: 0,
           },
-          {
-            lectureTimeId: "10",
+          2: {
+            lectureTimeId: 10,
             max: 30,
             aplications: 0,
           },
-        ],
+        },
       },
-      pa: {
-        9: [
-          {
-            lectureTimeId: "9",
+      patek: {
+        9: {
+          1: {
+            lectureTimeId: 9,
             max: 30,
             aplications: 0,
           },
-          {
-            lectureTimeId: "9",
+          2: {
+            lectureTimeId: 9,
             max: 30,
             aplications: 0,
           },
-        ],
-        10: [
-          {
-            lectureTimeId: "10",
+        },
+        10: {
+          1: {
+            lectureTimeId: 10,
             max: 30,
             aplications: 0,
           },
-          {
-            lectureTimeId: "10",
+          2: {
+            lectureTimeId: 10,
             max: 30,
             aplications: 0,
           },
-        ],
+        },
       },
     },
   },
   basic: {
+    lectureDays: ["pondeli", "utery", "streda", "ctvrtek", "patek"],
     lectureTimes: [
       {
-        id: "15",
+        id: 15,
         from: "15:00",
         to: "16:00",
       },
       {
-        id: "16",
+        id: 16,
         from: "16:00",
         to: "17:00",
       },
       {
-        id: "17",
+        id: 17,
         from: "17:00",
         to: "18:00",
       },
     ],
-    lectureDays: ["po", "ut", "st", "ct", "pa"],
     lectures: {
-      po: {
-        15: [
-          {
-            lectureTimeId: "15",
+      pondeli: {
+        15: {
+          1: {
+            lectureTimeId: 15,
             max: 30,
             aplications: 0,
           },
-          {
-            lectureTimeId: "15",
+          2: {
+            lectureTimeId: 15,
             max: 30,
             aplications: 0,
           },
-        ],
+        },
       },
-      ut: {
-        15: [
-          {
-            lectureTimeId: "15",
+      utery: {
+        15: {
+          1: {
+            lectureTimeId: 15,
             max: 30,
             aplications: 0,
           },
-          {
-            lectureTimeId: "15",
+          2: {
+            lectureTimeId: 15,
             max: 30,
             aplications: 0,
           },
-        ],
-        16: [
-          {
-            lectureTimeId: "16",
+        },
+        16: {
+          1: {
+            lectureTimeId: 16,
             max: 30,
             aplications: 0,
           },
-          {
-            lectureTimeId: "16",
+          2: {
+            lectureTimeId: 16,
             max: 30,
             aplications: 0,
           },
-        ],
+        },
       },
-      st: {
-        15: [
-          {
-            lectureTimeId: "15",
+      streda: {
+        15: {
+          1: {
+            lectureTimeId: 15,
             max: 30,
             aplications: 0,
           },
-          {
-            lectureTimeId: "15",
+          2: {
+            lectureTimeId: 15,
             max: 30,
             aplications: 0,
           },
-        ],
+        },
       },
-      ct: {
-        15: [
-          {
-            lectureTimeId: "15",
+      ctvrtek: {
+        15: {
+          1: {
+            lectureTimeId: 15,
             max: 30,
             aplications: 0,
           },
-          {
-            lectureTimeId: "15",
+          2: {
+            lectureTimeId: 15,
             max: 30,
             aplications: 0,
           },
-        ],
-        17: [
-          {
-            lectureTimeId: "17",
+        },
+        17: {
+          1: {
+            lectureTimeId: 17,
             max: 30,
             aplications: 0,
           },
-          {
-            lectureTimeId: "17",
+          2: {
+            lectureTimeId: 17,
             max: 30,
             aplications: 0,
           },
-        ],
+        },
       },
-      pa: {
-        15: [
-          {
-            lectureTimeId: "15",
+      patek: {
+        16: {
+          1: {
+            lectureTimeId: 16,
             max: 30,
             aplications: 0,
           },
-          {
-            lectureTimeId: "15",
+          2: {
+            lectureTimeId: 16,
             max: 30,
             aplications: 0,
           },
-        ],
-        16: [
-          {
-            lectureTimeId: "16",
+        },
+        17: {
+          1: {
+            lectureTimeId: 17,
             max: 30,
             aplications: 0,
           },
-          {
-            lectureTimeId: "16",
+          2: {
+            lectureTimeId: 17,
             max: 30,
             aplications: 0,
           },
-        ],
-        17: [
-          {
-            lectureTimeId: "17",
-            max: 30,
-            aplications: 0,
-          },
-          {
-            lectureTimeId: "17",
-            max: 30,
-            aplications: 0,
-          },
-        ],
+        },
       },
     },
   },
   advanced: {
+    lectureDays: ["pondeli", "streda", "patek"],
     lectureTimes: [
       {
-        id: "15",
+        id: 15,
         from: "15:00",
         to: "16:00",
       },
       {
-        id: "16",
+        id: 16,
         from: "16:00",
         to: "17:00",
       },
       {
-        id: "17",
+        id: 17,
         from: "17:00",
         to: "18:00",
       },
     ],
-    lectureDays: ["po", "st", "pa"],
     lectures: {
-      po: {
-        15: [
-          {
-            lectureTimeId: "15",
+      pondeli: {
+        15: {
+          1: {
+            lectureTimeId: 15,
             max: 15,
             aplications: 0,
           },
-        ],
+        },
       },
-      st: {
-        15: [
-          {
-            lectureTimeId: "15",
+      streda: {
+        15: {
+          1: {
+            lectureTimeId: 15,
             max: 15,
             aplications: 0,
           },
-        ],
+        },
       },
-      pa: {
-        16: [
-          {
-            lectureTimeId: "16",
+      patek: {
+        16: {
+          1: {
+            lectureTimeId: 16,
             max: 15,
             aplications: 0,
           },
-        ],
-        17: [
-          {
-            lectureTimeId: "17",
+        },
+        17: {
+          1: {
+            lectureTimeId: 17,
             max: 15,
             aplications: 0,
           },
-        ],
+        },
       },
     },
   },
   condition: {
+    lectureDays: ["pondeli", "utery", "streda", "ctvrtek", "patek"],
     lectureTimes: [
       {
-        id: "15",
+        id: 15,
         from: "15:00",
         to: "16:00",
       },
       {
-        id: "16",
+        id: 16,
         from: "16:00",
         to: "17:00",
       },
       {
-        id: "17",
+        id: 17,
         from: "17:00",
         to: "18:00",
       },
     ],
-    lectureDays: ["po", "ut", "st", "ct", "pa"],
     lectures: {
-      po: {
-        15: [
-          {
-            lectureTimeId: "15",
+      pondeli: {
+        15: {
+          1: {
+            lectureTimeId: 15,
             max: 45,
             aplications: 0,
           },
-        ],
-        16: [
-          {
-            lectureTimeId: "16",
+        },
+        16: {
+          1: {
+            lectureTimeId: 16,
             max: 15,
             aplications: 0,
           },
-        ],
-        17: [
-          {
-            lectureTimeId: "17",
+        },
+        17: {
+          1: {
+            lectureTimeId: 17,
             max: 15,
             aplications: 0,
           },
-        ],
+        },
       },
-      ut: {
-        16: [
-          {
-            lectureTimeId: "16",
+      utery: {
+        16: {
+          1: {
+            lectureTimeId: 16,
             max: 15,
             aplications: 0,
           },
-        ],
-        17: [
-          {
-            lectureTimeId: "17",
+        },
+        17: {
+          1: {
+            lectureTimeId: 17,
             max: 15,
             aplications: 0,
           },
-        ],
+        },
       },
-      st: {
-        15: [
-          {
-            lectureTimeId: "15",
+      streda: {
+        15: {
+          1: {
+            lectureTimeId: 15,
             max: 45,
             aplications: 0,
           },
-        ],
+        },
       },
-      ct: {
-        15: [
-          {
-            lectureTimeId: "15",
+      ctvrtek: {
+        15: {
+          1: {
+            lectureTimeId: 15,
             max: 30,
             aplications: 0,
           },
-        ],
-        16: [
-          {
-            lectureTimeId: "16",
+        },
+        16: {
+          1: {
+            lectureTimeId: 16,
             max: 30,
             aplications: 0,
           },
-        ],
-        17: [
-          {
-            lectureTimeId: "17",
+        },
+        17: {
+          1: {
+            lectureTimeId: 17,
             max: 30,
             aplications: 0,
           },
-        ],
+        },
       },
-      pa: {
-        15: [
-          {
-            lectureTimeId: "15",
+      patek: {
+        15: {
+          1: {
+            lectureTimeId: 15,
             max: 15,
             aplications: 0,
           },
-        ],
-        16: [
-          {
-            lectureTimeId: "16",
+        },
+        16: {
+          1: {
+            lectureTimeId: 16,
             max: 45,
             aplications: 0,
           },
-        ],
-        17: [
-          {
-            lectureTimeId: "17",
+        },
+        17: {
+          1: {
+            lectureTimeId: 17,
             max: 15,
             aplications: 0,
           },
-        ],
+        },
       },
     },
   },

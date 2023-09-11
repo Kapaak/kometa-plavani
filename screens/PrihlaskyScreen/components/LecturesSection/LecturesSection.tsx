@@ -40,7 +40,7 @@ export const LecturesSection = () => {
           url={d?.url}
           price={d?.price}
           time={d?.time}
-          lectureType={d?.lectureType}
+          lectureType={d.lectureType}
           pricingDocument={d?.pricingDocument}
         />
       ))}
