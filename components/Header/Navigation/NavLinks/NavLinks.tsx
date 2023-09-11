@@ -66,9 +66,6 @@ const NavItems = ({ data }: Props) => {
           </Link>
         </Flex>
       </Hidden>
-      <Hidden up="notebook">
-        <NavLink href="/prihlasky">Přihlášky</NavLink>
-      </Hidden>
       <Hidden down="notebook">
         <NavLink href="/prihlasky">
           <Button variant="filled" size="small">
