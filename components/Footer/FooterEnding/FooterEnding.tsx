@@ -16,7 +16,7 @@ const FooterEnding = () => {
         <Link href="https://www.youtube.com/KometaSwimTv">
           <Image src={YoutubeIcon} width={30} height={30} alt="youtube" />
         </Link>
-        <Link href="https://instagram.com/kometaplavani">
+        <Link href="https://www.instagram.com/kometaplavani">
           <Image src={InstagramIcon} width={30} height={30} alt="instagram" />
         </Link>
         <Link href="https://www.facebook.com/kometaplavani">
