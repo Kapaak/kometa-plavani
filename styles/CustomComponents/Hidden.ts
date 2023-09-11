@@ -17,8 +17,8 @@ export const Hidden = styled.div<HiddenProps>`
     return "visibility: visible;";
   }}
 
-  ${({ down }) => {
-    switch (down) {
+  ${({ up }) => {
+    switch (up) {
       case "tablet":
         return `@media (${dimensions.tablet}) { display: none; }`;
       case "tabletX":
@@ -34,8 +34,8 @@ export const Hidden = styled.div<HiddenProps>`
     }
   }}
 
-  ${({ up }) => {
-    switch (up) {
+  ${({ down }) => {
+    switch (down) {
       case "tablet":
         return `@media (${maxDimensions.tablet}) { display: none; }`;
       case "tabletX":

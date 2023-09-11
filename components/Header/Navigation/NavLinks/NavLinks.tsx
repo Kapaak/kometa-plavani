@@ -33,10 +33,10 @@ const NavItems = ({ data }: Props) => {
           {d.output}
         </NavLink>
       ))}
-      <Hidden down="notebook">
+      <Hidden up="notebook">
         <NavLink href="/prihlasky">Přihlášky</NavLink>
       </Hidden>
-      <Hidden up="notebook">
+      <Hidden down="notebook">
         <NavLink href="/prihlasky">
           <Button variant="filled" size="small">
             Přihlášky
