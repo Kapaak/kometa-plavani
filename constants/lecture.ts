@@ -727,6 +727,7 @@ export const LECTURE_OPTIONS = {
     {
       label: WeekDays.PA,
       options: [
+        { label: "15:00 - 16:00", value: "pa_15" },
         { label: "16:00 - 17:00", value: "pa_16" },
         { label: "17:00 - 18:00", value: "pa_17" },
       ],
@@ -754,16 +755,12 @@ export const LECTURE_OPTIONS = {
       label: WeekDays.PO,
       options: [
         { label: "15:00 - 16:00", value: "po_15" },
-        { label: "16:00 - 17:00", value: "po_16" },
         { label: "17:00 - 18:00", value: "po_17" },
       ],
     },
     {
       label: WeekDays.UT,
-      options: [
-        { label: "16:00 - 17:00", value: "ut_16" },
-        { label: "17:00 - 18:00", value: "ut_17" },
-      ],
+      options: [{ label: "16:00 - 17:00", value: "ut_16" }],
     },
     {
       label: WeekDays.ST,
