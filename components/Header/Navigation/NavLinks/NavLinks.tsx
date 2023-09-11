@@ -9,8 +9,6 @@ import { NavLink as NavLinkType } from "@/domains";
 //redux
 import { RootState } from "@/redux/store";
 import { Button } from "@/components/Shared";
-import { Hidden } from "@/styles";
-import { FacebookLogo, InstagramLogo } from "@phosphor-icons/react";
 
 import { Flex, Hidden } from "@/styles";
 import Link from "next/link";

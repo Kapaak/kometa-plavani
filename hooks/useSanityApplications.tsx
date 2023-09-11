@@ -49,11 +49,19 @@ const convertCourseToLectureTimes = (course: SanityCourse, key: string) => {
 
   const filteredAvailableDays = availableDays?.filter((day) => !_.isEmpty(day));
 
-  const removeDuplicates = _.uniqBy(filteredAvailableDays.flat(), "id");
+  const availableDaysWithoutDuplicates = _.uniqBy(
+    filteredAvailableDays.flat(),
+    "id"
+  );
+
+  const sortedAvailableDays = _.sortBy(
+    availableDaysWithoutDuplicates,
+    (o) => o?.id
+  );
 
   return {
     [key]: {
-      lectureTimes: removeDuplicates,
+      lectureTimes: sortedAvailableDays,
     },
   };
 };
@@ -102,25 +110,30 @@ const convertCourseToLectureCapacity = (course: SanityCourse, key: string) => {
 
 export const useSanityApplications = (courses: SanityCourse[]) => {
   const lectureDaysTimesCapacity = useMemo(() => {
-    // let lectureDaysTimesCapacityObj: LectureDaysTimesCapacity = {};
-    // courses?.forEach((course) => {
-    //   const lectureDays = convertCourseToLectureDays(course, course.value);
-    //   const lectureTimes = convertCourseToLectureTimes(course, course.value);
-    //   const lectureCapacity = convertCourseToLectureCapacity(
-    //     course,
-    //     course.value
-    //   );
+    let lectureDaysTimesCapacityObj: LectureDaysTimesCapacity = {};
+    courses?.forEach((course) => {
+      const lectureDays = convertCourseToLectureDays(course, course.value);
+      const lectureTimes = convertCourseToLectureTimes(course, course.value);
+      const lectureCapacity = convertCourseToLectureCapacity(
+        course,
+        course.value
+      );
 
-    //   const merged = _.mergeWith(lectureDays, lectureTimes, lectureCapacity);
+      const merged = _.mergeWith(lectureDays, lectureTimes, lectureCapacity);
 
-    //   lectureDaysTimesCapacityObj = {
-    //     ...lectureDaysTimesCapacityObj,
-    //     ...merged,
-    //   };
-    // });
+      lectureDaysTimesCapacityObj = {
+        ...lectureDaysTimesCapacityObj,
+        ...merged,
+      };
+    });
+    console.log(
+      "🚀 ~ file: useSanityApplications.tsx:123 ~ lectureDaysTimesCapacity ~ lectureDaysTimesCapacityObj:",
+      lectureDaysTimesCapacityObj
+    );
 
-    // return lectureDaysTimesCapacityObj;
-    return DUMMY_LECTURE_DAYS_TIMES_CAPACITY;
+    return lectureDaysTimesCapacityObj;
+    // if something goes wrong use this manual setup
+    // return DUMMY_LECTURE_DAYS_TIMES_CAPACITY;
   }, [courses]);
 
   return {

@@ -10,7 +10,6 @@ import {
 } from "@/contexts";
 import Link from "next/link";
 import { Button } from "@/shared";
-// import { DUMMY_LECTURE_DAYS_TIMES_CAPACITY } from "constants/lecture";
 
 type LectureProps = Omit<Service, "id">;
 
@@ -31,7 +30,6 @@ export const Lecture = (props: LectureProps) => {
 
   const { googleSheets, isLoading, isError } = useGoogleSheetsContext();
 
-  //todo pak predelat tu funkci na hodnotu
   if (!lectureType) return null;
 
   return (
