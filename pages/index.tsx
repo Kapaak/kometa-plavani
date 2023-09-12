@@ -24,9 +24,9 @@ const HomePage: NextPage<Props> = ({ actualities, faqs, documents }) => {
 export default HomePage;
 
 export const getServerSideProps = async () => {
-  const queryActualities = `*[_type == "home" && visibility == true]{text,title}|order(order asc)`;
+  const queryActualities = `*[_type == "home" && visibility == true]{text,order,title}|order(order asc)`;
   const queryFAQ = `*[_type == "faq"]{title,order,faqItems[]{icon,text,title}}|order(order asc)`;
-  const queryDocument = `*[_type == "uploadFile"]{title,file{asset->{url}}}|order(order asc)`;
+  const queryDocument = `*[_type == "uploadFile"]{title,order,file{asset->{url}}}|order(order asc)`;
 
   const actualities: SanityActuality[] = await client.fetch(queryActualities);
   const faqs: SanityFaq[] = await client.fetch(queryFAQ);
