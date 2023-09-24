@@ -22,10 +22,10 @@ function MyApp({ Component, pageProps }: AppProps) {
         gaMeasurementId={process.env.NEXT_PUBLIC_GOOGLE_ANALYTICS}
       />
       <GlobalStyles />
-      <Header />
+      {/* <Header /> */}
       <HeadSelector />
       <Component {...pageProps} />
-      <Footer />
+      {/* <Footer /> */}
     </Provider>
   );
 }

@@ -9,8 +9,14 @@ import Logo from "./Logo/Logo";
 //redux
 import { RootState } from "@/redux/store";
 import { Flex } from "@/styles";
+import { DiscountLabel } from "../DiscountLabel";
+import { SanityInfoBar } from "@/domains";
 
-const Header = () => {
+interface HeaderProps {
+  infoBar?: SanityInfoBar;
+}
+
+const Header = ({ infoBar }: HeaderProps) => {
   const isActive = useSelector(
     (state: RootState) => state.navigation.isNavActive
   );
@@ -21,6 +27,9 @@ const Header = () => {
 
   return (
     <S.Header withShadow={withShadow}>
+      {infoBar && (
+        <DiscountLabel title={infoBar?.title} description={infoBar?.text} />
+      )}
       <S.MaxWidth>
         <Flex direction="row" align="center" justify="space-between">
           <Logo />

@@ -2,6 +2,7 @@
 import { Course, PageData } from "@/domains";
 import { GetStaticPropsContext, NextPage } from "next";
 import { PrihlaskyNameScreen, prihlaskyNameData } from "@/screens";
+import { PageLayout } from "@/components/PageLayout";
 
 interface CoursePageProps {
   pageData: PageData;
@@ -9,9 +10,9 @@ interface CoursePageProps {
 
 const CoursePage: NextPage<CoursePageProps> = ({ pageData }) => {
   return (
-    <main>
+    <PageLayout>
       <PrihlaskyNameScreen pageData={pageData} />
-    </main>
+    </PageLayout>
   );
 };
 

@@ -7,6 +7,7 @@ import { PrihlaskyScreen } from "@/screens";
 import { SanityApplicationsContextProvider } from "@/contexts";
 import { client } from "@/libs";
 import { GoogleSheetsContextProvider } from "@/contexts";
+import { PageLayout } from "@/components/PageLayout";
 
 interface Props
   extends InferGetServerSidePropsType<typeof getServerSideProps> {}
@@ -15,9 +16,9 @@ const PrihlaskyPage: NextPage<Props> = ({ courses }) => {
   return (
     <SanityApplicationsContextProvider courses={courses}>
       <GoogleSheetsContextProvider>
-        <main>
+        <PageLayout>
           <PrihlaskyScreen />
-        </main>
+        </PageLayout>
       </GoogleSheetsContextProvider>
     </SanityApplicationsContextProvider>
   );

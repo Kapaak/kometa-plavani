@@ -8,10 +8,11 @@ export const Header = styled.header<{ withShadow: boolean }>`
   top: 0;
   left: 0;
   display: flex;
+  flex-direction: column;
   align-items: center;
   justify-content: space-between;
   width: 100%;
-  height: var(--header-height);
+  /* height: var(--header-height); */
   z-index: 9;
   background-color: var(--colw);
   box-shadow: ${({ withShadow }) =>
