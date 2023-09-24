@@ -6,12 +6,10 @@ import * as S from "./Logo.style";
 //images
 import LogoLatest from "@/public/icons/logo-latest.svg";
 
-const Logo = () => {
+export const Logo = () => {
   return (
     <Link href="/" aria-label="logo této stránky" passHref>
       <S.Img src={LogoLatest} alt="logo" />
     </Link>
   );
 };
-
-export default Logo;

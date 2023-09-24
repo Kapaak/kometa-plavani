@@ -6,7 +6,7 @@ import * as S from "./Hamburger.style";
 import { toggleNavigation } from "@/redux/slices/navigationSlice";
 import { RootState } from "@/redux/store";
 
-const Hamburger = () => {
+export const Hamburger = () => {
   const dispatch = useDispatch();
 
   const isActive = useSelector(
@@ -24,5 +24,3 @@ const Hamburger = () => {
     </S.Hamburger>
   );
 };
-
-export default Hamburger;

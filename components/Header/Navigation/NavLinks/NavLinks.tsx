@@ -19,6 +19,7 @@ import InstagramInvertIcon from "@/public/icons/instagram-invert.svg";
 
 interface Props {
   data: NavLinkType[];
+  isActive?: boolean;
 }
 
 const NavItems = ({ data }: Props) => {
@@ -42,12 +43,7 @@ const NavItems = ({ data }: Props) => {
         <NavLink href="/prihlasky">Přihlášky</NavLink>
       </Hidden>
       <Hidden down="desktop">
-        <Flex
-          direction="row"
-          align="center"
-          gap="3rem"
-          style={{ marginTop: ".7rem" }}
-        >
+        <S.IconsWrapper>
           <Link href="https://www.facebook.com/kometaplavani">
             <Image
               src={FacebookInvertIcon}
@@ -64,7 +60,7 @@ const NavItems = ({ data }: Props) => {
               alt="instagram"
             />
           </Link>
-        </Flex>
+        </S.IconsWrapper>
       </Hidden>
       <Hidden down="notebook">
         <NavLink href="/prihlasky">

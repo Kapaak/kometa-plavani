@@ -4,6 +4,8 @@ import NavLinks from "./NavLinks/NavLinks";
 import * as S from "./Navigation.style";
 //data
 import { data } from "./Navigation.data";
+import { Logo } from "../Logo";
+import { Hamburger } from "../Hamburger";
 
 interface Props {
   isActive: boolean;
@@ -11,11 +13,11 @@ interface Props {
 
 const Navigation = ({ isActive }: Props) => {
   return (
-    <S.Navigation isActive={isActive}>
-      <S.Flex direction="row" justify="end">
-        <NavLinks data={data} />
-      </S.Flex>
-    </S.Navigation>
+    <S.NavBar>
+      <Logo />
+      <NavLinks data={data} isActive={isActive} />
+      <Hamburger />
+    </S.NavBar>
   );
 };
 

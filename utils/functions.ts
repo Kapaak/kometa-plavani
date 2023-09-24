@@ -84,7 +84,7 @@ export const calculateGoogleSheetRowApplications = (
 ) => {
   let calculatedAplications: GoogleSheetDayTime = {};
 
-  googleSheets.forEach((sheet) => {
+  googleSheets?.forEach((sheet) => {
     const obj = {
       [sheet.day]: {
         ...calculatedAplications?.[sheet.day],

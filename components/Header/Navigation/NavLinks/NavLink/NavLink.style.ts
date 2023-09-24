@@ -2,6 +2,7 @@
 import styled from "styled-components";
 //styles
 import { dimensions } from "@/utils";
+import { Flex } from "@/styles";
 
 export const Dropdown = styled.div`
   display: none;

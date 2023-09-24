@@ -2,9 +2,9 @@
 import styled from "styled-components";
 //styles
 import { dimensions } from "@/utils";
-import { Flex as SFlex } from "@/styles";
+import { Flex } from "@/styles";
 
-export const Navigation = styled.nav<{ isActive: boolean }>`
+export const Navigation = styled.div<{ isActive: boolean }>`
   position: ${({ isActive }) => (isActive ? "fixed" : "absolute")};
   width: 100%;
   height: ${({ isActive }) => (isActive ? "100vh" : "auto")};
@@ -20,15 +20,16 @@ export const Navigation = styled.nav<{ isActive: boolean }>`
   }
 `;
 
-export const Flex = styled(SFlex)`
-  justify-content: end;
-  text-align: right;
-  padding-right: 3rem;
+export const NavBar = styled(Flex).attrs({
+  as: "nav",
+})`
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+  width: 100%;
+  height: 100%;
 
   @media (${dimensions.notebook}) {
-    justify-content: flex-end;
-    height: 100px;
-    padding-right: 0;
-    text-align: left;
+    padding: 0 6rem;
   }
 `;
