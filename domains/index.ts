@@ -297,6 +297,11 @@ export type SanityCourse = {
   value: string;
   title: string;
   price: string;
+  file: {
+    asset: {
+      url: string;
+    };
+  };
   duration: number;
   pondeli?: SanityCourseDay[];
   utery?: SanityCourseDay[];
@@ -327,6 +332,17 @@ export type LectureDaysTimesCapacity = Record<
     lectureTimes: LectureTime[];
     lectureDays: WeekDaysNew[];
     lectures: Record<string, DayTimeCapacity>;
+  }
+>;
+
+export type CoursesInformation = Record<
+  string,
+  {
+    title?: string;
+    duration?: number;
+    price?: string;
+    value?: string;
+    file?: string;
   }
 >;
 

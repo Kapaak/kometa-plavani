@@ -26,23 +26,26 @@ export const Lecture = (props: LectureProps) => {
     lectureType,
     pricingDocument,
   } = props;
-  const { lectureDaysTimesCapacity } = useSanityApplicationsContext();
+  const { lectureDaysTimesCapacity, coursesInformation } =
+    useSanityApplicationsContext();
 
   const { googleSheets, isLoading, isError } = useGoogleSheetsContext();
 
   if (!lectureType) return null;
+
+  const courseInformation = coursesInformation[lectureType];
 
   return (
     <S.LectureSection name={name}>
       <S.LectureGrid>
         <S.PaddingWrapper padding="3.3rem 0 3.3rem 5.1rem">
           <LectureDescription
-            title={headline}
+            title={courseInformation?.title}
             text={text}
-            price={price}
-            time={time}
+            price={courseInformation?.price}
+            time={courseInformation?.duration}
             url={url}
-            pricingDocument={pricingDocument}
+            pricingDocument={courseInformation?.file}
           />
         </S.PaddingWrapper>
         <S.PaddingWrapper padding="3.3rem">

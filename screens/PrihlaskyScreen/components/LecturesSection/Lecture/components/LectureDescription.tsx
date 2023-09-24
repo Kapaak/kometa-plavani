@@ -3,8 +3,8 @@ import * as S from "../Lecture.style";
 import { Coin, Timer } from "@phosphor-icons/react";
 
 interface LectureDescriptionProps {
-  title: string;
-  text: string;
+  title?: string;
+  text?: string;
   price?: string;
   time?: number;
   url?: string;

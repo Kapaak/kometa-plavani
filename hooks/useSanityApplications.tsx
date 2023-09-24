@@ -109,6 +109,23 @@ const convertCourseToLectureCapacity = (course: SanityCourse, key: string) => {
 };
 
 export const useSanityApplications = (courses: SanityCourse[]) => {
+  const coursesInformation = useMemo(() => {
+    return _.keyBy(
+      courses.map((course) => {
+        const { duration, price, title, value } = course;
+
+        return {
+          duration,
+          price,
+          title,
+          value,
+          file: course?.file?.asset?.url,
+        };
+      }),
+      "value"
+    );
+  }, [courses]);
+
   const lectureDaysTimesCapacity = useMemo(() => {
     let lectureDaysTimesCapacityObj: LectureDaysTimesCapacity = {};
     courses?.forEach((course) => {
@@ -126,10 +143,6 @@ export const useSanityApplications = (courses: SanityCourse[]) => {
         ...merged,
       };
     });
-    console.log(
-      "🚀 ~ file: useSanityApplications.tsx:123 ~ lectureDaysTimesCapacity ~ lectureDaysTimesCapacityObj:",
-      lectureDaysTimesCapacityObj
-    );
 
     return lectureDaysTimesCapacityObj;
     // if something goes wrong use this manual setup
@@ -137,7 +150,7 @@ export const useSanityApplications = (courses: SanityCourse[]) => {
   }, [courses]);
 
   return {
-    courses: [],
     lectureDaysTimesCapacity,
+    coursesInformation,
   };
 };
