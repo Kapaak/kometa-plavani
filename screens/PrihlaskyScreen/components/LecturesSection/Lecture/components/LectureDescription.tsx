@@ -1,14 +1,14 @@
 import { Flex, Text } from "@/styles";
 import * as S from "../Lecture.style";
-import { Coin, Timer } from "@phosphor-icons/react";
+import { Baby, Coin, Timer } from "@phosphor-icons/react";
 
 interface LectureDescriptionProps {
   title?: string;
   text?: string;
   price?: string;
   time?: number;
-  url?: string;
   pricingDocument?: string;
+  age?: string;
 }
 
 export const LectureDescription = ({
@@ -16,7 +16,7 @@ export const LectureDescription = ({
   text,
   price,
   time,
-  url,
+  age,
   pricingDocument,
 }: LectureDescriptionProps) => {
   return (
@@ -33,6 +33,10 @@ export const LectureDescription = ({
         <Flex direction="row" gap="1rem" align="center">
           <Timer size={20} />
           <Text variant="dark">{time} min</Text>
+        </Flex>
+        <Flex direction="row" gap="1rem" align="center">
+          <Baby size={20} />
+          <Text variant="dark">{age}</Text>
         </Flex>
         <Flex direction="row" gap="1rem" align="center">
           <Text variant="dark">

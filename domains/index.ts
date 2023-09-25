@@ -297,6 +297,7 @@ export type SanityCourse = {
   value: string;
   title: string;
   price: string;
+  age: string;
   file: {
     asset: {
       url: string;
@@ -342,6 +343,7 @@ export type CoursesInformation = Record<
     duration?: number;
     price?: string;
     value?: string;
+    age?: string;
     file?: string;
   }
 >;

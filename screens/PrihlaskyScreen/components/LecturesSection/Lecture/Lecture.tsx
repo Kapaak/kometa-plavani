@@ -44,8 +44,8 @@ export const Lecture = (props: LectureProps) => {
             text={text}
             price={courseInformation?.price}
             time={courseInformation?.duration}
-            url={url}
             pricingDocument={courseInformation?.file}
+            age={courseInformation?.age}
           />
         </S.PaddingWrapper>
         <S.PaddingWrapper padding="3.3rem">

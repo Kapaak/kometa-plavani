@@ -112,13 +112,14 @@ export const useSanityApplications = (courses: SanityCourse[]) => {
   const coursesInformation = useMemo(() => {
     return _.keyBy(
       courses.map((course) => {
-        const { duration, price, title, value } = course;
+        const { duration, price, title, value, age } = course;
 
         return {
           duration,
           price,
           title,
           value,
+          age,
           file: course?.file?.asset?.url,
         };
       }),
