@@ -5,8 +5,10 @@ import { SuccessModal } from "./SuccessModal";
 import axios from "axios";
 import {
   Course,
+  DayAbbr,
   GlobalSpreadsheetData,
   SchoolSpreadsheetData,
+  convertAbbrToWeekDaysDiacritics,
 } from "@/domains";
 import {
   SchoolForm,
@@ -60,11 +62,29 @@ export const FormContainer = ({
   const onSubmit = async (formValues: FormData) => {
     setIsLoading(true);
 
+    const multipleDays = formValues.lessonsDayTime?.split(",");
+
+    const fullDaysTimes: string[] = [];
+
+    multipleDays?.forEach(async (day, index) => {
+      const dayTimeAbbr = day?.split("_");
+      const dayAbbr = dayTimeAbbr?.[0] as DayAbbr;
+      const timeAbbr = dayTimeAbbr?.[1];
+
+      fullDaysTimes.push(
+        `${index > 0 ? ", " : ""} ${convertAbbrToWeekDaysDiacritics(
+          dayAbbr
+        )} ${timeAbbr}:00`
+      );
+    });
+
     try {
       await handleExcelUpload(formValues);
       await axios.post("/api/email", {
         email: formValues?.email ?? formValues?.contactPersonEmail,
         templateId: templateId,
+        day: fullDaysTimes,
+        price: formValues.lessonsPrice,
       });
     } catch (error) {
       console.log("cant send email or upload spreadsheet", error);
