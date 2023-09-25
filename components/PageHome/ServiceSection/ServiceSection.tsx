@@ -21,14 +21,14 @@ const ServiceSection = () => {
     <S.ServiceSection name="service">
       <MaxWidth>
         <S.Flex gap="4rem">
-          {filteredLectures.map((d, i) => (
+          {filteredLectures.map((filteredLecture, index) => (
             <Service
-              headline={d?.headline}
-              text={d.text}
-              image={d.image}
-              name={d.name}
-              key={i}
-              alt={d.alt}
+              headline={filteredLecture?.headline}
+              text={filteredLecture.text}
+              image={filteredLecture.image}
+              name={filteredLecture.name}
+              key={`${index}_${filteredLecture.id}`}
+              alt={filteredLecture.alt}
             />
           ))}
         </S.Flex>
