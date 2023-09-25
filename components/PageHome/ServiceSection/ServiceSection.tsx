@@ -23,7 +23,7 @@ const ServiceSection = () => {
         <S.Flex gap="4rem">
           {filteredLectures.map((d, i) => (
             <Service
-              headline={d.headline}
+              headline={d?.headline}
               text={d.text}
               image={d.image}
               name={d.name}

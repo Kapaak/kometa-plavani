@@ -32,43 +32,6 @@ export const Flex = styled(SFlex)`
   flex: 1 1 50%;
 `;
 
-export const Headline = styled.h2`
-  font-size: 3rem;
-  font-family: var(--font1);
-  font-weight: 500;
-  letter-spacing: 0.08rem;
-  color: var(--col2);
-
-  @media (${dimensions.notebook}) {
-    font-size: 4rem;
-  }
-`;
-
-export const LectureCalendar = styled(Flex)`
-  position: relative;
-  height: 100%;
-`;
-
-export const LectureSemesterButton = styled.button<{ visible: boolean }>`
-  cursor: pointer;
-  border: none;
-  background: none;
-  visibility: ${({ visible }) => (visible ? "inherit" : "hidden")};
-`;
-
-export const LectureCalendarTimesGrid = styled.div<{ padding?: string }>`
-  display: grid;
-  grid-template-columns: 3rem 8rem 8rem 8rem;
-  grid-template-rows: 3.6rem;
-  gap: 1.2rem;
-  align-items: center;
-  padding: ${({ padding }) => padding || "0"};
-
-  @media (${dimensions.tablet}) {
-    grid-template-columns: 3rem 11rem 11rem 11rem;
-  }
-`;
-
 export const LectureGrid = styled.div`
   display: grid;
   grid-template-columns: 1fr;
@@ -90,10 +53,6 @@ export const LectureSection = styled(SectionElement)`
   }
 `;
 
-export const LectureSemesterText = styled(Text)`
-  padding: 1.5rem 0;
-`;
-
 export const PaddingWrapper = styled.div<{ padding?: string }>`
   padding: 2rem 0;
 
@@ -104,13 +63,4 @@ export const PaddingWrapper = styled.div<{ padding?: string }>`
   @media (${dimensions.desktop}) {
     padding: ${({ padding }) => padding || "0"};
   }
-`;
-
-export const AbsoluteFlex = styled(Flex)`
-  position: absolute;
-  top: 50%;
-  left: 50%;
-  translate: -50% -30%;
-  align-items: center;
-  justify-content: center;
 `;

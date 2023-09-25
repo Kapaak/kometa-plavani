@@ -1,5 +1,5 @@
 import { Flex, Text } from "@/styles";
-import { LectureAvailability } from "./LectureAvailability";
+import { LectureAvailability } from "../LectureAvailability";
 import { nanoid } from "nanoid";
 import {
   DayTimeCapacity,
@@ -8,7 +8,7 @@ import {
   WeekDaysNew,
   convertWeekDaysToAbbr,
 } from "@/domains";
-import * as S from "../Lecture.style";
+import * as S from "./LectureCalendarData.style";
 
 interface LectureCalendarDataProps {
   lectureTimes?: LectureTime[];
