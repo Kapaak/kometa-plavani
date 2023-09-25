@@ -11,23 +11,18 @@ import {
 import Link from "next/link";
 import { Button } from "@/shared";
 
-type LectureProps = Omit<Service, "id">;
+type LectureProps = Omit<
+  Service,
+  "id" | "pricingDocument" | "headline" | "price"
+>;
 
 export const Lecture = (props: LectureProps) => {
-  const {
-    headline,
-    text,
-    image,
-    name,
-    alt,
-    url,
-    time,
-    price,
-    lectureType,
-    pricingDocument,
-  } = props;
+  const { text, image, name, alt, url, lectureType } = props;
   const { lectureDaysTimesCapacity, coursesInformation } =
     useSanityApplicationsContext();
+
+  const isSemesterSwitcherActive =
+    lectureType === "school" || lectureType === "kindergarden";
 
   const { googleSheets, isLoading, isError } = useGoogleSheetsContext();
 
@@ -53,9 +48,7 @@ export const Lecture = (props: LectureProps) => {
             <LectureCalendar
               isError={isError}
               isLoading={isLoading}
-              showSemesterSwitcher={
-                lectureType === "school" || lectureType === "kindergarden"
-              }
+              showSemesterSwitcher={isSemesterSwitcherActive}
               times={lectureDaysTimesCapacity?.[lectureType]?.lectureTimes}
               days={lectureDaysTimesCapacity?.[lectureType]?.lectureDays}
               data={lectureDaysTimesCapacity?.[lectureType]?.lectures}

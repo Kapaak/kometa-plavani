@@ -132,7 +132,7 @@ export type Sponsor = {
 
 export type Service = {
   id: number;
-  headline: string;
+  headline?: string;
   text: string;
   image: StaticImageData;
   alt: string;
