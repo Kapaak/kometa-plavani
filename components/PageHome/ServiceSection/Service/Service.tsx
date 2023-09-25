@@ -10,7 +10,7 @@ import { ScrollSections } from "@/domains";
 import { scrollTo } from "@/utils";
 
 interface ServiceProps {
-  headline: string;
+  headline?: string;
   text: string;
   image: StaticImageData;
   alt: string;

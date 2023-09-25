@@ -1,14 +1,18 @@
-import { LectureDaysTimesCapacity, SanityCourse } from "@/domains";
+import {
+  CoursesInformation,
+  LectureDaysTimesCapacity,
+  SanityCourse,
+} from "@/domains";
 import { useSanityApplications } from "hooks/useSanityApplications";
 import { PropsWithChildren, createContext, useContext } from "react";
 
 type SanityContext = {
-  courses: SanityCourse[];
+  coursesInformation: CoursesInformation;
   lectureDaysTimesCapacity: LectureDaysTimesCapacity;
 };
 
 const SanityApplicationsContext = createContext<SanityContext>({
-  courses: [],
+  coursesInformation: {},
   lectureDaysTimesCapacity: {},
 });
 
@@ -18,11 +22,12 @@ export const SanityApplicationsContextProvider = ({
 }: PropsWithChildren<{
   courses: SanityCourse[];
 }>) => {
-  const { lectureDaysTimesCapacity } = useSanityApplications(courses);
+  const { lectureDaysTimesCapacity, coursesInformation } =
+    useSanityApplications(courses);
 
   return (
     <SanityApplicationsContext.Provider
-      value={{ courses, lectureDaysTimesCapacity }}
+      value={{ coursesInformation, lectureDaysTimesCapacity }}
     >
       {children}
     </SanityApplicationsContext.Provider>

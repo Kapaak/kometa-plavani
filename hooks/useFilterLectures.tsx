@@ -20,7 +20,6 @@ const filterOptions = [
   },
 ];
 
-//by default returns all lectures for page
 export const useFilterLectures = (page?: string) => {
   const [selectedValue, setSelectedValue] = useState(FilterLectureOptions.ALL);
   const { lectures } = useLectureSections();

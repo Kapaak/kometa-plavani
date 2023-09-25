@@ -132,7 +132,7 @@ export type Sponsor = {
 
 export type Service = {
   id: number;
-  headline: string;
+  headline?: string;
   text: string;
   image: StaticImageData;
   alt: string;
@@ -297,6 +297,12 @@ export type SanityCourse = {
   value: string;
   title: string;
   price: string;
+  age: string;
+  file: {
+    asset: {
+      url: string;
+    };
+  };
   duration: number;
   pondeli?: SanityCourseDay[];
   utery?: SanityCourseDay[];
@@ -327,6 +333,18 @@ export type LectureDaysTimesCapacity = Record<
     lectureTimes: LectureTime[];
     lectureDays: WeekDaysNew[];
     lectures: Record<string, DayTimeCapacity>;
+  }
+>;
+
+export type CoursesInformation = Record<
+  string,
+  {
+    title?: string;
+    duration?: number;
+    price?: string;
+    value?: string;
+    age?: string;
+    file?: string;
   }
 >;
 

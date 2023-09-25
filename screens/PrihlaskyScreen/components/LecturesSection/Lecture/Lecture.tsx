@@ -11,38 +11,36 @@ import {
 import Link from "next/link";
 import { Button } from "@/shared";
 
-type LectureProps = Omit<Service, "id">;
+type LectureProps = Omit<
+  Service,
+  "id" | "pricingDocument" | "headline" | "price"
+>;
 
 export const Lecture = (props: LectureProps) => {
-  const {
-    headline,
-    text,
-    image,
-    name,
-    alt,
-    url,
-    time,
-    price,
-    lectureType,
-    pricingDocument,
-  } = props;
-  const { lectureDaysTimesCapacity } = useSanityApplicationsContext();
+  const { text, image, name, alt, url, lectureType } = props;
+  const { lectureDaysTimesCapacity, coursesInformation } =
+    useSanityApplicationsContext();
+
+  const isSemesterSwitcherActive =
+    lectureType === "school" || lectureType === "kindergarden";
 
   const { googleSheets, isLoading, isError } = useGoogleSheetsContext();
 
   if (!lectureType) return null;
+
+  const courseInformation = coursesInformation[lectureType];
 
   return (
     <S.LectureSection name={name}>
       <S.LectureGrid>
         <S.PaddingWrapper padding="3.3rem 0 3.3rem 5.1rem">
           <LectureDescription
-            title={headline}
+            title={courseInformation?.title}
             text={text}
-            price={price}
-            time={time}
-            url={url}
-            pricingDocument={pricingDocument}
+            price={courseInformation?.price}
+            time={courseInformation?.duration}
+            pricingDocument={courseInformation?.file}
+            age={courseInformation?.age}
           />
         </S.PaddingWrapper>
         <S.PaddingWrapper padding="3.3rem">
@@ -50,9 +48,7 @@ export const Lecture = (props: LectureProps) => {
             <LectureCalendar
               isError={isError}
               isLoading={isLoading}
-              showSemesterSwitcher={
-                lectureType === "school" || lectureType === "kindergarden"
-              }
+              showSemesterSwitcher={isSemesterSwitcherActive}
               times={lectureDaysTimesCapacity?.[lectureType]?.lectureTimes}
               days={lectureDaysTimesCapacity?.[lectureType]?.lectureDays}
               data={lectureDaysTimesCapacity?.[lectureType]?.lectures}

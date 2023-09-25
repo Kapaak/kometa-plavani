@@ -1,8 +1,7 @@
 import { useState } from "react";
-import * as S from "../Lecture.style";
-import { LectureSemester } from "./LectureSemester";
-import { LectureCalendarTimes } from "./LectureCalendarTimes";
-import { LectureCalendarData } from "./LectureCalendarData";
+import { LectureSemester } from "../LectureSemester";
+import { LectureCalendarTimes } from "../LectureCalendarTimes";
+import { LectureCalendarData } from "../LectureCalendarData";
 import {
   DayTimeCapacity,
   GoogleSheetDayTime,
@@ -13,6 +12,7 @@ import {
 import Loader from "react-spinners/HashLoader";
 import { Danger, Hidden, Space, Text } from "@/styles";
 import { X } from "@phosphor-icons/react";
+import * as S from "./LectureCalendar.style";
 
 interface LectureCalendarProps {
   times?: LectureTime[];
@@ -37,14 +37,14 @@ export const LectureCalendar = ({
   return (
     <S.LectureCalendar>
       {!isLoading && isError && (
-        <S.AbsoluteFlex justify="center" align="center">
+        <S.ActionMessage justify="center" align="center">
           <X size={40} color="var(--colr)" weight="bold" />
           <Space />
           <Danger>Došlo k chybě, zkuste stránku načíst znova</Danger>
-        </S.AbsoluteFlex>
+        </S.ActionMessage>
       )}
       {isLoading && (
-        <S.AbsoluteFlex>
+        <S.ActionMessage>
           <Loader
             size={60}
             color="var(--col2)"
@@ -57,7 +57,7 @@ export const LectureCalendar = ({
           <Text bold center>
             Načítám data o obsazenosti
           </Text>
-        </S.AbsoluteFlex>
+        </S.ActionMessage>
       )}
 
       <Hidden isHidden={isLoading || isError}>

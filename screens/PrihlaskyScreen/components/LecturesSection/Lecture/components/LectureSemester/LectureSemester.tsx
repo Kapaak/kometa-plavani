@@ -1,5 +1,5 @@
 import { ArrowLeft, ArrowRight } from "@phosphor-icons/react";
-import * as S from "../Lecture.style";
+import * as S from "./LectureSemester.style";
 import { Flex } from "@/styles";
 
 interface LectureSemesterProps {
