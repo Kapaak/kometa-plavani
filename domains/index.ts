@@ -392,6 +392,21 @@ export const convertAbbrToWeekDays = (day: DayAbbr): WeekDaysNew => {
   }
 };
 
+export const convertAbbrToWeekDaysDiacritics = (day: DayAbbr) => {
+  switch (day) {
+    case DayAbbr.PO:
+      return "Pondělí";
+    case DayAbbr.UT:
+      return "Úterý";
+    case DayAbbr.ST:
+      return "Středa";
+    case DayAbbr.CT:
+      return "Čtvrtek";
+    case DayAbbr.PA:
+      return "Pátek";
+  }
+};
+
 export type AvailableIcons =
   | "ClipboardText"
   | "Coin"

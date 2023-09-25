@@ -2,18 +2,21 @@ import sgMail from "@sendgrid/mail";
 import { NextApiRequest, NextApiResponse } from "next";
 
 const handler = async (req: NextApiRequest, res: NextApiResponse) => {
-  const { email, templateId } = req.body;
+  const { email, templateId, day, time, price } = req.body;
 
   sgMail.setApiKey(process.env.NEXT_PUBLIC_SENDGRID_API_KEY ?? "");
 
   const msg = {
     to: email,
-    // from: "pavel.zaplet25@gmail.com",
     from: "plavaniluzanky@kometaplavani.cz",
     subject: "Sending with SendGrid is Fun",
     text: "and easy to do anywhere, even with Node.js",
     html: "<strong>and easy to do anywhere, even with Node.js</strong>",
     template_id: templateId,
+    dynamic_template_data: {
+      day,
+      price,
+    },
   };
 
   try {

@@ -4,8 +4,6 @@ import { GoogleAnalytics } from "nextjs-google-analytics";
 import { Analytics } from "@vercel/analytics/react";
 //components
 import { HeadSelector } from "@/shared";
-import Header from "@/components/Header/Header";
-import Footer from "@/components/Footer/Footer";
 //styles
 import { GlobalStyles } from "../styles/GlobalStyles";
 //types
@@ -22,10 +20,8 @@ function MyApp({ Component, pageProps }: AppProps) {
         gaMeasurementId={process.env.NEXT_PUBLIC_GOOGLE_ANALYTICS}
       />
       <GlobalStyles />
-      {/* <Header /> */}
       <HeadSelector />
       <Component {...pageProps} />
-      {/* <Footer /> */}
     </Provider>
   );
 }
