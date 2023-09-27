@@ -39,7 +39,7 @@ export const SuccessModal = ({ addChild, isOpen, redirect }: ModalProps) => {
             <UserCirclePlus size={34} color="var(--col2)" />
             VYTVOŘIT DALŠÍ PŘIHLÁŠKU
           </S.CreateButton>
-          <S.ReturnButton onClick={redirect} iconAfter={S.ArrowRightIcon}>
+          <S.ReturnButton onClick={redirect}>
             vrátit na úvodní stránku
           </S.ReturnButton>
         </S.ButtonContainer>

@@ -27,6 +27,8 @@ export const CreateButton = styled.button`
 `;
 
 export const ReturnButton = styled(IconButton)`
+  min-width: 24rem;
+
   @media (${dimensions.tablet}) {
     margin-left: auto;
   }
