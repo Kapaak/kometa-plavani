@@ -1,6 +1,6 @@
 import { LectureDaysTimesCapacity, WeekDays } from "@/domains";
 
-//BACKUP DATA IF SANITY FUCKS UP
+//BACKUP DATA IF SANITY BREAKS
 export const DUMMY_LECTURE_DAYS_TIMES_CAPACITY: LectureDaysTimesCapacity = {
   kindergarden: {
     lectureDays: ["pondeli", "patek"],
@@ -644,10 +644,8 @@ export const LECTURE_PAYMENT_OPTIONS = {
   ],
 };
 
+//BACKUP DATA IF SANITY BREAKS
 export const LECTURE_OPTIONS = {
-  //nevim jestli bude fungovat, v tom aktualnim mam misto lecture options
-  //stacilo by prejmenovat, ale to lecture tu dava vetsi smysl
-  //pouziva se u SELECT komponentu
   kindergarden: [
     {
       label: WeekDays.PO,

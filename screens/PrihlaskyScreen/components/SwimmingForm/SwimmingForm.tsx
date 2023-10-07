@@ -6,11 +6,13 @@ import {
   BaseSyntheticEvent,
   PropsWithChildren,
   useEffect,
+  useMemo,
   useState,
 } from "react";
 import { useFormContext } from "react-hook-form";
-import { Button, IconButton } from "@/components/Shared";
+import { IconButton } from "@/components/Shared";
 import { Space, Subheadline } from "@/styles";
+import { useLecturesContext } from "@/contexts";
 
 const colourStyles: StylesConfig<any, true> = {
   control: (styles) => ({ ...styles, backgroundColor: "white" }),
@@ -33,13 +35,14 @@ const colourStyles: StylesConfig<any, true> = {
 export const SwimmingForm = ({
   isLoading,
   onSubmit,
-  children,
-  selectOptions,
   maxNumberOfLessons,
+  lectureType,
+  children,
 }: PropsWithChildren<SwimmingPage>) => {
   const [selectedOptions, setSelectedOptions] = useState<MultiValue<Option>>(
     []
   );
+  const { getAvailableLectureOptions } = useLecturesContext();
 
   const { setValue, watch } = useFormContext();
 
@@ -52,12 +55,28 @@ export const SwimmingForm = ({
     setSelectedOptions(options);
   };
 
-  const watchLessonsPrice = watch("lessonsPrice");
+  const lessonsPrice = watch("lessonsPrice", null);
+  const personCount = watch("childrenCount", null);
+  const semester = watch("midTerm", null);
+
+  const selectableOptions = useMemo(() => {
+    const semesterNumber = !semester
+      ? 1
+      : (Number(semester?.split(" ")[0]) as 1 | 2);
+
+    const personCountNumber = !personCount ? 1 : Number(personCount);
+
+    return getAvailableLectureOptions(
+      lectureType,
+      semesterNumber,
+      personCountNumber
+    );
+  }, [getAvailableLectureOptions, lectureType, personCount, semester]);
 
   useEffect(() => {
-    //resetuj "vybraný termín a čas", když se změní počet lekcí
+    //resetuj "vybraný termín a čas", když se změní počet lekcí, počet osob, nebo semestr
     setSelectedOptions([]);
-  }, [watchLessonsPrice]);
+  }, [lessonsPrice, personCount, semester]);
 
   useEffect(() => {
     const transformSelectedOptions = [...selectedOptions].map(
@@ -82,12 +101,13 @@ export const SwimmingForm = ({
             value={selectedOptions}
             isMulti
             name="lessonsDayTime"
+            noOptionsMessage={() => "Všechny termíny jsou obsazené"}
             closeMenuOnSelect={false}
             onChange={handleOptionSelect}
             isOptionDisabled={() =>
               selectedOptions.length >= maxNumberOfLessons
             }
-            options={selectOptions}
+            options={selectableOptions}
           />
         </S.FormItem>
       </S.Container>

@@ -8,8 +8,9 @@ import {
   ControlledSelect,
 } from "@/components/Shared";
 import { createOption } from "@/utils";
-import { useLectureOptions, useLecturePaymentOptions } from "@/hooks";
+import { useLecturePaymentOptions } from "@/hooks";
 import { useState } from "react";
+import { LectureTypes } from "@/domains";
 
 interface KindergardenFormProps {
   onSubmit: () => void;
@@ -22,7 +23,6 @@ export const KindergardenForm = ({
   isLoading,
   errors,
 }: KindergardenFormProps) => {
-  const { kindergarden: kindergardenOptions } = useLectureOptions();
   const { kindergarden: kindergardenPaymentOptions } =
     useLecturePaymentOptions();
 
@@ -32,7 +32,7 @@ export const KindergardenForm = ({
 
   return (
     <SwimmingForm
-      selectOptions={kindergardenOptions}
+      lectureType={LectureTypes.KINDERGARDEN}
       onSubmit={onSubmit}
       isLoading={isLoading}
       maxNumberOfLessons={maxNumberOfLessons}

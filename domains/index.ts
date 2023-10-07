@@ -16,8 +16,8 @@ export type GoogleSpreadsheetRowResponse = GoogleSpreadsheetRow;
 export type SwimmingPage = {
   onSubmit: (e: BaseSyntheticEvent) => void;
   isLoading: boolean;
-  selectOptions?: LectureOption[];
   maxNumberOfLessons: number;
+  lectureType: LectureTypes;
 };
 
 export type RadioOption = {
@@ -323,7 +323,7 @@ export type DayCapacity = {
   aplications?: number;
 };
 
-export type DayTimeCapacity = Record<number, Record<string, DayCapacity>>;
+export type DayTimeCapacity = Record<number, Record<number, DayCapacity>>;
 
 export type LectureTime = { id?: number; from?: string; to?: string };
 
@@ -334,6 +334,18 @@ export type LectureDaysTimesCapacity = Record<
     lectureDays: WeekDaysNew[];
     lectures: Record<string, DayTimeCapacity>;
   }
+>;
+
+export type GoogleSheets = Record<
+  string,
+  {
+    lectures: Record<string, GoogleSheetDayTime>;
+  }
+>;
+
+export type GoogleSheetDayTime = Record<
+  number,
+  Record<number, { aplications: number }>
 >;
 
 export type CoursesInformation = Record<
@@ -348,21 +360,25 @@ export type CoursesInformation = Record<
   }
 >;
 
-export type GoogleSheetDayTime = Record<
-  string,
-  Record<number, Record<number, { aplications: number }>>
->;
-
-export type GoogleSheets = Record<
-  string,
-  {
-    lectures: GoogleSheetDayTime;
-  }
->;
-
 export type WeekDaysNew = "pondeli" | "utery" | "streda" | "ctvrtek" | "patek";
 
-export const convertWeekDaysToAbbr = (day: WeekDaysNew): DayAbbrDiacritics => {
+export const convertWeekDaysToAbbr = (day: WeekDaysNew): DayAbbr => {
+  switch (day) {
+    case "pondeli":
+      return DayAbbr.PO;
+    case "utery":
+      return DayAbbr.UT;
+    case "streda":
+      return DayAbbr.ST;
+    case "ctvrtek":
+      return DayAbbr.CT;
+    case "patek":
+      return DayAbbr.PA;
+  }
+};
+export const convertWeekDaysToAbbrDiacritics = (
+  day: WeekDaysNew
+): DayAbbrDiacritics => {
   switch (day) {
     case "pondeli":
       return DayAbbrDiacritics.PO;

@@ -6,10 +6,11 @@ import {
   ControlledRadio,
   ControlledSelect,
 } from "@/shared";
-import { useLectureOptions, useLecturePaymentOptions } from "@/hooks";
+import { useLecturePaymentOptions } from "@/hooks";
 import { createOption } from "@/utils";
 import { SwimmingForm } from "../SwimmingForm";
 import { useState } from "react";
+import { LectureTypes } from "@/domains";
 
 interface SchoolFormProps {
   onSubmit: () => void;
@@ -22,7 +23,6 @@ export const SchoolForm = ({
   errors,
   isLoading,
 }: SchoolFormProps) => {
-  const { school: schoolOptions } = useLectureOptions();
   const { school: schoolPaymentOptions } = useLecturePaymentOptions();
 
   const [maxNumberOfLessons, setMaxNumberOfLessons] = useState(
@@ -31,7 +31,7 @@ export const SchoolForm = ({
 
   return (
     <SwimmingForm
-      selectOptions={schoolOptions}
+      lectureType={LectureTypes.SCHOOL}
       onSubmit={onSubmit}
       isLoading={isLoading}
       maxNumberOfLessons={maxNumberOfLessons}

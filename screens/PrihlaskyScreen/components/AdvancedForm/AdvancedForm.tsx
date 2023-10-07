@@ -8,8 +8,9 @@ import {
 } from "@/shared";
 import { createOption } from "@/utils";
 import { useState } from "react";
-import { useLectureOptions, useLecturePaymentOptions } from "@/hooks";
+import { useLecturePaymentOptions } from "@/hooks";
 import { SwimmingForm } from "../SwimmingForm";
+import { LectureTypes } from "@/domains";
 
 interface AdvancedFormProps {
   onSubmit: () => void;
@@ -22,7 +23,6 @@ export const AdvancedForm = ({
   errors,
   isLoading,
 }: AdvancedFormProps) => {
-  const { advanced: advancedOptions } = useLectureOptions();
   const { advanced: advancedPaymentOptions } = useLecturePaymentOptions();
 
   const [maxNumberOfLessons, setMaxNumberOfLessons] = useState(
@@ -31,7 +31,7 @@ export const AdvancedForm = ({
 
   return (
     <SwimmingForm
-      selectOptions={advancedOptions}
+      lectureType={LectureTypes.ADVANCED}
       onSubmit={onSubmit}
       isLoading={isLoading}
       maxNumberOfLessons={maxNumberOfLessons}
