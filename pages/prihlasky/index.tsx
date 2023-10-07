@@ -4,7 +4,10 @@ import {
   NextPage,
 } from "next";
 import { PrihlaskyScreen } from "@/screens";
-import { SanityApplicationsContextProvider } from "@/contexts";
+import {
+  LecturesContextProvider,
+  SanityApplicationsContextProvider,
+} from "@/contexts";
 import { client } from "@/libs";
 import { GoogleSheetsContextProvider } from "@/contexts";
 import { PageLayout } from "@/components/PageLayout";
@@ -15,13 +18,14 @@ interface Props
   extends InferGetServerSidePropsType<typeof getServerSideProps> {}
 
 const PrihlaskyPage: NextPage<Props> = ({ courses, infoBar }) => {
-  console.log("🚀 ~ file: index.tsx:18 ~ courses:", courses);
   return (
     <SanityApplicationsContextProvider courses={courses}>
       <GoogleSheetsContextProvider>
-        <PageLayout infoBar={infoBar}>
-          <PrihlaskyScreen />
-        </PageLayout>
+        <LecturesContextProvider courses={courses}>
+          <PageLayout infoBar={infoBar}>
+            <PrihlaskyScreen />
+          </PageLayout>
+        </LecturesContextProvider>
       </GoogleSheetsContextProvider>
     </SanityApplicationsContextProvider>
   );

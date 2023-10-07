@@ -82,9 +82,10 @@ export const calculateGoogleSheetRowApplications = (
     aplications: number;
   }[]
 ) => {
-  let calculatedAplications: GoogleSheetDayTime = {};
+  let calculatedAplications: Record<string, GoogleSheetDayTime> = {};
 
   googleSheets?.forEach((sheet) => {
+    //Pokud hazi error Cannot read properties of undefined (reading 'day'), tak mame v googleSheets datech prazdnej radek
     const obj = {
       [sheet.day]: {
         ...calculatedAplications?.[sheet.day],

@@ -19,7 +19,7 @@ interface LectureCalendarProps {
   days?: WeekDaysNew[];
   data?: Record<string, DayTimeCapacity>;
   showSemesterSwitcher?: boolean;
-  capacity?: GoogleSheetDayTime;
+  capacity?: Record<string, GoogleSheetDayTime>;
   isLoading?: boolean;
   isError?: boolean;
 }

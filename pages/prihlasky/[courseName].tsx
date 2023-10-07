@@ -1,24 +1,34 @@
 //interfaces
-import { Course, PageData } from "@/domains";
+import { Course, PageData, SanityCourse } from "@/domains";
 import { GetStaticPropsContext, NextPage } from "next";
 import { PrihlaskyNameScreen, prihlaskyNameData } from "@/screens";
 import { PageLayout } from "@/components/PageLayout";
+import { client } from "@/libs";
+import { groq } from "next-sanity";
+import { LecturesContextProvider } from "@/contexts";
 
 interface CoursePageProps {
   pageData: PageData;
+  courses: SanityCourse[];
 }
 
-const CoursePage: NextPage<CoursePageProps> = ({ pageData }) => {
+const CoursePage: NextPage<CoursePageProps> = ({ pageData, courses }) => {
   return (
-    <PageLayout>
-      <PrihlaskyNameScreen pageData={pageData} />
-    </PageLayout>
+    <LecturesContextProvider courses={courses}>
+      <PageLayout>
+        <PrihlaskyNameScreen pageData={pageData} />
+      </PageLayout>
+    </LecturesContextProvider>
   );
 };
 
 export const getStaticProps = async (ctx: GetStaticPropsContext) => {
+  const queryCourse = groq`*[_type == "course"]{pondeli[]{start,capacity},utery[]{start,capacity},streda[]{start,capacity},ctvrtek[]{start,capacity},patek[]{start,capacity},duration,price,title,value,age,file{asset->{url}}}`;
+
   const courseName = ctx.params?.courseName as Course;
   const pageData = prihlaskyNameData?.find((d) => d.name === courseName);
+
+  const courses = await client.fetch(queryCourse);
 
   if (!pageData)
     return {
@@ -28,6 +38,7 @@ export const getStaticProps = async (ctx: GetStaticPropsContext) => {
   return {
     props: {
       pageData,
+      courses,
     },
   };
 };

@@ -8,8 +8,9 @@ import {
 } from "@/shared";
 import { createOption } from "@/utils";
 import { useState } from "react";
-import { useLectureOptions, useLecturePaymentOptions } from "@/hooks";
+import { useLecturePaymentOptions } from "@/hooks";
 import { SwimmingForm } from "../SwimmingForm";
+import { LectureTypes } from "@/domains";
 
 interface BasicFormProps {
   onSubmit: () => void;
@@ -18,7 +19,6 @@ interface BasicFormProps {
 }
 
 export const BasicForm = ({ onSubmit, errors, isLoading }: BasicFormProps) => {
-  const { basic: basicOptions } = useLectureOptions();
   const { basic: basicPaymentOptions } = useLecturePaymentOptions();
 
   const [maxNumberOfLessons, setMaxNumberOfLessons] = useState(
@@ -27,7 +27,7 @@ export const BasicForm = ({ onSubmit, errors, isLoading }: BasicFormProps) => {
 
   return (
     <SwimmingForm
-      selectOptions={basicOptions}
+      lectureType={LectureTypes.BASIC}
       onSubmit={onSubmit}
       isLoading={isLoading}
       maxNumberOfLessons={maxNumberOfLessons}

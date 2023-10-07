@@ -6,6 +6,7 @@ import { Service } from "@/domains";
 import { LectureCalendar, LectureDescription } from "./components";
 import {
   useGoogleSheetsContext,
+  useLecturesContext,
   useSanityApplicationsContext,
 } from "@/contexts";
 import Link from "next/link";
@@ -20,6 +21,8 @@ export const Lecture = (props: LectureProps) => {
   const { text, image, name, alt, url, lectureType } = props;
   const { lectureDaysTimesCapacity, coursesInformation } =
     useSanityApplicationsContext();
+
+  const { lectures } = useLecturesContext();
 
   const isSemesterSwitcherActive =
     lectureType === "school" || lectureType === "kindergarden";
@@ -49,10 +52,11 @@ export const Lecture = (props: LectureProps) => {
               isError={isError}
               isLoading={isLoading}
               showSemesterSwitcher={isSemesterSwitcherActive}
-              times={lectureDaysTimesCapacity?.[lectureType]?.lectureTimes}
-              days={lectureDaysTimesCapacity?.[lectureType]?.lectureDays}
-              data={lectureDaysTimesCapacity?.[lectureType]?.lectures}
-              capacity={googleSheets?.[lectureType]?.lectures}
+              // times={lectureDaysTimesCapacity?.[lectureType]?.lectureTimes}
+              times={lectures?.[lectureType]?.lectureTimes}
+              days={lectures?.[lectureType]?.lectureDays}
+              data={lectures?.[lectureType]?.lectures}
+              capacity={lectures?.[lectureType]?.lectures}
             />
             <Hidden isHidden={isLoading || isError}>
               <Link href={`/prihlasky/${url}`} passHref>

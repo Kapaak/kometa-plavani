@@ -6,7 +6,7 @@ import {
   GoogleSheetDayTime,
   LectureTime,
   WeekDaysNew,
-  convertWeekDaysToAbbr,
+  convertWeekDaysToAbbrDiacritics,
 } from "@/domains";
 import * as S from "./LectureCalendarData.style";
 
@@ -15,7 +15,7 @@ interface LectureCalendarDataProps {
   lectureDays?: WeekDaysNew[];
   calendarData?: Record<string, DayTimeCapacity>;
   selectedSemester?: number;
-  capacity?: GoogleSheetDayTime;
+  capacity?: Record<string, GoogleSheetDayTime>;
 }
 
 export const LectureCalendarData = ({
@@ -52,7 +52,8 @@ export const LectureCalendarData = ({
       {lectureDays?.map((day, index) => {
         return (
           <S.LectureCalendarTimesGrid key={`${day}_${uniqueGlobalId}_${index}`}>
-            <div>{convertWeekDaysToAbbr(day)}</div> {findLectureTime(day)}
+            <div>{convertWeekDaysToAbbrDiacritics(day)}</div>{" "}
+            {findLectureTime(day)}
           </S.LectureCalendarTimesGrid>
         );
       })}

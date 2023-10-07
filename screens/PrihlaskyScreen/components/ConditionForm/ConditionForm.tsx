@@ -8,8 +8,9 @@ import {
 } from "@/shared";
 import { createOption } from "@/utils";
 import { useState } from "react";
-import { useLectureOptions, useLecturePaymentOptions } from "@/hooks";
+import { useLecturePaymentOptions } from "@/hooks";
 import { SwimmingForm } from "../SwimmingForm";
+import { LectureTypes } from "@/domains";
 
 interface ConditionFormProps {
   onSubmit: () => void;
@@ -22,7 +23,6 @@ export const ConditionForm = ({
   errors,
   isLoading,
 }: ConditionFormProps) => {
-  const { condition: conditionOptions } = useLectureOptions();
   const { condition: conditionPaymentOptions } = useLecturePaymentOptions();
 
   const [maxNumberOfLessons, setMaxNumberOfLessons] = useState(
@@ -31,7 +31,7 @@ export const ConditionForm = ({
 
   return (
     <SwimmingForm
-      selectOptions={conditionOptions}
+      lectureType={LectureTypes.CONDITION}
       onSubmit={onSubmit}
       isLoading={isLoading}
       maxNumberOfLessons={maxNumberOfLessons}
