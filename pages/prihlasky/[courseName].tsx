@@ -33,6 +33,7 @@ export const getStaticProps = async (ctx: GetStaticPropsContext) => {
   if (!pageData)
     return {
       notFound: true,
+      revalidate: 10,
     };
 
   return {
@@ -40,6 +41,7 @@ export const getStaticProps = async (ctx: GetStaticPropsContext) => {
       pageData,
       courses,
     },
+    revalidate: 10,
   };
 };
 
