@@ -42,7 +42,11 @@ export const SwimmingForm = ({
   const [selectedOptions, setSelectedOptions] = useState<MultiValue<Option>>(
     []
   );
-  const { getAvailableLectureOptions } = useLecturesContext();
+  const {
+    getAvailableLectureOptions,
+    isError: isDataError,
+    isLoading: isDataLoading,
+  } = useLecturesContext();
 
   const { setValue, watch } = useFormContext();
 
@@ -96,7 +100,11 @@ export const SwimmingForm = ({
           {/* //todo pridej at to rovnou uklada do react hook form */}
           <Select
             instanceId="lessons-select"
-            placeholder="Termín a čas"
+            placeholder={
+              isDataError
+                ? "Nepodařilo se načíst data, zkuste prosím později"
+                : "Termín a čas"
+            }
             styles={colourStyles}
             value={selectedOptions}
             isMulti
@@ -105,9 +113,10 @@ export const SwimmingForm = ({
             closeMenuOnSelect={false}
             onChange={handleOptionSelect}
             isOptionDisabled={() =>
-              selectedOptions.length >= maxNumberOfLessons
+              selectedOptions.length >= maxNumberOfLessons || isDataError
             }
             options={selectableOptions}
+            isLoading={isDataLoading}
           />
         </S.FormItem>
       </S.Container>

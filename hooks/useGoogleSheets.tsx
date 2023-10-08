@@ -41,6 +41,10 @@ export const useGoogleSheets = () => {
         "1180547156",
       ]);
 
+      if (!allSheets) {
+        return dispatch({ isError: true, isLoading: false });
+      }
+
       allSheets &&
         Promise.allSettled(allSheets)
           .then((resSheets: any) => {

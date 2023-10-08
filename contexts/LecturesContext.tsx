@@ -25,9 +25,13 @@ const LecturesContext = createContext<{
     semester?: 1 | 2,
     applicationsOffset?: number
   ) => { label: string; options: { label: string; value: string }[] }[];
+  isLoading: boolean;
+  isError: boolean;
 }>({
   lectures: {},
   getAvailableLectureOptions: () => [],
+  isLoading: false,
+  isError: false,
 });
 
 export const LecturesContextProvider = ({
@@ -36,7 +40,7 @@ export const LecturesContextProvider = ({
 }: PropsWithChildren<{ courses: SanityCourse[] }>) => {
   const { lectureDaysTimesCapacity } = useSanityApplications(courses);
 
-  const { googleSheets } = useGoogleSheets();
+  const { googleSheets, isError, isLoading } = useGoogleSheets();
 
   const lectures: CompleteLecture = _.mergeWith(
     lectureDaysTimesCapacity,
@@ -85,6 +89,8 @@ export const LecturesContextProvider = ({
       value={{
         lectures,
         getAvailableLectureOptions,
+        isLoading,
+        isError,
       }}
     >
       {children}
