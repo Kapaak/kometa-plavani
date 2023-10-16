@@ -67,7 +67,8 @@ export const useGoogleSheets = () => {
       const allEntriesPerSheet = sheets
         ?.map((sheet) => convertGoogleSheetRowData(sheet))
         //flat is needed, because we can have one or more swimming day_time per user
-        .flat();
+        .flat()
+        ?.filter((sheets) => sheets);
 
       const calculated =
         calculateGoogleSheetRowApplications(allEntriesPerSheet);
