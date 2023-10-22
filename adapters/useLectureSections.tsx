@@ -36,30 +36,6 @@ export const lectures: Record<string, Service[]> = {
   ],
   applicationsPage: [
     {
-      id: 1,
-      text: `
-      Cílem naší výuky u dětí předškolního věku je adaptovat na vodní prostředí. To konkrétně zahrnuje odstranění strachu z vody, potápění, splývání, rozvoj pocitu vody a skok do vody. Poté se děti učí základy jednotlivých plaveckých způsobů.
-  Navíc náš klub disponuje nově zpracovanou metodikou, díky které se děti naučí plavat rychle a zábavnou formou. Nejdůležitější pro nás je, aby děti měly z plavání radost..
-  Výuka probíhá jednou týdně v bazénu, který má 30°C až 32°C.
-        `,
-      image: KindergardenLecture,
-      alt: "dítě v bazénu pod vodou s brýlemi",
-      name: ScrollSections.APPLICATIONS_KINDERGARDEN,
-      lectureType: LectureTypes.KINDERGARDEN,
-      url: "skolky",
-    },
-    {
-      id: 2,
-      text: `
-      Cílem je naučit plavce základům plavání. Děti jsou na začátku rozděleny do týmů podle plaveckých dovedností pro jejich nejrychlejší rozvoj. V první části kurzu chceme rozšířit jejich plavecké dovednosti a naučit děti plavecké způsoby kraul a znak. V druhé části se zaměřujeme na náročnější styly prsa a motýl. Naše metodika odpovídá směrnicím MŠMT. Výuka se však přizpůsobuje aktuálním potřebám jednotlivců, což znamená, že děti vždy získají nové dovednosti.
-        `,
-      image: SchoolLecture,
-      alt: "dítě v bazénu pod vodou s brýlemi",
-      name: ScrollSections.APPLICATIONS_SCHOOL,
-      lectureType: LectureTypes.SCHOOL,
-      url: "skoly",
-    },
-    {
       id: 3,
       text: `
       Kurzy jsou určené pro děti, které se potřebují naučit plavat. Našim cílem je děti adaptovat na vodní prostředí. Navíc náš klub disponuje nově zpracovanou metodikou, díky které se děti naučí plavat rychle a zábavnou formou. Nejdůležitější pro nás je, aby děti měly z plavání radost.
@@ -91,6 +67,30 @@ export const lectures: Record<string, Service[]> = {
       name: ScrollSections.APPLICATIONS_CONDITION,
       lectureType: LectureTypes.CONDITION,
       url: "kondicni-plavani",
+    },
+    {
+      id: 1,
+      text: `
+      Cílem naší výuky u dětí předškolního věku je adaptovat na vodní prostředí. To konkrétně zahrnuje odstranění strachu z vody, potápění, splývání, rozvoj pocitu vody a skok do vody. Poté se děti učí základy jednotlivých plaveckých způsobů.
+  Navíc náš klub disponuje nově zpracovanou metodikou, díky které se děti naučí plavat rychle a zábavnou formou. Nejdůležitější pro nás je, aby děti měly z plavání radost..
+  Výuka probíhá jednou týdně v bazénu, který má 30°C až 32°C.
+        `,
+      image: KindergardenLecture,
+      alt: "dítě v bazénu pod vodou s brýlemi",
+      name: ScrollSections.APPLICATIONS_KINDERGARDEN,
+      lectureType: LectureTypes.KINDERGARDEN,
+      url: "skolky",
+    },
+    {
+      id: 2,
+      text: `
+      Cílem je naučit plavce základům plavání. Děti jsou na začátku rozděleny do týmů podle plaveckých dovedností pro jejich nejrychlejší rozvoj. V první části kurzu chceme rozšířit jejich plavecké dovednosti a naučit děti plavecké způsoby kraul a znak. V druhé části se zaměřujeme na náročnější styly prsa a motýl. Naše metodika odpovídá směrnicím MŠMT. Výuka se však přizpůsobuje aktuálním potřebám jednotlivců, což znamená, že děti vždy získají nové dovednosti.
+        `,
+      image: SchoolLecture,
+      alt: "dítě v bazénu pod vodou s brýlemi",
+      name: ScrollSections.APPLICATIONS_SCHOOL,
+      lectureType: LectureTypes.SCHOOL,
+      url: "skoly",
     },
   ],
 };
