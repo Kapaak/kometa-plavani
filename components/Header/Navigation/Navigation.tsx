@@ -13,11 +13,11 @@ interface Props {
 
 const Navigation = ({ isActive }: Props) => {
   return (
-    <S.NavBar>
+    <S.Navigation>
       <Logo />
       <NavLinks data={data} isActive={isActive} />
       <Hamburger />
-    </S.NavBar>
+    </S.Navigation>
   );
 };
 

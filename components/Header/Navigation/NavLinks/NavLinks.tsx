@@ -22,11 +22,7 @@ interface Props {
   isActive?: boolean;
 }
 
-const NavItems = ({ data }: Props) => {
-  const isActive = useSelector(
-    (state: RootState) => state.navigation.isNavActive
-  );
-
+const NavItems = ({ data, isActive = false }: Props) => {
   return (
     <S.NavLinks isActive={isActive}>
       {data.map((d, i) => (
