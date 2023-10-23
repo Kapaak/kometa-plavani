@@ -8,7 +8,7 @@ export const DiscountLabel = styled.div`
   top: 0rem;
   left: 0;
   width: 100%;
-  padding: 0.4rem var(--side-padding);
+  padding: 1rem var(--side-padding);
   background-color: var(--col1);
   z-index: 10;
 
@@ -20,8 +20,9 @@ export const DiscountLabel = styled.div`
 export const BiggerText = styled.span`
   font-family: var(--font1);
   font-size: 2rem;
+  letter-spacing: 0.2rem;
 `;
 
 export const SmallerText = styled.span`
-  font-size: 1.4rem;
+  font-size: 1.6rem;
 `;
