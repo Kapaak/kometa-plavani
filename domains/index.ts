@@ -47,6 +47,7 @@ export enum ScrollSections {
   APPLICATIONS_BASIC = "applications-basic",
   APPLICATIONS_ADVANCED = "applications-advanced",
   APPLICATIONS_CONDITION = "applications-condition",
+  APPLICATIONS_ADULT = "applications-adult",
 }
 
 export enum Content {
