@@ -423,26 +423,3 @@ export const convertAbbrToWeekDaysDiacritics = (day: DayAbbr) => {
       return "Pátek";
   }
 };
-
-export type AvailableIcons =
-  | "ClipboardText"
-  | "Coin"
-  | "Swap"
-  | "Checks"
-  | "CreditCard"
-  | "Money"
-  | "HandCoins"
-  | "TreePalm"
-  | "Backpack"
-  | "FirstAid"
-  | "Shuffle"
-  | "File"
-  | "Paperclip"
-  | "EnvelopeOpen"
-  | "SmileyXEyes"
-  | "Smiley"
-  | "MapPin"
-  | "HouseLine"
-  | "Boot"
-  | "CalendarCheck"
-  | "Archive";

@@ -1,7 +1,9 @@
 //libraries
 import styled from "styled-components";
+
 //styles
 import { Flex, Text } from "@/styles";
+import { dimensions } from "@/utils";
 
 // custom made type, that will act as if it was an <a> tag
 export const LinkElement = styled(Text).attrs({
@@ -25,8 +27,17 @@ export const Headline = styled(Text).attrs({
   font-weight: 500;
 `;
 
-export const ContactItem = styled(Flex)`
+export const LocationSectionItem = styled(Flex)`
   padding-bottom: 2rem;
   border-bottom: 1px solid var(--collg);
   max-width: 50rem;
+  height: 11rem;
+
+  @media (${dimensions.notebook}) {
+    height: 12rem;
+  }
+
+  @media (${dimensions.desktopX}) {
+    height: 13rem;
+  }
 `;

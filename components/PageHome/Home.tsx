@@ -1,11 +1,12 @@
 //components
 import AboutSection from "./AboutSection/AboutSection";
-import ContactSection from "./ContactSection/ContactSection";
+import { ContactSection } from "./ContactSection/ContactSection";
 import { DocumentSection } from "./DocumentSection";
 import { FAQSection } from "./FAQSection";
 import HeroSection from "./HeroSection/HeroSection";
 import ServiceSection from "./ServiceSection/ServiceSection";
 import SponsorSection from "./SponsorSection/SponsorSection";
+import { LocationSection } from "./LocationSection/LocationSection";
 //styles
 import { Space } from "@/styles";
 
@@ -22,6 +23,7 @@ const Home = () => {
       <Space />
       <DocumentSection />
       <Space />
+      <LocationSection />
       <ContactSection />
       <Space />
       <SponsorSection />

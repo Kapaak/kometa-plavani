@@ -1,8 +1,11 @@
 import { createGlobalStyle } from "styled-components";
 
 import { dimensions } from "@/utils";
+import { styleReset } from "./style-reset";
 
 export const GlobalStyles = createGlobalStyle`
+    ${styleReset}
+
     *,*::before,*::after{
         margin: 0;
         padding: 0;
