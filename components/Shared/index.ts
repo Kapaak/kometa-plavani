@@ -3,7 +3,6 @@ export * from "./ControlledCheckbox";
 export * from "./ControlledInput";
 export * from "./ControlledRadio";
 export * from "./ControlledSelect";
-export * from "./Expandable";
 export * from "./HeadSelector";
 export * from "./IconButton";
 export * from "./Modal";

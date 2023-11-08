@@ -14,3 +14,6 @@ export { Divider } from "./CustomComponents/Divider";
 export { Strong } from "./CustomComponents/Strong";
 export { Danger } from "./CustomComponents/Danger";
 export { Hidden } from "./CustomComponents/Hidden";
+export { Accordion } from "./CustomComponents/Accordion";
+export { VerticalStack } from "./CustomComponents/VerticalStack";
+export { TextBuilder } from "./CustomComponents/TextBuilder";

@@ -1,4 +1,3 @@
-import { AvailableIcons } from "@/domains";
 import {
   ClipboardText,
   Coin,
@@ -21,9 +20,40 @@ import {
   Boot,
   CalendarCheck,
   Archive,
+  SwimmingPool,
+  Goggles,
+  Lifebuoy,
+  Carrot,
 } from "@phosphor-icons/react";
 
-export const getAvailableIconByName = (iconName: AvailableIcons) => {
+export type AvailableIcons =
+  | "ClipboardText"
+  | "Coin"
+  | "Swap"
+  | "Checks"
+  | "CreditCard"
+  | "Money"
+  | "HandCoins"
+  | "TreePalm"
+  | "Backpack"
+  | "FirstAid"
+  | "Shuffle"
+  | "File"
+  | "Paperclip"
+  | "EnvelopeOpen"
+  | "SmileyXEyes"
+  | "Smiley"
+  | "MapPin"
+  | "HouseLine"
+  | "Boot"
+  | "CalendarCheck"
+  | "Archive"
+  | "SwimmingPool"
+  | "Goggles"
+  | "Lifebuoy"
+  | "Carrot";
+
+export const getAvailableIconByName = (iconName?: AvailableIcons) => {
   switch (iconName) {
     case "ClipboardText":
       return ClipboardText;
@@ -67,7 +97,14 @@ export const getAvailableIconByName = (iconName: AvailableIcons) => {
       return CalendarCheck;
     case "Archive":
       return Archive;
-
+    case "SwimmingPool":
+      return SwimmingPool;
+    case "Goggles":
+      return Goggles;
+    case "Lifebuoy":
+      return Lifebuoy;
+    case "Carrot":
+      return Carrot;
     default:
       return TreePalm;
   }
