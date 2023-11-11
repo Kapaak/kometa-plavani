@@ -32,7 +32,8 @@ export type Course =
   | "skolky"
   | "zdokonalovaci-plavani"
   | "kondicni-plavani"
-  | "zakladni-plavani";
+  | "zakladni-plavani"
+  | "plavani-pro-dospele";
 
 export type Level = "lower" | "higher";
 
@@ -87,6 +88,7 @@ export enum LectureTypes {
   BASIC = "basic",
   ADVANCED = "advanced",
   CONDITION = "condition",
+  ADULT = "adult",
 }
 
 export type Lecture = Record<

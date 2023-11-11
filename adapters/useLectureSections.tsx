@@ -53,7 +53,7 @@ export const lectures: Record<string, Service[]> = {
     {
       id: 6,
       headline: "Plavání pro dospělé",
-      text: "Od 1.1.2024 spouštíme plavání pro dospělé! Kurzy jsou určeny pro všechny, kteří se chtějí zdokonalit v plavání a vylepšit si kondičku.",
+      text: "Určeno všem nadšencům, kterým bylo již 18 let a chtějí si zlepšit své plavecké dovednosti.",
       image: AdultLecture,
       alt: "dospělý plavec u konce dráhy",
       name: ScrollSections.APPLICATIONS_ADULT,
@@ -92,6 +92,18 @@ export const lectures: Record<string, Service[]> = {
       name: ScrollSections.APPLICATIONS_CONDITION,
       lectureType: LectureTypes.CONDITION,
       url: "kondicni-plavani",
+    },
+    {
+      id: 6,
+      text: `
+      Určeno všem nadšencům, kterým bylo již 18 let a chtějí si zlepšit své plavecké dovednosti. Kurzy jsou Vhodné pro úplné začátečníky i pokročilé.
+Plavání je sport, díky kterému naberete tělesnou kondici, pomůže Vám zbavit se různých zdravotních problémů, ať už jde o bolest zad, kloubů nebo o problémy s dýcháním.
+      `,
+      image: AdultLecture,
+      alt: "dospělý plavec u konce dráhy",
+      name: ScrollSections.APPLICATIONS_ADULT,
+      lectureType: LectureTypes.ADULT,
+      url: "plavani-pro-dospele",
     },
     {
       id: 1,
