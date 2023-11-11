@@ -1,7 +1,7 @@
 //styles
 import * as S from "./ContactMap.style";
 
-const ContactMap = () => {
+export const ContactMap = () => {
   return (
     <S.Map
       title="kontakt"
@@ -10,5 +10,3 @@ const ContactMap = () => {
     />
   );
 };
-
-export default ContactMap;

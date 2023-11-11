@@ -4,15 +4,15 @@ import { Flex } from "@/styles";
 
 import * as S from "./LocationSectionItem.style";
 
-export type LocationSection = {
+export type LocationSectionItem = {
   title: string;
   icon: Icon;
   description: string;
 };
 
-interface LocationSectionProps extends LocationSection {}
+interface LocationSectionProps extends LocationSectionItem {}
 
-const LocationSection = ({
+export const LocationSectionItem = ({
   title,
   description,
   icon,
@@ -28,5 +28,3 @@ const LocationSection = ({
     </S.LocationSectionItem>
   );
 };
-
-export default LocationSection;

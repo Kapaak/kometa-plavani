@@ -19,15 +19,15 @@ interface AdultFormProps {
 }
 
 export const AdultForm = ({ onSubmit, errors, isLoading }: AdultFormProps) => {
-  const { advanced: advancedPaymentOptions } = useLecturePaymentOptions();
+  const { adult: adultPaymentOptions } = useLecturePaymentOptions();
 
   const [maxNumberOfLessons, setMaxNumberOfLessons] = useState(
-    advancedPaymentOptions[0].lessonsPerWeek
+    adultPaymentOptions[0].lessonsPerWeek
   );
 
   return (
     <SwimmingForm
-      lectureType={LectureTypes.ADVANCED}
+      lectureType={LectureTypes.ADULT}
       onSubmit={onSubmit}
       isLoading={isLoading}
       maxNumberOfLessons={maxNumberOfLessons}
@@ -166,7 +166,7 @@ export const AdultForm = ({ onSubmit, errors, isLoading }: AdultFormProps) => {
             onClick={(radio) => {
               setMaxNumberOfLessons(radio?.lessonsPerWeek ?? 0);
             }}
-            options={advancedPaymentOptions}
+            options={adultPaymentOptions}
           />
           <Text variant="dark">
             V případě individuálních požadavků kontaktujte

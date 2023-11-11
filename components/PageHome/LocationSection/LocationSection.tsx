@@ -1,16 +1,15 @@
 //components
 import { MaxWidth } from "@/styles";
 
-import ContactMap from "./ContactMap/ContactMap";
+import { ContactMap, LocationSectionItems } from "./parts";
 import * as S from "./LocationSection.style";
-import ContactItems from "./LocationSectionItems/LocationSectionItems";
 
 export const LocationSection = () => {
   return (
     <S.LocationSection name="location">
       <MaxWidth>
         <S.Flex>
-          <ContactItems />
+          <LocationSectionItems />
           <ContactMap />
         </S.Flex>
       </MaxWidth>

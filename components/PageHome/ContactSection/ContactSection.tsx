@@ -1,4 +1,4 @@
-import { Accordion, Headline, MaxWidth, VerticalStack } from "@/styles";
+import { Accordion, Headline, MaxWidth, Text, VerticalStack } from "@/styles";
 
 import TrainerImage from "../../../public/images/trainer.png";
 import { data } from "./ContactSection.data";
@@ -16,23 +16,16 @@ export const ContactSection = () => {
             src={TrainerImage}
             alt="hlavní trenérka plavání Anna Matušová"
           />
-          <VerticalStack margin="-2rem 0 0 0" flex="1">
-            <Accordion
-              accordionItems={[
-                {
-                  title: "Anna Matušová",
-                  subtitle: "Vedoucí táborů",
-                  content:
-                    "Plavání se věnuji od malička a prošla jsem si celou plaveckou přípravku. Poté jsem začala trénovat děti. Momentálně vedu plavání na Kohoutovicích a Holzové. Volný čas ráda trávím cestováním a sledováním filmů.",
-                },
-                {
-                  title: "Tom Strnad",
-                  subtitle: "Vedoucí táborů",
-                  content:
-                    "Trénování dětí se věnuji více než 5 let. Momentálně působím na bazénech v Kohoutovicích, na Holzové a Milenové. Ve volném čase rád cestuji, sportuji a zkoumám nové věci.",
-                },
-              ]}
-            />
+          <VerticalStack flex="1">
+            <Text bold variant="dark">
+              Anna Matušová
+            </Text>
+            <Text variant="dark">
+              Plavání se věnuji od malička a prošla jsem si celou plaveckou
+              přípravku. Poté jsem začala trénovat děti. Momentálně vedu plavání
+              na Kohoutovicích a Holzové. Volný čas ráda trávím cestováním a
+              sledováním filmů.
+            </Text>
 
             <VerticalStack padding="2rem 0 0 0" gap="2rem">
               {data?.map((contact) => (

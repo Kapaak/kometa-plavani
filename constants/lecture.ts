@@ -642,6 +642,41 @@ export const LECTURE_PAYMENT_OPTIONS = {
       lessonsPerWeek: 3,
     },
   ],
+  adult: [
+    {
+      label: "4000 Kč - pololetí, 1 x týdně - cca 17 lekcí ve vybrané skupince",
+      value: "4000 Kč",
+      lessonsPerWeek: 1,
+    },
+    {
+      label:
+        "7700 Kč - celý školní rok, 1 x týdně - cca 34 lekcí ve vybrané skupince",
+      value: "7700 Kč",
+      lessonsPerWeek: 1,
+    },
+    {
+      label: "7500 Kč - pololetí, 2x týdně - cca 34 lekcí ve vybrané skupince",
+      value: "7500 Kč",
+      lessonsPerWeek: 2,
+    },
+    {
+      label:
+        "14500 Kč - celý školní rok, 2x týdně - cca 68 lekcí ve vybrané skupince",
+      value: "14500 Kč",
+      lessonsPerWeek: 2,
+    },
+    {
+      label: "9000 Kč - pololetí, 3x týdně - cca 51 lekcí ve vybrané skupince",
+      value: "9000 Kč",
+      lessonsPerWeek: 3,
+    },
+    {
+      label:
+        "15000 Kč - celý školní rok, 3x týdně - cca 102 lekcí ve vybrané skupince",
+      value: "15000 Kč",
+      lessonsPerWeek: 3,
+    },
+  ],
 };
 
 //BACKUP DATA IF SANITY BREAKS

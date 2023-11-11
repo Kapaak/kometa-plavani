@@ -43,6 +43,7 @@ export enum ScrollSections {
   contact = "contact",
   faq = "faq",
   documents = "documents",
+  location = "location",
   APPLICATIONS_KINDERGARDEN = "applications-kindergarden",
   APPLICATIONS_SCHOOL = "applications-school",
   APPLICATIONS_BASIC = "applications-basic",
@@ -264,6 +265,7 @@ export const googleSheetKeyValuePairs: Record<number, LectureTypes> = {
   2: LectureTypes.BASIC,
   3: LectureTypes.ADVANCED,
   4: LectureTypes.CONDITION,
+  5: LectureTypes.ADULT,
 };
 
 export type SanityActuality = {

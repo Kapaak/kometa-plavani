@@ -45,6 +45,11 @@ export const data: NavLink[] = [
   },
   {
     href: "/",
+    scrollTarget: ScrollSections.location,
+    output: "Adresa",
+  },
+  {
+    href: "/",
     scrollTarget: ScrollSections.contact,
     output: "Kontakt",
   },
