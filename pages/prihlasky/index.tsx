@@ -14,8 +14,7 @@ import { PageLayout } from "@/components/PageLayout";
 import { groq } from "next-sanity";
 import { SanityInfoBar } from "@/domains";
 
-interface Props
-  extends InferGetServerSidePropsType<typeof getServerSideProps> {}
+interface Props extends InferGetServerSidePropsType<typeof getStaticProps> {}
 
 const PrihlaskyPage: NextPage<Props> = ({ courses, infoBar }) => {
   return (
@@ -33,7 +32,7 @@ const PrihlaskyPage: NextPage<Props> = ({ courses, infoBar }) => {
 
 export default PrihlaskyPage;
 
-export const getServerSideProps = async () => {
+export const getStaticProps = async () => {
   const queryCourse = groq`*[_type == "course"]{pondeli[]{start,capacity},utery[]{start,capacity},streda[]{start,capacity},ctvrtek[]{start,capacity},patek[]{start,capacity},duration,price,title,value,age,file{asset->{url}}}`;
   const queryInfoBar = groq`*[_type == "infoBar" && visibility == true][0]{title,visibility,text}`;
 
@@ -45,5 +44,6 @@ export const getServerSideProps = async () => {
       courses,
       infoBar,
     },
+    revalidate: 10,
   };
 };
