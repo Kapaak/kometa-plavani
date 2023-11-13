@@ -11,6 +11,14 @@ import { Service, ScrollSections, LectureTypes } from "@/domains";
 export const lectures: Record<string, Service[]> = {
   homePage: [
     {
+      id: 6,
+      headline: "Plavání pro dospělé",
+      text: "Určeno všem nadšencům, kterým bylo již 18 let a chtějí si zlepšit své plavecké dovednosti.",
+      image: AdultLecture,
+      alt: "dospělý plavec u konce dráhy",
+      name: ScrollSections.APPLICATIONS_ADULT,
+    },
+    {
       id: 1,
       headline: "Základní plavání",
       text: "Kurzy jsou určené pro děti, které se potřebují naučit plavat.",
@@ -50,16 +58,20 @@ export const lectures: Record<string, Service[]> = {
       alt: "plavec s brýlemi v mělké vodě",
       name: ScrollSections.APPLICATIONS_SCHOOL,
     },
+  ],
+  applicationsPage: [
     {
       id: 6,
-      headline: "Plavání pro dospělé",
-      text: "Určeno všem nadšencům, kterým bylo již 18 let a chtějí si zlepšit své plavecké dovednosti.",
+      text: `
+      Určeno všem nadšencům, kterým bylo již 18 let a chtějí si zlepšit své plavecké dovednosti. Kurzy jsou Vhodné pro úplné začátečníky i pokročilé.
+Plavání je sport, díky kterému naberete tělesnou kondici, pomůže Vám zbavit se různých zdravotních problémů, ať už jde o bolest zad, kloubů nebo o problémy s dýcháním.
+      `,
       image: AdultLecture,
       alt: "dospělý plavec u konce dráhy",
       name: ScrollSections.APPLICATIONS_ADULT,
+      lectureType: LectureTypes.ADULT,
+      url: "plavani-pro-dospele",
     },
-  ],
-  applicationsPage: [
     {
       id: 3,
       text: `
@@ -92,18 +104,6 @@ export const lectures: Record<string, Service[]> = {
       name: ScrollSections.APPLICATIONS_CONDITION,
       lectureType: LectureTypes.CONDITION,
       url: "kondicni-plavani",
-    },
-    {
-      id: 6,
-      text: `
-      Určeno všem nadšencům, kterým bylo již 18 let a chtějí si zlepšit své plavecké dovednosti. Kurzy jsou Vhodné pro úplné začátečníky i pokročilé.
-Plavání je sport, díky kterému naberete tělesnou kondici, pomůže Vám zbavit se různých zdravotních problémů, ať už jde o bolest zad, kloubů nebo o problémy s dýcháním.
-      `,
-      image: AdultLecture,
-      alt: "dospělý plavec u konce dráhy",
-      name: ScrollSections.APPLICATIONS_ADULT,
-      lectureType: LectureTypes.ADULT,
-      url: "plavani-pro-dospele",
     },
     {
       id: 1,
