@@ -633,34 +633,9 @@ export const LECTURE_PAYMENT_OPTIONS = {
   ],
   adult: [
     {
-      label: "4000 Kč - pololetí, 1 x týdně",
-      value: "4000 Kč",
+      label: "6000 Kč - pololetí, 1 x týdně (od ledna do půlky června)",
+      value: "6000 Kč",
       lessonsPerWeek: 1,
-    },
-    {
-      label: "7700 Kč - celý školní rok, 1 x týdně",
-      value: "7700 Kč",
-      lessonsPerWeek: 1,
-    },
-    {
-      label: "7500 Kč - pololetí, 2x týdně",
-      value: "7500 Kč",
-      lessonsPerWeek: 2,
-    },
-    {
-      label: "14500 Kč - celý školní rok, 2x týdně",
-      value: "14500 Kč",
-      lessonsPerWeek: 2,
-    },
-    {
-      label: "9000 Kč - pololetí, 3x týdně",
-      value: "9000 Kč",
-      lessonsPerWeek: 3,
-    },
-    {
-      label: "15000 Kč - celý školní rok, 3x týdně",
-      value: "15000 Kč",
-      lessonsPerWeek: 3,
     },
   ],
 };
