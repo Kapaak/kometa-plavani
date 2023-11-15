@@ -523,123 +523,119 @@ export const DUMMY_LECTURE_DAYS_TIMES_CAPACITY: LectureDaysTimesCapacity = {
 export const LECTURE_PAYMENT_OPTIONS = {
   kindergarden: [
     {
-      label:
-        "2040 Kč - pololetí, 1x týdně - cca 17 lekcí ve vybrané skupince / na 1 žáka",
+      label: "2040 Kč - pololetí, 1x týdně",
       value: "2040 Kč",
       lessonsPerWeek: 1,
     },
   ],
   school: [
     {
-      label:
-        "2040 Kč - pololetí, 1x týdně - cca 17 lekcí ve vybrané skupince / na 1 žáka",
+      label: "2040 Kč - pololetí, 1x týdně",
       value: "2040 Kč",
       lessonsPerWeek: 1,
     },
   ],
   basic: [
     {
-      label: "4000 Kč - pololetí, 1 x týdně - cca 17 lekcí ve vybrané skupince",
+      label: "4000 Kč - pololetí, 1 x týdně",
       value: "4000 Kč",
       lessonsPerWeek: 1,
     },
     {
-      label:
-        "7700 Kč - celý školní rok, 1 x týdně - cca 34 lekcí ve vybrané skupince",
+      label: "7700 Kč - celý školní rok, 1 x týdně",
       value: "7700 Kč",
       lessonsPerWeek: 1,
     },
     {
-      label: "7500 Kč - pololetí, 2x týdně - cca 34 lekcí ve vybrané skupince",
+      label: "7500 Kč - pololetí, 2x týdně",
       value: "7500 Kč",
       lessonsPerWeek: 2,
     },
     {
-      label:
-        "14500 Kč - celý školní rok, 2x týdně - cca 68 lekcí ve vybrané skupince",
+      label: "14500 Kč - celý školní rok, 2x týdně",
       value: "14500 Kč",
       lessonsPerWeek: 2,
     },
     {
-      label: "9000 Kč - pololetí, 3x týdně - cca 51 lekcí ve vybrané skupince",
+      label: "9000 Kč - pololetí, 3x týdně",
       value: "9000 Kč",
       lessonsPerWeek: 3,
     },
     {
-      label:
-        "15000 Kč - celý školní rok, 3x týdně - cca 102 lekcí ve vybrané skupince",
+      label: "15000 Kč - celý školní rok, 3x týdně",
       value: "15000 Kč",
       lessonsPerWeek: 3,
     },
   ],
   advanced: [
     {
-      label: "4000 Kč - pololetí, 1 x týdně - cca 17 lekcí ve vybrané skupince",
+      label: "4000 Kč - pololetí, 1 x týdně",
       value: "4000 Kč",
       lessonsPerWeek: 1,
     },
     {
-      label:
-        "7700 Kč - celý školní rok, 1 x týdně - cca 34 lekcí ve vybrané skupince",
+      label: "7700 Kč - celý školní rok, 1 x týdně",
       value: "7700 Kč",
       lessonsPerWeek: 1,
     },
     {
-      label: "7500 Kč - pololetí, 2x týdně - cca 34 lekcí ve vybrané skupince",
+      label: "7500 Kč - pololetí, 2x týdně",
       value: "7500 Kč",
       lessonsPerWeek: 2,
     },
     {
-      label:
-        "14500 Kč - celý školní rok, 2x týdně - cca 68 lekcí ve vybrané skupince",
+      label: "14500 Kč - celý školní rok, 2x týdně",
       value: "14500 Kč",
       lessonsPerWeek: 2,
     },
     {
-      label: "9000 Kč - pololetí, 3x týdně - cca 51 lekcí ve vybrané skupince",
+      label: "9000 Kč - pololetí, 3x týdně",
       value: "9000 Kč",
       lessonsPerWeek: 3,
     },
     {
-      label:
-        "15000 Kč - celý školní rok, 3x týdně - cca 102 lekcí ve vybrané skupince",
+      label: "15000 Kč - celý školní rok, 3x týdně",
       value: "15000 Kč",
       lessonsPerWeek: 3,
     },
   ],
   condition: [
     {
-      label: "4000 Kč - pololetí, 1 x týdně - cca 17 lekcí ve vybrané skupince",
+      label: "4000 Kč - pololetí, 1 x týdně",
       value: "4000 Kč",
       lessonsPerWeek: 1,
     },
     {
-      label:
-        "7700 Kč - celý školní rok, 1 x týdně - cca 34 lekcí ve vybrané skupince",
+      label: "7700 Kč - celý školní rok, 1 x týdně",
       value: "7700 Kč",
       lessonsPerWeek: 1,
     },
     {
-      label: "7500 Kč - pololetí, 2x týdně - cca 34 lekcí ve vybrané skupince",
+      label: "7500 Kč - pololetí, 2x týdně",
       value: "7500 Kč",
       lessonsPerWeek: 2,
     },
     {
-      label:
-        "14500 Kč - celý školní rok, 2x týdně - cca 68 lekcí ve vybrané skupince",
+      label: "14500 Kč - celý školní rok, 2x týdně",
       value: "14500 Kč",
       lessonsPerWeek: 2,
     },
     {
-      label: "9000 Kč - pololetí, 3x týdně - cca 51 lekcí ve vybrané skupince",
+      label: "9000 Kč - pololetí, 3x týdně",
       value: "9000 Kč",
       lessonsPerWeek: 3,
     },
     {
-      label:
-        "15000 Kč - celý školní rok, 3x týdně - cca 102 lekcí ve vybrané skupince",
+      label: "15000 Kč - celý školní rok, 3x týdně",
       value: "15000 Kč",
       lessonsPerWeek: 3,
+    },
+  ],
+  adult: [
+    {
+      label: "6000 Kč - pololetí, 1 x týdně (od ledna do půlky června)",
+      value: "6000 Kč",
+      lessonsPerWeek: 1,
     },
   ],
 };

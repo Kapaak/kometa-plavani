@@ -4,37 +4,74 @@ import SchoolLecture from "@/public/images/service-school.jpg";
 import AdvancedLecture from "@/public/images/service-advanced.jpg";
 import BasicLecture from "@/public/images/service-basic.jpg";
 import ConditionLecture from "@/public/images/service-condition.jpg";
+import AdultLecture from "@/public/images/service-adult.jpg";
 //interfaces
 import { Service, ScrollSections, LectureTypes } from "@/domains";
 
 export const lectures: Record<string, Service[]> = {
   homePage: [
     {
-      id: 1,
-      headline: "Školy a školky",
-      text: "Cílem naší výuky je adaptovat dítě na vodní prostředí.",
-      image: SchoolLecture,
-      alt: "dítě v bazénu pod vodou s brýlemi",
-      name: ScrollSections.APPLICATIONS_KINDERGARDEN,
+      id: 6,
+      headline: "Plavání pro dospělé",
+      text: "Určeno všem nadšencům, kterým bylo již 18 let a chtějí si zlepšit své plavecké dovednosti.",
+      image: AdultLecture,
+      alt: "dospělý plavec u konce dráhy",
+      name: ScrollSections.APPLICATIONS_ADULT,
     },
     {
-      id: 2,
+      id: 1,
       headline: "Základní plavání",
       text: "Kurzy jsou určené pro děti, které se potřebují naučit plavat.",
-      image: AdvancedLecture,
-      alt: "plavec s hlavou pod vodou a deskou",
+      image: SchoolLecture,
+      alt: "děti v bazénu pod vodou s brýlemi",
       name: ScrollSections.APPLICATIONS_BASIC,
     },
     {
-      id: 3,
-      headline: "Zdokonalovací a kondiční plavání",
-      text: "Vhodné přo děti, co se nebojí plavat ve velkém bazénu, navíc již ovládají základy plavání.",
-      image: ConditionLecture,
-      alt: "dvě plavkyně na začátku dráhy",
+      id: 2,
+      headline: "Zdokonalovací plavání",
+      text: "Kurzy jsou určené pro děti, které se v plavání chtějí zdokonalit.",
+      image: AdvancedLecture,
+      alt: "plavec s hlavou pod vodou a deskou",
       name: ScrollSections.APPLICATIONS_ADVANCED,
+    },
+    {
+      id: 3,
+      headline: "Kondiční plavání",
+      text: "Vhodné pro děti, co se nebojí plavat ve velkém bazénu, navíc již ovládají základy plavání.",
+      image: ConditionLecture,
+      alt: "plavkyně uprostřed dráhy",
+      name: ScrollSections.APPLICATIONS_CONDITION,
+    },
+    {
+      id: 4,
+      headline: "Školky",
+      text: "Cílem naší výuky je adaptovat dítě na vodní prostředí.",
+      image: KindergardenLecture,
+      alt: "plavkyně ve vodě, která se nadechuje",
+      name: ScrollSections.APPLICATIONS_KINDERGARDEN,
+    },
+    {
+      id: 5,
+      headline: "Školy",
+      text: "Cílem je naučit plavce základům plavání.",
+      image: BasicLecture,
+      alt: "plavec s brýlemi v mělké vodě",
+      name: ScrollSections.APPLICATIONS_SCHOOL,
     },
   ],
   applicationsPage: [
+    {
+      id: 6,
+      text: `
+      Určeno všem nadšencům, kterým bylo již 18 let a chtějí si zlepšit své plavecké dovednosti. Kurzy jsou Vhodné pro úplné začátečníky i pokročilé.
+Plavání je sport, díky kterému naberete tělesnou kondici, pomůže Vám zbavit se různých zdravotních problémů, ať už jde o bolest zad, kloubů nebo o problémy s dýcháním.
+      `,
+      image: AdultLecture,
+      alt: "dospělý plavec u konce dráhy",
+      name: ScrollSections.APPLICATIONS_ADULT,
+      lectureType: LectureTypes.ADULT,
+      url: "plavani-pro-dospele",
+    },
     {
       id: 3,
       text: `

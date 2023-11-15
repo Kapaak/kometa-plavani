@@ -1,14 +1,12 @@
 //libraries
 import styled from "styled-components";
 //styles
-import { Flex as SFlex, SectionElement } from "@/styles";
-import { dimensions } from "@/utils";
+import { Flex, SectionElement } from "@/styles";
 
-export const Flex = styled(SFlex)`
-  @media (${dimensions.tabletX}) {
-    flex-direction: row;
-    justify-content: space-between;
-  }
+export const Services = styled(Flex)`
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(33rem, 1fr));
+  gap: 4rem;
 `;
 
 export const ServiceSection = styled(SectionElement)`

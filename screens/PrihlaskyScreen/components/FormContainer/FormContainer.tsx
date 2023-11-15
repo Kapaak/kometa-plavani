@@ -18,6 +18,7 @@ import {
   ConditionForm,
 } from "..";
 import { uploadGlobalSpreadsheet, uploadSchoolSpreadsheet } from "@/utils";
+import { AdultForm } from "../AdultForm";
 
 interface FormContainerProps {
   spreadsheetId: string;
@@ -37,6 +38,7 @@ export const FormContainer = ({
   const isBasicSwimming = courseName === "zakladni-plavani";
   const isAdvancedSwimming = courseName === "zdokonalovaci-plavani";
   const isConditionSwimming = courseName === "kondicni-plavani";
+  const isAdultSwimming = courseName === "plavani-pro-dospele";
 
   const [isOpen, setIsOpen] = useState(false);
   const [isLoading, setIsLoading] = useState(false);
@@ -140,6 +142,13 @@ export const FormContainer = ({
       )}
       {isConditionSwimming && (
         <ConditionForm
+          onSubmit={handleSubmit(onSubmit)}
+          errors={errors}
+          isLoading={isLoading}
+        />
+      )}
+      {isAdultSwimming && (
+        <AdultForm
           onSubmit={handleSubmit(onSubmit)}
           errors={errors}
           isLoading={isLoading}

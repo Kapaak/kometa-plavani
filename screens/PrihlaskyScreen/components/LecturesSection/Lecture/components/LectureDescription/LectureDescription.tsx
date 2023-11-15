@@ -28,7 +28,7 @@ export const LectureDescription = ({
       <S.Container>
         <IconText icon={Coin} text={price} bold />
         <IconText icon={Timer} text={`${time} min`} />
-        <IconText icon={Baby} text={age} />
+        {age && <IconText icon={Baby} text={age} />}
         {pricingDocument && (
           <S.DocumentLink
             href={pricingDocument}

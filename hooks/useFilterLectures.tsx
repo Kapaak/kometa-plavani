@@ -49,7 +49,8 @@ export const useFilterLectures = (page?: string) => {
             if (
               lecture?.lectureType === LectureTypes.ADVANCED ||
               lecture?.lectureType === LectureTypes.BASIC ||
-              lecture?.lectureType === LectureTypes.CONDITION
+              lecture?.lectureType === LectureTypes.CONDITION ||
+              lecture?.lectureType === LectureTypes.ADULT
             ) {
               return true;
             }

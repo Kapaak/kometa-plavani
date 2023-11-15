@@ -32,7 +32,8 @@ export type Course =
   | "skolky"
   | "zdokonalovaci-plavani"
   | "kondicni-plavani"
-  | "zakladni-plavani";
+  | "zakladni-plavani"
+  | "plavani-pro-dospele";
 
 export type Level = "lower" | "higher";
 
@@ -42,11 +43,13 @@ export enum ScrollSections {
   contact = "contact",
   faq = "faq",
   documents = "documents",
+  location = "location",
   APPLICATIONS_KINDERGARDEN = "applications-kindergarden",
   APPLICATIONS_SCHOOL = "applications-school",
   APPLICATIONS_BASIC = "applications-basic",
   APPLICATIONS_ADVANCED = "applications-advanced",
   APPLICATIONS_CONDITION = "applications-condition",
+  APPLICATIONS_ADULT = "applications-adult",
 }
 
 export enum Content {
@@ -86,6 +89,7 @@ export enum LectureTypes {
   BASIC = "basic",
   ADVANCED = "advanced",
   CONDITION = "condition",
+  ADULT = "adult",
 }
 
 export type Lecture = Record<
@@ -261,6 +265,7 @@ export const googleSheetKeyValuePairs: Record<number, LectureTypes> = {
   2: LectureTypes.BASIC,
   3: LectureTypes.ADVANCED,
   4: LectureTypes.CONDITION,
+  5: LectureTypes.ADULT,
 };
 
 export type SanityActuality = {

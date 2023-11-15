@@ -20,18 +20,18 @@ const ServiceSection = () => {
   return (
     <S.ServiceSection name="service">
       <MaxWidth>
-        <S.Flex gap="4rem">
+        <S.Services gap="4rem">
           {filteredLectures.map((filteredLecture, index) => (
             <Service
               headline={filteredLecture?.headline}
               text={filteredLecture.text}
               image={filteredLecture.image}
               name={filteredLecture.name}
-              key={`${index}_${filteredLecture.id}`}
+              key={`${index}_${filteredLecture.name}`}
               alt={filteredLecture.alt}
             />
           ))}
-        </S.Flex>
+        </S.Services>
       </MaxWidth>
     </S.ServiceSection>
   );
