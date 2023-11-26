@@ -33,6 +33,7 @@ export const ContactSection = () => {
                   key={contact.title}
                   title={contact.title}
                   description={contact.description}
+                  value={contact.value}
                   icon={contact.icon}
                 />
               ))}
