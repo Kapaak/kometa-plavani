@@ -146,6 +146,7 @@ export type Service = {
   price?: string;
   time?: number;
   pricingDocument?: string;
+  tag?: string;
 };
 
 export type Dropdown = {

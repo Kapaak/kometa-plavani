@@ -17,6 +17,7 @@ export const lectures: Record<string, Service[]> = {
       image: AdultLecture,
       alt: "dospělý plavec u konce dráhy",
       name: ScrollSections.APPLICATIONS_ADULT,
+      tag: "dospělí",
     },
     {
       id: 1,
@@ -25,6 +26,7 @@ export const lectures: Record<string, Service[]> = {
       image: SchoolLecture,
       alt: "děti v bazénu pod vodou s brýlemi",
       name: ScrollSections.APPLICATIONS_BASIC,
+      tag: "děti od 4 let",
     },
     {
       id: 2,
@@ -33,6 +35,7 @@ export const lectures: Record<string, Service[]> = {
       image: AdvancedLecture,
       alt: "plavec s hlavou pod vodou a deskou",
       name: ScrollSections.APPLICATIONS_ADVANCED,
+      tag: "děti",
     },
     {
       id: 3,
@@ -41,6 +44,7 @@ export const lectures: Record<string, Service[]> = {
       image: ConditionLecture,
       alt: "plavkyně uprostřed dráhy",
       name: ScrollSections.APPLICATIONS_CONDITION,
+      tag: "děti",
     },
     {
       id: 4,
@@ -49,6 +53,7 @@ export const lectures: Record<string, Service[]> = {
       image: KindergardenLecture,
       alt: "plavkyně ve vodě, která se nadechuje",
       name: ScrollSections.APPLICATIONS_KINDERGARDEN,
+      tag: "organizace mšmt",
     },
     {
       id: 5,
@@ -57,6 +62,7 @@ export const lectures: Record<string, Service[]> = {
       image: BasicLecture,
       alt: "plavec s brýlemi v mělké vodě",
       name: ScrollSections.APPLICATIONS_SCHOOL,
+      tag: "organizace mšmt",
     },
   ],
   applicationsPage: [

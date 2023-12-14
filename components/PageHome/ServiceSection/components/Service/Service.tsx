@@ -15,10 +15,11 @@ interface ServiceProps {
   image: StaticImageData;
   alt: string;
   name: ScrollSections;
+  tag?: string;
 }
 
 export const Service = (props: ServiceProps) => {
-  const { headline, text, image, name, alt } = props;
+  const { headline, text, image, name, alt, tag } = props;
 
   const router = useRouter();
 
@@ -33,6 +34,7 @@ export const Service = (props: ServiceProps) => {
       <S.Container>
         <S.ImageContainer>
           <S.Img src={image} placeholder="blur" alt={alt} />
+          {tag && <S.Tag>{tag}</S.Tag>}
         </S.ImageContainer>
         <S.Flex justify="space-between" gap="1rem">
           <Subheadline variant="dark">{headline}</Subheadline>

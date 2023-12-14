@@ -29,6 +29,20 @@ export const Flex = styled(SFlex)`
   }
 `;
 
+export const Tag = styled.div`
+  position: absolute;
+  bottom: 3rem;
+  background-color: var(--col3);
+  color: var(--col2);
+  padding: 0.8rem 2rem;
+  min-width: 10.6rem;
+  border-radius: 0px 3.5rem 3.5rem 0px;
+  font-size: 1.4rem;
+  text-align: center;
+  letter-spacing: 0.07rem;
+  text-transform: uppercase;
+`;
+
 export const Container = styled.div`
   display: flex;
   flex-direction: column;

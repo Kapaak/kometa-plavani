@@ -29,6 +29,7 @@ const ServiceSection = () => {
               name={filteredLecture.name}
               key={`${index}_${filteredLecture.name}`}
               alt={filteredLecture.alt}
+              tag={filteredLecture.tag}
             />
           ))}
         </S.Services>
