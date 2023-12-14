@@ -17,7 +17,7 @@ interface ServiceProps {
   name: ScrollSections;
 }
 
-const Service = (props: ServiceProps) => {
+export const Service = (props: ServiceProps) => {
   const { headline, text, image, name, alt } = props;
 
   const router = useRouter();
@@ -48,5 +48,3 @@ const Service = (props: ServiceProps) => {
     </S.Service>
   );
 };
-
-export default Service;

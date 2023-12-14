@@ -1,8 +1,8 @@
 //styles
-import { MaxWidth } from "@/styles";
+import { MaxWidth, Space } from "@/styles";
 import * as S from "./ServiceSection.style";
 //components
-import Service from "./Service/Service";
+import { IndividualCourse, Service } from "./components";
 //data
 import { useFilterLectures } from "@/hooks";
 import { useRouter } from "next/router";
@@ -32,6 +32,8 @@ const ServiceSection = () => {
             />
           ))}
         </S.Services>
+        <Space />
+        <IndividualCourse />
       </MaxWidth>
     </S.ServiceSection>
   );
