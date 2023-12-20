@@ -32,6 +32,8 @@ export const Lecture = (props: LectureProps) => {
   if (!lectureType) return null;
 
   const courseInformation = coursesInformation[lectureType];
+  const isCalendarEmpty =
+    !lectureDaysTimesCapacity?.[lectureType]?.lectureTimes?.length;
 
   return (
     <S.LectureSection name={name}>
@@ -59,9 +61,15 @@ export const Lecture = (props: LectureProps) => {
               capacity={lectures?.[lectureType]?.lectures}
             />
             <Hidden isHidden={isLoading || isError}>
-              <Link href={`/prihlasky/${url}`} passHref>
-                <Button variant="filled">poslat přihlášku</Button>
-              </Link>
+              <S.Link
+                href={`/prihlasky/${url}`}
+                passHref
+                disabled={isCalendarEmpty}
+              >
+                <Button variant="filled" disabled={isCalendarEmpty}>
+                  {isCalendarEmpty ? "Kurz není dostupný" : "poslat přihlášku"}
+                </Button>
+              </S.Link>
             </Hidden>
           </Flex>
         </S.PaddingWrapper>

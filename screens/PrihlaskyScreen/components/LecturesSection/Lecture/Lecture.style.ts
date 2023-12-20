@@ -9,6 +9,7 @@ import {
 } from "@/styles";
 import { dimensions } from "@/utils";
 import Image from "next/image";
+import NextLink from "next/link";
 
 export const Img = styled(Image)`
   object-fit: cover;
@@ -63,4 +64,10 @@ export const PaddingWrapper = styled.div<{ padding?: string }>`
   @media (${dimensions.desktop}) {
     padding: ${({ padding }) => padding || "0"};
   }
+`;
+
+export const Link = styled(NextLink).withConfig({
+  shouldForwardProp: (prop) => !["active"].includes(prop),
+})<{ disabled?: boolean }>`
+  pointer-events: ${({ disabled }) => (disabled ? "none" : "auto")};
 `;

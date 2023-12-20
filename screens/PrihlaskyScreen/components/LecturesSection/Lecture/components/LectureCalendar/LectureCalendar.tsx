@@ -69,13 +69,15 @@ export const LectureCalendar = ({
           />
         )}
         <LectureCalendarTimes lectureTimes={times} />
-        <LectureCalendarData
-          selectedSemester={showSemesterSwitcher ? selectedSemester : 1}
-          lectureTimes={times}
-          lectureDays={days}
-          calendarData={data}
-          capacity={capacity}
-        />
+        {!isLoading && Boolean(times?.length) && (
+          <LectureCalendarData
+            selectedSemester={showSemesterSwitcher ? selectedSemester : 1}
+            lectureTimes={times}
+            lectureDays={days}
+            calendarData={data}
+            capacity={capacity}
+          />
+        )}
       </Hidden>
     </S.LectureCalendar>
   );
