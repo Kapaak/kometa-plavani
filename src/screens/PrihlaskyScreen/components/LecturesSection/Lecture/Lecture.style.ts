@@ -1,16 +1,9 @@
-//libraries
 import Image from "next/image";
 import NextLink from "next/link";
 
 import styled from "styled-components";
 
-//styles
-import {
-  Flex as SFlex,
-  Headline as SHeadline,
-  SectionElement,
-  Text,
-} from "~/styles";
+import { Flex as SFlex, SectionElement } from "~/styles";
 import { dimensions } from "~/utils";
 
 export const Img = styled(Image)`

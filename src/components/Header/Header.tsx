@@ -1,4 +1,3 @@
-//styles
 import { usePageContext } from "~/contexts";
 import { SanityInfoBar } from "~/domains";
 

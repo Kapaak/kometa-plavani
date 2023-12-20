@@ -1,10 +1,8 @@
-//libraries
 import Image from "next/image";
 
 import styled from "styled-components";
 
-//styles
-import { Text, MaxWidth as SMaxWidth, SectionElement } from "~/styles";
+import { MaxWidth as SMaxWidth, SectionElement, Text } from "~/styles";
 import { dimensions } from "~/utils";
 
 export const AboutSection = styled(SectionElement)`

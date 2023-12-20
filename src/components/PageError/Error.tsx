@@ -1,8 +1,6 @@
-//libraries
 import Link from "next/link";
 
-//styles
-import { MainSubheadline, MaxHeight, A, Flex, MaxWidth } from "~/styles";
+import { Flex, MainSubheadline, MaxHeight, MaxWidth } from "~/styles";
 
 import { Button } from "../Shared/Button";
 

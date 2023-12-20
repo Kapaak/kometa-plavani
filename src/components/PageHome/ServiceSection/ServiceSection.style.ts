@@ -1,7 +1,5 @@
-//libraries
 import styled from "styled-components";
 
-//styles
 import { Flex, SectionElement } from "~/styles";
 
 export const Services = styled(Flex)`

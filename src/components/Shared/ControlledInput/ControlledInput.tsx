@@ -1,4 +1,4 @@
-import { HTMLInputTypeAttribute, InputHTMLAttributes } from "react";
+import { HTMLInputTypeAttribute } from "react";
 import { Controller, ValidationRule } from "react-hook-form";
 
 import * as S from "./ControlledInput.style";

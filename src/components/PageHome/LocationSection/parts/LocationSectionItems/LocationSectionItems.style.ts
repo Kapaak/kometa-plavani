@@ -1,7 +1,5 @@
-//libraries
 import styled from "styled-components";
 
-//styles
 import { Text as SText } from "~/styles";
 import { dimensions } from "~/utils";
 

@@ -1,7 +1,5 @@
-//libraries
 import { Sponsor } from "~/domains";
 
-//styles
 import * as S from "./Sponsor.style";
 
 const Sponsor = ({ href, image, name }: Sponsor) => {

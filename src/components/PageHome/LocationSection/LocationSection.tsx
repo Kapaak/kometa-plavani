@@ -1,4 +1,3 @@
-//components
 import { MaxWidth } from "~/styles";
 
 import { ContactMap, LocationSectionItems } from "./parts";

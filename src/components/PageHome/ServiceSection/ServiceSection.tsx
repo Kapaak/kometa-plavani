@@ -1,4 +1,3 @@
-//styles
 import { useRouter } from "next/router";
 
 import { useFilterLectures } from "~/hooks";
@@ -8,9 +7,6 @@ import { getPageRouteTranslation } from "~/utils";
 import { IndividualCourse, Service } from "./components";
 
 import * as S from "./ServiceSection.style";
-//components
-//data
-
 
 const ServiceSection = () => {
   const { route } = useRouter();

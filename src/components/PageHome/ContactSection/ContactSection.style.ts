@@ -1,10 +1,8 @@
-//librarires
 import NextImage from "next/image";
 
 import styled from "styled-components";
 
-//styles
-import { SectionElement, Flex } from "~/styles";
+import { Flex, SectionElement } from "~/styles";
 import { dimensions } from "~/utils";
 
 export const ContactSection = styled(SectionElement)`

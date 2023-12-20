@@ -1,12 +1,9 @@
-//components
 import { useSanityHomeContext } from "~/contexts";
-import { MaxWidth, Text, Headline } from "~/styles";
+import { Headline, MaxWidth, Text } from "~/styles";
 
 import { Document } from "./Document";
 
-//styles
 import * as S from "./DocumentSection.style";
-//data
 
 export const DocumentSection = () => {
   const { documents } = useSanityHomeContext();

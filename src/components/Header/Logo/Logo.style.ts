@@ -1,9 +1,7 @@
-//libraries
 import Image from "next/image";
 
 import styled from "styled-components";
 
-//styles
 import { dimensions } from "~/utils";
 
 export const Img = styled(Image)`

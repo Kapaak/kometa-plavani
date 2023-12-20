@@ -1,10 +1,8 @@
-//components
 import { Flex, Headline } from "~/styles";
 
 import { locationInformation } from "../../constants";
 import { LocationSectionItem } from "../LocationSectionItem";
 
-//styles
 import * as S from "./LocationSectionItems.style";
 
 export const LocationSectionItems = () => {

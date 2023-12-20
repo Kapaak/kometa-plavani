@@ -1,15 +1,12 @@
 //components
 import { usePageContext } from "~/contexts";
 
-import { data } from "./Navigation.data";
-import NavLinks from "./NavLinks/NavLinks";
 import { Hamburger } from "../Hamburger";
 import { Logo } from "../Logo";
+import NavLinks from "./NavLinks/NavLinks";
+import { data } from "./Navigation.data";
 
-//styles
 import * as S from "./Navigation.style";
-//data
-
 
 interface Props {
   isActive: boolean;

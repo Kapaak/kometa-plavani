@@ -1,11 +1,7 @@
-//components
 import { ContentRenderer } from "~/components/Shared";
-
-//styles
 import { Fragment } from "~/domains";
 
 import * as S from "./FooterSection.style";
-//interfaces
 
 interface Props {
   headline: string;

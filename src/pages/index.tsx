@@ -1,11 +1,5 @@
-import type {
-  GetServerSideProps,
-  GetServerSidePropsContext,
-  InferGetServerSidePropsType,
-  NextPage,
-} from "next";
+import type { InferGetServerSidePropsType, NextPage } from "next";
 
-//componets
 import { groq } from "next-sanity";
 
 import Home from "~/components/PageHome/Home";

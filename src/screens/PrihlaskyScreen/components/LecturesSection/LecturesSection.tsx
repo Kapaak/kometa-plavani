@@ -1,4 +1,3 @@
-//components
 import { useRouter } from "next/router";
 
 import { Filter } from "~/components/Shared";
@@ -8,9 +7,7 @@ import { getPageRouteTranslation } from "~/utils";
 
 import { Lecture } from "./Lecture";
 
-//styles
 import * as S from "./LecturesSection.style";
-//data
 
 export const LecturesSection = () => {
   const { route } = useRouter();

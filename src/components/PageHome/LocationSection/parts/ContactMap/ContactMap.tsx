@@ -1,4 +1,3 @@
-//styles
 import * as S from "./ContactMap.style";
 
 export const ContactMap = () => {

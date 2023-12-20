@@ -1,12 +1,8 @@
-//libraries
-import Image, { StaticImageData } from "next/image";
+import { StaticImageData } from "next/image";
 import { useRouter } from "next/router";
 
-//styles
 import { ScrollSections } from "~/domains";
 import { Subheadline, Text } from "~/styles";
-//interfaces
-//others
 import { scrollTo } from "~/utils";
 
 import * as S from "./Service.style";

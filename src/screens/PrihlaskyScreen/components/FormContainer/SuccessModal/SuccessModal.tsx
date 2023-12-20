@@ -14,9 +14,9 @@ interface ModalProps {
 export const SuccessModal = ({ addChild, isOpen, redirect }: ModalProps) => {
   return (
     <Modal
-      headline={"vaše přihláška byla úspěšně odeslána"}
-      isOpen={isOpen}
-      redirect={redirect}
+      title="vaše přihláška byla úspěšně odeslána"
+      open={isOpen}
+      onChange={redirect}
     >
       <S.TextWrapper>
         <Text variant="dark">

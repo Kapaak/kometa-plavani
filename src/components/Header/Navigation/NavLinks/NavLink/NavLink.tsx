@@ -1,10 +1,6 @@
-//libraries
 import Link from "next/link";
 import { useRouter } from "next/router";
 
-//styles
-//interfaces
-//others
 import { usePageContext } from "~/contexts/PageContext";
 import { Dropdown, ScrollSections } from "~/domains";
 import { scrollTo } from "~/utils";

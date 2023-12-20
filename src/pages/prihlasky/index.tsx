@@ -1,16 +1,12 @@
-import {
-  GetServerSidePropsContext,
-  InferGetServerSidePropsType,
-  NextPage,
-} from "next";
+import { InferGetServerSidePropsType, NextPage } from "next";
 import { groq } from "next-sanity";
 
 import { PageLayout } from "~/components/PageLayout";
 import {
+  GoogleSheetsContextProvider,
   LecturesContextProvider,
   SanityApplicationsContextProvider,
 } from "~/contexts";
-import { GoogleSheetsContextProvider } from "~/contexts";
 import { SanityInfoBar } from "~/domains";
 import { client } from "~/libs";
 import { PrihlaskyScreen } from "~/screens";

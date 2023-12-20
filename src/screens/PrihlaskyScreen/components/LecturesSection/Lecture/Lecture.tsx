@@ -1,6 +1,3 @@
-//styles
-import Link from "next/link";
-
 import { Button } from "~/components/Shared";
 import {
   useGoogleSheetsContext,
@@ -13,10 +10,6 @@ import { Flex, Hidden } from "~/styles";
 import { LectureCalendar, LectureDescription } from "./components";
 
 import * as S from "./Lecture.style";
-//interfaces
-
-
-
 
 type LectureProps = Omit<
   Service,

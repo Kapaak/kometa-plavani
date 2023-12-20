@@ -1,4 +1,3 @@
-//interfaces
 import { GetStaticPropsContext, NextPage } from "next";
 import { groq } from "next-sanity";
 

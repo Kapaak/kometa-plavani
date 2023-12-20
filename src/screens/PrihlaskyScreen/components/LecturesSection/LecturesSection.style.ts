@@ -1,7 +1,5 @@
-//libraries
 import styled from "styled-components";
 
-//styles
 import { Flex as SFlex } from "~/styles";
 import { dimensions } from "~/utils";
 

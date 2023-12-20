@@ -1,10 +1,8 @@
-//libraries
 import Image from "next/image";
 
 import styled from "styled-components";
 
-//styles
-import { Flex, Text, MaxWidth as SMaxWidth, SectionElement } from "~/styles";
+import { Flex, MaxWidth as SMaxWidth, SectionElement, Text } from "~/styles";
 import { dimensions } from "~/utils";
 
 export const HeroSection = styled(SectionElement)`

@@ -1,40 +1,41 @@
-import { PropsWithChildren } from "react";
-import ReactModal from "react-modal";
+import { PropsWithChildren, ReactNode } from "react";
+
+import * as Dialog from "@radix-ui/react-dialog";
+
+import { Flex } from "~/styles";
 
 import * as S from "./Modal.style";
 
-ReactModal.setAppElement("body");
-
 interface ModalProps {
-	isOpen: boolean;
-	redirect: () => void;
-	headline: string;
+  open: boolean;
+  title: string;
+  actions?: ReactNode;
+  onChange?: () => void;
 }
 
-export const Modal = ({
-	isOpen,
-	headline,
-	children,
-}: PropsWithChildren<ModalProps>) => {
-	const modalStyles = {
-		content: {
-			inset: "0",
-			position: "relative",
-			border: "none",
-			borderRadius: "var(--small-border-rad)",
-			width: "70rem",
-			maxWidth: "80%",
-			boxShadow: "var(--shadow)",
-			margin: "0 auto",
-			padding: "2rem", // 6rem na vetsim
-		},
-		overlay: { zIndex: "1000", display: "flex", alignItems: "center" },
-	} as ReactModal.Styles;
-
-	return (
-		<ReactModal isOpen={isOpen} style={modalStyles}>
-			<S.Headline center>{headline}</S.Headline>
-			{children}
-		</ReactModal>
-	);
-};
+export function Modal({
+  open,
+  title,
+  actions,
+  children,
+  onChange,
+}: PropsWithChildren<ModalProps>) {
+  return (
+    <Dialog.Root open={open} onOpenChange={onChange}>
+      <Dialog.Portal>
+        <S.DialogOverlay />
+        <S.DialogContent>
+          <Dialog.Title>
+            <S.Headline center>{title}</S.Headline>
+          </Dialog.Title>
+          <Dialog.Description>
+            <S.TextWrapper>{children}</S.TextWrapper>
+          </Dialog.Description>
+          <Flex direction="row" gap="1rem" justify="space-between">
+            {actions}
+          </Flex>
+        </S.DialogContent>
+      </Dialog.Portal>
+    </Dialog.Root>
+  );
+}

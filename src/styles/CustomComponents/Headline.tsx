@@ -1,9 +1,6 @@
-//libraries
 import WaveYellow from "~/public/icons/wave-yellow.svg";
 
 import Image from "next/image";
-//icons
-//interfaces
 import { PropsWithChildren } from "react";
 
 import styled from "styled-components";

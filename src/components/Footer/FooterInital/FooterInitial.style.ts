@@ -1,8 +1,6 @@
-//libraries
 import styled from "styled-components";
 
-//styles
-import { Text as SText, Flex as SFlex } from "~/styles";
+import { Flex as SFlex, Text as SText } from "~/styles";
 import { dimensions } from "~/utils";
 
 export const Text = styled(SText)`

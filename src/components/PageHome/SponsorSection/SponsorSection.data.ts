@@ -1,5 +1,3 @@
-//interfaces
-//images
 import ArmendaLogo from "~/public/sponsors/armenda.svg";
 import BohuniceLogo from "~/public/sponsors/bohunice.png";
 import BrnoLogo from "~/public/sponsors/brno.png";

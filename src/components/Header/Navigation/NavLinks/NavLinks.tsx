@@ -1,4 +1,3 @@
-//components
 import FacebookInvertIcon from "~/public/icons/facebook-invert.svg";
 import InstagramInvertIcon from "~/public/icons/instagram-invert.svg";
 

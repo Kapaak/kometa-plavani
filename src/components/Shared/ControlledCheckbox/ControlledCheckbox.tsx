@@ -1,7 +1,6 @@
 import { useId } from "react";
 import { Controller } from "react-hook-form";
 
-import { Check } from "@phosphor-icons/react";
 import * as Checkbox from "@radix-ui/react-checkbox";
 import styled from "styled-components";
 

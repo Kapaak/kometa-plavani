@@ -1,4 +1,3 @@
-//components
 import { Space } from "~/styles";
 
 import AboutSection from "./AboutSection/AboutSection";
@@ -9,7 +8,6 @@ import HeroSection from "./HeroSection/HeroSection";
 import { LocationSection } from "./LocationSection/LocationSection";
 import ServiceSection from "./ServiceSection/ServiceSection";
 import SponsorSection from "./SponsorSection/SponsorSection";
-//styles
 
 const Home = () => {
   return (

@@ -1,7 +1,5 @@
-//libraries
 import styled, { css } from "styled-components";
 
-//styles
 import { Flex } from "~/styles";
 import { dimensions } from "~/utils";
 

@@ -1,7 +1,5 @@
-//libraries
 import styled, { css } from "styled-components";
 
-//styles
 import { dimensions } from "~/utils";
 
 export const Hamburger = styled.div.withConfig({

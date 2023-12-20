@@ -2,7 +2,6 @@ import { useMemo } from "react";
 
 import _ from "lodash";
 
-import { DUMMY_LECTURE_DAYS_TIMES_CAPACITY } from "~/constants";
 import {
   DayTimeCapacity,
   LectureDaysTimesCapacity,
