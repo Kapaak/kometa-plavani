@@ -1,9 +1,12 @@
 //libraries
 import Link from "next/link";
+
 //styles
 import { MainSubheadline, MaxHeight, A, Flex, MaxWidth } from "~/styles";
-import * as S from "./Error.style";
+
 import { Button } from "../Shared/Button";
+
+import * as S from "./Error.style";
 
 const Error = () => {
   return (

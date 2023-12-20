@@ -1,13 +1,15 @@
-import { Option } from "~/domains";
-import { CaretCircleDown } from "@phosphor-icons/react";
 import React, { useId } from "react";
 import { Controller } from "react-hook-form";
-import { ValidationRule } from "react-hook-form/dist/types";
 import Select, {
   StylesConfig,
   components,
   DropdownIndicatorProps,
 } from "react-select";
+
+import { CaretCircleDown } from "@phosphor-icons/react";
+import { ValidationRule } from "react-hook-form/dist/types";
+
+import { Option } from "~/domains";
 
 interface ControlledSelectProps {
   name: string;

@@ -1,5 +1,7 @@
-import { Flex } from "~/styles";
 import { FileArrowDown } from "@phosphor-icons/react";
+
+import { Flex } from "~/styles";
+
 import * as S from "./Document.style";
 
 interface DocumentProps {

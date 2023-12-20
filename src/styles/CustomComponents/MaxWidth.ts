@@ -1,5 +1,6 @@
-import { dimensions } from "~/utils";
 import styled from "styled-components";
+
+import { dimensions } from "~/utils";
 
 export const MaxWidth = styled.div<{ maxWidth?: string }>`
   height: 100%;

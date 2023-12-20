@@ -1,7 +1,9 @@
 import { PropsWithChildren } from "react";
-import Header from "../Header/Header";
-import Footer from "../Footer/Footer";
+
 import { SanityInfoBar } from "~/domains";
+
+import Footer from "../Footer/Footer";
+import Header from "../Header/Header";
 
 interface PageLayoutProps {
   infoBar?: SanityInfoBar;

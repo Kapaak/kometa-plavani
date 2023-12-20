@@ -1,8 +1,10 @@
-import { Flex } from "~/styles";
-import * as RadioGroup from "@radix-ui/react-radio-group";
 import React, { useId } from "react";
 import { Controller } from "react-hook-form";
+
+import * as RadioGroup from "@radix-ui/react-radio-group";
 import styled from "styled-components";
+
+import { Flex } from "~/styles";
 
 //idelane by bylo sem davat nejakej generic type na ten label value lessons
 type ControlledRadioProps = {

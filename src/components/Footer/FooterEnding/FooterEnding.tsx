@@ -1,13 +1,16 @@
 //libraries
-import Image from "next/image";
-import Link from "next/link";
-//styles
-import * as S from "./FooterEnding.style";
-import { Flex } from "~/styles";
-//images
 import FacebookIcon from "~/public/icons/facebook.svg";
 import InstagramIcon from "~/public/icons/instagram.svg";
 import YoutubeIcon from "~/public/icons/youtube.svg";
+
+import Image from "next/image";
+import Link from "next/link";
+
+//styles
+import { Flex } from "~/styles";
+
+import * as S from "./FooterEnding.style";
+//images
 
 const FooterEnding = () => {
   return (

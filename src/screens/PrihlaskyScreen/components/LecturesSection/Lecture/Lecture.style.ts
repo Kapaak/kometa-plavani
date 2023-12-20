@@ -1,5 +1,9 @@
 //libraries
+import Image from "next/image";
+import NextLink from "next/link";
+
 import styled from "styled-components";
+
 //styles
 import {
   Flex as SFlex,
@@ -8,8 +12,6 @@ import {
   Text,
 } from "~/styles";
 import { dimensions } from "~/utils";
-import Image from "next/image";
-import NextLink from "next/link";
 
 export const Img = styled(Image)`
   object-fit: cover;

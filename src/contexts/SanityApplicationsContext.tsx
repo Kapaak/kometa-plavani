@@ -1,10 +1,11 @@
+import { PropsWithChildren, createContext, useContext } from "react";
+
 import {
   CoursesInformation,
   LectureDaysTimesCapacity,
   SanityCourse,
 } from "~/domains";
 import { useSanityApplications } from "~/hooks";
-import { PropsWithChildren, createContext, useContext } from "react";
 
 type SanityContext = {
   coursesInformation: CoursesInformation;

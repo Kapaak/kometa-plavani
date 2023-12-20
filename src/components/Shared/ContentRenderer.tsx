@@ -1,10 +1,12 @@
 //libraries
 import { useEffect, useState } from "react";
+
 import { StyledComponent } from "styled-components";
+
 //styles
+import { Content, Fragment } from "~/domains";
 import { IText } from "~/styles";
 //interfaces
-import { Content, Fragment } from "~/domains";
 
 interface ContentRendererProps {
   fragment: Array<Fragment>;

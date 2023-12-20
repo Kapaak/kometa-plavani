@@ -1,7 +1,3 @@
-import { Option, SwimmingPage } from "~/domains";
-import * as S from "./SwimmingForm.style";
-import { useBasicSwimmingOptions } from "~/hooks";
-import Select, { MultiValue, StylesConfig } from "react-select";
 import {
   BaseSyntheticEvent,
   PropsWithChildren,
@@ -10,9 +6,15 @@ import {
   useState,
 } from "react";
 import { useFormContext } from "react-hook-form";
+import Select, { MultiValue, StylesConfig } from "react-select";
+
 import { IconButton } from "~/components/Shared";
-import { Space, Subheadline } from "~/styles";
 import { useLecturesContext } from "~/contexts";
+import { Option, SwimmingPage } from "~/domains";
+import { useBasicSwimmingOptions } from "~/hooks";
+import { Space, Subheadline } from "~/styles";
+
+import * as S from "./SwimmingForm.style";
 
 const colourStyles: StylesConfig<any, true> = {
   control: (styles) => ({ ...styles, backgroundColor: "white" }),

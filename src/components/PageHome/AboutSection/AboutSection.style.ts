@@ -1,9 +1,11 @@
 //libraries
-import styled from "styled-components";
-//styles
-import { dimensions } from "~/utils";
-import { Text, MaxWidth as SMaxWidth, SectionElement } from "~/styles";
 import Image from "next/image";
+
+import styled from "styled-components";
+
+//styles
+import { Text, MaxWidth as SMaxWidth, SectionElement } from "~/styles";
+import { dimensions } from "~/utils";
 
 export const AboutSection = styled(SectionElement)`
   padding: 1.5rem 0;

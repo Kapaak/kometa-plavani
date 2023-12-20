@@ -1,5 +1,4 @@
 //interfaces
-import { Sponsor } from "~/domains";
 //images
 import ArmendaLogo from "~/public/sponsors/armenda.svg";
 import BohuniceLogo from "~/public/sponsors/bohunice.png";
@@ -15,6 +14,8 @@ import SeverBrnoLogo from "~/public/sponsors/severbrno.png";
 import SgldBrnoLogo from "~/public/sponsors/sglo.png";
 import VodniPoloLogo from "~/public/sponsors/vodni-polo.svg";
 import WaterdropLogo from "~/public/sponsors/waterdrop.png";
+
+import { Sponsor } from "~/domains";
 
 export const data: Sponsor[] = [
   {

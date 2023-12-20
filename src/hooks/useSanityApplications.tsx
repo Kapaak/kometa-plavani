@@ -1,3 +1,8 @@
+import { useMemo } from "react";
+
+import _ from "lodash";
+
+import { DUMMY_LECTURE_DAYS_TIMES_CAPACITY } from "~/constants";
 import {
   DayTimeCapacity,
   LectureDaysTimesCapacity,
@@ -5,9 +10,6 @@ import {
   SanityCourse,
   WeekDaysNew,
 } from "~/domains";
-import { useMemo } from "react";
-import _ from "lodash";
-import { DUMMY_LECTURE_DAYS_TIMES_CAPACITY } from "~/constants";
 
 const DAYS: WeekDaysNew[] = ["pondeli", "utery", "streda", "ctvrtek", "patek"];
 

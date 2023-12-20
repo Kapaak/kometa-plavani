@@ -1,6 +1,7 @@
+import TrainerImage from "~/public/images/trainer.png";
+
 import { Accordion, Headline, MaxWidth, Text, VerticalStack } from "~/styles";
 
-import TrainerImage from "~/public/images/trainer.png";
 import { data } from "./ContactSection.data";
 import { ContactSectionItem } from "./ContactSectionItem";
 

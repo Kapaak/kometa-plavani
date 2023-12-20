@@ -1,5 +1,6 @@
-import { Text } from "~/styles";
 import styled from "styled-components";
+
+import { Text } from "~/styles";
 
 export const LectureSemesterButton = styled.button<{ visible: boolean }>`
   cursor: pointer;

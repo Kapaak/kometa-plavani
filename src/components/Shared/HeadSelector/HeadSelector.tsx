@@ -1,9 +1,9 @@
 import Head from "next/head";
 import { useRouter } from "next/router";
+import { useEffect, useState } from "react";
 
 import { metaDescription } from "./metaDescriptionData";
 import { title } from "./titleData";
-import { useEffect, useState } from "react";
 
 type RouteType = "/" | "/prihlasky";
 

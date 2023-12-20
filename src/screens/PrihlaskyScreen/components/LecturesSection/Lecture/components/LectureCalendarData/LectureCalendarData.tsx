@@ -1,6 +1,5 @@
-import { Flex, Text } from "~/styles";
-import { LectureAvailability } from "../LectureAvailability";
 import { nanoid } from "nanoid";
+
 import {
   DayTimeCapacity,
   GoogleSheetDayTime,
@@ -8,6 +7,10 @@ import {
   WeekDaysNew,
   convertWeekDaysToAbbrDiacritics,
 } from "~/domains";
+import { Flex, Text } from "~/styles";
+
+import { LectureAvailability } from "../LectureAvailability";
+
 import * as S from "./LectureCalendarData.style";
 
 interface LectureCalendarDataProps {

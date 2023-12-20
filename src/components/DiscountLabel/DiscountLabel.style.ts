@@ -1,4 +1,5 @@
 import styled from "styled-components";
+
 import { dimensions } from "~/utils";
 
 export const DiscountLabel = styled.div`

@@ -1,14 +1,19 @@
 //libraries
+import WaveYellow from "~/public/icons/wave-yellow.svg";
+
 import { useEffect } from "react";
 import { useInView } from "react-intersection-observer";
+
 //images
-import WaveYellow from "~/public/icons/wave-yellow.svg";
 //styles
-import * as S from "./AboutSection.style";
-import { useSanityHomeContext } from "~/contexts";
 import { PortableText } from "@portabletext/react";
-import { Text } from "~/styles";
+
+import { useSanityHomeContext } from "~/contexts";
 import { usePageContext } from "~/contexts";
+import { Text } from "~/styles";
+
+import * as S from "./AboutSection.style";
+
 
 const AboutSection = () => {
   const { actualities } = useSanityHomeContext();

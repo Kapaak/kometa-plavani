@@ -1,6 +1,7 @@
-import { FilterLectureOptions, LectureTypes } from "~/domains";
-import { useLectureSections } from "~/adapters";
 import { useCallback, useMemo, useState } from "react";
+
+import { useLectureSections } from "~/adapters";
+import { FilterLectureOptions, LectureTypes } from "~/domains";
 
 const filterOptions = [
   {

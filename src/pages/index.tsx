@@ -4,9 +4,12 @@ import type {
   InferGetServerSidePropsType,
   NextPage,
 } from "next";
+
 //componets
+import { groq } from "next-sanity";
+
 import Home from "~/components/PageHome/Home";
-import { client } from "~/libs";
+import { PageLayout } from "~/components/PageLayout";
 import { SanityHomeContextProvider } from "~/contexts";
 import {
   SanityActuality,
@@ -14,8 +17,7 @@ import {
   SanityFaq,
   SanityInfoBar,
 } from "~/domains";
-import { groq } from "next-sanity";
-import { PageLayout } from "~/components/PageLayout";
+import { client } from "~/libs";
 
 interface Props
   extends InferGetServerSidePropsType<typeof getServerSideProps> {}

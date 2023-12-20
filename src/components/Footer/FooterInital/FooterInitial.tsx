@@ -1,8 +1,10 @@
 //libraries
+import KometaLogo from "~/public/icons/kometa.svg";
+import LogoWhite from "~/public/icons/logo-latest-white.svg";
+
 import Image from "next/image";
 //images
-import LogoWhite from "~/public/icons/logo-latest-white.svg";
-import KometaLogo from "~/public/icons/kometa.svg";
+
 //styles
 import * as S from "./FooterInitial.style";
 

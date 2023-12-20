@@ -1,11 +1,13 @@
 //components
-import FooterSections from "./FooterSections/FooterSections";
-import FooterInitial from "./FooterInital/FooterInitial";
+import { data } from "./Footer.data";
 import FooterEnding from "./FooterEnding/FooterEnding";
+import FooterInitial from "./FooterInital/FooterInitial";
+import FooterSections from "./FooterSections/FooterSections";
+
 //styles
 import * as S from "./Footer.style";
+
 //data
-import { data } from "./Footer.data";
 
 const Footer = () => {
   return (

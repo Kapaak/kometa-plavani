@@ -1,7 +1,9 @@
 import React, { PropsWithChildren, ReactNode } from "react";
-import * as RadixDialog from "@radix-ui/react-dialog";
+
 import { X } from "@phosphor-icons/react";
+import * as RadixDialog from "@radix-ui/react-dialog";
 import styled, { keyframes } from "styled-components";
+
 import { Headline } from "~/styles";
 //todo -> nahrad ten default modal
 interface DialogProps {

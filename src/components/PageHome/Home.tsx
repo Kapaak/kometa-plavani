@@ -1,14 +1,15 @@
 //components
+import { Space } from "~/styles";
+
 import AboutSection from "./AboutSection/AboutSection";
 import { ContactSection } from "./ContactSection/ContactSection";
 import { DocumentSection } from "./DocumentSection";
 import { FAQSection } from "./FAQSection";
 import HeroSection from "./HeroSection/HeroSection";
+import { LocationSection } from "./LocationSection/LocationSection";
 import ServiceSection from "./ServiceSection/ServiceSection";
 import SponsorSection from "./SponsorSection/SponsorSection";
-import { LocationSection } from "./LocationSection/LocationSection";
 //styles
-import { Space } from "~/styles";
 
 const Home = () => {
   return (

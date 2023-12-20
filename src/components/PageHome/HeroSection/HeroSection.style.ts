@@ -1,9 +1,11 @@
 //libraries
+import Image from "next/image";
+
 import styled from "styled-components";
+
 //styles
 import { Flex, Text, MaxWidth as SMaxWidth, SectionElement } from "~/styles";
 import { dimensions } from "~/utils";
-import Image from "next/image";
 
 export const HeroSection = styled(SectionElement)`
   @media (${dimensions.notebook}) {

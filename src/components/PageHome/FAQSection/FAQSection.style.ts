@@ -1,5 +1,6 @@
-import { SectionElement } from "~/styles";
 import styled from "styled-components";
+
+import { SectionElement } from "~/styles";
 import { dimensions } from "~/utils";
 
 export const FAQSection = styled(SectionElement)`

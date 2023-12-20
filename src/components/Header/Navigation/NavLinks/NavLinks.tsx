@@ -1,17 +1,22 @@
 //components
+import FacebookInvertIcon from "~/public/icons/facebook-invert.svg";
+import InstagramInvertIcon from "~/public/icons/instagram-invert.svg";
+
+import Image from "next/image";
+import Link from "next/link";
+
+import { Button } from "~/components/Shared";
+import { NavLink as NavLinkType } from "~/domains";
+import { Flex, Hidden } from "~/styles";
+
 import NavLink from "./NavLink/NavLink";
+
 //styles
 import * as S from "./NavLinks.style";
 //interfaces
-import { NavLink as NavLinkType } from "~/domains";
-import { Button } from "~/components/Shared";
 
-import { Flex, Hidden } from "~/styles";
-import Link from "next/link";
-import Image from "next/image";
+
 //images
-import FacebookInvertIcon from "~/public/icons/facebook-invert.svg";
-import InstagramInvertIcon from "~/public/icons/instagram-invert.svg";
 
 interface Props {
   data: NavLinkType[];

@@ -1,6 +1,7 @@
-import { Headline, MaxWidth, TextBuilder, Accordion } from "~/styles";
-import * as S from "./FAQSection.style";
 import { useSanityHomeContext } from "~/contexts";
+import { Headline, MaxWidth, TextBuilder, Accordion } from "~/styles";
+
+import * as S from "./FAQSection.style";
 
 export const FAQSection = () => {
   const { faqs } = useSanityHomeContext();

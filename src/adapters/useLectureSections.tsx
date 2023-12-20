@@ -1,12 +1,11 @@
-//images
-import KindergardenLecture from "~/public/images/service-kindergarden.jpg";
-import SchoolLecture from "~/public/images/service-school.jpg";
+import AdultLecture from "~/public/images/service-adult.jpg";
 import AdvancedLecture from "~/public/images/service-advanced.jpg";
 import BasicLecture from "~/public/images/service-basic.jpg";
 import ConditionLecture from "~/public/images/service-condition.jpg";
-import AdultLecture from "~/public/images/service-adult.jpg";
-//interfaces
-import { Service, ScrollSections, LectureTypes } from "~/domains";
+import KindergardenLecture from "~/public/images/service-kindergarden.jpg";
+import SchoolLecture from "~/public/images/service-school.jpg";
+
+import { LectureTypes, ScrollSections, Service } from "~/domains";
 
 export const lectures: Record<string, Service[]> = {
   homePage: [

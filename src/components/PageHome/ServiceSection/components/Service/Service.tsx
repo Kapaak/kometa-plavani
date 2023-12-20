@@ -1,13 +1,15 @@
 //libraries
 import Image, { StaticImageData } from "next/image";
 import { useRouter } from "next/router";
+
 //styles
-import * as S from "./Service.style";
+import { ScrollSections } from "~/domains";
 import { Subheadline, Text } from "~/styles";
 //interfaces
-import { ScrollSections } from "~/domains";
 //others
 import { scrollTo } from "~/utils";
+
+import * as S from "./Service.style";
 
 interface ServiceProps {
   headline?: string;

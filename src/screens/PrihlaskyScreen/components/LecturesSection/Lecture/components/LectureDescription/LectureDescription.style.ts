@@ -1,7 +1,10 @@
-import { Flex } from "~/styles";
-import styled from "styled-components";
-import { dimensions } from "~/utils";
 import Link from "next/link";
+
+import styled from "styled-components";
+
+import { Flex } from "~/styles";
+import { dimensions } from "~/utils";
+
 
 export const LectureSection = styled(Flex)`
   align-items: flex-start;

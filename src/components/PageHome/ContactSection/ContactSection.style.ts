@@ -1,9 +1,11 @@
 //librarires
+import NextImage from "next/image";
+
 import styled from "styled-components";
+
 //styles
 import { SectionElement, Flex } from "~/styles";
 import { dimensions } from "~/utils";
-import NextImage from "next/image";
 
 export const ContactSection = styled(SectionElement)`
   padding: 8rem 0;

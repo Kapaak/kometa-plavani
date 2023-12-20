@@ -1,4 +1,5 @@
 import { Strong, Text } from "~/styles";
+
 import * as S from "./IndividiualCourse.style";
 
 export function IndividualCourse() {

@@ -1,7 +1,8 @@
-import { Flex } from "~/styles";
-import { IconButton } from "~/components/Shared";
 import { ArrowRight } from "@phosphor-icons/react";
 import styled from "styled-components";
+
+import { IconButton } from "~/components/Shared";
+import { Flex } from "~/styles";
 import { dimensions } from "~/utils";
 
 export const TextWrapper = styled.div`

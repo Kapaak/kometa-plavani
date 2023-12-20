@@ -1,4 +1,5 @@
 import { LectureTime } from "~/domains";
+
 import * as S from "./LectureCalendarTimes.style";
 
 interface LectureCalendarTimesProps {

@@ -1,7 +1,10 @@
 import { ReactNode } from "react";
-import * as S from "./IconText.style";
+
 import { Icon as TIcon } from "@phosphor-icons/react";
+
 import { Text } from "~/styles";
+
+import * as S from "./IconText.style";
 
 interface IconTextProps {
   icon: TIcon;

@@ -1,23 +1,31 @@
 //libraries
 import Link from "next/link";
 import { useRouter } from "next/router";
-//styles
-import * as S from "./NavLink.style";
-//interfaces
-import { Dropdown, ScrollSections } from "~/domains";
-//others
-import { scrollTo } from "~/utils";
-import { PropsWithChildren } from "react";
-import { usePageContext } from "~/contexts";
 
-interface NavLinkProps extends PropsWithChildren {
+//styles
+//interfaces
+//others
+import { usePageContext } from "~/contexts/PageContext";
+import { Dropdown, ScrollSections } from "~/domains";
+import { scrollTo } from "~/utils";
+
+import * as S from "./NavLink.style";
+
+interface NavLinkProps {
+  children: React.ReactNode;
   scrollTarget?: ScrollSections;
   href: string;
   dropdown?: Array<Dropdown>;
 }
 
-const NavLink = ({ scrollTarget, children, href, dropdown }: NavLinkProps) => {
+export function NavLink({
+  scrollTarget,
+  children,
+  href,
+  dropdown,
+}: NavLinkProps) {
   const { toggleNavigation } = usePageContext();
+
   const router = useRouter();
 
   const clickHandler = async (scrollTarget: string, href: string) => {
@@ -27,21 +35,25 @@ const NavLink = ({ scrollTarget, children, href, dropdown }: NavLinkProps) => {
     if (onDifferentPage) await router.push(href);
     scrollTo(scrollTarget);
 
-    toggleNavigation();
+    toggleNavigation(false);
   };
+
+  if (scrollTarget)
+    return (
+      <S.NavLink onClick={() => clickHandler(scrollTarget, href)}>
+        <button>{children}</button>
+      </S.NavLink>
+    );
+
   return (
     //I dont use next/link because I want to change route and then scroll to element
     //if I had next/link I would only change route, the function would not fire
     //maybe push route like /example#school and on example page have useEffect, that would fire
     //Scrolling to #school element on the initial page load (empty dependency array)
     <S.NavLink>
-      {scrollTarget ? (
-        <a onClick={() => clickHandler(scrollTarget, href)}>{children}</a>
-      ) : (
-        <Link href={href} onClick={() => toggleNavigation()}>
-          {children}
-        </Link>
-      )}
+      <Link href={href} onClick={() => toggleNavigation(false)}>
+        {children}
+      </Link>
       {/* {dropdown && (
         <S.Dropdown>
           {dropdown.map((g, i) => (
@@ -53,6 +65,6 @@ const NavLink = ({ scrollTarget, children, href, dropdown }: NavLinkProps) => {
       )} */}
     </S.NavLink>
   );
-};
+}
 
 export default NavLink;

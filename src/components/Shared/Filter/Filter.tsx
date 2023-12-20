@@ -1,6 +1,8 @@
 import { FilterOption } from "~/domains";
+
 import { Popover } from "../Popover";
 import { RadioGroup } from "../RadioGroup";
+
 import * as S from "./Filter.style";
 
 interface FilterProps<T> {

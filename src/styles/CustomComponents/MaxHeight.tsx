@@ -1,7 +1,9 @@
-import { dimensions } from "~/utils";
 import { useEffect, useState } from "react";
 import { use100vh, measureHeight } from "react-div-100vh";
+
 import styled, { css } from "styled-components";
+
+import { dimensions } from "~/utils";
 
 interface Props {
   children: React.ReactNode;

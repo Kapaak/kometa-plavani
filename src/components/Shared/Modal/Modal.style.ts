@@ -1,6 +1,8 @@
-import { Text } from "~/styles";
 import { ArrowRight } from "@phosphor-icons/react";
 import styled from "styled-components";
+
+import { Text } from "~/styles";
+
 import { Button } from "../Button";
 
 export const Headline = styled(Text)`

@@ -1,13 +1,17 @@
 //libraries
+import type { AppProps } from "next/app";
 import { GoogleAnalytics } from "nextjs-google-analytics";
+
 import { Analytics } from "@vercel/analytics/react";
+
 //components
 import { HeadSelector } from "~/components/Shared";
+
 //styles
+import { PageContextProvider } from "~/contexts";
+
 import { GlobalStyles } from "../styles/GlobalStyles";
 //types
-import type { AppProps } from "next/app";
-import { PageContextProvider } from "~/contexts";
 
 function MyApp({ Component, pageProps }: AppProps) {
   return (

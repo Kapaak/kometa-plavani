@@ -1,7 +1,9 @@
-import { MaxWidth } from "~/styles";
 import { PageData } from "~/domains";
-import * as S from "./PrihlaskyNameScreen.style";
 import { FormContainer } from "~/screens/PrihlaskyScreen/components";
+import { MaxWidth } from "~/styles";
+
+import * as S from "./PrihlaskyNameScreen.style";
+
 
 interface PrihlaskyNameScreenProps {
   pageData: PageData;

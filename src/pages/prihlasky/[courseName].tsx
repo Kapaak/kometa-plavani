@@ -1,11 +1,12 @@
 //interfaces
-import { Course, PageData, SanityCourse } from "~/domains";
 import { GetStaticPropsContext, NextPage } from "next";
-import { PrihlaskyNameScreen, prihlaskyNameData } from "~/screens";
-import { PageLayout } from "~/components/PageLayout";
-import { client } from "~/libs";
 import { groq } from "next-sanity";
+
+import { PageLayout } from "~/components/PageLayout";
 import { LecturesContextProvider } from "~/contexts";
+import { Course, PageData, SanityCourse } from "~/domains";
+import { client } from "~/libs";
+import { PrihlaskyNameScreen, prihlaskyNameData } from "~/screens";
 
 interface CoursePageProps {
   pageData: PageData;

@@ -1,16 +1,22 @@
 //styles
-import { Flex, Hidden } from "~/styles";
-import * as S from "./Lecture.style";
-//interfaces
-import { Service } from "~/domains";
-import { LectureCalendar, LectureDescription } from "./components";
+import Link from "next/link";
+
+import { Button } from "~/components/Shared";
 import {
   useGoogleSheetsContext,
   useLecturesContext,
   useSanityApplicationsContext,
 } from "~/contexts";
-import Link from "next/link";
-import { Button } from "~/components/Shared";
+import { Service } from "~/domains";
+import { Flex, Hidden } from "~/styles";
+
+import { LectureCalendar, LectureDescription } from "./components";
+
+import * as S from "./Lecture.style";
+//interfaces
+
+
+
 
 type LectureProps = Omit<
   Service,

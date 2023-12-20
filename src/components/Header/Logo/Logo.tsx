@@ -1,10 +1,12 @@
 //libraries
+import LogoLatest from "~/public/icons/logo-latest.svg";
+
 import Image from "next/image";
 import Link from "next/link";
+
 //styles
 import * as S from "./Logo.style";
 //images
-import LogoLatest from "~/public/icons/logo-latest.svg";
 
 export const Logo = () => {
   return (

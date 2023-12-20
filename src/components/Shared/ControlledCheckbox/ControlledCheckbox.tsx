@@ -1,9 +1,11 @@
-import { Flex } from "~/styles";
-import { Check } from "@phosphor-icons/react";
-import * as Checkbox from "@radix-ui/react-checkbox";
 import { useId } from "react";
 import { Controller } from "react-hook-form";
+
+import { Check } from "@phosphor-icons/react";
+import * as Checkbox from "@radix-ui/react-checkbox";
 import styled from "styled-components";
+
+import { Flex } from "~/styles";
 
 type ControlledCheckboxProps = JSX.IntrinsicElements["input"] & {
   name: string;

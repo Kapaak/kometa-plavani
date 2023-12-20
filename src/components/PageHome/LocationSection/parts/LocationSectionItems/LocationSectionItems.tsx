@@ -1,5 +1,6 @@
 //components
 import { Flex, Headline } from "~/styles";
+
 import { locationInformation } from "../../constants";
 import { LocationSectionItem } from "../LocationSectionItem";
 

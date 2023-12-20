@@ -4,7 +4,9 @@ import {
   useCallback,
   useContext,
 } from "react";
+
 import _ from "lodash";
+
 import {
   GoogleSheets,
   LectureDaysTimesCapacity,
@@ -81,7 +83,6 @@ export const LecturesContextProvider = ({
         })
       );
     },
-    // eslint-disable-next-line react-~/hooksexhaustive-deps
     [lectures, googleSheets]
   );
   return (

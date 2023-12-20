@@ -1,10 +1,12 @@
 //libraries
-import styled from "styled-components";
+import WaveYellow from "~/public/icons/wave-yellow.svg";
+
 import Image from "next/image";
 //icons
-import WaveYellow from "~/public/icons/wave-yellow.svg";
 //interfaces
 import { PropsWithChildren } from "react";
+
+import styled from "styled-components";
 
 type HeadlineType = "h1" | "h2";
 interface Props {

@@ -1,5 +1,6 @@
-import { dimensions } from "~/utils";
 import styled from "styled-components";
+
+import { dimensions } from "~/utils";
 
 interface Props {
   variant: "light" | "dark";

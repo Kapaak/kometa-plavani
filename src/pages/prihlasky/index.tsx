@@ -3,16 +3,17 @@ import {
   InferGetServerSidePropsType,
   NextPage,
 } from "next";
-import { PrihlaskyScreen } from "~/screens";
+import { groq } from "next-sanity";
+
+import { PageLayout } from "~/components/PageLayout";
 import {
   LecturesContextProvider,
   SanityApplicationsContextProvider,
 } from "~/contexts";
-import { client } from "~/libs";
 import { GoogleSheetsContextProvider } from "~/contexts";
-import { PageLayout } from "~/components/PageLayout";
-import { groq } from "next-sanity";
 import { SanityInfoBar } from "~/domains";
+import { client } from "~/libs";
+import { PrihlaskyScreen } from "~/screens";
 
 interface Props extends InferGetServerSidePropsType<typeof getStaticProps> {}
 

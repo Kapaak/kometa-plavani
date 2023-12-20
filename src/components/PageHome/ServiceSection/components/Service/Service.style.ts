@@ -1,10 +1,12 @@
 //libraries
-import styled from "styled-components";
-//styles
-import { dimensions } from "~/utils";
-import { A as SA, Flex as SFlex } from "~/styles";
 import Image from "next/image";
+
+import styled from "styled-components";
+
+//styles
 import { Button } from "~/components/Shared";
+import { A as SA, Flex as SFlex } from "~/styles";
+import { dimensions } from "~/utils";
 
 export const Service = styled.article`
   display: flex;

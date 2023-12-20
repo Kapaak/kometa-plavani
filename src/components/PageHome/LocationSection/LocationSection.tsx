@@ -2,6 +2,7 @@
 import { MaxWidth } from "~/styles";
 
 import { ContactMap, LocationSectionItems } from "./parts";
+
 import * as S from "./LocationSection.style";
 
 export const LocationSection = () => {

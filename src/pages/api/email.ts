@@ -1,5 +1,6 @@
-import sgMail from "@sendgrid/mail";
 import { NextApiRequest, NextApiResponse } from "next";
+
+import sgMail from "@sendgrid/mail";
 
 const handler = async (req: NextApiRequest, res: NextApiResponse) => {
   const { email, templateId, day, time, price } = req.body;

@@ -1,5 +1,6 @@
-import { LecturesSection } from "./components";
 import { Headline, MaxWidth, SectionElement } from "~/styles";
+
+import { LecturesSection } from "./components";
 
 export const PrihlaskyScreen = () => {
   return (

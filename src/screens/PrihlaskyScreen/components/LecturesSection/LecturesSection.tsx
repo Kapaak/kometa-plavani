@@ -1,13 +1,16 @@
 //components
+import { useRouter } from "next/router";
+
+import { Filter } from "~/components/Shared";
+import { FilterLectureOptions } from "~/domains";
+import { useFilterLectures } from "~/hooks";
+import { getPageRouteTranslation } from "~/utils";
+
 import { Lecture } from "./Lecture";
+
 //styles
 import * as S from "./LecturesSection.style";
 //data
-import { Filter } from "~/components/Shared";
-import { useFilterLectures } from "~/hooks";
-import { FilterLectureOptions } from "~/domains";
-import { useRouter } from "next/router";
-import { getPageRouteTranslation } from "~/utils";
 
 export const LecturesSection = () => {
   const { route } = useRouter();

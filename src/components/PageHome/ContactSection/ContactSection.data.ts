@@ -1,5 +1,6 @@
-import { ContactItem } from "./ContactSectionItem";
 import { EnvelopeOpen, Phone } from "@phosphor-icons/react";
+
+import { ContactItem } from "./ContactSectionItem";
 
 export const data: ContactItem[] = [
   {

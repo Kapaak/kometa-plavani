@@ -1,11 +1,13 @@
 //styles
+import HeroImage from "~/public/images/hero-img.jpg";
+
+import { Button } from "~/components/Shared";
 import { MainHeadline, MainSubheadline, MaxHeight } from "~/styles";
+import { scrollTo } from "~/utils";
+
 import * as S from "./HeroSection.style";
 //images
-import HeroImage from "~/public/images/hero-img.jpg";
 //others
-import { scrollTo } from "~/utils";
-import { Button } from "~/components/Shared";
 
 const HeroSection = () => {
   return (

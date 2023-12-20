@@ -1,10 +1,11 @@
 //styles
-import * as S from "./Header.style";
-//components
-import Navigation from "./Navigation/Navigation";
-import { DiscountLabel } from "../DiscountLabel";
-import { SanityInfoBar } from "~/domains";
 import { usePageContext } from "~/contexts";
+import { SanityInfoBar } from "~/domains";
+
+import { DiscountLabel } from "../DiscountLabel";
+import Navigation from "./Navigation/Navigation";
+
+import * as S from "./Header.style";
 
 interface HeaderProps {
   infoBar?: SanityInfoBar;

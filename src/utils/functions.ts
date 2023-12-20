@@ -1,10 +1,11 @@
+import { scroller } from "react-scroll";
+
 import {
   DayAbbr,
   GoogleSheetDayTime,
   PageRouteTranslation,
   convertAbbrToWeekDays,
 } from "~/domains";
-import { scroller } from "react-scroll";
 
 export const scrollTo = (destination: string) => {
   scroller.scrollTo(destination, { smooth: true, offset: -100 });

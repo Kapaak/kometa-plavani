@@ -1,5 +1,6 @@
-import { Flex, SectionElement } from "~/styles";
 import styled from "styled-components";
+
+import { Flex, SectionElement } from "~/styles";
 import { dimensions } from "~/utils";
 
 export const DocumentSection = styled(SectionElement)`

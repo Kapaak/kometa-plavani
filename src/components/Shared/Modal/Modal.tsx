@@ -1,5 +1,6 @@
 import { PropsWithChildren } from "react";
 import ReactModal from "react-modal";
+
 import * as S from "./Modal.style";
 
 ReactModal.setAppElement("body");

@@ -1,8 +1,6 @@
-//libraries
 import styled from "styled-components";
-//styles
+
 import { dimensions } from "~/utils";
-import { Flex } from "~/styles";
 
 export const Dropdown = styled.div`
   display: none;
@@ -27,10 +25,12 @@ export const NavLink = styled.li`
   font-family: var(--font1);
   font-size: var(--fnavlink);
   line-height: 2.4;
-  cursor: pointer;
   padding-left: 4rem;
 
-  a {
+  a,
+  button {
+    cursor: pointer;
+    color: var(--colw);
     &:hover {
       color: var(--col1);
     }
@@ -39,7 +39,8 @@ export const NavLink = styled.li`
   @media (${dimensions.notebook}) {
     padding-left: 0;
 
-    a {
+    a,
+    button {
       color: var(--colb);
     }
   }

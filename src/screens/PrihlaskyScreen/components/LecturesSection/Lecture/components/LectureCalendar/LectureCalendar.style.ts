@@ -1,5 +1,6 @@
-import { Flex } from "~/styles";
 import styled from "styled-components";
+
+import { Flex } from "~/styles";
 
 export const LectureCalendar = styled(Flex)`
   position: relative;

@@ -1,6 +1,7 @@
-import { Controller, ValidationRule } from "react-hook-form";
-import * as S from "./ControlledInput.style";
 import { HTMLInputTypeAttribute, InputHTMLAttributes } from "react";
+import { Controller, ValidationRule } from "react-hook-form";
+
+import * as S from "./ControlledInput.style";
 
 interface ControlledInputProps {
   name: string;

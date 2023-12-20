@@ -1,8 +1,10 @@
 //libraries
+import Image from "next/image";
+
 import styled from "styled-components";
+
 //styles
 import { dimensions } from "~/utils";
-import Image from "next/image";
 
 export const Img = styled(Image)`
   position: relative;

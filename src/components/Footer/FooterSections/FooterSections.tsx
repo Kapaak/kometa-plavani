@@ -1,4 +1,5 @@
 import { HeadlineFragment } from "~/domains";
+
 import FooterSection from "./FooterSection/FooterSection";
 
 interface FooterSectionsProps {

@@ -1,16 +1,21 @@
-import { Danger, Space, Subheadline, Text } from "~/styles";
-import * as S from "../SwimmingForm/SwimmingForm.style";
+import { useState } from "react";
+
 import {
   ControlledInput,
   ControlledSelect,
   ControlledNameInput,
   ControlledRadio,
 } from "~/components/Shared";
-import { createOption } from "~/utils";
-import { useState } from "react";
-import { useLecturePaymentOptions } from "~/hooks";
-import { SwimmingForm } from "../SwimmingForm";
 import { LectureTypes } from "~/domains";
+import { useLecturePaymentOptions } from "~/hooks";
+import { Danger, Space, Subheadline, Text } from "~/styles";
+import { createOption } from "~/utils";
+
+
+
+import { SwimmingForm } from "../SwimmingForm";
+import * as S from "../SwimmingForm/SwimmingForm.style";
+
 
 interface BasicFormProps {
   onSubmit: () => void;

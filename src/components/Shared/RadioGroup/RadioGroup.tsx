@@ -1,6 +1,8 @@
-import { Flex } from "~/styles";
-import * as S from "./RadioGroup.style";
 import { FunctionComponent } from "react";
+
+import { Flex } from "~/styles";
+
+import * as S from "./RadioGroup.style";
 
 export type RadioOption = {
   id: string;

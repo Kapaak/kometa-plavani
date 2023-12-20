@@ -1,12 +1,16 @@
 //styles
+import { useRouter } from "next/router";
+
+import { useFilterLectures } from "~/hooks";
 import { MaxWidth, Space } from "~/styles";
+import { getPageRouteTranslation } from "~/utils";
+
+import { IndividualCourse, Service } from "./components";
+
 import * as S from "./ServiceSection.style";
 //components
-import { IndividualCourse, Service } from "./components";
 //data
-import { useFilterLectures } from "~/hooks";
-import { useRouter } from "next/router";
-import { getPageRouteTranslation } from "~/utils";
+
 
 const ServiceSection = () => {
   const { route } = useRouter();

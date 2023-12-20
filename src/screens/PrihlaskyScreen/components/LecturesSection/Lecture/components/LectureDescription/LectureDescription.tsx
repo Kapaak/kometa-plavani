@@ -1,8 +1,13 @@
-import { Flex, Text } from "~/styles";
-import * as S from "./LectureDescription.style";
-import { Baby, Coin, Timer } from "@phosphor-icons/react";
-import { IconText } from "../IconText";
 import NextLink from "next/link";
+
+import { Baby, Coin, Timer } from "@phosphor-icons/react";
+
+import { Flex, Text } from "~/styles";
+
+import { IconText } from "../IconText";
+
+import * as S from "./LectureDescription.style";
+
 
 interface LectureDescriptionProps {
   title?: string;

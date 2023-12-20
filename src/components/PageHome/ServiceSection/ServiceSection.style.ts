@@ -1,5 +1,6 @@
 //libraries
 import styled from "styled-components";
+
 //styles
 import { Flex, SectionElement } from "~/styles";
 

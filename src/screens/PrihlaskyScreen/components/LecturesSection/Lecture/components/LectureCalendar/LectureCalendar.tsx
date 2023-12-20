@@ -1,17 +1,24 @@
 import { useState } from "react";
-import { LectureSemester } from "../LectureSemester";
-import { LectureCalendarTimes } from "../LectureCalendarTimes";
-import { LectureCalendarData } from "../LectureCalendarData";
+
+import { X } from "@phosphor-icons/react";
+import Loader from "react-spinners/HashLoader";
+
 import {
   DayTimeCapacity,
   GoogleSheetDayTime,
   LectureTime,
   WeekDaysNew,
 } from "~/domains";
-
-import Loader from "react-spinners/HashLoader";
 import { Danger, Hidden, Space, Text } from "~/styles";
-import { X } from "@phosphor-icons/react";
+
+import { LectureCalendarData } from "../LectureCalendarData";
+import { LectureCalendarTimes } from "../LectureCalendarTimes";
+import { LectureSemester } from "../LectureSemester";
+
+
+
+
+
 import * as S from "./LectureCalendar.style";
 
 interface LectureCalendarProps {

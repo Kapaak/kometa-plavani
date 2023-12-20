@@ -1,8 +1,9 @@
 //libraries
 import styled from "styled-components";
+
 //styles
-import { dimensions } from "~/utils";
 import { Flex } from "~/styles";
+import { dimensions } from "~/utils";
 
 export const Navigation = styled(Flex).attrs({
   as: "nav",

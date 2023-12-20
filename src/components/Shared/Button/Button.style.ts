@@ -1,6 +1,7 @@
+import { CircleNotch } from "@phosphor-icons/react";
 import { keyframes, css } from "styled-components";
 import styled from "styled-components";
-import { CircleNotch } from "@phosphor-icons/react";
+
 import { ButtonColor, ButtonSize, ButtonVariant } from "./Button";
 
 interface ButtonProps {

@@ -1,6 +1,8 @@
-import { dimensions } from "~/utils";
 import Image from "next/image";
+
 import styled from "styled-components";
+
+import { dimensions } from "~/utils";
 
 export const Sponsor = styled.a`
   flex: 1;
