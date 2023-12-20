@@ -50,8 +50,8 @@ export function NavLink({
     //if I had next/link I would only change route, the function would not fire
     //maybe push route like /example#school and on example page have useEffect, that would fire
     //Scrolling to #school element on the initial page load (empty dependency array)
-    <S.NavLink>
-      <Link href={href} onClick={() => toggleNavigation(false)}>
+    <S.NavLink light>
+      <Link href={href} onClick={() => toggleNavigation(false)} passHref>
         {children}
       </Link>
       {/* {dropdown && (

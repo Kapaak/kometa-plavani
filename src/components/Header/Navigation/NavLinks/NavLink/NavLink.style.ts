@@ -17,7 +17,9 @@ export const Dropdown = styled.div`
   }
 `;
 
-export const NavLink = styled.li`
+export const NavLink = styled.li.withConfig({
+  shouldForwardProp: (prop) => !["light"].includes(prop),
+})<{ light?: boolean }>`
   position: relative;
   list-style-type: none;
   text-decoration: none;
@@ -32,7 +34,7 @@ export const NavLink = styled.li`
     cursor: pointer;
     color: var(--colw);
     &:hover {
-      color: var(--col1);
+      color: ${({ light }) => (light ? "var(--colw)" : "var(--col2)")};
     }
   }
 
@@ -41,7 +43,7 @@ export const NavLink = styled.li`
 
     a,
     button {
-      color: var(--colb);
+      color: ${({ light }) => (light ? "var(--colw)" : "var(--colb)")};
     }
   }
 

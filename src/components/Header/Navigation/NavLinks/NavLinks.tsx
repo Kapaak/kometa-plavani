@@ -7,16 +7,11 @@ import Link from "next/link";
 
 import { Button } from "~/components/Shared";
 import { NavLink as NavLinkType } from "~/domains";
-import { Flex, Hidden } from "~/styles";
+import { Hidden } from "~/styles";
 
 import NavLink from "./NavLink/NavLink";
 
-//styles
 import * as S from "./NavLinks.style";
-//interfaces
-
-
-//images
 
 interface Props {
   data: NavLinkType[];
