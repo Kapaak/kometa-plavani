@@ -38,6 +38,7 @@ export const LecturesSection = () => {
           name={filteredLecture.name}
           url={filteredLecture?.url}
           lectureType={filteredLecture.lectureType}
+          semesterLabels={filteredLecture?.semesterLabels}
         />
       ))}
     </S.Flex>

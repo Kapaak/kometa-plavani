@@ -17,7 +17,7 @@ type LectureProps = Omit<
 >;
 
 export const Lecture = (props: LectureProps) => {
-  const { text, image, name, alt, url, lectureType } = props;
+  const { text, image, name, alt, url, lectureType, semesterLabels } = props;
   const { lectureDaysTimesCapacity, coursesInformation } =
     useSanityApplicationsContext();
 
@@ -58,6 +58,7 @@ export const Lecture = (props: LectureProps) => {
               days={lectures?.[lectureType]?.lectureDays}
               data={lectures?.[lectureType]?.lectures}
               capacity={lectures?.[lectureType]?.lectures}
+              semesterLabels={semesterLabels}
             />
             <Hidden isHidden={isLoading || isError}>
               <S.Link

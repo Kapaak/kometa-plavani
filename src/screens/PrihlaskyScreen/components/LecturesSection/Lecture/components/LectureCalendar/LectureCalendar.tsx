@@ -15,10 +15,6 @@ import { LectureCalendarData } from "../LectureCalendarData";
 import { LectureCalendarTimes } from "../LectureCalendarTimes";
 import { LectureSemester } from "../LectureSemester";
 
-
-
-
-
 import * as S from "./LectureCalendar.style";
 
 interface LectureCalendarProps {
@@ -29,6 +25,7 @@ interface LectureCalendarProps {
   capacity?: Record<string, GoogleSheetDayTime>;
   isLoading?: boolean;
   isError?: boolean;
+  semesterLabels?: string[];
 }
 
 export const LectureCalendar = ({
@@ -36,6 +33,7 @@ export const LectureCalendar = ({
   days,
   data,
   showSemesterSwitcher = false,
+  semesterLabels,
   capacity,
   isLoading,
   isError,
@@ -68,13 +66,14 @@ export const LectureCalendar = ({
       )}
 
       <Hidden isHidden={isLoading || isError}>
-        {showSemesterSwitcher && (
-          <LectureSemester
-            selectedSemester={selectedSemester}
-            onPrev={() => setSelectedSemester(1)}
-            onNext={() => setSelectedSemester(2)}
-          />
-        )}
+        <LectureSemester
+          selectedSemester={selectedSemester}
+          semesterLabels={semesterLabels}
+          {...(showSemesterSwitcher && {
+            onPrev: () => setSelectedSemester(1),
+            onNext: () => setSelectedSemester(2),
+          })}
+        />
         <LectureCalendarTimes lectureTimes={times} />
         {!isLoading && Boolean(times?.length) && (
           <LectureCalendarData

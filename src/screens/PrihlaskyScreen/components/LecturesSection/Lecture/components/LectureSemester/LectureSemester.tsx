@@ -6,12 +6,14 @@ import * as S from "./LectureSemester.style";
 
 interface LectureSemesterProps {
   selectedSemester: 1 | 2;
+  semesterLabels?: string[];
   onPrev?: () => void;
   onNext?: () => void;
 }
 
 export const LectureSemester = ({
   selectedSemester,
+  semesterLabels,
   onNext,
   onPrev,
 }: LectureSemesterProps) => {
@@ -27,13 +29,14 @@ export const LectureSemester = ({
       align="center"
     >
       <S.LectureSemesterButton visible={!isFirstSemesterSelected}>
-        {<ArrowLeft size={20} onClick={onPrev} />}
+        {onPrev && <ArrowLeft size={20} onClick={onPrev} />}
       </S.LectureSemesterButton>
       <S.LectureSemesterText variant="dark" bold>
-        {selectedSemester}. pololetí
+        {isFirstSemesterSelected && semesterLabels?.[0]}
+        {isSecondSemesterSelected && semesterLabels?.[1]}
       </S.LectureSemesterText>
       <S.LectureSemesterButton visible={!isSecondSemesterSelected}>
-        {<ArrowRight size={20} onClick={onNext} />}
+        {onNext && <ArrowRight size={20} onClick={onNext} />}
       </S.LectureSemesterButton>
     </Flex>
   );
