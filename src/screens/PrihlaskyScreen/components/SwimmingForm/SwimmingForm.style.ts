@@ -1,5 +1,6 @@
 import { ArrowRight } from "@phosphor-icons/react";
 import styled from "styled-components";
+import { Button } from "~/components/Shared";
 
 import { Text as SText } from "~/styles";
 import { dimensions } from "~/utils";
@@ -30,6 +31,10 @@ export const ArrowRightIcon = styled(ArrowRight)`
 export const Form = styled.form`
   display: flex;
   flex-direction: column;
+`;
+
+export const SubmitButton = styled(Button)`
+  margin-left: auto;
 `;
 
 export const FormInputContainer = styled.div`

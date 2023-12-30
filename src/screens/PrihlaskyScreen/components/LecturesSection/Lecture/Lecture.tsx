@@ -67,7 +67,7 @@ export const Lecture = (props: LectureProps) => {
                 disabled={isCalendarEmpty}
               >
                 <Button variant="filled" disabled={isCalendarEmpty}>
-                  {isCalendarEmpty ? "Kurz není dostupný" : "poslat přihlášku"}
+                  {isCalendarEmpty ? "Kurz není dostupný" : "Poslat přihlášku"}
                 </Button>
               </S.Link>
             </Hidden>

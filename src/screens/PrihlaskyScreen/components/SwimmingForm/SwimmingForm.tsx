@@ -8,10 +8,8 @@ import {
 import { useFormContext } from "react-hook-form";
 import Select, { MultiValue, StylesConfig } from "react-select";
 
-import { IconButton } from "~/components/Shared";
 import { useLecturesContext } from "~/contexts";
 import { Option, SwimmingPage } from "~/domains";
-import { useBasicSwimmingOptions } from "~/hooks";
 import { Space, Subheadline } from "~/styles";
 
 import * as S from "./SwimmingForm.style";
@@ -135,13 +133,12 @@ export const SwimmingForm = ({
           . S podmínkami souhlasím a moje dítě je splňuje.
         </S.Text>
 
-        <IconButton
+        <S.SubmitButton
           isLoading={isLoading}
           disabled={isLoading || selectedOptions.length !== maxNumberOfLessons}
-          iconAfter={S.ArrowRightIcon}
         >
           Odeslat
-        </IconButton>
+        </S.SubmitButton>
       </S.SubmitContainer>
     </S.Form>
   );
