@@ -68,7 +68,7 @@ export const lectures: Record<string, Service[]> = {
     {
       id: 6,
       text: `
-      Určeno všem nadšencům, kterým bylo již 18 let a chtějí si zlepšit své plavecké dovednosti. Kurzy jsou Vhodné pro úplné začátečníky i pokročilé.
+      Určeno všem nadšencům, kterým bylo již 18 let a chtějí si zlepšit své plavecké dovednosti. Kurzy jsou vhodné pro úplné začátečníky i pokročilé.
 Plavání je sport, díky kterému naberete tělesnou kondici, pomůže Vám zbavit se různých zdravotních problémů, ať už jde o bolest zad, kloubů nebo o problémy s dýcháním.
       `,
       image: AdultLecture,
