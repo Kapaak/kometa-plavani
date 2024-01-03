@@ -3,6 +3,7 @@ import { useState } from "react";
 import { FormProvider, useForm } from "react-hook-form";
 
 import axios from "axios";
+import posthog from "posthog-js";
 
 import {
   Course,
@@ -95,8 +96,9 @@ export const FormContainer = ({
       console.log("cant send email or upload spreadsheet", error);
     } finally {
       setIsOpen(true);
-
       setIsLoading(false);
+
+      posthog.capture("conversion", { property: "value" });
     }
   };
 
