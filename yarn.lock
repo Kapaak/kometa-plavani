@@ -853,6 +853,20 @@
     "@babel/runtime" "^7.13.10"
     "@radix-ui/react-compose-refs" "1.0.1"
 
+"@radix-ui/react-switch@^1.0.3":
+  version "1.0.3"
+  resolved "https://registry.yarnpkg.com/@radix-ui/react-switch/-/react-switch-1.0.3.tgz#6119f16656a9eafb4424c600fdb36efa5ec5837e"
+  integrity sha512-mxm87F88HyHztsI7N+ZUmEoARGkC22YVW5CaC+Byc+HRpuvCrOBPTAnXgf+tZ/7i0Sg/eOePGdMhUKhPaQEqow==
+  dependencies:
+    "@babel/runtime" "^7.13.10"
+    "@radix-ui/primitive" "1.0.1"
+    "@radix-ui/react-compose-refs" "1.0.1"
+    "@radix-ui/react-context" "1.0.1"
+    "@radix-ui/react-primitive" "1.0.3"
+    "@radix-ui/react-use-controllable-state" "1.0.1"
+    "@radix-ui/react-use-previous" "1.0.1"
+    "@radix-ui/react-use-size" "1.0.1"
+
 "@radix-ui/react-use-callback-ref@1.0.1":
   version "1.0.1"
   resolved "https://registry.yarnpkg.com/@radix-ui/react-use-callback-ref/-/react-use-callback-ref-1.0.1.tgz#f4bb1f27f2023c984e6534317ebc411fc181107a"
@@ -2930,6 +2944,11 @@ fastq@^1.6.0:
   dependencies:
     reusify "^1.0.4"
 
+fflate@^0.4.1:
+  version "0.4.8"
+  resolved "https://registry.yarnpkg.com/fflate/-/fflate-0.4.8.tgz#f90b82aefbd8ac174213abb338bd7ef848f0f5ae"
+  integrity sha512-FJqqoDBR00Mdj9ppamLa/Y7vxm+PRmNWA67N846RvsoYVMKB4q3y/de5PA7gUmRMYK/8CMz2GDZQmCRN1wBcWA==
+
 file-entry-cache@^6.0.1:
   version "6.0.1"
   resolved "https://registry.npmjs.org/file-entry-cache/-/file-entry-cache-6.0.1.tgz"
@@ -4462,6 +4481,13 @@ postcss@8.4.14:
     nanoid "^3.3.4"
     picocolors "^1.0.0"
     source-map-js "^1.0.2"
+
+posthog-js@^1.96.1:
+  version "1.96.1"
+  resolved "https://registry.yarnpkg.com/posthog-js/-/posthog-js-1.96.1.tgz#4f9719a24e4e14037b0e72d430194d7cdb576447"
+  integrity sha512-kv1vQqYMt2BV3YHS+wxsbGuP+tz+M3y1AzNhz8TfkpY1HT8W/ONT0i0eQpeRr9Y+d4x/fZ6M4cXG5GMvi9lRCA==
+  dependencies:
+    fflate "^0.4.1"
 
 prelude-ls@^1.2.1:
   version "1.2.1"

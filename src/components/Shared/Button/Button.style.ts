@@ -14,6 +14,7 @@ interface ButtonProps {
 export const Button = styled.button<ButtonProps>`
   display: flex;
   position: relative;
+  white-space: nowrap;
   border: none;
   font-family: var(--font2);
   color: var(--col2);
@@ -22,6 +23,7 @@ export const Button = styled.button<ButtonProps>`
   font-size: var(--fbutton);
   overflow: hidden;
   transition: all 0.3s ease;
+  justify-content: center;
   width: ${({ isLoading }) => isLoading && "14rem"};
 
   ${({ variant = "bordered", color = "primary" }) => {
