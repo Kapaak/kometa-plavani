@@ -1,4 +1,4 @@
-import { HeadlineFragment, Content } from "~/domains";
+import { Content, HeadlineFragment } from "~/domains";
 
 export const data: HeadlineFragment[] = [
   {
@@ -65,6 +65,11 @@ export const data: HeadlineFragment[] = [
         output: "Pisárky",
         type: Content.link,
         href: "https://kometaplavani.cz/otevrena-zahrada/",
+      },
+      {
+        output: "Lužánky",
+        type: Content.link,
+        href: "https://www.primestak-brno.cz/",
       },
     ],
   },
