@@ -439,3 +439,23 @@ export const convertAbbrToWeekDaysDiacritics = (day: DayAbbr) => {
       return "Pátek";
   }
 };
+
+export enum Category {
+  EQUIPMENT = 1,
+  TRAINING = 2,
+  TIPS = 3,
+  FUN_FACT = 4,
+}
+
+export const categoryTranslation = (category: Category) => {
+  switch (category) {
+    case Category.EQUIPMENT:
+      return "Vybavení";
+    case Category.TRAINING:
+      return "Trénink";
+    case Category.TIPS:
+      return "Tipy";
+    case Category.FUN_FACT:
+      return "Zajímavosti";
+  }
+};

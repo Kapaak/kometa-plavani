@@ -7,6 +7,8 @@ export { Divider } from "./CustomComponents/Divider";
 export { Flex } from "./CustomComponents/Flex";
 export { Headline } from "./CustomComponents/Headline";
 export { Hidden } from "./CustomComponents/Hidden";
+export { HorizontalStack } from "./CustomComponents/HorizontalStack";
+export { IconText } from "./CustomComponents/IconText";
 export { MainHeadline } from "./CustomComponents/MainHeadline";
 export { MainSubheadline } from "./CustomComponents/MainSubheadline";
 export { MaxHeight } from "./CustomComponents/MaxHeight";
