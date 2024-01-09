@@ -75,7 +75,7 @@ Plavání je sport, díky kterému naberete tělesnou kondici, pomůže Vám zba
       alt: "dospělý plavec u konce dráhy",
       name: ScrollSections.APPLICATIONS_ADULT,
       lectureType: LectureTypes.ADULT,
-      semesterLabels: ["leden 2024 - červen 2024"],
+      semesterLabels: ["", "leden 2024 - červen 2024"],
       url: "plavani-pro-dospele",
     },
     {
@@ -87,7 +87,7 @@ Plavání je sport, díky kterému naberete tělesnou kondici, pomůže Vám zba
       alt: "plavec sLecture pod vodou a deskou",
       name: ScrollSections.APPLICATIONS_BASIC,
       lectureType: LectureTypes.BASIC,
-      semesterLabels: ["říjen 2023 - únor 2024"],
+      semesterLabels: ["", "únor 2024 - červen 2024"],
       url: "zakladni-plavani",
     },
     {
@@ -99,7 +99,7 @@ Plavání je sport, díky kterému naberete tělesnou kondici, pomůže Vám zba
       alt: "dvě plavkyně na začátku dráhy čekající na start",
       name: ScrollSections.APPLICATIONS_ADVANCED,
       lectureType: LectureTypes.ADVANCED,
-      semesterLabels: ["říjen 2023 - únor 2024"],
+      semesterLabels: ["", "únor 2024 - červen 2024"],
       url: "zdokonalovaci-plavani",
     },
     {
@@ -111,7 +111,7 @@ Plavání je sport, díky kterému naberete tělesnou kondici, pomůže Vám zba
       alt: "dvě plavkyně na začátku dráhy čekající na start",
       name: ScrollSections.APPLICATIONS_CONDITION,
       lectureType: LectureTypes.CONDITION,
-      semesterLabels: ["říjen 2023 - únor 2024"],
+      semesterLabels: ["", "únor 2024 - červen 2024"],
       url: "kondicni-plavani",
     },
     {
