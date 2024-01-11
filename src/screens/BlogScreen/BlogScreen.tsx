@@ -1,6 +1,12 @@
-import { Headline, MaxWidth, VerticalStack } from "~/styles";
+import { useMemo, useState } from "react";
 
-import { BlogArticle } from "./components";
+import { BLOG_CATEGORIES } from "~/constants/category";
+import { Category } from "~/domains";
+import { Headline, MaxWidth, Scrollable, Text, VerticalStack } from "~/styles";
+
+import { BlogArticle, BlogFilter } from "./components";
+
+import * as S from "./BlogScreen.style";
 
 interface BlogScreenProps {}
 
@@ -14,7 +20,7 @@ const DUMMYBLOGS = [
     author: "Bara Novakova",
     readTime: 5,
     image: "",
-    categories: [1, 3],
+    categories: ["tips", "training"],
   },
   {
     id: "2",
@@ -25,30 +31,71 @@ const DUMMYBLOGS = [
     author: "Pavle Zapletal",
     readTime: 5,
     image: "",
-    categories: [2, 4],
+    categories: ["equipment", "funFact"],
   },
 ];
 
 export function BlogScreen({}: BlogScreenProps) {
+  const [selectedFilter, setSelectedFilter] =
+    useState<Category[]>(BLOG_CATEGORIES);
+
+  const handleChange = (filterValue: Category) => {
+    if (selectedFilter.includes(filterValue)) {
+      return setSelectedFilter((prev) =>
+        prev.filter((item) => item !== filterValue)
+      );
+    }
+
+    setSelectedFilter((prev) => [...prev, filterValue]);
+  };
+
+  const getFilterCategoryActive = (filterCategory: Category) => {
+    return selectedFilter.includes(filterCategory);
+  };
+
+  const filteredBlogs = useMemo(() => {
+    return DUMMYBLOGS.filter((blog) =>
+      blog.categories?.some((category) =>
+        selectedFilter.includes(category as Category)
+      )
+    );
+  }, [selectedFilter]);
+
   return (
     <MaxWidth>
-      <p>kategorie ....</p>
-      <Headline>Blog</Headline>
-
       <VerticalStack gap="2rem">
-        {DUMMYBLOGS?.map((blog) => (
-          <BlogArticle
-            key={blog.id}
-            title={blog?.title}
-            description={blog?.description}
-            date={blog?.date}
-            author={blog?.author}
-            readTime={blog?.readTime}
-            image={blog?.image}
-            href={`/blog/${blog?.id}`}
-            categories={blog?.categories}
-          />
-        ))}
+        <VerticalStack gap="2rem">
+          <Headline>Blog</Headline>
+          <Scrollable direction="horizontal">
+            <BlogFilter
+              onChange={handleChange}
+              getIsCategoryActive={getFilterCategoryActive}
+            />
+          </Scrollable>
+
+          {DUMMYBLOGS.length > 0 &&
+            filteredBlogs?.map((blog) => (
+              <BlogArticle
+                key={blog.id}
+                title={blog?.title}
+                description={blog?.description}
+                date={blog?.date}
+                author={blog?.author}
+                readTime={blog?.readTime}
+                image={blog?.image}
+                href={`/blog/${blog?.id}`}
+                categories={blog?.categories}
+              />
+            ))}
+
+          {filteredBlogs.length === 0 && (
+            <S.EmptyFilterResults>
+              <Text variant="dark" center>
+                Nebyly nalezeny žádné články. Zkuste vybrat jinou kategorii.
+              </Text>
+            </S.EmptyFilterResults>
+          )}
+        </VerticalStack>
       </VerticalStack>
     </MaxWidth>
   );

@@ -20,7 +20,7 @@ interface BlogArticleProps {
   image?: string;
   imageAlt?: string;
   href?: string;
-  categories?: number[];
+  categories?: string[];
 }
 
 export function BlogArticle({

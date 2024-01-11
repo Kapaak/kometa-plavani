@@ -13,6 +13,7 @@ export { MainHeadline } from "./CustomComponents/MainHeadline";
 export { MainSubheadline } from "./CustomComponents/MainSubheadline";
 export { MaxHeight } from "./CustomComponents/MaxHeight";
 export { MaxWidth } from "./CustomComponents/MaxWidth";
+export { Scrollable } from "./CustomComponents/Scrollable";
 export { SectionElement } from "./CustomComponents/SectionElement";
 export { Space } from "./CustomComponents/Space";
 export { Strong } from "./CustomComponents/Strong";

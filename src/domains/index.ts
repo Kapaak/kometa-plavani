@@ -441,10 +441,10 @@ export const convertAbbrToWeekDaysDiacritics = (day: DayAbbr) => {
 };
 
 export enum Category {
-  EQUIPMENT = 1,
-  TRAINING = 2,
-  TIPS = 3,
-  FUN_FACT = 4,
+  EQUIPMENT = "equipment",
+  TRAINING = "training",
+  FUN_FACT = "funFact",
+  TIPS = "tips",
 }
 
 export const categoryTranslation = (category: Category) => {
