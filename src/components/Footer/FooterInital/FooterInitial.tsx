@@ -9,7 +9,8 @@ const FooterInitial = () => {
     <S.Flex justify="space-between" direction="row" wrap="wrap" gap="3rem">
       <Image src={KometaLogo} alt="logo Kometa Brno" />
       <S.Text variant="light">
-        Sportovní klub policie Brno <br />
+        Klub plaveckých sportů policie Kometa Brno z.s.
+        <br />
         Bauerova 321/5
         <br /> 613 00 Brno
       </S.Text>
