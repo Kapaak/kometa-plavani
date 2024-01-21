@@ -1,8 +1,13 @@
 import styled from "styled-components";
 
 import { Button } from "~/components/Shared";
-import { Text, VerticalStack } from "~/styles";
+import { Chip, Text, VerticalStack } from "~/styles";
 import { dimensions } from "~/utils";
+
+export const BlogChip = styled(Chip)`
+  background-color: var(--col3);
+  color: var(--col2);
+`;
 
 export const BlogArticle = styled.article`
   display: grid;

@@ -10,7 +10,7 @@ export const Header = styled.header<{ withShadow: boolean }>`
   justify-content: space-between;
   width: 100%;
   /* height: var(--header-height); */ //todo: update this so that I dont need to use it
-  z-index: 9;
+  z-index: 11;
   background-color: var(--colw);
   box-shadow: ${({ withShadow }) =>
     withShadow ? "0 0 20px 0 rgba(10,19,10,.2)" : "none"};

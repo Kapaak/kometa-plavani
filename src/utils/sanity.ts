@@ -1,13 +1,31 @@
 import { groq } from "next-sanity";
 
+import urlBuilder from "@sanity/image-url";
+import { SanityImageSource } from "@sanity/image-url/lib/types/types";
+
 import {
   SanityActuality,
+  SanityBlog,
   SanityCourse,
   SanityDocument,
   SanityFaq,
   SanityInfoBar,
 } from "~/domains";
 import { client } from "~/libs";
+
+const builder = urlBuilder(client);
+
+export function urlForImage(source: SanityImageSource) {
+  return builder.image(source);
+}
+
+export async function getBlogs(): Promise<SanityBlog[]> {
+  const query = groq`*[_type == "blog"]{title,shortDescription,description,createdAt,author,readTime,image{asset->{...,metadata}},tags,slug}`;
+
+  const blogs: SanityBlog[] = await client.fetch(query);
+
+  return blogs;
+}
 
 export async function getActualities(): Promise<SanityActuality[]> {
   const query = groq`*[_type == "home" && visibility == true]{text,order,title}|order(order asc)`;

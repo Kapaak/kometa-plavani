@@ -33,6 +33,20 @@ export const TextBuilder = ({ value, options }: TextBuilderProps) => {
             );
           },
         },
+        types: {
+          image: (props) => {
+            return null;
+            //for now not supported due to blog item
+
+            // <NextImage
+            //   alt="Obrázek k článku."
+            //   src={urlForImage(props.value)?.url()}
+            //   width={400}
+            //   height={200}
+            //   style={{ objectFit: "cover" }}
+            // />
+          },
+        },
 
         listItem: {
           bullet: (props) => {

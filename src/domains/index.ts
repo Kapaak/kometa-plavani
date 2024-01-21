@@ -2,6 +2,7 @@ import { StaticImageData } from "next/image";
 import { BaseSyntheticEvent } from "react";
 
 import { PortableTextBlock } from "@portabletext/types";
+import { SanityImageObject } from "@sanity/image-url/lib/types/types";
 import { GoogleSpreadsheetRow } from "google-spreadsheet";
 
 export type PageData = {
@@ -333,6 +334,32 @@ export type SanityCourseDay = {
   capacity: number;
 };
 
+export type SanityImage = SanityImageObject & {
+  asset: {
+    metadata: {
+      lqip: string;
+      dimensions: {
+        width: number;
+        height: number;
+      };
+    };
+  };
+};
+
+export type SanityBlog = {
+  title: string;
+  shortDescription: string;
+  author: string;
+  readTime: number;
+  slug: {
+    current: string;
+  };
+  createdAt: string;
+  description: PortableTextBlock[];
+  image: SanityImage;
+  tags: Category[];
+};
+
 export type DayCapacity = {
   lectureTimeId?: number;
   max?: number;
@@ -443,8 +470,8 @@ export const convertAbbrToWeekDaysDiacritics = (day: DayAbbr) => {
 export enum Category {
   EQUIPMENT = "equipment",
   TRAINING = "training",
-  FUN_FACT = "funFact",
   TIPS = "tips",
+  FUN_FACT = "funFact",
 }
 
 export const categoryTranslation = (category: Category) => {
