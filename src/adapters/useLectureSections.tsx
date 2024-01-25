@@ -10,15 +10,6 @@ import { LectureTypes, ScrollSections, Service } from "~/domains";
 export const lectures: Record<string, Service[]> = {
   homePage: [
     {
-      id: 6,
-      headline: "Plavání pro dospělé",
-      text: "Určeno všem nadšencům, kterým bylo již 18 let a chtějí si zlepšit své plavecké dovednosti.",
-      image: AdultLecture,
-      alt: "dospělý plavec u konce dráhy",
-      name: ScrollSections.APPLICATIONS_ADULT,
-      tag: "dospělí",
-    },
-    {
       id: 1,
       headline: "Základní plavání",
       text: "Kurzy jsou určené pro děti, které se potřebují naučit plavat.",
@@ -36,6 +27,7 @@ export const lectures: Record<string, Service[]> = {
       name: ScrollSections.APPLICATIONS_ADVANCED,
       tag: "děti",
     },
+
     {
       id: 3,
       headline: "Kondiční plavání",
@@ -44,6 +36,15 @@ export const lectures: Record<string, Service[]> = {
       alt: "plavkyně uprostřed dráhy",
       name: ScrollSections.APPLICATIONS_CONDITION,
       tag: "děti",
+    },
+    {
+      id: 6,
+      headline: "Plavání pro dospělé",
+      text: "Určeno všem nadšencům, kterým bylo již 18 let a chtějí si zlepšit své plavecké dovednosti.",
+      image: AdultLecture,
+      alt: "dospělý plavec u konce dráhy",
+      name: ScrollSections.APPLICATIONS_ADULT,
+      tag: "dospělí",
     },
     {
       id: 4,
@@ -65,19 +66,6 @@ export const lectures: Record<string, Service[]> = {
     },
   ],
   applicationsPage: [
-    {
-      id: 6,
-      text: `
-      Určeno všem nadšencům, kterým bylo již 18 let a chtějí si zlepšit své plavecké dovednosti. Kurzy jsou vhodné pro úplné začátečníky i pokročilé.
-Plavání je sport, díky kterému naberete tělesnou kondici, pomůže Vám zbavit se různých zdravotních problémů, ať už jde o bolest zad, kloubů nebo o problémy s dýcháním.
-      `,
-      image: AdultLecture,
-      alt: "dospělý plavec u konce dráhy",
-      name: ScrollSections.APPLICATIONS_ADULT,
-      lectureType: LectureTypes.ADULT,
-      semesterLabels: ["", "leden 2024 - červen 2024"],
-      url: "plavani-pro-dospele",
-    },
     {
       id: 3,
       text: `
@@ -113,6 +101,19 @@ Plavání je sport, díky kterému naberete tělesnou kondici, pomůže Vám zba
       lectureType: LectureTypes.CONDITION,
       semesterLabels: ["", "únor 2024 - červen 2024"],
       url: "kondicni-plavani",
+    },
+    {
+      id: 6,
+      text: `
+      Určeno všem nadšencům, kterým bylo již 18 let a chtějí si zlepšit své plavecké dovednosti. Kurzy jsou vhodné pro úplné začátečníky i pokročilé.
+Plavání je sport, díky kterému naberete tělesnou kondici, pomůže Vám zbavit se různých zdravotních problémů, ať už jde o bolest zad, kloubů nebo o problémy s dýcháním.
+      `,
+      image: AdultLecture,
+      alt: "dospělý plavec u konce dráhy",
+      name: ScrollSections.APPLICATIONS_ADULT,
+      lectureType: LectureTypes.ADULT,
+      semesterLabels: ["", "leden 2024 - červen 2024"],
+      url: "plavani-pro-dospele",
     },
     {
       id: 1,
