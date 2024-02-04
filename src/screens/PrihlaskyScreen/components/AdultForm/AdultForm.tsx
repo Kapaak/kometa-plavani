@@ -2,20 +2,17 @@ import { useState } from "react";
 
 import {
   ControlledInput,
-  ControlledSelect,
   ControlledNameInput,
   ControlledRadio,
+  ControlledSelect,
 } from "~/components/Shared";
 import { LectureTypes } from "~/domains";
 import { useLecturePaymentOptions } from "~/hooks";
 import { Danger, Space, Subheadline, Text } from "~/styles";
 import { createOption } from "~/utils";
 
-
-
 import { SwimmingForm } from "../SwimmingForm";
 import * as S from "../SwimmingForm/SwimmingForm.style";
-
 
 interface AdultFormProps {
   onSubmit: () => void;
@@ -74,11 +71,11 @@ export const AdultForm = ({ onSubmit, errors, isLoading }: AdultFormProps) => {
             <ControlledInput
               name="personalIdNum"
               placeholder="Rodné číslo (př. 045421/1234)"
-              pattern={{
-                value: /\d{4}([.,\/]\d{4})/,
-                message:
-                  "Rodné číslo v nesprávném formátu. Příklad: 045421/1234.",
-              }}
+              // pattern={{
+              //   value: /\d{4}([.,\/]\d{4})/,
+              //   message:
+              //     "Rodné číslo v nesprávném formátu. Příklad: 045421/1234.",
+              // }}
               required="Rodné číslo musí být vyplněno."
             />
             <S.Label>Rodné číslo</S.Label>
