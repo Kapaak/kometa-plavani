@@ -23,7 +23,7 @@ export const Hamburger = styled.div.withConfig({
     transform-origin: center;
 
     &:last-child {
-      transition: all 0.3s ease-in;
+      transition: width 0.3s ease-in;
     }
   }
 
@@ -34,18 +34,20 @@ export const Hamburger = styled.div.withConfig({
           background-color: var(--colw);
 
           &:first-child {
-            transform: rotate(45deg);
+            /* transform: translateY(6px) rotate(45deg); */
+            transform: translateY(10px) rotate(45deg);
             margin-left: 0.5rem;
             width: 80%;
           }
 
           &:nth-child(2) {
-            transform: rotate(-45deg);
+            transform: translateY(10px) rotate(-45deg);
             margin: -2.5rem 0 0 0.5rem;
             width: 80%;
           }
 
           &:last-child {
+            transform: translateY(10px);
             width: 100%;
           }
         }

@@ -11,6 +11,7 @@ export const NavLinks = styled.ul<{ isActive: boolean }>(
     z-index: 9;
     top: 0;
     transition: all 0.4 ease;
+    gap: 0.5rem;
 
     ${isActive &&
     css`
@@ -31,11 +32,26 @@ export const NavLinks = styled.ul<{ isActive: boolean }>(
       justify-content: flex-end;
       height: auto;
       flex-direction: row;
-      gap: 4rem;
+      gap: 3rem;
       padding: 1rem 0rem;
+    }
+
+    @media (${dimensions.desktop}) {
+      gap: 4rem;
     }
   `
 );
+
+export const SocialMediaMobile = styled(Flex)`
+  position: absolute;
+  bottom: 4rem;
+  right: 2rem;
+  width: initial;
+
+  @media (${dimensions.notebook}) {
+    display: none;
+  }
+`;
 
 export const IconsWrapper = styled(Flex)`
   flex-direction: row;

@@ -24,7 +24,6 @@ export const NavLink = styled.li.withConfig({
   list-style-type: none;
   text-decoration: none;
   color: var(--colw);
-  font-family: var(--font1);
   font-size: var(--fnavlink);
   line-height: 2.4;
   padding-left: 4rem;
@@ -40,6 +39,7 @@ export const NavLink = styled.li.withConfig({
 
   @media (${dimensions.notebook}) {
     padding-left: 0;
+    font-size: 1.6rem;
 
     a,
     button {
