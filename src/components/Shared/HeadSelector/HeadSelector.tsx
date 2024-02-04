@@ -1,37 +1,39 @@
 import Head from "next/head";
 import { useRouter } from "next/router";
 
-import { metaDescription } from "./metaDescriptionData";
-
-type RouteType = "/" | "/prihlasky";
-
-type TitleType = "/prihlasky";
+import { data } from "./metaDescriptionData";
 
 export const HeadSelector = () => {
   const router = useRouter();
 
-  const currentRoute = router.asPath;
+  const currentRoute = router.pathname;
 
-  const currentRouteMetaDesc =
-    metaDescription[currentRoute as RouteType]?.description ??
-    metaDescription.default.description;
+  const routeMetaData = data[currentRoute] ?? data.default;
 
-  //pri reloadu to dela <--!> a dava error do console .. warning ...
-  // const currentRouteTitle = title[currentRoute as TitleType] ?? title.default;
   return (
     <Head>
-      <title> Plavecká škola | Kometa </title>
+      <title>{routeMetaData.title}</title>
       <link rel="icon" href="/icons/tucnak.svg" />
+      <link rel="canonical" href="https://www.plavani-luzanky.cz" />
+      <meta name="title" content={routeMetaData.title} />
       <meta name="author" content="Pavel Zapletal & Barbora Novakova" />
+      <meta name="keywords" content={routeMetaData.keywords} />
+      <meta name="description" content={routeMetaData.description} />
+
+      <meta property="og:type" content="website" />
+      <meta property="og:url" content="https://www.plavani-luzanky.cz" />
+      <meta property="og:title" content={routeMetaData.title} />
+      <meta property="og:description" content={routeMetaData.description} />
+      <meta property="og:image" content="/images/social-media-card.jpg" />
+
+      <meta property="twitter:card" content="summary_large_image" />
+      <meta property="twitter:url" content="https://www.plavani-luzanky.cz" />
+      <meta property="twitter:title" content={routeMetaData.title} />
       <meta
-        name="keywords"
-        content="plavání Lužánky, bazén Lužánky, bazén za Lužánkami, výuka plavání v Brně, plavání Brno, plavecké kurzy brno, plavání brno, plavání pro děti, plavání s dětmi"
+        property="twitter:description"
+        content={routeMetaData.description}
       />
-      <link
-        rel="canonical"
-        href={`https://www.plavani-luzanky.cz${currentRoute}`}
-      />
-      <meta name="description" content={currentRouteMetaDesc} />
+      <meta property="twitter:image" content="/images/social-media-card.jpg" />
     </Head>
   );
 };
