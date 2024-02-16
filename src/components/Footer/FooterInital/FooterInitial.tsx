@@ -11,8 +11,8 @@ const FooterInitial = () => {
       <S.Text variant="light">
         Klub plaveckých sportů policie Kometa Brno z.s.
         <br />
-        Bauerova 321/5
-        <br /> 613 00 Brno
+        Sportovní 486/4
+        <br /> 602 00 Brno - Královo Pole
       </S.Text>
     </S.Flex>
   );
