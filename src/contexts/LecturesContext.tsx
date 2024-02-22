@@ -83,7 +83,8 @@ export const LecturesContextProvider = ({
         })
       );
     },
-    [lectures]
+    //TODO: kdyz bylo bez googleSheets, tak sanity fungovalo, pak ale prestalo fungovat restrikce na plny terminy
+    [lectures, googleSheets]
   );
   return (
     <LecturesContext.Provider
