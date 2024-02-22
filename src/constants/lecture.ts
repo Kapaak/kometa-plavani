@@ -588,8 +588,8 @@ export const LECTURE_PAYMENT_OPTIONS = {
   ],
   adult: [
     {
-      label: "6000 Kč - pololetí, 1 x týdně (od ledna do půlky června)",
-      value: "6000 Kč",
+      label: "4500 Kč - pololetí, 1 x týdně (od ledna do půlky června)",
+      value: "4500 Kč",
       lessonsPerWeek: 1,
     },
   ],
