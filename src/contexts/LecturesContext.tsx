@@ -83,7 +83,7 @@ export const LecturesContextProvider = ({
         })
       );
     },
-    [lectures, googleSheets]
+    [lectures]
   );
   return (
     <LecturesContext.Provider
