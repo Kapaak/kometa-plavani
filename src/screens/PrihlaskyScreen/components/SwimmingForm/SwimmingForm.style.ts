@@ -1,7 +1,7 @@
 import { ArrowRight } from "@phosphor-icons/react";
 import styled from "styled-components";
-import { Button } from "~/components/Shared";
 
+import { Button } from "~/components/Shared";
 import { Text as SText } from "~/styles";
 import { dimensions } from "~/utils";
 
@@ -57,7 +57,7 @@ export const Label = styled.label`
 
 export const SubmitContainer = styled.div`
   margin-left: auto;
-  max-width: 61rem;
+  max-width: 54rem;
   text-align: left;
   margin-top: 2rem;
 
