@@ -11,6 +11,7 @@ import Select, { MultiValue, StylesConfig } from "react-select";
 import { useLecturesContext } from "~/contexts";
 import { Option, SwimmingPage } from "~/domains";
 import { Space, Subheadline } from "~/styles";
+import { semesterNumberFromString } from "~/utils";
 
 import * as S from "./SwimmingForm.style";
 
@@ -64,9 +65,7 @@ export const SwimmingForm = ({
   const semester = watch("midTerm", null);
 
   const selectableOptions = useMemo(() => {
-    const semesterNumber = !semester
-      ? 1
-      : (Number(semester?.split(" ")[0]) as 1 | 2);
+    const semesterNumber = semesterNumberFromString(semester) ?? 1;
 
     const personCountNumber = !personCount ? 1 : Number(personCount);
 

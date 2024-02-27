@@ -7,6 +7,8 @@ import {
   convertAbbrToWeekDays,
 } from "~/domains";
 
+import { semesterNumberFromString } from "./transform";
+
 export const scrollTo = (destination: string) => {
   scroller.scrollTo(destination, { smooth: true, offset: -100 });
 };
@@ -35,16 +37,6 @@ export const getDayAndTimeFromString = (dayTime?: string) => {
   return { day: convertAbbrToWeekDays(day as DayAbbr), time };
 };
 
-export const getSemesterNumberFromString = (
-  semester?: string
-): number | null => {
-  if (!semester || semester.length === 0) return null;
-
-  const [semesterNumber] = semester.split(" ");
-
-  return Number(semesterNumber);
-};
-
 export const getPageRouteTranslation = (pageRoute: string) => {
   switch (pageRoute) {
     case "/":
@@ -63,7 +55,7 @@ export const convertGoogleSheetRowData = (sheet: any) => {
 
     if (!day || !time) return;
 
-    const semesterNumber = getSemesterNumberFromString(sheet["Pololetí"]) ?? 1;
+    const semesterNumber = semesterNumberFromString(sheet["Pololetí"]) ?? 1;
     const aplications = Number(sheet["Počet dětí"]) || 1;
 
     return {
