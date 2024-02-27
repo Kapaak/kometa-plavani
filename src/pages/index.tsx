@@ -1,5 +1,4 @@
 import type { InferGetServerSidePropsType, NextPage } from "next";
-
 import { groq } from "next-sanity";
 
 import Home from "~/components/PageHome/Home";
@@ -13,8 +12,7 @@ import {
 } from "~/domains";
 import { client } from "~/libs";
 
-interface Props
-  extends InferGetServerSidePropsType<typeof getServerSideProps> {}
+interface Props extends InferGetServerSidePropsType<typeof getStaticProps> {}
 
 const HomePage: NextPage<Props> = ({
   actualities,
@@ -33,7 +31,7 @@ const HomePage: NextPage<Props> = ({
 
 export default HomePage;
 
-export const getServerSideProps = async () => {
+export const getStaticProps = async () => {
   const queryActualities = groq`*[_type == "home" && visibility == true]{text,order,title}|order(order asc)`;
   const queryFAQ = groq`*[_type == "faq"]{title,order,faqItems[]{icon,text,title}}|order(order asc)`;
   const queryDocument = groq`*[_type == "uploadFile"]{title,order,file{asset->{url}}}|order(order asc)`;
