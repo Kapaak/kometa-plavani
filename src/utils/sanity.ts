@@ -42,7 +42,7 @@ export async function getInfoBar(): Promise<SanityInfoBar> {
 }
 
 export async function getCourses(): Promise<SanityCourse[]> {
-  const query = groq`*[_type == "course"]{pondeli[]{start,capacity},utery[]{start,capacity},streda[]{start,capacity},ctvrtek[]{start,capacity},patek[]{start,capacity},duration,price,title,value,age,file{asset->{url}}}`;
+  const query = groq`*[_type == "course"]{pondeli[]{start, discount,capacity},utery[]{start, discount,capacity},streda[]{start, discount,capacity},ctvrtek[]{start, discount,capacity},patek[]{start, discount,capacity},duration,price,lectureFrequencyPricingOptions[]{price,title,lectureFrequency},title,value,age,file{asset->{url}}}`;
 
   const courses: SanityCourse[] = await client.fetch(query);
 
