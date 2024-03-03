@@ -1,11 +1,10 @@
 import { GetStaticPropsContext, NextPage } from "next";
-import { groq } from "next-sanity";
 
 import { PageLayout } from "~/components/PageLayout";
 import { CourseDetailContextProvider } from "~/contexts";
 import { Course, PageData, SanityCourse } from "~/domains";
-import { client } from "~/libs";
 import { PrihlaskyNameScreen, prihlaskyNameData } from "~/screens";
+import { getCourses } from "~/utils";
 
 interface CoursePageProps {
   pageData: PageData;
@@ -23,12 +22,10 @@ const CoursePage: NextPage<CoursePageProps> = ({ pageData, courses }) => {
 };
 
 export const getStaticProps = async (ctx: GetStaticPropsContext) => {
-  const queryCourse = groq`*[_type == "course"]{pondeli[]{start, discount,capacity},utery[]{start, discount,capacity},streda[]{start, discount,capacity},ctvrtek[]{start, discount,capacity},patek[]{start, discount,capacity},duration,price,lectureFrequencyPricingOptions[]{price,title,lectureFrequency},title,value,age,file{asset->{url}}}`;
-
   const courseName = ctx.params?.courseName as Course;
   const pageData = prihlaskyNameData?.find((d) => d.name === courseName);
 
-  const courses = await client.fetch(queryCourse);
+  const courses = await getCourses();
 
   if (!pageData)
     return {
