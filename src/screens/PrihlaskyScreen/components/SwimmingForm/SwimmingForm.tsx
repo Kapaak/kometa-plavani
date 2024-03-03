@@ -8,7 +8,7 @@ import {
 import { useFormContext } from "react-hook-form";
 import Select, { MultiValue, StylesConfig } from "react-select";
 
-import { useLecturesContext } from "~/contexts";
+import { useCourseDetailContext } from "~/contexts";
 import { Option, SwimmingPage } from "~/domains";
 import { Space, Subheadline } from "~/styles";
 import { semesterNumberFromString } from "~/utils";
@@ -37,7 +37,6 @@ export const SwimmingForm = ({
   isLoading,
   onSubmit,
   maxNumberOfLessons,
-  lectureType,
   children,
 }: PropsWithChildren<SwimmingPage>) => {
   const [selectedOptions, setSelectedOptions] = useState<MultiValue<Option>>(
@@ -47,7 +46,7 @@ export const SwimmingForm = ({
     getAvailableLectureOptions,
     isError: isDataError,
     isLoading: isDataLoading,
-  } = useLecturesContext();
+  } = useCourseDetailContext();
 
   const { setValue, watch } = useFormContext();
 
@@ -69,12 +68,8 @@ export const SwimmingForm = ({
 
     const personCountNumber = !personCount ? 1 : Number(personCount);
 
-    return getAvailableLectureOptions(
-      lectureType,
-      semesterNumber,
-      personCountNumber
-    );
-  }, [getAvailableLectureOptions, lectureType, personCount, semester]);
+    return getAvailableLectureOptions(semesterNumber, personCountNumber);
+  }, [getAvailableLectureOptions, personCount, semester]);
 
   useEffect(() => {
     //resetuj "vybraný termín a čas", když se změní počet lekcí, počet osob, nebo semestr

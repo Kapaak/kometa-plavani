@@ -1,4 +1,4 @@
-import { useState } from "react";
+import { useMemo, useState } from "react";
 
 import {
   ControlledInput,
@@ -6,15 +6,12 @@ import {
   ControlledRadio,
   ControlledSelect,
 } from "~/components/Shared";
-import { LectureTypes } from "~/domains";
-import { useLecturePaymentOptions } from "~/hooks";
+import { useCourseDetailContext } from "~/contexts";
 import { Danger, Space, Subheadline, Text } from "~/styles";
 import { createOption } from "~/utils";
 
 import { SwimmingForm } from "../SwimmingForm";
 import * as S from "../SwimmingForm/SwimmingForm.style";
-
-
 
 interface SchoolFormProps {
   onSubmit: () => void;
@@ -27,15 +24,24 @@ export const SchoolForm = ({
   errors,
   isLoading,
 }: SchoolFormProps) => {
-  const { school: schoolPaymentOptions } = useLecturePaymentOptions();
+  const { lecturePricingOptions } = useCourseDetailContext();
 
   const [maxNumberOfLessons, setMaxNumberOfLessons] = useState(
-    schoolPaymentOptions[0].lessonsPerWeek
+    lecturePricingOptions?.[0]?.lectureFrequency ?? 0
+  );
+
+  const radioLectureOptions = useMemo(
+    () =>
+      lecturePricingOptions?.map((lectureOption) => ({
+        label: lectureOption.title,
+        value: String(lectureOption.price),
+        lectureFrequency: lectureOption.lectureFrequency,
+      })),
+    [lecturePricingOptions]
   );
 
   return (
     <SwimmingForm
-      lectureType={LectureTypes.SCHOOL}
       onSubmit={onSubmit}
       isLoading={isLoading}
       maxNumberOfLessons={maxNumberOfLessons}
@@ -142,9 +148,9 @@ export const SchoolForm = ({
           <ControlledRadio
             name="lessonsPrice"
             onClick={(radio) =>
-              setMaxNumberOfLessons(radio?.lessonsPerWeek ?? 0)
+              setMaxNumberOfLessons(radio?.lectureFrequency ?? 0)
             }
-            options={schoolPaymentOptions}
+            options={radioLectureOptions}
           />
           <Text variant="dark">
             V případě individuálních požadavků kontaktujte

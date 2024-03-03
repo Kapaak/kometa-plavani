@@ -1,4 +1,4 @@
-import React, { useId } from "react";
+import { useId } from "react";
 import { Controller } from "react-hook-form";
 
 import * as RadioGroup from "@radix-ui/react-radio-group";
@@ -7,19 +7,20 @@ import styled from "styled-components";
 import { Flex } from "~/styles";
 
 //idelane by bylo sem davat nejakej generic type na ten label value lessons
+//-  spis idelane tohle pojmenovat jako LectureRadioGroup
 type ControlledRadioProps = {
   name: string;
-  options: {
+  options?: {
     label: string;
     value: string;
-    lessonsPerWeek?: number;
-    level?: "lower" | "higher";
+    lectureFrequency?: number;
+    // level?: "lower" | "higher";
   }[];
   onClick?: (option: {
     label: string;
     value: string;
-    lessonsPerWeek?: number;
-    level?: "lower" | "higher";
+    lectureFrequency?: number;
+    // level?: "lower" | "higher";
   }) => void;
 };
 
@@ -74,7 +75,7 @@ export const ControlledRadio = ({
       render={({ field: { value, ...restField } }) => (
         <RadioGroupRoot
           className="RadioGroupRoot"
-          defaultValue={options[0]?.value}
+          defaultValue={options?.[0]?.value}
           aria-label="View density"
           {...restField}
         >
@@ -95,7 +96,7 @@ export const ControlledRadio = ({
           ))}
         </RadioGroupRoot>
       )}
-      defaultValue={options[0]?.value ?? false}
+      defaultValue={options?.[0]?.value ?? false}
     />
   );
 };

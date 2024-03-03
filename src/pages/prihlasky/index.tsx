@@ -3,8 +3,8 @@ import { groq } from "next-sanity";
 
 import { PageLayout } from "~/components/PageLayout";
 import {
+  CoursesContextProvider,
   GoogleSheetsContextProvider,
-  LecturesContextProvider,
   SanityApplicationsContextProvider,
 } from "~/contexts";
 import { SanityInfoBar } from "~/domains";
@@ -17,11 +17,11 @@ const PrihlaskyPage: NextPage<Props> = ({ courses, infoBar }) => {
   return (
     <SanityApplicationsContextProvider courses={courses}>
       <GoogleSheetsContextProvider>
-        <LecturesContextProvider courses={courses}>
+        <CoursesContextProvider courses={courses}>
           <PageLayout infoBar={infoBar}>
             <PrihlaskyScreen />
           </PageLayout>
-        </LecturesContextProvider>
+        </CoursesContextProvider>
       </GoogleSheetsContextProvider>
     </SanityApplicationsContextProvider>
   );

@@ -1,7 +1,7 @@
 import { Button } from "~/components/Shared";
 import {
+  useCoursesContext,
   useGoogleSheetsContext,
-  useLecturesContext,
   useSanityApplicationsContext,
 } from "~/contexts";
 import { Service } from "~/domains";
@@ -21,7 +21,7 @@ export const Lecture = (props: LectureProps) => {
   const { lectureDaysTimesCapacity, coursesInformation } =
     useSanityApplicationsContext();
 
-  const { lectures } = useLecturesContext();
+  const { lectures } = useCoursesContext();
 
   const isSemesterSwitcherActive =
     lectureType === "school" || lectureType === "kindergarden";

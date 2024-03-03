@@ -9,6 +9,7 @@ export type PageData = {
   name: Course;
   templateId: string;
   label: string;
+  value: LectureTypes;
 };
 
 export type GoogleSpreadsheetRowResponse = GoogleSpreadsheetRow;
@@ -17,7 +18,6 @@ export type SwimmingPage = {
   onSubmit: (e: BaseSyntheticEvent) => void;
   isLoading: boolean;
   maxNumberOfLessons: number;
-  lectureType: LectureTypes;
 };
 
 export type RadioOption = {
@@ -310,6 +310,7 @@ export type SanityCourse = {
       url: string;
     };
   };
+  lectureFrequencyPricingOptions: SanityLectureFrequencyPricing[];
   duration: number;
   pondeli?: SanityCourseDay[];
   utery?: SanityCourseDay[];
@@ -318,9 +319,16 @@ export type SanityCourse = {
   patek?: SanityCourseDay[];
 };
 
+export type SanityLectureFrequencyPricing = {
+  title: string;
+  price: number;
+  lectureFrequency: number;
+};
+
 export type SanityCourseDay = {
   //NEW
   start: number;
+  discount: number | null;
   capacity: number;
 };
 

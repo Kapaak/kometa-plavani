@@ -4,19 +4,9 @@
 
 - Web application for swimming courses of Kometa Brno
 
-### Interesting components
+### Page hierarchy
 
-- ContentRenderer.tsx
-  - Converts text strings into HTML elements with predetermined tag
-- SectionElement.tsx
-
-  - Element that React-scroll scrolls to. Is styleable even though its .tsx, because it passes className prop + I use forwardRef to pass down ref from IntersectionObserver
-
-### TODO
-
-- projdi si lighthouse score
-- najdi best practices SEO
-- optimalizuj appku
-- pri redirectu asi smaz shadow u headeru, protoze to se ted neoddelava pri zmene stranky
-- co kdyz budu met kazdou page obalenou komponentem, ktery bude checkovat # za url a bude scrollovat
-- resolvni vsechny TODO
+- Page contains multiple courses e.g. Adult swimming, School swimming, Advanced swimming etc.
+- All courses are called Lectures (should be probably called Courses instead)
+- Lecture should describe time when a specific course is taking place for example - Course of School swimming will have lectures on Monday in times 14:00, 15:00 ... etc.
+- One specific course should be called CourseDetail

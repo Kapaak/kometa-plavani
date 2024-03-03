@@ -1,4 +1,4 @@
-import { useState } from "react";
+import { useMemo, useState } from "react";
 
 import {
   ControlledInput,
@@ -6,15 +6,12 @@ import {
   ControlledRadio,
   ControlledSelect,
 } from "~/components/Shared";
-import { LectureTypes } from "~/domains";
-import { useLecturePaymentOptions } from "~/hooks";
+import { useCourseDetailContext } from "~/contexts";
 import { Danger, Space, Subheadline, Text } from "~/styles";
 import { createOption } from "~/utils";
 
 import { SwimmingForm } from "../SwimmingForm";
 import * as S from "../SwimmingForm/SwimmingForm.style";
-
-
 
 interface KindergardenFormProps {
   onSubmit: () => void;
@@ -27,16 +24,24 @@ export const KindergardenForm = ({
   isLoading,
   errors,
 }: KindergardenFormProps) => {
-  const { kindergarden: kindergardenPaymentOptions } =
-    useLecturePaymentOptions();
+  const { lecturePricingOptions } = useCourseDetailContext();
 
   const [maxNumberOfLessons, setMaxNumberOfLessons] = useState(
-    kindergardenPaymentOptions[0].lessonsPerWeek
+    lecturePricingOptions?.[0]?.lectureFrequency ?? 0
+  );
+
+  const radioLectureOptions = useMemo(
+    () =>
+      lecturePricingOptions?.map((lectureOption) => ({
+        label: lectureOption.title,
+        value: String(lectureOption.price),
+        lectureFrequency: lectureOption.lectureFrequency,
+      })),
+    [lecturePricingOptions]
   );
 
   return (
     <SwimmingForm
-      lectureType={LectureTypes.KINDERGARDEN}
       onSubmit={onSubmit}
       isLoading={isLoading}
       maxNumberOfLessons={maxNumberOfLessons}
@@ -143,9 +148,9 @@ export const KindergardenForm = ({
           <ControlledRadio
             name="lessonsPrice"
             onClick={(radio) =>
-              setMaxNumberOfLessons(radio?.lessonsPerWeek ?? 0)
+              setMaxNumberOfLessons(radio?.lectureFrequency ?? 0)
             }
-            options={kindergardenPaymentOptions}
+            options={radioLectureOptions}
           />
           <Text variant="dark">
             V případě individuálních požadavků kontaktujte
