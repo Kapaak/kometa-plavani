@@ -1,20 +1,13 @@
-import { useState } from "react";
-
 import {
   ControlledInput,
   ControlledNameInput,
-  ControlledRadio,
   ControlledSelect,
 } from "~/components/Shared";
-import { LectureTypes } from "~/domains";
-import { useLecturePaymentOptions } from "~/hooks";
-import { Danger, Space, Subheadline, Text } from "~/styles";
+import { Danger, Subheadline } from "~/styles";
 import { createOption } from "~/utils";
 
 import { SwimmingForm } from "../SwimmingForm";
 import * as S from "../SwimmingForm/SwimmingForm.style";
-
-
 
 interface KindergardenFormProps {
   onSubmit: () => void;
@@ -27,20 +20,8 @@ export const KindergardenForm = ({
   isLoading,
   errors,
 }: KindergardenFormProps) => {
-  const { kindergarden: kindergardenPaymentOptions } =
-    useLecturePaymentOptions();
-
-  const [maxNumberOfLessons, setMaxNumberOfLessons] = useState(
-    kindergardenPaymentOptions[0].lessonsPerWeek
-  );
-
   return (
-    <SwimmingForm
-      lectureType={LectureTypes.KINDERGARDEN}
-      onSubmit={onSubmit}
-      isLoading={isLoading}
-      maxNumberOfLessons={maxNumberOfLessons}
-    >
+    <SwimmingForm onSubmit={onSubmit} isLoading={isLoading}>
       <S.Container>
         <S.FormItem>
           <Subheadline variant="dark">Údaje</Subheadline>
@@ -134,23 +115,6 @@ export const KindergardenForm = ({
             <S.Label>Email kontaktní osoby</S.Label>
             <Danger>{errors?.contactPersonEmail?.message}</Danger>
           </S.FormInputContainer>
-        </S.FormItem>
-      </S.Container>
-      <Space />
-      <S.Container>
-        <S.FormItem>
-          <Subheadline variant="dark">Počet lekcí</Subheadline>
-          <ControlledRadio
-            name="lessonsPrice"
-            onClick={(radio) =>
-              setMaxNumberOfLessons(radio?.lessonsPerWeek ?? 0)
-            }
-            options={kindergardenPaymentOptions}
-          />
-          <Text variant="dark">
-            V případě individuálních požadavků kontaktujte
-            plavaniluzanky@kometaplavani.cz
-          </Text>
         </S.FormItem>
       </S.Container>
     </SwimmingForm>

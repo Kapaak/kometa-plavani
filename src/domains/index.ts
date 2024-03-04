@@ -9,6 +9,7 @@ export type PageData = {
   name: Course;
   templateId: string;
   label: string;
+  value: LectureTypes;
 };
 
 export type GoogleSpreadsheetRowResponse = GoogleSpreadsheetRow;
@@ -16,8 +17,6 @@ export type GoogleSpreadsheetRowResponse = GoogleSpreadsheetRow;
 export type SwimmingPage = {
   onSubmit: (e: BaseSyntheticEvent) => void;
   isLoading: boolean;
-  maxNumberOfLessons: number;
-  lectureType: LectureTypes;
 };
 
 export type RadioOption = {
@@ -178,10 +177,11 @@ export type GlobalSpreadsheetData = {
   city?: string;
   postCode?: string;
   alergy?: string;
-  lessonsPrice?: string;
+  lessonsPrice?: number;
   healthIssues?: string;
   level?: string;
   lessonsDayTime?: string;
+  discount?: number;
 };
 
 export type SchoolSpreadsheetData = {
@@ -191,12 +191,13 @@ export type SchoolSpreadsheetData = {
   contactPerson?: string;
   contactPersonPhone?: string;
   contactPersonEmail?: string;
-  lessonsPrice?: string;
+  lessonsPrice?: number;
   childrenCount?: string;
   level?: string;
   lessonsDayTime?: string;
   midTerm?: string;
   notes?: string;
+  discount?: number;
 };
 
 export enum DayAbbr {
@@ -310,6 +311,7 @@ export type SanityCourse = {
       url: string;
     };
   };
+  lectureFrequencyPricingOptions: SanityLectureFrequencyPricing[];
   duration: number;
   pondeli?: SanityCourseDay[];
   utery?: SanityCourseDay[];
@@ -318,9 +320,16 @@ export type SanityCourse = {
   patek?: SanityCourseDay[];
 };
 
+export type SanityLectureFrequencyPricing = {
+  title: string;
+  price: number;
+  lectureFrequency: number;
+};
+
 export type SanityCourseDay = {
   //NEW
   start: number;
+  discount: number | null;
   capacity: number;
 };
 
@@ -328,6 +337,7 @@ export type DayCapacity = {
   lectureTimeId?: number;
   max?: number;
   aplications?: number;
+  discount?: number;
 };
 
 export type DayTimeCapacity = Record<number, Record<number, DayCapacity>>;

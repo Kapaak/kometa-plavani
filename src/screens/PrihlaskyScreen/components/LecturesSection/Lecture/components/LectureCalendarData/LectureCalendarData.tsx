@@ -21,6 +21,7 @@ interface LectureCalendarDataProps {
   capacity?: Record<string, GoogleSheetDayTime>;
 }
 
+//TODO: Convert to table?
 export const LectureCalendarData = ({
   lectureTimes,
   lectureDays,
@@ -46,6 +47,7 @@ export const LectureCalendarData = ({
           key={id}
           applications={realCapacity?.aplications || 0}
           max={lectureData?.max ?? 0}
+          discount={lectureData?.discount ?? 0}
         />
       );
     });

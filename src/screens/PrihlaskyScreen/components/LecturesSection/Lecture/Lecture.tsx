@@ -1,9 +1,5 @@
 import { Button } from "~/components/Shared";
-import {
-  useGoogleSheetsContext,
-  useLecturesContext,
-  useSanityApplicationsContext,
-} from "~/contexts";
+import { useCoursesContext, useSanityDataContext } from "~/contexts";
 import { Service } from "~/domains";
 import { Flex, Hidden } from "~/styles";
 
@@ -19,14 +15,14 @@ type LectureProps = Omit<
 export const Lecture = (props: LectureProps) => {
   const { text, image, name, alt, url, lectureType, semesterLabels } = props;
   const { lectureDaysTimesCapacity, coursesInformation } =
-    useSanityApplicationsContext();
+    useSanityDataContext();
 
-  const { lectures } = useLecturesContext();
+  const { lectures } = useCoursesContext();
 
   const isSemesterSwitcherActive =
     lectureType === "school" || lectureType === "kindergarden";
 
-  const { googleSheets, isLoading, isError } = useGoogleSheetsContext();
+  const { isLoading, isError } = useCoursesContext();
 
   if (!lectureType) return null;
 

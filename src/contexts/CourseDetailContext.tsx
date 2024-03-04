@@ -3,6 +3,7 @@ import {
   createContext,
   useCallback,
   useContext,
+  useMemo,
 } from "react";
 
 import _ from "lodash";
@@ -12,6 +13,7 @@ import {
   LectureDaysTimesCapacity,
   LectureTypes,
   SanityCourse,
+  SanityLectureFrequencyPricing,
   WeekDaysNew,
   convertAbbrToWeekDaysDiacritics,
   convertWeekDaysToAbbr,
@@ -20,40 +22,54 @@ import { useGoogleSheets, useSanityApplications } from "~/hooks";
 
 type CompleteLecture = LectureDaysTimesCapacity & GoogleSheets;
 
-const LecturesContext = createContext<{
+const CourseDetailContext = createContext<{
   lectures?: CompleteLecture;
   getAvailableLectureOptions: (
-    lectureType: LectureTypes,
     semester?: 1 | 2,
     applicationsOffset?: number
   ) => { label: string; options: { label: string; value: string }[] }[];
+  lecturePricingOptions?: SanityLectureFrequencyPricing[];
   isLoading: boolean;
   isError: boolean;
 }>({
   lectures: {},
   getAvailableLectureOptions: () => [],
+  lecturePricingOptions: [],
   isLoading: false,
   isError: false,
 });
 
-export const LecturesContextProvider = ({
+export const CourseDetailContextProvider = ({
   children,
   courses,
-}: PropsWithChildren<{ courses: SanityCourse[] }>) => {
+  lectureType,
+}: PropsWithChildren<{
+  courses: SanityCourse[];
+  lectureType: LectureTypes;
+}>) => {
   const { lectureDaysTimesCapacity } = useSanityApplications(courses);
 
   const { googleSheets, isError, isLoading } = useGoogleSheets();
 
+  //TODO: brat data jen pro specifickej google-sheet a ne pro vsechny, to by hodne usetrilo
   const lectures: CompleteLecture = _.mergeWith(
     lectureDaysTimesCapacity,
     googleSheets
   );
 
+  const lecturePricingOptions = useMemo(
+    () =>
+      courses?.find((course) => course?.value === lectureType)
+        ?.lectureFrequencyPricingOptions,
+    [courses, lectureType]
+  );
+
   const getAvailableLectureOptions = useCallback(
-    (lectureType: string, semester = 1, applicationsOffset = 0) => {
+    (semester = 1, createdApplications = 0) => {
       return _.values(
         _.mapValues(lectures?.[lectureType]?.lectures, (lecture, day) => {
-          const options: { label: string; value: string }[] = [];
+          const options: { label: string; value: string; discount: number }[] =
+            [];
           let label = "";
 
           _.forEach(lecture, (lectureTime, timeKey) => {
@@ -69,12 +85,13 @@ export const LecturesContextProvider = ({
             label = convertAbbrToWeekDaysDiacritics(convertedDay);
 
             if (
-              semesterData.aplications + applicationsOffset <=
+              semesterData.aplications + createdApplications <=
               semesterData.max
             ) {
               options.push({
                 label: `${selectedTime?.from} - ${selectedTime?.to}`,
                 value: `${convertedDay}_${semesterData.lectureTimeId}`,
+                discount: semesterData?.discount ?? 0,
               });
             }
           });
@@ -84,22 +101,23 @@ export const LecturesContextProvider = ({
       );
     },
     //TODO: kdyz bylo bez googleSheets, tak sanity fungovalo, pak ale prestalo fungovat restrikce na plny terminy
-    [lectures, googleSheets]
+    // eslint-disable-next-line react-hooks/exhaustive-deps
+    [lectures, lectureType, googleSheets]
   );
   return (
-    <LecturesContext.Provider
+    <CourseDetailContext.Provider
       value={{
-        lectures,
         getAvailableLectureOptions,
         isLoading,
         isError,
+        lecturePricingOptions,
       }}
     >
       {children}
-    </LecturesContext.Provider>
+    </CourseDetailContext.Provider>
   );
 };
 
-export function useLecturesContext() {
-  return useContext(LecturesContext);
+export function useCourseDetailContext() {
+  return useContext(CourseDetailContext);
 }

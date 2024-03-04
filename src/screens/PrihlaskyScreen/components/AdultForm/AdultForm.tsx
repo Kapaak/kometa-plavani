@@ -1,14 +1,9 @@
-import { useState } from "react";
-
 import {
   ControlledInput,
   ControlledNameInput,
-  ControlledRadio,
   ControlledSelect,
 } from "~/components/Shared";
-import { LectureTypes } from "~/domains";
-import { useLecturePaymentOptions } from "~/hooks";
-import { Danger, Space, Subheadline, Text } from "~/styles";
+import { Danger, Subheadline } from "~/styles";
 import { createOption } from "~/utils";
 
 import { SwimmingForm } from "../SwimmingForm";
@@ -21,19 +16,8 @@ interface AdultFormProps {
 }
 
 export const AdultForm = ({ onSubmit, errors, isLoading }: AdultFormProps) => {
-  const { adult: adultPaymentOptions } = useLecturePaymentOptions();
-
-  const [maxNumberOfLessons, setMaxNumberOfLessons] = useState(
-    adultPaymentOptions[0].lessonsPerWeek
-  );
-
   return (
-    <SwimmingForm
-      lectureType={LectureTypes.ADULT}
-      onSubmit={onSubmit}
-      isLoading={isLoading}
-      maxNumberOfLessons={maxNumberOfLessons}
-    >
+    <SwimmingForm onSubmit={onSubmit} isLoading={isLoading}>
       <S.Container>
         <S.FormItem>
           <Subheadline variant="dark">Osobní údaje</Subheadline>
@@ -157,23 +141,6 @@ export const AdultForm = ({ onSubmit, errors, isLoading }: AdultFormProps) => {
             />
             <S.Label>Zdravotní potíže</S.Label>
           </S.FormInputContainer>
-        </S.FormItem>
-      </S.Container>
-      <Space />
-      <S.Container>
-        <S.FormItem>
-          <Subheadline variant="dark">Počet lekcí</Subheadline>
-          <ControlledRadio
-            name="lessonsPrice"
-            onClick={(radio) => {
-              setMaxNumberOfLessons(radio?.lessonsPerWeek ?? 0);
-            }}
-            options={adultPaymentOptions}
-          />
-          <Text variant="dark">
-            V případě individuálních požadavků kontaktujte
-            plavaniluzanky@kometaplavani.cz
-          </Text>
         </S.FormItem>
       </S.Container>
     </SwimmingForm>

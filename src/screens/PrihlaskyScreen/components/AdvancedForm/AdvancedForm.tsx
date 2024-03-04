@@ -1,14 +1,9 @@
-import { useState } from "react";
-
 import {
   ControlledInput,
   ControlledNameInput,
-  ControlledRadio,
   ControlledSelect,
 } from "~/components/Shared";
-import { LectureTypes } from "~/domains";
-import { useLecturePaymentOptions } from "~/hooks";
-import { Danger, Space, Subheadline, Text } from "~/styles";
+import { Danger, Subheadline } from "~/styles";
 import { createOption } from "~/utils";
 
 import { SwimmingForm } from "../SwimmingForm";
@@ -25,19 +20,8 @@ export const AdvancedForm = ({
   errors,
   isLoading,
 }: AdvancedFormProps) => {
-  const { advanced: advancedPaymentOptions } = useLecturePaymentOptions();
-
-  const [maxNumberOfLessons, setMaxNumberOfLessons] = useState(
-    advancedPaymentOptions[0].lessonsPerWeek
-  );
-
   return (
-    <SwimmingForm
-      lectureType={LectureTypes.ADVANCED}
-      onSubmit={onSubmit}
-      isLoading={isLoading}
-      maxNumberOfLessons={maxNumberOfLessons}
-    >
+    <SwimmingForm onSubmit={onSubmit} isLoading={isLoading}>
       <S.Container>
         <S.FormItem>
           <Subheadline variant="dark">Osobní údaje</Subheadline>
@@ -161,23 +145,6 @@ export const AdvancedForm = ({
             />
             <S.Label>Zdravotní potíže</S.Label>
           </S.FormInputContainer>
-        </S.FormItem>
-      </S.Container>
-      <Space />
-      <S.Container>
-        <S.FormItem>
-          <Subheadline variant="dark">Počet lekcí</Subheadline>
-          <ControlledRadio
-            name="lessonsPrice"
-            onClick={(radio) => {
-              setMaxNumberOfLessons(radio?.lessonsPerWeek ?? 0);
-            }}
-            options={advancedPaymentOptions}
-          />
-          <Text variant="dark">
-            V případě individuálních požadavků kontaktujte
-            plavaniluzanky@kometaplavani.cz
-          </Text>
         </S.FormItem>
       </S.Container>
     </SwimmingForm>

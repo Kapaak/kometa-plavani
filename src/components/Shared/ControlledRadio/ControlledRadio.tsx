@@ -1,101 +1,71 @@
-import React, { useId } from "react";
+import { useId } from "react";
 import { Controller } from "react-hook-form";
 
-import * as RadioGroup from "@radix-ui/react-radio-group";
-import styled from "styled-components";
-
 import { Flex } from "~/styles";
+import { calculatePriceAfterDiscount } from "~/utils";
 
-//idelane by bylo sem davat nejakej generic type na ten label value lessons
-type ControlledRadioProps = {
-  name: string;
-  options: {
-    label: string;
-    value: string;
-    lessonsPerWeek?: number;
-    level?: "lower" | "higher";
-  }[];
-  onClick?: (option: {
-    label: string;
-    value: string;
-    lessonsPerWeek?: number;
-    level?: "lower" | "higher";
-  }) => void;
+import * as S from "./ControlledRadio.style";
+
+//-  spis idelane tohle pojmenovat jako LectureRadioGroup
+type Option = {
+  label: string;
+  value: string;
+  lectureFrequency?: number;
 };
 
-export const RadioGroupIndicator = styled(RadioGroup.Indicator)`
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  width: 100%;
-  height: 100%;
-  position: relative;
-
-  &::after {
-    content: "";
-    top: 50%;
-    left: 50%;
-    display: block;
-    width: 1rem;
-    height: 1rem;
-    border-radius: 50%;
-    background-color: var(--colb);
-  }
-`;
-
-export const RadioGroupItem = styled(RadioGroup.Item)`
-  all: unset;
-  background-color: #fff;
-  width: 1.6rem;
-  min-width: 1.6rem;
-  min-height: 1.6rem;
-  height: 1.6rem;
-  border-radius: 50%;
-  box-shadow: 0 2px 10px var(--collg);
-
-  border: 1px solid var(--colb);
-`;
-
-export const RadioGroupRoot = styled(RadioGroup.Root)`
-  display: flex;
-  flex-direction: column;
-  gap: 1rem;
-`;
+type ControlledRadioProps = {
+  name: string;
+  discount?: number;
+  price?: number;
+  options?: Option[];
+  onClick?: (option: Option) => void;
+};
 
 export const ControlledRadio = ({
   name,
+  discount,
+  price,
   options,
   onClick,
 }: ControlledRadioProps) => {
   const id = useId();
+
   return (
     <Controller
       name={name}
       render={({ field: { value, ...restField } }) => (
-        <RadioGroupRoot
+        <S.RadioGroupRoot
           className="RadioGroupRoot"
-          defaultValue={options[0]?.value}
+          defaultValue={options?.[0]?.value}
           aria-label="View density"
           {...restField}
         >
           {options?.map((option, index) => (
             <Flex key={option.value} direction="row" align="center" gap="2rem">
-              <RadioGroupItem
+              <S.RadioGroupItem
                 className="RadioGroupItem"
                 value={option.value}
                 id={`${id}-${index}`}
                 onClick={() => onClick && onClick(option)}
               >
-                <RadioGroupIndicator className="RadioGroupIndicator" />
-              </RadioGroupItem>
-              <label className="Label" htmlFor={`${id}-${index}`}>
-                {option.label}
-              </label>
+                <S.RadioGroupIndicator className="RadioGroupIndicator" />
+              </S.RadioGroupItem>
+              <S.RadioLabel className="Label" htmlFor={`${id}-${index}`}>
+                {option.label}{" "}
+                {Boolean(discount) ? (
+                  <S.DiscountChip>
+                    {calculatePriceAfterDiscount(price ?? 0, discount ?? 0)} Kč
+                    - sleva {discount} %
+                  </S.DiscountChip>
+                ) : (
+                  <S.NonDiscountChip>{price} Kč</S.NonDiscountChip>
+                )}
+              </S.RadioLabel>
             </Flex>
           ))}
-        </RadioGroupRoot>
+        </S.RadioGroupRoot>
       )}
-      defaultValue={options[0]?.value ?? false}
+      defaultValue={options?.[0]?.value ?? false}
     />
   );
 };
