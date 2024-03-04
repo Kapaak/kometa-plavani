@@ -58,6 +58,7 @@ export const FormContainer = ({
   const {
     handleSubmit,
     formState: { errors },
+    getValues,
     reset,
   } = form;
 
@@ -115,6 +116,7 @@ export const FormContainer = ({
     reset({
       gender: "",
       midTerm: "",
+      lessonsPrice: getValues("lessonsPrice"),
     });
     setIsOpen(false);
   };
