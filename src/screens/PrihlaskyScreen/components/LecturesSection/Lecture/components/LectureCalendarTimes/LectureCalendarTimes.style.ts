@@ -12,5 +12,6 @@ export const LectureCalendarTimes = styled.div<{ padding?: string }>`
 
   @media (${dimensions.tablet}) {
     grid-template-columns: 3rem 11rem 11rem 11rem;
+    gap: 2rem;
   }
 `;

@@ -17,7 +17,6 @@ export type GoogleSpreadsheetRowResponse = GoogleSpreadsheetRow;
 export type SwimmingPage = {
   onSubmit: (e: BaseSyntheticEvent) => void;
   isLoading: boolean;
-  maxNumberOfLessons: number;
 };
 
 export type RadioOption = {
@@ -178,10 +177,11 @@ export type GlobalSpreadsheetData = {
   city?: string;
   postCode?: string;
   alergy?: string;
-  lessonsPrice?: string;
+  lessonsPrice?: number;
   healthIssues?: string;
   level?: string;
   lessonsDayTime?: string;
+  discount?: number;
 };
 
 export type SchoolSpreadsheetData = {
@@ -191,12 +191,13 @@ export type SchoolSpreadsheetData = {
   contactPerson?: string;
   contactPersonPhone?: string;
   contactPersonEmail?: string;
-  lessonsPrice?: string;
+  lessonsPrice?: number;
   childrenCount?: string;
   level?: string;
   lessonsDayTime?: string;
   midTerm?: string;
   notes?: string;
+  discount?: number;
 };
 
 export enum DayAbbr {
@@ -336,6 +337,7 @@ export type DayCapacity = {
   lectureTimeId?: number;
   max?: number;
   aplications?: number;
+  discount?: number;
 };
 
 export type DayTimeCapacity = Record<number, Record<number, DayCapacity>>;

@@ -1,5 +1,6 @@
 export { A } from "./CustomComponents/A";
 export { Accordion } from "./CustomComponents/Accordion";
+export { Chip } from "./CustomComponents/Chip";
 export { ControlledSwitch } from "./CustomComponents/ControlledSwitch";
 export { Danger } from "./CustomComponents/Danger";
 export { Divider } from "./CustomComponents/Divider";

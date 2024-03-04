@@ -12,7 +12,11 @@ import {
   SchoolSpreadsheetData,
   convertAbbrToWeekDaysDiacritics,
 } from "~/domains";
-import { uploadGlobalSpreadsheet, uploadSchoolSpreadsheet } from "~/utils";
+import {
+  calculatePriceAfterDiscount,
+  uploadGlobalSpreadsheet,
+  uploadSchoolSpreadsheet,
+} from "~/utils";
 
 import {
   AdvancedForm,
@@ -90,7 +94,12 @@ export const FormContainer = ({
         email: formValues?.email ?? formValues?.contactPersonEmail,
         templateId: templateId,
         day: fullDaysTimes,
-        price: formValues.lessonsPrice,
+        price: Math.floor(
+          calculatePriceAfterDiscount(
+            formValues.lessonsPrice ?? 0,
+            formValues.discount ?? 0
+          )
+        ),
       });
     } catch (error) {
       console.log("cant send email or upload spreadsheet", error);

@@ -4,12 +4,15 @@ import { Controller } from "react-hook-form";
 import * as RadioGroup from "@radix-ui/react-radio-group";
 import styled from "styled-components";
 
-import { Flex } from "~/styles";
+import { Chip, Flex } from "~/styles";
+import { calculatePriceAfterDiscount } from "~/utils";
 
 //idelane by bylo sem davat nejakej generic type na ten label value lessons
 //-  spis idelane tohle pojmenovat jako LectureRadioGroup
 type ControlledRadioProps = {
   name: string;
+  discount?: number;
+  price?: number;
   options?: {
     label: string;
     value: string;
@@ -63,12 +66,25 @@ export const RadioGroupRoot = styled(RadioGroup.Root)`
   gap: 1rem;
 `;
 
+const DiscountChip = styled(Chip)`
+  background-color: var(--col1);
+  font-size: 1.4rem;
+`;
+
+const NonDiscountChip = styled(Chip)`
+  background-color: var(--col3);
+  font-size: 1.4rem;
+`;
+
 export const ControlledRadio = ({
   name,
+  discount,
+  price,
   options,
   onClick,
 }: ControlledRadioProps) => {
   const id = useId();
+
   return (
     <Controller
       name={name}
@@ -89,8 +105,25 @@ export const ControlledRadio = ({
               >
                 <RadioGroupIndicator className="RadioGroupIndicator" />
               </RadioGroupItem>
-              <label className="Label" htmlFor={`${id}-${index}`}>
-                {option.label}
+              <label
+                style={{
+                  display: "flex",
+                  gap: "1rem",
+                  alignItems: "center",
+                  flexWrap: "wrap",
+                }}
+                className="Label"
+                htmlFor={`${id}-${index}`}
+              >
+                {option.label}{" "}
+                {Boolean(discount) ? (
+                  <DiscountChip>
+                    {calculatePriceAfterDiscount(price ?? 0, discount ?? 0)} Kč
+                    - sleva {discount} %
+                  </DiscountChip>
+                ) : (
+                  <NonDiscountChip>{price} Kč</NonDiscountChip>
+                )}
               </label>
             </Flex>
           ))}

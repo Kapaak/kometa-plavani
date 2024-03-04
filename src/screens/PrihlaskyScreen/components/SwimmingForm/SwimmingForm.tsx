@@ -6,44 +6,83 @@ import {
   useState,
 } from "react";
 import { useFormContext } from "react-hook-form";
-import Select, { MultiValue, StylesConfig } from "react-select";
+import Select, { OnChangeValue, StylesConfig } from "react-select";
 
+import { ControlledRadio } from "~/components/Shared";
 import { useCourseDetailContext } from "~/contexts";
-import { Option, SwimmingPage } from "~/domains";
-import { Space, Subheadline } from "~/styles";
+import { SwimmingPage } from "~/domains";
+import { Space, Subheadline, Text } from "~/styles";
 import { semesterNumberFromString } from "~/utils";
 
 import * as S from "./SwimmingForm.style";
 
-const colourStyles: StylesConfig<any, true> = {
+const colourStyles: StylesConfig<any, false> = {
   control: (styles) => ({ ...styles, backgroundColor: "white" }),
+  option: (styles, { data }) => {
+    const discount = data.discount as number;
 
-  multiValue: (styles, { data }) => {
-    const prefix = data.value.split("_")[0].toUpperCase() as string;
     return {
       ...styles,
-      paddingLeft: "1rem",
+      display: "flex",
+      gap: "2rem",
+      ":after": Boolean(discount)
+        ? {
+            content: `"-${discount} %"`,
+            right: "2rem",
+            alignSelf: "center",
+            fontSize: "1.2rem",
+            backgroundColor: "var(--col1)",
+            padding: ".2rem 1rem",
+            borderRadius: "2rem",
+          }
+        : {},
+    };
+  },
+  singleValue: (styles, { data }) => {
+    const prefix = data.value.split("_")[0].toUpperCase() as string;
+    const discount = data.discount as number;
+    return {
+      ...styles,
+      display: "flex",
+      gap: "2rem",
       ":before": {
         display: "flex",
         alignSelf: "center",
         content: `"${prefix}"`,
         fontSize: "1.2rem",
       },
+      ":after": Boolean(discount)
+        ? {
+            content: `"-${discount} %"`,
+            right: "2rem",
+            alignSelf: "center",
+            fontSize: "1.2rem",
+            backgroundColor: "var(--col1)",
+            padding: ".2rem 1rem",
+            borderRadius: "2rem",
+          }
+        : {},
     };
   },
 };
 
+interface SelectOptions {
+  label: string;
+  value: string;
+  discount: number;
+}
+
 export const SwimmingForm = ({
   isLoading,
   onSubmit,
-  maxNumberOfLessons,
   children,
 }: PropsWithChildren<SwimmingPage>) => {
-  const [selectedOptions, setSelectedOptions] = useState<MultiValue<Option>>(
-    []
+  const [selectedOption, setSelectedOption] = useState<SelectOptions | null>(
+    null
   );
   const {
     getAvailableLectureOptions,
+    lecturePricingOptions,
     isError: isDataError,
     isLoading: isDataLoading,
   } = useCourseDetailContext();
@@ -52,16 +91,26 @@ export const SwimmingForm = ({
 
   const handleSubmit = (event: BaseSyntheticEvent) => {
     onSubmit(event);
-    setSelectedOptions([]);
+    setSelectedOption(null);
   };
 
-  const handleOptionSelect = (options: MultiValue<Option>) => {
-    setSelectedOptions(options);
+  const handleOptionSelect = (option: OnChangeValue<SelectOptions, false>) => {
+    setSelectedOption(option);
   };
 
   const lessonsPrice = watch("lessonsPrice", null);
   const personCount = watch("childrenCount", null);
   const semester = watch("midTerm", null);
+
+  const radioLectureOptions = useMemo(
+    () =>
+      lecturePricingOptions?.map((lectureOption) => ({
+        label: lectureOption.title,
+        value: String(lectureOption.price),
+        lectureFrequency: lectureOption.lectureFrequency,
+      })),
+    [lecturePricingOptions]
+  );
 
   const selectableOptions = useMemo(() => {
     const semesterNumber = semesterNumberFromString(semester) ?? 1;
@@ -73,16 +122,15 @@ export const SwimmingForm = ({
 
   useEffect(() => {
     //resetuj "vybraný termín a čas", když se změní počet lekcí, počet osob, nebo semestr
-    setSelectedOptions([]);
+    setSelectedOption(null);
   }, [lessonsPrice, personCount, semester]);
 
   useEffect(() => {
-    const transformSelectedOptions = [...selectedOptions].map(
-      (option) => option.value
-    );
-
-    setValue("lessonsDayTime", transformSelectedOptions.toString());
-  }, [selectedOptions, setValue]);
+    if (selectedOption?.value) {
+      setValue("lessonsDayTime", selectedOption.value);
+      setValue("discount", selectedOption?.discount ?? 0);
+    }
+  }, [selectedOption, setValue]);
 
   return (
     <S.Form onSubmit={handleSubmit}>
@@ -90,8 +138,23 @@ export const SwimmingForm = ({
       <Space />
       <S.Container>
         <S.FormItem>
+          <Subheadline variant="dark">Počet lekcí</Subheadline>
+          <ControlledRadio
+            name="lessonsPrice"
+            options={radioLectureOptions}
+            discount={selectedOption?.discount}
+            price={Number(lessonsPrice)}
+          />
+          <Text variant="dark">
+            V případě individuálních požadavků kontaktujte
+            plavaniluzanky@kometaplavani.cz
+          </Text>
+        </S.FormItem>
+      </S.Container>
+      <Space />
+      <S.Container>
+        <S.FormItem>
           <Subheadline variant="dark">Vybraný termín a čas</Subheadline>
-          {/* //todo pridej at to rovnou uklada do react hook form */}
           <Select
             instanceId="lessons-select"
             placeholder={
@@ -100,15 +163,10 @@ export const SwimmingForm = ({
                 : "Termín a čas"
             }
             styles={colourStyles}
-            value={selectedOptions}
-            isMulti
+            value={selectedOption}
             name="lessonsDayTime"
             noOptionsMessage={() => "Všechny termíny jsou obsazené"}
-            closeMenuOnSelect={false}
             onChange={handleOptionSelect}
-            isOptionDisabled={() =>
-              selectedOptions.length >= maxNumberOfLessons || isDataError
-            }
             options={selectableOptions}
             isLoading={isDataLoading}
           />
@@ -129,7 +187,7 @@ export const SwimmingForm = ({
 
         <S.SubmitButton
           isLoading={isLoading}
-          disabled={isLoading || selectedOptions.length !== maxNumberOfLessons}
+          disabled={isLoading || !Boolean(selectedOption)}
         >
           Odeslat
         </S.SubmitButton>

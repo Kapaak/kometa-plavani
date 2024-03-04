@@ -83,11 +83,13 @@ const convertCourseToLectureCapacity = (course: SanityCourse, key: string) => {
             lectureTimeId: data.start,
             max: data.capacity,
             aplications: 0,
+            discount: data.discount ?? 0,
           },
           2: {
             lectureTimeId: data.start,
             max: data.capacity,
             aplications: 0,
+            discount: data.discount ?? 0,
           },
         },
       };

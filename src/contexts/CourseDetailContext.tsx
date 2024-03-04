@@ -68,7 +68,8 @@ export const CourseDetailContextProvider = ({
     (semester = 1, createdApplications = 0) => {
       return _.values(
         _.mapValues(lectures?.[lectureType]?.lectures, (lecture, day) => {
-          const options: { label: string; value: string }[] = [];
+          const options: { label: string; value: string; discount: number }[] =
+            [];
           let label = "";
 
           _.forEach(lecture, (lectureTime, timeKey) => {
@@ -90,6 +91,7 @@ export const CourseDetailContextProvider = ({
               options.push({
                 label: `${selectedTime?.from} - ${selectedTime?.to}`,
                 value: `${convertedDay}_${semesterData.lectureTimeId}`,
+                discount: semesterData?.discount ?? 0,
               });
             }
           });
@@ -99,7 +101,8 @@ export const CourseDetailContextProvider = ({
       );
     },
     //TODO: kdyz bylo bez googleSheets, tak sanity fungovalo, pak ale prestalo fungovat restrikce na plny terminy
-    [lectures, googleSheets]
+    // eslint-disable-next-line react-hooks/exhaustive-deps
+    [lectures, lectureType, googleSheets]
   );
   return (
     <CourseDetailContext.Provider

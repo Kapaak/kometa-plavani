@@ -1,13 +1,9 @@
-import { useMemo, useState } from "react";
-
 import {
   ControlledInput,
   ControlledNameInput,
-  ControlledRadio,
   ControlledSelect,
 } from "~/components/Shared";
-import { useCourseDetailContext } from "~/contexts";
-import { Danger, Space, Subheadline, Text } from "~/styles";
+import { Danger, Subheadline } from "~/styles";
 import { createOption } from "~/utils";
 
 import { SwimmingForm } from "../SwimmingForm";
@@ -24,28 +20,8 @@ export const KindergardenForm = ({
   isLoading,
   errors,
 }: KindergardenFormProps) => {
-  const { lecturePricingOptions } = useCourseDetailContext();
-
-  const [maxNumberOfLessons, setMaxNumberOfLessons] = useState(
-    lecturePricingOptions?.[0]?.lectureFrequency ?? 0
-  );
-
-  const radioLectureOptions = useMemo(
-    () =>
-      lecturePricingOptions?.map((lectureOption) => ({
-        label: lectureOption.title,
-        value: String(lectureOption.price),
-        lectureFrequency: lectureOption.lectureFrequency,
-      })),
-    [lecturePricingOptions]
-  );
-
   return (
-    <SwimmingForm
-      onSubmit={onSubmit}
-      isLoading={isLoading}
-      maxNumberOfLessons={maxNumberOfLessons}
-    >
+    <SwimmingForm onSubmit={onSubmit} isLoading={isLoading}>
       <S.Container>
         <S.FormItem>
           <Subheadline variant="dark">Údaje</Subheadline>
@@ -139,23 +115,6 @@ export const KindergardenForm = ({
             <S.Label>Email kontaktní osoby</S.Label>
             <Danger>{errors?.contactPersonEmail?.message}</Danger>
           </S.FormInputContainer>
-        </S.FormItem>
-      </S.Container>
-      <Space />
-      <S.Container>
-        <S.FormItem>
-          <Subheadline variant="dark">Počet lekcí</Subheadline>
-          <ControlledRadio
-            name="lessonsPrice"
-            onClick={(radio) =>
-              setMaxNumberOfLessons(radio?.lectureFrequency ?? 0)
-            }
-            options={radioLectureOptions}
-          />
-          <Text variant="dark">
-            V případě individuálních požadavků kontaktujte
-            plavaniluzanky@kometaplavani.cz
-          </Text>
         </S.FormItem>
       </S.Container>
     </SwimmingForm>

@@ -1,13 +1,9 @@
-import { useMemo, useState } from "react";
-
 import {
   ControlledInput,
   ControlledNameInput,
-  ControlledRadio,
   ControlledSelect,
 } from "~/components/Shared";
-import { useCourseDetailContext } from "~/contexts";
-import { Danger, Space, Strong, Subheadline, Text } from "~/styles";
+import { Danger, Subheadline } from "~/styles";
 import { createOption } from "~/utils";
 
 import { SwimmingForm } from "../SwimmingForm";
@@ -20,28 +16,8 @@ interface BasicFormProps {
 }
 
 export const BasicForm = ({ onSubmit, errors, isLoading }: BasicFormProps) => {
-  const { lecturePricingOptions } = useCourseDetailContext();
-
-  const [maxNumberOfLessons, setMaxNumberOfLessons] = useState(
-    lecturePricingOptions?.[0]?.lectureFrequency ?? 0
-  );
-
-  const radioLectureOptions = useMemo(
-    () =>
-      lecturePricingOptions?.map((lectureOption) => ({
-        label: lectureOption.title,
-        value: String(lectureOption.price),
-        lectureFrequency: lectureOption.lectureFrequency,
-      })),
-    [lecturePricingOptions]
-  );
-
   return (
-    <SwimmingForm
-      onSubmit={onSubmit}
-      isLoading={isLoading}
-      maxNumberOfLessons={maxNumberOfLessons}
-    >
+    <SwimmingForm onSubmit={onSubmit} isLoading={isLoading}>
       <S.Container>
         <S.FormItem>
           <Subheadline variant="dark">Osobní údaje</Subheadline>
@@ -165,23 +141,6 @@ export const BasicForm = ({ onSubmit, errors, isLoading }: BasicFormProps) => {
             />
             <S.Label>Zdravotní potíže</S.Label>
           </S.FormInputContainer>
-        </S.FormItem>
-      </S.Container>
-      <Space />
-      <S.Container>
-        <S.FormItem>
-          <Subheadline variant="dark">Počet lekcí</Subheadline>
-          <ControlledRadio
-            name="lessonsPrice"
-            onClick={(radio) => {
-              setMaxNumberOfLessons(radio?.lectureFrequency ?? 0);
-            }}
-            options={radioLectureOptions}
-          />
-          <Text variant="dark">
-            Pokud máte zájem kurzy navštěvovat vícekrát týdně, kontaktujte nás
-            na <Strong>plavaniluzanky@kometaplavani.cz</Strong>.
-          </Text>
         </S.FormItem>
       </S.Container>
     </SwimmingForm>
