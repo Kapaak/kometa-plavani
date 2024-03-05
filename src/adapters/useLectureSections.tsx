@@ -17,6 +17,7 @@ export const lectures: Record<string, Service[]> = {
       alt: "děti v bazénu pod vodou s brýlemi",
       name: ScrollSections.APPLICATIONS_BASIC,
       tag: "děti od 4 let",
+      price: "Od 4000 Kč",
     },
     {
       id: 2,
@@ -26,6 +27,7 @@ export const lectures: Record<string, Service[]> = {
       alt: "plavec s hlavou pod vodou a deskou",
       name: ScrollSections.APPLICATIONS_ADVANCED,
       tag: "děti",
+      price: "Od 4000 Kč",
     },
 
     {
@@ -36,6 +38,7 @@ export const lectures: Record<string, Service[]> = {
       alt: "plavkyně uprostřed dráhy",
       name: ScrollSections.APPLICATIONS_CONDITION,
       tag: "děti",
+      price: "Od 4000 Kč",
     },
     {
       id: 6,
@@ -45,6 +48,7 @@ export const lectures: Record<string, Service[]> = {
       alt: "dospělý plavec u konce dráhy",
       name: ScrollSections.APPLICATIONS_ADULT,
       tag: "dospělí",
+      price: "Od 4500 Kč",
     },
     {
       id: 4,
@@ -54,6 +58,7 @@ export const lectures: Record<string, Service[]> = {
       alt: "plavkyně ve vodě, která se nadechuje",
       name: ScrollSections.APPLICATIONS_KINDERGARDEN,
       tag: "organizace mšmt",
+      price: "Od 2040 Kč",
     },
     {
       id: 5,
@@ -63,6 +68,7 @@ export const lectures: Record<string, Service[]> = {
       alt: "plavec s brýlemi v mělké vodě",
       name: ScrollSections.APPLICATIONS_SCHOOL,
       tag: "organizace mšmt",
+      price: "Od 2040 Kč",
     },
   ],
   applicationsPage: [

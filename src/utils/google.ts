@@ -3,6 +3,8 @@ import dayjs from "dayjs";
 import { GlobalSpreadsheetData, SchoolSpreadsheetData } from "~/domains";
 import { appendSpreadsheet } from "~/libs";
 
+import { calculatePriceAfterDiscount } from "./calculations";
+
 export const uploadSchoolSpreadsheet = async (
   spreadsheetId: string,
   spreadsheetData: SchoolSpreadsheetData
@@ -15,7 +17,10 @@ export const uploadSchoolSpreadsheet = async (
       "Kontaktní osoba": spreadsheetData?.contactPerson,
       "Telefon kontaktní osoby": spreadsheetData?.contactPersonPhone,
       "Email kontaktní osoby": spreadsheetData?.contactPersonEmail,
-      "Cenová kategorie": spreadsheetData?.lessonsPrice,
+      "Cenová kategorie": calculatePriceAfterDiscount(
+        spreadsheetData?.lessonsPrice ?? 0,
+        spreadsheetData.discount ?? 0
+      ),
       "Počet dětí": spreadsheetData?.childrenCount,
       "Den a čas": spreadsheetData?.lessonsDayTime,
       Pololetí: spreadsheetData?.midTerm,
@@ -45,7 +50,10 @@ export const uploadGlobalSpreadsheet = async (
       Město: globalSpreadsheet?.city,
       PSČ: globalSpreadsheet?.postCode,
       Alergie: globalSpreadsheet?.alergy,
-      "Cenová kategorie": globalSpreadsheet?.lessonsPrice,
+      "Cenová kategorie": calculatePriceAfterDiscount(
+        globalSpreadsheet?.lessonsPrice ?? 0,
+        globalSpreadsheet.discount ?? 0
+      ),
       "Zdravotní potíže": globalSpreadsheet?.healthIssues,
       "Den a čas": globalSpreadsheet?.lessonsDayTime,
     },

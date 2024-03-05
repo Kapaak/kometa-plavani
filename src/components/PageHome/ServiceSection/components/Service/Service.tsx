@@ -14,10 +14,11 @@ interface ServiceProps {
   alt: string;
   name: ScrollSections;
   tag?: string;
+  price: string;
 }
 
 export const Service = (props: ServiceProps) => {
-  const { headline, text, image, name, alt, tag } = props;
+  const { headline, text, image, name, alt, tag, price } = props;
 
   const router = useRouter();
 
@@ -43,6 +44,14 @@ export const Service = (props: ServiceProps) => {
           >
             Více informací
           </S.Btn>
+          {/* <Flex
+            direction="row"
+            align="center"
+            justify="space-between"
+            gap="1rem"
+          >
+            <Text>{price}</Text>
+          </Flex> */}
         </S.Flex>
       </S.Container>
     </S.Service>
