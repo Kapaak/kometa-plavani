@@ -19,8 +19,8 @@ export const CreateButton = styled.button`
   color: var(--col2);
   display: flex;
   gap: 1rem;
-  font-family: var(--font1);
-  font-size: var(--fbutton);
+  font-family: var(--font2);
+  font-size: 1.4rem;
   align-items: center;
   cursor: pointer;
   background-color: transparent;

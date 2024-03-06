@@ -9,16 +9,12 @@ const authCredentials = {
 };
 
 export const appendSpreadsheet = async (row: any, sheetId: string) => {
-  try {
-    await doc.useServiceAccountAuth(authCredentials);
-    // loads document properties and worksheets
-    await doc.loadInfo();
-    const sheet = doc.sheetsById[sheetId];
-    console.log(sheet, "sheet");
-    await sheet.addRow(row);
-  } catch (e) {
-    console.error("Error: ", e);
-  }
+  await doc.useServiceAccountAuth(authCredentials);
+  // loads document properties and worksheets
+  await doc.loadInfo();
+  const sheet = doc.sheetsById[sheetId];
+
+  return await sheet.addRow(row);
 };
 
 export const getRowsBySheetId = async (sheetId: string) => {
@@ -29,8 +25,6 @@ export const getRowsBySheetId = async (sheetId: string) => {
 
     const sheet = doc.sheetsById[sheetId];
     const result = await sheet.getRows();
-
-    return result;
   } catch (e) {
     console.log("get rows by sheet id:", e);
   }

@@ -1,6 +1,7 @@
 import type { AppProps } from "next/app";
 import { useRouter } from "next/router";
 import { useEffect } from "react";
+import { ToastContainer } from "react-toastify";
 
 import { Analytics } from "@vercel/analytics/react";
 import posthog from "posthog-js";
@@ -10,6 +11,8 @@ import { HeadSelector } from "~/components/Shared";
 import { PageContextProvider } from "~/contexts";
 
 import { GlobalStyles } from "../styles/GlobalStyles";
+
+import "react-toastify/dist/ReactToastify.css";
 
 //disable posthog in development
 if (typeof window !== "undefined" && process.env.NODE_ENV === "production") {
@@ -37,6 +40,14 @@ export default function App({ Component, pageProps }: AppProps) {
 
   return (
     <PageContextProvider>
+      <ToastContainer
+        position="bottom-right"
+        autoClose={false}
+        closeOnClick
+        pauseOnFocusLoss
+        draggable
+        theme="colored"
+      />
       <Analytics />
       {/* <GoogleAnalytics
         trackPageViews
