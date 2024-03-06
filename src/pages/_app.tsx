@@ -1,62 +1,38 @@
 import type { AppProps } from "next/app";
-import { useRouter } from "next/router";
-import { useEffect } from "react";
 import { ToastContainer } from "react-toastify";
 
-import { Analytics } from "@vercel/analytics/react";
-import posthog from "posthog-js";
+import { QueryClient, QueryClientProvider } from "@tanstack/react-query";
 
 import { CookieConsent } from "~/components/CookieConsent";
 import { HeadSelector } from "~/components/Shared";
-import { PageContextProvider } from "~/contexts";
+import { AnalyticsProvider, PageContextProvider } from "~/contexts";
 
 import { GlobalStyles } from "../styles/GlobalStyles";
 
 import "react-toastify/dist/ReactToastify.css";
 
-//disable posthog in development
-if (typeof window !== "undefined" && process.env.NODE_ENV === "production") {
-  posthog.init(process.env.NEXT_PUBLIC_POSTHOG_KEY ?? "", {
-    api_host: process.env.NEXT_PUBLIC_POSTHOG_HOST || "https://app.posthog.com",
-    // Enable debug mode in development
-    loaded: (posthog) => {
-      if (process.env.NODE_ENV === "development") posthog.debug();
-    },
-  });
-}
+const queryClient = new QueryClient();
 
 export default function App({ Component, pageProps }: AppProps) {
-  const router = useRouter();
-
-  useEffect(() => {
-    // Track page views
-    const handleRouteChange = () => posthog?.capture("$pageview");
-    router.events.on("routeChangeComplete", handleRouteChange);
-
-    return () => {
-      router.events.off("routeChangeComplete", handleRouteChange);
-    };
-  }, [router.events]);
-
   return (
-    <PageContextProvider>
-      <ToastContainer
-        position="bottom-right"
-        autoClose={false}
-        closeOnClick
-        pauseOnFocusLoss
-        draggable
-        theme="colored"
-      />
-      <Analytics />
-      {/* <GoogleAnalytics
-        trackPageViews
-        gaMeasurementId={process.env.NEXT_PUBLIC_GOOGLE_ANALYTICS}
-      /> */}
-      <GlobalStyles />
-      <HeadSelector />
-      <Component {...pageProps} />
-      <CookieConsent />
-    </PageContextProvider>
+    <QueryClientProvider client={queryClient}>
+      <AnalyticsProvider>
+        <PageContextProvider>
+          <ToastContainer
+            position="bottom-right"
+            autoClose={false}
+            closeOnClick
+            pauseOnFocusLoss
+            draggable
+            theme="colored"
+          />
+
+          <GlobalStyles />
+          <HeadSelector />
+          <Component {...pageProps} />
+          <CookieConsent />
+        </PageContextProvider>
+      </AnalyticsProvider>
+    </QueryClientProvider>
   );
 }

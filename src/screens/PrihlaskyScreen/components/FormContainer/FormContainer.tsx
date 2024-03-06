@@ -3,21 +3,15 @@ import { useState } from "react";
 import { FormProvider, useForm } from "react-hook-form";
 import { toast } from "react-toastify";
 
-import axios from "axios";
 import posthog from "posthog-js";
 
+import { useSendEmail } from "~/adapters";
 import {
   Course,
-  DayAbbr,
   GlobalSpreadsheetData,
   SchoolSpreadsheetData,
-  convertAbbrToWeekDaysDiacritics,
 } from "~/domains";
-import {
-  calculatePriceAfterDiscount,
-  uploadGlobalSpreadsheet,
-  uploadSchoolSpreadsheet,
-} from "~/utils";
+import { uploadGlobalSpreadsheet, uploadSchoolSpreadsheet } from "~/utils";
 
 import {
   AdvancedForm,
@@ -35,26 +29,20 @@ interface FormContainerProps {
   templateId: string;
 }
 
-type FormData = GlobalSpreadsheetData & SchoolSpreadsheetData;
+type SendEmailFormData = GlobalSpreadsheetData & SchoolSpreadsheetData;
 
 export const FormContainer = ({
   spreadsheetId,
   courseName,
   templateId,
 }: FormContainerProps) => {
-  const isKindergardenSwimming = courseName === "skolky";
-  const isSchoolSwimming = courseName === "skoly";
-  const isBasicSwimming = courseName === "zakladni-plavani";
-  const isAdvancedSwimming = courseName === "zdokonalovaci-plavani";
-  const isConditionSwimming = courseName === "kondicni-plavani";
-  const isAdultSwimming = courseName === "plavani-pro-dospele";
-
   const [isOpen, setIsOpen] = useState(false);
-  const [isLoading, setIsLoading] = useState(false);
+
+  const { sendEmail, isLoading } = useSendEmail(false);
 
   const router = useRouter();
 
-  const form = useForm<FormData>();
+  const form = useForm<SendEmailFormData>();
 
   const {
     handleSubmit,
@@ -63,52 +51,7 @@ export const FormContainer = ({
     reset,
   } = form;
 
-  const sendEmail = async (formValues: FormData, showNotifications = false) => {
-    const multipleDays = formValues.lessonsDayTime?.split(",");
-
-    const fullDaysTimes: string[] = [];
-
-    multipleDays?.forEach(async (day, index) => {
-      const dayTimeAbbr = day?.split("_");
-      const dayAbbr = dayTimeAbbr?.[0] as DayAbbr;
-      const timeAbbr = dayTimeAbbr?.[1];
-
-      fullDaysTimes.push(
-        `${index > 0 ? ", " : ""} ${convertAbbrToWeekDaysDiacritics(
-          dayAbbr
-        )} ${timeAbbr}:00`
-      );
-    });
-
-    try {
-      await axios.post("/api/email", {
-        email: formValues?.email ?? formValues?.contactPersonEmail,
-        templateId: templateId,
-        day: fullDaysTimes,
-        price: Math.floor(
-          calculatePriceAfterDiscount(
-            formValues.lessonsPrice ?? 0,
-            formValues.discount ?? 0
-          )
-        ),
-      });
-
-      showNotifications &&
-        toast.success("Potvrzovací email úspěšně odeslán.", {
-          autoClose: 3000,
-          hideProgressBar: true,
-        });
-
-      setIsOpen(true);
-    } catch (error) {
-      showNotifications &&
-        toast.error(
-          "Nepodařilo se zaslat potvrzovací email. Zkuste to prosím znovu, nebo nás kontaktujte."
-        );
-    }
-  };
-
-  const handleExcelUpload = async (formData: FormData) => {
+  const handleExcelUpload = async (formData: SendEmailFormData) => {
     if (courseName !== "skoly" && courseName !== "skolky") {
       return uploadGlobalSpreadsheet(spreadsheetId, formData);
     }
@@ -116,17 +59,17 @@ export const FormContainer = ({
     return uploadSchoolSpreadsheet(spreadsheetId, formData);
   };
 
-  const onSubmit = async (formValues: FormData) => {
-    setIsLoading(true);
-
+  const onSubmit = async (formValues: SendEmailFormData) => {
     try {
-      await Promise.all([handleExcelUpload(formValues), sendEmail(formValues)]);
+      await Promise.all([
+        handleExcelUpload(formValues),
+        sendEmail({ formValues, templateId }),
+      ]);
       setIsOpen(true);
+
+      posthog.capture("conversion", { property: "value" });
     } catch (error) {
       toast.error("Nepodařilo se vytvořit přihlášku. Zkuste to prosím znovu.");
-    } finally {
-      setIsLoading(false);
-      posthog.capture("conversion", { property: "value" });
     }
   };
 
@@ -143,46 +86,46 @@ export const FormContainer = ({
     <FormProvider {...form}>
       <SuccessModal
         isOpen={isOpen}
-        retryEmailSend={async () => await sendEmail(getValues(), true)}
+        formData={{ formValues: getValues(), templateId }}
         addChild={resetAll}
         redirect={() => router.push("/")}
       />
-      {isKindergardenSwimming && (
+      {courseName === "skolky" && (
         <KindergardenForm
           onSubmit={handleSubmit(onSubmit)}
           errors={errors}
           isLoading={isLoading}
         />
       )}
-      {isSchoolSwimming && (
+      {courseName === "skoly" && (
         <SchoolForm
           onSubmit={handleSubmit(onSubmit)}
           errors={errors}
           isLoading={isLoading}
         />
       )}
-      {isBasicSwimming && (
+      {courseName === "zakladni-plavani" && (
         <BasicForm
           onSubmit={handleSubmit(onSubmit)}
           errors={errors}
           isLoading={isLoading}
         />
       )}
-      {isAdvancedSwimming && (
+      {courseName === "zdokonalovaci-plavani" && (
         <AdvancedForm
           onSubmit={handleSubmit(onSubmit)}
           errors={errors}
           isLoading={isLoading}
         />
       )}
-      {isConditionSwimming && (
+      {courseName === "kondicni-plavani" && (
         <ConditionForm
           onSubmit={handleSubmit(onSubmit)}
           errors={errors}
           isLoading={isLoading}
         />
       )}
-      {isAdultSwimming && (
+      {courseName === "plavani-pro-dospele" && (
         <AdultForm
           onSubmit={handleSubmit(onSubmit)}
           errors={errors}

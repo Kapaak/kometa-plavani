@@ -1,5 +1,6 @@
 import { UserCirclePlus } from "@phosphor-icons/react";
 
+import { useSendEmail } from "~/adapters";
 import { Button, Modal } from "~/components/Shared";
 import { Divider, Strong, Text } from "~/styles";
 
@@ -9,15 +10,17 @@ interface ModalProps {
   isOpen: boolean;
   addChild: () => void;
   redirect: () => void;
-  retryEmailSend: () => Promise<void>;
+  formData: any;
 }
 
 export const SuccessModal = ({
   addChild,
   isOpen,
   redirect,
-  retryEmailSend,
+  formData,
 }: ModalProps) => {
+  const { sendEmail, isLoading } = useSendEmail(true);
+
   return (
     <Modal
       title="vaše přihláška byla odeslána"
@@ -32,7 +35,11 @@ export const SuccessModal = ({
         <Text variant="dark">
           V případě, že Vám e-mail nedorazil, můžete si ho nechat zaslat znovu.
         </Text>
-        <Button onClick={retryEmailSend} style={{ marginTop: "1rem" }}>
+        <Button
+          onClick={() => sendEmail(formData)}
+          isLoading={isLoading}
+          style={{ marginTop: "1rem" }}
+        >
           Znovu zaslat potvrzovací email
         </Button>
         <Divider />
