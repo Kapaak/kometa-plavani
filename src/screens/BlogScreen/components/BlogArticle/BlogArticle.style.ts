@@ -17,7 +17,6 @@ export const BlogArticle = styled.article`
 
   @media (${dimensions.tabletX}) {
     gap: 5rem;
-    height: auto;
   }
 
   @media (${dimensions.desktop}) {
@@ -69,7 +68,6 @@ export const Container = styled.div`
   display: flex;
   flex-direction: column;
   padding: 2rem;
-  height: 100%;
 
   @media (${dimensions.tabletX}) {
     flex-direction: row;

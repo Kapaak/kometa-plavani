@@ -1,5 +1,9 @@
+import NextImage from "next/image";
+
 import { PortableText } from "@portabletext/react";
 import { PortableTextBlock } from "@portabletext/types";
+
+import { urlForImage } from "~/utils";
 
 import { Text } from "../Text";
 
@@ -35,16 +39,28 @@ export const TextBuilder = ({ value, options }: TextBuilderProps) => {
         },
         types: {
           image: (props) => {
-            return null;
-            //for now not supported due to blog item
+            console.log(props, "props");
 
-            // <NextImage
-            //   alt="Obrázek k článku."
-            //   src={urlForImage(props.value)?.url()}
-            //   width={400}
-            //   height={200}
-            //   style={{ objectFit: "cover" }}
-            // />
+            // return null;
+            // for now not supported due to blog item
+            console.log(props.value, "imggg", urlForImage(props.value));
+
+            return (
+              <NextImage
+                alt="Obrázek k článku."
+                src={urlForImage(props.value).url()}
+                width={400}
+                height={200}
+                style={{ objectFit: "cover", maxWidth: "100%" }}
+              />
+              // <NextSanityImage
+              //   alt="Obrázek k článku."
+              //   src={props.value}
+              //   width={400}
+              //   height={200}
+              //   style={{ objectFit: "cover" }}
+              // />
+            );
           },
         },
 
