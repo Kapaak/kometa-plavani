@@ -12,7 +12,13 @@ interface BlogItemPageProps
 
 export default function BlogItemPage({ infoBar, blog }: BlogItemPageProps) {
   return (
-    <PageLayout infoBar={infoBar}>
+    <PageLayout
+      infoBar={infoBar}
+      upperLevel={{
+        href: "/blog",
+        label: "Zpět na blog",
+      }}
+    >
       <BlogItemScreen blog={blog} />
     </PageLayout>
   );

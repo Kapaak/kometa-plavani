@@ -38,4 +38,5 @@ const SHeadline = styled.h2.attrs<StyleProps>((props) => ({
   font-size: var(--fheadline);
   letter-spacing: 0.2rem;
   font-weight: 400;
+  line-height: 1;
 `;

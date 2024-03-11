@@ -2,7 +2,7 @@ import NextLink from "next/link";
 
 import styled from "styled-components";
 
-import { MaxWidth, Text, VerticalStack } from "~/styles";
+import { Text, VerticalStack } from "~/styles";
 import { dimensions } from "~/utils";
 
 export const BlogItemContainer = styled(VerticalStack).attrs({
@@ -13,10 +13,6 @@ export const BlogItemContainer = styled(VerticalStack).attrs({
   @media (${dimensions.notebook}) {
     margin-bottom: 10rem;
   }
-`;
-
-export const PageMaxWidth = styled(MaxWidth)`
-  padding: 0;
 `;
 
 export const Title = styled(Text).attrs({

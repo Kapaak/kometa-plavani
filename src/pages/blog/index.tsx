@@ -10,7 +10,13 @@ interface BlogPageProps
 
 export default function BlogPage({ infoBar, blogs }: BlogPageProps) {
   return (
-    <PageLayout infoBar={infoBar}>
+    <PageLayout
+      infoBar={infoBar}
+      upperLevel={{
+        href: "/",
+        label: "Zpět na hlavní stránku",
+      }}
+    >
       <SanityBlogsContextProvider sanityData={{ blogs }}>
         <BlogScreen />
       </SanityBlogsContextProvider>

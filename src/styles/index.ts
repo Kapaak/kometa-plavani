@@ -25,4 +25,5 @@ export { Switch } from "./CustomComponents/Switch";
 export { Text } from "./CustomComponents/Text";
 export type { Props as IText } from "./CustomComponents/Text";
 export { TextBuilder } from "./CustomComponents/TextBuilder";
+export { UpperLevel } from "./CustomComponents/UpperLevel";
 export { VerticalStack } from "./CustomComponents/VerticalStack";

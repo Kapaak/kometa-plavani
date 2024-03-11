@@ -35,6 +35,20 @@ export const TextBuilder = ({ value, options }: TextBuilderProps) => {
               </Text>
             );
           },
+          h2: (props) => {
+            return (
+              <S.H2 center={paragraph?.position === "center"}>
+                {props.children}
+              </S.H2>
+            );
+          },
+          h3: (props) => {
+            return (
+              <S.H3 center={paragraph?.position === "center"}>
+                {props.children}
+              </S.H3>
+            );
+          },
         },
         types: {
           //the difference between image and customImage is that customImage supports alt tag
