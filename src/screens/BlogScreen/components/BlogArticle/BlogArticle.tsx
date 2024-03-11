@@ -43,16 +43,18 @@ export function BlogArticle({
             );
           })}
         </S.CategoryContainer>
-        <NextSanityImage
-          image={image ?? ""}
-          alt={imageAlt}
-          placeholder="blur"
-          loading="eager"
-          draggable={false}
-          sizes="(max-width: 768px) 25vw, 20vw"
-          fill
-          objectFit="contain"
-        />
+        {image && (
+          <NextSanityImage
+            image={image}
+            alt={imageAlt}
+            placeholder="blur"
+            loading="eager"
+            draggable={false}
+            sizes="(max-width: 768px) 25vw, 20vw"
+            fill
+            objectFit="contain"
+          />
+        )}
       </S.ImageContainer>
       <S.Container>
         <S.TextContainer>

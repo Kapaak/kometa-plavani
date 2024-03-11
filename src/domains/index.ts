@@ -335,12 +335,14 @@ export type SanityCourseDay = {
 };
 
 export type SanityImage = SanityImageObject & {
+  alt: string;
   asset: {
     metadata: {
       lqip: string;
       dimensions: {
         width: number;
         height: number;
+        aspectRatio: number;
       };
     };
   };

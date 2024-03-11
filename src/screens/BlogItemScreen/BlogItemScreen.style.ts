@@ -2,7 +2,7 @@ import NextLink from "next/link";
 
 import styled from "styled-components";
 
-import { Text, VerticalStack } from "~/styles";
+import { MaxWidth, Text, VerticalStack } from "~/styles";
 import { dimensions } from "~/utils";
 
 export const BlogItemContainer = styled(VerticalStack).attrs({
@@ -15,6 +15,10 @@ export const BlogItemContainer = styled(VerticalStack).attrs({
   }
 `;
 
+export const PageMaxWidth = styled(MaxWidth)`
+  padding: 0;
+`;
+
 export const Title = styled(Text).attrs({
   as: "h1",
 })`
@@ -25,11 +29,11 @@ export const Title = styled(Text).attrs({
   font-weight: 400;
 `;
 
-export const BlogItemImageContainer = styled.div`
+export const BlogItemImageContainer = styled.div<{ aspectRatio: string }>`
   position: relative;
   width: 100%;
-  max-height: 24rem;
-  height: 24rem;
+  max-height: 40rem;
+  aspect-ratio: ${(props) => props.aspectRatio};
 `;
 
 export const PreviousPageLink = styled(NextLink)`

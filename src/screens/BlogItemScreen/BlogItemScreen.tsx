@@ -22,7 +22,7 @@ interface BlogItemScreenProps {
 export function BlogItemScreen({ blog }: BlogItemScreenProps) {
   return (
     <section>
-      <MaxWidth>
+      <S.PageMaxWidth>
         <PageIconLink
           href="/blog"
           icon={<ArrowLeft size={18} weight="bold" />}
@@ -48,17 +48,21 @@ export function BlogItemScreen({ blog }: BlogItemScreenProps) {
                 desc={convertDateToString(new Date(blog?.createdAt)) ?? ""}
               />
             </Hidden>
-            <S.BlogItemImageContainer>
-              <NextSanityImage
-                image={blog?.image}
-                alt="Obrázek popisující článek"
-                placeholder="blur"
-                loading="eager"
-                draggable={false}
-                sizes="(max-width: 768px) 50vw, 80vw"
-                fill
-                objectFit="cover"
-              />
+            <S.BlogItemImageContainer
+              aspectRatio={String(
+                blog?.image?.asset?.metadata?.dimensions?.aspectRatio
+              )}
+            >
+              {blog?.image && (
+                <NextSanityImage
+                  image={blog?.image}
+                  alt={blog?.image.alt}
+                  placeholder="blur"
+                  sizes="(max-width: 768px) 80vw, 60vw"
+                  fill
+                  objectFit="cover"
+                />
+              )}
             </S.BlogItemImageContainer>
             <TextBuilder
               value={blog?.description}
@@ -69,7 +73,7 @@ export function BlogItemScreen({ blog }: BlogItemScreenProps) {
             </S.PreviousPageLink>
           </S.BlogItemContainer>
         </MaxWidth>
-      </MaxWidth>
+      </S.PageMaxWidth>
     </section>
   );
 }

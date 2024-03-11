@@ -19,8 +19,22 @@ export function urlForImage(source: SanityImageSource) {
   return builder.image(source);
 }
 
+export async function getBlogById(blogId: string): Promise<SanityBlog> {
+  const query = groq`*[_type == "blog" && slug.current == "${blogId}"][0]{"id":_id,title,shortDescription, description[]{
+    ...,
+    _type == "customImage" => {
+      ...,
+      asset->
+    },
+  },createdAt,author,readTime,image{asset->{...,metadata},alt},tags,slug}`;
+
+  const blog: SanityBlog = await client.fetch(query);
+
+  return blog;
+}
+
 export async function getBlogs(): Promise<SanityBlog[]> {
-  const query = groq`*[_type == "blog"]{title,shortDescription,description,createdAt,author,readTime,image{asset->{...,metadata}},tags,slug}`;
+  const query = groq`*[_type == "blog"]{title,shortDescription,description,createdAt,author,readTime,image{asset->{...,metadata},alt},tags,slug}`;
 
   const blogs: SanityBlog[] = await client.fetch(query);
 

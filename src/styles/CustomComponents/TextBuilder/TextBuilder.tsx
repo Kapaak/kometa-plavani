@@ -1,8 +1,7 @@
-import NextImage from "next/image";
-
 import { PortableText } from "@portabletext/react";
 import { PortableTextBlock } from "@portabletext/types";
 
+import { SanityImage } from "~/domains";
 import { urlForImage } from "~/utils";
 
 import { Text } from "../Text";
@@ -38,28 +37,22 @@ export const TextBuilder = ({ value, options }: TextBuilderProps) => {
           },
         },
         types: {
-          image: (props) => {
-            console.log(props, "props");
-
-            // return null;
-            // for now not supported due to blog item
-            console.log(props.value, "imggg", urlForImage(props.value));
-
+          //the difference between image and customImage is that customImage supports alt tag
+          customImage: (props) => {
+            const value: SanityImage = props.value;
             return (
-              <NextImage
-                alt="Obrázek k článku."
-                src={urlForImage(props.value).url()}
-                width={400}
-                height={200}
-                style={{ objectFit: "cover", maxWidth: "100%" }}
-              />
-              // <NextSanityImage
-              //   alt="Obrázek k článku."
-              //   src={props.value}
-              //   width={400}
-              //   height={200}
-              //   style={{ objectFit: "cover" }}
-              // />
+              <S.ImageContainer
+                aspectRatio={String(
+                  value?.asset?.metadata?.dimensions?.aspectRatio
+                )}
+              >
+                <S.TextBuilderImage
+                  alt={value.alt}
+                  sizes="(max-width: 1023px) 90vw, 60vw"
+                  src={urlForImage(props.value).url()}
+                  fill
+                />
+              </S.ImageContainer>
             );
           },
         },

@@ -10,6 +10,7 @@ export const PageIconLink = styled(NextLink)`
   display: flex;
   align-items: center;
   gap: 0.5rem;
+  padding-left: 2rem;
 `;
 
 export const Label = styled(Text)`

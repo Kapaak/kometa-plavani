@@ -26,7 +26,6 @@ interface NextSanityImageProps
 export function NextSanityImage({
   className,
   image,
-  alt,
   sizes,
   objectFit = "contain",
   ...props
@@ -34,15 +33,14 @@ export function NextSanityImage({
   return (
     <S.NextSanityImage
       {...props}
-      src={image ? urlForImage(image).url() : ""}
+      src={urlForImage(image).url()}
       objectFit={objectFit}
       //className is here so we can style the image via styled-components
       className={className}
       //sizes = (max-width: breakpoint when we want to apply some style) + the size of the image on that breakpoint
       sizes={sizes}
-      alt={alt}
-      placeholder={image ? "blur" : "empty"}
-      blurDataURL={image ? image.asset.metadata.lqip : ""}
+      draggable={false}
+      blurDataURL={image.asset.metadata.lqip}
     />
   );
 }

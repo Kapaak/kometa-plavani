@@ -70,7 +70,7 @@ export function BlogScreen({}: BlogScreenProps) {
                   key={blog?.slug?.current}
                   title={blog?.title}
                   description={blog?.shortDescription}
-                  imageAlt="Obrázek popisující článek"
+                  imageAlt={blog?.image?.alt}
                   date={blog?.createdAt}
                   author={blog?.author}
                   readTime={blog?.readTime}

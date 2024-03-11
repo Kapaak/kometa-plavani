@@ -2,9 +2,10 @@ import { GetStaticPropsContext, InferGetServerSidePropsType } from "next";
 import { groq } from "next-sanity";
 
 import { PageLayout } from "~/components/PageLayout";
-import { SanityBlog, SanityInfoBar } from "~/domains";
+import { SanityBlog } from "~/domains";
 import { client } from "~/libs";
 import { BlogItemScreen } from "~/screens";
+import { getBlogById, getInfoBar } from "~/utils";
 
 interface BlogItemPageProps
   extends InferGetServerSidePropsType<typeof getStaticProps> {}
@@ -20,11 +21,8 @@ export default function BlogItemPage({ infoBar, blog }: BlogItemPageProps) {
 export const getStaticProps = async (ctx: GetStaticPropsContext<any>) => {
   const { blogId } = ctx.params;
 
-  const queryInfoBar = groq`*[_type == "infoBar" && visibility == true][0]{title,visibility,text}`;
-  const queryBlog = groq`*[_type == "blog" && slug.current == "${blogId}"][0]{title,shortDescription,description,createdAt,author,readTime,image{asset->{...,metadata}},tags,slug}`;
-
-  const infoBar: SanityInfoBar = await client.fetch(queryInfoBar);
-  const blog: SanityBlog = await client.fetch(queryBlog);
+  const infoBar = await getInfoBar();
+  const blog = await getBlogById(blogId);
 
   return {
     props: {
