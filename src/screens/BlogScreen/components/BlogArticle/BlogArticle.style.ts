@@ -112,8 +112,8 @@ export const ImageContainer = styled.div`
 
   @media (${dimensions.desktop}) {
     display: block;
-    height: 100%;
     order: 3;
+    height: auto;
   }
 `;
 
