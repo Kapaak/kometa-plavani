@@ -18,16 +18,12 @@ export const appendSpreadsheet = async (row: any, sheetId: string) => {
 };
 
 export const getRowsBySheetId = async (sheetId: string) => {
-  try {
-    await doc.useServiceAccountAuth(authCredentials);
+  await doc.useServiceAccountAuth(authCredentials);
 
-    await doc.loadInfo();
+  await doc.loadInfo();
 
-    const sheet = doc.sheetsById[sheetId];
-    const result = await sheet.getRows();
-  } catch (e) {
-    console.log("get rows by sheet id:", e);
-  }
+  const sheet = doc.sheetsById[sheetId];
+  return await sheet.getRows();
 };
 
 export const getAllSheets = async (sheetIds: Array<string>) => {

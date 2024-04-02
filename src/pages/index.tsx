@@ -37,5 +37,6 @@ export const getStaticProps = async () => {
       documents,
       infoBar,
     },
+    revalidate: 10,
   };
 };

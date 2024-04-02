@@ -3,7 +3,6 @@ import {
   createContext,
   useCallback,
   useContext,
-  useMemo,
 } from "react";
 
 import _ from "lodash";
@@ -18,7 +17,7 @@ import {
   convertAbbrToWeekDaysDiacritics,
   convertWeekDaysToAbbr,
 } from "~/domains";
-import { useGoogleSheets, useSanityApplications } from "~/hooks";
+import { useGoogleSheet, useSanityApplication } from "~/hooks";
 
 type CompleteLecture = LectureDaysTimesCapacity & GoogleSheets;
 
@@ -41,27 +40,25 @@ const CourseDetailContext = createContext<{
 
 export const CourseDetailContextProvider = ({
   children,
-  courses,
+  course,
   lectureType,
+  googleSheetId,
 }: PropsWithChildren<{
-  courses: SanityCourse[];
+  googleSheetId: string;
+  course: SanityCourse;
   lectureType: LectureTypes;
 }>) => {
-  const { lectureDaysTimesCapacity } = useSanityApplications(courses);
+  const { lectureDaysTimesCapacity: lectureDaysTimesCapacity2 } =
+    useSanityApplication(course);
 
-  const { googleSheets, isError, isLoading } = useGoogleSheets();
+  const { googleSheet, isError, isLoading } = useGoogleSheet({
+    googleSheetId,
+    lectureType,
+  });
 
-  //TODO: brat data jen pro specifickej google-sheet a ne pro vsechny, to by hodne usetrilo
   const lectures: CompleteLecture = _.mergeWith(
-    lectureDaysTimesCapacity,
-    googleSheets
-  );
-
-  const lecturePricingOptions = useMemo(
-    () =>
-      courses?.find((course) => course?.value === lectureType)
-        ?.lectureFrequencyPricingOptions,
-    [courses, lectureType]
+    lectureDaysTimesCapacity2,
+    googleSheet
   );
 
   const getAvailableLectureOptions = useCallback(
@@ -102,7 +99,7 @@ export const CourseDetailContextProvider = ({
     },
     //TODO: kdyz bylo bez googleSheets, tak sanity fungovalo, pak ale prestalo fungovat restrikce na plny terminy
     // eslint-disable-next-line react-hooks/exhaustive-deps
-    [lectures, lectureType, googleSheets]
+    [lectures, lectureType, googleSheet]
   );
   return (
     <CourseDetailContext.Provider
@@ -110,7 +107,7 @@ export const CourseDetailContextProvider = ({
         getAvailableLectureOptions,
         isLoading,
         isError,
-        lecturePricingOptions,
+        lecturePricingOptions: course?.lectureFrequencyPricingOptions,
       }}
     >
       {children}

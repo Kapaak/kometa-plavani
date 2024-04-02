@@ -4,16 +4,20 @@ import { PageLayout } from "~/components/PageLayout";
 import { CourseDetailContextProvider } from "~/contexts";
 import { Course, PageData, SanityCourse } from "~/domains";
 import { PrihlaskyNameScreen, prihlaskyNameData } from "~/screens";
-import { getCourses } from "~/utils";
+import { getCourse } from "~/utils";
 
 interface CoursePageProps {
   pageData: PageData;
-  courses: SanityCourse[];
+  course: SanityCourse;
 }
 
-const CoursePage: NextPage<CoursePageProps> = ({ pageData, courses }) => {
+const CoursePage: NextPage<CoursePageProps> = ({ pageData, course }) => {
   return (
-    <CourseDetailContextProvider courses={courses} lectureType={pageData.value}>
+    <CourseDetailContextProvider
+      course={course}
+      lectureType={pageData.value}
+      googleSheetId={pageData.spreadsheetId}
+    >
       <PageLayout>
         <PrihlaskyNameScreen pageData={pageData} />
       </PageLayout>
@@ -25,18 +29,17 @@ export const getStaticProps = async (ctx: GetStaticPropsContext) => {
   const courseName = ctx.params?.courseName as Course;
   const pageData = prihlaskyNameData?.find((d) => d.name === courseName);
 
-  const courses = await getCourses();
-
   if (!pageData)
     return {
       notFound: true,
       revalidate: 10,
     };
+  const course = await getCourse(pageData.value);
 
   return {
     props: {
       pageData,
-      courses,
+      course,
     },
     revalidate: 10,
   };

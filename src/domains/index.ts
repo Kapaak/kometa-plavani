@@ -353,12 +353,11 @@ export type LectureDaysTimesCapacity = Record<
   }
 >;
 
-export type GoogleSheets = Record<
-  string,
-  {
-    lectures: Record<string, GoogleSheetDayTime>;
-  }
->;
+export type GoogleSheet = {
+  lectures: Record<string, GoogleSheetDayTime>;
+};
+
+export type GoogleSheets = Record<string, GoogleSheet>;
 
 export type GoogleSheetDayTime = Record<
   number,
