@@ -36,12 +36,12 @@ export const data: HeadlineFragment[] = [
       {
         output: "Kraví hora",
         type: Content.link,
-        href: "https://kometaplavani.cz/ucime-se-plavat/kravi-hora/",
+        href: "https://www.plavanikometa.cz/kravi-hora/",
       },
       {
         output: "Kohoutovice",
         type: Content.link,
-        href: "https://kometaplavani.cz/plavani-bazenky/bazenky/aquapark-kohoutovice/",
+        href: "https://www.plavanikometa.cz/aquapark-kohoutovice/",
       },
       {
         output: "Bazénky",
@@ -59,12 +59,12 @@ export const data: HeadlineFragment[] = [
       {
         output: "Kraví hora",
         type: Content.link,
-        href: "https://kometaplavani.cz/primestsky-tabor-kravi-hora/",
+        href: "https://www.plavanikometa.cz/tabor-kravi-hora/",
       },
       {
         output: "Pisárky",
         type: Content.link,
-        href: "https://kometaplavani.cz/otevrena-zahrada/",
+        href: "https://www.plavanikometa.cz/tabor-pisarky/",
       },
       {
         output: "Lužánky",
