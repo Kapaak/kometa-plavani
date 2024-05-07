@@ -8,7 +8,7 @@ import {
 import { useFormContext } from "react-hook-form";
 import Select, { OnChangeValue, StylesConfig } from "react-select";
 
-import { ControlledRadio } from "~/components/Shared";
+import { ControlledCheckbox, ControlledRadio } from "~/components/Shared";
 import { useCourseDetailContext } from "~/contexts";
 import { SwimmingPage } from "~/domains";
 import { Space, Subheadline, Text } from "~/styles";
@@ -101,6 +101,7 @@ export const SwimmingForm = ({
   const lessonsPrice = watch("lessonsPrice", null);
   const personCount = watch("childrenCount", null);
   const semester = watch("midTerm", null);
+  const gdprConsent = watch("gdprConsent", false);
 
   const radioLectureOptions = useMemo(
     () =>
@@ -173,21 +174,26 @@ export const SwimmingForm = ({
         </S.FormItem>
       </S.Container>
       <S.SubmitContainer>
-        <S.Text>
-          Odesláním přihlášky potvrzuji, že jsem se seznámil(a) s{" "}
-          <S.UnderlinedInput
-            href="/files/VSEOBECNE-PODMINKY.pdf"
-            rel="noopener noreferrer"
-            target="_blank"
-          >
-            podmínkami přijetí
-          </S.UnderlinedInput>
-          . S podmínkami souhlasím a moje dítě je splňuje.
-        </S.Text>
+        <ControlledCheckbox
+          name="gdprConsent"
+          label={
+            <S.Text>
+              Potvrzuji, že jsem se seznámil(a) s{" "}
+              <S.UnderlinedInput
+                href="/files/VSEOBECNE-PODMINKY.pdf"
+                rel="noopener noreferrer"
+                target="_blank"
+              >
+                podmínkami přijetí
+              </S.UnderlinedInput>{" "}
+              a že s nimi souhlasím.
+            </S.Text>
+          }
+        />
 
         <S.SubmitButton
           isLoading={isLoading}
-          disabled={isLoading || !Boolean(selectedOption)}
+          disabled={isLoading || !Boolean(selectedOption) || !gdprConsent}
         >
           Odeslat
         </S.SubmitButton>

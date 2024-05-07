@@ -35,6 +35,7 @@ export const Form = styled.form`
 
 export const SubmitButton = styled(Button)`
   margin-left: auto;
+  margin-top: 2rem;
 `;
 
 export const FormInputContainer = styled.div`
@@ -57,7 +58,6 @@ export const Label = styled.label`
 
 export const SubmitContainer = styled.div`
   margin-left: auto;
-  max-width: 54rem;
   text-align: left;
   margin-top: 2rem;
 
@@ -70,7 +70,6 @@ export const Text = styled(SText)`
   color: var(--colg);
   text-align: inherit;
   font-weight: 500;
-  margin: 1rem 0 4rem;
   font-size: 1.4rem;
 `;
 
