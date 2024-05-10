@@ -1,7 +1,5 @@
 import styled from "styled-components";
 
-import { dimensions } from "~/utils";
-
 interface Props {
   variant: "light" | "dark";
 }
@@ -12,8 +10,4 @@ export const Subheadline = styled.h3<Props>`
     variant === "light" ? "var(--colw)" : "var(--colb)"};
   font-family: var(--font1);
   font-weight: 500;
-
-  @media (${dimensions.tablet}) {
-    margin-bottom: 1rem;
-  }
 `;

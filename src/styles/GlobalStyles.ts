@@ -41,7 +41,7 @@ export const GlobalStyles = createGlobalStyle`
         --header-height:7rem;
 
         --shadow:0 0 20px 0 rgba(10, 19, 10, 0.1);
-        --small-border-rad:1rem;
+        --small-border-rad:1.5rem;
 
         --ftext:1.6rem;
         --fnavlink:2rem;

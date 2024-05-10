@@ -2,8 +2,7 @@ import Image from "next/image";
 
 import styled from "styled-components";
 
-import { Button } from "~/components/Shared";
-import { Flex as SFlex } from "~/styles";
+import { Flex as SFlex, Text } from "~/styles";
 import { dimensions } from "~/utils";
 
 export const Service = styled.article`
@@ -13,20 +12,11 @@ export const Service = styled.article`
   flex: 1 1 30%;
   border-radius: var(--small-border-rad);
   box-shadow: var(--shadow);
-  font-family: var(--font1);
 `;
 
 export const Flex = styled(SFlex)`
-  padding: 3rem;
+  padding: 1.4rem 2.4rem 2.4rem;
   flex: 1;
-
-  @media (${dimensions.tablet}) {
-    padding: 3rem 4rem;
-  }
-
-  @media (${dimensions.notebook}) {
-    padding: 3rem;
-  }
 `;
 
 export const Tag = styled.div`
@@ -41,6 +31,18 @@ export const Tag = styled.div`
   text-align: center;
   letter-spacing: 0.07rem;
   text-transform: uppercase;
+`;
+
+export const Label = styled(Text).attrs({ as: "h3" })`
+  font-family: var(--font1);
+  font-size: 3rem;
+  line-height: 1.4;
+`;
+
+export const Description = styled(Text)`
+  line-height: 2.4rem;
+  margin-bottom: auto;
+  padding-bottom: 1rem;
 `;
 
 export const Container = styled.div`
@@ -64,8 +66,4 @@ export const ImageContainer = styled.div`
   @media (${dimensions.notebook}) {
     height: 26rem;
   }
-`;
-
-export const Btn = styled(Button)`
-  align-self: end;
 `;
