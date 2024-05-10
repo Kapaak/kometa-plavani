@@ -60,11 +60,15 @@ export const Lecture = (props: LectureProps) => {
               <S.Link
                 href={`/prihlasky/${url}`}
                 passHref
-                disabled={isCalendarEmpty}
+                disabled
+                // disabled={isCalendarEmpty}
               >
-                <Button variant="filled" disabled={isCalendarEmpty}>
-                  {isCalendarEmpty ? "Kurz není dostupný" : "Poslat přihlášku"}
+                <Button variant="filled" disabled>
+                  Připravujeme
                 </Button>
+                {/* <Button variant="filled" disabled={isCalendarEmpty}>
+                  {isCalendarEmpty ? "Kurz není dostupný" : "Poslat přihlášku"}
+                </Button> */}
               </S.Link>
             </Hidden>
           </Flex>
