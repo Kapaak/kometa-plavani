@@ -7,7 +7,7 @@ import {
   WeekDaysNew,
   convertWeekDaysToAbbrDiacritics,
 } from "~/domains";
-import { Flex, Text } from "~/styles";
+import { Flex } from "~/styles";
 
 import { LectureAvailability } from "../LectureAvailability";
 
@@ -48,6 +48,7 @@ export const LectureCalendarData = ({
           applications={realCapacity?.aplications || 0}
           max={lectureData?.max ?? 0}
           discount={lectureData?.discount ?? 0}
+          skillLevelId={lectureData?.skillLevelId ?? 0}
         />
       );
     });
@@ -62,7 +63,6 @@ export const LectureCalendarData = ({
           </S.LectureCalendarTimesGrid>
         );
       })}
-      <Text variant="dark">&#42; Volná místa / kapacita</Text>
     </Flex>
   );
 };

@@ -11,7 +11,12 @@ const HeroSection = () => {
     <S.HeroSection name="home">
       <MaxHeight $gradient={true}>
         <S.MaxWidth>
-          <S.FlexWrapper align="flex-start" justify="flex-end" gap="2rem">
+          <S.FlexWrapper
+            align="flex-start"
+            justify="flex-end"
+            gap="2rem"
+            height="100%"
+          >
             <div>
               <MainHeadline>
                 Plavecká škola{" "}

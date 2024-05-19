@@ -23,6 +23,7 @@ export const VerticalStack = styled.div<{
   padding?: string;
   margin?: string;
   flex?: string;
+  height?: string;
 }>`
   position: ${({ relative }) => (relative ? "relative" : "static")};
   display: flex;
@@ -31,11 +32,11 @@ export const VerticalStack = styled.div<{
   align-items: ${({ align }) => (align ? align : "stretch")};
   flex-direction: ${({ direction }) => (direction ? direction : "column")};
   gap: ${({ gap }) => (gap ? gap : "0")};
-  height: 100%;
+  height: ${({ height }) => (height ? height : "initial")};
   width: ${({ width }) => (width ? width : "100%")};
   text-align: ${({ textAlign }) => (textAlign ? textAlign : "left")};
   flex-wrap: ${({ wrap }) => (wrap ? wrap : "nowrap")};
   padding: ${({ padding }) => (padding ? padding : "0")};
-  margin: ${({ margin }) => (margin ? margin : "0")};
+  margin: ${({ margin }) => (margin ? margin : "initial")};
   margin: ${({ flex }) => (flex ? flex : "0")};
 `;

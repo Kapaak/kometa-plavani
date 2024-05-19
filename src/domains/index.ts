@@ -331,13 +331,21 @@ export type SanityCourseDay = {
   start: number;
   discount: number | null;
   capacity: number;
+  skillLevel: number;
 };
+
+export enum SkillLevel {
+  BEGINNER = 1,
+  ADVANCED = 2,
+  PROFESIONAL = 3,
+}
 
 export type DayCapacity = {
   lectureTimeId?: number;
   max?: number;
   aplications?: number;
   discount?: number;
+  skillLevelId?: number;
 };
 
 export type DayTimeCapacity = Record<number, Record<number, DayCapacity>>;

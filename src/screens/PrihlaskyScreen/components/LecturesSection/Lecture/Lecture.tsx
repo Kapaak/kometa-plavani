@@ -44,7 +44,7 @@ export const Lecture = (props: LectureProps) => {
           />
         </S.PaddingWrapper>
         <S.PaddingWrapper padding="3.3rem">
-          <Flex gap="6rem" align="end">
+          <Flex gap="6rem" align="end" height="100%">
             <LectureCalendar
               isError={isError}
               isLoading={isLoading}
@@ -56,6 +56,7 @@ export const Lecture = (props: LectureProps) => {
               capacity={lectures?.[lectureType]?.lectures}
               semesterLabels={semesterLabels}
             />
+
             <Hidden isHidden={isLoading || isError}>
               <S.Link
                 href={`/prihlasky/${url}`}

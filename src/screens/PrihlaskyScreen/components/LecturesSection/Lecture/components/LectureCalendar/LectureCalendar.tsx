@@ -12,6 +12,7 @@ import {
 import { Danger, Hidden, Space, Text } from "~/styles";
 
 import { LectureCalendarData } from "../LectureCalendarData";
+import { LectureCalendarSkillInformation } from "../LectureCalendarSkillInformation";
 import { LectureCalendarTimes } from "../LectureCalendarTimes";
 import { LectureSemester } from "../LectureSemester";
 
@@ -84,7 +85,22 @@ export const LectureCalendar = ({
             capacity={capacity}
           />
         )}
+        {data && hasSkillLevel(data) && <LectureCalendarSkillInformation />}
+        <Text variant="dark">&#42; Volná místa / kapacita</Text>
       </Hidden>
     </S.LectureCalendar>
   );
 };
+
+export function hasSkillLevel(data: Record<string, DayTimeCapacity>): boolean {
+  for (const dayTimeCapacity of Object.values(data)) {
+    for (const dayCapacity of Object.values(dayTimeCapacity)) {
+      for (const timeCapacity of Object.values(dayCapacity)) {
+        if (timeCapacity.skillLevelId) {
+          return true;
+        }
+      }
+    }
+  }
+  return false;
+}

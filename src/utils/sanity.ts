@@ -42,7 +42,7 @@ export async function getInfoBar(): Promise<SanityInfoBar> {
 }
 
 export async function getCourses(): Promise<SanityCourse[]> {
-  const query = groq`*[_type == "course"]{pondeli[]{start, discount,capacity},utery[]{start, discount,capacity},streda[]{start, discount,capacity},ctvrtek[]{start, discount,capacity},patek[]{start, discount,capacity},duration,price,lectureFrequencyPricingOptions[]{price,title,lectureFrequency},title,value,age,file{asset->{url}}}`;
+  const query = groq`*[_type == "course"]{pondeli[]{start, discount,skillLevel,capacity},utery[]{start, discount,skillLevel,capacity},streda[]{start, discount,skillLevel,capacity},ctvrtek[]{start, discount,skillLevel,capacity},patek[]{start, discount,skillLevel,capacity},duration,price,lectureFrequencyPricingOptions[]{price,title,lectureFrequency},title,value,age,file{asset->{url}}}`;
 
   const courses: SanityCourse[] = await client.fetch(query);
 
@@ -50,7 +50,7 @@ export async function getCourses(): Promise<SanityCourse[]> {
 }
 
 export async function getCourse(courseName: string): Promise<SanityCourse> {
-  const query = groq`*[_type == "course" && value == $courseName]{pondeli[]{start, discount,capacity},utery[]{start, discount,capacity},streda[]{start, discount,capacity},ctvrtek[]{start, discount,capacity},patek[]{start, discount,capacity},duration,price,lectureFrequencyPricingOptions[]{price,title,lectureFrequency},title,value,age,file{asset->{url}}}[0]`;
+  const query = groq`*[_type == "course" && value == $courseName]{pondeli[]{start, discount,skillLevel,capacity},utery[]{start, discount,skillLevel,capacity},streda[]{start, discount,skillLevel,capacity},ctvrtek[]{start, discount,skillLevel,capacity},patek[]{start, discount,skillLevel,capacity},duration,price,lectureFrequencyPricingOptions[]{price,title,lectureFrequency},title,value,age,file{asset->{url}}}[0]`;
 
   const course: SanityCourse = await client.fetch(query, { courseName });
 
