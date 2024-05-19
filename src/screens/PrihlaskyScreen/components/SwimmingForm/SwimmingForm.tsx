@@ -98,7 +98,6 @@ export const SwimmingForm = ({
     setSelectedOption(option);
   };
 
-  const lessonsPrice = watch("lessonsPrice", null);
   const personCount = watch("childrenCount", null);
   const semester = watch("midTerm", null);
   const gdprConsent = watch("gdprConsent", false);
@@ -124,7 +123,7 @@ export const SwimmingForm = ({
   useEffect(() => {
     //resetuj "vybraný termín a čas", když se změní počet lekcí, počet osob, nebo semestr
     setSelectedOption(null);
-  }, [lessonsPrice, personCount, semester]);
+  }, [personCount, semester]);
 
   useEffect(() => {
     if (selectedOption?.value) {
@@ -144,7 +143,6 @@ export const SwimmingForm = ({
             name="lessonsPrice"
             options={radioLectureOptions}
             discount={selectedOption?.discount}
-            price={Number(lessonsPrice)}
           />
           <Text variant="dark">
             V případě individuálních požadavků kontaktujte

@@ -16,7 +16,6 @@ type Option = {
 type ControlledRadioProps = {
   name: string;
   discount?: number;
-  price?: number;
   options?: Option[];
   onClick?: (option: Option) => void;
 };
@@ -24,7 +23,6 @@ type ControlledRadioProps = {
 export const ControlledRadio = ({
   name,
   discount,
-  price,
   options,
   onClick,
 }: ControlledRadioProps) => {
@@ -54,11 +52,16 @@ export const ControlledRadio = ({
                 {option.label}{" "}
                 {Boolean(discount) ? (
                   <S.DiscountChip>
-                    {calculatePriceAfterDiscount(price ?? 0, discount ?? 0)} Kč
-                    - sleva {discount} %
+                    {calculatePriceAfterDiscount(
+                      Number(option.value) ?? 0,
+                      discount ?? 0
+                    )}{" "}
+                    Kč - sleva {discount} %
                   </S.DiscountChip>
                 ) : (
-                  <S.NonDiscountChip>{price} Kč</S.NonDiscountChip>
+                  <S.NonDiscountChip>
+                    {Number(option.value)} Kč
+                  </S.NonDiscountChip>
                 )}
               </S.RadioLabel>
             </Flex>
