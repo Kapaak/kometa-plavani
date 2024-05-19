@@ -19,8 +19,8 @@ export const Lecture = (props: LectureProps) => {
 
   const { lectures } = useCoursesContext();
 
-  const isSemesterSwitcherActive =
-    lectureType === "school" || lectureType === "kindergarden";
+  const isSemesterSwitcherActive = true;
+  // lectureType === "school" || lectureType === "kindergarden";
 
   const { isLoading, isError } = useCoursesContext();
 
@@ -60,15 +60,11 @@ export const Lecture = (props: LectureProps) => {
               <S.Link
                 href={`/prihlasky/${url}`}
                 passHref
-                disabled
-                // disabled={isCalendarEmpty}
+                disabled={isCalendarEmpty}
               >
-                <Button variant="filled" disabled>
-                  Připravujeme
-                </Button>
-                {/* <Button variant="filled" disabled={isCalendarEmpty}>
+                <Button variant="filled" disabled={isCalendarEmpty}>
                   {isCalendarEmpty ? "Kurz není dostupný" : "Poslat přihlášku"}
-                </Button> */}
+                </Button>
               </S.Link>
             </Hidden>
           </Flex>
