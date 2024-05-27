@@ -58,7 +58,10 @@ export const Lecture = (props: LectureProps) => {
             />
 
             <Hidden isHidden={isLoading || isError}>
-              <S.Link
+              <Button variant="filled" disabled>
+                Připravujeme
+              </Button>
+              {/* <S.Link
                 href={`/prihlasky/${url}`}
                 passHref
                 disabled={isCalendarEmpty}
@@ -66,7 +69,7 @@ export const Lecture = (props: LectureProps) => {
                 <Button variant="filled" disabled={isCalendarEmpty}>
                   {isCalendarEmpty ? "Kurz není dostupný" : "Poslat přihlášku"}
                 </Button>
-              </S.Link>
+              </S.Link> */}
             </Hidden>
           </Flex>
         </S.PaddingWrapper>
