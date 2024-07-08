@@ -30,7 +30,6 @@ export const AnalyticsProvider = ({ children }: PropsWithChildren) => {
       router.events.off("routeChangeComplete", handleRouteChange);
     };
   }, [router.events]);
-
   return (
     <PostHogProvider client={posthog}>
       <Analytics />
