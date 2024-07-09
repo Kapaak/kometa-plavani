@@ -10,6 +10,9 @@ import { PostHogProvider } from "posthog-js/react";
 // //disable posthog in development
 if (typeof window !== "undefined" && process.env.NODE_ENV === "production") {
   posthog.init(process.env.NEXT_PUBLIC_POSTHOG_KEY ?? "", {
+    person_profiles: "always",
+    persistence: "localStorage+cookie",
+    persistence_name: "posthog_persistence",
     api_host: process.env.NEXT_PUBLIC_POSTHOG_HOST || "https://app.posthog.com",
     // Enable debug mode in development
     loaded: (posthog) => {

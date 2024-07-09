@@ -28,7 +28,7 @@
     "next": "^13.3.4",
     "next-sanity": "^0.8.4",
     "nextjs-google-analytics": "^2.3.3",
-    "posthog-js": "^1.105.7",
+    "posthog-js": "^1.145.0",
     "react": "^18.2.0",
     "react-div-100vh": "^0.7.0",
     "react-dom": "^18.2.0",
