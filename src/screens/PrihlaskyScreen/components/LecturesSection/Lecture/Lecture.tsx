@@ -19,8 +19,8 @@ export const Lecture = (props: LectureProps) => {
 
   const { lectures } = useCoursesContext();
 
-  const isSemesterSwitcherActive = true;
-  // lectureType === "school" || lectureType === "kindergarden";
+  const isSemesterSwitcherActive =
+    lectureType === "school" || lectureType === "kindergarden";
 
   const { isLoading, isError } = useCoursesContext();
 
