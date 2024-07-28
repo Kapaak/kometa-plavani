@@ -337,7 +337,7 @@ export type SanityCourseDay = {
 export enum SkillLevel {
   BEGINNER = 1,
   ADVANCED = 2,
-  PROFESIONAL = 3,
+  UNSET = 3,
 }
 
 export type DayCapacity = {

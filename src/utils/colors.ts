@@ -6,8 +6,8 @@ export function getColorFromSkillLevel(skillLevelId: SkillLevel) {
       return "#7FDAEF";
     case SkillLevel.ADVANCED:
       return "#49C660";
-    case SkillLevel.PROFESIONAL:
-      return "#ED9A3A";
+    case SkillLevel.UNSET:
+      return "#fff";
     default:
       return "transparent";
   }

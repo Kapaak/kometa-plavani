@@ -10,8 +10,8 @@ export function LectureCalendarSkillInformation() {
       <SkillLevelRow label="Začátečník" skillLevelId={SkillLevel.BEGINNER} />
       <SkillLevelRow label="Pokročilý" skillLevelId={SkillLevel.ADVANCED} />
       <SkillLevelRow
-        label="Profesionál"
-        skillLevelId={SkillLevel.PROFESIONAL}
+        label="Všechny plavecké úrovně"
+        skillLevelId={SkillLevel.UNSET}
       />
     </S.LectureCalendarSkillInformation>
   );
