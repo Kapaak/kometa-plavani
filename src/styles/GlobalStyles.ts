@@ -69,7 +69,6 @@ export const GlobalStyles = createGlobalStyle`
 
     @media(${dimensions.tablet}){
         :root{
-            --side-padding:6rem;
             --gap:4rem;
         }
     }

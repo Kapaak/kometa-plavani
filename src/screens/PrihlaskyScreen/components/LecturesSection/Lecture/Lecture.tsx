@@ -73,9 +73,6 @@ export const Lecture = (props: LectureProps) => {
             </Hidden>
           </Flex>
         </S.PaddingWrapper>
-        <S.DesktopImageContainer>
-          <S.Img src={image} alt={alt} quality="80" />
-        </S.DesktopImageContainer>
       </S.LectureGrid>
     </S.LectureSection>
   );

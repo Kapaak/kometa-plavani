@@ -75,16 +75,18 @@ export const LectureCalendar = ({
             onNext: () => setSelectedSemester(2),
           })}
         />
-        <LectureCalendarTimes lectureTimes={times} />
-        {!isLoading && Boolean(times?.length) && (
-          <LectureCalendarData
-            selectedSemester={showSemesterSwitcher ? selectedSemester : 1}
-            lectureTimes={times}
-            lectureDays={days}
-            calendarData={data}
-            capacity={capacity}
-          />
-        )}
+        <S.OverflowContainer>
+          <LectureCalendarTimes lectureTimes={times} />
+          {!isLoading && Boolean(times?.length) && (
+            <LectureCalendarData
+              selectedSemester={showSemesterSwitcher ? selectedSemester : 1}
+              lectureTimes={times}
+              lectureDays={days}
+              calendarData={data}
+              capacity={capacity}
+            />
+          )}
+        </S.OverflowContainer>
         {data && hasSkillLevel(data) && <LectureCalendarSkillInformation />}
         <Text variant="dark">&#42; Volná místa / kapacita</Text>
       </Hidden>

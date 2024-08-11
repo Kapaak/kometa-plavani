@@ -10,7 +10,10 @@ export const LectureCalendarTimes = ({
   lectureTimes,
 }: LectureCalendarTimesProps) => {
   return (
-    <S.LectureCalendarTimes padding="0 0 1.5rem 0">
+    <S.LectureCalendarTimes
+      padding="0 0 1.5rem 0"
+      columns={lectureTimes?.length}
+    >
       <div />
       {lectureTimes?.map((time) => (
         <div key={time?.from}>

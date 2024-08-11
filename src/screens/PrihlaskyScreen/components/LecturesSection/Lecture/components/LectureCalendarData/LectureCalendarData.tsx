@@ -57,7 +57,10 @@ export const LectureCalendarData = ({
     <Flex gap="1.2rem">
       {lectureDays?.map((day, index) => {
         return (
-          <S.LectureCalendarTimesGrid key={`${day}_${uniqueGlobalId}_${index}`}>
+          <S.LectureCalendarTimesGrid
+            key={`${day}_${uniqueGlobalId}_${index}`}
+            columns={lectureTimes?.length}
+          >
             <div>{convertWeekDaysToAbbrDiacritics(day)}</div>{" "}
             {findLectureTime(day)}
           </S.LectureCalendarTimesGrid>

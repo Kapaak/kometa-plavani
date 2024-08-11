@@ -1,27 +1,9 @@
-import Image from "next/image";
 import NextLink from "next/link";
 
 import styled from "styled-components";
 
 import { Flex as SFlex, SectionElement } from "~/styles";
 import { dimensions } from "~/utils";
-
-export const Img = styled(Image)`
-  object-fit: cover;
-  width: 100%;
-  height: 100%;
-`;
-
-export const DesktopImageContainer = styled.div`
-  display: none;
-  position: relative;
-  border-radius: 0 var(--small-border-rad) var(--small-border-rad) 0;
-  overflow: hidden;
-
-  @media (${dimensions.desktop}) {
-    display: block;
-  }
-`;
 
 export const Flex = styled(SFlex)`
   align-items: flex-start;
@@ -32,12 +14,9 @@ export const LectureGrid = styled.div`
   display: grid;
   grid-template-columns: 1fr;
 
-  @media (${dimensions.tabletX}) {
+  @media (${dimensions.notebook}) {
     gap: 2rem;
     grid-template-columns: 1fr 1fr;
-  }
-  @media (${dimensions.desktop}) {
-    grid-template-columns: 1fr 1fr 35rem;
   }
 `;
 

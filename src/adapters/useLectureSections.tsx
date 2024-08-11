@@ -1,9 +1,9 @@
 import AdultLecture from "~/public/images/service-adult.jpg";
-import AdvancedLecture from "~/public/images/service-advanced.jpg";
-import BasicLecture from "~/public/images/service-basic.jpg";
+import AdvancedLecture from "~/public/images/service-advanced.png";
+import BasicLecture from "~/public/images/service-basic.png";
 import ConditionLecture from "~/public/images/service-condition.jpg";
-import KindergardenLecture from "~/public/images/service-kindergarden.jpg";
-import SchoolLecture from "~/public/images/service-school.jpg";
+import KindergardenLecture from "~/public/images/service-kindergarden.png";
+import SchoolLecture from "~/public/images/service-school.png";
 
 import { LectureTypes, ScrollSections, Service } from "~/domains";
 
@@ -13,7 +13,7 @@ export const lectures: Record<string, Service[]> = {
       id: 1,
       headline: "Základní plavání",
       text: "Kurzy jsou určené pro děti, které se potřebují naučit plavat.",
-      image: SchoolLecture,
+      image: BasicLecture,
       alt: "Děti v bazénu pod vodou s brýlemi",
       name: ScrollSections.APPLICATIONS_BASIC,
       tag: "děti od 4 let",
@@ -64,7 +64,7 @@ export const lectures: Record<string, Service[]> = {
       id: 5,
       headline: "Školy",
       text: "Cílem je naučit plavce základům plavání.",
-      image: BasicLecture,
+      image: SchoolLecture,
       alt: "Plavec s plaveckými brýlemi v mělké vodě na bazénu Lužánky",
       name: ScrollSections.APPLICATIONS_SCHOOL,
       tag: "organizace mšmt",
