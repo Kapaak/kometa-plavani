@@ -1,7 +1,7 @@
 import { usePageContext } from "~/contexts";
 import { SanityInfoBar } from "~/domains";
 
-import { DiscountLabel } from "../DiscountLabel";
+import { InformationBar } from "../DiscountLabel";
 import Navigation from "./Navigation/Navigation";
 
 import * as S from "./Header.style";
@@ -16,7 +16,7 @@ const Header = ({ infoBar }: HeaderProps) => {
   return (
     <S.Header withShadow={isShadowActive}>
       {infoBar && (
-        <DiscountLabel title={infoBar?.title} description={infoBar?.text} />
+        <InformationBar title={infoBar?.title} description={infoBar?.text} />
       )}
       <Navigation isActive={isNavigationOpen} />
     </S.Header>

@@ -9,7 +9,6 @@ export const Header = styled.header<{ withShadow: boolean }>`
   align-items: center;
   justify-content: space-between;
   width: 100%;
-  /* height: var(--header-height); */ //todo: update this so that I dont need to use it
   z-index: 9;
   background-color: var(--colw);
   box-shadow: ${({ withShadow }) =>

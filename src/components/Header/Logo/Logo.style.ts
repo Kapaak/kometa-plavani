@@ -8,12 +8,12 @@ export const Img = styled(Image)`
   position: relative;
   display: inline-block;
   z-index: 10;
-  padding: 1rem 2rem;
+  padding: 1rem 1.6rem;
   cursor: pointer;
   width: 11rem;
-  margin: 0 2rem;
   height: 100%;
   z-index: 2;
+  vertical-align: middle;
 
   @media (${dimensions.notebook}) {
     width: 10rem;

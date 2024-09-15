@@ -1,21 +1,15 @@
 import styled from "styled-components";
 
-import { dimensions } from "~/utils";
-
-export const DiscountLabel = styled.div`
-  display: none;
+export const InformationBar = styled.div`
+  display: flex;
   justify-content: space-between;
   align-items: center;
   top: 0rem;
   left: 0;
   width: 100%;
-  padding: 1rem var(--side-padding);
   background-color: var(--col1);
   z-index: 10;
-
-  @media (${dimensions.notebook}) {
-    display: flex;
-  }
+  padding: 1rem var(--side-padding);
 `;
 
 export const BiggerText = styled.span`
@@ -26,4 +20,5 @@ export const BiggerText = styled.span`
 
 export const SmallerText = styled.span`
   font-size: 1.4rem;
+  text-align: end;
 `;

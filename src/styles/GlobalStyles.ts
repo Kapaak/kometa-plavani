@@ -35,10 +35,11 @@ export const GlobalStyles = createGlobalStyle`
         --col-success:#34C759;
 
         --max-width:145rem;
-        --side-padding:3rem;
+        --side-padding:1.6rem;
         --vertical-padding:2rem;
         --gap:2.5rem;
         --header-height:7rem;
+        --information-bar-height:0rem;
 
         --shadow:0 0 20px 0 rgba(10, 19, 10, 0.1);
         --small-border-rad:1.5rem;
@@ -70,6 +71,7 @@ export const GlobalStyles = createGlobalStyle`
     @media(${dimensions.tablet}){
         :root{
             --gap:4rem;
+            --side-padding:3rem;
         }
     }
 
