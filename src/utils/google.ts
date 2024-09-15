@@ -56,6 +56,7 @@ export const uploadGlobalSpreadsheet = async (
       ),
       "Zdravotní potíže": globalSpreadsheet?.healthIssues,
       "Den a čas": globalSpreadsheet?.lessonsDayTime,
+      Poznámky: globalSpreadsheet?.notes,
     },
     spreadsheetId
   );

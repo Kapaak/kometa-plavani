@@ -131,7 +131,7 @@ export const AdultForm = ({ onSubmit, errors, isLoading }: AdultFormProps) => {
         <S.FormItem>
           <Subheadline variant="dark">Ostatní</Subheadline>
           <S.FormInputContainer>
-            <ControlledInput name={`alergy`} placeholder="Alergie" />
+            <ControlledInput name="alergy" placeholder="Alergie" />
             <S.Label>Alergie</S.Label>
           </S.FormInputContainer>
           <S.FormInputContainer>
@@ -140,6 +140,10 @@ export const AdultForm = ({ onSubmit, errors, isLoading }: AdultFormProps) => {
               placeholder="Upozornění  na zdravotní potíže"
             />
             <S.Label>Zdravotní potíže</S.Label>
+          </S.FormInputContainer>
+          <S.FormInputContainer>
+            <ControlledInput name="notes" placeholder="Prostor pro poznámky" />
+            <S.Label>Prostor pro poznámky</S.Label>
           </S.FormInputContainer>
         </S.FormItem>
       </S.Container>

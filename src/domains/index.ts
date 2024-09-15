@@ -182,6 +182,7 @@ export type GlobalSpreadsheetData = {
   level?: string;
   lessonsDayTime?: string;
   discount?: number;
+  notes?: string;
 };
 
 export type SchoolSpreadsheetData = {

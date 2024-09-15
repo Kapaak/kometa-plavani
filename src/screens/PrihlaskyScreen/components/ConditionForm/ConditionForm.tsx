@@ -145,6 +145,10 @@ export const ConditionForm = ({
             />
             <S.Label>Zdravotní potíže</S.Label>
           </S.FormInputContainer>
+          <S.FormInputContainer>
+            <ControlledInput name="notes" placeholder="Prostor pro poznámky" />
+            <S.Label>Prostor pro poznámky</S.Label>
+          </S.FormInputContainer>
         </S.FormItem>
       </S.Container>
     </SwimmingForm>
