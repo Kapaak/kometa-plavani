@@ -1,13 +1,14 @@
 import { GetStaticPropsContext, NextPage } from "next";
 
 import { PageLayout } from "~/components/PageLayout";
+import { courseEnrollmentData } from "~/constants/enrol-course";
 import { CourseDetailContextProvider } from "~/contexts";
-import { Course, PageData, SanityCourse } from "~/domains";
-import { PrihlaskyNameScreen, prihlaskyNameData } from "~/screens";
+import { Course, EnrollmentDetail, SanityCourse } from "~/domains";
+import { PrihlaskyNameScreen } from "~/screens";
 import { getCourse } from "~/utils";
 
 interface CoursePageProps {
-  pageData: PageData;
+  pageData: EnrollmentDetail;
   course: SanityCourse;
 }
 
@@ -27,7 +28,7 @@ const CoursePage: NextPage<CoursePageProps> = ({ pageData, course }) => {
 
 export const getStaticProps = async (ctx: GetStaticPropsContext) => {
   const courseName = ctx.params?.courseName as Course;
-  const pageData = prihlaskyNameData?.find((d) => d.name === courseName);
+  const pageData = courseEnrollmentData?.find((d) => d.name === courseName);
 
   if (!pageData)
     return {
@@ -46,7 +47,7 @@ export const getStaticProps = async (ctx: GetStaticPropsContext) => {
 };
 
 export const getStaticPaths = async () => {
-  const paths = prihlaskyNameData.map((data) => ({
+  const paths = courseEnrollmentData.map((data) => ({
     params: {
       courseName: data?.name,
     },

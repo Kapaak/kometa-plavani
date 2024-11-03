@@ -1,6 +1,6 @@
 import { useEffect, useReducer, useState } from "react";
 
-import { GoogleSheets, LectureTypes } from "~/domains";
+import { GoogleSheets } from "~/domains";
 import { getRowsBySheetId } from "~/libs";
 import {
   calculateGoogleSheetRowApplications,
@@ -14,7 +14,7 @@ type LoadingState = {
 
 interface GoogleSheetProps {
   googleSheetId: string;
-  lectureType: LectureTypes;
+  lectureType: string;
 }
 
 export const useGoogleSheet = ({

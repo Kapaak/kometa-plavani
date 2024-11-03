@@ -1,5 +1,7 @@
+export * from './axios';
 export * from './breakpoints';
 export * from './calculations';
+export * from './colors';
 export * from './functions';
 export * from './google';
 export * from './icons';

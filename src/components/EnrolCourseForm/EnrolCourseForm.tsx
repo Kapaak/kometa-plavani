@@ -6,36 +6,31 @@ import { toast } from "react-toastify";
 import posthog from "posthog-js";
 
 import { useSendEmail } from "~/adapters";
-import {
-  Course,
-  GlobalSpreadsheetData,
-  SchoolSpreadsheetData,
-} from "~/domains";
+import { courseEnrollmentData } from "~/constants/enrol-course";
+import { GlobalSpreadsheetData, SchoolSpreadsheetData } from "~/domains";
 import { uploadGlobalSpreadsheet, uploadSchoolSpreadsheet } from "~/utils";
 
 import {
+  AdultForm,
   AdvancedForm,
   BasicForm,
   ConditionForm,
   KindergardenForm,
   SchoolForm,
-} from "..";
-import { AdultForm } from "../AdultForm";
-import { SuccessModal } from "./SuccessModal";
+  SuccessModal,
+} from "./parts";
 
-interface FormContainerProps {
-  spreadsheetId: string;
-  courseName: Course;
-  templateId: string;
+interface EnrolCourseFormProps {
+  formTypeId?: string;
+  googleSheetId?: string;
 }
 
 type SendEmailFormData = GlobalSpreadsheetData & SchoolSpreadsheetData;
 
-export const FormContainer = ({
-  spreadsheetId,
-  courseName,
-  templateId,
-}: FormContainerProps) => {
+export const EnrolCourseForm = ({
+  formTypeId,
+  googleSheetId,
+}: EnrolCourseFormProps) => {
   const [isOpen, setIsOpen] = useState(false);
 
   const { sendEmail, isLoading } = useSendEmail(false);
@@ -43,6 +38,8 @@ export const FormContainer = ({
   const router = useRouter();
 
   const form = useForm<SendEmailFormData>();
+
+  const enrolCourse = courseEnrollmentData.find((d) => d.value === formTypeId);
 
   const {
     handleSubmit,
@@ -52,18 +49,32 @@ export const FormContainer = ({
   } = form;
 
   const handleExcelUpload = async (formData: SendEmailFormData) => {
-    if (courseName !== "skoly" && courseName !== "skolky") {
-      return uploadGlobalSpreadsheet(spreadsheetId, formData);
+    if (!enrolCourse || (!enrolCourse.spreadsheetId && !googleSheetId)) {
+      return;
     }
 
-    return uploadSchoolSpreadsheet(spreadsheetId, formData);
+    if (enrolCourse?.name !== "skoly" && enrolCourse?.name !== "skolky") {
+      return uploadGlobalSpreadsheet(
+        googleSheetId ?? enrolCourse.spreadsheetId,
+        formData
+      );
+    }
+
+    return uploadSchoolSpreadsheet(
+      googleSheetId ?? enrolCourse.spreadsheetId,
+      formData
+    );
   };
 
   const onSubmit = async (formValues: SendEmailFormData) => {
+    if (!enrolCourse) {
+      return;
+    }
+
     try {
       await Promise.all([
         handleExcelUpload(formValues),
-        sendEmail({ formValues, templateId }),
+        sendEmail({ formValues, templateId: enrolCourse.templateId }),
       ]);
       setIsOpen(true);
 
@@ -86,46 +97,49 @@ export const FormContainer = ({
     <FormProvider {...form}>
       <SuccessModal
         isOpen={isOpen}
-        formData={{ formValues: getValues(), templateId }}
+        formData={{
+          formValues: getValues(),
+          templateId: enrolCourse?.templateId,
+        }}
         addChild={resetAll}
         redirect={() => router.push("/")}
       />
-      {courseName === "skolky" && (
+      {enrolCourse?.name === "skolky" && (
         <KindergardenForm
           onSubmit={handleSubmit(onSubmit)}
           errors={errors}
           isLoading={isLoading}
         />
       )}
-      {courseName === "skoly" && (
+      {enrolCourse?.name === "skoly" && (
         <SchoolForm
           onSubmit={handleSubmit(onSubmit)}
           errors={errors}
           isLoading={isLoading}
         />
       )}
-      {courseName === "zakladni-plavani" && (
+      {enrolCourse?.name === "zakladni-plavani" && (
         <BasicForm
           onSubmit={handleSubmit(onSubmit)}
           errors={errors}
           isLoading={isLoading}
         />
       )}
-      {courseName === "zdokonalovaci-plavani" && (
+      {enrolCourse?.name === "zdokonalovaci-plavani" && (
         <AdvancedForm
           onSubmit={handleSubmit(onSubmit)}
           errors={errors}
           isLoading={isLoading}
         />
       )}
-      {courseName === "kondicni-plavani" && (
+      {enrolCourse?.name === "kondicni-plavani" && (
         <ConditionForm
           onSubmit={handleSubmit(onSubmit)}
           errors={errors}
           isLoading={isLoading}
         />
       )}
-      {courseName === "plavani-pro-dospele" && (
+      {enrolCourse?.name === "plavani-pro-dospele" && (
         <AdultForm
           onSubmit={handleSubmit(onSubmit)}
           errors={errors}

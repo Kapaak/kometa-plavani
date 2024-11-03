@@ -10,7 +10,6 @@ import _ from "lodash";
 import {
   GoogleSheets,
   LectureDaysTimesCapacity,
-  LectureTypes,
   SanityCourse,
   SanityLectureFrequencyPricing,
   WeekDaysNew,
@@ -46,7 +45,7 @@ export const CourseDetailContextProvider = ({
 }: PropsWithChildren<{
   googleSheetId: string;
   course: SanityCourse;
-  lectureType: LectureTypes;
+  lectureType: string;
 }>) => {
   const { lectureDaysTimesCapacity: lectureDaysTimesCapacity2 } =
     useSanityApplication(course);

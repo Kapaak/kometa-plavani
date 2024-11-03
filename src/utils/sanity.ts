@@ -6,6 +6,7 @@ import {
   SanityDocument,
   SanityFaq,
   SanityInfoBar,
+  SanityPreliminaryCourse,
 } from "~/domains";
 import { client } from "~/libs";
 
@@ -53,6 +54,32 @@ export async function getCourse(courseName: string): Promise<SanityCourse> {
   const query = groq`*[_type == "course" && value == $courseName]{pondeli[]{start, discount,skillLevel,capacity},utery[]{start, discount,skillLevel,capacity},streda[]{start, discount,skillLevel,capacity},ctvrtek[]{start, discount,skillLevel,capacity},patek[]{start, discount,skillLevel,capacity},duration,price,lectureFrequencyPricingOptions[]{price,title,lectureFrequency},title,value,age,file{asset->{url}}}[0]`;
 
   const course: SanityCourse = await client.fetch(query, { courseName });
+
+  return course;
+}
+
+export async function getAllPreliminaryCourses(): Promise<
+  SanityPreliminaryCourse[]
+> {
+  const query = groq`*[_type == "preliminaryCourse"]{title,"slug":slug.current,"dateFrom":activeDate.activeDateFrom,"dateTo":activeDate.activeDateTo,
+    "semesterFrom": dateTime(semesterMonthYear.yearMonthFrom.year + "-" + semesterMonthYear.yearMonthFrom.month + "-01" + "T00:00:00Z"),
+    "semesterTo": dateTime(semesterMonthYear.yearMonthFrom.year + "-" + semesterMonthYear.yearMonthFrom.month + "-01" + "T00:00:00Z")
+  ,price,googleSheetId,lectureFrequencyPricingOptions,duration,age,value,pondeli[]{start, discount,skillLevel,capacity},utery[]{start, discount,skillLevel,capacity},streda[]{start, discount,skillLevel,capacity},ctvrtek[]{start, discount,skillLevel,capacity},patek[]{start, discount,skillLevel,capacity}}`;
+
+  const course = await client.fetch(query);
+
+  return course;
+}
+
+export async function getPreliminaryCourse(
+  slug: string
+): Promise<SanityPreliminaryCourse> {
+  const query = groq`*[_type == "preliminaryCourse" && slug.current == $slug && activeDate.activeDateTo > now() ]{title,"slug":slug.current,"dateFrom":activeDate.activeDateFrom,"dateTo":activeDate.activeDateTo,
+       "semesterFrom": dateTime(semesterMonthYear.yearMonthFrom.year + "-" + semesterMonthYear.yearMonthFrom.month + "-01" + "T00:00:00Z"),
+       "semesterTo": dateTime(semesterMonthYear.yearMonthTo.year + "-" + semesterMonthYear.yearMonthTo.month + "-01" + "T00:00:00Z")
+  ,price,googleSheetId,lectureFrequencyPricingOptions,duration,age,value,pondeli[]{start, discount,skillLevel,capacity},utery[]{start, discount,skillLevel,capacity},streda[]{start, discount,skillLevel,capacity},ctvrtek[]{start, discount,skillLevel,capacity},patek[]{start, discount,skillLevel,capacity}}[0]`;
+
+  const course = await client.fetch(query, { slug });
 
   return course;
 }
