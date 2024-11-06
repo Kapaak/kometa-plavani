@@ -1,12 +1,11 @@
-import { PageData } from "~/domains";
-import { FormContainer } from "~/screens/PrihlaskyScreen/components";
+import { EnrolCourseForm } from "~/components/EnrolCourseForm";
+import { EnrollmentDetail } from "~/domains";
 import { MaxWidth } from "~/styles";
 
 import * as S from "./PrihlaskyNameScreen.style";
 
-
 interface PrihlaskyNameScreenProps {
-  pageData: PageData;
+  pageData: EnrollmentDetail;
 }
 
 export const PrihlaskyNameScreen = ({ pageData }: PrihlaskyNameScreenProps) => {
@@ -14,11 +13,7 @@ export const PrihlaskyNameScreen = ({ pageData }: PrihlaskyNameScreenProps) => {
     <MaxWidth>
       <S.Wrapper>
         <S.Headline>{pageData?.label}</S.Headline>
-        <FormContainer
-          courseName={pageData?.name}
-          spreadsheetId={pageData?.spreadsheetId}
-          templateId={pageData?.templateId}
-        />
+        <EnrolCourseForm formTypeId={pageData?.value} />
       </S.Wrapper>
     </MaxWidth>
   );

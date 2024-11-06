@@ -23,7 +23,7 @@ export const getRowsBySheetId = async (sheetId: string) => {
   await doc.loadInfo();
 
   const sheet = doc.sheetsById[sheetId];
-  return await sheet.getRows();
+  return await sheet?.getRows();
 };
 
 export const getAllSheets = async (sheetIds: Array<string>) => {

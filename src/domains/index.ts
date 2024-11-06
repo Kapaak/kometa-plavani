@@ -4,7 +4,7 @@ import { BaseSyntheticEvent } from "react";
 import { PortableTextBlock } from "@portabletext/types";
 import { GoogleSpreadsheetRow } from "google-spreadsheet";
 
-export type PageData = {
+export type EnrollmentDetail = {
   spreadsheetId: string;
   name: Course;
   templateId: string;
@@ -307,11 +307,31 @@ export type SanityCourse = {
   title: string;
   price: string;
   age: string;
-  file: {
+  file?: {
     asset: {
       url: string;
     };
   };
+  lectureFrequencyPricingOptions: SanityLectureFrequencyPricing[];
+  duration: number;
+  pondeli?: SanityCourseDay[];
+  utery?: SanityCourseDay[];
+  streda?: SanityCourseDay[];
+  ctvrtek?: SanityCourseDay[];
+  patek?: SanityCourseDay[];
+};
+
+export type SanityPreliminaryCourse = {
+  value: string;
+  googleSheetId: string;
+  slug: string;
+  title: string;
+  price: string;
+  age: string;
+  semesterFrom: string;
+  semesterTo: string;
+  dateTo: string;
+  dateFrom: string;
   lectureFrequencyPricingOptions: SanityLectureFrequencyPricing[];
   duration: number;
   pondeli?: SanityCourseDay[];

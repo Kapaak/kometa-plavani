@@ -1,6 +1,6 @@
-import { LectureTypes, PageData } from "~/domains";
+import { EnrollmentDetail, LectureTypes } from "~/domains";
 
-export const prihlaskyNameData: PageData[] = [
+export const courseEnrollmentData: EnrollmentDetail[] = [
   {
     spreadsheetId: "1925580387",
     name: "skolky",
