@@ -57,7 +57,6 @@ export const getStaticPaths = async () => {
   if (!preliminaryCourses)
     return {
       notFound: true,
-      revalidate: 10,
     };
 
   const paths = preliminaryCourses.map((course) => ({
@@ -68,6 +67,6 @@ export const getStaticPaths = async () => {
 
   return {
     paths,
-    fallback: false,
+    fallback: "blocking",
   };
 };
