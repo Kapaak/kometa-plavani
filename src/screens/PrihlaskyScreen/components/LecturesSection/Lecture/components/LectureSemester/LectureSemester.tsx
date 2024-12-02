@@ -1,4 +1,4 @@
-import { ArrowLeft, ArrowRight } from "@phosphor-icons/react";
+import { ArrowLeft } from "@phosphor-icons/react";
 
 import { Flex } from "~/styles";
 
@@ -35,9 +35,9 @@ export const LectureSemester = ({
         {isFirstSemesterSelected && semesterLabels?.[0]}
         {isSecondSemesterSelected && semesterLabels?.[1]}
       </S.LectureSemesterText>
-      <S.LectureSemesterButton visible={!isSecondSemesterSelected}>
+      {/* <S.LectureSemesterButton visible={!isSecondSemesterSelected}>
         {onNext && <ArrowRight size={20} onClick={onNext} />}
-      </S.LectureSemesterButton>
+      </S.LectureSemesterButton> */}
     </Flex>
   );
 };

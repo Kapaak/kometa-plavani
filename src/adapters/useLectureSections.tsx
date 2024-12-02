@@ -7,6 +7,14 @@ import SchoolLecture from "~/public/images/service-school.png";
 
 import { LectureTypes, ScrollSections, Service } from "~/domains";
 
+const semesterRange = {
+  first: ["září 2024 - leden 2025", "únor 2025 - červen 2025"],
+  second: ["únor 2025 - červen 2025", "září 2025 - leden 2026"],
+};
+
+//pri uprave semesterLabel je potreba upravit i const [selectedSemester, setSelectedSemester] = useState<1 | 2>(1); z 1 na 2 a naopak
+const activeSemesterRange = semesterRange.second;
+
 export const lectures: Record<string, Service[]> = {
   homePage: [
     {
@@ -82,7 +90,7 @@ export const lectures: Record<string, Service[]> = {
       name: ScrollSections.APPLICATIONS_BASIC,
       lectureType: LectureTypes.BASIC,
       //pri uprave semesterLabel je potreba upravit i const [selectedSemester, setSelectedSemester] = useState<1 | 2>(1); z 1 na 2 a naopak
-      semesterLabels: ["září 2024 - leden 2025", "únor 2025 - červen 2025"],
+      semesterLabels: activeSemesterRange,
       url: "zakladni-plavani",
     },
     {
@@ -94,7 +102,7 @@ export const lectures: Record<string, Service[]> = {
       alt: "Dítě na plavecké lekci",
       name: ScrollSections.APPLICATIONS_ADVANCED,
       lectureType: LectureTypes.ADVANCED,
-      semesterLabels: ["září 2024 - leden 2025", "únor 2025 - červen 2025"],
+      semesterLabels: activeSemesterRange,
       url: "zdokonalovaci-plavani",
     },
     {
@@ -106,7 +114,7 @@ export const lectures: Record<string, Service[]> = {
       alt: "Plavkyně uprostřed dráhy na plavecké lekci pro děti",
       name: ScrollSections.APPLICATIONS_CONDITION,
       lectureType: LectureTypes.CONDITION,
-      semesterLabels: ["září 2024 - leden 2025", "únor 2025 - červen 2025"],
+      semesterLabels: activeSemesterRange,
       url: "kondicni-plavani",
     },
     {
@@ -119,7 +127,7 @@ Plavání je sport, díky kterému naberete tělesnou kondici, pomůže Vám zba
       alt: "Dospělý plavec u konce dráhy na plavecké lekci pro dospělé",
       name: ScrollSections.APPLICATIONS_ADULT,
       lectureType: LectureTypes.ADULT,
-      semesterLabels: ["září 2024 - leden 2025", "únor 2025 - červen 2025"],
+      semesterLabels: activeSemesterRange,
       url: "plavani-pro-dospele",
     },
     {
@@ -132,7 +140,7 @@ Plavání je sport, díky kterému naberete tělesnou kondici, pomůže Vám zba
       image: KindergardenLecture,
       name: ScrollSections.APPLICATIONS_KINDERGARDEN,
       lectureType: LectureTypes.KINDERGARDEN,
-      semesterLabels: ["září 2024 - leden 2025", "únor 2025 - červen 2025"],
+      semesterLabels: activeSemesterRange,
       alt: "Plavkyně ve vodě na bazénu Lužánky, která se nadechuje",
       url: "skolky",
     },
@@ -144,7 +152,7 @@ Plavání je sport, díky kterému naberete tělesnou kondici, pomůže Vám zba
       image: SchoolLecture,
       name: ScrollSections.APPLICATIONS_SCHOOL,
       lectureType: LectureTypes.SCHOOL,
-      semesterLabels: ["září 2024 - leden 2025", "únor 2025 - červen 2025"],
+      semesterLabels: activeSemesterRange,
       alt: "Děti v bazénu pod vodou s brýlemi",
       url: "skoly",
     },
