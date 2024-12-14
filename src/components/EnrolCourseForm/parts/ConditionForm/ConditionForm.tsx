@@ -135,7 +135,7 @@ export const ConditionForm = ({
         <S.FormItem>
           <Subheadline variant="dark">Ostatní</Subheadline>
           <S.FormInputContainer>
-            <ControlledInput name={`alergy`} placeholder="Alergie" />
+            <ControlledInput name="alergy" placeholder="Alergie" />
             <S.Label>Alergie</S.Label>
           </S.FormInputContainer>
           <S.FormInputContainer>

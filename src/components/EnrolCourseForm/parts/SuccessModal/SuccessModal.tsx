@@ -8,15 +8,15 @@ import * as S from "./SuccessModal.style";
 
 interface ModalProps {
   isOpen: boolean;
-  addChild: () => void;
-  redirect: () => void;
+  onEnrollMore: () => void;
+  onClose: () => void;
   formData: any;
 }
 
 export const SuccessModal = ({
-  addChild,
+  onEnrollMore,
   isOpen,
-  redirect,
+  onClose,
   formData,
 }: ModalProps) => {
   const { sendEmail, isLoading } = useSendEmail(true);
@@ -25,7 +25,7 @@ export const SuccessModal = ({
     <Modal
       title="vaše přihláška byla odeslána"
       open={isOpen}
-      onChange={redirect}
+      onChange={onClose}
     >
       <S.TextWrapper>
         <Text variant="dark" bold>
@@ -51,11 +51,11 @@ export const SuccessModal = ({
         <Divider width="50%" />
 
         <S.ButtonContainer justify="center" gap="2rem">
-          <S.CreateButton onClick={addChild}>
+          <S.CreateButton onClick={onEnrollMore}>
             <UserCirclePlus size={26} color="var(--col2)" />
             Vytvořit další přihlášku
           </S.CreateButton>
-          <S.ReturnButton onClick={redirect}>
+          <S.ReturnButton onClick={onClose}>
             Vrátit se na úvodní stránku
           </S.ReturnButton>
         </S.ButtonContainer>

@@ -25,7 +25,8 @@ interface EnrolCourseFormProps {
   googleSheetId?: string;
 }
 
-type SendEmailFormData = GlobalSpreadsheetData & SchoolSpreadsheetData;
+type SendEmailFormData = GlobalSpreadsheetData &
+  SchoolSpreadsheetData & { gdprConsent?: boolean };
 
 export const EnrolCourseForm = ({
   formTypeId,
@@ -37,7 +38,13 @@ export const EnrolCourseForm = ({
 
   const router = useRouter();
 
-  const form = useForm<SendEmailFormData>();
+  const form = useForm<SendEmailFormData>({
+    defaultValues: {
+      gender: "",
+      midTerm: "",
+      gdprConsent: false,
+    },
+  });
 
   const enrolCourse = courseEnrollmentData.find((d) => d.value === formTypeId);
 
@@ -85,11 +92,7 @@ export const EnrolCourseForm = ({
   };
 
   const resetAll = () => {
-    reset({
-      gender: "",
-      midTerm: "",
-      lessonsPrice: getValues("lessonsPrice"),
-    });
+    reset();
     setIsOpen(false);
   };
 
@@ -101,8 +104,8 @@ export const EnrolCourseForm = ({
           formValues: getValues(),
           templateId: enrolCourse?.templateId,
         }}
-        addChild={resetAll}
-        redirect={() => router.push("/")}
+        onEnrollMore={resetAll}
+        onClose={() => router.push("/")}
       />
       {enrolCourse?.name === "skolky" && (
         <KindergardenForm
