@@ -39,7 +39,7 @@ export const LectureCalendar = ({
   isLoading,
   isError,
 }: LectureCalendarProps) => {
-  const [selectedSemester, setSelectedSemester] = useState<1 | 2>(1);
+  const [selectedSemester, setSelectedSemester] = useState<1 | 2>(2);
   return (
     <S.LectureCalendar>
       {!isLoading && isError && (
