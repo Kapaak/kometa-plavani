@@ -13,7 +13,7 @@ const semesterRange = {
 };
 
 //pri uprave semesterLabel je potreba upravit i const [selectedSemester, setSelectedSemester] = useState<1 | 2>(1); z 1 na 2 a naopak
-const activeSemesterRange = semesterRange.second;
+const activeSemesterRange = semesterRange.first;
 
 export const lectures: Record<string, Service[]> = {
   homePage: [
