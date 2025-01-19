@@ -23,9 +23,9 @@ export const ContactSection = () => {
             </Text>
             <Text variant="dark">
               Plavání se věnuji od malička a prošla jsem si celou plaveckou
-              přípravku. Poté jsem začala trénovat děti. Momentálně vedu plavání
-              na Kohoutovicích a Holzové. Volný čas ráda trávím cestováním a
-              sledováním filmů.
+              přípravku. Postupem času jsem se začala věnovat trénování dětí a
+              nyní vedu plavecké kurzy a závodní přípravku plavců na Lužánkách.
+              Ve volném čase ráda cestuji a poznávám nová místa.
             </Text>
 
             <VerticalStack padding="2rem 0 0 0" gap="2rem">
