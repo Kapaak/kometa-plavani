@@ -62,6 +62,7 @@ export type Fragment = {
   output: string;
   type: Content;
   href?: string;
+  downloadable?: boolean;
 };
 
 export type HeadlineFragment = {

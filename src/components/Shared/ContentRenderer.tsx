@@ -43,7 +43,7 @@ export const ContentRenderer = ({
           return (
             LinkElement &&
             content.push(
-              <LinkElement key={i} href={href}>
+              <LinkElement key={i} href={href} download={a.downloadable}>
                 {a.output}
               </LinkElement>
             )

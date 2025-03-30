@@ -76,7 +76,12 @@ export const data: HeadlineFragment[] = [
   {
     headline: "Informace",
     fragment: [
-      { output: "GDPR", type: Content.normal },
+      {
+        output: "GDPR",
+        type: Content.link,
+        downloadable: true,
+        href: "/files/GDPR.pdf",
+      },
       { output: "IČO: 44992432", type: Content.normal },
     ],
   },
