@@ -63,7 +63,7 @@ export async function getAllPreliminaryCourses(): Promise<
 > {
   const query = groq`*[_type == "preliminaryCourse"]{title,"slug":slug.current,"dateFrom":activeDate.activeDateFrom,"dateTo":activeDate.activeDateTo,
     "semesterFrom": dateTime(semesterMonthYear.yearMonthFrom.year + "-" + semesterMonthYear.yearMonthFrom.month + "-01" + "T00:00:00Z"),
-    "semesterTo": dateTime(semesterMonthYear.yearMonthFrom.year + "-" + semesterMonthYear.yearMonthFrom.month + "-01" + "T00:00:00Z")
+    "semesterTo": dateTime(semesterMonthYear.yearMonthTo.year + "-" + semesterMonthYear.yearMonthTo.month + "-01" + "T00:00:00Z")
   ,price,googleSheetId,lectureFrequencyPricingOptions,duration,age,value,pondeli[]{start, discount,skillLevel,capacity},utery[]{start, discount,skillLevel,capacity},streda[]{start, discount,skillLevel,capacity},ctvrtek[]{start, discount,skillLevel,capacity},patek[]{start, discount,skillLevel,capacity}}`;
 
   const course = await client.fetch(query);
@@ -74,7 +74,7 @@ export async function getAllPreliminaryCourses(): Promise<
 export async function getPreliminaryCourse(
   slug: string
 ): Promise<SanityPreliminaryCourse> {
-  const query = groq`*[_type == "preliminaryCourse" && slug.current == $slug && activeDate.activeDateTo > now() ]{title,"slug":slug.current,"dateFrom":activeDate.activeDateFrom,"dateTo":activeDate.activeDateTo,
+  const query = groq`*[_type == "preliminaryCourse" && slug.current == $slug && activeDate.activeDateFrom <= now() && activeDate.activeDateTo > now() ]|order(activeDate.activeDateFrom desc){title,"slug":slug.current,"dateFrom":activeDate.activeDateFrom,"dateTo":activeDate.activeDateTo,
        "semesterFrom": dateTime(semesterMonthYear.yearMonthFrom.year + "-" + semesterMonthYear.yearMonthFrom.month + "-01" + "T00:00:00Z"),
        "semesterTo": dateTime(semesterMonthYear.yearMonthTo.year + "-" + semesterMonthYear.yearMonthTo.month + "-01" + "T00:00:00Z")
   ,price,googleSheetId,lectureFrequencyPricingOptions,duration,age,value,pondeli[]{start, discount,skillLevel,capacity},utery[]{start, discount,skillLevel,capacity},streda[]{start, discount,skillLevel,capacity},ctvrtek[]{start, discount,skillLevel,capacity},patek[]{start, discount,skillLevel,capacity}}[0]`;
