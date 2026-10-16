@@ -58,6 +58,8 @@ export function useSendEmail(showNotifications = false) {
       return fetcherPost("/api/email", {
         email: formValues?.email ?? formValues?.contactPersonEmail,
         templateId: templateId,
+        firstName: formValues?.firstName,
+        lastName: formValues?.lastName,
         day: fullDaysTimes,
         price: Math.floor(
           calculatePriceAfterDiscount(
